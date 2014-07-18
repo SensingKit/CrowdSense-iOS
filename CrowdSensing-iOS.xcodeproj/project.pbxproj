@@ -203,6 +203,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Kleomenis Katevas";
 				TargetAttributes = {
+					CFFF325119796BF600F7CE57 = {
+						DevelopmentTeam = 9T92P8D3FB;
+					};
 					CFFF327519796BF600F7CE57 = {
 						TestTargetID = CFFF325119796BF600F7CE57;
 					};
@@ -391,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
@@ -404,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
