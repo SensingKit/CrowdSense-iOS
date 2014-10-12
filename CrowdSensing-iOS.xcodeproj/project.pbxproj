@@ -17,7 +17,6 @@
 		CFFF326C19796BF600F7CE57 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326A19796BF600F7CE57 /* Main_iPad.storyboard */; };
 		CFFF326F19796BF600F7CE57 /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326E19796BF600F7CE57 /* CSViewController.m */; };
 		CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFF327019796BF600F7CE57 /* Images.xcassets */; };
-		CFFF327819796BF600F7CE57 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF327719796BF600F7CE57 /* XCTest.framework */; };
 		CFFF327919796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
 		CFFF327A19796BF600F7CE57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325919796BF600F7CE57 /* UIKit.framework */; };
 		CFFF328219796BF600F7CE57 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFFF328019796BF600F7CE57 /* InfoPlist.strings */; };
@@ -51,7 +50,6 @@
 		CFFF326E19796BF600F7CE57 /* CSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
 		CFFF327019796BF600F7CE57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CFFF327619796BF600F7CE57 /* CrowdSensing-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrowdSensing-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFFF327719796BF600F7CE57 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CFFF327F19796BF600F7CE57 /* CrowdSensing-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrowdSensing-iOSTests-Info.plist"; sourceTree = "<group>"; };
 		CFFF328119796BF600F7CE57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFFF328319796BF600F7CE57 /* CrowdSensing_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrowdSensing_iOSTests.m; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFFF327819796BF600F7CE57 /* XCTest.framework in Frameworks */,
 				CFFF327A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
 				CFFF327919796BF600F7CE57 /* Foundation.framework in Frameworks */,
 			);
@@ -106,7 +103,6 @@
 				CFFF325519796BF600F7CE57 /* Foundation.framework */,
 				CFFF325719796BF600F7CE57 /* CoreGraphics.framework */,
 				CFFF325919796BF600F7CE57 /* UIKit.framework */,
-				CFFF327719796BF600F7CE57 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -476,6 +472,7 @@
 				CFFF328919796BF600F7CE57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFFF328A19796BF600F7CE57 /* Build configuration list for PBXNativeTarget "CrowdSensing-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +481,7 @@
 				CFFF328C19796BF600F7CE57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
