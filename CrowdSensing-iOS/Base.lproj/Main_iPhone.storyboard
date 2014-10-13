@@ -25,7 +25,7 @@
                                 </constraints>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <action selector="startButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UaE-fn-Tmm"/>
+                                    <action selector="startButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="yLf-zv-Ckp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyW-Fg-I84" customClass="CSRoundButton">
@@ -38,7 +38,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pauseButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eOO-Af-49A"/>
+                                    <action selector="pauseButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="qpY-my-fJ1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47l-nY-Bhw" customClass="CSRoundButton">
@@ -51,7 +51,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="syncButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jhn-5y-ind"/>
+                                    <action selector="syncButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="7Sc-aM-5An"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OAv-Ab-Rd4">
