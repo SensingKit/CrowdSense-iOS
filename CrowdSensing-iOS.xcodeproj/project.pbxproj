@@ -14,7 +14,6 @@
 		CFFF326219796BF600F7CE57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326119796BF600F7CE57 /* main.m */; };
 		CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326519796BF600F7CE57 /* CSAppDelegate.m */; };
 		CFFF326919796BF600F7CE57 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */; };
-		CFFF326C19796BF600F7CE57 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326A19796BF600F7CE57 /* Main_iPad.storyboard */; };
 		CFFF326F19796BF600F7CE57 /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326E19796BF600F7CE57 /* CSViewController.m */; };
 		CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFF327019796BF600F7CE57 /* Images.xcassets */; };
 		CFFF327919796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
@@ -45,7 +44,6 @@
 		CFFF326419796BF600F7CE57 /* CSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAppDelegate.h; sourceTree = "<group>"; };
 		CFFF326519796BF600F7CE57 /* CSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAppDelegate.m; sourceTree = "<group>"; };
 		CFFF326819796BF600F7CE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		CFFF326B19796BF600F7CE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		CFFF326D19796BF600F7CE57 /* CSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
 		CFFF326E19796BF600F7CE57 /* CSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
 		CFFF327019796BF600F7CE57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				CFFF326419796BF600F7CE57 /* CSAppDelegate.h */,
 				CFFF326519796BF600F7CE57 /* CSAppDelegate.m */,
 				CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */,
-				CFFF326A19796BF600F7CE57 /* Main_iPad.storyboard */,
 				CFFF326D19796BF600F7CE57 /* CSViewController.h */,
 				CFFF326E19796BF600F7CE57 /* CSViewController.m */,
 				CFFF327019796BF600F7CE57 /* Images.xcassets */,
@@ -231,7 +228,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFFF326C19796BF600F7CE57 /* Main_iPad.storyboard in Resources */,
 				CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */,
 				CFFF326919796BF600F7CE57 /* Main_iPhone.storyboard in Resources */,
 				CFFF326019796BF600F7CE57 /* InfoPlist.strings in Resources */,
@@ -292,14 +288,6 @@
 				CFFF326819796BF600F7CE57 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		CFFF326A19796BF600F7CE57 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFFF326B19796BF600F7CE57 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		CFFF328019796BF600F7CE57 /* InfoPlist.strings */ = {
@@ -395,6 +383,7 @@
 				GCC_PREFIX_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,6 +398,7 @@
 				GCC_PREFIX_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
