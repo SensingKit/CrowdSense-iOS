@@ -194,7 +194,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Setup" id="Rri-XZ-ktg">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="40Q-A0-pvK"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="40Q-A0-pvK"/>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="aZX-Wv-hel"/>
                     </navigationItem>
                 </tableViewController>
