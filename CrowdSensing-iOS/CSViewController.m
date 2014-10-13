@@ -10,6 +10,10 @@
 
 @interface CSViewController ()
 
+@property (weak, nonatomic) IBOutlet CSRoundButton *startButton;
+@property (weak, nonatomic) IBOutlet CSRoundButton *pauseButton;
+@property (weak, nonatomic) IBOutlet CSRoundButton *syncButton;
+
 @end
 
 @implementation CSViewController
@@ -24,6 +28,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)startButtonAction:(CSRoundButton *)sender
+{
+}
+
+- (IBAction)pauseButtonAction:(CSRoundButton *)sender
+{
+}
+
+- (IBAction)syncButtonAction:(CSRoundButton *)sender
+{
 }
 
 @end

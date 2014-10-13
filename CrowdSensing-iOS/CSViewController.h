@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSRoundButton.h"
 
 @interface CSViewController : UIViewController
 
