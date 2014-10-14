@@ -421,7 +421,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accelerometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-Vz-3he">
-                                                    <rect key="frame" x="16" y="11" width="112" height="20.5"/>
+                                                    <rect key="frame" x="16" y="11" width="112" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -462,7 +462,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Zc0-Yx-tlL" kind="modal" id="0rn-cv-Qes"/>
+                                            <segue destination="kiY-jU-Cf3" kind="push" id="4t2-v3-0hb"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -495,19 +495,28 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1JN-Ad-UKu" id="u2k-pX-gi7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" placeholder="Sampling Rate (Hz)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IOq-kV-xMr">
-                                                    <rect key="frame" x="85.5" y="7" width="150" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sampling Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WA-8D-thG">
+                                                    <rect key="frame" x="15" y="11" width="113" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" placeholder="Sampling Rate (Hz)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8VD-nF-kuG">
+                                                    <rect key="frame" x="165" y="7" width="140" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="0ZJ-50-4sj"/>
-                                                        <constraint firstAttribute="height" constant="30" id="FGf-gL-pXK"/>
+                                                        <constraint firstAttribute="height" constant="30" id="JyT-Zi-K5X"/>
+                                                        <constraint firstAttribute="width" constant="140" id="vrl-mf-2ao"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="IOq-kV-xMr" secondAttribute="centerY" id="bFA-1Q-d69"/>
-                                                <constraint firstAttribute="centerX" secondItem="IOq-kV-xMr" secondAttribute="centerX" id="cu6-wn-n79"/>
+                                                <constraint firstAttribute="centerY" secondItem="8VD-nF-kuG" secondAttribute="centerY" id="7u5-oD-WHE"/>
+                                                <constraint firstAttribute="centerY" secondItem="9WA-8D-thG" secondAttribute="centerY" id="9zb-Xj-Er8"/>
+                                                <constraint firstAttribute="trailing" secondItem="8VD-nF-kuG" secondAttribute="trailing" constant="15" id="LaO-qN-Vef"/>
+                                                <constraint firstItem="9WA-8D-thG" firstAttribute="leading" secondItem="u2k-pX-gi7" secondAttribute="leading" constant="15" id="Wfg-KR-tVr"/>
+                                                <constraint firstAttribute="centerY" secondItem="8VD-nF-kuG" secondAttribute="centerY" id="nrc-CV-MFU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -526,7 +535,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkA-F8-9KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3619" y="-14"/>
+            <point key="canvasLocation" x="3588" y="-9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ab-Yh-ZPU">
@@ -545,24 +554,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aH-jP-KFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137" y="342"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ARC-6z-6pB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zc0-Yx-tlL" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wfE-s4-GQC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kiY-jU-Cf3" kind="relationship" relationship="rootViewController" id="qce-C5-5PW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CUr-83-xAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3087" y="-14"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VFA-Vo-LBS">
