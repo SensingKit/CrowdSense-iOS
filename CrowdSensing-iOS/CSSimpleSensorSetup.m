@@ -10,9 +10,6 @@
 
 @interface CSSimpleSensorSetup ()
 
-//@property (weak, nonatomic) IBOutlet UILabel *sensorLabel;
-//@property (weak, nonatomic) IBOutlet UISwitch *sensorSwitch;
-
 @end
 
 @implementation CSSimpleSensorSetup
