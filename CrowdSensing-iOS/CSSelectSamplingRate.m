@@ -18,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Set the delegate
+    self.samplingRateTextField.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -36,6 +39,21 @@
 - (IBAction)cancelAction:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#define MAXLENGTH 3
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSUInteger oldLength = [textField.text length];
+    NSUInteger replacementLength = [string length];
+    NSUInteger rangeLength = range.length;
+    
+    NSUInteger newLength = oldLength - rangeLength + replacementLength;
+    
+    BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
+    
+    return newLength <= MAXLENGTH || returnKey;
 }
 
 @end

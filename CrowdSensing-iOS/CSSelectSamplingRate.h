@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CSGenericSensorSetup.h"
 
-@interface CSSelectSamplingRate : CSGenericSensorSetup
+@interface CSSelectSamplingRate : CSGenericSensorSetup<UITextFieldDelegate>
 
 @end
