@@ -115,10 +115,44 @@
             </objects>
             <point key="canvasLocation" x="350" y="859"/>
         </scene>
+        <!--Information-->
+        <scene sceneID="Ijv-x1-Huj">
+            <objects>
+                <viewController id="6Wf-LA-WTM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OSs-nb-AbX"/>
+                        <viewControllerLayoutGuide type="bottom" id="AVY-3E-eD5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tby-Cd-lcX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmh-J0-Fhk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mmh-J0-Fhk" firstAttribute="top" secondItem="Tby-Cd-lcX" secondAttribute="top" id="ICA-qA-sNG"/>
+                            <constraint firstAttribute="trailing" secondItem="Mmh-J0-Fhk" secondAttribute="trailing" id="VPr-mD-DrC"/>
+                            <constraint firstItem="Mmh-J0-Fhk" firstAttribute="leading" secondItem="Tby-Cd-lcX" secondAttribute="leading" id="W0b-F2-5rC"/>
+                            <constraint firstItem="AVY-3E-eD5" firstAttribute="top" secondItem="Mmh-J0-Fhk" secondAttribute="bottom" id="hHf-D4-AvH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Information" id="PSG-W3-Z46"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ei-gG-6ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2336" y="720"/>
+        </scene>
         <!--Setup-->
         <scene sceneID="FfC-Aj-ke3">
             <objects>
-                <tableViewController id="EaW-p1-3Bn" sceneMemberID="viewController">
+                <tableViewController id="EaW-p1-3Bn" customClass="CSSetupTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="3nI-Ix-a9H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,9 +179,9 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection footerTitle="Only Local data storage is supported at the moment." id="n9x-RM-fPB">
+                            <tableViewSection footerTitle="Only local data storage is supported at the moment." id="n9x-RM-fPB">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="KEz-wb-eh6" detailTextLabel="iGX-IP-74j" style="IBUITableViewCellStyleValue1" id="DCM-EH-Upp">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="KEz-wb-eh6" detailTextLabel="iGX-IP-74j" style="IBUITableViewCellStyleValue1" id="DCM-EH-Upp">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DCM-EH-Upp" id="XbS-yg-zjq">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -171,7 +205,7 @@
                             </tableViewSection>
                             <tableViewSection id="h3s-Zh-VXS">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Ahm-0F-TES" style="IBUITableViewCellStyleDefault" id="dZZ-FC-7bK">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Ahm-0F-TES" style="IBUITableViewCellStyleDefault" id="dZZ-FC-7bK">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dZZ-FC-7bK" id="kBl-2P-5hl">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -184,6 +218,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="6Wf-LA-WTM" kind="push" id="xfG-Gk-GN4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -194,8 +231,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Setup" id="Rri-XZ-ktg">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="40Q-A0-pvK"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="aZX-Wv-hel"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="aZX-Wv-hel">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="EaW-p1-3Bn" id="LeU-qP-Eic"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5R-7w-1p1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,7 +245,7 @@
         <!--Sensor Setup-->
         <scene sceneID="uBX-zU-jMw">
             <objects>
-                <tableViewController id="nC1-gs-nuI" sceneMemberID="viewController">
+                <tableViewController id="nC1-gs-nuI" customClass="CSSensorSetupTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9Ol-Sc-mZf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +273,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="d7J-q3-MxI" kind="push" identifier="Setup Accelerometer" id="30A-BT-qrI"/>
+                                            <segue destination="d7J-q3-MxI" kind="push" identifier="Accelerometer Sensor Segue" id="pbL-A3-CtC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="H8v-9h-bXe" detailTextLabel="qZp-OP-Ipy" rowHeight="44" style="IBUITableViewCellStyleValue1" id="JeZ-Uu-Fwr">
@@ -255,6 +295,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="d7J-q3-MxI" kind="push" identifier="Gyroscope Sensor Segue" id="uWa-OA-IeR"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="tza-ud-4dL" detailTextLabel="Lgt-4K-5iQ" rowHeight="44" style="IBUITableViewCellStyleValue1" id="iJ8-Pw-RAD">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -275,6 +318,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="d7J-q3-MxI" kind="push" identifier="Magnetometer Sensor Segue" id="gXp-2B-TIm"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wb9-ex-rfg" detailTextLabel="t5S-YJ-bn3" rowHeight="44" style="IBUITableViewCellStyleValue1" id="rZu-dO-ELu">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -295,6 +341,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="d7J-q3-MxI" kind="push" identifier="Device Motion Sensor Segue" id="9dt-7Q-yG5"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="5yd-1H-bmB" detailTextLabel="zEp-Jq-5FY" rowHeight="44" style="IBUITableViewCellStyleValue1" id="CxS-6Y-k8Y">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -315,6 +364,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vyI-8l-K4q" kind="push" identifier="Activity Sensor Segue" id="cpy-jx-pYR"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -339,6 +391,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8yJ-ut-GIs" kind="push" identifier="Location Sensor Segue" id="xxZ-zh-pLm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -363,6 +418,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="fte-ah-Sge" kind="push" identifier="Proximity Sensor Segue" id="IjE-Gt-DOM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -387,6 +445,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vyI-8l-K4q" kind="push" identifier="Battery Sensor Segue" id="ml7-tI-jYp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -402,12 +463,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBc-eS-2S2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="-62"/>
+            <point key="canvasLocation" x="2336" y="-80"/>
         </scene>
-        <!--Accelerometer-->
+        <!--Sampling Rate-->
         <scene sceneID="w5p-oS-Qmu">
             <objects>
-                <tableViewController id="d7J-q3-MxI" sceneMemberID="viewController">
+                <tableViewController id="d7J-q3-MxI" customClass="CSSamplingRateSensorSetup" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="QST-tl-O1T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,25 +476,28 @@
                         <sections>
                             <tableViewSection footerTitle="Description of the sensor" id="a2q-4L-Jzb">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="nnL-rH-Ab6">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="nnL-rH-Ab6">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nnL-rH-Ab6" id="B4R-T8-LKB">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accelerometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-Vz-3he">
-                                                    <rect key="frame" x="16" y="11" width="112" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sensor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-Vz-3he">
+                                                    <rect key="frame" x="15" y="11.5" width="54" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yz8-7k-eea">
-                                                    <rect key="frame" x="245" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="256" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="sensorSwitchAction:" destination="d7J-q3-MxI" eventType="valueChanged" id="lcb-zc-phn"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Yz8-7k-eea" secondAttribute="trailing" constant="26" id="Fc9-w8-NvU"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yz8-7k-eea" secondAttribute="trailing" constant="15" id="Fc9-w8-NvU"/>
                                                 <constraint firstAttribute="centerY" secondItem="Yz8-7k-eea" secondAttribute="centerY" id="aiN-0d-vo5"/>
-                                                <constraint firstItem="nPa-Vz-3he" firstAttribute="leading" secondItem="B4R-T8-LKB" secondAttribute="leading" constant="16" id="bUU-BG-nJP"/>
+                                                <constraint firstItem="nPa-Vz-3he" firstAttribute="leading" secondItem="B4R-T8-LKB" secondAttribute="leading" constant="15" id="bUU-BG-nJP"/>
                                                 <constraint firstAttribute="centerY" secondItem="nPa-Vz-3he" secondAttribute="centerY" id="mn2-yk-cqr"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -462,7 +526,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kiY-jU-Cf3" kind="push" id="4t2-v3-0hb"/>
+                                            <segue destination="lVr-He-ZhG" kind="modal" identifier="Select Sampling Rate" id="4t2-v3-0hb"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -473,16 +537,185 @@
                             <outlet property="delegate" destination="d7J-q3-MxI" id="iKB-f3-Q8V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Accelerometer" id="3WV-ew-xlT"/>
+                    <navigationItem key="navigationItem" title="Sampling Rate" id="3WV-ew-xlT"/>
+                    <connections>
+                        <outlet property="sensorLabel" destination="nPa-Vz-3he" id="91X-jA-hH7"/>
+                        <outlet property="sensorSwitch" destination="Yz8-7k-eea" id="hPa-uA-3rU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsd-kv-97z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2716" y="-980"/>
+            <point key="canvasLocation" x="3491" y="-348"/>
+        </scene>
+        <!--Simple-->
+        <scene sceneID="27E-S1-Kgl">
+            <objects>
+                <tableViewController id="vyI-8l-K4q" customClass="CSSimpleSensorSetup" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="baU-xD-ehL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection footerTitle="Description of the sensor" id="RX0-zv-GZv">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="CDR-Zz-Q5K">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CDR-Zz-Q5K" id="rBo-pS-gYu">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sensor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15a-eO-naB">
+                                                    <rect key="frame" x="15" y="11.5" width="54" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LpK-BZ-TTV">
+                                                    <rect key="frame" x="256" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="sensorSwitchAction:" destination="vyI-8l-K4q" eventType="valueChanged" id="gDg-Ue-vGA"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="LpK-BZ-TTV" secondAttribute="trailing" constant="15" id="0rz-Me-u8a"/>
+                                                <constraint firstItem="15a-eO-naB" firstAttribute="leading" secondItem="rBo-pS-gYu" secondAttribute="leading" constant="15" id="SwC-fU-t9M"/>
+                                                <constraint firstAttribute="centerY" secondItem="15a-eO-naB" secondAttribute="centerY" id="Y3E-Yj-gh4"/>
+                                                <constraint firstAttribute="centerY" secondItem="LpK-BZ-TTV" secondAttribute="centerY" id="bw2-OX-bgb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="vyI-8l-K4q" id="FiP-bG-8cp"/>
+                            <outlet property="delegate" destination="vyI-8l-K4q" id="j7x-0y-bO1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Simple" id="wfU-1e-tu6"/>
+                    <connections>
+                        <outlet property="sensorLabel" destination="15a-eO-naB" id="uoZ-lU-ssa"/>
+                        <outlet property="sensorSwitch" destination="LpK-BZ-TTV" id="PXW-sq-DnO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWq-hm-BmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3491" y="-1036"/>
+        </scene>
+        <!--Location-->
+        <scene sceneID="zsK-Pi-wF8">
+            <objects>
+                <tableViewController id="8yJ-ut-GIs" customClass="CSLocationSensorSetup" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="3NO-5E-A0q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection footerTitle="Description of the sensor" id="LFd-9u-oub">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="o4F-k4-tMr">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o4F-k4-tMr" id="SdE-ZD-tJu">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-aE-C2l">
+                                                    <rect key="frame" x="256" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="sensorSwitchAction:" destination="8yJ-ut-GIs" eventType="valueChanged" id="dds-ih-ojh"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFz-wi-RS5">
+                                                    <rect key="frame" x="15" y="11.5" width="66.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="6Wk-aE-C2l" secondAttribute="trailing" constant="15" id="XEj-WE-AQ9"/>
+                                                <constraint firstItem="oFz-wi-RS5" firstAttribute="leading" secondItem="SdE-ZD-tJu" secondAttribute="leading" constant="15" id="kt9-O7-7Yj"/>
+                                                <constraint firstAttribute="centerY" secondItem="6Wk-aE-C2l" secondAttribute="centerY" id="o8j-vg-rWL"/>
+                                                <constraint firstAttribute="centerY" secondItem="oFz-wi-RS5" secondAttribute="centerY" id="vhk-P5-owz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="8yJ-ut-GIs" id="dno-gA-vYi"/>
+                            <outlet property="delegate" destination="8yJ-ut-GIs" id="Ra0-hG-rWa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Location" id="n0g-Hf-GtH"/>
+                    <connections>
+                        <outlet property="sensorLabel" destination="oFz-wi-RS5" id="7eD-Zp-5ql"/>
+                        <outlet property="sensorSwitch" destination="6Wk-aE-C2l" id="jLz-OF-wq3"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZs-Th-aWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3491" y="334"/>
+        </scene>
+        <!--Proximity-->
+        <scene sceneID="Eyc-F3-o7q">
+            <objects>
+                <tableViewController id="fte-ah-Sge" customClass="CSProximitySensorSetup" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PrK-N8-6CS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection footerTitle="Description of the sensor" id="rps-dn-OCR">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="wdY-AA-s23">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wdY-AA-s23" id="5g7-UX-npa">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proximity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVp-ON-F9t">
+                                                    <rect key="frame" x="15" y="11.5" width="71.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hhb-Yn-Tdp">
+                                                    <rect key="frame" x="256" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="sensorSwitchAction:" destination="fte-ah-Sge" eventType="valueChanged" id="Vqk-Z9-0eo"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yVp-ON-F9t" firstAttribute="leading" secondItem="5g7-UX-npa" secondAttribute="leading" constant="15" id="D17-4T-ZMq"/>
+                                                <constraint firstAttribute="centerY" secondItem="yVp-ON-F9t" secondAttribute="centerY" id="SI1-ja-uZX"/>
+                                                <constraint firstAttribute="centerY" secondItem="hhb-Yn-Tdp" secondAttribute="centerY" id="TY4-R1-U81"/>
+                                                <constraint firstAttribute="trailing" secondItem="hhb-Yn-Tdp" secondAttribute="trailing" constant="15" id="yaM-FR-uX4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fte-ah-Sge" id="Khd-Ne-6gQ"/>
+                            <outlet property="delegate" destination="fte-ah-Sge" id="FPL-K5-z1i"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Proximity" id="ldR-Cm-Zeo"/>
+                    <connections>
+                        <outlet property="sensorLabel" destination="yVp-ON-F9t" id="sVO-js-Yjf"/>
+                        <outlet property="sensorSwitch" destination="hhb-Yn-Tdp" id="VZt-xv-4tU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WgR-ks-5lL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3491" y="1049"/>
         </scene>
         <!--Sampling Rate-->
         <scene sceneID="bct-KP-8D5">
             <objects>
-                <tableViewController id="kiY-jU-Cf3" sceneMemberID="viewController">
+                <tableViewController id="kiY-jU-Cf3" customClass="CSSelectSamplingRate" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="c3Q-bu-jGs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -490,22 +723,15 @@
                         <sections>
                             <tableViewSection footerTitle="Type the Sampling Rate of the selected sensor in Hz." id="k0R-aM-oGd">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="1JN-Ad-UKu">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="1JN-Ad-UKu">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1JN-Ad-UKu" id="u2k-pX-gi7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sampling Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WA-8D-thG">
-                                                    <rect key="frame" x="15" y="11" width="113" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" placeholder="Sampling Rate (Hz)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8VD-nF-kuG">
-                                                    <rect key="frame" x="165" y="7" width="140" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" placeholder="Sampling Rate (Hz)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8VD-nF-kuG">
+                                                    <rect key="frame" x="15" y="7.5" width="290" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="JyT-Zi-K5X"/>
-                                                        <constraint firstAttribute="width" constant="140" id="vrl-mf-2ao"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -513,10 +739,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="8VD-nF-kuG" secondAttribute="centerY" id="7u5-oD-WHE"/>
-                                                <constraint firstAttribute="centerY" secondItem="9WA-8D-thG" secondAttribute="centerY" id="9zb-Xj-Er8"/>
-                                                <constraint firstAttribute="trailing" secondItem="8VD-nF-kuG" secondAttribute="trailing" constant="15" id="LaO-qN-Vef"/>
-                                                <constraint firstItem="9WA-8D-thG" firstAttribute="leading" secondItem="u2k-pX-gi7" secondAttribute="leading" constant="15" id="Wfg-KR-tVr"/>
+                                                <constraint firstItem="8VD-nF-kuG" firstAttribute="leading" secondItem="u2k-pX-gi7" secondAttribute="leading" constant="15" id="hot-K3-0Nr"/>
                                                 <constraint firstAttribute="centerY" secondItem="8VD-nF-kuG" secondAttribute="centerY" id="nrc-CV-MFU"/>
+                                                <constraint firstAttribute="trailing" secondItem="8VD-nF-kuG" secondAttribute="trailing" constant="15" id="vGT-U4-BtF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -529,13 +754,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sampling Rate" id="UOe-Fk-jGM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zsb-bd-q8g"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="KWW-l4-g4V"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zsb-bd-q8g">
+                            <connections>
+                                <action selector="cancelAction:" destination="kiY-jU-Cf3" id="jJb-Lh-Zpg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="KWW-l4-g4V">
+                            <connections>
+                                <action selector="doneAction:" destination="kiY-jU-Cf3" id="XQS-am-psf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="samplingRateTextField" destination="8VD-nF-kuG" id="Hzj-zk-ixY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkA-F8-9KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3588" y="-9"/>
+            <point key="canvasLocation" x="4669" y="-349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ab-Yh-ZPU">
@@ -573,10 +809,32 @@
             </objects>
             <point key="canvasLocation" x="-140" y="859"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Zo-iY-crR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lVr-He-ZhG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPE-qb-vw8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kiY-jU-Cf3" kind="relationship" relationship="rootViewController" id="CTH-n2-bdb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lll-Pp-7wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4137" y="-348"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="9dt-7Q-yG5"/>
+        <segue reference="cpy-jx-pYR"/>
+    </inferredMetricsTieBreakers>
 </document>

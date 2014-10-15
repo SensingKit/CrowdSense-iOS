@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */; };
+		CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39519ED446500E295CB /* CSSensorSetupTableViewController.m */; };
+		CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */; };
+		CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39F19ED4BDC00E295CB /* CSSimpleSensorSetup.m */; };
+		CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */; };
+		CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */; };
+		CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */; };
+		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
 		CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325719796BF600F7CE57 /* CoreGraphics.framework */; };
@@ -34,6 +42,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF18C39119ED439B00E295CB /* CSSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSetupTableViewController.h; sourceTree = "<group>"; };
+		CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSetupTableViewController.m; sourceTree = "<group>"; };
+		CF18C39419ED446500E295CB /* CSSensorSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensorSetupTableViewController.h; sourceTree = "<group>"; };
+		CF18C39519ED446500E295CB /* CSSensorSetupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSensorSetupTableViewController.m; sourceTree = "<group>"; };
+		CF18C39B19ED4BA400E295CB /* CSSamplingRateSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSamplingRateSensorSetup.h; sourceTree = "<group>"; };
+		CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSamplingRateSensorSetup.m; sourceTree = "<group>"; };
+		CF18C39E19ED4BDC00E295CB /* CSSimpleSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSimpleSensorSetup.h; sourceTree = "<group>"; };
+		CF18C39F19ED4BDC00E295CB /* CSSimpleSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSimpleSensorSetup.m; sourceTree = "<group>"; };
+		CF18C3A119ED4C0000E295CB /* CSLocationSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLocationSensorSetup.h; sourceTree = "<group>"; };
+		CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLocationSensorSetup.m; sourceTree = "<group>"; };
+		CF18C3A419ED4C1200E295CB /* CSProximitySensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSProximitySensorSetup.h; sourceTree = "<group>"; };
+		CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSProximitySensorSetup.m; sourceTree = "<group>"; };
+		CF18C3A719ED4C7700E295CB /* CSSelectSamplingRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSelectSamplingRate.h; sourceTree = "<group>"; };
+		CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectSamplingRate.m; sourceTree = "<group>"; };
+		CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGenericSensorSetup.h; sourceTree = "<group>"; };
+		CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGenericSensorSetup.m; sourceTree = "<group>"; };
 		CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRoundButton.h; sourceTree = "<group>"; };
 		CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRoundButton.m; sourceTree = "<group>"; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +103,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF18C38A19ED408800E295CB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CF18C39119ED439B00E295CB /* CSSetupTableViewController.h */,
+				CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */,
+				CF18C39419ED446500E295CB /* CSSensorSetupTableViewController.h */,
+				CF18C39519ED446500E295CB /* CSSensorSetupTableViewController.m */,
+				CF18C39719ED4B6000E295CB /* Sensor Setup */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		CF18C39719ED4B6000E295CB /* Sensor Setup */ = {
+			isa = PBXGroup;
+			children = (
+				CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */,
+				CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */,
+				CF18C39E19ED4BDC00E295CB /* CSSimpleSensorSetup.h */,
+				CF18C39F19ED4BDC00E295CB /* CSSimpleSensorSetup.m */,
+				CF18C39B19ED4BA400E295CB /* CSSamplingRateSensorSetup.h */,
+				CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */,
+				CF18C3A719ED4C7700E295CB /* CSSelectSamplingRate.h */,
+				CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */,
+				CF18C3A119ED4C0000E295CB /* CSLocationSensorSetup.h */,
+				CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */,
+				CF18C3A419ED4C1200E295CB /* CSProximitySensorSetup.h */,
+				CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */,
+			);
+			name = "Sensor Setup";
+			sourceTree = "<group>";
+		};
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
@@ -113,13 +168,14 @@
 			children = (
 				CFFF326419796BF600F7CE57 /* CSAppDelegate.h */,
 				CFFF326519796BF600F7CE57 /* CSAppDelegate.m */,
-				CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */,
 				CFFF326D19796BF600F7CE57 /* CSViewController.h */,
 				CFFF326E19796BF600F7CE57 /* CSViewController.m */,
-				CFFF327019796BF600F7CE57 /* Images.xcassets */,
-				CFFF325C19796BF600F7CE57 /* Supporting Files */,
 				CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */,
 				CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */,
+				CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */,
+				CF18C38A19ED408800E295CB /* Settings */,
+				CFFF327019796BF600F7CE57 /* Images.xcassets */,
+				CFFF325C19796BF600F7CE57 /* Supporting Files */,
 			);
 			path = "CrowdSensing-iOS";
 			sourceTree = "<group>";
@@ -257,7 +313,15 @@
 				CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */,
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
 				CFFF326219796BF600F7CE57 /* main.m in Sources */,
+				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,
+				CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */,
+				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
+				CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */,
 				CFFF326F19796BF600F7CE57 /* CSViewController.m in Sources */,
+				CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */,
+				CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */,
+				CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */,
+				CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
