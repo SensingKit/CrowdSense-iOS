@@ -1,12 +1,12 @@
 //
-//  CSViewController.m
+//  CSRecordViewController.m
 //  CrowdSensing-iOS
 //
 //  Created by Minos Katevas on 18/07/2014.
 //  Copyright (c) 2014 Kleomenis Katevas. All rights reserved.
 //
 
-#import "CSViewController.h"
+#import "CSRecordViewController.h"
 
 enum CSStartButtonMode : NSUInteger {
     CSStartButtonStartMode,
@@ -18,7 +18,7 @@ enum CSPauseButtonMode : NSUInteger {
     CSPauseButtonResumeMode
 };
 
-@interface CSViewController ()
+@interface CSRecordViewController ()
 
 @property (weak, nonatomic) IBOutlet CSRoundButton *startButton;
 @property (weak, nonatomic) IBOutlet CSRoundButton *pauseButton;
@@ -29,7 +29,7 @@ enum CSPauseButtonMode : NSUInteger {
 
 @end
 
-@implementation CSViewController
+@implementation CSRecordViewController
 
 - (void)viewDidLoad
 {

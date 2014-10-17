@@ -23,7 +23,7 @@
 		CFFF326219796BF600F7CE57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326119796BF600F7CE57 /* main.m */; };
 		CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326519796BF600F7CE57 /* CSAppDelegate.m */; };
 		CFFF326919796BF600F7CE57 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */; };
-		CFFF326F19796BF600F7CE57 /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326E19796BF600F7CE57 /* CSViewController.m */; };
+		CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326E19796BF600F7CE57 /* CSRecordViewController.m */; };
 		CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFF327019796BF600F7CE57 /* Images.xcassets */; };
 		CFFF327919796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
 		CFFF327A19796BF600F7CE57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325919796BF600F7CE57 /* UIKit.framework */; };
@@ -71,8 +71,8 @@
 		CFFF326419796BF600F7CE57 /* CSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAppDelegate.h; sourceTree = "<group>"; };
 		CFFF326519796BF600F7CE57 /* CSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAppDelegate.m; sourceTree = "<group>"; };
 		CFFF326819796BF600F7CE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		CFFF326D19796BF600F7CE57 /* CSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
-		CFFF326E19796BF600F7CE57 /* CSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
+		CFFF326D19796BF600F7CE57 /* CSRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSRecordViewController.h; sourceTree = "<group>"; };
+		CFFF326E19796BF600F7CE57 /* CSRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSRecordViewController.m; sourceTree = "<group>"; };
 		CFFF327019796BF600F7CE57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CFFF327619796BF600F7CE57 /* CrowdSensing-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrowdSensing-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF327F19796BF600F7CE57 /* CrowdSensing-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrowdSensing-iOSTests-Info.plist"; sourceTree = "<group>"; };
@@ -168,8 +168,8 @@
 			children = (
 				CFFF326419796BF600F7CE57 /* CSAppDelegate.h */,
 				CFFF326519796BF600F7CE57 /* CSAppDelegate.m */,
-				CFFF326D19796BF600F7CE57 /* CSViewController.h */,
-				CFFF326E19796BF600F7CE57 /* CSViewController.m */,
+				CFFF326D19796BF600F7CE57 /* CSRecordViewController.h */,
+				CFFF326E19796BF600F7CE57 /* CSRecordViewController.m */,
 				CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */,
 				CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */,
 				CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */,
@@ -317,7 +317,7 @@
 				CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */,
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
 				CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */,
-				CFFF326F19796BF600F7CE57 /* CSViewController.m in Sources */,
+				CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */,
 				CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */,
 				CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */,
 				CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */,

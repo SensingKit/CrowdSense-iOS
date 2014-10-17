@@ -1,5 +1,5 @@
 //
-//  CSViewController.h
+//  CSRecordViewController.h
 //  CrowdSensing-iOS
 //
 //  Created by Minos Katevas on 18/07/2014.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CSRoundButton.h"
 
-@interface CSViewController : UIViewController
+@interface CSRecordViewController : UIViewController
 
 @end
