@@ -13,19 +13,12 @@ enum CSStartButtonMode : NSUInteger {
     CSStartButtonStopMode
 };
 
-enum CSPauseButtonMode : NSUInteger {
-    CSPauseButtonPauseMode,
-    CSPauseButtonResumeMode
-};
-
 @interface CSRecordViewController ()
 
 @property (weak, nonatomic) IBOutlet CSRoundButton *startButton;
-@property (weak, nonatomic) IBOutlet CSRoundButton *pauseButton;
 @property (weak, nonatomic) IBOutlet CSRoundButton *syncButton;
 
 @property (nonatomic) enum CSStartButtonMode startButtonMode;
-@property (nonatomic) enum CSPauseButtonMode pauseButtonMode;
 
 @end
 
@@ -37,7 +30,6 @@ enum CSPauseButtonMode : NSUInteger {
 	
     // Init Button Modes
     self.startButtonMode = CSStartButtonStartMode;
-    self.pauseButtonMode = CSPauseButtonPauseMode;
 }
 
 - (void)setStartButtonMode:(enum CSStartButtonMode)startButtonMode
@@ -82,51 +74,15 @@ enum CSPauseButtonMode : NSUInteger {
     }
 }
 
-- (void)setPauseButtonMode:(enum CSPauseButtonMode)pauseButtonMode
-{
-    switch (pauseButtonMode) {
-        case CSPauseButtonPauseMode:
-            [self.pauseButton setTitle:@"Pause" forState:UIControlStateNormal];
-            break;
-            
-        case CSPauseButtonResumeMode:
-            [self.pauseButton setTitle:@"Resume" forState:UIControlStateNormal];
-            break;
-            
-        default:
-            // Error
-            break;
-    }
-    
-    _pauseButtonMode = pauseButtonMode;
-}
-
-- (IBAction)pauseButtonAction:(CSRoundButton *)sender
-{
-    switch (self.pauseButtonMode) {
-        case CSPauseButtonPauseMode:
-            
-            NSLog(@"Pause Action");
-            self.pauseButtonMode = CSPauseButtonResumeMode;
-            
-            break;
-            
-        case CSPauseButtonResumeMode:
-            
-            NSLog(@"Resume Action");
-            self.pauseButtonMode = CSPauseButtonPauseMode;
-            
-            break;
-            
-        default:
-            // Error
-            break;
-    }
-}
-
 - (IBAction)syncButtonAction:(CSRoundButton *)sender
 {
     NSLog(@"Sync Action");
 }
+
+- (IBAction)doneButtonAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 @end
