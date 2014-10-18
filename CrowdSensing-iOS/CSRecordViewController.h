@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CSRoundButton.h"
 
-@interface CSRecordViewController : UIViewController
+@interface CSRecordViewController : UIViewController<UIAlertViewDelegate>
 
 @end
