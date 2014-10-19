@@ -7,8 +7,12 @@
 //
 
 #import "CSMainViewController.h"
+//#import "SensingKitLib"
 
 @interface CSMainViewController ()
+
+//@property (nonatomic, strong) SensingKitLib *sensingKitLib;
+@property (weak, nonatomic) IBOutlet UITableView *recordingsTableView;
 
 @end
 
@@ -33,5 +37,37 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark Table view methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;  // TODO: Change this
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Recording Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    // Get the item
+    
+    // Set up the cell...
+    cell.textLabel.text = @"New Recording";
+    cell.detailTextLabel.text = @"3 hours";
+    
+    return cell;
+}
 
 @end

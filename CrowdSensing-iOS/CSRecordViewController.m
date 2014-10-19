@@ -25,6 +25,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
+@property (weak, nonatomic) IBOutlet UITableView *logTableView;
+
 @property (weak, nonatomic) IBOutlet CSRoundButton *setupButton;
 @property (weak, nonatomic) IBOutlet CSRoundButton *startButton;
 @property (weak, nonatomic) IBOutlet CSRoundButton *syncButton;
@@ -230,6 +232,38 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     {
         NSLog(@"Unknown CSRecordViewControllerAlertType: %ld", (long) type);
     }
+}
+
+#pragma mark Table view methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;  // TODO: Change this
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Log Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    // Get the item
+    
+    // Set up the cell...
+    cell.textLabel.text = @"00:00:00,000";
+    cell.detailTextLabel.text = @"Start";
+    
+    return cell;
 }
 
 @end

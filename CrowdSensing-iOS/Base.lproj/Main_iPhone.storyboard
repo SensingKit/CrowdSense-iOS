@@ -66,7 +66,7 @@
                                 <rect key="frame" x="0.0" y="311" width="320" height="257"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Log Entry" textLabel="kLe-e4-eB2" detailTextLabel="vmt-Pf-xOD" style="IBUITableViewCellStyleValue1" id="4Vz-d1-T76">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Log Cell" textLabel="kLe-e4-eB2" detailTextLabel="vmt-Pf-xOD" style="IBUITableViewCellStyleValue1" id="4Vz-d1-T76">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Vz-d1-T76" id="cEU-vq-Io5">
@@ -88,6 +88,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="3d6-7W-ehR"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="M2P-ma-Sgj"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-MS-8e4" customClass="CSRoundButton">
                                 <rect key="frame" x="32" y="226" width="70" height="70"/>
@@ -134,6 +138,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="logTableView" destination="dxm-x2-aJf" id="7Tf-6b-tV9"/>
                         <outlet property="setupButton" destination="oFx-MS-8e4" id="lpG-Pn-9QS"/>
                         <outlet property="startButton" destination="48k-Ft-YWZ" id="hH3-IT-I2J"/>
                         <outlet property="syncButton" destination="47l-nY-Bhw" id="AGg-YM-Mxr"/>
@@ -146,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="407" y="1129"/>
         </scene>
-        <!--Information-->
+        <!--About CrowdSensing-->
         <scene sceneID="Ijv-x1-Huj">
             <objects>
                 <viewController id="6Wf-LA-WTM" customClass="CSInfoViewController" sceneMemberID="viewController">
@@ -174,7 +179,7 @@
                             <constraint firstItem="AVY-3E-eD5" firstAttribute="top" secondItem="Mmh-J0-Fhk" secondAttribute="bottom" id="hHf-D4-AvH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Information" id="PSG-W3-Z46">
+                    <navigationItem key="navigationItem" title="About CrowdSensing" id="PSG-W3-Z46">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="l62-Rx-jCb">
                             <connections>
                                 <action selector="DoneAction:" destination="6Wf-LA-WTM" id="3Wl-qr-3g9"/>
@@ -844,7 +849,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Recording Entry" textLabel="svr-f8-qxX" detailTextLabel="0UH-aD-sAr" style="IBUITableViewCellStyleValue1" id="gVQ-dy-UfL">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Recording Cell" textLabel="svr-f8-qxX" detailTextLabel="0UH-aD-sAr" style="IBUITableViewCellStyleValue1" id="gVQ-dy-UfL">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVQ-dy-UfL" id="epg-bB-aLB">
@@ -869,9 +874,13 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gT3-PJ-Jxa" id="3S6-bu-4oD"/>
+                                    <outlet property="delegate" destination="gT3-PJ-Jxa" id="0Hg-jF-hcq"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elx-fz-AEE">
-                                <rect key="frame" x="164" y="518" width="125" height="30"/>
+                                <rect key="frame" x="98" y="518" width="125" height="30"/>
                                 <state key="normal" title="New Recording">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -879,19 +888,26 @@
                                     <segue destination="Tcn-DU-S3I" kind="modal" id="rqc-PW-I9x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPG-Jp-lTQ">
-                                <rect key="frame" x="31" y="518" width="125" height="30"/>
-                                <state key="normal" title="Information">
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CrowdSensing" id="5NI-So-b5q">
+                        <barButtonItem key="leftBarButtonItem" id="Kax-HR-s18">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GPG-Jp-lTQ">
+                                <rect key="frame" x="22" y="518" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="About">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="ahg-fV-Rtx" kind="modal" id="ghd-Kg-ZBt"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="CrowdSensing" id="5NI-So-b5q"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="recordingsTableView" destination="z73-bT-lQn" id="xsI-rK-WLF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peb-ZE-VhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
