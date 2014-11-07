@@ -47,6 +47,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Init SensingKitLib
+    self.sensingKitLib = [[SensingKitLib alloc] init];
 	
     // Init Button Modes
     self.startButtonMode = CSStartButtonStartMode;
