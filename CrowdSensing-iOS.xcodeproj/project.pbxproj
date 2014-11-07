@@ -15,6 +15,8 @@
 		CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */; };
 		CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */; };
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
+		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
+		CF52989B1A0D16C4002A4D54 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */; };
 		CFB7CD1E19F2E25500F6B406 /* CSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD1D19F2E25500F6B406 /* CSMainViewController.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
@@ -24,7 +26,6 @@
 		CFFF326019796BF600F7CE57 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFFF325E19796BF600F7CE57 /* InfoPlist.strings */; };
 		CFFF326219796BF600F7CE57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326119796BF600F7CE57 /* main.m */; };
 		CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326519796BF600F7CE57 /* CSAppDelegate.m */; };
-		CFFF326919796BF600F7CE57 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */; };
 		CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF326E19796BF600F7CE57 /* CSRecordViewController.m */; };
 		CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFF327019796BF600F7CE57 /* Images.xcassets */; };
 		CFFF327919796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
@@ -60,6 +61,8 @@
 		CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectSamplingRate.m; sourceTree = "<group>"; };
 		CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGenericSensorSetup.h; sourceTree = "<group>"; };
 		CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGenericSensorSetup.m; sourceTree = "<group>"; };
+		CF5298971A0D1141002A4D54 /* SKStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKStyles.h; path = "CrowdSensing-iOS/SKStyles.h"; sourceTree = "<group>"; };
+		CF5298981A0D1141002A4D54 /* SKStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKStyles.m; path = "CrowdSensing-iOS/SKStyles.m"; sourceTree = "<group>"; };
 		CFB7CD1C19F2E25500F6B406 /* CSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMainViewController.h; sourceTree = "<group>"; };
 		CFB7CD1D19F2E25500F6B406 /* CSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMainViewController.m; sourceTree = "<group>"; };
 		CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInfoViewController.h; sourceTree = "<group>"; };
@@ -140,9 +143,19 @@
 			name = "Sensor Setup";
 			sourceTree = "<group>";
 		};
+		CF52989A1A0D1149002A4D54 /* PaintCode generated files */ = {
+			isa = PBXGroup;
+			children = (
+				CF5298971A0D1141002A4D54 /* SKStyles.h */,
+				CF5298981A0D1141002A4D54 /* SKStyles.m */,
+			);
+			name = "PaintCode generated files";
+			sourceTree = "<group>";
+		};
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
+				CF52989A1A0D1149002A4D54 /* PaintCode generated files */,
 				CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */,
 				CFFF327D19796BF600F7CE57 /* CrowdSensing-iOSTests */,
 				CFFF325419796BF600F7CE57 /* Frameworks */,
@@ -299,8 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF52989B1A0D16C4002A4D54 /* Main_iPhone.storyboard in Resources */,
 				CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */,
-				CFFF326919796BF600F7CE57 /* Main_iPhone.storyboard in Resources */,
 				CFFF326019796BF600F7CE57 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +337,7 @@
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
 				CFFF326219796BF600F7CE57 /* main.m in Sources */,
 				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,
+				CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */,
 				CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */,
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
 				CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */,

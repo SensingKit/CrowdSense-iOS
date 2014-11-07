@@ -7,15 +7,25 @@
 //
 
 #import "CSRoundButton.h"
+#import "SKStyles.h"
 
 @implementation CSRoundButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect
+{
     // Drawing code
+    if (self.type == CSRoundButtonFilledType) {
+        [SKStyles drawRoundButtonFilledWithTitle:self.title];
+    }
+    else if (self.type == CSRoundButtonStrokedType) {
+        [SKStyles drawRoundButtonStrokedWithTitle:self.title];
+    }
 }
-*/
+
+- (void)setTitle:(NSString *)title
+{
+    _title = title;
+    [self setNeedsDisplay];
+}
 
 @end

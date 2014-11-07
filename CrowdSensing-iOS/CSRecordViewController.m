@@ -51,10 +51,20 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     // Init Button Modes
     self.startButtonMode = CSStartButtonStartMode;
     
+    // Setup Title
     self.titleLabel.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleLabelTap:)];
     [self.titleLabel addGestureRecognizer:tapGesture];
+    
+    // Setup Round Buttons
+    self.setupButton.type = CSRoundButtonStrokedType;
+    self.setupButton.title = @"Setup";
+
+    self.startButton.type = CSRoundButtonFilledType;
+    
+    self.syncButton.type = CSRoundButtonStrokedType;
+    self.syncButton.title = @"Sync";
 }
 
 - (NSDateFormatter *)dateFormatter
@@ -73,19 +83,19 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 {
     switch (startButtonMode) {
         case CSStartButtonStartMode:
-            [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+            [self.startButton setTitle:@"Start"];
             break;
             
         case CSStartButtonStopMode:
-            [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
+            [self.startButton setTitle:@"Stop"];
             break;
             
         case CSStartButtonPauseMode:
-            [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
+            [self.startButton setTitle:@"Stop"];
             break;
             
         case CSStartButtonContinueMode:
-            [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+            [self.startButton setTitle:@"Start"];
             break;
             
         default:

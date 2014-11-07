@@ -17,13 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48k-Ft-YWZ" customClass="CSRoundButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48k-Ft-YWZ" customClass="CSRoundButton">
                                 <rect key="frame" x="125" y="226" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="D1K-nU-0VM"/>
                                     <constraint firstAttribute="width" constant="70" id="mt7-4W-b8w"/>
                                 </constraints>
-                                <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="yLf-zv-Ckp"/>
                                 </connections>
@@ -49,13 +48,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47l-nY-Bhw" customClass="CSRoundButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47l-nY-Bhw" customClass="CSRoundButton">
                                 <rect key="frame" x="218" y="226" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="lHn-cG-E74"/>
                                     <constraint firstAttribute="width" constant="70" id="prA-x9-EnO"/>
                                 </constraints>
-                                <state key="normal" title="Sync">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -93,13 +92,13 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="M2P-ma-Sgj"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-MS-8e4" customClass="CSRoundButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-MS-8e4" customClass="CSRoundButton">
                                 <rect key="frame" x="32" y="226" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8Yc-VZ-yep"/>
                                     <constraint firstAttribute="width" constant="70" id="cR0-LT-yET"/>
                                 </constraints>
-                                <state key="normal" title="Setup">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

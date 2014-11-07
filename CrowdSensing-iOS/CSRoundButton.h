@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+enum CSRoundButtonType : NSUInteger {
+    CSRoundButtonFilledType,
+    CSRoundButtonStrokedType
+};
+
+
 @interface CSRoundButton : UIButton
+
+@property (strong, nonatomic) NSString *title;
+@property (nonatomic) enum CSRoundButtonType type;
 
 @end
