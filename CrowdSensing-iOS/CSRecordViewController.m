@@ -10,7 +10,9 @@
 
 enum CSStartButtonMode : NSUInteger {
     CSStartButtonStartMode,
-    CSStartButtonStopMode
+    CSStartButtonStopMode,
+    CSStartButtonPauseMode,
+    CSStartButtonContinueMode
 };
 
 enum CSRecordViewControllerAlertType : NSUInteger {
@@ -33,6 +35,11 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 @property (nonatomic) enum CSStartButtonMode startButtonMode;
 
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSDate *startDate;
+@property (nonatomic) NSTimeInterval timeElapsed;
+
 @end
 
 @implementation CSRecordViewController
@@ -50,6 +57,18 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     [self.titleLabel addGestureRecognizer:tapGesture];
 }
 
+- (NSDateFormatter *)dateFormatter
+{
+    if (!_dateFormatter)
+    {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss,SSS"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+        _dateFormatter = dateFormatter;
+    }
+    return _dateFormatter;
+}
+
 - (void)setStartButtonMode:(enum CSStartButtonMode)startButtonMode
 {
     switch (startButtonMode) {
@@ -61,8 +80,16 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
             break;
             
+        case CSStartButtonPauseMode:
+            [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
+            break;
+            
+        case CSStartButtonContinueMode:
+            [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+            break;
+            
         default:
-            // Error
+            NSLog(@"Unknown CSStartButtonMode: %ld", (long) startButtonMode);
             break;
     }
     
@@ -75,19 +102,41 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         case CSStartButtonStartMode:
             
             NSLog(@"Start Action");
-            self.startButtonMode = CSStartButtonStopMode;
+            [self startTimer];
+            
+            self.startButtonMode = CSStartButtonPauseMode;
             
             break;
             
         case CSStartButtonStopMode:
             
             NSLog(@"Stop Action");
+            [self stopTimer];
+            
             self.startButtonMode = CSStartButtonStartMode;
             
             break;
             
+        case CSStartButtonPauseMode:
+            
+            NSLog(@"Pause Action");
+            [self pauseTimer];
+            
+            self.startButtonMode = CSStartButtonContinueMode;
+            
+            break;
+            
+        case CSStartButtonContinueMode:
+            
+            NSLog(@"Continue Action");
+            [self continueTimer];
+            
+            self.startButtonMode = CSStartButtonPauseMode;
+            
+            break;
+            
         default:
-            // Error
+            NSLog(@"Unknown CSStartButtonMode: %ld", (long) self.startButtonMode);
             break;
     }
 }
@@ -264,6 +313,58 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     cell.detailTextLabel.text = @"Start";
     
     return cell;
+}
+
+#pragma mark Timer methods
+
+- (void)startTimer
+{
+    self.timeElapsed = 0;
+    
+    [self continueTimer];
+}
+
+- (void)stopTimer
+{
+    [self pauseTimer];
+    
+    self.timeElapsed = 0;
+}
+
+- (void)pauseTimer
+{
+    [self.timer invalidate];
+    self.timer = nil;
+    
+    [self timerTick];
+    
+    self.timeElapsed += [[NSDate date] timeIntervalSinceDate:self.startDate];
+}
+
+- (void)continueTimer
+{
+    self.startDate = [NSDate date];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 / 12.0
+                                                  target:self
+                                                selector:@selector(timerTick)
+                                                userInfo:nil
+                                                 repeats:YES];
+}
+
+- (void)timerTick
+{
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:self.startDate];
+    timeInterval += self.timeElapsed;
+    
+    // Update the UI
+    [self updateTimerLabelWithTimeInterval:timeInterval];
+}
+
+- (void)updateTimerLabelWithTimeInterval:(NSTimeInterval)timeInterval
+{
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    self.timestampLabel.text = [self.dateFormatter stringFromDate:timerDate];
 }
 
 @end
