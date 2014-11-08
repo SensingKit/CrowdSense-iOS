@@ -49,15 +49,15 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     [super viewDidLoad];
     
     // Init SensingKitLib
-    self.sensingKitLib = [[SensingKitLib alloc] init];
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"F8E5698A-3AF5-491B-BA88-33075574F1C6"];
+    self.sensingKitLib = [[SensingKitLib alloc] initWithUUID:uuid serverUrl:nil];
 	
     // Init Button Modes
     self.startButtonMode = CSStartButtonStartMode;
     
     // Setup Title
     self.titleLabel.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGesture =
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleLabelTap:)];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleLabelTap:)];
     [self.titleLabel addGestureRecognizer:tapGesture];
     
     // Setup Round Buttons
@@ -116,6 +116,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Start Action");
             [self startTimer];
+            [self.sensingKitLib startSensing];
             
             self.startButtonMode = CSStartButtonPauseMode;
             
@@ -134,6 +135,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Pause Action");
             [self pauseTimer];
+            [self.sensingKitLib stopSensing];
             
             self.startButtonMode = CSStartButtonContinueMode;
             

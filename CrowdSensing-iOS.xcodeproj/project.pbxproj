@@ -21,6 +21,7 @@
 		CFB7CD1E19F2E25500F6B406 /* CSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD1D19F2E25500F6B406 /* CSMainViewController.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
+		CFF581DA1A0EA56400CBEE4D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
 		CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325719796BF600F7CE57 /* CoreGraphics.framework */; };
 		CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325919796BF600F7CE57 /* UIKit.framework */; };
@@ -71,6 +72,7 @@
 		CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInfoViewController.m; sourceTree = "<group>"; };
 		CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRoundButton.h; sourceTree = "<group>"; };
 		CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRoundButton.m; sourceTree = "<group>"; };
+		CFF581D91A0EA56400CBEE4D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF325519796BF600F7CE57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFFF325719796BF600F7CE57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF581DA1A0EA56400CBEE4D /* libz.dylib in Frameworks */,
 				CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */,
 				CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
 				CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */,
@@ -178,6 +181,7 @@
 		CFFF325419796BF600F7CE57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFF581D91A0EA56400CBEE4D /* libz.dylib */,
 				CF5298A41A0D742A002A4D54 /* SensingKit.framework */,
 				CFFF325519796BF600F7CE57 /* Foundation.framework */,
 				CFFF325719796BF600F7CE57 /* CoreGraphics.framework */,
@@ -491,6 +495,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -510,6 +515,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
