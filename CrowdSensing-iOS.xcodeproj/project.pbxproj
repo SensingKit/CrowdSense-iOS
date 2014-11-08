@@ -286,6 +286,11 @@
 				TargetAttributes = {
 					CFFF325119796BF600F7CE57 = {
 						DevelopmentTeam = 9T92P8D3FB;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+						};
 					};
 					CFFF327519796BF600F7CE57 = {
 						TestTargetID = CFFF325119796BF600F7CE57;
