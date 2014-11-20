@@ -116,6 +116,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Start Action");
             [self startTimer];
+            
+            // SensingKit
             [self.sensingKitLib startSensing];
             
             self.startButtonMode = CSStartButtonPauseMode;
@@ -127,6 +129,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             NSLog(@"Stop Action");
             [self stopTimer];
             
+            // SensingKit
+            [self.sensingKitLib stopSensing];
+            
             self.startButtonMode = CSStartButtonStartMode;
             
             break;
@@ -135,7 +140,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Pause Action");
             [self pauseTimer];
-            [self.sensingKitLib stopSensing];
+            
+            // SensingKit
+            [self.sensingKitLib pauseSensing];
             
             self.startButtonMode = CSStartButtonContinueMode;
             
@@ -145,6 +152,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Continue Action");
             [self continueTimer];
+            
+            // SensingKit
+            [self.sensingKitLib continueSensing];
             
             self.startButtonMode = CSStartButtonPauseMode;
             
@@ -158,7 +168,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (IBAction)syncButtonAction:(CSRoundButton *)sender
 {
-    NSLog(@"Sync Action");
+    // SensingKit
+    [self.sensingKitLib saveSyncPoint];
 }
 
 - (IBAction)doneButtonAction:(id)sender
