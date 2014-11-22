@@ -869,7 +869,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="R1M-P7-5JS" kind="push" id="0dZ-hP-kak"/>
+                                            <segue destination="R1M-P7-5JS" kind="push" identifier="Show Recording Details" id="0dZ-hP-kak"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -899,7 +899,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ahg-fV-Rtx" kind="modal" id="ghd-Kg-ZBt"/>
+                                    <segue destination="ahg-fV-Rtx" kind="modal" identifier="About us" id="ghd-Kg-ZBt"/>
                                 </connections>
                             </button>
                         </barButtonItem>

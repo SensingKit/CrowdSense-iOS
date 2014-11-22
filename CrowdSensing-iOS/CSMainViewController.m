@@ -58,6 +58,14 @@
         
         viewController.recording = newRecording;
     }
+    else if ([segue.identifier isEqualToString:@"Show Recording Details"])
+    {
+        // Nothing at the moment
+    }
+    else if ([segue.identifier isEqualToString:@"About us"])
+    {
+        // Ignore
+    }
     else
     {
         NSLog(@"WARNING: Unknown segue '%@'.", segue.identifier);
