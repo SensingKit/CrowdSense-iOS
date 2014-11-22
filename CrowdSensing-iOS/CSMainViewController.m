@@ -15,6 +15,8 @@
 @property (nonatomic, weak) IBOutlet UITableView *recordingsTableView;
 @property (nonatomic, strong) NSArray *recordings;
 
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation CSMainViewController
@@ -35,6 +37,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSDateFormatter *)dateFormatter
+{
+    if (!_dateFormatter)
+    {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        _dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        _dateFormatter.timeStyle = NSDateFormatterMediumStyle;
+    }
+    return _dateFormatter;
+}
 
 #pragma mark - Navigation
 
@@ -77,11 +89,11 @@
     }
     
     // Get the item
-    SKRecording *recording = self.recordings[indexPath.row];
+    NSDictionary *recording = self.recordings[indexPath.row];
     
     // Set up the cell...
-    cell.textLabel.text = @"New Recording";
-    cell.detailTextLabel.text = @"3 hours";
+    cell.textLabel.text = recording[@"name"];
+    cell.detailTextLabel.text = [self.dateFormatter stringFromDate:recording[@"create_date"]];
     
     return cell;
 }
