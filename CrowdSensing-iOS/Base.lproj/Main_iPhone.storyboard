@@ -903,7 +903,6 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="gw3-Ce-fHg"/>
                     </navigationItem>
                     <connections>
                         <outlet property="recordingsTableView" destination="z73-bT-lQn" id="xsI-rK-WLF"/>

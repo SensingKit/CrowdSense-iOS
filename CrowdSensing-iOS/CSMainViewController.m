@@ -32,11 +32,6 @@
     self.recordings = self.sensingKitLib.recordings;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (NSDateFormatter *)dateFormatter
 {
     if (!_dateFormatter)
@@ -100,6 +95,20 @@
     cell.detailTextLabel.text = [self.dateFormatter stringFromDate:recording[@"create_date"]];
     
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Get the item
+    NSDictionary *recording = self.recordings[indexPath.row];
+    [self.sensingKitLib deleteRecordingWithDetails:recording];
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 @end
