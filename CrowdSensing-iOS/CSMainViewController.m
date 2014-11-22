@@ -7,12 +7,13 @@
 //
 
 #import "CSMainViewController.h"
-//#import "SensingKitLib"
+#import "CSRecordViewController.h"
 
 @interface CSMainViewController ()
 
-//@property (nonatomic, strong) SensingKitLib *sensingKitLib;
-@property (weak, nonatomic) IBOutlet UITableView *recordingsTableView;
+@property (nonatomic, strong) SensingKitLib *sensingKitLib;
+@property (nonatomic, weak) IBOutlet UITableView *recordingsTableView;
+@property (nonatomic, strong) NSArray *recordings;
 
 @end
 
@@ -21,6 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Init SensingKitLib
+    self.sensingKitLib = [SensingKitLib sharedSensingKitLib];
+    
+    // Get recordings ref
+    self.recordings = self.sensingKitLib.recordings;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,15 +35,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"New Recording"])
+    {
+        CSRecordViewController *viewController = segue.destinationViewController;
+        
+        SKRecording *newRecording = [self.sensingKitLib newRecording];
+        
+        viewController.recording = newRecording;
+    }
+    
+    
+    
+    //viewController.recording = [
 }
-*/
 
 #pragma mark Table view methods
 
@@ -48,7 +65,7 @@
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;  // TODO: Change this
+    return self.recordings.count;
 }
 
 // Customize the appearance of table view cells.
@@ -62,6 +79,7 @@
     }
     
     // Get the item
+    SKRecording *recording = self.recordings[indexPath.row];
     
     // Set up the cell...
     cell.textLabel.text = @"New Recording";

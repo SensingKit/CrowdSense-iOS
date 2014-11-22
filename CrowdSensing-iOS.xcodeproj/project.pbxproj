@@ -15,9 +15,9 @@
 		CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */; };
 		CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */; };
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
+		CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */; };
 		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
 		CF52989B1A0D16C4002A4D54 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */; };
-		CF5298A51A0D742A002A4D54 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5298A41A0D742A002A4D54 /* SensingKit.framework */; };
 		CFB7CD1E19F2E25500F6B406 /* CSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD1D19F2E25500F6B406 /* CSMainViewController.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
@@ -63,9 +63,9 @@
 		CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectSamplingRate.m; sourceTree = "<group>"; };
 		CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGenericSensorSetup.h; sourceTree = "<group>"; };
 		CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGenericSensorSetup.m; sourceTree = "<group>"; };
+		CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SensingKit.framework; sourceTree = "<group>"; };
 		CF5298971A0D1141002A4D54 /* SKStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKStyles.h; path = "CrowdSensing-iOS/SKStyles.h"; sourceTree = "<group>"; };
 		CF5298981A0D1141002A4D54 /* SKStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKStyles.m; path = "CrowdSensing-iOS/SKStyles.m"; sourceTree = "<group>"; };
-		CF5298A41A0D742A002A4D54 /* SensingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SensingKit.framework; sourceTree = "<group>"; };
 		CFB7CD1C19F2E25500F6B406 /* CSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMainViewController.h; sourceTree = "<group>"; };
 		CFB7CD1D19F2E25500F6B406 /* CSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMainViewController.m; sourceTree = "<group>"; };
 		CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInfoViewController.h; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 				CFF581DA1A0EA56400CBEE4D /* libz.dylib in Frameworks */,
 				CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */,
 				CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
+				CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */,
 				CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */,
-				CF5298A51A0D742A002A4D54 /* SensingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,8 +181,8 @@
 		CFFF325419796BF600F7CE57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */,
 				CFF581D91A0EA56400CBEE4D /* libz.dylib */,
-				CF5298A41A0D742A002A4D54 /* SensingKit.framework */,
 				CFFF325519796BF600F7CE57 /* Foundation.framework */,
 				CFFF325719796BF600F7CE57 /* CoreGraphics.framework */,
 				CFFF325919796BF600F7CE57 /* UIKit.framework */,

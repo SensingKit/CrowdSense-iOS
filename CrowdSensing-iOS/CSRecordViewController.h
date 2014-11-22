@@ -12,6 +12,6 @@
 
 @interface CSRecordViewController : UIViewController<UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) SensingKitLib *sensingKitLib;
+@property (nonatomic, strong) SKRecording *recording;
 
 @end

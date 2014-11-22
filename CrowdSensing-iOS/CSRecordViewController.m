@@ -49,8 +49,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     [super viewDidLoad];
     
     // Init SensingKitLib
-    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"F8E5698A-3AF5-491B-BA88-33075574F1C6"];
-    self.sensingKitLib = [[SensingKitLib alloc] initWithUUID:uuid serverUrl:nil];
+    //NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"F8E5698A-3AF5-491B-BA88-33075574F1C6"];
+    NSAssert(self.recording, @"recording cannot be nil");
 	
     // Init Button Modes
     self.startButtonMode = CSStartButtonStartMode;
@@ -118,7 +118,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self startTimer];
             
             // SensingKit
-            [self.sensingKitLib startSensing];
+            [self.recording startSensing];
             
             self.startButtonMode = CSStartButtonPauseMode;
             
@@ -130,7 +130,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self stopTimer];
             
             // SensingKit
-            [self.sensingKitLib stopSensing];
+            [self.recording stopSensing];
             
             self.startButtonMode = CSStartButtonStartMode;
             
@@ -142,7 +142,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self pauseTimer];
             
             // SensingKit
-            [self.sensingKitLib pauseSensing];
+            [self.recording pauseSensing];
             
             self.startButtonMode = CSStartButtonContinueMode;
             
@@ -154,7 +154,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self continueTimer];
             
             // SensingKit
-            [self.sensingKitLib continueSensing];
+            [self.recording continueSensing];
             
             self.startButtonMode = CSStartButtonPauseMode;
             
@@ -169,7 +169,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 - (IBAction)syncButtonAction:(CSRoundButton *)sender
 {
     // SensingKit
-    [self.sensingKitLib saveSyncPoint];
+    [self.recording saveSyncPoint];
 }
 
 - (IBAction)doneButtonAction:(id)sender

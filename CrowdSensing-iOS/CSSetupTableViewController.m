@@ -10,6 +10,8 @@
 
 @interface CSSetupTableViewController ()
 
+@property (nonatomic, strong) NSDictionary *configuration;
+
 @end
 
 @implementation CSSetupTableViewController
@@ -20,6 +22,11 @@
 
 - (IBAction)doneButtonAction:(id)sender
 {
+    if (self.delegate)
+    {
+        [self.delegate doneWithConfiguration:self.configuration];
+    }
+    
     [self dismissViewControllerAnimated:YES
                              completion:NULL];
 }

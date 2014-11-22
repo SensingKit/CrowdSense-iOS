@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CSSetupTableViewControllerDelegate <NSObject>
+
+- (void)doneWithConfiguration:(NSDictionary *)configuration;
+
+@end
+
 @interface CSSetupTableViewController : UITableViewController
+
+@property (weak, nonatomic) id <CSSetupTableViewControllerDelegate> delegate;
 
 @end
