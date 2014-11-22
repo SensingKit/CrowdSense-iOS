@@ -63,6 +63,10 @@
         
         viewController.recording = newRecording;
     }
+    else
+    {
+        NSLog(@"WARNING: Unknown segue '%@'.", segue.identifier);
+    }
 }
 
 #pragma mark Table view methods
