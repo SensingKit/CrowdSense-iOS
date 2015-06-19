@@ -17,7 +17,7 @@
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
 		CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */; };
 		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
-		CF52989B1A0D16C4002A4D54 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */; };
+		CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Storyboard.storyboard */; };
 		CF8E9BD71B3356E6005AC2FC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */; };
 		CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8E9BDF1B336195005AC2FC /* CoreData.framework */; };
 		CF8E9BE31B3361D4005AC2FC /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BE21B3361D4005AC2FC /* Recording.m */; };
@@ -96,7 +96,7 @@
 		CFFF326319796BF600F7CE57 /* CrowdSensing-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrowdSensing-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		CFFF326419796BF600F7CE57 /* CSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAppDelegate.h; sourceTree = "<group>"; };
 		CFFF326519796BF600F7CE57 /* CSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAppDelegate.m; sourceTree = "<group>"; };
-		CFFF326819796BF600F7CE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		CFFF326819796BF600F7CE57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		CFFF326D19796BF600F7CE57 /* CSRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSRecordViewController.h; sourceTree = "<group>"; };
 		CFFF326E19796BF600F7CE57 /* CSRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSRecordViewController.m; sourceTree = "<group>"; };
 		CFFF327019796BF600F7CE57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 				CF8E9BDE1B3360AD005AC2FC /* Categories */,
 				CFFF325C19796BF600F7CE57 /* Supporting Files */,
 				CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */,
-				CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */,
+				CFFF326719796BF600F7CE57 /* Storyboard.storyboard */,
 			);
 			path = "CrowdSensing-iOS";
 			sourceTree = "<group>";
@@ -355,7 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF52989B1A0D16C4002A4D54 /* Main_iPhone.storyboard in Resources */,
+				CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */,
 				CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */,
 				CFFF326019796BF600F7CE57 /* InfoPlist.strings in Resources */,
 			);
@@ -425,12 +425,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */ = {
+		CFFF326719796BF600F7CE57 /* Storyboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CFFF326819796BF600F7CE57 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
+			name = Storyboard.storyboard;
 			sourceTree = "<group>";
 		};
 		CFFF328019796BF600F7CE57 /* InfoPlist.strings */ = {
@@ -531,7 +531,7 @@
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -551,7 +551,7 @@
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
