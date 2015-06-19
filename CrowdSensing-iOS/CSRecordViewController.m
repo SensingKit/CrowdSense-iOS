@@ -440,6 +440,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     {
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"LogEntry"];
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]];
+        request.predicate = [NSPredicate predicateWithFormat:@"ofRecording = %@", self.recording];
         
         _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.recording.managedObjectContext
