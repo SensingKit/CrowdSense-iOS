@@ -827,13 +827,15 @@
                             <outlet property="delegate" destination="Oex-SW-Hps" id="faR-ec-hGH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="CrowdSense" id="Hx7-zE-HqQ">
-                        <barButtonItem key="rightBarButtonItem" title="Record" id="1DI-df-Vw2">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="6ER-ij-SLU"/>
+                        <barButtonItem title="New Recording" id="1DI-df-Vw2">
                             <connections>
                                 <segue destination="Tcn-DU-S3I" kind="presentation" identifier="New Recording" id="QfV-vc-uW3"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="CrowdSense" id="Hx7-zE-HqQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLL-xa-l7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -860,13 +862,16 @@
         <!--Navigation Controller-->
         <scene sceneID="kXE-Uy-Tad">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BIq-tP-tce" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="BIq-tP-tce" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jEj-eL-e01">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="g9N-D6-Cju">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Oex-SW-Hps" kind="relationship" relationship="rootViewController" id="w59-8w-8ma"/>
                     </connections>
