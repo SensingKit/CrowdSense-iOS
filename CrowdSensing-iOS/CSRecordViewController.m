@@ -42,6 +42,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 @property (nonatomic) NSTimeInterval timeElapsed;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSIndexPath *postUpdateScrollTarget;
 
 @end
 
@@ -467,8 +468,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-    
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+{
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
@@ -487,8 +488,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath {
-    
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
     UITableView *tableView = self.tableView;
     
     switch(type) {
@@ -496,6 +497,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:@[newIndexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
+            
+            // For scrolling to bottom
+            self.postUpdateScrollTarget = newIndexPath;
             break;
             
         case NSFetchedResultsChangeDelete:
@@ -516,8 +520,15 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     }
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
     [self.tableView endUpdates];
+    
+    if (self.postUpdateScrollTarget)
+    {
+        [self.tableView scrollToRowAtIndexPath:self.postUpdateScrollTarget atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    self.postUpdateScrollTarget = nil;
 }
 
 @end
