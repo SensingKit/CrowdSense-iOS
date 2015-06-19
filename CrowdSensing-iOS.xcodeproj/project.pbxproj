@@ -18,7 +18,12 @@
 		CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */; };
 		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
 		CF52989B1A0D16C4002A4D54 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */; };
-		CFB7CD1E19F2E25500F6B406 /* CSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD1D19F2E25500F6B406 /* CSMainViewController.m */; };
+		CF8E9BD71B3356E6005AC2FC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */; };
+		CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8E9BDF1B336195005AC2FC /* CoreData.framework */; };
+		CF8E9BE31B3361D4005AC2FC /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BE21B3361D4005AC2FC /* Recording.m */; };
+		CF8E9BE61B3361D4005AC2FC /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BE51B3361D4005AC2FC /* LogEntry.m */; };
+		CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BEA1B342BB9005AC2FC /* CoreDataTableViewController.m */; };
+		CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
 		CFF581DA1A0EA56400CBEE4D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
@@ -66,8 +71,16 @@
 		CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SensingKit.framework; sourceTree = "<group>"; };
 		CF5298971A0D1141002A4D54 /* SKStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKStyles.h; path = "CrowdSensing-iOS/SKStyles.h"; sourceTree = "<group>"; };
 		CF5298981A0D1141002A4D54 /* SKStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKStyles.m; path = "CrowdSensing-iOS/SKStyles.m"; sourceTree = "<group>"; };
-		CFB7CD1C19F2E25500F6B406 /* CSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMainViewController.h; sourceTree = "<group>"; };
-		CFB7CD1D19F2E25500F6B406 /* CSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMainViewController.m; sourceTree = "<group>"; };
+		CF8E9BD61B3356E6005AC2FC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		CF8E9BDF1B336195005AC2FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CF8E9BE11B3361D4005AC2FC /* Recording.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recording.h; sourceTree = "<group>"; };
+		CF8E9BE21B3361D4005AC2FC /* Recording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recording.m; sourceTree = "<group>"; };
+		CF8E9BE41B3361D4005AC2FC /* LogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogEntry.h; sourceTree = "<group>"; };
+		CF8E9BE51B3361D4005AC2FC /* LogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogEntry.m; sourceTree = "<group>"; };
+		CF8E9BE91B342BB9005AC2FC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		CF8E9BEA1B342BB9005AC2FC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		CF8E9BEC1B342C6D005AC2FC /* CSMainTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMainTableTableViewController.h; sourceTree = "<group>"; };
+		CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMainTableTableViewController.m; sourceTree = "<group>"; };
 		CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInfoViewController.h; sourceTree = "<group>"; };
 		CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInfoViewController.m; sourceTree = "<group>"; };
 		CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRoundButton.h; sourceTree = "<group>"; };
@@ -99,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFF581DA1A0EA56400CBEE4D /* libz.dylib in Frameworks */,
+				CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */,
 				CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */,
 				CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
 				CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */,
@@ -158,6 +172,17 @@
 			name = "PaintCode generated files";
 			sourceTree = "<group>";
 		};
+		CF8E9BDE1B3360AD005AC2FC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CF8E9BE41B3361D4005AC2FC /* LogEntry.h */,
+				CF8E9BE51B3361D4005AC2FC /* LogEntry.m */,
+				CF8E9BE11B3361D4005AC2FC /* Recording.h */,
+				CF8E9BE21B3361D4005AC2FC /* Recording.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +206,9 @@
 		CFFF325419796BF600F7CE57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */,
 				CFF581D91A0EA56400CBEE4D /* libz.dylib */,
+				CF8E9BDF1B336195005AC2FC /* CoreData.framework */,
+				CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */,
 				CFFF325519796BF600F7CE57 /* Foundation.framework */,
 				CFFF325719796BF600F7CE57 /* CoreGraphics.framework */,
 				CFFF325919796BF600F7CE57 /* UIKit.framework */,
@@ -193,20 +219,22 @@
 		CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CFFF326419796BF600F7CE57 /* CSAppDelegate.h */,
-				CFFF326519796BF600F7CE57 /* CSAppDelegate.m */,
-				CFB7CD1C19F2E25500F6B406 /* CSMainViewController.h */,
-				CFB7CD1D19F2E25500F6B406 /* CSMainViewController.m */,
+				CFFF327019796BF600F7CE57 /* Images.xcassets */,
+				CF8E9BE91B342BB9005AC2FC /* CoreDataTableViewController.h */,
+				CF8E9BEA1B342BB9005AC2FC /* CoreDataTableViewController.m */,
+				CF8E9BEC1B342C6D005AC2FC /* CSMainTableTableViewController.h */,
+				CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */,
 				CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */,
 				CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */,
 				CFFF326D19796BF600F7CE57 /* CSRecordViewController.h */,
 				CFFF326E19796BF600F7CE57 /* CSRecordViewController.m */,
 				CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */,
 				CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */,
-				CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */,
 				CF18C38A19ED408800E295CB /* Settings */,
-				CFFF327019796BF600F7CE57 /* Images.xcassets */,
+				CF8E9BDE1B3360AD005AC2FC /* Categories */,
 				CFFF325C19796BF600F7CE57 /* Supporting Files */,
+				CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */,
+				CFFF326719796BF600F7CE57 /* Main_iPhone.storyboard */,
 			);
 			path = "CrowdSensing-iOS";
 			sourceTree = "<group>";
@@ -214,6 +242,8 @@
 		CFFF325C19796BF600F7CE57 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CFFF326419796BF600F7CE57 /* CSAppDelegate.h */,
+				CFFF326519796BF600F7CE57 /* CSAppDelegate.m */,
 				CFFF325D19796BF600F7CE57 /* CrowdSensing-iOS-Info.plist */,
 				CFFF325E19796BF600F7CE57 /* InfoPlist.strings */,
 				CFFF326119796BF600F7CE57 /* main.m */,
@@ -350,6 +380,8 @@
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
 				CFFF326219796BF600F7CE57 /* main.m in Sources */,
 				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,
+				CF8E9BE31B3361D4005AC2FC /* Recording.m in Sources */,
+				CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */,
 				CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */,
 				CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */,
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
@@ -357,9 +389,11 @@
 				CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */,
 				CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */,
 				CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */,
+				CF8E9BD71B3356E6005AC2FC /* Model.xcdatamodeld in Sources */,
+				CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */,
 				CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */,
 				CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */,
-				CFB7CD1E19F2E25500F6B406 /* CSMainViewController.m in Sources */,
+				CF8E9BE61B3361D4005AC2FC /* LogEntry.m in Sources */,
 				CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +627,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF8E9BD61B3356E6005AC2FC /* Model.xcdatamodel */,
+			);
+			currentVersion = CF8E9BD61B3356E6005AC2FC /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CFFF324A19796BF600F7CE57 /* Project object */;
 }

@@ -50,7 +50,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     // Init SensingKitLib
     //NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"F8E5698A-3AF5-491B-BA88-33075574F1C6"];
-    NSAssert(self.recording, @"recording cannot be nil");
+    //NSAssert(self.recording, @"recording cannot be nil");
 	
     // Init Button Modes
     self.startButtonMode = CSStartButtonStartMode;
@@ -76,7 +76,6 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm:ss,SSS"];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
         _dateFormatter = dateFormatter;
     }
     return _dateFormatter;
@@ -118,7 +117,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self startTimer];
             
             // SensingKit
-            [self.recording startSensing];
+            //[self.recording startSensing];
             
             self.startButtonMode = CSStartButtonPauseMode;
             
@@ -130,7 +129,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self stopTimer];
             
             // SensingKit
-            [self.recording stopSensing];
+            //[self.recording stopSensing];
             
             self.startButtonMode = CSStartButtonStartMode;
             
@@ -139,10 +138,10 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         case CSStartButtonPauseMode:
             
             NSLog(@"Pause Action");
-            [self pauseTimer];
+            //[self pauseTimer];
             
             // SensingKit
-            [self.recording pauseSensing];
+            //[self.recording pauseSensing];
             
             self.startButtonMode = CSStartButtonContinueMode;
             
@@ -154,7 +153,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self continueTimer];
             
             // SensingKit
-            [self.recording continueSensing];
+            //[self.recording continueSensing];
             
             self.startButtonMode = CSStartButtonPauseMode;
             
@@ -169,7 +168,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 - (IBAction)syncButtonAction:(CSRoundButton *)sender
 {
     // SensingKit
-    [self.recording saveSyncPoint];
+    //[self.recording saveSyncPoint];
 }
 
 - (IBAction)doneButtonAction:(id)sender
@@ -255,6 +254,10 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         else if ([buttonText isEqualToString:@"Save"])
         {
             NSLog(@"Save with name: %@", recordingName);
+            
+            //SKRecordingDetails *recordingDetails = self.recording.recordingDetails;
+            //recordingDetails.name = recordingName;
+            //[recordingDetails saveDetails];
             
             // Dismiss the view
             [self dismissViewControllerAnimated:YES completion:NULL];
