@@ -7,6 +7,7 @@
 //
 
 #import "CSMainTableTableViewController.h"
+#import "Recording.h"
 
 @interface CSMainTableTableViewController ()
 
@@ -23,6 +24,8 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    [self setupFetchedResultsController];
 }
 
 - (NSDateFormatter *)dateFormatter
@@ -36,14 +39,30 @@
     return _dateFormatter;
 }
 
-#pragma mark - Table view data source
+- (void)setupFetchedResultsController
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Recording"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createDate" ascending:NO]];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:self.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+}
 
+
+#pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Recording Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Get the recording
+    Recording *recording = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    // Configure the cell.
+    cell.textLabel.text = recording.title;
+    cell.detailTextLabel.text = [self.dateFormatter stringFromDate:recording.createDate];
     
     return cell;
 }
