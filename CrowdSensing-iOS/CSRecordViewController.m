@@ -138,7 +138,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         case CSStartButtonPauseMode:
             
             NSLog(@"Pause Action");
-            //[self pauseTimer];
+            [self pauseTimer];
             
             // SensingKit
             //[self.recording pauseSensing];
