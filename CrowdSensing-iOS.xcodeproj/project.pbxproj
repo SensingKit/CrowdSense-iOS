@@ -220,8 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				CFFF327019796BF600F7CE57 /* Images.xcassets */,
-				CF8E9BE91B342BB9005AC2FC /* CoreDataTableViewController.h */,
-				CF8E9BEA1B342BB9005AC2FC /* CoreDataTableViewController.m */,
 				CF8E9BEC1B342C6D005AC2FC /* CSMainTableTableViewController.h */,
 				CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */,
 				CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */,
@@ -244,6 +242,8 @@
 			children = (
 				CFFF326419796BF600F7CE57 /* CSAppDelegate.h */,
 				CFFF326519796BF600F7CE57 /* CSAppDelegate.m */,
+				CF8E9BE91B342BB9005AC2FC /* CoreDataTableViewController.h */,
+				CF8E9BEA1B342BB9005AC2FC /* CoreDataTableViewController.m */,
 				CFFF325D19796BF600F7CE57 /* CrowdSensing-iOS-Info.plist */,
 				CFFF325E19796BF600F7CE57 /* InfoPlist.strings */,
 				CFFF326119796BF600F7CE57 /* main.m */,
