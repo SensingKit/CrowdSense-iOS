@@ -157,7 +157,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self pauseTimer];
             
             // Add to the list
-            [self addLogEntryWithLabel:@"Pause"];
+            [self addLogEntryWithLabel:@"Stop"];
             
             // SensingKit
             //[self.recording pauseSensing];
@@ -172,7 +172,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self continueTimer];
             
             // Add to the list
-            [self addLogEntryWithLabel:@"Continue"];
+            [self addLogEntryWithLabel:@"Start"];
             
             // SensingKit
             //[self.recording continueSensing];
