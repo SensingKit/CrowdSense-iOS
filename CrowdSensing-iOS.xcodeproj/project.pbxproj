@@ -25,6 +25,7 @@
 		CF8E9BF11B344D4B005AC2FC /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF01B344D4B005AC2FC /* LogEntry.m */; };
 		CF8E9BF41B344D4B005AC2FC /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF31B344D4B005AC2FC /* Recording.m */; };
 		CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */; };
+		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
 		CFF581DA1A0EA56400CBEE4D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
@@ -84,6 +85,8 @@
 		CF8E9BF31B344D4B005AC2FC /* Recording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recording.m; sourceTree = "<group>"; };
 		CF8E9BF81B344EF3005AC2FC /* Recording+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recording+Create.h"; sourceTree = "<group>"; };
 		CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recording+Create.m"; sourceTree = "<group>"; };
+		CF8E9BFB1B346733005AC2FC /* LogEntry+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LogEntry+Create.h"; sourceTree = "<group>"; };
+		CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LogEntry+Create.m"; sourceTree = "<group>"; };
 		CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInfoViewController.h; sourceTree = "<group>"; };
 		CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInfoViewController.m; sourceTree = "<group>"; };
 		CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRoundButton.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 			children = (
 				CF8E9BF81B344EF3005AC2FC /* Recording+Create.h */,
 				CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */,
+				CF8E9BFB1B346733005AC2FC /* LogEntry+Create.h */,
+				CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */,
 				CF8E9BF21B344D4B005AC2FC /* Recording.h */,
 				CF8E9BF31B344D4B005AC2FC /* Recording.m */,
 				CF8E9BEF1B344D4B005AC2FC /* LogEntry.h */,
@@ -382,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */,
+				CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */,
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
 				CFFF326219796BF600F7CE57 /* main.m in Sources */,
 				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,

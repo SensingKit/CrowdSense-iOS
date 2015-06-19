@@ -7,6 +7,7 @@
 //
 
 #import "CSRecordViewController.h"
+#import "LogEntry+Create.h"
 
 enum CSStartButtonMode : NSUInteger {
     CSStartButtonStartMode,
@@ -116,6 +117,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             NSLog(@"Start Action");
             [self startTimer];
             
+            // Add to the list
+            [self addLogEntryWithLabel:@"Start"];
+            
             // SensingKit
             //[self.recording startSensing];
             
@@ -127,6 +131,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Stop Action");
             [self stopTimer];
+            
+            // Add to the list
+            [self addLogEntryWithLabel:@"Stop"];
             
             // SensingKit
             //[self.recording stopSensing];
@@ -140,6 +147,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             NSLog(@"Pause Action");
             [self pauseTimer];
             
+            // Add to the list
+            [self addLogEntryWithLabel:@"Pause"];
+            
             // SensingKit
             //[self.recording pauseSensing];
             
@@ -151,6 +161,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Continue Action");
             [self continueTimer];
+            
+            // Add to the list
+            [self addLogEntryWithLabel:@"Continue"];
             
             // SensingKit
             //[self.recording continueSensing];
@@ -167,6 +180,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (IBAction)syncButtonAction:(CSRoundButton *)sender
 {
+    // Add to the list
+    [self addLogEntryWithLabel:@"Sync"];
+    
     // SensingKit
     //[self.recording saveSyncPoint];
 }
@@ -194,8 +210,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     // Preload the text with 'New Recording'
     UITextField *textField = [alertView textFieldAtIndex:0];
-    textField.text = @"New Recording";
-    textField.placeholder = @"New Recording";
+    textField.text = self.recording.title;
+    textField.placeholder = self.recording.title;
     
     [alertView show];
 }
@@ -217,8 +233,6 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (void)showSetNameAlertWithName:(NSString *)name
 {
-    if (!name) { name = @"New Recording"; }
-    
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Recording Name"
                                                         message:@"Enter a name for this sensor recording."
                                                        delegate:self
@@ -246,18 +260,20 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         
         NSString *recordingName = [alertView textFieldAtIndex:0].text;
         
-        if([buttonText isEqualToString:@"Delete"])
+        if ([buttonText isEqualToString:@"Delete"])
         {
             [self showDeleteRecordingAlertForRecordingName:recordingName];
             
         }
         else if ([buttonText isEqualToString:@"Save"])
         {
-            NSLog(@"Save with name: %@", recordingName);
+            NSLog(@"Save with title: %@", recordingName);
             
-            //SKRecordingDetails *recordingDetails = self.recording.recordingDetails;
-            //recordingDetails.name = recordingName;
-            //[recordingDetails saveDetails];
+            // Save the title
+            self.recording.title = recordingName;
+            
+            // Update the Label
+            self.titleLabel.text = recordingName;
             
             // Dismiss the view
             [self dismissViewControllerAnimated:YES completion:NULL];
@@ -272,9 +288,11 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     {
         NSString *buttonText = [alertView buttonTitleAtIndex:buttonIndex];
         
-        if([buttonText isEqualToString:@"Delete"])
+        if ([buttonText isEqualToString:@"Delete"])
         {
             NSLog(@"Delete");
+            
+            // TODO: Delete it!!!
             
             // Dismiss the view
             [self dismissViewControllerAnimated:YES completion:NULL];
@@ -293,9 +311,15 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     {
         NSString *buttonText = [alertView buttonTitleAtIndex:buttonIndex];
         
-        if([buttonText isEqualToString:@"OK"])
+        if ([buttonText isEqualToString:@"OK"])
         {
-            NSLog(@"Set name");
+            NSString *recordingName = [alertView textFieldAtIndex:0].text;
+            
+            // Save the title
+            self.recording.title = recordingName;
+            
+            // Update the Label
+            self.titleLabel.text = recordingName;
         }
         else if ([buttonText isEqualToString:@"Cancel"])
         {
@@ -394,6 +418,17 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 {
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     self.timestampLabel.text = [self.dateFormatter stringFromDate:timerDate];
+}
+
+#pragma mark -
+
+- (void)addLogEntryWithLabel:(NSString *)label
+{
+    LogEntry *logEntry = [LogEntry logEntryWithLabel:label
+                                       withTimestamp:[NSDate date]
+                              inManagedObjectContext:self.recording.managedObjectContext];
+    
+    logEntry.ofRecording = self.recording;
 }
 
 @end
