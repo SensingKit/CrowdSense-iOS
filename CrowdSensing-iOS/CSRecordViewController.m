@@ -50,7 +50,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     // Init SensingKitLib
     //NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"F8E5698A-3AF5-491B-BA88-33075574F1C6"];
-    //NSAssert(self.recording, @"recording cannot be nil");
+    NSAssert(self.recording, @"recording cannot be nil");
 	
     // Init Button Modes
     self.startButtonMode = CSStartButtonStartMode;
