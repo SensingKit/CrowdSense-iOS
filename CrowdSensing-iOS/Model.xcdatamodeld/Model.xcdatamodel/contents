@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="LogEntry" representedClassName="LogEntry" syncable="YES">
-        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="ofRecording" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recording" inverseName="withLog" inverseEntity="Recording" syncable="YES"/>
+        <attribute name="label" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" syncable="YES"/>
+        <relationship name="ofRecording" maxCount="1" deletionRule="Cascade" destinationEntity="Recording" inverseName="withLog" inverseEntity="Recording" syncable="YES"/>
     </entity>
     <entity name="Recording" representedClassName="Recording" syncable="YES">
-        <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="storageFolder" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="withLog" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="LogEntry" inverseName="ofRecording" inverseEntity="LogEntry" syncable="YES"/>
+        <attribute name="createDate" attributeType="Date" syncable="YES"/>
+        <attribute name="storageFolder" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="withLog" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="LogEntry" inverseName="ofRecording" inverseEntity="LogEntry" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Recording" positionX="-245" positionY="-220" width="128" height="103"/>
         <element name="LogEntry" positionX="18" positionY="-99" width="128" height="88"/>
+        <element name="Recording" positionX="-245" positionY="-220" width="128" height="103"/>
     </elements>
 </model>
