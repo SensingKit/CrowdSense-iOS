@@ -11,7 +11,7 @@
 #import "CSRoundButton.h"
 #import "Recording.h"
 
-@interface CSRecordViewController : UIViewController<UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface CSRecordViewController : UIViewController<UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) Recording *recording;
 

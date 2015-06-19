@@ -28,7 +28,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
-@property (weak, nonatomic) IBOutlet UITableView *logTableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet CSRoundButton *setupButton;
 @property (weak, nonatomic) IBOutlet CSRoundButton *startButton;
@@ -40,6 +40,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSDate *startDate;
 @property (nonatomic) NSTimeInterval timeElapsed;
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -69,6 +71,12 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     self.syncButton.type = CSRoundButtonStrokedType;
     self.syncButton.title = @"Sync";
+    
+    NSError *error;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        // Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
 }
 
 - (NSDateFormatter *)dateFormatter
@@ -340,13 +348,14 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [[_fetchedResultsController sections] count];
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;  // TODO: Change this
+    id sectionInfo = [[_fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 // Customize the appearance of table view cells.
@@ -360,10 +369,11 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     }
     
     // Get the item
+    LogEntry *logEntry = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Set up the cell...
-    cell.textLabel.text = @"00:00:00,000";
-    cell.detailTextLabel.text = @"Start";
+    cell.textLabel.text = [self.dateFormatter stringFromDate:logEntry.timestamp];
+    cell.detailTextLabel.text = logEntry.label;
     
     return cell;
 }
@@ -420,7 +430,24 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     self.timestampLabel.text = [self.dateFormatter stringFromDate:timerDate];
 }
 
-#pragma mark -
+
+#pragma mark CoreData
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (!_fetchedResultsController)
+    {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"LogEntry"];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]];
+        
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:self.recording.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+        _fetchedResultsController.delegate = self;
+    }
+    return _fetchedResultsController;
+}
 
 - (void)addLogEntryWithLabel:(NSString *)label
 {
@@ -429,6 +456,68 @@ enum CSRecordViewControllerAlertType : NSUInteger {
                               inManagedObjectContext:self.recording.managedObjectContext];
     
     logEntry.ofRecording = self.recording;
+}
+
+
+#pragma mark NSFetchedResultsController delegates
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:@[indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
 }
 
 @end

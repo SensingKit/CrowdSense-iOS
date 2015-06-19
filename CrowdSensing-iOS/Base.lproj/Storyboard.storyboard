@@ -137,10 +137,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="logTableView" destination="dxm-x2-aJf" id="7Tf-6b-tV9"/>
                         <outlet property="setupButton" destination="oFx-MS-8e4" id="lpG-Pn-9QS"/>
                         <outlet property="startButton" destination="48k-Ft-YWZ" id="hH3-IT-I2J"/>
                         <outlet property="syncButton" destination="47l-nY-Bhw" id="AGg-YM-Mxr"/>
+                        <outlet property="tableView" destination="dxm-x2-aJf" id="Xut-I8-LzE"/>
                         <outlet property="timeLabel" destination="g17-U1-PKb" id="7Sg-ha-ADp"/>
                         <outlet property="timestampLabel" destination="iaC-S0-IbG" id="qz2-Uh-F7R"/>
                         <outlet property="titleLabel" destination="Bbc-rI-xwr" id="7GH-fX-nbK"/>
