@@ -41,6 +41,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSDate *startDate;
 @property (nonatomic) NSTimeInterval timeElapsed;
+@property (nonatomic) NSUInteger syncCounter;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *postUpdateScrollTarget;
@@ -73,6 +74,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     self.syncButton.type = CSRoundButtonStrokedType;
     self.syncButton.title = @"Sync";
+    self.syncCounter = 0;
     
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
@@ -202,8 +204,11 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (IBAction)syncButtonAction:(CSRoundButton *)sender
 {
+    // Increase counter
+    self.syncCounter += 1;
+    
     // Add to the list
-    [self addLogEntryWithLabel:@"Sync"];
+    [self addLogEntryWithLabel:[NSString stringWithFormat:@"Sync %lu", (unsigned long)self.syncCounter]];
     
     // SensingKit
     //[self.recording saveSyncPoint];
