@@ -32,6 +32,8 @@
 	<string>I want access</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>Storyboard</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Storyboard</string>
 	<key>UIMainStoryboardFile~ipad</key>
