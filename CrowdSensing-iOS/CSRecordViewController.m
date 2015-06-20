@@ -36,7 +36,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 @property (nonatomic) enum CSStartButtonMode startButtonMode;
 
-@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSDateFormatter *timerDateFormatter;
+@property (strong, nonatomic) NSDateFormatter *timestampDateFormatter;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSDate *startDate;
 @property (nonatomic) NSTimeInterval timeElapsed;
@@ -80,16 +81,27 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     }
 }
 
-- (NSDateFormatter *)dateFormatter
+- (NSDateFormatter *)timerDateFormatter
 {
-    if (!_dateFormatter)
+    if (!_timerDateFormatter)
     {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm:ss,SSS"];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-        _dateFormatter = dateFormatter;
+        _timerDateFormatter = dateFormatter;
     }
-    return _dateFormatter;
+    return _timerDateFormatter;
+}
+
+- (NSDateFormatter *)timestampDateFormatter
+{
+    if (!_timestampDateFormatter)
+    {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss,SSS"];
+        _timestampDateFormatter = dateFormatter;
+    }
+    return _timestampDateFormatter;
 }
 
 - (void)setStartButtonMode:(enum CSStartButtonMode)startButtonMode
@@ -374,7 +386,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     LogEntry *logEntry = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Set up the cell...
-    cell.textLabel.text = [self.dateFormatter stringFromDate:logEntry.timestamp];
+    cell.textLabel.text = [self.timestampDateFormatter stringFromDate:logEntry.timestamp];
     cell.detailTextLabel.text = logEntry.label;
     
     return cell;
@@ -429,7 +441,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 - (void)updateTimerLabelWithTimeInterval:(NSTimeInterval)timeInterval
 {
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    self.timestampLabel.text = [self.dateFormatter stringFromDate:timerDate];
+    self.timestampLabel.text = [self.timerDateFormatter stringFromDate:timerDate];
 }
 
 
