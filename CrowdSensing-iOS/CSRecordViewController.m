@@ -298,7 +298,12 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             self.titleLabel.text = recordingName;
             
             // Dismiss the view
-            [self dismissViewControllerAnimated:YES completion:NULL];
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+                // Save
+                NSManagedObjectContext *context = self.recording.managedObjectContext;
+                [context save:NULL];
+            }];
         }
         else
         {
@@ -314,10 +319,17 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         {
             NSLog(@"Delete");
             
-            // TODO: Delete it!!!
-            
-            // Dismiss the view
-            [self dismissViewControllerAnimated:YES completion:NULL];
+            // Dismiss the view and delete recording
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+                NSManagedObjectContext *context = self.recording.managedObjectContext;
+                
+                // Delete recording
+                [context deleteObject:self.recording];
+                
+                // Save
+                [context save:NULL];
+            }];
         }
         else if ([buttonText isEqualToString:@"Cancel"])
         {
