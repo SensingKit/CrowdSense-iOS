@@ -28,7 +28,6 @@
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
-		CFF581DA1A0EA56400CBEE4D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
 		CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325719796BF600F7CE57 /* CoreGraphics.framework */; };
 		CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325919796BF600F7CE57 /* UIKit.framework */; };
@@ -117,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFF581DA1A0EA56400CBEE4D /* libz.dylib in Frameworks */,
 				CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */,
 				CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */,
 				CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
