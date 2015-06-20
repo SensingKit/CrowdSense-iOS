@@ -245,8 +245,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Delete Sensor Recording"
                                                         message:message
                                                        delegate:self
-                                              cancelButtonTitle:@"Delete"
-                                              otherButtonTitles:@"Cancel", nil];
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Delete", nil];
     
     alertView.tag = CSRecordViewControllerDeleteRecordingAlertType;
     
