@@ -86,6 +86,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm:ss,SSS"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
         _dateFormatter = dateFormatter;
     }
     return _dateFormatter;
