@@ -8,10 +8,10 @@
 
 #import "CSRecordViewController.h"
 #import "LogEntry+Create.h"
+#import "CSSensingSession.h"
 
 enum CSStartButtonMode : NSUInteger {
     CSStartButtonStartMode,
-    CSStartButtonStopMode,
     CSStartButtonPauseMode,
     CSStartButtonContinueMode
 };
@@ -46,6 +46,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *postUpdateScrollTarget;
 
+@property (strong, nonatomic) CSSensingSession *sensingSession;
+
 @end
 
 @implementation CSRecordViewController
@@ -54,8 +56,6 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 {
     [super viewDidLoad];
     
-    // Init SensingKitLib
-    //NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"F8E5698A-3AF5-491B-BA88-33075574F1C6"];
     NSAssert(self.recording, @"recording cannot be nil");
 	
     // Init Button Modes
@@ -81,6 +81,17 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         // Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
+    
+    // Get current date and folder name
+    NSDate *createDate = [NSDate date];
+    NSString *folderName = [self folderNameForDate:createDate];
+    
+    // Set in the model
+    self.recording.createDate = createDate;
+    self.recording.storageFolder = folderName;
+    
+    // Create the SensingSession
+    self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
 }
 
 - (NSDateFormatter *)timerDateFormatter
@@ -106,15 +117,19 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     return _timestampDateFormatter;
 }
 
+- (NSString *)folderNameForDate:(NSDate *)date
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH.mm.ss"];
+    
+    return [dateFormatter stringFromDate:date];
+}
+
 - (void)setStartButtonMode:(enum CSStartButtonMode)startButtonMode
 {
     switch (startButtonMode) {
         case CSStartButtonStartMode:
             [self.startButton setTitle:@"Start"];
-            break;
-            
-        case CSStartButtonStopMode:
-            [self.startButton setTitle:@"Stop"];
             break;
             
         case CSStartButtonPauseMode:
@@ -144,25 +159,10 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             // Add to the list
             [self addLogEntryWithLabel:@"Start"];
             
-            // SensingKit
-            //[self.recording startSensing];
+            // Sensing
+            [self.sensingSession start];
             
             self.startButtonMode = CSStartButtonPauseMode;
-            
-            break;
-            
-        case CSStartButtonStopMode:
-            
-            NSLog(@"Stop Action");
-            [self stopTimer];
-            
-            // Add to the list
-            [self addLogEntryWithLabel:@"Stop"];
-            
-            // SensingKit
-            //[self.recording stopSensing];
-            
-            self.startButtonMode = CSStartButtonStartMode;
             
             break;
             
@@ -174,8 +174,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             // Add to the list
             [self addLogEntryWithLabel:@"Stop"];
             
-            // SensingKit
-            //[self.recording pauseSensing];
+            // Sensing
+            [self.sensingSession stop];
             
             self.startButtonMode = CSStartButtonContinueMode;
             
@@ -189,8 +189,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             // Add to the list
             [self addLogEntryWithLabel:@"Start"];
             
-            // SensingKit
-            //[self.recording continueSensing];
+            // Sensing
+            [self.sensingSession start];
             
             self.startButtonMode = CSStartButtonPauseMode;
             
@@ -209,9 +209,6 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     // Add to the list
     [self addLogEntryWithLabel:[NSString stringWithFormat:@"Sync %lu", (unsigned long)self.syncCounter]];
-    
-    // SensingKit
-    //[self.recording saveSyncPoint];
 }
 
 - (IBAction)doneButtonAction:(id)sender

@@ -7,14 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SensingKit/SensingKitLib.h>
 #import "CSRoundButton.h"
 #import "Recording.h"
 
 @interface CSRecordViewController : UIViewController<UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) Recording *recording;
-
-@property (nonatomic, strong) SensingKitLib *sensingKitLib;
 
 @end
