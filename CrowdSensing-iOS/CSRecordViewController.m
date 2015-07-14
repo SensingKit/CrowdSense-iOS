@@ -92,6 +92,11 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     // Create the SensingSession
     self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
+    
+    // Enable all sensors
+    [self.sensingSession enableSensorWithType:Accelerometer];
+    [self.sensingSession enableSensorWithType:Gyroscope];
+    [self.sensingSession enableSensorWithType:Magnetometer];
 }
 
 - (NSDateFormatter *)timerDateFormatter
@@ -292,6 +297,15 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         else if ([buttonText isEqualToString:@"Save"])
         {
             NSLog(@"Save with title: %@", recordingName);
+            
+            // Disable sensors
+            [self.sensingSession disableSensorWithType:Accelerometer];
+            [self.sensingSession disableSensorWithType:Gyroscope];
+            [self.sensingSession disableSensorWithType:Magnetometer];
+            
+            // Close Session
+            [self.sensingSession close];
+            self.sensingSession = nil;
             
             // Save the title
             self.recording.title = recordingName;

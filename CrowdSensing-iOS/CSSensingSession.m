@@ -11,6 +11,7 @@
 @interface CSSensingSession ()
 
 @property (nonatomic, strong) NSURL* folderPath;
+@property (nonatomic, strong) NSMutableArray *sensorModules;
 
 @end
 
@@ -24,6 +25,8 @@
         self.sensingKitLib = [SensingKitLib sharedSensingKitLib];
         
         self.folderPath = [self createFolderWithName:folderName];
+        
+        self.sensorModules = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -52,19 +55,41 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+- (void)enableSensorWithType:(SKSensorModuleType)moduleType
+{
+    [self.sensingKitLib registerSensorModule:moduleType];
+    [self.sensingKitLib subscribeSensorDataListenerToSensor:moduleType
+                                                withHandler:^(SKSensorModuleType moduleType, SKSensorData *sensorData) {
+                                                    
+                                                }];
+    [self.sensorModules addObject:@(moduleType)];
+}
+
+- (void)disableSensorWithType:(SKSensorModuleType)moduleType
+{
+    [self.sensingKitLib deregisterSensorModule:moduleType];
+    [self.sensorModules removeObject:@(moduleType)];
+}
+
 - (void)start
 {
-    
+    for (NSNumber *moduleType in self.sensorModules)
+    {
+        [self.sensingKitLib startContinuousSensingWithSensor:moduleType.unsignedIntegerValue];
+    }
 }
 
 - (void)stop
 {
-    
+    for (NSNumber *moduleType in self.sensorModules)
+    {
+        [self.sensingKitLib stopContinuousSensingWithSensor:moduleType.unsignedIntegerValue];
+    }
 }
 
 - (void)close
 {
-    
+    NSLog(@"Close Session");
 }
 
 @end

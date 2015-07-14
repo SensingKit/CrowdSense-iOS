@@ -15,6 +15,9 @@
 
 - (instancetype)initWithFolderName:(NSString *)folderName;
 
+- (void)enableSensorWithType:(SKSensorModuleType)moduleType;
+- (void)disableSensorWithType:(SKSensorModuleType)moduleType;
+
 - (void)start;
 - (void)stop;
 - (void)close;
