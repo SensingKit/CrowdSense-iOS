@@ -8,7 +8,7 @@
 
 #import "CSModelWriter.h"
 
-@interface CSModelWriter ()
+@interface CSModelWriter () <NSStreamDelegate>
 
 @property (nonatomic, strong) NSURL* filePath;
 @property(nonatomic, strong) NSOutputStream* outputStream;
@@ -28,6 +28,7 @@
         
         self.filePath = filePath;
         self.outputStream = [[NSOutputStream alloc] initWithURL:filePath append:NO];
+        self.outputStream.delegate = self;
         [self.outputStream open];
     }
     return self;
@@ -43,6 +44,11 @@
 {
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     [self.outputStream write:data.bytes maxLength:data.length];
+}
+
+- (void)close
+{
+    [self.outputStream close];
 }
 
 @end

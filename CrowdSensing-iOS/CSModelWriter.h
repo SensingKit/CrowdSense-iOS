@@ -19,4 +19,6 @@
 
 - (void)readData:(SKSensorData *)sensorData;
 
+- (void)close;
+
 @end
