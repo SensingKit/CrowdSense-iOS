@@ -171,6 +171,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             // Sensing
             [self.sensingSession start];
             
+            // Proximity Monitoring
+            [UIDevice currentDevice].proximityMonitoringEnabled = YES;
+            
             self.startButtonMode = CSStartButtonPauseMode;
             
             break;
@@ -186,6 +189,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             // Sensing
             [self.sensingSession stop];
             
+            // Proximity Monitoring
+            [UIDevice currentDevice].proximityMonitoringEnabled = NO;
+            
             self.startButtonMode = CSStartButtonContinueMode;
             
             break;
@@ -200,6 +206,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             // Sensing
             [self.sensingSession start];
+            
+            // Proximity Monitoring
+            [UIDevice currentDevice].proximityMonitoringEnabled = YES;
             
             self.startButtonMode = CSStartButtonPauseMode;
             
