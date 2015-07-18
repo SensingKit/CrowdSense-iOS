@@ -97,6 +97,10 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     [self.sensingSession enableSensorWithType:Accelerometer];
     [self.sensingSession enableSensorWithType:Gyroscope];
     [self.sensingSession enableSensorWithType:Magnetometer];
+    [self.sensingSession enableSensorWithType:DeviceMotion];
+    [self.sensingSession enableSensorWithType:Activity];
+    [self.sensingSession enableSensorWithType:Battery];
+    [self.sensingSession enableSensorWithType:Location];
 }
 
 - (NSDateFormatter *)timerDateFormatter
@@ -302,6 +306,10 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             [self.sensingSession disableSensorWithType:Accelerometer];
             [self.sensingSession disableSensorWithType:Gyroscope];
             [self.sensingSession disableSensorWithType:Magnetometer];
+            [self.sensingSession disableSensorWithType:DeviceMotion];
+            [self.sensingSession disableSensorWithType:Activity];
+            [self.sensingSession disableSensorWithType:Battery];
+            [self.sensingSession disableSensorWithType:Location];
             
             // Close Session
             [self.sensingSession close];
