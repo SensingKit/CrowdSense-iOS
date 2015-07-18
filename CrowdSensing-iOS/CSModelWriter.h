@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SensingKit/SensingKitLib.h>
 
 @interface CSModelWriter : NSObject
 
-- (instancetype)initWithFilename:(NSString *)filename
-                          inPath:(NSURL *)path;
+@property (nonatomic, readonly) SKSensorModuleType moduleType;
+
+- (instancetype)initWithSensorModuleType:(SKSensorModuleType)moduleType
+                            withFilename:(NSString *)filename
+                                  inPath:(NSURL *)path;
+
+- (void)readData:(SKSensorData *)sensorData;
 
 @end

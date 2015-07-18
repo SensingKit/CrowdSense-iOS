@@ -7,11 +7,13 @@
 //
 
 #import "CSSensingSession.h"
+#import "CSModelWriter.h"
 
 @interface CSSensingSession ()
 
 @property (nonatomic, strong) NSURL* folderPath;
 @property (nonatomic, strong) NSMutableArray *sensorModules;
+@property (nonatomic, strong) NSMutableArray *modelWriters;
 
 @end
 
@@ -26,7 +28,8 @@
         
         self.folderPath = [self createFolderWithName:folderName];
         
-        self.sensorModules = [[NSMutableArray alloc] init];
+        self.sensorModules = [[NSMutableArray alloc] initWithCapacity:8];
+        self.modelWriters = [[NSMutableArray alloc] initWithCapacity:8];
     }
     return self;
 }
@@ -57,18 +60,32 @@
 
 - (void)enableSensorWithType:(SKSensorModuleType)moduleType
 {
+    // Create ModelWriter
+    NSString *filename = [[self getSensorModuleInString:moduleType] stringByAppendingString:@".csv"];
+    CSModelWriter *modelWriter = [[CSModelWriter alloc] initWithSensorModuleType:moduleType
+                                                                    withFilename:filename
+                                                                          inPath:self.folderPath];
+    
+    // Register and Subscribe sensor
     [self.sensingKitLib registerSensorModule:moduleType];
     [self.sensingKitLib subscribeSensorDataListenerToSensor:moduleType
                                                 withHandler:^(SKSensorModuleType moduleType, SKSensorData *sensorData) {
                                                     
+                                                    // Feed the writer with data
+                                                    [modelWriter readData:sensorData];
                                                 }];
+    
+    // Add sensorType and modelWriter to the arrays
     [self.sensorModules addObject:@(moduleType)];
+    [self.modelWriters addObject:modelWriter];
 }
 
 - (void)disableSensorWithType:(SKSensorModuleType)moduleType
 {
     [self.sensingKitLib deregisterSensorModule:moduleType];
     [self.sensorModules removeObject:@(moduleType)];
+    
+    // TODO: Remove fileWriter
 }
 
 - (void)start
@@ -90,6 +107,39 @@
 - (void)close
 {
     NSLog(@"Close Session");
+}
+
+- (NSString *)getSensorModuleInString:(SKSensorModuleType)moduleType
+{
+    switch (moduleType) {
+            
+        case Accelerometer:
+            return @"Accelerometer";
+            
+        case Gyroscope:
+            return @"Gyroscope";
+            
+        case Magnetometer:
+            return @"Magnetometer";
+            
+        case DeviceMotion:
+            return @"DeviceMotion";
+            
+        case Activity:
+            return @"Activity";
+            
+        case Battery:
+            return @"Battery";
+            
+        case Location:
+            return @"Location";
+            
+        case Proximity:
+            return @"Proximity";
+            
+        default:
+            return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
+    }
 }
 
 @end
