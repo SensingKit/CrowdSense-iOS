@@ -14,6 +14,7 @@
 @interface CSMainTableTableViewController ()
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) NSFileManager *fileManager;
 
 @end
 
@@ -30,6 +31,14 @@
     [self setupFetchedResultsController];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    self.fileManager = nil;
+    self.dateFormatter = nil;
+}
+
 - (NSDateFormatter *)dateFormatter
 {
     if (!_dateFormatter)
@@ -39,6 +48,15 @@
         _dateFormatter.timeStyle = NSDateFormatterMediumStyle;
     }
     return _dateFormatter;
+}
+
+- (NSFileManager *)fileManager
+{
+    if (!_fileManager)
+    {
+        _fileManager = [NSFileManager defaultManager];
+    }
+    return _fileManager;
 }
 
 - (void)setupFetchedResultsController
@@ -78,8 +96,32 @@
         
         // Get the recording
         Recording *recording = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        // Delete recording data
+        [self deleteFolderWithName:recording.storageFolder];
+        
+        // Delete the recording
         [self.managedObjectContext deleteObject:recording];
     }
+}
+
+- (void)deleteFolderWithName:(NSString *)folderName
+{
+    NSURL *folderPath = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:folderName];
+    
+    NSError *error;
+    [self.fileManager removeItemAtURL:folderPath error:&error];
+    
+    if (error)
+    {
+        NSLog(@"Error: %@", error.localizedDescription);
+    }
+}
+
+// Returns the URL to the application's Documents directory.
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 
