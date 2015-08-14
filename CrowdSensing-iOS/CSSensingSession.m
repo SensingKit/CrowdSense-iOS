@@ -58,6 +58,15 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+- (CSModelWriter *)getModuleWriterWithType:(SKSensorModuleType)moduleType
+{
+    for (CSModelWriter *moduleWriter in self.modelWriters) {
+        if (moduleWriter.moduleType == moduleType) { return moduleWriter; }
+    }
+    
+    return nil;
+}
+
 - (void)enableSensorWithType:(SKSensorModuleType)moduleType
 {
     // Create ModelWriter
@@ -85,7 +94,14 @@
     [self.sensingKitLib deregisterSensorModule:moduleType];
     [self.sensorModules removeObject:@(moduleType)];
     
-    // TODO: Remove fileWriter
+    // Search for the moduleWriter in the Array
+    CSModelWriter *moduleWriter = [self getModuleWriterWithType:moduleType];
+    
+    // Close the fileWriter
+    [moduleWriter close];
+    
+    // Remove fileWriter
+    [self.modelWriters removeObject:moduleWriter];
 }
 
 - (void)disableAllRegisteredSensors
