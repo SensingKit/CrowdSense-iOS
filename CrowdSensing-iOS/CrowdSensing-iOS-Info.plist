@@ -25,11 +25,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>I want access</string>
+	<string>CrowdSense Location Sensor requires this access in order to collect geographical coordinate information data.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>I want access!!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>I want access</string>
+	<string>CrowdSense Location Sensor requires this access in order to collect geographical coordinate information data.</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
