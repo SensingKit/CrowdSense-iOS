@@ -27,7 +27,7 @@
         NSURL *filePath = [path URLByAppendingPathComponent:filename];
         
         self.filePath = filePath;
-        self.outputStream = [[NSOutputStream alloc] initWithURL:filePath append:NO];
+        self.outputStream = [[NSOutputStream alloc] initWithURL:filePath append:YES];
         self.outputStream.delegate = self;
         [self.outputStream open];
     }
