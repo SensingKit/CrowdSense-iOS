@@ -20,8 +20,19 @@
 
 - (IBAction)sensorSwitchAction:(id)sender
 {
-    
+    if (self.delegate)
+    {
+        UISwitch *sensorSwitch = sender;
+        
+        if (sensorSwitch.on)
+        {
+            [self.delegate changeStatus:CSSensorStatusEnabled ofSensorWithType:self.sensorSetupType];
+        }
+        else
+        {
+            [self.delegate changeStatus:CSSensorStatusDisabled ofSensorWithType:self.sensorSetupType];
+        }
+    }
 }
-
 
 @end

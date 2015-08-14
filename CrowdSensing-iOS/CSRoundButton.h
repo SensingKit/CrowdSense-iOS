@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-enum CSRoundButtonType : NSUInteger {
+typedef NS_ENUM(NSUInteger, CSRoundButtonType) {
     CSRoundButtonFilledType,
     CSRoundButtonStrokedType
 };

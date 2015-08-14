@@ -102,7 +102,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bkX-xL-Q3E" kind="presentation" modalTransitionStyle="flipHorizontal" id="LFU-oq-rbh"/>
+                                    <segue destination="bkX-xL-Q3E" kind="presentation" identifier="Setup" modalTransitionStyle="flipHorizontal" id="LFU-oq-rbh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -255,9 +255,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="d7J-q3-MxI" kind="show" identifier="Accelerometer Sensor Segue" id="pbL-A3-CtC"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="H8v-9h-bXe" detailTextLabel="qZp-OP-Ipy" rowHeight="44" style="IBUITableViewCellStyleValue1" id="JeZ-Uu-Fwr">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -278,9 +275,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="d7J-q3-MxI" kind="show" identifier="Gyroscope Sensor Segue" id="uWa-OA-IeR"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="tza-ud-4dL" detailTextLabel="Lgt-4K-5iQ" rowHeight="44" style="IBUITableViewCellStyleValue1" id="iJ8-Pw-RAD">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -301,9 +295,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="d7J-q3-MxI" kind="show" identifier="Magnetometer Sensor Segue" id="gXp-2B-TIm"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wb9-ex-rfg" detailTextLabel="t5S-YJ-bn3" rowHeight="44" style="IBUITableViewCellStyleValue1" id="rZu-dO-ELu">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -324,9 +315,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="d7J-q3-MxI" kind="show" identifier="Device Motion Sensor Segue" id="9dt-7Q-yG5"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="5yd-1H-bmB" detailTextLabel="zEp-Jq-5FY" rowHeight="44" style="IBUITableViewCellStyleValue1" id="CxS-6Y-k8Y">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -347,9 +335,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="vyI-8l-K4q" kind="show" identifier="Activity Sensor Segue" id="cpy-jx-pYR"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -374,36 +359,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="8yJ-ut-GIs" kind="show" identifier="Location Sensor Segue" id="xxZ-zh-pLm"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="yyp-7h-38V">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="UUr-Pi-SiU" detailTextLabel="t2r-yE-1ne" rowHeight="44" style="IBUITableViewCellStyleValue1" id="mtA-3X-rpM">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mtA-3X-rpM" id="OYi-jr-oCv">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Proximity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UUr-Pi-SiU">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t2r-yE-1ne">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="fte-ah-Sge" kind="show" identifier="Proximity Sensor Segue" id="IjE-Gt-DOM"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -428,9 +383,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="vyI-8l-K4q" kind="show" identifier="Battery Sensor Segue" id="ml7-tI-jYp"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -443,10 +395,21 @@
                     <navigationItem key="navigationItem" title="Sensor Setup" id="8xv-nr-zvL">
                         <barButtonItem key="backBarButtonItem" title="Sensors" id="i8O-z4-pxQ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ActivitySensorCell" destination="CxS-6Y-k8Y" id="ezW-2M-8r1"/>
+                        <outlet property="BatterySensorCell" destination="d4H-SX-ACn" id="5zu-dY-Eb9"/>
+                        <outlet property="LocationSensorCell" destination="SU3-l0-nu7" id="Q0G-3P-Sfo"/>
+                        <outlet property="accelerometerSensorCell" destination="1kn-3I-ZCX" id="y6A-x0-y4J"/>
+                        <outlet property="deviceMotionSensorCell" destination="rZu-dO-ELu" id="kHM-cT-gWn"/>
+                        <outlet property="gyroscopeSensorCell" destination="JeZ-Uu-Fwr" id="ABb-By-Yym"/>
+                        <outlet property="magnetometerSensorCell" destination="iJ8-Pw-RAD" id="aDq-Hm-dqG"/>
+                        <segue destination="vyI-8l-K4q" kind="show" identifier="Simple Sensor Setup" id="jSO-w1-0b3"/>
+                        <segue destination="d7J-q3-MxI" kind="show" identifier="Sampling Rate Sensor Setup" id="9SG-XC-Hiv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBc-eS-2S2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4113.75" y="750"/>
+            <point key="canvasLocation" x="4057" y="794"/>
         </scene>
         <!--Sampling Rate-->
         <scene sceneID="w5p-oS-Qmu">
@@ -528,7 +491,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsd-kv-97z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6279.375" y="466.9014084507042"/>
+            <point key="canvasLocation" x="5055" y="1046"/>
         </scene>
         <!--Simple-->
         <scene sceneID="27E-S1-Kgl">
@@ -583,117 +546,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWq-hm-BmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6279.375" y="-259.85915492957747"/>
-        </scene>
-        <!--Location-->
-        <scene sceneID="zsK-Pi-wF8">
-            <objects>
-                <tableViewController id="8yJ-ut-GIs" customClass="CSLocationSensorSetup" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="3NO-5E-A0q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection footerTitle="Description of the sensor" id="LFd-9u-oub">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="o4F-k4-tMr">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o4F-k4-tMr" id="SdE-ZD-tJu">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-aE-C2l">
-                                                    <rect key="frame" x="536" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="sensorSwitchAction:" destination="8yJ-ut-GIs" eventType="valueChanged" id="dds-ih-ojh"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFz-wi-RS5">
-                                                    <rect key="frame" x="15" y="11" width="67" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="6Wk-aE-C2l" secondAttribute="trailing" constant="15" id="XEj-WE-AQ9"/>
-                                                <constraint firstItem="oFz-wi-RS5" firstAttribute="leading" secondItem="SdE-ZD-tJu" secondAttribute="leading" constant="15" id="kt9-O7-7Yj"/>
-                                                <constraint firstAttribute="centerY" secondItem="6Wk-aE-C2l" secondAttribute="centerY" id="o8j-vg-rWL"/>
-                                                <constraint firstAttribute="centerY" secondItem="oFz-wi-RS5" secondAttribute="centerY" id="vhk-P5-owz"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="8yJ-ut-GIs" id="dno-gA-vYi"/>
-                            <outlet property="delegate" destination="8yJ-ut-GIs" id="Ra0-hG-rWa"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Location" id="n0g-Hf-GtH"/>
-                    <connections>
-                        <outlet property="sensorLabel" destination="oFz-wi-RS5" id="7eD-Zp-5ql"/>
-                        <outlet property="sensorSwitch" destination="6Wk-aE-C2l" id="jLz-OF-wq3"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FZs-Th-aWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6279.375" y="1187.3239436619717"/>
-        </scene>
-        <!--Proximity-->
-        <scene sceneID="Eyc-F3-o7q">
-            <objects>
-                <tableViewController id="fte-ah-Sge" customClass="CSProximitySensorSetup" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PrK-N8-6CS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection footerTitle="Description of the sensor" id="rps-dn-OCR">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="wdY-AA-s23">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wdY-AA-s23" id="5g7-UX-npa">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proximity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVp-ON-F9t">
-                                                    <rect key="frame" x="15" y="11" width="72" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hhb-Yn-Tdp">
-                                                    <rect key="frame" x="536" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="sensorSwitchAction:" destination="fte-ah-Sge" eventType="valueChanged" id="Vqk-Z9-0eo"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="yVp-ON-F9t" firstAttribute="leading" secondItem="5g7-UX-npa" secondAttribute="leading" constant="15" id="D17-4T-ZMq"/>
-                                                <constraint firstAttribute="centerY" secondItem="yVp-ON-F9t" secondAttribute="centerY" id="SI1-ja-uZX"/>
-                                                <constraint firstAttribute="centerY" secondItem="hhb-Yn-Tdp" secondAttribute="centerY" id="TY4-R1-U81"/>
-                                                <constraint firstAttribute="trailing" secondItem="hhb-Yn-Tdp" secondAttribute="trailing" constant="15" id="yaM-FR-uX4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="fte-ah-Sge" id="Khd-Ne-6gQ"/>
-                            <outlet property="delegate" destination="fte-ah-Sge" id="FPL-K5-z1i"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Proximity" id="ldR-Cm-Zeo"/>
-                    <connections>
-                        <outlet property="sensorLabel" destination="yVp-ON-F9t" id="sVO-js-Yjf"/>
-                        <outlet property="sensorSwitch" destination="hhb-Yn-Tdp" id="VZt-xv-4tU"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WgR-ks-5lL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6279.375" y="1927.8169014084506"/>
+            <point key="canvasLocation" x="5055" y="320"/>
         </scene>
         <!--Sampling Rate-->
         <scene sceneID="bct-KP-8D5">
@@ -754,7 +607,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkA-F8-9KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8488.125" y="465.84507042253517"/>
+            <point key="canvasLocation" x="6864" y="1046"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ab-Yh-ZPU">
@@ -857,7 +710,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lll-Pp-7wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7490.625" y="466.9014084507042"/>
+            <point key="canvasLocation" x="5866" y="1047"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kXE-Uy-Tad">
@@ -881,8 +734,4 @@
             <point key="canvasLocation" x="-2318" y="1654"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pbL-A3-CtC"/>
-        <segue reference="ml7-tI-jYp"/>
-    </inferredMetricsTieBreakers>
 </document>

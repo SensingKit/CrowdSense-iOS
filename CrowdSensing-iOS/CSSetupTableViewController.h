@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSSensingSession.h"
 
 @protocol CSSetupTableViewControllerDelegate <NSObject>
 
-- (void)doneWithConfiguration:(NSDictionary *)configuration;
+//- (void)doneWithConfiguration:(NSDictionary *)configuration;
 
 @end
 
 @interface CSSetupTableViewController : UITableViewController
 
 @property (weak, nonatomic) id <CSSetupTableViewControllerDelegate> delegate;
+
+@property (strong, nonatomic) CSSensingSession *sensingSession;
 
 @end

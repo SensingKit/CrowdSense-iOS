@@ -7,6 +7,7 @@
 //
 
 #import "CSSetupTableViewController.h"
+#import "CSSensorSetupTableViewController.h"
 
 @interface CSSetupTableViewController ()
 
@@ -24,11 +25,22 @@
 {
     if (self.delegate)
     {
-        [self.delegate doneWithConfiguration:self.configuration];
+        //[self.delegate doneWithConfiguration:self.configuration];
     }
     
     [self dismissViewControllerAnimated:YES
                              completion:NULL];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Sensor Setup"]) {
+        
+        CSSensorSetupTableViewController *sensorSetupTableViewController = (CSSensorSetupTableViewController *)segue.destinationViewController;
+        
+        //sensorSetupTableViewController.delegate = self;
+        sensorSetupTableViewController.sensingSession = self.sensingSession;
+    }
 }
 
 @end

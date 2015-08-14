@@ -88,6 +88,11 @@
     // TODO: Remove fileWriter
 }
 
+- (BOOL)isSensorEnabled:(SKSensorModuleType)moduleType
+{
+    return [self.sensorModules containsObject:@(moduleType)];
+}
+
 - (void)start
 {
     for (NSNumber *moduleType in self.sensorModules)

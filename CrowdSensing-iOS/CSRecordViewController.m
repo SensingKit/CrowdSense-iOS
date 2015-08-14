@@ -92,15 +92,6 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     // Create the SensingSession
     self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
-    
-    // Enable all sensors
-    [self.sensingSession enableSensorWithType:Accelerometer];
-    [self.sensingSession enableSensorWithType:Gyroscope];
-    [self.sensingSession enableSensorWithType:Magnetometer];
-    [self.sensingSession enableSensorWithType:DeviceMotion];
-    [self.sensingSession enableSensorWithType:Activity];
-    [self.sensingSession enableSensorWithType:Battery];
-    [self.sensingSession enableSensorWithType:Location];
 }
 
 - (NSDateFormatter *)timerDateFormatter
@@ -400,6 +391,18 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     else
     {
         NSLog(@"Unknown CSRecordViewControllerAlertType: %ld", (long) type);
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Setup"]) {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        CSSetupTableViewController *setupTableViewController = (CSSetupTableViewController *)navigationController.topViewController;
+        
+        setupTableViewController.delegate = self;
+        setupTableViewController.sensingSession = self.sensingSession;
     }
 }
 

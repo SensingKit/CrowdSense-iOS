@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CSRoundButton.h"
 #import "Recording.h"
+#import "CSSetupTableViewController.h"
 
-@interface CSRecordViewController : UIViewController<UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
+@interface CSRecordViewController : UIViewController<UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, CSSetupTableViewControllerDelegate>
 
 @property (nonatomic, strong) Recording *recording;
 

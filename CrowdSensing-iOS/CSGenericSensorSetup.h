@@ -8,15 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-enum CSSensorSetupType : NSUInteger {
+typedef NS_ENUM(NSUInteger, CSSensorSetupType) {
     CSSensorSetupAccelerometerType,
     CSSensorSetupGyroscopeType,
     CSSensorSetupMagnetometerType,
     CSSensorSetupDeviceMotionType,
     CSSensorSetupActivityType,
     CSSensorSetupLocationType,
-    CSSensorSetupProximityType,
     CSSensorSetupBatteryType
+};
+
+typedef NS_ENUM(NSUInteger, CSSensorStatus) {
+    CSSensorStatusEnabled,
+    CSSensorStatusDisabled
 };
 
 @interface CSGenericSensorSetup : UITableViewController
@@ -24,7 +28,8 @@ enum CSSensorSetupType : NSUInteger {
 @property (weak, nonatomic) IBOutlet UILabel *sensorLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *sensorSwitch;
 
-//@property (nonatomic, strong) SensingKitLib sensingKitLib;
-@property (nonatomic) enum CSSensorSetupType sensorSetupType;
+@property (nonatomic) CSSensorSetupType sensorSetupType;
+
+@property (nonatomic) CSSensorStatus sensorStatus;
 
 @end

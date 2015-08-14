@@ -19,7 +19,26 @@
     
     // Set the label from title
     self.sensorLabel.text = self.title;
+    
+    [self updateSensorSwitch];
+}
 
+- (void)updateSensorSwitch
+{
+    switch (self.sensorStatus)
+    {
+        case CSSensorStatusDisabled:
+            self.sensorSwitch.on = NO;
+            break;
+            
+        case CSSensorStatusEnabled:
+            self.sensorSwitch.on = YES;
+            break;
+            
+        default:
+            NSLog(@"Unknown CSSensorStatus: %lu", (unsigned long)self.sensorStatus);
+            abort();
+    }
 }
 
 - (void)setSensorSetupType:(enum CSSensorSetupType)sensorSetupType
@@ -48,10 +67,6 @@
             
         case CSSensorSetupLocationType:
             self.title = @"Location";
-            break;
-            
-        case CSSensorSetupProximityType:
-            self.title = @"Proximity";
             break;
             
         case CSSensorSetupBatteryType:
