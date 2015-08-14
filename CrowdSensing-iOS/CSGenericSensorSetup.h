@@ -32,4 +32,6 @@ typedef NS_ENUM(NSUInteger, CSSensorStatus) {
 
 @property (nonatomic) CSSensorStatus sensorStatus;
 
+@property (strong, nonatomic) NSString *sensorDescription;
+
 @end

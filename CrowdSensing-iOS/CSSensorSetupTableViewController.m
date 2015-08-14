@@ -43,6 +43,7 @@
     NSString *sensorName = sender;
     CSSensorSetupType type = [self typeFromSensorName:sensorName];
     SKSensorModuleType moduleType = [self moduleTypeFromSensorName:sensorName];
+    NSString *sensorDescription = [self sensorDescriptionForSensorWithType:moduleType];
     
     CSSensorStatus sensorStatus;
     if ([self.sensingSession isSensorEnabled:moduleType])
@@ -61,6 +62,7 @@
         simpleSensorSetup.delegate = self;
         simpleSensorSetup.sensorSetupType = type;
         simpleSensorSetup.sensorStatus = sensorStatus;
+        simpleSensorSetup.sensorDescription = sensorDescription;
     }
 }
 
@@ -135,6 +137,39 @@
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
         abort();
+    }
+}
+
+- (NSString *)sensorDescriptionForSensorWithType:(SKSensorModuleType)moduleType {
+    
+    switch (moduleType) {
+            
+        case Accelerometer:
+            return @"Accelerometer is a sensor that measures the device acceleration changes in three-dimensional space. You can use this data to detect both the current orientation of the device (relative to the ground) and any instantaneous changes to that orientation.";
+            
+        case Gyroscope:
+            return @"Gyroscope is a sensor that measures the device’s rate of rotation around each of the three spatial axes.";
+            
+        case Magnetometer:
+            return @"Magnetometer (also known as Compass or Magnetic Field Sensor) is a sensor that measures the actual orientation of the device relatively to the Magnetic North.";
+            
+        case DeviceMotion:
+            return @"Device Motion sensor uses sensor fusion techniques to provide more advanced and accurate motion measurements. It provides measurements of the Attitude, Rotation Rate, Calibrated Magnetic Field, as well as a separation of User Acceleration and Gravity from the device’s acceleration.";
+            
+        case Activity:
+            return @"Activity sensor uses an embedded motion co-processor that senses the user’s activity classified as Stationary, Walking, Running, Automotive or Cycling.";
+            
+        case Battery:
+            return @"Battery sensor listens for changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).";
+            
+        case Location:
+            return @"Location sensor senses the current location of the device using a combination of Cellular, Wi-Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude) as well as the altitude of the device.";
+            
+        case Proximity:
+            return @"Proximity Description.";
+            
+        default:
+            return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
     }
 }
 

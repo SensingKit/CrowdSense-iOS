@@ -23,6 +23,11 @@
     [self updateSensorSwitch];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return self.sensorDescription;
+}
+
 - (void)updateSensorSwitch
 {
     switch (self.sensorStatus)
