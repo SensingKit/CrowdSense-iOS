@@ -11,7 +11,7 @@
 #import "Recording.h"
 #import "Recording+Create.h"
 
-@interface CSMainTableTableViewController ()
+@interface CSMainTableTableViewController () <CSRecordViewControllerDelegate>
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSFileManager *fileManager;
@@ -97,12 +97,18 @@
         // Get the recording
         Recording *recording = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
-        // Delete recording data
-        [self deleteFolderWithName:recording.storageFolder];
-        
-        // Delete the recording
-        [self.managedObjectContext deleteObject:recording];
+        // Delete recording data and folder
+        [self deleteRecording:recording];
     }
+}
+
+- (void)deleteRecording:(Recording *)recording
+{
+    // Delete recording data
+    [self deleteFolderWithName:recording.storageFolder];
+    
+    // Delete the recording
+    [self.managedObjectContext deleteObject:recording];
 }
 
 - (void)deleteFolderWithName:(NSString *)folderName
@@ -138,6 +144,7 @@
                                                         withCreateDate:[NSDate date]
                                                 inManagedObjectContext:self.managedObjectContext];
         
+        recordViewController.delegate = self;
     }
 }
 

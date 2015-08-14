@@ -340,13 +340,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             // Dismiss the view and delete recording
             [self dismissViewControllerAnimated:YES completion:^{
                 
-                NSManagedObjectContext *context = self.recording.managedObjectContext;
-                
-                // Delete recording
-                [context deleteObject:self.recording];
-                
-                // Save
-                [context save:NULL];
+                // Delete the recording
+                [self.delegate deleteRecording:self.recording];
             }];
         }
         else if ([buttonText isEqualToString:@"Cancel"])
