@@ -303,13 +303,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             NSLog(@"Save with title: %@", recordingName);
             
             // Disable sensors
-            [self.sensingSession disableSensorWithType:Accelerometer];
-            [self.sensingSession disableSensorWithType:Gyroscope];
-            [self.sensingSession disableSensorWithType:Magnetometer];
-            [self.sensingSession disableSensorWithType:DeviceMotion];
-            [self.sensingSession disableSensorWithType:Activity];
-            [self.sensingSession disableSensorWithType:Battery];
-            [self.sensingSession disableSensorWithType:Location];
+            [self.sensingSession disableAllRegisteredSensors];
             
             // Close Session
             [self.sensingSession close];

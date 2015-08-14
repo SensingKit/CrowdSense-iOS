@@ -88,6 +88,14 @@
     // TODO: Remove fileWriter
 }
 
+- (void)disableAllRegisteredSensors
+{
+    // Copy to avoid error "NSArray was mutated while being enumerated."
+    for (NSNumber *moduleType in [self.sensorModules copy]) {
+        [self disableSensorWithType:moduleType.unsignedIntegerValue];
+    }
+}
+
 - (BOOL)isSensorEnabled:(SKSensorModuleType)moduleType
 {
     return [self.sensorModules containsObject:@(moduleType)];

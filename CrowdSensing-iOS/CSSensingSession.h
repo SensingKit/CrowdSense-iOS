@@ -17,6 +17,7 @@
 
 - (void)enableSensorWithType:(SKSensorModuleType)moduleType;
 - (void)disableSensorWithType:(SKSensorModuleType)moduleType;
+- (void)disableAllRegisteredSensors;
 
 - (BOOL)isSensorEnabled:(SKSensorModuleType)moduleType;
 
