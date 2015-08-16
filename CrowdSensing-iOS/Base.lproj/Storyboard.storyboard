@@ -688,11 +688,65 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="CrowdSense" id="Hx7-zE-HqQ"/>
+                    <navigationItem key="navigationItem" title="CrowdSense" id="Hx7-zE-HqQ">
+                        <barButtonItem key="leftBarButtonItem" title="Info" id="WLF-DH-aS4">
+                            <connections>
+                                <segue destination="jhA-ja-4Qx" kind="presentation" identifier="Show About Screen" modalPresentationStyle="formSheet" id="8DX-a8-xoD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLL-xa-l7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1506" y="1654"/>
+        </scene>
+        <!--About CrowdSense-->
+        <scene sceneID="kda-vZ-dTH">
+            <objects>
+                <viewController id="Ia2-eY-cWS" customClass="CSInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Pu-PX-iEl"/>
+                        <viewControllerLayoutGuide type="bottom" id="8HC-l9-5Dk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pGR-KC-Jbg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-FV-hzu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2f5-FV-hzu" firstAttribute="top" secondItem="pGR-KC-Jbg" secondAttribute="top" id="B8B-qz-RmO"/>
+                            <constraint firstItem="8HC-l9-5Dk" firstAttribute="top" secondItem="2f5-FV-hzu" secondAttribute="bottom" id="TW2-Jb-iOh"/>
+                            <constraint firstItem="2f5-FV-hzu" firstAttribute="leading" secondItem="pGR-KC-Jbg" secondAttribute="leading" id="UEL-og-awV"/>
+                            <constraint firstAttribute="trailing" secondItem="2f5-FV-hzu" secondAttribute="trailing" id="ioT-kn-e1a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About CrowdSense" id="nv9-6R-RcM">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ljZ-N9-2f4">
+                            <connections>
+                                <action selector="DoneAction:" destination="Ia2-eY-cWS" id="OT7-NB-kef"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmn-aB-KHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554" y="2025"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Zo-iY-crR">
@@ -732,6 +786,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLL-oP-QJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2318" y="1654"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LGN-uK-ino">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jhA-ja-4Qx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u0q-pG-Ka9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ia2-eY-cWS" kind="relationship" relationship="rootViewController" id="fcy-cR-x6P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B9p-he-25X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258" y="2025"/>
         </scene>
     </scenes>
 </document>
