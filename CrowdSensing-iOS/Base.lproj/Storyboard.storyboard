@@ -369,13 +369,37 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d4H-SX-ACn" id="Jzb-YN-yKw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TCN-CQ-rgM">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="iBeacon Proximity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TCN-CQ-rgM">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Rt-YK-7fn">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Jlp-iR-ddD">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="3xn-1j-YSF" detailTextLabel="cwo-xt-KY2" rowHeight="44" style="IBUITableViewCellStyleValue1" id="7ao-8U-E3g">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ao-8U-E3g" id="w7w-bU-TfB">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3xn-1j-YSF">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cwo-xt-KY2">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -396,12 +420,13 @@
                         <barButtonItem key="backBarButtonItem" title="Sensors" id="i8O-z4-pxQ"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="ActivitySensorCell" destination="CxS-6Y-k8Y" id="ezW-2M-8r1"/>
-                        <outlet property="BatterySensorCell" destination="d4H-SX-ACn" id="5zu-dY-Eb9"/>
-                        <outlet property="LocationSensorCell" destination="SU3-l0-nu7" id="Q0G-3P-Sfo"/>
                         <outlet property="accelerometerSensorCell" destination="1kn-3I-ZCX" id="y6A-x0-y4J"/>
+                        <outlet property="activitySensorCell" destination="CxS-6Y-k8Y" id="PsU-7s-quS"/>
+                        <outlet property="batterySensorCell" destination="7ao-8U-E3g" id="qqP-qX-yti"/>
+                        <outlet property="beaconSensorCell" destination="d4H-SX-ACn" id="y7Z-za-YhK"/>
                         <outlet property="deviceMotionSensorCell" destination="rZu-dO-ELu" id="kHM-cT-gWn"/>
                         <outlet property="gyroscopeSensorCell" destination="JeZ-Uu-Fwr" id="ABb-By-Yym"/>
+                        <outlet property="locationSensorCell" destination="SU3-l0-nu7" id="TCV-Y4-MGn"/>
                         <outlet property="magnetometerSensorCell" destination="iJ8-Pw-RAD" id="aDq-Hm-dqG"/>
                         <segue destination="vyI-8l-K4q" kind="show" identifier="Simple Sensor Setup" id="jSO-w1-0b3"/>
                         <segue destination="d7J-q3-MxI" kind="show" identifier="Sampling Rate Sensor Setup" id="9SG-XC-Hiv"/>

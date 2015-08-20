@@ -92,6 +92,10 @@
     {
         return CSSensorSetupLocationType;
     }
+    else if ([sensorName isEqualToString:@"iBeacon Proximity"])
+    {
+        return CSSensorSetupBeaconType;
+    }
     else if ([sensorName isEqualToString:@"Battery"])
     {
         return CSSensorSetupBatteryType;
@@ -128,6 +132,10 @@
     else if ([sensorName isEqualToString:@"Location"])
     {
         return Location;
+    }
+    else if ([sensorName isEqualToString:@"iBeacon Proximity"])
+    {
+        return Proximity;
     }
     else if ([sensorName isEqualToString:@"Battery"])
     {
@@ -166,7 +174,7 @@
             return @"Location sensor senses the current location of the device using a combination of Cellular, Wi-Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude) as well as the altitude of the device.";
             
         case Proximity:
-            return @"Proximity Description.";
+            return @"iBeacon Proximity sensor uses Apple's iBeacon technology to estimate the proximity of the current device with other devices actively running CrowdSense application.";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
@@ -201,6 +209,10 @@
             
         case CSSensorSetupLocationType:
             sensorModule = Location;
+            break;
+            
+        case CSSensorSetupBeaconType:
+            sensorModule = Proximity;
             break;
             
         case CSSensorSetupBatteryType:
@@ -238,9 +250,10 @@
     [self updateTableViewCell:self.gyroscopeSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:Gyroscope]];
     [self updateTableViewCell:self.magnetometerSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:Magnetometer]];
     [self updateTableViewCell:self.deviceMotionSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:DeviceMotion]];
-    [self updateTableViewCell:self.ActivitySensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Activity]];
-    [self updateTableViewCell:self.LocationSensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Location]];
-    [self updateTableViewCell:self.BatterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Battery]];
+    [self updateTableViewCell:self.activitySensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Activity]];
+    [self updateTableViewCell:self.locationSensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Location]];
+    [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:Proximity]];
+    [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Battery]];
 }
 
 - (void)updateTableViewCell:(UITableViewCell *)tableViewCell withSensorEnabled:(BOOL)sensorEnabled

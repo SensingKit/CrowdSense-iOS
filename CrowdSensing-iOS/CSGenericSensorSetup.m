@@ -74,13 +74,17 @@
             self.title = @"Location";
             break;
             
+        case CSSensorSetupBeaconType:
+            self.title = @"iBeacon Proximity";
+            break;
+            
         case CSSensorSetupBatteryType:
             self.title = @"Battery";
             break;
             
         default:
             NSLog(@"Unknown sensorSetupType: %ld", (long)sensorSetupType);
-            break;
+            abort();
     }
     
     _sensorSetupType = sensorSetupType;

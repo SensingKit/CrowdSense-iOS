@@ -18,10 +18,12 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *gyroscopeSensorCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *magnetometerSensorCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *deviceMotionSensorCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *ActivitySensorCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *activitySensorCell;
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *LocationSensorCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *locationSensorCell;
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *BatterySensorCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *beaconSensorCell;
+
+@property (weak, nonatomic) IBOutlet UITableViewCell *batterySensorCell;
 
 @end

@@ -37,6 +37,10 @@
 - (void)readData:(SKSensorData *)sensorData
 {
     NSString *csv = [NSString stringWithFormat:@"%@\n",sensorData.csvString];
+    
+    // debug
+    NSLog(@"%@", csv);
+    
     [self writeString:csv];
 }
 
