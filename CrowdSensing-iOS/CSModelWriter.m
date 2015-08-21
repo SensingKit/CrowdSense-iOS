@@ -10,8 +10,8 @@
 
 @interface CSModelWriter () <NSStreamDelegate>
 
-@property (nonatomic, strong) NSURL* filePath;
-@property(nonatomic, strong) NSOutputStream* outputStream;
+@property (nonatomic, strong) NSURL *filePath;
+@property (nonatomic, strong) NSOutputStream *outputStream;
 
 @end
 
