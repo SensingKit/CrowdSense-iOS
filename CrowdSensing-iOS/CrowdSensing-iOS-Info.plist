@@ -25,11 +25,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>CrowdSense Location Sensor requires this access in order to collect geographical coordinate information data.</string>
+	<string>CrowdSense requires this access in order to capture your location, as well as your proximity with other devices actively running this app.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>I want access!!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>CrowdSense Location Sensor requires this access in order to collect geographical coordinate information data.</string>
+	<string>CrowdSense requires this access in order to capture your location, as well as your proximity with other devices actively running this app.</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
