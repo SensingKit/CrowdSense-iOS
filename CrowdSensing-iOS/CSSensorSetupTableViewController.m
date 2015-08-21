@@ -135,7 +135,7 @@
     }
     else if ([sensorName isEqualToString:@"iBeacon Proximity"])
     {
-        return Proximity;
+        return iBeaconProximity;
     }
     else if ([sensorName isEqualToString:@"Battery"])
     {
@@ -173,7 +173,7 @@
         case Location:
             return @"Location sensor senses the current location of the device using a combination of Cellular, Wi-Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude) as well as the altitude of the device.";
             
-        case Proximity:
+        case iBeaconProximity:
             return @"iBeacon Proximity sensor uses Apple's iBeacon technology to estimate the proximity of the current device with other devices actively running CrowdSense application.";
             
         default:
@@ -212,7 +212,7 @@
             break;
             
         case CSSensorSetupBeaconType:
-            sensorModule = Proximity;
+            sensorModule = iBeaconProximity;
             break;
             
         case CSSensorSetupBatteryType:
@@ -243,7 +243,6 @@
     [self updateSensorStatus];
 }
 
-
 - (void)updateSensorStatus
 {
     [self updateTableViewCell:self.accelerometerSensorCell withSensorEnabled:[self.sensingSession isSensorEnabled:Accelerometer]];
@@ -252,7 +251,7 @@
     [self updateTableViewCell:self.deviceMotionSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:DeviceMotion]];
     [self updateTableViewCell:self.activitySensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Activity]];
     [self updateTableViewCell:self.locationSensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Location]];
-    [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:Proximity]];
+    [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:iBeaconProximity]];
     [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Battery]];
 }
 

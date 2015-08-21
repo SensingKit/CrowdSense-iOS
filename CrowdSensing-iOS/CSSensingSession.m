@@ -163,8 +163,8 @@
         case Location:
             return @"Location";
             
-        case Proximity:
-            return @"Proximity";
+        case iBeaconProximity:
+            return @"iBeaconProximity";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
