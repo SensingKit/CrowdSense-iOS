@@ -9,10 +9,11 @@
 #import "CSSensingSession.h"
 #import "CSModelWriter.h"
 
+#define TOTAL_SENSOR_MODULES 8
+
 @interface CSSensingSession ()
 
 @property (nonatomic, strong) NSURL* folderPath;
-@property (nonatomic, strong) NSMutableArray *sensorModules;
 @property (nonatomic, strong) NSMutableArray *modelWriters;
 
 @end
@@ -28,8 +29,7 @@
         
         self.folderPath = [self createFolderWithName:folderName];
         
-        self.sensorModules = [[NSMutableArray alloc] initWithCapacity:8];
-        self.modelWriters = [[NSMutableArray alloc] initWithCapacity:8];
+        self.modelWriters = [[NSMutableArray alloc] initWithCapacity:TOTAL_SENSOR_MODULES];
     }
     return self;
 }
@@ -85,14 +85,12 @@
                                                 }];
     
     // Add sensorType and modelWriter to the arrays
-    [self.sensorModules addObject:@(moduleType)];
     [self.modelWriters addObject:modelWriter];
 }
 
 - (void)disableSensorWithType:(SKSensorModuleType)moduleType
 {
     [self.sensingKitLib deregisterSensorModule:moduleType];
-    [self.sensorModules removeObject:@(moduleType)];
     
     // Search for the moduleWriter in the Array
     CSModelWriter *moduleWriter = [self getModuleWriterWithType:moduleType];
@@ -106,31 +104,29 @@
 
 - (void)disableAllRegisteredSensors
 {
-    // Copy to avoid error "NSArray was mutated while being enumerated."
-    for (NSNumber *moduleType in [self.sensorModules copy]) {
-        [self disableSensorWithType:moduleType.unsignedIntegerValue];
+    for (int i = 0; i < TOTAL_SENSOR_MODULES; i++)
+    {
+        SKSensorModuleType moduleType = i;
+        
+        if ([self isSensorEnabled:moduleType]) {
+            [self disableSensorWithType:moduleType];
+        }
     }
 }
 
 - (BOOL)isSensorEnabled:(SKSensorModuleType)moduleType
 {
-    return [self.sensorModules containsObject:@(moduleType)];
+    return [self.sensingKitLib isSensorModuleRegistered:moduleType];
 }
 
 - (void)start
 {
-    for (NSNumber *moduleType in self.sensorModules)
-    {
-        [self.sensingKitLib startContinuousSensingWithSensor:moduleType.unsignedIntegerValue];
-    }
+    [self.sensingKitLib startContinuousSensingWithAllRegisteredSensors];
 }
 
 - (void)stop
 {
-    for (NSNumber *moduleType in self.sensorModules)
-    {
-        [self.sensingKitLib stopContinuousSensingWithSensor:moduleType.unsignedIntegerValue];
-    }
+    [self.sensingKitLib stopContinuousSensingWithAllRegisteredSensors];
 }
 
 - (void)close
