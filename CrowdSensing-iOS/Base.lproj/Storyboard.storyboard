@@ -180,7 +180,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection footerTitle="Only local data storage is supported at the moment." id="n9x-RM-fPB">
+                            <tableViewSection footerTitle="Only local data storage is supported at the moment. Collected data can be accessed using iTunes File Sharing." id="n9x-RM-fPB">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="KEz-wb-eh6" detailTextLabel="iGX-IP-74j" style="IBUITableViewCellStyleValue1" id="DCM-EH-Upp">
                                         <autoresizingMask key="autoresizingMask"/>
