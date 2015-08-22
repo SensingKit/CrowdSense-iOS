@@ -86,6 +86,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     NSDate *createDate = [NSDate date];
     NSString *folderName = [self folderNameForDate:createDate];
     
+    // Set it in the UI
+    self.timeLabel.text = [self datetimeDateFormatter:createDate];
+    
     // Set in the model
     self.recording.createDate = createDate;
     self.recording.storageFolder = folderName;
@@ -121,6 +124,15 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd_HH.mm.ss"];
+    
+    return [dateFormatter stringFromDate:date];
+}
+
+- (NSString *)datetimeDateFormatter:(NSDate *)date
+{
+    // Format: 17/10/14 12:29.15
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/YY HH:mm.ss"];
     
     return [dateFormatter stringFromDate:date];
 }
