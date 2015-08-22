@@ -1,29 +1,27 @@
 //
-//  CSModelWriter.m
+//  CSInformationModelWriter.m
 //  CrowdSensing-iOS
 //
-//  Created by Minos Katevas on 13/07/2015.
+//  Created by Minos Katevas on 22/08/2015.
 //  Copyright (c) 2015 Kleomenis Katevas. All rights reserved.
 //
 
-#import "CSModelWriter.h"
+#import "CSInformationModelWriter.h"
 
-@interface CSModelWriter () <NSStreamDelegate>
+@interface CSInformationModelWriter () <NSStreamDelegate>
 
 @property (nonatomic, strong) NSURL *filePath;
 @property (nonatomic, strong) NSOutputStream *outputStream;
 
 @end
 
-@implementation CSModelWriter
+@implementation CSInformationModelWriter
 
-- (instancetype)initWithSensorModuleType:(SKSensorModuleType)moduleType
-                            withFilename:(NSString *)filename
-                                  inPath:(NSURL *)path
+- (instancetype)initWithFilename:(NSString *)filename
+                          inPath:(NSURL *)path
 {
     if (self = [super init])
     {
-        _moduleType = moduleType;
         NSURL *filePath = [path URLByAppendingPathComponent:filename];
         
         self.filePath = filePath;
@@ -34,15 +32,9 @@
     return self;
 }
 
-- (void)readData:(SKSensorData *)sensorData
+- (void)addInformation:(NSString *)information
 {
-    NSString *csv = [NSString stringWithFormat:@"%@\n", sensorData.csvString];
-    
-    // debug
-    //NSLog(@"%@", csv);
-    //NSDictionary *dictionary = sensorData.dictionaryData;
-    
-    [self writeString:csv];
+    [self writeString:[NSString stringWithFormat:@"%@\n", information]];
 }
 
 - (void)writeString:(NSString *)string

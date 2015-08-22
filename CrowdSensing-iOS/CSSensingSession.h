@@ -25,4 +25,6 @@
 - (void)stop;
 - (void)close;
 
+- (void)addInformation:(NSString *)information;
+
 @end
