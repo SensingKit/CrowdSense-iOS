@@ -92,7 +92,7 @@
     {
         return CSSensorSetupLocationType;
     }
-    else if ([sensorName isEqualToString:@"iBeacon Proximity"])
+    else if ([sensorName isEqualToString:@"iBeacon™ Proximity"])
     {
         return CSSensorSetupBeaconType;
     }
@@ -137,7 +137,7 @@
     {
         return Location;
     }
-    else if ([sensorName isEqualToString:@"iBeacon Proximity"])
+    else if ([sensorName isEqualToString:@"iBeacon™ Proximity"])
     {
         return iBeaconProximity;
     }
@@ -182,7 +182,7 @@
             return @"Location sensor senses the current location of the device using a combination of Cellular, Wi-Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude) as well as the altitude of the device.";
             
         case iBeaconProximity:
-            return @"iBeacon Proximity sensor uses Apple's iBeacon technology to estimate the proximity of the current device with other devices actively running CrowdSense application.";
+            return @"iBeacon™ Proximity sensor uses Apple's iBeacon™ technology to estimate the proximity of the current device with other devices actively running CrowdSense application.";
             
         case EddystoneProximity:
             return @"Eddystone™ Proximity sensor estimates the proximity of the current device with Eddystone™ beacons in range.";
