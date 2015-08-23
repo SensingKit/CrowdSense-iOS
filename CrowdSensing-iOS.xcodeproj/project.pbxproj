@@ -32,11 +32,6 @@
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
 		CFD450291B885C4900E2E78D /* CSInformationModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */; };
 		CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFD450421B8A0DEC00E2E78D /* Settings.bundle */; };
-		CFD4504E1B8A508500E2E78D /* NetAssociation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450471B8A508500E2E78D /* NetAssociation.m */; };
-		CFD4504F1B8A508500E2E78D /* NetworkClock.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450491B8A508500E2E78D /* NetworkClock.m */; };
-		CFD450501B8A508500E2E78D /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = CFD4504A1B8A508500E2E78D /* Notes */; };
-		CFD450511B8A508500E2E78D /* NSDate+NetworkClock.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD4504C1B8A508500E2E78D /* NSDate+NetworkClock.m */; };
-		CFD450541B8A50D100E2E78D /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450531B8A50D100E2E78D /* GCDAsyncUdpSocket.m */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
 		CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325719796BF600F7CE57 /* CoreGraphics.framework */; };
 		CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325919796BF600F7CE57 /* UIKit.framework */; };
@@ -106,17 +101,6 @@
 		CFD450271B885C4900E2E78D /* CSInformationModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInformationModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInformationModelWriter.m; sourceTree = "<group>"; };
 		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
-		CFD450451B8A508500E2E78D /* ios-ntp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ios-ntp.h"; sourceTree = "<group>"; };
-		CFD450461B8A508500E2E78D /* NetAssociation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetAssociation.h; sourceTree = "<group>"; };
-		CFD450471B8A508500E2E78D /* NetAssociation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetAssociation.m; sourceTree = "<group>"; };
-		CFD450481B8A508500E2E78D /* NetworkClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkClock.h; sourceTree = "<group>"; };
-		CFD450491B8A508500E2E78D /* NetworkClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkClock.m; sourceTree = "<group>"; };
-		CFD4504A1B8A508500E2E78D /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
-		CFD4504B1B8A508500E2E78D /* NSDate+NetworkClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NetworkClock.h"; sourceTree = "<group>"; };
-		CFD4504C1B8A508500E2E78D /* NSDate+NetworkClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NetworkClock.m"; sourceTree = "<group>"; };
-		CFD4504D1B8A508500E2E78D /* ntp-log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ntp-log.h"; sourceTree = "<group>"; };
-		CFD450521B8A50D100E2E78D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		CFD450531B8A50D100E2E78D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		CFF581D91A0EA56400CBEE4D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF325519796BF600F7CE57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -218,28 +202,9 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		CFD450441B8A508500E2E78D /* ios-ntp-lib */ = {
-			isa = PBXGroup;
-			children = (
-				CFD450451B8A508500E2E78D /* ios-ntp.h */,
-				CFD450521B8A50D100E2E78D /* GCDAsyncUdpSocket.h */,
-				CFD450531B8A50D100E2E78D /* GCDAsyncUdpSocket.m */,
-				CFD450461B8A508500E2E78D /* NetAssociation.h */,
-				CFD450471B8A508500E2E78D /* NetAssociation.m */,
-				CFD450481B8A508500E2E78D /* NetworkClock.h */,
-				CFD450491B8A508500E2E78D /* NetworkClock.m */,
-				CFD4504A1B8A508500E2E78D /* Notes */,
-				CFD4504B1B8A508500E2E78D /* NSDate+NetworkClock.h */,
-				CFD4504C1B8A508500E2E78D /* NSDate+NetworkClock.m */,
-				CFD4504D1B8A508500E2E78D /* ntp-log.h */,
-			);
-			path = "ios-ntp-lib";
-			sourceTree = "<group>";
-		};
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
-				CFD450441B8A508500E2E78D /* ios-ntp-lib */,
 				CF52989A1A0D1149002A4D54 /* PaintCode generated files */,
 				CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */,
 				CFFF327D19796BF600F7CE57 /* CrowdSensing-iOSTests */,
@@ -417,7 +382,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */,
-				CFD450501B8A508500E2E78D /* Notes in Resources */,
 				CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */,
 				CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */,
 				CFFF326019796BF600F7CE57 /* InfoPlist.strings in Resources */,
@@ -443,7 +407,6 @@
 				CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */,
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
 				CFFF326219796BF600F7CE57 /* main.m in Sources */,
-				CFD450541B8A50D100E2E78D /* GCDAsyncUdpSocket.m in Sources */,
 				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,
 				CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */,
 				CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */,
@@ -453,8 +416,6 @@
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
 				CF8E9BF11B344D4B005AC2FC /* LogEntry.m in Sources */,
 				CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */,
-				CFD4504F1B8A508500E2E78D /* NetworkClock.m in Sources */,
-				CFD450511B8A508500E2E78D /* NSDate+NetworkClock.m in Sources */,
 				CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */,
 				CF8E9BF41B344D4B005AC2FC /* Recording.m in Sources */,
 				CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */,
@@ -464,7 +425,6 @@
 				CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */,
 				CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */,
 				CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */,
-				CFD4504E1B8A508500E2E78D /* NetAssociation.m in Sources */,
 				CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */,
 				CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */,
 			);
