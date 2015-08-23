@@ -384,6 +384,26 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="bfw-Mk-F3m" detailTextLabel="Kna-9T-OuR" rowHeight="44" style="IBUITableViewCellStyleValue1" id="qEU-T9-0TR">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEU-T9-0TR" id="h0g-e2-qOF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Eddystone™ Proximity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bfw-Mk-F3m">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kna-9T-OuR">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="Jlp-iR-ddD">
@@ -425,6 +445,7 @@
                         <outlet property="batterySensorCell" destination="7ao-8U-E3g" id="qqP-qX-yti"/>
                         <outlet property="beaconSensorCell" destination="d4H-SX-ACn" id="y7Z-za-YhK"/>
                         <outlet property="deviceMotionSensorCell" destination="rZu-dO-ELu" id="kHM-cT-gWn"/>
+                        <outlet property="eddystoneSensorCell" destination="qEU-T9-0TR" id="V9C-x4-eCN"/>
                         <outlet property="gyroscopeSensorCell" destination="JeZ-Uu-Fwr" id="ABb-By-Yym"/>
                         <outlet property="locationSensorCell" destination="SU3-l0-nu7" id="TCV-Y4-MGn"/>
                         <outlet property="magnetometerSensorCell" destination="iJ8-Pw-RAD" id="aDq-Hm-dqG"/>

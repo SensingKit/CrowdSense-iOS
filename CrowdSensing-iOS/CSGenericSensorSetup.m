@@ -78,6 +78,10 @@
             self.title = @"iBeacon Proximity";
             break;
             
+        case CSSensorSetupEddystoneType:
+            self.title = @"Eddystone™ Proximity";
+            break;
+            
         case CSSensorSetupBatteryType:
             self.title = @"Battery";
             break;

@@ -96,6 +96,10 @@
     {
         return CSSensorSetupBeaconType;
     }
+    else if ([sensorName isEqualToString:@"Eddystone™ Proximity"])
+    {
+        return CSSensorSetupEddystoneType;
+    }
     else if ([sensorName isEqualToString:@"Battery"])
     {
         return CSSensorSetupBatteryType;
@@ -137,6 +141,10 @@
     {
         return iBeaconProximity;
     }
+    else if ([sensorName isEqualToString:@"Eddystone™ Proximity"])
+    {
+        return EddystoneProximity;
+    }
     else if ([sensorName isEqualToString:@"Battery"])
     {
         return Battery;
@@ -175,6 +183,9 @@
             
         case iBeaconProximity:
             return @"iBeacon Proximity sensor uses Apple's iBeacon technology to estimate the proximity of the current device with other devices actively running CrowdSense application.";
+            
+        case EddystoneProximity:
+            return @"Eddystone™ Proximity sensor estimates the proximity of the current device with Eddystone™ beacons in range.";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
@@ -215,6 +226,10 @@
             sensorModule = iBeaconProximity;
             break;
             
+        case CSSensorSetupEddystoneType:
+            sensorModule = EddystoneProximity;
+            break;
+            
         case CSSensorSetupBatteryType:
             sensorModule = Battery;
             break;
@@ -252,6 +267,7 @@
     [self updateTableViewCell:self.activitySensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Activity]];
     [self updateTableViewCell:self.locationSensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Location]];
     [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:iBeaconProximity]];
+    [self updateTableViewCell:self.eddystoneSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:EddystoneProximity]];
     [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Battery]];
 }
 

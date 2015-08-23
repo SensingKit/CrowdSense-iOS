@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *locationSensorCell;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *beaconSensorCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *eddystoneSensorCell;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *batterySensorCell;
 
