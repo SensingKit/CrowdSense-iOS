@@ -31,6 +31,7 @@
 		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
 		CFD450291B885C4900E2E78D /* CSInformationModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */; };
+		CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFD450421B8A0DEC00E2E78D /* Settings.bundle */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
 		CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325719796BF600F7CE57 /* CoreGraphics.framework */; };
 		CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325919796BF600F7CE57 /* UIKit.framework */; };
@@ -99,6 +100,7 @@
 		CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRoundButton.m; sourceTree = "<group>"; };
 		CFD450271B885C4900E2E78D /* CSInformationModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInformationModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInformationModelWriter.m; sourceTree = "<group>"; };
+		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CFF581D91A0EA56400CBEE4D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF325519796BF600F7CE57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -203,6 +205,7 @@
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
+				CFD450421B8A0DEC00E2E78D /* Settings.bundle */,
 				CF52989A1A0D1149002A4D54 /* PaintCode generated files */,
 				CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */,
 				CFFF327D19796BF600F7CE57 /* CrowdSensing-iOSTests */,
@@ -378,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */,
 				CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */,
 				CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */,
 				CFFF326019796BF600F7CE57 /* InfoPlist.strings in Resources */,
