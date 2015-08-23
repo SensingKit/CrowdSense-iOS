@@ -766,7 +766,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers and developers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled.
+                                        <string key="content">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers and developers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. All collected data can be accessed through iTunes File Sharing feature, using iTunes software.
 
 CrowdSense supports the following sensor modules:
 - Accelerometer
@@ -775,6 +775,8 @@ CrowdSense supports the following sensor modules:
 - Device Motion (Gravity, User acceleration, Magnetic Field, Rotation, Attitude)
 - Activity (for iPhone 5S, 6 &amp; 6 Plus)
 - Location
+- iBeacon™ Proximity
+- Eddystone™ Proximity
 - Battery
 
 For more details about SensingKit library, please refer to the website www.sensingkit.org, or read the following Extended Abstract publication:
@@ -783,8 +785,8 @@ Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, “Poster: SensingKit -- A
 
 This application is part of a Ph.D. research, conducted in Queen Mary University of London.</string>
                                         <attributes>
-                                            <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <color key="NSColor" red="0.29493025751072965" green="0.29493025751072965" blue="0.29493025751072965" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="Helvetica-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
