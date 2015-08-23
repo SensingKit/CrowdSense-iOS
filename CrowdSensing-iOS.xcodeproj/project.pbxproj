@@ -100,7 +100,7 @@
 		CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRoundButton.m; sourceTree = "<group>"; };
 		CFD450271B885C4900E2E78D /* CSInformationModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInformationModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInformationModelWriter.m; sourceTree = "<group>"; };
-		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		CFF581D91A0EA56400CBEE4D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF325519796BF600F7CE57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -205,7 +205,6 @@
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
-				CFD450421B8A0DEC00E2E78D /* Settings.bundle */,
 				CF52989A1A0D1149002A4D54 /* PaintCode generated files */,
 				CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */,
 				CFFF327D19796BF600F7CE57 /* CrowdSensing-iOSTests */,
@@ -259,6 +258,7 @@
 				CFFF325C19796BF600F7CE57 /* Supporting Files */,
 				CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */,
 				CFFF326719796BF600F7CE57 /* Storyboard.storyboard */,
+				CFD450421B8A0DEC00E2E78D /* Settings.bundle */,
 			);
 			path = "CrowdSensing-iOS";
 			sourceTree = "<group>";
