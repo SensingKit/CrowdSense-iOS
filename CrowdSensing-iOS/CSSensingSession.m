@@ -118,6 +118,11 @@
     }
 }
 
+- (BOOL)isSensorAvailable:(SKSensorModuleType)moduleType
+{
+     return [self.sensingKitLib isSensorModuleAvailable:moduleType];
+}
+
 - (BOOL)isSensorEnabled:(SKSensorModuleType)moduleType
 {
     return [self.sensingKitLib isSensorModuleRegistered:moduleType];

@@ -34,10 +34,17 @@
     {
         case CSSensorStatusDisabled:
             self.sensorSwitch.on = NO;
+            self.sensorSwitch.enabled = YES;
             break;
             
         case CSSensorStatusEnabled:
             self.sensorSwitch.on = YES;
+            self.sensorSwitch.enabled = YES;
+            break;
+            
+        case CSSensorStatusNotAvailable:
+            self.sensorSwitch.on = NO;
+            self.sensorSwitch.enabled = NO;
             break;
             
         default:

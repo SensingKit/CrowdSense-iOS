@@ -24,7 +24,8 @@ typedef NS_ENUM(NSUInteger, CSSensorSetupType) {
 
 typedef NS_ENUM(NSUInteger, CSSensorStatus) {
     CSSensorStatusEnabled,
-    CSSensorStatusDisabled
+    CSSensorStatusDisabled,
+    CSSensorStatusNotAvailable
 };
 
 @interface CSGenericSensorSetup : UITableViewController

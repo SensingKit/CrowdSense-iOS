@@ -46,7 +46,11 @@
     NSString *sensorDescription = [self sensorDescriptionForSensorWithType:moduleType];
     
     CSSensorStatus sensorStatus;
-    if ([self.sensingSession isSensorEnabled:moduleType])
+    if (![self.sensingSession isSensorAvailable:moduleType])
+    {
+        sensorStatus = CSSensorStatusNotAvailable;
+    }
+    else if ([self.sensingSession isSensorEnabled:moduleType])
     {
         sensorStatus = CSSensorStatusEnabled;
     }
