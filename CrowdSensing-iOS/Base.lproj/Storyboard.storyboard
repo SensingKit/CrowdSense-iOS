@@ -356,6 +356,26 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="3gA-dk-YVq" detailTextLabel="6Jj-A6-Jb6" rowHeight="44" style="IBUITableViewCellStyleValue1" id="iP8-Ec-hAF">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iP8-Ec-hAF" id="4SF-zd-xP0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Altimeter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3gA-dk-YVq">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Jj-A6-Jb6">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="Egb-Bu-RIW">
@@ -462,6 +482,7 @@
                     <connections>
                         <outlet property="accelerometerSensorCell" destination="1kn-3I-ZCX" id="y6A-x0-y4J"/>
                         <outlet property="activitySensorCell" destination="CxS-6Y-k8Y" id="PsU-7s-quS"/>
+                        <outlet property="altimeterSensorCell" destination="iP8-Ec-hAF" id="zsd-pt-hYh"/>
                         <outlet property="batterySensorCell" destination="7ao-8U-E3g" id="qqP-qX-yti"/>
                         <outlet property="beaconSensorCell" destination="d4H-SX-ACn" id="y7Z-za-YhK"/>
                         <outlet property="deviceMotionSensorCell" destination="rZu-dO-ELu" id="kHM-cT-gWn"/>
@@ -796,6 +817,7 @@ CrowdSense supports the following sensor modules:
 - Device Motion (Gravity, User acceleration, Magnetic Field, Rotation, Attitude)
 - Activity
 - Pedometer
+- Altimeter
 - Location
 - iBeacon™ Proximity
 - Eddystone™ Proximity

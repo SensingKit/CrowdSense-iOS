@@ -92,6 +92,10 @@
     {
         return CSSensorSetupPedometerType;
     }
+    else if ([sensorName isEqualToString:@"Altimeter"])
+    {
+        return CSSensorSetupAltimeterType;
+    }
     else if ([sensorName isEqualToString:@"Location"])
     {
         return CSSensorSetupLocationType;
@@ -141,6 +145,10 @@
     {
         return Pedometer;
     }
+    else if ([sensorName isEqualToString:@"Altimeter"])
+    {
+        return Altimeter;
+    }
     else if ([sensorName isEqualToString:@"Location"])
     {
         return Location;
@@ -185,6 +193,9 @@
             
         case Pedometer:
             return @"Pedometer sensor uses an embedded motion co-processor that captures pedestrian-related data such as step counts, distance traveled and the number of floors ascended or descended.";
+            
+        case Altimeter:
+            return @"Altimeter sensor uses an embedded barometer sensor to capture relative changes in altitude (but not the actual altitude). It also provides the recorded atmospheric pressure in kPa.";
             
         case Battery:
             return @"Battery sensor listens for changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).";
@@ -231,6 +242,10 @@
             
         case CSSensorSetupPedometerType:
             sensorModule = Pedometer;
+            break;
+            
+        case CSSensorSetupAltimeterType:
+            sensorModule = Altimeter;
             break;
             
         case CSSensorSetupLocationType:
@@ -281,6 +296,7 @@
     [self updateTableViewCell:self.deviceMotionSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:DeviceMotion]];
     [self updateTableViewCell:self.activitySensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Activity]];
     [self updateTableViewCell:self.pedometerSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:Pedometer]];
+    [self updateTableViewCell:self.altimeterSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:Altimeter]];
     [self updateTableViewCell:self.locationSensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Location]];
     [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:iBeaconProximity]];
     [self updateTableViewCell:self.eddystoneSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:EddystoneProximity]];

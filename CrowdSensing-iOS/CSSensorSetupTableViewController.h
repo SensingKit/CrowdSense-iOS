@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *deviceMotionSensorCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *activitySensorCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *pedometerSensorCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *altimeterSensorCell;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *locationSensorCell;
 
