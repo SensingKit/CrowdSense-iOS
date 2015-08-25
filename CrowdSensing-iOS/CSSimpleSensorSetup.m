@@ -20,7 +20,7 @@
 
 - (IBAction)sensorSwitchAction:(id)sender
 {
-    if (self.delegate)
+    if (self.delegate && self.sensorStatus != CSSensorStatusNotAvailable)
     {
         UISwitch *sensorSwitch = sender;
         
@@ -32,6 +32,24 @@
         {
             [self.delegate changeStatus:CSSensorStatusDisabled ofSensorWithType:self.sensorSetupType];
         }
+    }
+}
+
+- (IBAction)switchTouchedAction:(id)sender
+{
+    if (self.sensorStatus == CSSensorStatusNotAvailable)
+    {
+        NSString *title = [NSString stringWithFormat:@"%@ Sensor", self.title];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:@"Sensor is not available on this device."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        
+        [self.sensorSwitch setOn:NO animated:YES];
     }
 }
 

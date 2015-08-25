@@ -607,6 +607,7 @@
                                                     <rect key="frame" x="536" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="sensorSwitchAction:" destination="vyI-8l-K4q" eventType="valueChanged" id="gDg-Ue-vGA"/>
+                                                        <action selector="switchTouchedAction:" destination="vyI-8l-K4q" eventType="touchUpInside" id="3Pc-eM-hGj"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
