@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, CSSensorSetupType) {
     CSSensorSetupMagnetometerType,
     CSSensorSetupDeviceMotionType,
     CSSensorSetupActivityType,
+    CSSensorSetupPedometerType,
     CSSensorSetupLocationType,
     CSSensorSetupBeaconType,
     CSSensorSetupEddystoneType,

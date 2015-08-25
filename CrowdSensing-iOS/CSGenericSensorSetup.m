@@ -70,6 +70,10 @@
             self.title = @"Activity";
             break;
             
+        case CSSensorSetupPedometerType:
+            self.title = @"Pedometer";
+            break;
+            
         case CSSensorSetupLocationType:
             self.title = @"Location";
             break;

@@ -10,7 +10,7 @@
 #import "CSModelWriter.h"
 #import "CSInformationModelWriter.h"
 
-#define TOTAL_SENSOR_MODULES 8
+#define TOTAL_SENSOR_MODULES 10
 
 @interface CSSensingSession ()
 
@@ -158,6 +158,9 @@
             
         case Activity:
             return @"Activity";
+            
+        case Pedometer:
+            return @"Pedometer";
             
         case Battery:
             return @"Battery";

@@ -88,6 +88,10 @@
     {
         return CSSensorSetupActivityType;
     }
+    else if ([sensorName isEqualToString:@"Pedometer"])
+    {
+        return CSSensorSetupPedometerType;
+    }
     else if ([sensorName isEqualToString:@"Location"])
     {
         return CSSensorSetupLocationType;
@@ -133,6 +137,10 @@
     {
         return Activity;
     }
+    else if ([sensorName isEqualToString:@"Pedometer"])
+    {
+        return Pedometer;
+    }
     else if ([sensorName isEqualToString:@"Location"])
     {
         return Location;
@@ -175,6 +183,9 @@
         case Activity:
             return @"Activity sensor uses an embedded motion co-processor that senses the user’s activity classified as Stationary, Walking, Running, Automotive or Cycling.";
             
+        case Pedometer:
+            return @"Pedometer sensor uses an embedded motion co-processor that captures pedestrian-related data such as step counts, distance traveled and the number of floors ascended or descended.";
+            
         case Battery:
             return @"Battery sensor listens for changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).";
             
@@ -216,6 +227,10 @@
             
         case CSSensorSetupActivityType:
             sensorModule = Activity;
+            break;
+            
+        case CSSensorSetupPedometerType:
+            sensorModule = Pedometer;
             break;
             
         case CSSensorSetupLocationType:
@@ -265,6 +280,7 @@
     [self updateTableViewCell:self.magnetometerSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:Magnetometer]];
     [self updateTableViewCell:self.deviceMotionSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:DeviceMotion]];
     [self updateTableViewCell:self.activitySensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Activity]];
+    [self updateTableViewCell:self.pedometerSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:Pedometer]];
     [self updateTableViewCell:self.locationSensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Location]];
     [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:iBeaconProximity]];
     [self updateTableViewCell:self.eddystoneSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:EddystoneProximity]];
