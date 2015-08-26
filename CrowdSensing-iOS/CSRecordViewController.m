@@ -411,14 +411,13 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[_fetchedResultsController sections] count];
+    return [[self.fetchedResultsController sections] count];
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id sectionInfo = [_fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    return [self.fetchedResultsController.sections[section] numberOfObjects];
 }
 
 // Customize the appearance of table view cells.
