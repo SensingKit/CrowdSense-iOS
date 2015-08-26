@@ -365,7 +365,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             }
             else
             {
-                // TODO: Error
+                // Ask again
+                [self showSaveRecordingAlertWithName:self.recording.title];
             }
         }
         else
@@ -418,7 +419,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             }
             else
             {
-                // TODO: Error
+                // Ask again
+                [self showSetNameAlertWithName:self.recording.title];
             }
         }
         else if ([buttonText isEqualToString:@"Cancel"])
