@@ -1,5 +1,5 @@
 //
-//  CSInfoViewController.h
+//  CSAboutViewController.h
 //  CrowdSensing-iOS
 //
 //  Created by Minos Katevas on 18/10/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSInfoViewController : UIViewController
+@interface CSAboutViewController : UIViewController
 
 @end

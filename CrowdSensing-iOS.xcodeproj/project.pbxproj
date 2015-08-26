@@ -28,7 +28,7 @@
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
 		CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */; };
 		CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */; };
-		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
+		CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSAboutViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
 		CFC896281B8DE47F004F857C /* CSRecordingInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */; };
 		CFC8965C1B8E1388004F857C /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC896501B8E1388004F857C /* Main.m */; };
@@ -101,8 +101,8 @@
 		CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSensingSession.m; sourceTree = "<group>"; };
 		CFB668BD1B5434CC00D3ED80 /* CSModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSModelWriter.h; sourceTree = "<group>"; };
 		CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSModelWriter.m; sourceTree = "<group>"; };
-		CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInfoViewController.h; sourceTree = "<group>"; };
-		CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInfoViewController.m; sourceTree = "<group>"; };
+		CFB7CD1F19F2E2BC00F6B406 /* CSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAboutViewController.h; sourceTree = "<group>"; };
+		CFB7CD2019F2E2BC00F6B406 /* CSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAboutViewController.m; sourceTree = "<group>"; };
 		CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRoundButton.h; sourceTree = "<group>"; };
 		CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRoundButton.m; sourceTree = "<group>"; };
 		CFC896261B8DE47F004F857C /* CSRecordingInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingInfoTableViewController.h; sourceTree = "<group>"; };
@@ -289,8 +289,8 @@
 				CFFF327019796BF600F7CE57 /* Images.xcassets */,
 				CF8E9BEC1B342C6D005AC2FC /* CSMainTableTableViewController.h */,
 				CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */,
-				CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */,
-				CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */,
+				CFB7CD1F19F2E2BC00F6B406 /* CSAboutViewController.h */,
+				CFB7CD2019F2E2BC00F6B406 /* CSAboutViewController.m */,
 				CFC896261B8DE47F004F857C /* CSRecordingInfoTableViewController.h */,
 				CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */,
 				CFFF326D19796BF600F7CE57 /* CSRecordViewController.h */,
@@ -469,7 +469,7 @@
 				CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */,
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
 				CF8E9BF11B344D4B005AC2FC /* LogEntry.m in Sources */,
-				CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */,
+				CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */,
 				CFC8965D1B8E1388004F857C /* ioapi.c in Sources */,
 				CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */,
 				CF8E9BF41B344D4B005AC2FC /* Recording.m in Sources */,

@@ -1,18 +1,18 @@
 //
-//  CSInfoViewController.m
+//  CSAboutViewController.m
 //  CrowdSensing-iOS
 //
 //  Created by Minos Katevas on 18/10/2014.
 //  Copyright (c) 2014 Kleomenis Katevas. All rights reserved.
 //
 
-#import "CSInfoViewController.h"
+#import "CSAboutViewController.h"
 
-@interface CSInfoViewController ()
+@interface CSAboutViewController ()
 
 @end
 
-@implementation CSInfoViewController
+@implementation CSAboutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -782,7 +782,7 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="CrowdSense" id="Hx7-zE-HqQ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="hY0-bh-Zel"/>
-                        <barButtonItem key="leftBarButtonItem" title="Info" id="WLF-DH-aS4">
+                        <barButtonItem key="leftBarButtonItem" title="About" id="WLF-DH-aS4">
                             <connections>
                                 <segue destination="jhA-ja-4Qx" kind="presentation" identifier="Show About Screen" modalPresentationStyle="formSheet" id="8DX-a8-xoD"/>
                             </connections>
@@ -796,7 +796,7 @@
         <!--About CrowdSense-->
         <scene sceneID="kda-vZ-dTH">
             <objects>
-                <viewController id="Ia2-eY-cWS" customClass="CSInfoViewController" sceneMemberID="viewController">
+                <viewController id="Ia2-eY-cWS" customClass="CSAboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Pu-PX-iEl"/>
                         <viewControllerLayoutGuide type="bottom" id="8HC-l9-5Dk"/>
@@ -805,12 +805,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-FV-hzu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-FV-hzu">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers and developers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. All collected data can be accessed through iTunes File Sharing feature, using iTunes software.
+                                <string key="text">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers and developers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. All collected data can be accessed through iTunes File Sharing feature, using iTunes software.
 
 CrowdSense supports the following sensor modules:
 - Accelerometer
@@ -830,13 +828,8 @@ For more details about SensingKit library, please refer to the website www.sensi
 Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, “Poster: SensingKit -- A Multi-Platform Mobile Sensing Framework for Large-Scale Experiments”, Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
 This application is part of a Ph.D. research, conducted in Queen Mary University of London.</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.29493025751072965" green="0.29493025751072965" blue="0.29493025751072965" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Helvetica-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <color key="textColor" red="0.29493025751072965" green="0.29493025751072965" blue="0.29493025751072965" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
