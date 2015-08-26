@@ -151,6 +151,18 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return @"Recorded data can be accessed using iTunes software through iTunes file sharing. Alternatively you use the Share button to send the data over the Internet.";
+    }
+    else
+    {
+        return nil;
+    }
+}
+
 #pragma mark - Sharing
 
 - (IBAction)shareAction:(id)sender
