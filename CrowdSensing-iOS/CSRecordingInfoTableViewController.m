@@ -177,6 +177,18 @@
     {
         return @"Recorded data can be accessed using iTunes software through iTunes file sharing. Alternatively you use the Share button to send the data over the Internet.";
     }
+    else if (section == 1)
+    {
+        // If recording log is empty
+        if (![self.fetchedResultsController.fetchedObjects count])
+        {
+            return @"Empty recording log.";
+        }
+        else
+        {
+            return nil;
+        }
+    }
     else
     {
         return nil;
