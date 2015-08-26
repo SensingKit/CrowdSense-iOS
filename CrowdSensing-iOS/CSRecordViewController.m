@@ -257,6 +257,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     UITextField *textField = [alertView textFieldAtIndex:0];
     textField.text = self.recording.title;
     textField.placeholder = self.recording.title;
+    textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
     
     [alertView show];
 }
