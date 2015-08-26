@@ -34,6 +34,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 @property (weak, nonatomic) IBOutlet CSRoundButton *startButton;
 @property (weak, nonatomic) IBOutlet CSRoundButton *syncButton;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
 @property (nonatomic) enum CSStartButtonMode startButtonMode;
 
 @property (strong, nonatomic) NSDateFormatter *timerDateFormatter;
@@ -164,10 +166,15 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 - (IBAction)startButtonAction:(CSRoundButton *)sender
 {
     switch (self.startButtonMode) {
+            
         case CSStartButtonStartMode:
             
             NSLog(@"Start Action");
             [self startTimer];
+            
+            // Disable Done and Setup buttons
+            self.doneButton.enabled = NO;
+            self.setupButton.enabled = NO;
             
             // Add to the list
             [self addLogEntryWithLabel:@"Start"];
@@ -186,6 +193,10 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Pause Action");
             [self pauseTimer];
+            
+            // Enable Done and Setup buttons
+            self.doneButton.enabled = YES;
+            self.setupButton.enabled = YES;
             
             // Add to the list
             [self addLogEntryWithLabel:@"Stop"];
@@ -207,6 +218,10 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             NSLog(@"Continue Action");
             [self continueTimer];
+            
+            // Disable Done and Setup buttons
+            self.doneButton.enabled = NO;
+            self.setupButton.enabled = NO;
             
             // Add to the list
             [self addLogEntryWithLabel:@"Start"];

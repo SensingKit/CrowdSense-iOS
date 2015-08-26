@@ -137,6 +137,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="fin-9J-2vk" id="uxW-4Q-qen"/>
                         <outlet property="setupButton" destination="oFx-MS-8e4" id="lpG-Pn-9QS"/>
                         <outlet property="startButton" destination="48k-Ft-YWZ" id="hH3-IT-I2J"/>
                         <outlet property="syncButton" destination="47l-nY-Bhw" id="AGg-YM-Mxr"/>
