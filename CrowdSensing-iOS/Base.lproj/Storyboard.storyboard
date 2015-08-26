@@ -956,6 +956,9 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
+                    <connections>
+                        <outlet property="shareButton" destination="8tz-9s-QVw" id="cO2-FX-ug7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tho-p4-E6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

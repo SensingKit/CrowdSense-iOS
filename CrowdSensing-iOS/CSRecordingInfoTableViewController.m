@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSDateFormatter *timestampDateFormatter;
 @property (strong, nonatomic) NSDateFormatter *durationDateFormatter;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 
 @end
 
@@ -235,6 +236,13 @@
                                                      UIActivityTypePostToFlickr,
                                                      UIActivityTypePostToVimeo,
                                                      UIActivityTypePostToTencentWeibo];
+    
+    // To avoid crash on iPad and iOS 8
+    if ([activityViewController respondsToSelector:@selector(popoverPresentationController)])
+    {
+        // iOS8
+        activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
+    }
     
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
