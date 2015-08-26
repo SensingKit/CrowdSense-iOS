@@ -8,6 +8,7 @@
 
 #import "CSRecordingInfoTableViewController.h"
 #import "LogEntry.h"
+#import "GZIP.h"
 
 @interface CSRecordingInfoTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -148,6 +149,37 @@
     }
 }
 
+#pragma mark - Sharing
 
+- (IBAction)shareAction:(id)sender
+{
+    NSString *text = @"TEXT";
+    
+    NSString *path = [NSString stringWithFormat:@"%@/Information.csv", self.recording.storageFolder];
+    NSURL *attachment = [NSURL URLWithString:path relativeToURL:[self applicationDocumentsDirectory]];
+
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[text, attachment] applicationActivities:nil];
+    
+    // Exclude Activities
+    activityViewController.excludedActivityTypes = @[UIActivityTypePostToFacebook,
+                                                     UIActivityTypePostToTwitter,
+                                                     UIActivityTypePostToWeibo,
+                                                     UIActivityTypeMessage,
+                                                     UIActivityTypePrint,
+                                                     UIActivityTypeCopyToPasteboard,
+                                                     UIActivityTypeAssignToContact,
+                                                     UIActivityTypeSaveToCameraRoll,
+                                                     UIActivityTypeAddToReadingList,
+                                                     UIActivityTypePostToFlickr,
+                                                     UIActivityTypePostToVimeo,
+                                                     UIActivityTypePostToTencentWeibo];
+    
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
 
 @end

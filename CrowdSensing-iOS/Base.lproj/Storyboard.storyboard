@@ -955,7 +955,11 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="LWE-rh-CF4"/>
-                        <barButtonItem systemItem="action" id="8tz-9s-QVw"/>
+                        <barButtonItem systemItem="action" id="8tz-9s-QVw">
+                            <connections>
+                                <action selector="shareAction:" destination="eAb-MT-Ftx" id="Bf2-hr-kbg"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tho-p4-E6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
