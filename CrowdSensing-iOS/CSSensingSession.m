@@ -10,7 +10,7 @@
 #import "CSModelWriter.h"
 #import "CSRecordingLogModelWriter.h"
 
-#define TOTAL_SENSOR_MODULES 10
+#define TOTAL_SENSOR_MODULES 11
 
 @interface CSSensingSession ()
 
