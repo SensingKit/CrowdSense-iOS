@@ -169,9 +169,7 @@
         NSLog(@"Zip file could not be created.");
     }
     
-    NSString *title = self.recording.title;
-    
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[title, attachment] applicationActivities:nil];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[attachment] applicationActivities:nil];
     
     // Call this when the activity is completed
     [activityViewController setCompletionHandler:^(NSString *activityType, BOOL completed) {
