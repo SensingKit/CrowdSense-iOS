@@ -173,6 +173,13 @@
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[title, attachment] applicationActivities:nil];
     
+    // Call this when the activity is completed
+    [activityViewController setCompletionHandler:^(NSString *activityType, BOOL completed) {
+
+        // Delete the temporary file
+        [[NSFileManager defaultManager] removeItemAtURL:attachment error:nil];
+    }];
+    
     // Exclude Activities
     activityViewController.excludedActivityTypes = @[UIActivityTypePostToFacebook,
                                                      UIActivityTypePostToTwitter,
