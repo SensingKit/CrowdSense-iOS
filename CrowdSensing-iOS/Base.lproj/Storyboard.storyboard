@@ -58,7 +58,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="syncButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8iV-Yg-WdY"/>
+                                    <action selector="syncButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="qTP-tV-uIu"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dxm-x2-aJf">
