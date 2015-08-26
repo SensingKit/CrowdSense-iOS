@@ -96,6 +96,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     self.recording.createDate = createDate;
     self.recording.storageFolder = folderName;
     
+    // zero the duration
+    self.duration = [NSDate distantPast];
+    
     // Create the SensingSession
     self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
 }
