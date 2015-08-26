@@ -120,7 +120,8 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CrowdSense.DGStore"];
+    NSURL *hiddenDocuments = [self applicationHiddenDocumentsDirectory];
+    NSURL *storeURL = [hiddenDocuments URLByAppendingPathComponent:@"CrowdSense.DGStore"];
     
     /*
      Set up the store.
@@ -184,6 +185,34 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+// Returns a directory that is not visible in iTunes file sharing
+// Thanks to http://stackoverflow.com/questions/3864823/hide-core-data-sqlite-file-when-itunes-file-sharing-is-enabled?lq=1
+- (NSURL *)applicationHiddenDocumentsDirectory
+{
+    NSURL *libraryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *url = [libraryURL URLByAppendingPathComponent:@"Private Documents"];
+    
+    BOOL isDirectory;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:url.path isDirectory:&isDirectory]) {
+        if (isDirectory)
+            return url;
+        else {
+            // Handle error. ".data" is a file which should not be there...
+            [NSException raise:@".data exists, and is a file" format:@"Path: %@", url.path];
+            // NSError *error = nil;
+            // if (![[NSFileManager defaultManager] removeItemAtPath:path error:&error]) {
+            //     [NSException raise:@"could not remove file" format:@"Path: %@", path];
+            // }
+        }
+    }
+    NSError *error = nil;
+    if (![[NSFileManager defaultManager] createDirectoryAtPath:url.path withIntermediateDirectories:YES attributes:nil error:&error]) {
+        // Handle error.
+        [NSException raise:@"Failed creating directory" format:@"[%@], %@", url.path, error];
+    }
+    return url;
 }
 
 @end
