@@ -8,7 +8,9 @@
 
 #import "CSRecordingInfoTableViewController.h"
 #import "LogEntry.h"
-#import "GZIP.h"
+
+// ZipArchive
+#import "Main.h"
 
 @interface CSRecordingInfoTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -153,12 +155,23 @@
 
 - (IBAction)shareAction:(id)sender
 {
-    NSString *text = @"TEXT";
+    NSString *attachmentName = [NSString stringWithFormat:@"%@.zip", self.recording.storageFolder];
+    NSURL *filesDirectory = [self storageFolderFromRecording:self.recording];
+    NSURL *attachment = [self zipFileWithName:attachmentName];
     
-    NSString *path = [NSString stringWithFormat:@"%@/Information.csv", self.recording.storageFolder];
-    NSURL *attachment = [NSURL URLWithString:path relativeToURL:[self applicationDocumentsDirectory]];
-
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[text, attachment] applicationActivities:nil];
+    // Zip Directory
+    if ([[NSFileManager defaultManager] fileExistsAtPath:attachment.path])
+    {
+        NSLog(@"File already exist. No need to create it again.");
+    }
+    else if (![Main createZipFileAtPath:attachment.path withContentsOfDirectory:filesDirectory.path keepParentDirectory:YES])
+    {
+        NSLog(@"Zip file could not be created.");
+    }
+    
+    NSString *title = self.recording.title;
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[title, attachment] applicationActivities:nil];
     
     // Exclude Activities
     activityViewController.excludedActivityTypes = @[UIActivityTypePostToFacebook,
@@ -177,9 +190,24 @@
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
+- (NSURL *)zipFileWithName:(NSString *)name
+{
+    return [[self applicationCachesDirectory] URLByAppendingPathComponent:name isDirectory:NO];
+}
+
+- (NSURL *)storageFolderFromRecording:(Recording *)recording
+{
+    return [[self applicationDocumentsDirectory] URLByAppendingPathComponent:self.recording.storageFolder isDirectory:YES];
+}
+
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (NSURL *)applicationCachesDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end
