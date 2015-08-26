@@ -291,7 +291,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 {
     NSString *message = [NSString stringWithFormat:@"Are you sure you want to delete\n\"%@\"?", recordingName];
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Delete Sensor Recording"
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Delete Recording"
                                                         message:message
                                                        delegate:self
                                               cancelButtonTitle:@"Cancel"
