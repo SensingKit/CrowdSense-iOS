@@ -30,6 +30,7 @@
 		CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
+		CFC896281B8DE47F004F857C /* CSRecordingInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */; };
 		CFD450291B885C4900E2E78D /* CSInformationModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */; };
 		CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFD450421B8A0DEC00E2E78D /* Settings.bundle */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
@@ -98,6 +99,8 @@
 		CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInfoViewController.m; sourceTree = "<group>"; };
 		CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRoundButton.h; sourceTree = "<group>"; };
 		CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRoundButton.m; sourceTree = "<group>"; };
+		CFC896261B8DE47F004F857C /* CSRecordingInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingInfoTableViewController.h; sourceTree = "<group>"; };
+		CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingInfoTableViewController.m; sourceTree = "<group>"; };
 		CFD450271B885C4900E2E78D /* CSInformationModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInformationModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInformationModelWriter.m; sourceTree = "<group>"; };
 		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 				CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */,
 				CFB7CD1F19F2E2BC00F6B406 /* CSInfoViewController.h */,
 				CFB7CD2019F2E2BC00F6B406 /* CSInfoViewController.m */,
+				CFC896261B8DE47F004F857C /* CSRecordingInfoTableViewController.h */,
+				CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */,
 				CFFF326D19796BF600F7CE57 /* CSRecordViewController.h */,
 				CFFF326E19796BF600F7CE57 /* CSRecordViewController.m */,
 				CFB668BA1B5434BC00D3ED80 /* CSSensingSession.h */,
@@ -410,6 +415,7 @@
 				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,
 				CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */,
 				CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */,
+				CFC896281B8DE47F004F857C /* CSRecordingInfoTableViewController.m in Sources */,
 				CFD450291B885C4900E2E78D /* CSInformationModelWriter.m in Sources */,
 				CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */,
 				CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */,

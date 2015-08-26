@@ -8,6 +8,7 @@
 
 #import "CSMainTableTableViewController.h"
 #import "CSRecordViewController.h"
+#import "CSRecordingInfoTableViewController.h"
 #import "Recording.h"
 #import "Recording+Create.h"
 
@@ -145,6 +146,14 @@
                                                 inManagedObjectContext:self.managedObjectContext];
         
         recordViewController.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:@"Recording Info"]) {
+        
+        CSRecordingInfoTableViewController *recordingInfoController = (CSRecordingInfoTableViewController *)segue.destinationViewController;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        Recording *recording = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        recordingInfoController.recording = recording;
     }
 }
 

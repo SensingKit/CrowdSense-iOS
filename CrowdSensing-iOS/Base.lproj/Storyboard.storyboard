@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763.125" y="1192.6056338028168"/>
+            <point key="canvasLocation" x="549" y="1192"/>
         </scene>
         <!--Setup-->
         <scene sceneID="FfC-Aj-ke3">
@@ -223,7 +223,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5R-7w-1p1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2821.875" y="1192.6056338028168"/>
+            <point key="canvasLocation" x="2097" y="1192"/>
         </scene>
         <!--Sensor Setup-->
         <scene sceneID="uBX-zU-jMw">
@@ -497,7 +497,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBc-eS-2S2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4057" y="794"/>
+            <point key="canvasLocation" x="2887" y="1192"/>
         </scene>
         <!--Sampling Rate-->
         <scene sceneID="w5p-oS-Qmu">
@@ -579,7 +579,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsd-kv-97z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5055" y="1046"/>
+            <point key="canvasLocation" x="3823" y="1576"/>
         </scene>
         <!--Simple-->
         <scene sceneID="27E-S1-Kgl">
@@ -635,7 +635,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWq-hm-BmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5055" y="320"/>
+            <point key="canvasLocation" x="3823" y="848"/>
         </scene>
         <!--Sampling Rate-->
         <scene sceneID="bct-KP-8D5">
@@ -696,7 +696,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkA-F8-9KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6864" y="1046"/>
+            <point key="canvasLocation" x="5368" y="1576"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ab-Yh-ZPU">
@@ -714,7 +714,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aH-jP-KFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798.125" y="1192.6056338028168"/>
+            <point key="canvasLocation" x="1328" y="1192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VFA-Vo-LBS">
@@ -763,7 +763,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="0gj-dR-JiP" kind="show" id="wZa-ES-u7K"/>
+                                    <segue destination="eAb-MT-Ftx" kind="show" identifier="Recording Info" id="Pf1-gx-lZx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -781,6 +781,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="CrowdSense" id="Hx7-zE-HqQ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="hY0-bh-Zel"/>
                         <barButtonItem key="leftBarButtonItem" title="Info" id="WLF-DH-aS4">
                             <connections>
                                 <segue destination="jhA-ja-4Qx" kind="presentation" identifier="Show About Screen" modalPresentationStyle="formSheet" id="8DX-a8-xoD"/>
@@ -790,7 +791,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLL-xa-l7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1506" y="1654"/>
+            <point key="canvasLocation" x="-1226" y="1192"/>
         </scene>
         <!--About CrowdSense-->
         <scene sceneID="kda-vZ-dTH">
@@ -858,7 +859,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmn-aB-KHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="554" y="2025"/>
+            <point key="canvasLocation" x="549" y="437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Zo-iY-crR">
@@ -876,7 +877,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lll-Pp-7wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5866" y="1047"/>
+            <point key="canvasLocation" x="4634" y="1577"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kXE-Uy-Tad">
@@ -897,7 +898,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLL-oP-QJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2318" y="1654"/>
+            <point key="canvasLocation" x="-2104" y="1192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LGN-uK-ino">
@@ -915,25 +916,51 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9p-he-25X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="2025"/>
+            <point key="canvasLocation" x="-263" y="437"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="kxB-1e-5xh">
+        <!--Recording Info-->
+        <scene sceneID="eR9-T9-iSu">
             <objects>
-                <viewController id="0gj-dR-JiP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hkp-oU-bvb"/>
-                        <viewControllerLayoutGuide type="bottom" id="gfp-3J-XYf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ivk-4j-6EH">
+                <tableViewController title="Recording Info" id="eAb-MT-Ftx" customClass="CSRecordingInfoTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="RcD-yE-QVr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ie3-Ft-zrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Information Cell" textLabel="soX-XR-XfI" detailTextLabel="kgH-qt-Q4r" style="IBUITableViewCellStyleValue1" id="C4A-ks-h9i">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C4A-ks-h9i" id="xCF-R4-2sj">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="soX-XR-XfI">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kgH-qt-Q4r">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eAb-MT-Ftx" id="sOo-w9-oUa"/>
+                            <outlet property="delegate" destination="eAb-MT-Ftx" id="liX-E7-nDn"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="LWE-rh-CF4"/>
+                        <barButtonItem systemItem="action" id="8tz-9s-QVw"/>
+                    </toolbarItems>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tho-p4-E6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="2908"/>
+            <point key="canvasLocation" x="-263" y="1955"/>
         </scene>
     </scenes>
 </document>
