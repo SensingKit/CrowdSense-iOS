@@ -19,7 +19,6 @@
     
     recording.title = title;
     recording.createDate = createDate;
-    recording.storageFolder = @"";
     
     return recording;
 }

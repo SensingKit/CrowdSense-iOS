@@ -2,7 +2,7 @@
 //  Recording.h
 //  CrowdSensing-iOS
 //
-//  Created by Minos Katevas on 18/06/2015.
+//  Created by Minos Katevas on 26/08/2015.
 //  Copyright (c) 2015 Kleomenis Katevas. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSDate * createDate;
 @property (nonatomic, retain) NSString * storageFolder;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSDate * duration;
 @property (nonatomic, retain) NSOrderedSet *withLog;
 @end
 

@@ -22,8 +22,6 @@
 		CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8E9BDF1B336195005AC2FC /* CoreData.framework */; };
 		CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BEA1B342BB9005AC2FC /* CoreDataTableViewController.m */; };
 		CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */; };
-		CF8E9BF11B344D4B005AC2FC /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF01B344D4B005AC2FC /* LogEntry.m */; };
-		CF8E9BF41B344D4B005AC2FC /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF31B344D4B005AC2FC /* Recording.m */; };
 		CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */; };
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
 		CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */; };
@@ -37,6 +35,8 @@
 		CFC8965F1B8E1388004F857C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896571B8E1388004F857C /* unzip.c */; };
 		CFC896601B8E1388004F857C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896591B8E1388004F857C /* zip.c */; };
 		CFC896611B8E13BA004F857C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
+		CFC8966B1B8E4A4C004F857C /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966A1B8E4A4C004F857C /* Recording.m */; };
+		CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966D1B8E4A4D004F857C /* LogEntry.m */; };
 		CFD450291B885C4900E2E78D /* CSInformationModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */; };
 		CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFD450421B8A0DEC00E2E78D /* Settings.bundle */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
@@ -89,10 +89,6 @@
 		CF8E9BEA1B342BB9005AC2FC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		CF8E9BEC1B342C6D005AC2FC /* CSMainTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMainTableTableViewController.h; sourceTree = "<group>"; };
 		CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMainTableTableViewController.m; sourceTree = "<group>"; };
-		CF8E9BEF1B344D4B005AC2FC /* LogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogEntry.h; sourceTree = "<group>"; };
-		CF8E9BF01B344D4B005AC2FC /* LogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogEntry.m; sourceTree = "<group>"; };
-		CF8E9BF21B344D4B005AC2FC /* Recording.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recording.h; sourceTree = "<group>"; };
-		CF8E9BF31B344D4B005AC2FC /* Recording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recording.m; sourceTree = "<group>"; };
 		CF8E9BF81B344EF3005AC2FC /* Recording+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recording+Create.h"; sourceTree = "<group>"; };
 		CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recording+Create.m"; sourceTree = "<group>"; };
 		CF8E9BFB1B346733005AC2FC /* LogEntry+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LogEntry+Create.h"; sourceTree = "<group>"; };
@@ -118,6 +114,10 @@
 		CFC896581B8E1388004F857C /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
 		CFC896591B8E1388004F857C /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
 		CFC8965A1B8E1388004F857C /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		CFC896691B8E4A4C004F857C /* Recording.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recording.h; sourceTree = "<group>"; };
+		CFC8966A1B8E4A4C004F857C /* Recording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recording.m; sourceTree = "<group>"; };
+		CFC8966C1B8E4A4D004F857C /* LogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogEntry.h; sourceTree = "<group>"; };
+		CFC8966D1B8E4A4D004F857C /* LogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogEntry.m; sourceTree = "<group>"; };
 		CFD450271B885C4900E2E78D /* CSInformationModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInformationModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInformationModelWriter.m; sourceTree = "<group>"; };
 		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
@@ -215,10 +215,6 @@
 				CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */,
 				CF8E9BFB1B346733005AC2FC /* LogEntry+Create.h */,
 				CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */,
-				CF8E9BF21B344D4B005AC2FC /* Recording.h */,
-				CF8E9BF31B344D4B005AC2FC /* Recording.m */,
-				CF8E9BEF1B344D4B005AC2FC /* LogEntry.h */,
-				CF8E9BF01B344D4B005AC2FC /* LogEntry.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -247,6 +243,19 @@
 				CFC8965A1B8E1388004F857C /* zip.h */,
 			);
 			path = minizip;
+			sourceTree = "<group>";
+		};
+		CFC896621B8E4997004F857C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF8E9BDE1B3360AD005AC2FC /* Categories */,
+				CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */,
+				CFC8966C1B8E4A4D004F857C /* LogEntry.h */,
+				CFC8966D1B8E4A4D004F857C /* LogEntry.m */,
+				CFC896691B8E4A4C004F857C /* Recording.h */,
+				CFC8966A1B8E4A4C004F857C /* Recording.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		CFFF324919796BF600F7CE57 = {
@@ -304,9 +313,8 @@
 				CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */,
 				CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */,
 				CF18C38A19ED408800E295CB /* Settings */,
-				CF8E9BDE1B3360AD005AC2FC /* Categories */,
+				CFC896621B8E4997004F857C /* Model */,
 				CFFF325C19796BF600F7CE57 /* Supporting Files */,
-				CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */,
 				CFFF326719796BF600F7CE57 /* Storyboard.storyboard */,
 				CFD450421B8A0DEC00E2E78D /* Settings.bundle */,
 			);
@@ -458,6 +466,7 @@
 				CFC8965F1B8E1388004F857C /* unzip.c in Sources */,
 				CFC896601B8E1388004F857C /* zip.c in Sources */,
 				CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */,
+				CFC8966B1B8E4A4C004F857C /* Recording.m in Sources */,
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
 				CFFF326219796BF600F7CE57 /* main.m in Sources */,
 				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,
@@ -468,13 +477,12 @@
 				CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */,
 				CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */,
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
-				CF8E9BF11B344D4B005AC2FC /* LogEntry.m in Sources */,
 				CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */,
 				CFC8965D1B8E1388004F857C /* ioapi.c in Sources */,
 				CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */,
-				CF8E9BF41B344D4B005AC2FC /* Recording.m in Sources */,
 				CFC8965E1B8E1388004F857C /* mztools.c in Sources */,
 				CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */,
+				CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */,
 				CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */,
 				CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */,
 				CF8E9BD71B3356E6005AC2FC /* Model.xcdatamodeld in Sources */,

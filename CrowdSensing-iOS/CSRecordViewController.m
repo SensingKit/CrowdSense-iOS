@@ -40,6 +40,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 @property (strong, nonatomic) NSDateFormatter *timestampDateFormatter;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic) NSDate *duration;
 @property (nonatomic) NSTimeInterval timeElapsed;
 @property (nonatomic) NSUInteger syncCounter;
 
@@ -197,6 +198,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             self.startButtonMode = CSStartButtonContinueMode;
             
+            // Save duration in the Model
+            self.recording.duration = self.duration;
+            
             break;
             
         case CSStartButtonContinueMode:
@@ -324,6 +328,9 @@ enum CSRecordViewControllerAlertType : NSUInteger {
             
             // Save the title
             self.recording.title = recordingName;
+            
+            // Save the duration
+            self.recording.duration = self.duration;
             
             // Update the Label
             self.titleLabel.text = recordingName;
@@ -489,8 +496,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (void)updateTimerLabelWithTimeInterval:(NSTimeInterval)timeInterval
 {
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    self.timestampLabel.text = [self.timerDateFormatter stringFromDate:timerDate];
+    self.duration = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    self.timestampLabel.text = [self.timerDateFormatter stringFromDate:self.duration];
 }
 
 

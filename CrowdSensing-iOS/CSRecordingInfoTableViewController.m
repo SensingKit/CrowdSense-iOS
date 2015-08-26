@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSDateFormatter *timestampDateFormatter;
+@property (strong, nonatomic) NSDateFormatter *durationDateFormatter;
 
 @end
 
@@ -37,6 +38,7 @@
     [super didReceiveMemoryWarning];
     
     self.timestampDateFormatter = nil;
+    self.durationDateFormatter = nil;
 }
 
 - (NSString *)datetimeDateFormatter:(NSDate *)date
@@ -57,6 +59,18 @@
         _timestampDateFormatter = dateFormatter;
     }
     return _timestampDateFormatter;
+}
+
+- (NSDateFormatter *)durationDateFormatter
+{
+    if (!_durationDateFormatter)
+    {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss,SSS"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+        _durationDateFormatter = dateFormatter;
+    }
+    return _durationDateFormatter;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -90,8 +104,9 @@
     if (section == 0)
     {
         // Row 1: Create Date
-        // Row 2: Storage Folder
-        return 2;
+        // Row 2: Duration
+        // Row 3: Storage Folder
+        return 3;
     }
     else
     {
@@ -113,6 +128,11 @@
             cell.detailTextLabel.text = [self datetimeDateFormatter:self.recording.createDate];
         }
         else if (indexPath.row == 1)
+        {
+            cell.textLabel.text = @"Duration";
+            cell.detailTextLabel.text = [self.durationDateFormatter stringFromDate:self.recording.duration];
+        }
+        else if (indexPath.row == 2)
         {
             cell.textLabel.text = @"Storage Folder";
             cell.detailTextLabel.text = self.recording.storageFolder;
