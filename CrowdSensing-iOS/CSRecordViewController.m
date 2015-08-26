@@ -258,7 +258,10 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (void)titleLabelTap:(id)sender
 {
-    [self showSetNameAlertWithName:nil];
+    if (self.startButtonMode != CSStartButtonPauseMode)
+    {
+        [self showSetNameAlertWithName:nil];
+    }
 }
 
 - (void)showSaveRecordingAlert
