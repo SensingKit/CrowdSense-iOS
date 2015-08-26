@@ -253,21 +253,21 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (IBAction)doneButtonAction:(id)sender
 {
-    [self showSaveRecordingAlert];
+    [self showSaveRecordingAlertWithName:self.recording.title];
 }
 
 - (void)titleLabelTap:(id)sender
 {
     if (self.startButtonMode != CSStartButtonPauseMode)
     {
-        [self showSetNameAlertWithName:nil];
+        [self showSetNameAlertWithName:self.recording.title];
     }
 }
 
-- (void)showSaveRecordingAlert
+- (void)showSaveRecordingAlertWithName:(NSString *)name
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Save Sensor Recording"
-                                                        message:nil
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Save Recording"
+                                                        message:@"Enter a name for this recording."
                                                        delegate:self
                                               cancelButtonTitle:@"Delete"
                                               otherButtonTitles:@"Save", nil];
@@ -277,8 +277,8 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     
     // Preload the text with 'New Recording'
     UITextField *textField = [alertView textFieldAtIndex:0];
-    textField.text = self.recording.title;
-    textField.placeholder = self.recording.title;
+    textField.text = name;
+    textField.placeholder = name;
     textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
     
     [alertView show];
@@ -302,7 +302,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 - (void)showSetNameAlertWithName:(NSString *)name
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Recording Name"
-                                                        message:@"Enter a name for this sensor recording."
+                                                        message:@"Enter a name for this recording."
                                                        delegate:self
                                               cancelButtonTitle:@"Cancel"
                                               otherButtonTitles:@"OK", nil];
@@ -335,31 +335,38 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         }
         else if ([buttonText isEqualToString:@"Save"])
         {
-            NSLog(@"Save with title: %@", recordingName);
-            
-            // Disable sensors
-            [self.sensingSession disableAllRegisteredSensors];
-            
-            // Close Session
-            [self.sensingSession close];
-            self.sensingSession = nil;
-            
-            // Save the title
-            self.recording.title = recordingName;
-            
-            // Save the duration
-            self.recording.duration = self.duration;
-            
-            // Update the Label
-            self.titleLabel.text = recordingName;
-            
-            // Dismiss the view
-            [self dismissViewControllerAnimated:YES completion:^{
+            if (recordingName.length > 0)
+            {
+                NSLog(@"Save with title: %@", recordingName);
                 
-                // Save
-                NSManagedObjectContext *context = self.recording.managedObjectContext;
-                [context save:NULL];
-            }];
+                // Disable sensors
+                [self.sensingSession disableAllRegisteredSensors];
+                
+                // Close Session
+                [self.sensingSession close];
+                self.sensingSession = nil;
+                
+                // Save the title
+                self.recording.title = recordingName;
+                
+                // Save the duration
+                self.recording.duration = self.duration;
+                
+                // Update the Label
+                self.titleLabel.text = recordingName;
+                
+                // Dismiss the view
+                [self dismissViewControllerAnimated:YES completion:^{
+                    
+                    // Save
+                    NSManagedObjectContext *context = self.recording.managedObjectContext;
+                    [context save:NULL];
+                }];
+            }
+            else
+            {
+                // TODO: Error
+            }
         }
         else
         {
@@ -384,7 +391,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
         }
         else if ([buttonText isEqualToString:@"Cancel"])
         {
-            [self showSaveRecordingAlert];
+            [self showSaveRecordingAlertWithName:self.recording.title];
         }
         else
         {
@@ -394,17 +401,25 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     }
     else if (type == CSRecordViewControllerSetNameAlertType)
     {
+        // When tapping on the Title Label
         NSString *buttonText = [alertView buttonTitleAtIndex:buttonIndex];
         
         if ([buttonText isEqualToString:@"OK"])
         {
             NSString *recordingName = [alertView textFieldAtIndex:0].text;
             
-            // Save the title
-            self.recording.title = recordingName;
+            if (recordingName.length > 0)
+            {
+                // Save the title
+                self.recording.title = recordingName;
             
-            // Update the Label
-            self.titleLabel.text = recordingName;
+                // Update the Label
+                self.titleLabel.text = recordingName;
+            }
+            else
+            {
+                // TODO: Error
+            }
         }
         else if ([buttonText isEqualToString:@"Cancel"])
         {
