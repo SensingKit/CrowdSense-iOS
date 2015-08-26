@@ -26,6 +26,6 @@
 - (void)stop;
 - (void)close;
 
-- (void)addInformation:(NSString *)information;
+- (void)addRecordingLog:(NSString *)recordingLog;
 
 @end

@@ -37,7 +37,7 @@
 		CFC896611B8E13BA004F857C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
 		CFC8966B1B8E4A4C004F857C /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966A1B8E4A4C004F857C /* Recording.m */; };
 		CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966D1B8E4A4D004F857C /* LogEntry.m */; };
-		CFD450291B885C4900E2E78D /* CSInformationModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */; };
+		CFD450291B885C4900E2E78D /* CSRecordingLogModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */; };
 		CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFD450421B8A0DEC00E2E78D /* Settings.bundle */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
 		CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325719796BF600F7CE57 /* CoreGraphics.framework */; };
@@ -118,8 +118,8 @@
 		CFC8966A1B8E4A4C004F857C /* Recording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recording.m; sourceTree = "<group>"; };
 		CFC8966C1B8E4A4D004F857C /* LogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogEntry.h; sourceTree = "<group>"; };
 		CFC8966D1B8E4A4D004F857C /* LogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogEntry.m; sourceTree = "<group>"; };
-		CFD450271B885C4900E2E78D /* CSInformationModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInformationModelWriter.h; sourceTree = "<group>"; };
-		CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInformationModelWriter.m; sourceTree = "<group>"; };
+		CFD450271B885C4900E2E78D /* CSRecordingLogModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingLogModelWriter.h; sourceTree = "<group>"; };
+		CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingLogModelWriter.m; sourceTree = "<group>"; };
 		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		CFF581D91A0EA56400CBEE4D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,8 +308,8 @@
 				CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */,
 				CFB668BD1B5434CC00D3ED80 /* CSModelWriter.h */,
 				CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */,
-				CFD450271B885C4900E2E78D /* CSInformationModelWriter.h */,
-				CFD450281B885C4900E2E78D /* CSInformationModelWriter.m */,
+				CFD450271B885C4900E2E78D /* CSRecordingLogModelWriter.h */,
+				CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */,
 				CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */,
 				CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */,
 				CF18C38A19ED408800E295CB /* Settings */,
@@ -473,7 +473,7 @@
 				CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */,
 				CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */,
 				CFC896281B8DE47F004F857C /* CSRecordingInfoTableViewController.m in Sources */,
-				CFD450291B885C4900E2E78D /* CSInformationModelWriter.m in Sources */,
+				CFD450291B885C4900E2E78D /* CSRecordingLogModelWriter.m in Sources */,
 				CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */,
 				CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */,
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,

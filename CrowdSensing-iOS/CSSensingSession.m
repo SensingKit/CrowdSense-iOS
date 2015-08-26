@@ -8,7 +8,7 @@
 
 #import "CSSensingSession.h"
 #import "CSModelWriter.h"
-#import "CSInformationModelWriter.h"
+#import "CSRecordingLogModelWriter.h"
 
 #define TOTAL_SENSOR_MODULES 10
 
@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) NSURL* folderPath;
 @property (nonatomic, strong) NSMutableArray *modelWriters;
-@property (nonatomic, strong) CSInformationModelWriter *informationModelWriter;
+@property (nonatomic, strong) CSRecordingLogModelWriter *recordingLogModelWriter;
 
 @end
 
@@ -32,8 +32,8 @@
         self.folderPath = [self createFolderWithName:folderName];
         
         self.modelWriters = [[NSMutableArray alloc] initWithCapacity:TOTAL_SENSOR_MODULES];
-        self.informationModelWriter = [[CSInformationModelWriter alloc] initWithFilename:@"Information.csv"
-                                                                                  inPath:self.folderPath];
+        self.recordingLogModelWriter = [[CSRecordingLogModelWriter alloc] initWithFilename:@"RecordingLog.csv"
+                                                                                    inPath:self.folderPath];
     }
     return self;
 }
@@ -142,7 +142,7 @@
 {
     NSLog(@"Close Session");
     
-    [self.informationModelWriter close];
+    [self.recordingLogModelWriter close];
 }
 
 - (NSString *)getSensorModuleInString:(SKSensorModuleType)moduleType
@@ -184,9 +184,9 @@
     }
 }
 
-- (void)addInformation:(NSString *)information
+- (void)addRecordingLog:(NSString *)recordingLog;
 {
-    [self.informationModelWriter addInformation:information];
+    [self.recordingLogModelWriter addRecordingLog:recordingLog];
 }
 
 @end

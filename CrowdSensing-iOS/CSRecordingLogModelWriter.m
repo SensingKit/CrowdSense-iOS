@@ -1,21 +1,21 @@
 //
-//  CSInformationModelWriter.m
+//  CSRecordingLogModelWriter.m
 //  CrowdSensing-iOS
 //
 //  Created by Minos Katevas on 22/08/2015.
 //  Copyright (c) 2015 Kleomenis Katevas. All rights reserved.
 //
 
-#import "CSInformationModelWriter.h"
+#import "CSRecordingLogModelWriter.h"
 
-@interface CSInformationModelWriter () <NSStreamDelegate>
+@interface CSRecordingLogModelWriter () <NSStreamDelegate>
 
 @property (nonatomic, strong) NSURL *filePath;
 @property (nonatomic, strong) NSOutputStream *outputStream;
 
 @end
 
-@implementation CSInformationModelWriter
+@implementation CSRecordingLogModelWriter
 
 - (instancetype)initWithFilename:(NSString *)filename
                           inPath:(NSURL *)path
@@ -32,9 +32,9 @@
     return self;
 }
 
-- (void)addInformation:(NSString *)information
+- (void)addRecordingLog:(NSString *)recordingLog
 {
-    [self writeString:[NSString stringWithFormat:@"%@\n", information]];
+    [self writeString:[NSString stringWithFormat:@"%@\n", recordingLog]];
 }
 
 - (void)writeString:(NSString *)string
