@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) SKSensorModuleType moduleType;
 
 - (instancetype)initWithSensorModuleType:(SKSensorModuleType)moduleType
+                              withHeader:(NSString *)header
                             withFilename:(NSString *)filename
                                   inPath:(NSURL *)path;
 

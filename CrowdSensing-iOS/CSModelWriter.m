@@ -18,6 +18,7 @@
 @implementation CSModelWriter
 
 - (instancetype)initWithSensorModuleType:(SKSensorModuleType)moduleType
+                              withHeader:(NSString *)header
                             withFilename:(NSString *)filename
                                   inPath:(NSURL *)path
 {
@@ -30,6 +31,9 @@
         self.outputStream = [[NSOutputStream alloc] initWithURL:filePath append:YES];
         self.outputStream.delegate = self;
         [self.outputStream open];
+        
+        // Write header
+        [self writeString:[NSString stringWithFormat:@"%@\n", header]];
     }
     return self;
 }
@@ -39,7 +43,7 @@
     NSString *csv = [NSString stringWithFormat:@"%@\n", sensorData.csvString];
     
     // debug
-    NSLog(@"%@", csv);
+    //NSLog(@"%@", csv);
     //NSDictionary *dictionary = sensorData.dictionaryData;
     
     [self writeString:csv];

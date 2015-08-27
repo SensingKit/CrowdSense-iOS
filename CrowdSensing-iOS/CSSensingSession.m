@@ -73,9 +73,13 @@
 
 - (void)enableSensorWithType:(SKSensorModuleType)moduleType
 {
+    // Get the csv header
+    NSString *header = [self.sensingKitLib csvHeaderForSensorModule:moduleType];
+    
     // Create ModelWriter
     NSString *filename = [[self getSensorModuleInString:moduleType] stringByAppendingString:@".csv"];
     CSModelWriter *modelWriter = [[CSModelWriter alloc] initWithSensorModuleType:moduleType
+                                                                      withHeader:header
                                                                     withFilename:filename
                                                                           inPath:self.folderPath];
     
@@ -181,6 +185,7 @@
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
+            abort();
     }
 }
 
