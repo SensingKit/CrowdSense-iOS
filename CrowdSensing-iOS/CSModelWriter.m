@@ -39,7 +39,7 @@
     NSString *csv = [NSString stringWithFormat:@"%@\n", sensorData.csvString];
     
     // debug
-    //NSLog(@"%@", csv);
+    NSLog(@"%@", csv);
     //NSDictionary *dictionary = sensorData.dictionaryData;
     
     [self writeString:csv];
