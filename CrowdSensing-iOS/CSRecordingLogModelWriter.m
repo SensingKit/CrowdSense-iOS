@@ -28,6 +28,10 @@
         self.outputStream = [[NSOutputStream alloc] initWithURL:filePath append:YES];
         self.outputStream.delegate = self;
         [self.outputStream open];
+        
+        // Write header
+        NSString *header = @"timestamp,time,label";
+        [self writeString:[NSString stringWithFormat:@"%@\n", header]];
     }
     return self;
 }

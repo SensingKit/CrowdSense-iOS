@@ -570,7 +570,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     // Also write it in RecordingLog.csv
     double timestampEpoch = logEntry.timestamp.timeIntervalSince1970;
     NSString *timestamp = [self.timestampDateFormatter stringFromDate:logEntry.timestamp];
-    NSString *log = [NSString stringWithFormat:@"%f,%@,%@", timestampEpoch, timestamp, label];
+    NSString *log = [NSString stringWithFormat:@"%f,\"%@\",%@", timestampEpoch, timestamp, label];
     [self.sensingSession addRecordingLog:log];
 }
 
