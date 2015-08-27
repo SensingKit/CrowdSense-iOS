@@ -196,7 +196,7 @@
             return @"Activity sensor uses an embedded motion co-processor that senses the user’s activity classified as Stationary, Walking, Running, Automotive or Cycling.";
             
         case Pedometer:
-            return @"Pedometer sensor uses an embedded motion co-processor that captures pedestrian-related data such as step counts, distance traveled and the number of floors ascended or descended.";
+            return @"Pedometer sensor uses an embedded motion co-processor that captures pedestrian-related data such as step counts, distance traveled and number of floors ascended or descended.";
             
         case Altimeter:
             return @"Altimeter sensor uses an embedded barometer sensor to capture relative changes in altitude (but not the actual altitude). It also provides the recorded atmospheric pressure in kPa.";

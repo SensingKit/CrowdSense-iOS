@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Record Sensor Data-->
+        <!--Recording-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="CSRecordViewController" sceneMemberID="viewController">
@@ -129,7 +129,7 @@
                             <constraint firstItem="g17-U1-PKb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="tkm-0M-jvy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Record Sensor Data" id="Mgx-oc-8gh">
+                    <navigationItem key="navigationItem" title="Recording" id="Mgx-oc-8gh">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="fin-9J-2vk">
                             <connections>
                                 <action selector="doneButtonAction:" destination="vXZ-lx-hvc" id="q6U-U5-QTA"/>
