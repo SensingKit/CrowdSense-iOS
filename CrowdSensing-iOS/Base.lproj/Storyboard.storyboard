@@ -807,10 +807,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-FV-hzu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers and developers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. All collected data can be accessed through iTunes File Sharing feature, using iTunes software.
+                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers and developers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. Recorded data can be accessed using iTunes software through iTunes file sharing.
 
 CrowdSense supports the following sensor modules:
 - Accelerometer
@@ -825,23 +825,24 @@ CrowdSense supports the following sensor modules:
 - Eddystone™ Proximity
 - Battery
 
-For more details about SensingKit library, please refer to the website www.sensingkit.org, or read the following Extended Abstract publication:
+Please note that continued use of CrowdSense can dramatically decrease your battery life.
+
+For more details about SensingKit library, please refer to http://www.sensingkit.org, or read the following Extended Abstract publication:
 
 Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, “Poster: SensingKit -- A Multi-Platform Mobile Sensing Framework for Large-Scale Experiments”, Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
-This application is part of a Ph.D. research, conducted in Queen Mary University of London.</string>
-                                <color key="textColor" red="0.29493025751072965" green="0.29493025751072965" blue="0.29493025751072965" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit http://minoskt.github.io.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2f5-FV-hzu" firstAttribute="top" secondItem="pGR-KC-Jbg" secondAttribute="top" id="B8B-qz-RmO"/>
-                            <constraint firstItem="8HC-l9-5Dk" firstAttribute="top" secondItem="2f5-FV-hzu" secondAttribute="bottom" id="TW2-Jb-iOh"/>
-                            <constraint firstItem="2f5-FV-hzu" firstAttribute="leading" secondItem="pGR-KC-Jbg" secondAttribute="leading" id="UEL-og-awV"/>
-                            <constraint firstAttribute="trailing" secondItem="2f5-FV-hzu" secondAttribute="trailing" id="ioT-kn-e1a"/>
+                            <constraint firstItem="8HC-l9-5Dk" firstAttribute="top" secondItem="v0A-7H-Krq" secondAttribute="bottom" id="NDd-7m-7Y9"/>
+                            <constraint firstItem="v0A-7H-Krq" firstAttribute="top" secondItem="pGR-KC-Jbg" secondAttribute="top" id="Nyz-Ap-LfT"/>
+                            <constraint firstAttribute="trailing" secondItem="v0A-7H-Krq" secondAttribute="trailing" id="R7p-Gn-M3a"/>
+                            <constraint firstItem="v0A-7H-Krq" firstAttribute="leading" secondItem="pGR-KC-Jbg" secondAttribute="leading" id="dLi-3c-VZA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About CrowdSense" id="nv9-6R-RcM">
@@ -851,6 +852,9 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="v0A-7H-Krq" id="diF-jr-gSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmn-aB-KHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -920,7 +924,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="RcD-yE-QVr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Information Cell" textLabel="soX-XR-XfI" detailTextLabel="kgH-qt-Q4r" style="IBUITableViewCellStyleValue1" id="C4A-ks-h9i">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -930,7 +934,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="soX-XR-XfI">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kgH-qt-Q4r">
