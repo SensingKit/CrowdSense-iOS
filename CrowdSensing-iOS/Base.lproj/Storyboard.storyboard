@@ -182,7 +182,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="n9x-RM-fPB">
-                                <string key="footerTitle">Only local data storage is supported at the moment. Recorded data can be accessed using iTunes software through iTunes file sharing.</string>
+                                <string key="footerTitle">Only local data storage is supported at the moment. Recorded data can be accessed using iTunes software through iTunes file sharing. Alternatively you can share the data with nearby devices or over the Internet.</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="KEz-wb-eh6" detailTextLabel="iGX-IP-74j" style="IBUITableViewCellStyleValue1" id="DCM-EH-Upp">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -810,7 +810,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers and developers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. Recorded data can be accessed using iTunes software through iTunes file sharing.
+                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers and developers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. Recorded data can be accessed using iTunes software through iTunes file sharing. Alternatively you can manually share the data with nearby devices or over the Internet.
 
 CrowdSense supports the following sensor modules:
 - Accelerometer

@@ -176,7 +176,7 @@
 {
     if (section == 0)
     {
-        return @"Recorded data can be accessed using iTunes software through iTunes file sharing. Alternatively you can use the Share button to send the data over the Internet.";
+        return @"Recorded data can be accessed using iTunes software through iTunes file sharing. Alternatively you can use the Share button to share the data with nearby devices or over the Internet.";
     }
     else if (section == 1)
     {
