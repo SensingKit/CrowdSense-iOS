@@ -30,7 +30,7 @@
         [self.outputStream open];
         
         // Write header
-        NSString *header = @"timestamp,time,label";
+        NSString *header = @"timestamp,timeIntervalSince1970,label";
         [self writeString:[NSString stringWithFormat:@"%@\n", header]];
     }
     return self;

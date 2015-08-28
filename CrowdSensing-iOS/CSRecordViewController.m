@@ -9,6 +9,7 @@
 #import "CSRecordViewController.h"
 #import "LogEntry+Create.h"
 #import "CSSensingSession.h"
+#import <SensingKit/SKSensorTimestamp.h>
 
 enum CSStartButtonMode : NSUInteger {
     CSStartButtonStartMode,
@@ -560,17 +561,17 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (void)addLogEntryWithLabel:(NSString *)label
 {
+    SKSensorTimestamp *sensorTimestamp = [SKSensorTimestamp sensorTimestampFromTimeInterval:[NSProcessInfo processInfo].systemUptime];
+    
     // Add to the Model
     LogEntry *logEntry = [LogEntry logEntryWithLabel:label
-                                       withTimestamp:[NSDate date]
+                                       withTimestamp:sensorTimestamp.timestamp
                               inManagedObjectContext:self.recording.managedObjectContext];
     
     logEntry.ofRecording = self.recording;
     
     // Also write it in RecordingLog.csv
-    double timestampEpoch = logEntry.timestamp.timeIntervalSince1970;
-    NSString *timestamp = [self.timestampDateFormatter stringFromDate:logEntry.timestamp];
-    NSString *log = [NSString stringWithFormat:@"%f,\"%@\",%@", timestampEpoch, timestamp, label];
+    NSString *log = [NSString stringWithFormat:@"\"%@\",%f,%@", sensorTimestamp.timestampString, sensorTimestamp.timeIntervalSince1970, label];
     [self.sensingSession addRecordingLog:log];
 }
 
