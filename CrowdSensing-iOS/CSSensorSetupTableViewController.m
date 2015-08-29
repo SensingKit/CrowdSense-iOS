@@ -211,7 +211,7 @@
             return @"iBeacon™ Proximity sensor uses Apple's iBeacon™ technology to estimate the proximity of the current device with other devices actively running CrowdSense application.";
             
         case EddystoneProximity:
-            return @"Eddystone™ Proximity sensor estimates the proximity of the current device with Eddystone™ beacons in range.";
+            return @"Eddystone™ Proximity sensor estimates the proximity of the current device with other Eddystone™ beacons with namespace '90643f1a5253bff747fa' in range.";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
