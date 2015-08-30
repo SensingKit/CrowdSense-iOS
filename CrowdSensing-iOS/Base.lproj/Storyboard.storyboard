@@ -829,7 +829,7 @@ Please note that continued use of CrowdSense can dramatically decrease your batt
 
 For more details about SensingKit library, please refer to http://www.sensingkit.org, or read the following Extended Abstract publication:
 
-Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, “Poster: SensingKit -- A Multi-Platform Mobile Sensing Framework for Large-Scale Experiments”, Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
+Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, “Poster: SensingKit – A Multi‑Platform Mobile Sensing Framework for Large-Scale Experiments”, Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
 This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit http://minoskt.github.io.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
