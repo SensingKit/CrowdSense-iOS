@@ -17,14 +17,14 @@
 
 @implementation CSModelWriter
 
-- (instancetype)initWithSensorModuleType:(SKSensorModuleType)moduleType
+- (instancetype)initWithSensorType:(SKSensorType)sensorType
                               withHeader:(NSString *)header
                             withFilename:(NSString *)filename
                                   inPath:(NSURL *)path
 {
     if (self = [super init])
     {
-        _moduleType = moduleType;
+        _sensorType = sensorType;
         NSURL *filePath = [path URLByAppendingPathComponent:filename];
         
         self.filePath = filePath;

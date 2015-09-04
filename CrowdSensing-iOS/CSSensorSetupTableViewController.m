@@ -42,15 +42,15 @@
 {
     NSString *sensorName = sender;
     CSSensorSetupType type = [self typeFromSensorName:sensorName];
-    SKSensorModuleType moduleType = [self moduleTypeFromSensorName:sensorName];
-    NSString *sensorDescription = [self sensorDescriptionForSensorWithType:moduleType];
+    SKSensorType sensorType = [self sensorTypeFromSensorName:sensorName];
+    NSString *sensorDescription = [self sensorDescriptionForSensorWithType:sensorType];
     
     CSSensorStatus sensorStatus;
-    if (![self.sensingSession isSensorAvailable:moduleType])
+    if (![self.sensingSession isSensorAvailable:sensorType])
     {
         sensorStatus = CSSensorStatusNotAvailable;
     }
-    else if ([self.sensingSession isSensorEnabled:moduleType])
+    else if ([self.sensingSession isSensorEnabled:sensorType])
     {
         sensorStatus = CSSensorStatusEnabled;
     }
@@ -123,7 +123,7 @@
     }
 }
 
-- (SKSensorModuleType)moduleTypeFromSensorName:(NSString *)sensorName {
+- (SKSensorType)sensorTypeFromSensorName:(NSString *)sensorName {
     
     if ([sensorName isEqualToString:@"Accelerometer"])
     {
@@ -176,9 +176,9 @@
     }
 }
 
-- (NSString *)sensorDescriptionForSensorWithType:(SKSensorModuleType)moduleType {
+- (NSString *)sensorDescriptionForSensorWithType:(SKSensorType)sensorType {
     
-    switch (moduleType) {
+    switch (sensorType) {
             
         case Accelerometer:
             return @"Accelerometer is a sensor that measures the device acceleration changes in three‑dimensional space. You can use this data to detect both the current orientation of the device (relative to the ground) and any instantaneous changes to that orientation.";
@@ -214,14 +214,14 @@
             return @"Eddystone™ Proximity sensor estimates the proximity of the current device with other Eddystone™ beacons with namespace '90643f1a5253bff747fa' in range.";
             
         default:
-            return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
+            return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
     }
 }
 
 - (void)changeStatus:(CSSensorStatus)sensorStatus ofSensorWithType:(CSSensorSetupType)sensorType
 {
     // Get the actual sensorModuleType
-    SKSensorModuleType sensorModule;
+    SKSensorType sensorModule;
     
     switch (sensorType) {
         case CSSensorSetupAccelerometerType:

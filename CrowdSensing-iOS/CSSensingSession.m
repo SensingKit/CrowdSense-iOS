@@ -62,46 +62,46 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-- (CSModelWriter *)getModuleWriterWithType:(SKSensorModuleType)moduleType
+- (CSModelWriter *)getModuleWriterWithType:(SKSensorType)sensorType
 {
     for (CSModelWriter *moduleWriter in self.modelWriters) {
-        if (moduleWriter.moduleType == moduleType) { return moduleWriter; }
+        if (moduleWriter.sensorType == sensorType) { return moduleWriter; }
     }
     
     return nil;
 }
 
-- (void)enableSensorWithType:(SKSensorModuleType)moduleType
+- (void)enableSensorWithType:(SKSensorType)sensorType
 {
     // Get the csv header
-    NSString *header = [self.sensingKitLib csvHeaderForSensorModule:moduleType];
+    NSString *header = [SensingKitLib csvHeaderForSensor:sensorType];
     
     // Create ModelWriter
-    NSString *filename = [[self getSensorModuleInString:moduleType] stringByAppendingString:@".csv"];
-    CSModelWriter *modelWriter = [[CSModelWriter alloc] initWithSensorModuleType:moduleType
-                                                                      withHeader:header
-                                                                    withFilename:filename
-                                                                          inPath:self.folderPath];
+    NSString *filename = [[self getSensorModuleInString:sensorType] stringByAppendingString:@".csv"];
+    CSModelWriter *modelWriter = [[CSModelWriter alloc] initWithSensorType:sensorType
+                                                                withHeader:header
+                                                              withFilename:filename
+                                                                    inPath:self.folderPath];
     
     // Register and Subscribe sensor
-    [self.sensingKitLib registerSensorModule:moduleType];
-    [self.sensingKitLib subscribeSensorDataListenerToSensor:moduleType
-                                                withHandler:^(SKSensorModuleType moduleType, SKSensorData *sensorData) {
-                                                    
-                                                    // Feed the writer with data
-                                                    [modelWriter readData:sensorData];
-                                                }];
+    [self.sensingKitLib registerSensor:sensorType];
+    [self.sensingKitLib subscribeToSensor:sensorType
+                              withHandler:^(SKSensorType sensorType, SKSensorData *sensorData) {
+                                  
+                                  // Feed the writer with data
+                                  [modelWriter readData:sensorData];
+                              }];
     
     // Add sensorType and modelWriter to the arrays
     [self.modelWriters addObject:modelWriter];
 }
 
-- (void)disableSensorWithType:(SKSensorModuleType)moduleType
+- (void)disableSensorWithType:(SKSensorType)sensorType
 {
-    [self.sensingKitLib deregisterSensorModule:moduleType];
+    [self.sensingKitLib deregisterSensor:sensorType];
     
     // Search for the moduleWriter in the Array
-    CSModelWriter *moduleWriter = [self getModuleWriterWithType:moduleType];
+    CSModelWriter *moduleWriter = [self getModuleWriterWithType:sensorType];
     
     // Close the fileWriter
     [moduleWriter close];
@@ -114,22 +114,22 @@
 {
     for (int i = 0; i < TOTAL_SENSOR_MODULES; i++)
     {
-        SKSensorModuleType moduleType = i;
+        SKSensorType sensorType = i;
         
-        if ([self isSensorEnabled:moduleType]) {
-            [self disableSensorWithType:moduleType];
+        if ([self isSensorEnabled:sensorType]) {
+            [self disableSensorWithType:sensorType];
         }
     }
 }
 
-- (BOOL)isSensorAvailable:(SKSensorModuleType)moduleType
+- (BOOL)isSensorAvailable:(SKSensorType)sensorType
 {
-     return [self.sensingKitLib isSensorModuleAvailable:moduleType];
+     return [self.sensingKitLib isSensorAvailable:sensorType];
 }
 
-- (BOOL)isSensorEnabled:(SKSensorModuleType)moduleType
+- (BOOL)isSensorEnabled:(SKSensorType)sensorType
 {
-    return [self.sensingKitLib isSensorModuleRegistered:moduleType];
+    return [self.sensingKitLib isSensorRegistered:sensorType];
 }
 
 - (void)start
@@ -149,9 +149,9 @@
     [self.recordingLogModelWriter close];
 }
 
-- (NSString *)getSensorModuleInString:(SKSensorModuleType)moduleType
+- (NSString *)getSensorModuleInString:(SKSensorType)sensorType
 {
-    switch (moduleType) {
+    switch (sensorType) {
             
         case Accelerometer:
             return @"Accelerometer";
@@ -187,7 +187,7 @@
             return @"EddystoneProximity";
             
         default:
-            return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)moduleType];
+            return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
             abort();
     }
 }

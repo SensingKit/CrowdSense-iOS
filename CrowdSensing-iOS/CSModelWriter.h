@@ -11,9 +11,9 @@
 
 @interface CSModelWriter : NSObject
 
-@property (nonatomic, readonly) SKSensorModuleType moduleType;
+@property (nonatomic, readonly) SKSensorType sensorType;
 
-- (instancetype)initWithSensorModuleType:(SKSensorModuleType)moduleType
+- (instancetype)initWithSensorType:(SKSensorType)sensorType
                               withHeader:(NSString *)header
                             withFilename:(NSString *)filename
                                   inPath:(NSURL *)path;
