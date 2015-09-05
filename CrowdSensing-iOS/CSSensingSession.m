@@ -74,7 +74,7 @@
 - (void)enableSensorWithType:(SKSensorType)sensorType
 {
     // Get the csv header
-    NSString *header = [SensingKitLib csvHeaderForSensor:sensorType];
+    NSString *header = [self.sensingKitLib csvHeaderForSensor:sensorType];
     
     // Create ModelWriter
     NSString *filename = [[self getSensorModuleInString:sensorType] stringByAppendingString:@".csv"];
