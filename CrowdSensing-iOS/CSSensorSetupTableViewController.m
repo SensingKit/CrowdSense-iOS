@@ -116,6 +116,10 @@
     {
         return CSSensorSetupBatteryType;
     }
+    else if ([sensorName isEqualToString:@"Microphone"])
+    {
+        return CSSensorSetupMicrophoneType;
+    }
     else
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
@@ -169,6 +173,10 @@
     {
         return Battery;
     }
+    else if ([sensorName isEqualToString:@"Microphone"])
+    {
+        return Microphone;
+    }
     else
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
@@ -212,6 +220,9 @@
             
         case EddystoneProximity:
             return @"Eddystone™ Proximity sensor estimates the proximity of the current device with other Eddystone™ beacons with namespace '90643f1a5253bff747fa' in range.";
+            
+        case Microphone:
+            return @"TODO.";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
@@ -268,6 +279,10 @@
             sensorModule = Battery;
             break;
             
+        case CSSensorSetupMicrophoneType:
+            sensorModule = Microphone;
+            break;
+            
         default:
             NSLog(@"Unknown CSSensorSetupType: %lu", (unsigned long)sensorType);
             abort();
@@ -305,6 +320,7 @@
     [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:iBeaconProximity]];
     [self updateTableViewCell:self.eddystoneSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:EddystoneProximity]];
     [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Battery]];
+    [self updateTableViewCell:self.microphoneSensorCell    withSensorEnabled:[self.sensingSession isSensorEnabled:Microphone]];
 }
 
 - (void)updateTableViewCell:(UITableViewCell *)tableViewCell withSensorEnabled:(BOOL)sensorEnabled

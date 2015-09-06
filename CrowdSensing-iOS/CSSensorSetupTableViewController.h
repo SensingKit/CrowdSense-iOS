@@ -29,4 +29,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *batterySensorCell;
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *microphoneSensorCell;
+
 @end

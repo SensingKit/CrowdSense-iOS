@@ -19,7 +19,8 @@ typedef NS_ENUM(NSUInteger, CSSensorSetupType) {
     CSSensorSetupLocationType,
     CSSensorSetupBeaconType,
     CSSensorSetupEddystoneType,
-    CSSensorSetupBatteryType
+    CSSensorSetupBatteryType,
+    CSSensorSetupMicrophoneType
 };
 
 typedef NS_ENUM(NSUInteger, CSSensorStatus) {

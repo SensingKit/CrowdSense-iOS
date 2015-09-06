@@ -98,6 +98,10 @@
             self.title = @"Battery";
             break;
             
+        case CSSensorSetupMicrophoneType:
+            self.title = @"Microphone";
+            break;
+            
         default:
             NSLog(@"Unknown sensorSetupType: %ld", (long)sensorSetupType);
             abort();
