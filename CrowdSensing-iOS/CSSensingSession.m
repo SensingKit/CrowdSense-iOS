@@ -9,6 +9,7 @@
 #import "CSSensingSession.h"
 #import "CSModelWriter.h"
 #import "CSRecordingLogModelWriter.h"
+#import <SensingKit/NSString+SensorType.h>
 
 #define TOTAL_SENSOR_MODULES 12
 
@@ -77,7 +78,7 @@
     NSString *header = [self.sensingKitLib csvHeaderForSensor:sensorType];
     
     // Create ModelWriter
-    NSString *filename = [[self getSensorModuleInString:sensorType] stringByAppendingString:@".csv"];
+    NSString *filename = [[NSString stringWithSensorType:sensorType] stringByAppendingString:@".csv"];
     CSModelWriter *modelWriter = [[CSModelWriter alloc] initWithSensorType:sensorType
                                                                 withHeader:header
                                                               withFilename:filename
@@ -147,49 +148,6 @@
     NSLog(@"Close Session");
     
     [self.recordingLogModelWriter close];
-}
-
-- (NSString *)getSensorModuleInString:(SKSensorType)sensorType
-{
-    switch (sensorType) {
-            
-        case Accelerometer:
-            return @"Accelerometer";
-            
-        case Gyroscope:
-            return @"Gyroscope";
-            
-        case Magnetometer:
-            return @"Magnetometer";
-            
-        case DeviceMotion:
-            return @"DeviceMotion";
-            
-        case Activity:
-            return @"Activity";
-            
-        case Pedometer:
-            return @"Pedometer";
-            
-        case Altimeter:
-            return @"Altimeter";
-            
-        case Battery:
-            return @"Battery";
-            
-        case Location:
-            return @"Location";
-            
-        case iBeaconProximity:
-            return @"iBeaconProximity";
-            
-        case EddystoneProximity:
-            return @"EddystoneProximity";
-            
-        default:
-            return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
-            abort();
-    }
 }
 
 - (void)addRecordingLog:(NSString *)recordingLog;
