@@ -17,97 +17,97 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Set the label from title
-    self.sensorLabel.text = self.title;
-    
-    [self updateSensorSwitch];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    return self.sensorDescription;
-}
-
-- (void)updateSensorSwitch
-{
-    switch (self.sensorStatus)
+    if (section == 0)
     {
-        case CSSensorStatusDisabled:
-            self.sensorSwitch.on = NO;
-            break;
-            
-        case CSSensorStatusEnabled:
-            self.sensorSwitch.on = YES;
-            break;
-            
-        case CSSensorStatusNotAvailable:
-            self.sensorSwitch.on = NO;
-            break;
-            
-        default:
-            NSLog(@"Unknown CSSensorStatus: %lu", (unsigned long)self.sensorStatus);
-            abort();
+        return self.sensorDescription;
+    }
+    else
+    {
+        return nil;
     }
 }
 
-- (void)setSensorSetupType:(enum CSSensorSetupType)sensorSetupType
+- (void)setSensorType:(SKSensorType)sensorType
 {
-    switch (sensorSetupType)
+    // Update the title first
+    [self updateTitleForSensor:sensorType];
+    
+    _sensorType = sensorType;
+}
+
+- (void)updateTitleForSensor:(SKSensorType)sensorType
+{
+    switch (sensorType)
     {
-        case CSSensorSetupAccelerometerType:
+        case Accelerometer:
             self.title = @"Accelerometer";
             break;
             
-        case CSSensorSetupGyroscopeType:
+        case Gyroscope:
             self.title = @"Gyroscope";
             break;
             
-        case CSSensorSetupMagnetometerType:
+        case Magnetometer:
             self.title = @"Magnetometer";
             break;
             
-        case CSSensorSetupDeviceMotionType:
+        case DeviceMotion:
             self.title = @"Device Motion";
             break;
             
-        case CSSensorSetupActivityType:
+        case Activity:
             self.title = @"Activity";
             break;
             
-        case CSSensorSetupPedometerType:
+        case Pedometer:
             self.title = @"Pedometer";
             break;
             
-        case CSSensorSetupAltimeterType:
+        case Altimeter:
             self.title = @"Altimeter";
             break;
             
-        case CSSensorSetupLocationType:
+        case Location:
             self.title = @"Location";
             break;
             
-        case CSSensorSetupBeaconType:
+        case iBeaconProximity:
             self.title = @"iBeacon™ Proximity";
             break;
             
-        case CSSensorSetupEddystoneType:
+        case EddystoneProximity:
             self.title = @"Eddystone™ Proximity";
             break;
             
-        case CSSensorSetupBatteryType:
+        case Battery:
             self.title = @"Battery";
             break;
             
-        case CSSensorSetupMicrophoneType:
+        case Microphone:
             self.title = @"Microphone";
             break;
             
         default:
-            NSLog(@"Unknown sensorSetupType: %ld", (long)sensorSetupType);
+            NSLog(@"Unknown sensorSetupType: %ld", (long)sensorType);
             abort();
     }
+}
+
+- (void)alertSensorNotAvailable
+{
+    NSString *title = [NSString stringWithFormat:@"%@ Sensor", self.title];
     
-    _sensorSetupType = sensorSetupType;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:@"Sensor is not available on this device."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 @end

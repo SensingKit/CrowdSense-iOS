@@ -13,7 +13,7 @@
 #import "CSLocationSensorSetup.h"
 #import "CSProximitySensorSetup.h"
 
-@interface CSSensorSetupTableViewController () <CSSimpleSensorSetupDelegate>
+@interface CSSensorSetupTableViewController () <CSSensorSetupDelegate>
 
 @end
 
@@ -32,16 +32,14 @@
     
     NSString *sensorName = cell.textLabel.text;
     
-    if (YES) // ([sensorName isEqualToString:@"Accelerometer"])
-    {
-        [self performSegueWithIdentifier:@"Simple Sensor Setup" sender:sensorName];
-    }
+    NSString *segueIdentifier = [self segueIdentifierFromSensorName:sensorName];
+    
+    [self performSegueWithIdentifier:segueIdentifier sender:sensorName];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *sensorName = sender;
-    CSSensorSetupType type = [self typeFromSensorName:sensorName];
     SKSensorType sensorType = [self sensorTypeFromSensorName:sensorName];
     NSString *sensorDescription = [self sensorDescriptionForSensorWithType:sensorType];
     
@@ -59,71 +57,14 @@
         sensorStatus = CSSensorStatusDisabled;
     }
     
-    if ([segue.identifier isEqualToString:@"Simple Sensor Setup"]) {
+    if ([[segue.destinationViewController class] isSubclassOfClass:CSGenericSensorSetup.class])
+    {
+        CSGenericSensorSetup *genericSensorSetup = (CSGenericSensorSetup *)segue.destinationViewController;
         
-        CSSimpleSensorSetup *simpleSensorSetup = (CSSimpleSensorSetup *)segue.destinationViewController;
-        
-        simpleSensorSetup.delegate = self;
-        simpleSensorSetup.sensorSetupType = type;
-        simpleSensorSetup.sensorStatus = sensorStatus;
-        simpleSensorSetup.sensorDescription = sensorDescription;
-    }
-}
-
-- (CSSensorSetupType)typeFromSensorName:(NSString *)sensorName {
-    
-    if ([sensorName isEqualToString:@"Accelerometer"])
-    {
-        return CSSensorSetupAccelerometerType;
-    }
-    else if ([sensorName isEqualToString:@"Gyroscope"])
-    {
-        return CSSensorSetupGyroscopeType;
-    }
-    else if ([sensorName isEqualToString:@"Magnetometer"])
-    {
-        return CSSensorSetupMagnetometerType;
-    }
-    else if ([sensorName isEqualToString:@"Device Motion"])
-    {
-        return CSSensorSetupDeviceMotionType;
-    }
-    else if ([sensorName isEqualToString:@"Activity"])
-    {
-        return CSSensorSetupActivityType;
-    }
-    else if ([sensorName isEqualToString:@"Pedometer"])
-    {
-        return CSSensorSetupPedometerType;
-    }
-    else if ([sensorName isEqualToString:@"Altimeter"])
-    {
-        return CSSensorSetupAltimeterType;
-    }
-    else if ([sensorName isEqualToString:@"Location"])
-    {
-        return CSSensorSetupLocationType;
-    }
-    else if ([sensorName isEqualToString:@"iBeacon™ Proximity"])
-    {
-        return CSSensorSetupBeaconType;
-    }
-    else if ([sensorName isEqualToString:@"Eddystone™ Proximity"])
-    {
-        return CSSensorSetupEddystoneType;
-    }
-    else if ([sensorName isEqualToString:@"Battery"])
-    {
-        return CSSensorSetupBatteryType;
-    }
-    else if ([sensorName isEqualToString:@"Microphone"])
-    {
-        return CSSensorSetupMicrophoneType;
-    }
-    else
-    {
-        NSLog(@"Unknown Sensor name: %@", sensorName);
-        abort();
+        genericSensorSetup.delegate = self;
+        genericSensorSetup.sensorType = sensorType;
+        genericSensorSetup.sensorStatus = sensorStatus;
+        genericSensorSetup.sensorDescription = sensorDescription;
     }
 }
 
@@ -184,6 +125,63 @@
     }
 }
 
+- (NSString *)segueIdentifierFromSensorName:(NSString *)sensorName {
+    
+    if ([sensorName isEqualToString:@"Accelerometer"])
+    {
+        return @"Sampling Rate Sensor Setup";
+    }
+    else if ([sensorName isEqualToString:@"Gyroscope"])
+    {
+        return @"Sampling Rate Sensor Setup";
+    }
+    else if ([sensorName isEqualToString:@"Magnetometer"])
+    {
+        return @"Sampling Rate Sensor Setup";
+    }
+    else if ([sensorName isEqualToString:@"Device Motion"])
+    {
+        return @"Sampling Rate Sensor Setup";
+    }
+    else if ([sensorName isEqualToString:@"Activity"])
+    {
+        return @"Simple Sensor Setup";
+    }
+    else if ([sensorName isEqualToString:@"Pedometer"])
+    {
+        return @"Simple Sensor Setup";
+    }
+    else if ([sensorName isEqualToString:@"Altimeter"])
+    {
+        return @"Simple Sensor Setup";
+    }
+    else if ([sensorName isEqualToString:@"Location"])
+    {
+        return @"";
+    }
+    else if ([sensorName isEqualToString:@"iBeacon™ Proximity"])
+    {
+        return @"";
+    }
+    else if ([sensorName isEqualToString:@"Eddystone™ Proximity"])
+    {
+        return @"";
+    }
+    else if ([sensorName isEqualToString:@"Battery"])
+    {
+        return @"Simple Sensor Setup";
+    }
+    else if ([sensorName isEqualToString:@"Microphone"])
+    {
+        return @"";
+    }
+    else
+    {
+        NSLog(@"Unknown Sensor name: %@", sensorName);
+        abort();
+    }
+}
+
 - (NSString *)sensorDescriptionForSensorWithType:(SKSensorType)sensorType {
     
     switch (sensorType) {
@@ -229,73 +227,16 @@
     }
 }
 
-- (void)changeStatus:(CSSensorStatus)sensorStatus ofSensorWithType:(CSSensorSetupType)sensorType
+- (void)changeStatus:(CSSensorStatus)sensorStatus ofSensor:(SKSensorType)sensorType withConfiguration:(SKConfiguration *)configuration
 {
-    // Get the actual sensorModuleType
-    SKSensorType sensorModule;
-    
-    switch (sensorType) {
-        case CSSensorSetupAccelerometerType:
-            sensorModule = Accelerometer;
-            break;
-            
-        case CSSensorSetupGyroscopeType:
-            sensorModule = Gyroscope;
-            break;
-            
-        case CSSensorSetupMagnetometerType:
-            sensorModule = Magnetometer;
-            break;
-            
-        case CSSensorSetupDeviceMotionType:
-            sensorModule = DeviceMotion;
-            break;
-            
-        case CSSensorSetupActivityType:
-            sensorModule = Activity;
-            break;
-            
-        case CSSensorSetupPedometerType:
-            sensorModule = Pedometer;
-            break;
-            
-        case CSSensorSetupAltimeterType:
-            sensorModule = Altimeter;
-            break;
-            
-        case CSSensorSetupLocationType:
-            sensorModule = Location;
-            break;
-            
-        case CSSensorSetupBeaconType:
-            sensorModule = iBeaconProximity;
-            break;
-            
-        case CSSensorSetupEddystoneType:
-            sensorModule = EddystoneProximity;
-            break;
-            
-        case CSSensorSetupBatteryType:
-            sensorModule = Battery;
-            break;
-            
-        case CSSensorSetupMicrophoneType:
-            sensorModule = Microphone;
-            break;
-            
-        default:
-            NSLog(@"Unknown CSSensorSetupType: %lu", (unsigned long)sensorType);
-            abort();
-    }
-    
     // Set the action based on the sensorStatus enum
     switch (sensorStatus) {
         case CSSensorStatusEnabled:
-            [self.sensingSession enableSensorWithType:sensorModule];
+            [self.sensingSession enableSensor:sensorType withConfiguration:configuration];
             break;
             
         case CSSensorStatusDisabled:
-            [self.sensingSession disableSensorWithType:sensorModule];
+            [self.sensingSession disableSensor:sensorType];
             break;
             
         default:
@@ -305,6 +246,11 @@
     
     // Update the UI
     [self updateSensorStatus];
+}
+
+- (void)updateConfiguration:(SKConfiguration *)configuration forSensor:(SKSensorType)sensorType
+{
+    [self.sensingSession setConfiguration:configuration toSensor:sensorType];
 }
 
 - (void)updateSensorStatus

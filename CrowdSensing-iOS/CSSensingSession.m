@@ -72,7 +72,7 @@
     return nil;
 }
 
-- (void)enableSensorWithType:(SKSensorType)sensorType
+- (void)enableSensor:(SKSensorType)sensorType withConfiguration:(SKConfiguration *)configuration
 {
     // Get the csv header
     NSString *header = [self.sensingKitLib csvHeaderForSensor:sensorType];
@@ -85,7 +85,7 @@
                                                                     inPath:self.folderPath];
     
     // Register and Subscribe sensor
-    [self.sensingKitLib registerSensor:sensorType];
+    [self.sensingKitLib registerSensor:sensorType withConfiguration:configuration];
     [self.sensingKitLib subscribeToSensor:sensorType
                               withHandler:^(SKSensorType sensorType, SKSensorData *sensorData) {
                                   
@@ -97,7 +97,7 @@
     [self.modelWriters addObject:modelWriter];
 }
 
-- (void)disableSensorWithType:(SKSensorType)sensorType
+- (void)disableSensor:(SKSensorType)sensorType
 {
     [self.sensingKitLib deregisterSensor:sensorType];
     
@@ -118,9 +118,19 @@
         SKSensorType sensorType = i;
         
         if ([self isSensorEnabled:sensorType]) {
-            [self disableSensorWithType:sensorType];
+            [self disableSensor:sensorType];
         }
     }
+}
+
+- (void)setConfiguration:(SKConfiguration *)configuration toSensor:(SKSensorType)sensorType
+{
+    [self.sensingKitLib setConfiguration:configuration toSensor:sensorType];
+}
+
+- (SKConfiguration *)getConfigurationFromSensor:(SKSensorType)sensorType
+{
+    return [self.sensingKitLib getConfigurationFromSensor:sensorType];
 }
 
 - (BOOL)isSensorAvailable:(SKSensorType)sensorType

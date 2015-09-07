@@ -7,21 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSUInteger, CSSensorSetupType) {
-    CSSensorSetupAccelerometerType,
-    CSSensorSetupGyroscopeType,
-    CSSensorSetupMagnetometerType,
-    CSSensorSetupDeviceMotionType,
-    CSSensorSetupActivityType,
-    CSSensorSetupPedometerType,
-    CSSensorSetupAltimeterType,
-    CSSensorSetupLocationType,
-    CSSensorSetupBeaconType,
-    CSSensorSetupEddystoneType,
-    CSSensorSetupBatteryType,
-    CSSensorSetupMicrophoneType
-};
+#import <SensingKit/SensingKitLib.h>
 
 typedef NS_ENUM(NSUInteger, CSSensorStatus) {
     CSSensorStatusEnabled,
@@ -29,15 +15,26 @@ typedef NS_ENUM(NSUInteger, CSSensorStatus) {
     CSSensorStatusNotAvailable
 };
 
+
+@protocol CSSensorSetupDelegate <NSObject>
+
+- (void)changeStatus:(CSSensorStatus)sensorStatus ofSensor:(SKSensorType)sensorType withConfiguration:(SKConfiguration *)configuration;
+
+- (void)updateConfiguration:(SKConfiguration *)configuration forSensor:(SKSensorType)sensorType;
+
+@end
+
+
 @interface CSGenericSensorSetup : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *sensorLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *sensorSwitch;
+@property (weak, nonatomic) id <CSSensorSetupDelegate> delegate;
 
-@property (nonatomic) CSSensorSetupType sensorSetupType;
+@property (nonatomic) SKSensorType sensorType;
 
 @property (nonatomic) CSSensorStatus sensorStatus;
 
 @property (strong, nonatomic) NSString *sensorDescription;
+
+- (void)alertSensorNotAvailable;
 
 @end

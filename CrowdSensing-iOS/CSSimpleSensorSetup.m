@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Set the label from title
+    self.sensorLabel.text = self.title;
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -26,11 +29,11 @@
         
         if (sensorSwitch.on)
         {
-            [self.delegate changeStatus:CSSensorStatusEnabled ofSensorWithType:self.sensorSetupType];
+            [self.delegate changeStatus:CSSensorStatusEnabled ofSensor:self.sensorType withConfiguration:nil];
         }
         else
         {
-            [self.delegate changeStatus:CSSensorStatusDisabled ofSensorWithType:self.sensorSetupType];
+            [self.delegate changeStatus:CSSensorStatusDisabled ofSensor:self.sensorType withConfiguration:nil];
         }
     }
 }
@@ -39,17 +42,31 @@
 {
     if (self.sensorStatus == CSSensorStatusNotAvailable)
     {
-        NSString *title = [NSString stringWithFormat:@"%@ Sensor", self.title];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                        message:@"Sensor is not available on this device."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        
-        [alert show];
-        
+        [self alertSensorNotAvailable];
+     
         [self.sensorSwitch setOn:NO animated:YES];
+    }
+}
+
+- (void)updateSensorSwitch
+{
+    switch (self.sensorStatus)
+    {
+        case CSSensorStatusDisabled:
+            self.sensorSwitch.on = NO;
+            break;
+            
+        case CSSensorStatusEnabled:
+            self.sensorSwitch.on = YES;
+            break;
+            
+        case CSSensorStatusNotAvailable:
+            self.sensorSwitch.on = NO;
+            break;
+            
+        default:
+            NSLog(@"Unknown CSSensorStatus: %lu", (unsigned long)self.sensorStatus);
+            abort();
     }
 }
 

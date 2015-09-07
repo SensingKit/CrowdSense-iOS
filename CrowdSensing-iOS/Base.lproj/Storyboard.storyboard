@@ -552,6 +552,7 @@
                                                     <rect key="frame" x="536" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="sensorSwitchAction:" destination="d7J-q3-MxI" eventType="valueChanged" id="lcb-zc-phn"/>
+                                                        <action selector="switchTouchedAction:" destination="d7J-q3-MxI" eventType="touchUpInside" id="bxk-px-O07"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -600,8 +601,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Sampling Rate" id="3WV-ew-xlT"/>
                     <connections>
-                        <outlet property="sensorLabel" destination="nPa-Vz-3he" id="91X-jA-hH7"/>
-                        <outlet property="sensorSwitch" destination="Yz8-7k-eea" id="hPa-uA-3rU"/>
+                        <outlet property="sensorLabel" destination="nPa-Vz-3he" id="F9R-kh-Lef"/>
+                        <outlet property="sensorSwitch" destination="Yz8-7k-eea" id="klx-3t-nSF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsd-kv-97z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -656,8 +657,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Simple" id="wfU-1e-tu6"/>
                     <connections>
-                        <outlet property="sensorLabel" destination="15a-eO-naB" id="uoZ-lU-ssa"/>
-                        <outlet property="sensorSwitch" destination="LpK-BZ-TTV" id="PXW-sq-DnO"/>
+                        <outlet property="sensorLabel" destination="15a-eO-naB" id="nTA-QW-U8Q"/>
+                        <outlet property="sensorSwitch" destination="LpK-BZ-TTV" id="Ne6-lQ-NDD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWq-hm-BmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CSGenericSensorSetup.h"
 
+
 @interface CSSamplingRateSensorSetup : CSGenericSensorSetup
+
+@property (weak, nonatomic) IBOutlet UILabel *sensorLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *sensorSwitch;
 
 @end

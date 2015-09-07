@@ -9,14 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CSGenericSensorSetup.h"
 
-@protocol CSSimpleSensorSetupDelegate <NSObject>
-
-- (void)changeStatus:(CSSensorStatus)sensorStatus ofSensorWithType:(CSSensorSetupType)sensorType;
-
-@end
 
 @interface CSSimpleSensorSetup : CSGenericSensorSetup
 
-@property (weak, nonatomic) id <CSSimpleSensorSetupDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UILabel *sensorLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *sensorSwitch;
 
 @end

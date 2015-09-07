@@ -15,9 +15,12 @@
 
 - (instancetype)initWithFolderName:(NSString *)folderName;
 
-- (void)enableSensorWithType:(SKSensorType)sensorType;
-- (void)disableSensorWithType:(SKSensorType)sensorType;
+- (void)enableSensor:(SKSensorType)sensorType withConfiguration:(SKConfiguration *)configuration;
+- (void)disableSensor:(SKSensorType)sensorType;
 - (void)disableAllRegisteredSensors;
+
+- (void)setConfiguration:(SKConfiguration *)configuration toSensor:(SKSensorType)sensorType;
+- (SKConfiguration *)getConfigurationFromSensor:(SKSensorType)sensorType;
 
 - (BOOL)isSensorAvailable:(SKSensorType)sensorType;
 - (BOOL)isSensorEnabled:(SKSensorType)sensorType;
