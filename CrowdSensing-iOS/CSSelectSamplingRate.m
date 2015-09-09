@@ -33,6 +33,11 @@
 
 - (IBAction)doneAction:(id)sender
 {
+    NSUInteger samplingRate = self.samplingRateTextField.text.integerValue;
+    
+    if (self.delegate) {
+        [self.delegate setSamplingRate:samplingRate];
+    }
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CSGenericSensorSetup.h"
 
-@interface CSSelectSamplingRate : CSGenericSensorSetup<UITextFieldDelegate>
+@protocol CSSelectSamplingRateDelegate <NSObject>
+
+- (void)setSamplingRate:(NSUInteger)samplingRate;
+
+@end
+
+@interface CSSelectSamplingRate : UITableViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) id <CSSelectSamplingRateDelegate> delegate;
 
 @end

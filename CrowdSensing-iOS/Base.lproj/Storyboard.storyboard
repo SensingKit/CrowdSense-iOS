@@ -601,6 +601,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Sampling Rate" id="3WV-ew-xlT"/>
                     <connections>
+                        <outlet property="samplingRateLabel" destination="dJj-NJ-r4u" id="Jne-W2-gtu"/>
                         <outlet property="sensorLabel" destination="nPa-Vz-3he" id="F9R-kh-Lef"/>
                         <outlet property="sensorSwitch" destination="Yz8-7k-eea" id="klx-3t-nSF"/>
                     </connections>

@@ -29,7 +29,7 @@
         
         if (sensorSwitch.on)
         {
-            [self.delegate changeStatus:CSSensorStatusEnabled ofSensor:self.sensorType withConfiguration:nil];
+            [self.delegate changeStatus:CSSensorStatusEnabled ofSensor:self.sensorType withConfiguration:self.configuration];
         }
         else
         {

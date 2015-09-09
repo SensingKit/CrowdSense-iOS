@@ -7,8 +7,11 @@
 //
 
 #import "CSSamplingRateSensorSetup.h"
+#import "CSSelectSamplingRate.h"
 
-@interface CSSamplingRateSensorSetup ()
+@interface CSSamplingRateSensorSetup () <CSSelectSamplingRateDelegate>
+
+@property (nonatomic) NSUInteger samplingRate;
 
 @end
 
@@ -19,6 +22,9 @@
     
     // Set the label from title
     self.sensorLabel.text = self.title;
+    
+    // Update sensor specific properties
+    [self updateProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -67,6 +73,75 @@
         default:
             NSLog(@"Unknown CSSensorStatus: %lu", (unsigned long)self.sensorStatus);
             abort();
+    }
+}
+
+- (SKAccelerometerConfiguration *)accelerometerConfiguration
+{
+    return (SKAccelerometerConfiguration *)self.configuration;
+}
+
+- (SKGyroscopeConfiguration *)gyroscopeConfiguration
+{
+    return (SKGyroscopeConfiguration *)self.configuration;
+}
+
+- (SKMagnetometerConfiguration *)magnetometerConfiguration
+{
+    return (SKMagnetometerConfiguration *)self.configuration;
+}
+
+- (SKDeviceMotionConfiguration *)deviceMotionConfiguration
+{
+    return (SKDeviceMotionConfiguration *)self.configuration;
+}
+
+- (void)setSamplingRate:(NSUInteger)samplingRate
+{
+    // Update the UI
+    self.samplingRateLabel.text = [NSString stringWithFormat:@"%lu Hz", (long)samplingRate];
+    
+    _samplingRate = samplingRate;
+}
+
+- (void)updateProperties
+{
+    NSUInteger samplingRate;
+    
+    if (self.sensorType == Accelerometer)
+    {
+        samplingRate = [self accelerometerConfiguration].samplingRate;
+    }
+    else if (self.sensorType == Gyroscope)
+    {
+        samplingRate = [self gyroscopeConfiguration].samplingRate;
+    }
+    else if (self.sensorType == Magnetometer)
+    {
+        samplingRate = [self magnetometerConfiguration].samplingRate;
+    }
+    else if (self.sensorType == DeviceMotion)
+    {
+        samplingRate = [self deviceMotionConfiguration].samplingRate;
+    }
+    else
+    {
+        NSLog(@"Sensor %lu is not supported from this SensorSetup class", (unsigned long)self.sensorType);
+        abort();
+    }
+    
+    // Update the property and the UI
+    self.samplingRate = samplingRate;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Select Sampling Rate"])
+    {
+        // set delegate
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+        CSSelectSamplingRate *selectSamplingRate = (CSSelectSamplingRate *)navigationController.topViewController;
+        selectSamplingRate.delegate = self;
     }
 }
 

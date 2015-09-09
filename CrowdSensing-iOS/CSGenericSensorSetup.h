@@ -30,11 +30,14 @@ typedef NS_ENUM(NSUInteger, CSSensorStatus) {
 @property (weak, nonatomic) id <CSSensorSetupDelegate> delegate;
 
 @property (nonatomic) SKSensorType sensorType;
+@property (nonatomic, strong) SKConfiguration *configuration;
 
 @property (nonatomic) CSSensorStatus sensorStatus;
 
 @property (strong, nonatomic) NSString *sensorDescription;
 
 - (void)alertSensorNotAvailable;
+
++ (SKConfiguration *)createConfigurationForSensor:(SKSensorType)sensorType;
 
 @end
