@@ -20,6 +20,9 @@
     else if (self.type == CSRoundButtonStrokedType) {
         [SKStyles drawRoundButtonStrokedWithTitle:self.title];
     }
+    else if (self.type == CSRoundButtonDeactivatedType) {
+        [SKStyles drawRoundButtonStrokedDeactivatedWithTitle:self.title];
+    }
 }
 
 - (void)setTitle:(NSString *)title

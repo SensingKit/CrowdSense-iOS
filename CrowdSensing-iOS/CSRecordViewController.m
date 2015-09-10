@@ -180,6 +180,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             // Disable Done and Setup buttons
             self.doneButton.enabled = NO;
             self.setupButton.enabled = NO;
+            self.setupButton.type = CSRoundButtonDeactivatedType;
             
             // Add to the list
             [self addLogEntryWithLabel:@"Start"];
@@ -202,6 +203,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             // Enable Done and Setup buttons
             self.doneButton.enabled = YES;
             self.setupButton.enabled = YES;
+            self.setupButton.type = CSRoundButtonStrokedType;
             
             // Add to the list
             [self addLogEntryWithLabel:@"Stop"];
@@ -227,6 +229,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             // Disable Done and Setup buttons
             self.doneButton.enabled = NO;
             self.setupButton.enabled = NO;
+            self.setupButton.type = CSRoundButtonDeactivatedType;
             
             // Add to the list
             [self addLogEntryWithLabel:@"Start"];
