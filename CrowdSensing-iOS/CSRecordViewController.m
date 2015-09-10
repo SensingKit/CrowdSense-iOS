@@ -11,13 +11,14 @@
 #import "CSSensingSession.h"
 #import <SensingKit/SKSensorTimestamp.h>
 
-enum CSStartButtonMode : NSUInteger {
+
+typedef NS_ENUM(NSUInteger, CSStartButtonMode) {
     CSStartButtonStartMode,
     CSStartButtonPauseMode,
     CSStartButtonContinueMode
 };
 
-enum CSRecordViewControllerAlertType : NSUInteger {
+typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     CSRecordViewControllerSaveRecordingAlertType,
     CSRecordViewControllerDeleteRecordingAlertType,
     CSRecordViewControllerSetNameAlertType
@@ -37,7 +38,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
-@property (nonatomic) enum CSStartButtonMode startButtonMode;
+@property (nonatomic) CSStartButtonMode startButtonMode;
 
 @property (strong, nonatomic) NSDateFormatter *timerDateFormatter;
 @property (strong, nonatomic) NSDateFormatter *timestampDateFormatter;
@@ -144,7 +145,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
     return [dateFormatter stringFromDate:date];
 }
 
-- (void)setStartButtonMode:(enum CSStartButtonMode)startButtonMode
+- (void)setStartButtonMode:(CSStartButtonMode)startButtonMode
 {
     switch (startButtonMode) {
         case CSStartButtonStartMode:
@@ -324,7 +325,7 @@ enum CSRecordViewControllerAlertType : NSUInteger {
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    enum CSRecordViewControllerAlertType type = alertView.tag;
+    CSRecordViewControllerAlertType type = alertView.tag;
     
     if (type == CSRecordViewControllerSaveRecordingAlertType)
     {

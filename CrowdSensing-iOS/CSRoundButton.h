@@ -17,6 +17,6 @@ typedef NS_ENUM(NSUInteger, CSRoundButtonType) {
 @interface CSRoundButton : UIButton
 
 @property (strong, nonatomic) NSString *title;
-@property (nonatomic) enum CSRoundButtonType type;
+@property (nonatomic) CSRoundButtonType type;
 
 @end
