@@ -1004,7 +1004,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. Recorded data can be accessed using iTunes (through iTunes file sharing).
+                                <string key="text">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and all sensors need explicit permission from the user before enabled. Recorded data can be accessed using iTunes (through iTunes file sharing).
 
 CrowdSense supports the following sensors:
 - Accelerometer
@@ -1026,7 +1026,7 @@ For more details about SensingKit library, please refer to www.sensingkit.org, o
 
 Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, “Poster: SensingKit – A Multi‑Platform Mobile Sensing Framework for Large-Scale Experiments”, Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
-This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit minoskt.github.io.</mutableString>
+This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit minoskt.github.io.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
