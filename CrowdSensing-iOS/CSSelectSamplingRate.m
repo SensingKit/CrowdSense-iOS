@@ -36,6 +36,18 @@
 {
     NSUInteger sampleRate = self.samplingRateTextField.text.integerValue;
     
+    // 0 is not allowed
+    if (sampleRate == 0)
+    {
+        sampleRate = 1;
+    }
+    
+    // > 100 is not allowed
+    if (sampleRate > 100)
+    {
+        sampleRate = 100;
+    }
+    
     [self.delegate updateSampleRate:sampleRate];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
