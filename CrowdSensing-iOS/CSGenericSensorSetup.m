@@ -17,8 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Create the Configuration
-    self.configuration = [CSGenericSensorSetup createConfigurationForSensor:self.sensorType];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
@@ -110,68 +108,6 @@
                                           otherButtonTitles:nil];
     
     [alert show];
-}
-
-+ (SKConfiguration *)createConfigurationForSensor:(SKSensorType)sensorType
-{
-    SKConfiguration *configuration;
-    
-    switch (sensorType) {
-            
-        case Accelerometer:
-            configuration = [[SKAccelerometerConfiguration alloc] init];
-            break;
-            
-        case Gyroscope:
-            configuration = [[SKGyroscopeConfiguration alloc] init];
-            break;
-            
-        case Magnetometer:
-            configuration = [[SKMagnetometerConfiguration alloc] init];
-            break;
-            
-        case DeviceMotion:
-            configuration = [[SKDeviceMotionConfiguration alloc] init];
-            break;
-            
-        case Activity:
-            configuration = [[SKActivityConfiguration alloc] init];
-            break;
-            
-        case Pedometer:
-            configuration = [[SKPedometerConfiguration alloc] init];
-            break;
-            
-        case Altimeter:
-            configuration = [[SKAltimeterConfiguration alloc] init];
-            break;
-            
-        case Location:
-            configuration = [[SKLocationConfiguration alloc] init];
-            break;
-            
-        case iBeaconProximity:
-            configuration = [[SKiBeaconProximityConfiguration alloc] init];
-            break;
-            
-        case EddystoneProximity:
-            configuration = [[SKEddystoneProximityConfiguration alloc] init];
-            break;
-            
-        case Battery:
-            configuration = [[SKBatteryConfiguration alloc] init];
-            break;
-            
-        case Microphone:
-            configuration = [[SKMicrophoneConfiguration alloc] init];
-            break;
-            
-        default:
-            NSLog(@"Unknown sensorSetupType: %ld", (long)sensorType);
-            abort();
-    }
-    
-    return configuration;
 }
 
 @end

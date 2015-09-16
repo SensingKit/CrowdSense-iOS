@@ -10,12 +10,13 @@
 
 @protocol CSSelectSamplingRateDelegate <NSObject>
 
-- (void)setSamplingRate:(NSUInteger)samplingRate;
+- (void)updateSampleRate:(NSUInteger)sampleRate;
 
 @end
 
 @interface CSSelectSamplingRate : UITableViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) id <CSSelectSamplingRateDelegate> delegate;
+@property (nonatomic) NSUInteger sampleRate;
 
 @end

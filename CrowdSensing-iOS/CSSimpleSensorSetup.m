@@ -19,6 +19,9 @@
     
     // Set the label from title
     self.sensorLabel.text = self.title;
+    
+    // Update sensor properties
+    [self updateSensorSwitch];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender

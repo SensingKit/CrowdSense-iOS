@@ -38,6 +38,4 @@ typedef NS_ENUM(NSUInteger, CSSensorStatus) {
 
 - (void)alertSensorNotAvailable;
 
-+ (SKConfiguration *)createConfigurationForSensor:(SKSensorType)sensorType;
-
 @end

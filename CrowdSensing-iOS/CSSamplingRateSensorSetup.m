@@ -11,8 +11,6 @@
 
 @interface CSSamplingRateSensorSetup () <CSSelectSamplingRateDelegate>
 
-@property (nonatomic) NSUInteger samplingRate;
-
 @end
 
 @implementation CSSamplingRateSensorSetup
@@ -23,7 +21,8 @@
     // Set the label from title
     self.sensorLabel.text = self.title;
     
-    // Update sensor specific properties
+    // Update sensor properties
+    [self updateSensorSwitch];
     [self updateProperties];
 }
 
@@ -76,62 +75,23 @@
     }
 }
 
-- (SKAccelerometerConfiguration *)accelerometerConfiguration
+- (SKSampleRateConfiguration *)sampleRateConfiguration
 {
-    return (SKAccelerometerConfiguration *)self.configuration;
+    return (SKSampleRateConfiguration *)self.configuration;
 }
 
-- (SKGyroscopeConfiguration *)gyroscopeConfiguration
+- (void)updateSampleRate:(NSUInteger)sampleRate
 {
-    return (SKGyroscopeConfiguration *)self.configuration;
-}
-
-- (SKMagnetometerConfiguration *)magnetometerConfiguration
-{
-    return (SKMagnetometerConfiguration *)self.configuration;
-}
-
-- (SKDeviceMotionConfiguration *)deviceMotionConfiguration
-{
-    return (SKDeviceMotionConfiguration *)self.configuration;
-}
-
-- (void)setSamplingRate:(NSUInteger)samplingRate
-{
-    // Update the UI
-    self.samplingRateLabel.text = [NSString stringWithFormat:@"%lu Hz", (long)samplingRate];
-    
-    _samplingRate = samplingRate;
+    self.sampleRateConfiguration.sampleRate = sampleRate;
+    [self updateProperties];
 }
 
 - (void)updateProperties
 {
-    NSUInteger samplingRate;
+    NSUInteger sampleRate = self.sampleRateConfiguration.sampleRate;
     
-    if (self.sensorType == Accelerometer)
-    {
-        samplingRate = [self accelerometerConfiguration].samplingRate;
-    }
-    else if (self.sensorType == Gyroscope)
-    {
-        samplingRate = [self gyroscopeConfiguration].samplingRate;
-    }
-    else if (self.sensorType == Magnetometer)
-    {
-        samplingRate = [self magnetometerConfiguration].samplingRate;
-    }
-    else if (self.sensorType == DeviceMotion)
-    {
-        samplingRate = [self deviceMotionConfiguration].samplingRate;
-    }
-    else
-    {
-        NSLog(@"Sensor %lu is not supported from this SensorSetup class", (unsigned long)self.sensorType);
-        abort();
-    }
-    
-    // Update the property and the UI
-    self.samplingRate = samplingRate;
+    // Update the UI
+    self.samplingRateLabel.text = [NSString stringWithFormat:@"%lu Hz", (long)sampleRate];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -142,6 +102,7 @@
         UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
         CSSelectSamplingRate *selectSamplingRate = (CSSelectSamplingRate *)navigationController.topViewController;
         selectSamplingRate.delegate = self;
+        selectSamplingRate.sampleRate = self.sampleRateConfiguration.sampleRate;
     }
 }
 

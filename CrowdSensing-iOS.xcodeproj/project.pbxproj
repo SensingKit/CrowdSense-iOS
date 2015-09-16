@@ -168,19 +168,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF18C38A19ED408800E295CB /* Settings */ = {
+		CF18C38A19ED408800E295CB /* Setup */ = {
 			isa = PBXGroup;
 			children = (
 				CF18C39119ED439B00E295CB /* CSSetupTableViewController.h */,
 				CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */,
 				CF18C39419ED446500E295CB /* CSSensorSetupTableViewController.h */,
 				CF18C39519ED446500E295CB /* CSSensorSetupTableViewController.m */,
-				CF18C39719ED4B6000E295CB /* Sensor Setup */,
+				CF18C39719ED4B6000E295CB /* Sensors */,
 			);
-			name = Settings;
+			name = Setup;
 			sourceTree = "<group>";
 		};
-		CF18C39719ED4B6000E295CB /* Sensor Setup */ = {
+		CF18C39719ED4B6000E295CB /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
 				CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */,
@@ -196,7 +196,7 @@
 				CF18C3A419ED4C1200E295CB /* CSProximitySensorSetup.h */,
 				CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */,
 			);
-			name = "Sensor Setup";
+			name = Sensors;
 			sourceTree = "<group>";
 		};
 		CF52989A1A0D1149002A4D54 /* PaintCode generated files */ = {
@@ -312,7 +312,7 @@
 				CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */,
 				CFC0F8AC19EC2242006CA622 /* CSRoundButton.h */,
 				CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */,
-				CF18C38A19ED408800E295CB /* Settings */,
+				CF18C38A19ED408800E295CB /* Setup */,
 				CFC896621B8E4997004F857C /* Model */,
 				CFFF325C19796BF600F7CE57 /* Supporting Files */,
 				CFFF326719796BF600F7CE57 /* Storyboard.storyboard */,

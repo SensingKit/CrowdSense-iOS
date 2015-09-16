@@ -21,6 +21,7 @@
     
     // Set the delegate
     self.samplingRateTextField.delegate = self;
+    self.samplingRateTextField.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.sampleRate];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -33,11 +34,10 @@
 
 - (IBAction)doneAction:(id)sender
 {
-    NSUInteger samplingRate = self.samplingRateTextField.text.integerValue;
+    NSUInteger sampleRate = self.samplingRateTextField.text.integerValue;
     
-    if (self.delegate) {
-        [self.delegate setSamplingRate:samplingRate];
-    }
+    [self.delegate updateSampleRate:sampleRate];
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -46,19 +46,36 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+
 #define MAXLENGTH 3
 
+// Thanks to http://stackoverflow.com/questions/12944789/allow-only-numbers-for-uitextfield-input
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    NSUInteger oldLength = [textField.text length];
-    NSUInteger replacementLength = [string length];
-    NSUInteger rangeLength = range.length;
+    // allow backspace
+    if (!string.length)
+    {
+        return YES;
+    }
     
-    NSUInteger newLength = oldLength - rangeLength + replacementLength;
+    // Prevent invalid character input, if keyboard is numberpad
+    if (textField.keyboardType == UIKeyboardTypeNumberPad)
+    {
+        if ([string rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
+        {
+            return NO;
+        }
+    }
     
-    BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
+    // verify max length has not been exceeded
+    NSString *updatedText = [textField.text stringByReplacingCharactersInRange:range withString:string];
     
-    return newLength <= MAXLENGTH || returnKey;
+    if (updatedText.length > MAXLENGTH)
+    {
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end

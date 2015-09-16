@@ -64,6 +64,7 @@
         genericSensorSetup.delegate = self;
         genericSensorSetup.sensorType = sensorType;
         genericSensorSetup.sensorStatus = sensorStatus;
+        genericSensorSetup.configuration = [self.sensingSession getConfigurationFromSensor:sensorType];
         genericSensorSetup.sensorDescription = sensorDescription;
     }
 }
