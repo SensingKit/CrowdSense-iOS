@@ -11,7 +11,7 @@
 #import "CSSimpleSensorSetup.h"
 #import "CSSamplingRateSensorSetup.h"
 #import "CSLocationSensorSetup.h"
-#import "CSProximitySensorSetup.h"
+#import "CSiBeaconProximitySensorSetup.h"
 
 @interface CSSensorSetupTableViewController () <CSSensorSetupDelegate>
 

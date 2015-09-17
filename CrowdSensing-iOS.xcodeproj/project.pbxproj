@@ -12,7 +12,7 @@
 		CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */; };
 		CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39F19ED4BDC00E295CB /* CSSimpleSensorSetup.m */; };
 		CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */; };
-		CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */; };
+		CF18C3A619ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A519ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m */; };
 		CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */; };
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
 		CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */; };
@@ -37,6 +37,8 @@
 		CFC896611B8E13BA004F857C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
 		CFC8966B1B8E4A4C004F857C /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966A1B8E4A4C004F857C /* Recording.m */; };
 		CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966D1B8E4A4D004F857C /* LogEntry.m */; };
+		CFD0E18D1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0E18C1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m */; settings = {ASSET_TAGS = (); }; };
+		CFD0E1901BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0E18F1BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m */; settings = {ASSET_TAGS = (); }; };
 		CFD450291B885C4900E2E78D /* CSRecordingLogModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */; };
 		CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFD450421B8A0DEC00E2E78D /* Settings.bundle */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
@@ -74,8 +76,8 @@
 		CF18C39F19ED4BDC00E295CB /* CSSimpleSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSimpleSensorSetup.m; sourceTree = "<group>"; };
 		CF18C3A119ED4C0000E295CB /* CSLocationSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLocationSensorSetup.h; sourceTree = "<group>"; };
 		CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLocationSensorSetup.m; sourceTree = "<group>"; };
-		CF18C3A419ED4C1200E295CB /* CSProximitySensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSProximitySensorSetup.h; sourceTree = "<group>"; };
-		CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSProximitySensorSetup.m; sourceTree = "<group>"; };
+		CF18C3A419ED4C1200E295CB /* CSiBeaconProximitySensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSiBeaconProximitySensorSetup.h; sourceTree = "<group>"; };
+		CF18C3A519ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSiBeaconProximitySensorSetup.m; sourceTree = "<group>"; };
 		CF18C3A719ED4C7700E295CB /* CSSelectSamplingRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSelectSamplingRate.h; sourceTree = "<group>"; };
 		CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectSamplingRate.m; sourceTree = "<group>"; };
 		CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGenericSensorSetup.h; sourceTree = "<group>"; };
@@ -118,6 +120,10 @@
 		CFC8966A1B8E4A4C004F857C /* Recording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recording.m; sourceTree = "<group>"; };
 		CFC8966C1B8E4A4D004F857C /* LogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogEntry.h; sourceTree = "<group>"; };
 		CFC8966D1B8E4A4D004F857C /* LogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogEntry.m; sourceTree = "<group>"; };
+		CFD0E18B1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSEddystoneProximitySensorSetup.h; sourceTree = "<group>"; };
+		CFD0E18C1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSEddystoneProximitySensorSetup.m; sourceTree = "<group>"; };
+		CFD0E18E1BAAC7A500F98F14 /* CSMicrophoneSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMicrophoneSensorSetup.h; sourceTree = "<group>"; };
+		CFD0E18F1BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMicrophoneSensorSetup.m; sourceTree = "<group>"; };
 		CFD450271B885C4900E2E78D /* CSRecordingLogModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingLogModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingLogModelWriter.m; sourceTree = "<group>"; };
 		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
@@ -193,8 +199,12 @@
 				CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */,
 				CF18C3A119ED4C0000E295CB /* CSLocationSensorSetup.h */,
 				CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */,
-				CF18C3A419ED4C1200E295CB /* CSProximitySensorSetup.h */,
-				CF18C3A519ED4C1200E295CB /* CSProximitySensorSetup.m */,
+				CF18C3A419ED4C1200E295CB /* CSiBeaconProximitySensorSetup.h */,
+				CF18C3A519ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m */,
+				CFD0E18B1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.h */,
+				CFD0E18C1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m */,
+				CFD0E18E1BAAC7A500F98F14 /* CSMicrophoneSensorSetup.h */,
+				CFD0E18F1BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m */,
 			);
 			name = Sensors;
 			sourceTree = "<group>";
@@ -473,8 +483,10 @@
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
 				CFFF326219796BF600F7CE57 /* main.m in Sources */,
 				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,
+				CFD0E1901BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m in Sources */,
 				CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */,
 				CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */,
+				CFD0E18D1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m in Sources */,
 				CFC896281B8DE47F004F857C /* CSRecordingInfoTableViewController.m in Sources */,
 				CFD450291B885C4900E2E78D /* CSRecordingLogModelWriter.m in Sources */,
 				CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */,
@@ -482,7 +494,7 @@
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
 				CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */,
 				CFC8965D1B8E1388004F857C /* ioapi.c in Sources */,
-				CF18C3A619ED4C1200E295CB /* CSProximitySensorSetup.m in Sources */,
+				CF18C3A619ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m in Sources */,
 				CFC8965E1B8E1388004F857C /* mztools.c in Sources */,
 				CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */,
 				CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */,
