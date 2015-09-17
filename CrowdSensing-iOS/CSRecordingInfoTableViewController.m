@@ -10,7 +10,7 @@
 #import "LogEntry.h"
 
 // ZipArchive
-#import "Main.h"
+#import "SSZipArchive.h"
 
 @interface CSRecordingInfoTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -209,7 +209,7 @@
     {
         NSLog(@"File already exist. No need to create it again.");
     }
-    else if (![Main createZipFileAtPath:attachment.path withContentsOfDirectory:filesDirectory.path keepParentDirectory:YES])
+    else if (![SSZipArchive createZipFileAtPath:attachment.path withContentsOfDirectory:filesDirectory.path keepParentDirectory:YES])
     {
         NSLog(@"Zip file could not be created.");
     }

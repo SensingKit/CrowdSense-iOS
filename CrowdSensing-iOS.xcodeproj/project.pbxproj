@@ -29,7 +29,7 @@
 		CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSAboutViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
 		CFC896281B8DE47F004F857C /* CSRecordingInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */; };
-		CFC8965C1B8E1388004F857C /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC896501B8E1388004F857C /* Main.m */; };
+		CFC8965C1B8E1388004F857C /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC896501B8E1388004F857C /* SSZipArchive.m */; };
 		CFC8965D1B8E1388004F857C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896531B8E1388004F857C /* ioapi.c */; };
 		CFC8965E1B8E1388004F857C /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896551B8E1388004F857C /* mztools.c */; };
 		CFC8965F1B8E1388004F857C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896571B8E1388004F857C /* unzip.c */; };
@@ -103,8 +103,8 @@
 		CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRoundButton.m; sourceTree = "<group>"; };
 		CFC896261B8DE47F004F857C /* CSRecordingInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingInfoTableViewController.h; sourceTree = "<group>"; };
 		CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingInfoTableViewController.m; sourceTree = "<group>"; };
-		CFC8964F1B8E1388004F857C /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
-		CFC896501B8E1388004F857C /* Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
+		CFC8964F1B8E1388004F857C /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		CFC896501B8E1388004F857C /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		CFC896521B8E1388004F857C /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		CFC896531B8E1388004F857C /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		CFC896541B8E1388004F857C /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -222,8 +222,8 @@
 		CFC8964E1B8E1388004F857C /* ZipArchive */ = {
 			isa = PBXGroup;
 			children = (
-				CFC8964F1B8E1388004F857C /* Main.h */,
-				CFC896501B8E1388004F857C /* Main.m */,
+				CFC8964F1B8E1388004F857C /* SSZipArchive.h */,
+				CFC896501B8E1388004F857C /* SSZipArchive.m */,
 				CFC896511B8E1388004F857C /* minizip */,
 			);
 			path = ZipArchive;
@@ -464,7 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFC8965C1B8E1388004F857C /* Main.m in Sources */,
+				CFC8965C1B8E1388004F857C /* SSZipArchive.m in Sources */,
 				CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */,
 				CFC8965F1B8E1388004F857C /* unzip.c in Sources */,
 				CFC896601B8E1388004F857C /* zip.c in Sources */,
