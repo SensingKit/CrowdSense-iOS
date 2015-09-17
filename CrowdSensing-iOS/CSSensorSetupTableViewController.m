@@ -12,6 +12,8 @@
 #import "CSSamplingRateSensorSetup.h"
 #import "CSLocationSensorSetup.h"
 #import "CSiBeaconProximitySensorSetup.h"
+#import "CSEddystoneProximitySensorSetup.h"
+#import "CSMicrophoneSensorSetup.h"
 
 @interface CSSensorSetupTableViewController () <CSSensorSetupDelegate>
 
@@ -130,19 +132,19 @@
     
     if ([sensorName isEqualToString:@"Accelerometer"])
     {
-        return @"Sampling Rate Sensor Setup";
+        return @"Sample Rate Sensor Setup";
     }
     else if ([sensorName isEqualToString:@"Gyroscope"])
     {
-        return @"Sampling Rate Sensor Setup";
+        return @"Sample Rate Sensor Setup";
     }
     else if ([sensorName isEqualToString:@"Magnetometer"])
     {
-        return @"Sampling Rate Sensor Setup";
+        return @"Sample Rate Sensor Setup";
     }
     else if ([sensorName isEqualToString:@"Device Motion"])
     {
-        return @"Sampling Rate Sensor Setup";
+        return @"Sample Rate Sensor Setup";
     }
     else if ([sensorName isEqualToString:@"Activity"])
     {
@@ -158,15 +160,15 @@
     }
     else if ([sensorName isEqualToString:@"Location"])
     {
-        return @"";
+        return @"Location Sensor Setup";
     }
     else if ([sensorName isEqualToString:@"iBeacon™ Proximity"])
     {
-        return @"";
+        return @"iBeacon Proximity Sensor Setup";
     }
     else if ([sensorName isEqualToString:@"Eddystone™ Proximity"])
     {
-        return @"";
+        return @"Eddystone Proximity Sensor Setup";
     }
     else if ([sensorName isEqualToString:@"Battery"])
     {
@@ -174,7 +176,7 @@
     }
     else if ([sensorName isEqualToString:@"Microphone"])
     {
-        return @"";
+        return @"Microphone Sensor Setup";
     }
     else
     {
