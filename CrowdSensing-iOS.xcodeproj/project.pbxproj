@@ -13,7 +13,7 @@
 		CF18C3A019ED4BDC00E295CB /* CSSimpleSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39F19ED4BDC00E295CB /* CSSimpleSensorSetup.m */; };
 		CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */; };
 		CF18C3A619ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A519ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m */; };
-		CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */; };
+		CF18C3A919ED4C7700E295CB /* CSNumericUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSNumericUserInput.m */; };
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
 		CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */; };
 		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
@@ -78,8 +78,8 @@
 		CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLocationSensorSetup.m; sourceTree = "<group>"; };
 		CF18C3A419ED4C1200E295CB /* CSiBeaconProximitySensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSiBeaconProximitySensorSetup.h; sourceTree = "<group>"; };
 		CF18C3A519ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSiBeaconProximitySensorSetup.m; sourceTree = "<group>"; };
-		CF18C3A719ED4C7700E295CB /* CSSelectSamplingRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSelectSamplingRate.h; sourceTree = "<group>"; };
-		CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectSamplingRate.m; sourceTree = "<group>"; };
+		CF18C3A719ED4C7700E295CB /* CSNumericUserInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNumericUserInput.h; sourceTree = "<group>"; };
+		CF18C3A819ED4C7700E295CB /* CSNumericUserInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNumericUserInput.m; sourceTree = "<group>"; };
 		CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGenericSensorSetup.h; sourceTree = "<group>"; };
 		CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGenericSensorSetup.m; sourceTree = "<group>"; };
 		CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SensingKit.framework; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 				CF18C39F19ED4BDC00E295CB /* CSSimpleSensorSetup.m */,
 				CF18C39B19ED4BA400E295CB /* CSSamplingRateSensorSetup.h */,
 				CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */,
-				CF18C3A719ED4C7700E295CB /* CSSelectSamplingRate.h */,
-				CF18C3A819ED4C7700E295CB /* CSSelectSamplingRate.m */,
+				CF18C3A719ED4C7700E295CB /* CSNumericUserInput.h */,
+				CF18C3A819ED4C7700E295CB /* CSNumericUserInput.m */,
 				CF18C3A119ED4C0000E295CB /* CSLocationSensorSetup.h */,
 				CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */,
 				CF18C3A419ED4C1200E295CB /* CSiBeaconProximitySensorSetup.h */,
@@ -499,7 +499,7 @@
 				CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */,
 				CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */,
 				CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */,
-				CF18C3A919ED4C7700E295CB /* CSSelectSamplingRate.m in Sources */,
+				CF18C3A919ED4C7700E295CB /* CSNumericUserInput.m in Sources */,
 				CF8E9BD71B3356E6005AC2FC /* Model.xcdatamodeld in Sources */,
 				CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */,
 				CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */,

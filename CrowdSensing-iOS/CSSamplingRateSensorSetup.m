@@ -7,9 +7,9 @@
 //
 
 #import "CSSamplingRateSensorSetup.h"
-#import "CSSelectSamplingRate.h"
+#import "CSNumericUserInput.h"
 
-@interface CSSamplingRateSensorSetup () <CSSelectSamplingRateDelegate>
+@interface CSSamplingRateSensorSetup () <CSNumericUserInputDelegate>
 
 @end
 
@@ -80,9 +80,9 @@
     return (SKSampleRateConfiguration *)self.configuration;
 }
 
-- (void)updateSampleRate:(NSUInteger)sampleRate
+- (void)userInputWithValue:(NSUInteger)value
 {
-    self.sampleRateConfiguration.sampleRate = sampleRate;
+    self.sampleRateConfiguration.sampleRate = value;
     [self updateProperties];
 }
 
@@ -96,13 +96,19 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Select Sampling Rate"])
+    if ([segue.identifier isEqualToString:@"Select Sample Rate"])
     {
         // set delegate
         UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
-        CSSelectSamplingRate *selectSamplingRate = (CSSelectSamplingRate *)navigationController.topViewController;
-        selectSamplingRate.delegate = self;
-        selectSamplingRate.sampleRate = self.sampleRateConfiguration.sampleRate;
+        CSNumericUserInput *userInput = (CSNumericUserInput *)navigationController.topViewController;
+        userInput.delegate = self;
+        userInput.maxDigits = 3;
+        userInput.minValue = 1;
+        userInput.maxValue = 100;
+        userInput.defaultValue = self.sampleRateConfiguration.sampleRate;
+        userInput.userInputDescription = @"Type the Sample Rate of the selected sensor in Hz.";
+        userInput.userInputPlaceholder = @"Sample Rate (Hz)";
+        userInput.title = @"Sample Rate";
     }
 }
 

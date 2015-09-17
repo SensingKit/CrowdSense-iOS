@@ -704,17 +704,17 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="mdo-Xf-ELm">
+                            <tableViewSection headerTitle="Configuration" id="mdo-Xf-ELm">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="b7L-AA-ufA" detailTextLabel="dJj-NJ-r4u" style="IBUITableViewCellStyleValue1" id="cCg-O0-EhV">
-                                        <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="210" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cCg-O0-EhV" id="xC5-DM-A7w">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sampling Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b7L-AA-ufA">
-                                                    <rect key="frame" x="15" y="12" width="105" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sample Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b7L-AA-ufA">
+                                                    <rect key="frame" x="15" y="12" width="92" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -734,7 +734,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="lVr-He-ZhG" kind="presentation" identifier="Select Sampling Rate" id="4t2-v3-0hb"/>
+                                            <segue destination="lVr-He-ZhG" kind="presentation" identifier="Select Sample Rate" id="4t2-v3-0hb"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -803,10 +803,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="yHJ-4j-6wh">
+                            <tableViewSection headerTitle="Configuration" id="yHJ-4j-6wh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0Pt-Nu-5aF">
-                                        <rect key="frame" x="0.0" y="188" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="210" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Pt-Nu-5aF" id="CLH-4z-GKf">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -879,10 +879,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="qZ2-oh-xwZ">
+                            <tableViewSection headerTitle="Configuration" id="qZ2-oh-xwZ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NMz-m5-45p">
-                                        <rect key="frame" x="0.0" y="188" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="210" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NMz-m5-45p" id="siM-Wr-tLu">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -955,10 +955,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="vLH-kq-D2X">
+                            <tableViewSection headerTitle="Configuration" id="vLH-kq-D2X">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="awz-N8-aZv">
-                                        <rect key="frame" x="0.0" y="188" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="210" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awz-N8-aZv" id="K9Q-uq-vgf">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1031,10 +1031,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="JCI-or-1Sc">
+                            <tableViewSection headerTitle="Configuration" id="JCI-or-1Sc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HWt-eB-k9V">
-                                        <rect key="frame" x="0.0" y="188" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="210" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HWt-eB-k9V" id="nDl-FF-qrJ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1123,17 +1123,17 @@
             </objects>
             <point key="canvasLocation" x="3988" y="-479"/>
         </scene>
-        <!--Sampling Rate-->
+        <!--Numeric User Input-->
         <scene sceneID="bct-KP-8D5">
             <objects>
-                <tableViewController id="kiY-jU-Cf3" customClass="CSSelectSamplingRate" sceneMemberID="viewController">
+                <tableViewController id="kiY-jU-Cf3" customClass="CSNumericUserInput" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="c3Q-bu-jGs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection footerTitle="Type the Sampling Rate of the selected sensor in Hz." id="k0R-aM-oGd">
+                            <tableViewSection footerTitle="User Input Description" id="k0R-aM-oGd">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="1JN-Ad-UKu">
                                         <rect key="frame" x="0.0" y="99" width="600" height="44"/>
@@ -1142,7 +1142,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" placeholder="Sampling Rate (Hz)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8VD-nF-kuG">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8VD-nF-kuG">
                                                     <rect key="frame" x="15" y="7" width="570" height="30"/>
                                                     <animations/>
                                                     <constraints>
@@ -1170,7 +1170,7 @@
                             <outlet property="delegate" destination="kiY-jU-Cf3" id="c2A-S1-huO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sampling Rate" id="UOe-Fk-jGM">
+                    <navigationItem key="navigationItem" title="Numeric User Input" id="UOe-Fk-jGM">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zsb-bd-q8g">
                             <connections>
                                 <action selector="cancelAction:" destination="kiY-jU-Cf3" id="jJb-Lh-Zpg"/>
@@ -1183,7 +1183,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="samplingRateTextField" destination="8VD-nF-kuG" id="Hzj-zk-ixY"/>
+                        <outlet property="textField" destination="8VD-nF-kuG" id="MVR-Lc-Vmk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkA-F8-9KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

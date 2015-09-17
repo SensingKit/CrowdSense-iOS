@@ -1,27 +1,29 @@
 //
-//  CSSelectSamplingRate.m
+//  CSNumericUserInput.m
 //  CrowdSensing-iOS
 //
 //  Created by Minos Katevas on 14/10/2014.
 //  Copyright (c) 2014 Kleomenis Katevas. All rights reserved.
 //
 
-#import "CSSelectSamplingRate.h"
+#import "CSNumericUserInput.h"
 
-@interface CSSelectSamplingRate ()
+@interface CSNumericUserInput ()
 
-@property (weak, nonatomic) IBOutlet UITextField *samplingRateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
-@implementation CSSelectSamplingRate
+@implementation CSNumericUserInput
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Set the delegate
-    self.samplingRateTextField.delegate = self;
-    self.samplingRateTextField.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.sampleRate];
+    self.textField.delegate = self;
+    self.textField.text = [NSString stringWithFormat:@"%lu", (long)self.defaultValue];
+    self.textField.placeholder = self.userInputPlaceholder;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -29,26 +31,26 @@
     [super viewWillAppear:animated];
     
     // Make keyboard appear
-    [self.samplingRateTextField becomeFirstResponder];
+    [self.textField becomeFirstResponder];
 }
 
 - (IBAction)doneAction:(id)sender
 {
-    NSUInteger sampleRate = self.samplingRateTextField.text.integerValue;
+    NSUInteger value = self.textField.text.integerValue;
     
-    // 0 is not allowed
-    if (sampleRate == 0)
+    if (value < self.minValue)
     {
-        sampleRate = 1;
+        value = self.minValue;
     }
     
-    // > 100 is not allowed
-    if (sampleRate > 100)
+    if (value > self.maxValue)
     {
-        sampleRate = 100;
+        value = self.maxValue;
     }
     
-    [self.delegate updateSampleRate:sampleRate];
+    if (self.delegate) {
+        [self.delegate userInputWithValue:value];
+    }
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -57,9 +59,6 @@
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
-
-
-#define MAXLENGTH 3
 
 // Thanks to http://stackoverflow.com/questions/12944789/allow-only-numbers-for-uitextfield-input
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -82,12 +81,24 @@
     // verify max length has not been exceeded
     NSString *updatedText = [textField.text stringByReplacingCharactersInRange:range withString:string];
     
-    if (updatedText.length > MAXLENGTH)
+    if (updatedText.length > self.maxDigits)
     {
         return NO;
     }
     
     return YES;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return self.userInputDescription;
+    }
+    else
+    {
+        return nil;
+    }
 }
 
 @end
