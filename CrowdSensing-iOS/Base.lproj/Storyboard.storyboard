@@ -733,9 +733,6 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <segue destination="lVr-He-ZhG" kind="presentation" identifier="Select Sample Rate" id="4t2-v3-0hb"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -900,7 +897,6 @@
                     <connections>
                         <outlet property="sensorLabel" destination="wmF-xx-dla" id="vWZ-H7-qdU"/>
                         <outlet property="sensorSwitch" destination="nCa-tb-eq8" id="jkc-Yz-bNh"/>
-                        <segue destination="lVr-He-ZhG" kind="show" identifier="Select Accuracy" id="OD5-IB-4Ci"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zxj-eX-OhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1724,7 +1720,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
         <!--Navigation Controller-->
         <scene sceneID="0Zo-iY-crR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lVr-He-ZhG" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="userInput" automaticallyAdjustsScrollViewInsets="NO" id="lVr-He-ZhG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPE-qb-vw8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1844,7 +1840,4 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
             <point key="canvasLocation" x="-263" y="1955"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4t2-v3-0hb"/>
-    </inferredMetricsTieBreakers>
 </document>

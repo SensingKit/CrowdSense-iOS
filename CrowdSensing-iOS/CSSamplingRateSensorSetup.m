@@ -75,6 +75,29 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if ([cell.textLabel.text isEqualToString:@"Sample Rate"])
+    {
+        // Configure the userInput controller
+        UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
+        CSNumericUserInput *userInput = (CSNumericUserInput *)navigationController.topViewController;
+        userInput.delegate = self;
+        userInput.maxDigits = 3;
+        userInput.minValue = 1;
+        userInput.maxValue = 100;
+        userInput.defaultValue = self.sampleRateConfiguration.sampleRate;
+        userInput.userInputDescription = @"Type the Sample Rate of the selected sensor in Hz.";
+        userInput.userInputPlaceholder = @"Sample Rate (Hz)";
+        userInput.title = @"Sample Rate";
+        
+        // Show the userInput controller
+        [self presentViewController:navigationController animated:YES completion:nil];
+    }
+}
+
 - (SKSampleRateConfiguration *)sampleRateConfiguration
 {
     return (SKSampleRateConfiguration *)self.configuration;
@@ -92,24 +115,6 @@
     
     // Update the UI
     self.samplingRateLabel.text = [NSString stringWithFormat:@"%lu Hz", (long)sampleRate];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"Select Sample Rate"])
-    {
-        // set delegate
-        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
-        CSNumericUserInput *userInput = (CSNumericUserInput *)navigationController.topViewController;
-        userInput.delegate = self;
-        userInput.maxDigits = 3;
-        userInput.minValue = 1;
-        userInput.maxValue = 100;
-        userInput.defaultValue = self.sampleRateConfiguration.sampleRate;
-        userInput.userInputDescription = @"Type the Sample Rate of the selected sensor in Hz.";
-        userInput.userInputPlaceholder = @"Sample Rate (Hz)";
-        userInput.title = @"Sample Rate";
-    }
 }
 
 @end
