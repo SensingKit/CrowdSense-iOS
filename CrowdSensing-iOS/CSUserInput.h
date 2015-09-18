@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CSNumericUserInputDelegate <NSObject>
+@protocol CSNUserInputDelegate <NSObject>
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSUInteger)value;
 
 @end
 
-@interface CSNumericUserInput : UITableViewController <UITextFieldDelegate>
+@interface CSUserInput : UITableViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) id <CSNumericUserInputDelegate> delegate;
+@property (weak, nonatomic) id <CSNUserInputDelegate> delegate;
 
 @property (strong, nonatomic) NSString *identifier;
 

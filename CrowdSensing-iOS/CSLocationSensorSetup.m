@@ -7,8 +7,9 @@
 //
 
 #import "CSLocationSensorSetup.h"
+#import "CSUserInput.h"
 
-@interface CSLocationSensorSetup ()
+@interface CSLocationSensorSetup () <CSNUserInputDelegate>
 
 @end
 
@@ -71,6 +72,41 @@
             NSLog(@"Unknown CSSensorStatus: %lu", (unsigned long)self.sensorStatus);
             abort();
     }
+}
+
+- (SKLocationConfiguration *)locationConfiguration
+{
+    return (SKLocationConfiguration *)self.configuration;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if ([cell.textLabel.text isEqualToString:@"Distance Filter"])
+    {
+        // Configure the userInput controller
+        UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
+        CSUserInput *userInput = (CSUserInput *)navigationController.topViewController;
+        userInput.delegate = self;
+        userInput.maxDigits = 4;
+        userInput.minValue = 0;
+        userInput.maxValue = 1000;
+        userInput.defaultValue = self.locationConfiguration.distanceFilter;
+        userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
+        userInput.userInputPlaceholder = @"Distance Filter (m)";
+        userInput.title = @"Distance Filter";
+        userInput.identifier = @"Distance Filter";
+        
+        // Show the userInput controller
+        [self presentViewController:navigationController animated:YES completion:nil];
+    }
+}
+
+- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSUInteger)value
+{
+    //self.sampleRateConfiguration.sampleRate = value;
+    //[self updateProperties];
 }
 
 @end

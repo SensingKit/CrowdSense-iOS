@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Kleomenis Katevas. All rights reserved.
 //
 
-#import "CSNumericUserInput.h"
+#import "CSUserInput.h"
 
-@interface CSNumericUserInput ()
+@interface CSUserInput ()
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
-@implementation CSNumericUserInput
+@implementation CSUserInput
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -7,9 +7,9 @@
 //
 
 #import "CSSamplingRateSensorSetup.h"
-#import "CSNumericUserInput.h"
+#import "CSUserInput.h"
 
-@interface CSSamplingRateSensorSetup () <CSNumericUserInputDelegate>
+@interface CSSamplingRateSensorSetup () <CSNUserInputDelegate>
 
 @end
 
@@ -83,7 +83,7 @@
     {
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
-        CSNumericUserInput *userInput = (CSNumericUserInput *)navigationController.topViewController;
+        CSUserInput *userInput = (CSUserInput *)navigationController.topViewController;
         userInput.delegate = self;
         userInput.maxDigits = 3;
         userInput.minValue = 1;
