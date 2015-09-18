@@ -10,13 +10,15 @@
 
 @protocol CSNumericUserInputDelegate <NSObject>
 
-- (void)userInputWithValue:(NSUInteger)value;
+- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSUInteger)value;
 
 @end
 
 @interface CSNumericUserInput : UITableViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) id <CSNumericUserInputDelegate> delegate;
+
+@property (strong, nonatomic) NSString *identifier;
 
 @property (strong, nonatomic) NSString *userInputPlaceholder;
 @property (strong, nonatomic) NSString *userInputDescription;

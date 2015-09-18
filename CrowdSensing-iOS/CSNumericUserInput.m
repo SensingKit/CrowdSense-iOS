@@ -49,7 +49,7 @@
     }
     
     if (self.delegate) {
-        [self.delegate userInputWithValue:value];
+        [self.delegate userInputWithIdentifier:self.identifier withValue:value];
     }
     
     [self dismissViewControllerAnimated:YES completion:NULL];

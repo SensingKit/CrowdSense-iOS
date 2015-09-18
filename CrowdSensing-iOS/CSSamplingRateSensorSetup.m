@@ -92,6 +92,7 @@
         userInput.userInputDescription = @"Type the Sample Rate of the selected sensor in Hz.";
         userInput.userInputPlaceholder = @"Sample Rate (Hz)";
         userInput.title = @"Sample Rate";
+        userInput.identifier = @"Sample Rate";
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
@@ -103,7 +104,7 @@
     return (SKSampleRateConfiguration *)self.configuration;
 }
 
-- (void)userInputWithValue:(NSUInteger)value
+- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSUInteger)value
 {
     self.sampleRateConfiguration.sampleRate = value;
     [self updateProperties];
