@@ -8,8 +8,9 @@
 
 #import "CSiBeaconProximitySensorSetup.h"
 #import "CSUserInput.h"
+#import "CSSelectProperty.h"
 
-@interface CSiBeaconProximitySensorSetup () <CSUserInputDelegate>
+@interface CSiBeaconProximitySensorSetup () <CSUserInputDelegate, CSSelectPropertyDelegate>
 
 @end
 
@@ -75,6 +76,25 @@
     }
 }
 
+- (NSString *)sensorModeString
+{
+    switch (self.iBeaconConfiguration.mode)
+    {
+        case SKiBeaconProximityModeScanOnly:
+            return @"Scan only";
+            
+        case SKiBeaconProximityModeBroadcastOnly:
+            return @"Broadcast only";
+            
+        case SKiBeaconProximityModeScanAndBroadcast:
+            return @"Scan and Broadcast";
+            
+        default:
+            NSLog(@"Unknown SKLocationAccuracy: %lu", (unsigned long)self.iBeaconConfiguration.mode);
+            abort();
+    }
+}
+
 - (NSString *)majorString
 {
     return [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.major];
@@ -106,7 +126,20 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if ([cell.textLabel.text isEqualToString:@"Major Identifier"])
+    if ([cell.textLabel.text isEqualToString:@"Sensor Mode"])
+    {
+        // Configure the selectProperty controller
+        CSSelectProperty *selectProperty = [self.storyboard instantiateViewControllerWithIdentifier:@"selectProperty"];
+        selectProperty.identifier = @"Sensor Mode";
+        selectProperty.delegate = self;
+        selectProperty.elements = @[@"Scan only", @"Broadcast only", @"Scan and Broadcast"];
+        selectProperty.selectedIndex = self.iBeaconConfiguration.mode;
+        selectProperty.title = @"Sensor Mode";
+        
+        // Show the userInput controller
+        [self.navigationController pushViewController:selectProperty animated:YES];
+    }
+    else if ([cell.textLabel.text isEqualToString:@"Major Identifier"])
     {
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
@@ -178,6 +211,22 @@
     }
 }
 
+- (void)selectPropertyWithIdentifier:(NSString *)identifier withIndex:(NSUInteger)index withValue:(NSString *)value
+{
+    if ([identifier isEqualToString:@"Sensor Mode"])
+    {
+        SKiBeaconProximityMode mode = index;
+        self.iBeaconConfiguration.mode = mode;
+    }
+    else
+    {
+        NSLog(@"Unknown identifier: %@", identifier);
+        abort();
+    }
+    
+    [self updateProperties];
+}
+
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
     if ([identifier isEqualToString:@"Major"])
@@ -211,6 +260,7 @@
 - (void)updateProperties
 {
     // Update the UI
+    self.sensorMode.text = self.sensorModeString;
     self.majorLabel.text = self.majorString;
     self.minorLabel.text = self.minorString;
     self.measuredPowerLabel.text = self.measuredPowerString;

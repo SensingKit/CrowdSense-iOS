@@ -8,8 +8,9 @@
 
 #import "CSLocationSensorSetup.h"
 #import "CSUserInput.h"
+#import "CSSelectProperty.h"
 
-@interface CSLocationSensorSetup () <CSUserInputDelegate>
+@interface CSLocationSensorSetup () <CSUserInputDelegate, CSSelectPropertyDelegate>
 
 @end
 
@@ -85,22 +86,22 @@
     switch (self.locationConfiguration.locationAccuracy)
     {
         case SKLocationAccuracyBestForNavigation:
-            return @"Best for Navigation";
+            return @"Best for navigation";
             
         case SKLocationAccuracyBest:
             return @"Best";
             
         case SKLocationAccuracyNearestTenMeters:
-            return @"Ten Meters";
+            return @"Ten meters";
             
         case SKLocationAccuracyHundredMeters:
-            return @"Hundred Meters";
+            return @"Hundred meters";
             
         case SKLocationAccuracyKilometer:
             return @"Kilometer";
             
         case SKLocationAccuracyThreeKilometers:
-            return @"Three Kilometers";
+            return @"Three kilometers";
             
         default:
             NSLog(@"Unknown SKLocationAccuracy: %lu", (unsigned long)self.locationConfiguration.locationAccuracy);
@@ -147,7 +148,20 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if ([cell.textLabel.text isEqualToString:@"Distance Filter"])
+    if ([cell.textLabel.text isEqualToString:@"Desired Accuracy"])
+    {
+        // Configure the selectProperty controller
+        CSSelectProperty *selectProperty = [self.storyboard instantiateViewControllerWithIdentifier:@"selectProperty"];
+        selectProperty.identifier = @"Desired Accuracy";
+        selectProperty.delegate = self;
+        selectProperty.elements = @[@"Best for navigation", @"Best", @"Ten meters", @"Hundred meters", @"Kilometer", @"Three kilometers"];
+        selectProperty.selectedIndex = self.locationConfiguration.locationAccuracy;
+        selectProperty.title = @"Desired Accuracy";
+        
+        // Show the userInput controller
+        [self.navigationController pushViewController:selectProperty animated:YES];
+    }
+    else if ([cell.textLabel.text isEqualToString:@"Distance Filter"])
     {
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
@@ -176,6 +190,40 @@
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
     }
+    else if ([cell.textLabel.text isEqualToString:@"Authorization"])
+    {
+        // Configure the selectProperty controller
+        CSSelectProperty *selectProperty = [self.storyboard instantiateViewControllerWithIdentifier:@"selectProperty"];
+        selectProperty.identifier = @"Authorization";
+        selectProperty.delegate = self;
+        selectProperty.elements = @[@"None", @"When in use", @"Always"];
+        selectProperty.selectedIndex = self.locationConfiguration.locationAuthorization;
+        selectProperty.title = @"Desired Accuracy";
+        
+        // Show the userInput controller
+        [self.navigationController pushViewController:selectProperty animated:YES];
+    }
+}
+
+- (void)selectPropertyWithIdentifier:(NSString *)identifier withIndex:(NSUInteger)index withValue:(NSString *)value
+{
+    if ([identifier isEqualToString:@"Desired Accuracy"])
+    {
+        SKLocationAccuracy locationAccuracy = index;
+        self.locationConfiguration.locationAccuracy = locationAccuracy;
+    }
+    else if ([identifier isEqualToString:@"Authorization"])
+    {
+        SKLocationAuthorization locationAuthorization = index;
+        self.locationConfiguration.locationAuthorization = locationAuthorization;
+    }
+    else
+    {
+        NSLog(@"Unknown identifier: %@", identifier);
+        abort();
+    }
+
+    [self updateProperties];
 }
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value

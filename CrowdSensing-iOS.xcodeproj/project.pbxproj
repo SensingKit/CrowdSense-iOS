@@ -24,6 +24,7 @@
 		CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */; };
 		CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */; };
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
+		CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */; settings = {ASSET_TAGS = (); }; };
 		CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */; };
 		CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSAboutViewController.m */; };
@@ -95,6 +96,8 @@
 		CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recording+Create.m"; sourceTree = "<group>"; };
 		CF8E9BFB1B346733005AC2FC /* LogEntry+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LogEntry+Create.h"; sourceTree = "<group>"; };
 		CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LogEntry+Create.m"; sourceTree = "<group>"; };
+		CFB029B61BADBEB3008E4137 /* CSSelectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSelectProperty.h; sourceTree = "<group>"; };
+		CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectProperty.m; sourceTree = "<group>"; };
 		CFB668BA1B5434BC00D3ED80 /* CSSensingSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensingSession.h; sourceTree = "<group>"; };
 		CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSensingSession.m; sourceTree = "<group>"; };
 		CFB668BD1B5434CC00D3ED80 /* CSModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSModelWriter.h; sourceTree = "<group>"; };
@@ -189,8 +192,7 @@
 		CF18C39719ED4B6000E295CB /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
-				CF18C3A719ED4C7700E295CB /* CSUserInput.h */,
-				CF18C3A819ED4C7700E295CB /* CSUserInput.m */,
+				CFB029B51BADBE90008E4137 /* User Input */,
 				CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */,
 				CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */,
 				CF18C39E19ED4BDC00E295CB /* CSSimpleSensorSetup.h */,
@@ -227,6 +229,17 @@
 				CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		CFB029B51BADBE90008E4137 /* User Input */ = {
+			isa = PBXGroup;
+			children = (
+				CF18C3A719ED4C7700E295CB /* CSUserInput.h */,
+				CF18C3A819ED4C7700E295CB /* CSUserInput.m */,
+				CFB029B61BADBEB3008E4137 /* CSSelectProperty.h */,
+				CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */,
+			);
+			name = "User Input";
 			sourceTree = "<group>";
 		};
 		CFC8964E1B8E1388004F857C /* ZipArchive */ = {
@@ -476,6 +489,7 @@
 			files = (
 				CFC8965C1B8E1388004F857C /* SSZipArchive.m in Sources */,
 				CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */,
+				CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */,
 				CFC8965F1B8E1388004F857C /* unzip.c in Sources */,
 				CFC896601B8E1388004F857C /* zip.c in Sources */,
 				CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */,
