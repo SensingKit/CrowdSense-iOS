@@ -98,7 +98,6 @@
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"Distance Filter (m)";
         userInput.title = @"Distance Filter";
-        userInput.zeroIsNil = YES;
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];

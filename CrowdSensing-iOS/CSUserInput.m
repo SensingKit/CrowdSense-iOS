@@ -73,24 +73,17 @@
         // Parse as integer
         NSUInteger value = self.textField.text.integerValue;
         
-        if (self.zeroIsNil && value == 0)
+        if (value < self.minValue)
         {
-            self.textField.text = nil;
+            value = self.minValue;
         }
-        else
+        
+        if (value > self.maxValue)
         {
-            if (value < self.minValue)
-            {
-                value = self.minValue;
-            }
-            
-            if (value > self.maxValue)
-            {
-                value = self.maxValue;
-            }
-            
-            self.textField.text = [NSString stringWithFormat:@"%lu", (long)value];
+            value = self.maxValue;
         }
+        
+        self.textField.text = [NSString stringWithFormat:@"%lu", (long)value];
     }
     
     if (self.delegate) {
