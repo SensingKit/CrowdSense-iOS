@@ -9,7 +9,7 @@
 #import "CSMicrophoneSensorSetup.h"
 #import "CSUserInput.h"
 
-@interface CSMicrophoneSensorSetup () <CSNUserInputDelegate>
+@interface CSMicrophoneSensorSetup () <CSUserInputDelegate>
 
 @end
 

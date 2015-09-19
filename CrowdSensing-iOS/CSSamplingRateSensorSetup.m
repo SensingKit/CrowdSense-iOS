@@ -9,7 +9,7 @@
 #import "CSSamplingRateSensorSetup.h"
 #import "CSUserInput.h"
 
-@interface CSSamplingRateSensorSetup () <CSNUserInputDelegate>
+@interface CSSamplingRateSensorSetup () <CSUserInputDelegate>
 
 @end
 

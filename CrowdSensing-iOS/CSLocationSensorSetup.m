@@ -9,7 +9,7 @@
 #import "CSLocationSensorSetup.h"
 #import "CSUserInput.h"
 
-@interface CSLocationSensorSetup () <CSNUserInputDelegate>
+@interface CSLocationSensorSetup () <CSUserInputDelegate>
 
 @end
 

@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, CSUserInputMode) {
     CSNUserInputHexMode
 };
 
-@protocol CSNUserInputDelegate <NSObject>
+@protocol CSUserInputDelegate <NSObject>
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value;
 
@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, CSUserInputMode) {
 
 @property (strong, nonatomic) NSString *identifier;
 
-@property (weak, nonatomic) id <CSNUserInputDelegate> delegate;
+@property (weak, nonatomic) id <CSUserInputDelegate> delegate;
 
 @property (nonatomic) CSUserInputMode mode;
 

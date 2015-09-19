@@ -9,7 +9,7 @@
 #import "CSEddystoneProximitySensorSetup.h"
 #import "CSUserInput.h"
 
-@interface CSEddystoneProximitySensorSetup () <CSNUserInputDelegate>
+@interface CSEddystoneProximitySensorSetup () <CSUserInputDelegate>
 
 @end
 

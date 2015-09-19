@@ -9,7 +9,7 @@
 #import "CSiBeaconProximitySensorSetup.h"
 #import "CSUserInput.h"
 
-@interface CSiBeaconProximitySensorSetup () <CSNUserInputDelegate>
+@interface CSiBeaconProximitySensorSetup () <CSUserInputDelegate>
 
 @end
 
