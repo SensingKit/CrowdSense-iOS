@@ -895,6 +895,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="authorizationLabel" destination="yBQ-pe-ct9" id="EqA-HT-8ab"/>
+                        <outlet property="desiredAccuracyLabel" destination="ijU-Kh-Ofw" id="RNT-OS-CRC"/>
+                        <outlet property="distanceFilterLabel" destination="UM2-T6-nvc" id="sTF-aW-t7h"/>
                         <outlet property="sensorLabel" destination="wmF-xx-dla" id="vWZ-H7-qdU"/>
                         <outlet property="sensorSwitch" destination="nCa-tb-eq8" id="jkc-Yz-bNh"/>
                     </connections>

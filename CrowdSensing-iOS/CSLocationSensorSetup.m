@@ -23,6 +23,7 @@
     
     // Update sensor properties
     [self updateSensorSwitch];
+    [self updateProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -79,6 +80,69 @@
     return (SKLocationConfiguration *)self.configuration;
 }
 
+- (NSString *)desiredAccuracyString
+{
+    switch (self.locationConfiguration.locationAccuracy)
+    {
+        case SKLocationAccuracyBestForNavigation:
+            return @"Best for Navigation";
+            
+        case SKLocationAccuracyBest:
+            return @"Best";
+            
+        case SKLocationAccuracyNearestTenMeters:
+            return @"Ten Meters";
+            
+        case SKLocationAccuracyHundredMeters:
+            return @"Hundred Meters";
+            
+        case SKLocationAccuracyKilometer:
+            return @"Kilometer";
+            
+        case SKLocationAccuracyThreeKilometers:
+            return @"Three Kilometers";
+            
+        default:
+            NSLog(@"Unknown SKLocationAccuracy: %lu", (unsigned long)self.locationConfiguration.locationAccuracy);
+            abort();
+    }
+}
+
+- (NSString *)distanceFilterString
+{
+    if (self.locationConfiguration.distanceFilter == -1)
+    {
+        return @"None";
+    }
+    else if (self.locationConfiguration.distanceFilter == 1)
+    {
+        return [NSString stringWithFormat:@"%lu meter", (long)self.locationConfiguration.distanceFilter];
+    }
+    else
+    {
+        return [NSString stringWithFormat:@"%lu meters", (long)self.locationConfiguration.distanceFilter];
+    }
+}
+
+- (NSString *)desiredAuthorizationString
+{
+    switch (self.locationConfiguration.locationAuthorization)
+    {
+        case SKLocationAuthorizationNone:
+            return @"None";
+            
+        case SKLocationAuthorizationWhenInUse:
+            return @"When in use";
+            
+        case SKLocationAuthorizationAlways:
+            return @"Always";
+            
+        default:
+            NSLog(@"Unknown SKLocationAuthorization: %lu", (unsigned long)self.locationConfiguration.locationAuthorization);
+            abort();
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -91,12 +155,21 @@
         userInput.identifier = @"Distance Filter";
         userInput.delegate = self;
         userInput.mode = CSNUserInputIntegerMode;
-        userInput.maxCharacters = 4;
+        userInput.maxCharacters = 10;
         userInput.minValue = 0;
-        userInput.maxValue = 1000;
-        userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.locationConfiguration.distanceFilter];
+        userInput.maxValue = 1000000000;
+        
+        if (self.locationConfiguration.distanceFilter == -1)
+        {
+            userInput.userInputDefaultValue = nil;
+        }
+        else
+        {
+            [NSString stringWithFormat:@"%ld", (long)self.locationConfiguration.distanceFilter];
+        }
+        
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
-        userInput.userInputPlaceholder = @"Distance Filter (m)";
+        userInput.userInputPlaceholder = @"None";
         userInput.title = @"Distance Filter";
         
         // Show the userInput controller
@@ -106,16 +179,16 @@
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
-    if (value)
-    {
-        self.locationConfiguration.distanceFilter = value.integerValue;
-    }
-    else
-    {
-        self.locationConfiguration.distanceFilter = 0;
-    }
-    //self.sampleRateConfiguration.sampleRate = value;
-    //[self updateProperties];
+    self.locationConfiguration.distanceFilter = value.integerValue;
+
+    [self updateProperties];
 }
 
+- (void)updateProperties
+{
+    // Update the UI
+    self.desiredAccuracyLabel.text = self.desiredAccuracyString;
+    self.distanceFilterLabel.text = self.distanceFilterString;
+    self.authorizationLabel.text = self.desiredAuthorizationString;
+}
 @end
