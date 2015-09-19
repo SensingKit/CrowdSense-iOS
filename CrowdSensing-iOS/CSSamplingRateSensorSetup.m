@@ -84,15 +84,17 @@
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
         CSUserInput *userInput = (CSUserInput *)navigationController.topViewController;
+        userInput.identifier = @"Sample Rate";
         userInput.delegate = self;
-        userInput.maxDigits = 3;
+        userInput.mode = CSNUserInputIntegerMode;
+        userInput.maxCharacters = 3;
         userInput.minValue = 1;
         userInput.maxValue = 100;
-        userInput.defaultValue = self.sampleRateConfiguration.sampleRate;
+        userInput.zeroIsNil = NO;
+        userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.sampleRateConfiguration.sampleRate];
         userInput.userInputDescription = @"Type the Sample Rate of the selected sensor in Hz.";
         userInput.userInputPlaceholder = @"Sample Rate (Hz)";
         userInput.title = @"Sample Rate";
-        userInput.identifier = @"Sample Rate";
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
@@ -104,9 +106,9 @@
     return (SKSampleRateConfiguration *)self.configuration;
 }
 
-- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSUInteger)value
+- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
-    self.sampleRateConfiguration.sampleRate = value;
+    self.sampleRateConfiguration.sampleRate = value.integerValue;
     [self updateProperties];
 }
 

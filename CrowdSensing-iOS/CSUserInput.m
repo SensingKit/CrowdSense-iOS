@@ -12,6 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
+@property (strong, nonatomic) NSCharacterSet *validCharacters;
+
+@property (nonatomic) UIKeyboardType keyboardType;
+
 @end
 
 @implementation CSUserInput
@@ -21,7 +25,7 @@
     
     // Set the delegate
     self.textField.delegate = self;
-    self.textField.text = [NSString stringWithFormat:@"%lu", (long)self.defaultValue];
+    self.textField.text = self.userInputDefaultValue;
     self.textField.placeholder = self.userInputPlaceholder;
     
 }
@@ -31,25 +35,66 @@
     [super viewWillAppear:animated];
     
     // Make keyboard appear
+    self.textField.keyboardType = self.keyboardType;
     [self.textField becomeFirstResponder];
+}
+
+- (void)setMode:(CSUserInputMode)mode
+{
+    switch (mode)
+    {
+        case CSNUserInputIntegerMode:
+            self.keyboardType = UIKeyboardTypeNumberPad;
+            self.validCharacters = [NSCharacterSet decimalDigitCharacterSet].invertedSet;
+            break;
+            
+        case CSNUserInputTextMode:
+            self.keyboardType = UIKeyboardTypeASCIICapable;
+            self.validCharacters = [NSCharacterSet alphanumericCharacterSet].invertedSet;
+            break;
+            
+        case CSNUserInputHexMode:
+            self.keyboardType = UIKeyboardTypeASCIICapable;
+            self.validCharacters = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEFabcdef"].invertedSet;
+            break;
+            
+        default:
+            NSLog(@"Unknown UserInputMode: %lu", (unsigned long)mode);
+            abort();
+    }
+    
+    _mode = mode;
 }
 
 - (IBAction)doneAction:(id)sender
 {
-    NSUInteger value = self.textField.text.integerValue;
-    
-    if (value < self.minValue)
+    if (self.mode == CSNUserInputIntegerMode)
     {
-        value = self.minValue;
-    }
-    
-    if (value > self.maxValue)
-    {
-        value = self.maxValue;
+        // Parse as integer
+        NSUInteger value = self.textField.text.integerValue;
+        
+        if (self.zeroIsNil && value == 0)
+        {
+            self.textField.text = nil;
+        }
+        else
+        {
+            if (value < self.minValue)
+            {
+                value = self.minValue;
+            }
+            
+            if (value > self.maxValue)
+            {
+                value = self.maxValue;
+            }
+            
+            self.textField.text = [NSString stringWithFormat:@"%lu", (long)value];
+        }
     }
     
     if (self.delegate) {
-        [self.delegate userInputWithIdentifier:self.identifier withValue:value];
+        [self.delegate userInputWithIdentifier:self.identifier withValue:self.textField.text];
     }
     
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -60,33 +105,25 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-// Thanks to http://stackoverflow.com/questions/12944789/allow-only-numbers-for-uitextfield-input
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     // allow backspace
-    if (!string.length)
-    {
-        return YES;
-    }
+    if (!string.length) { return YES; }
     
-    // Prevent invalid character input, if keyboard is numberpad
-    if (textField.keyboardType == UIKeyboardTypeNumberPad)
-    {
-        if ([string rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound)
-        {
-            return NO;
-        }
-    }
+    // Check string for validity
+    if (![self isStringValid:string]) { return NO; }
     
-    // verify max length has not been exceeded
+    // Check the length of the string
     NSString *updatedText = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if (updatedText.length > self.maxCharacters) { return NO; }
     
-    if (updatedText.length > self.maxDigits)
-    {
-        return NO;
-    }
-    
+    // All ok
     return YES;
+}
+
+- (BOOL)isStringValid:(NSString *)string
+{
+    return ([string rangeOfCharacterFromSet:self.validCharacters].location == NSNotFound);
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section

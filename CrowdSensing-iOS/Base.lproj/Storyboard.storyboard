@@ -1479,7 +1479,7 @@
         <!--Numeric User Input-->
         <scene sceneID="bct-KP-8D5">
             <objects>
-                <tableViewController id="kiY-jU-Cf3" customClass="CSNumericUserInput" sceneMemberID="viewController">
+                <tableViewController id="kiY-jU-Cf3" customClass="CSUserInput" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="c3Q-bu-jGs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1502,7 +1502,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="JyT-Zi-K5X"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -1541,7 +1541,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkA-F8-9KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6628" y="677"/>
+            <point key="canvasLocation" x="3098" y="2647"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ab-Yh-ZPU">
@@ -1734,7 +1734,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lll-Pp-7wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5854" y="677"/>
+            <point key="canvasLocation" x="2324" y="2647"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kXE-Uy-Tad">

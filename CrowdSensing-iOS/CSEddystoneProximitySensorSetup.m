@@ -88,22 +88,23 @@
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
         CSUserInput *userInput = (CSUserInput *)navigationController.topViewController;
+        userInput.identifier = @"Namespace Filter";
         userInput.delegate = self;
-        userInput.maxDigits = 4;
+        userInput.mode = CSNUserInputHexMode;
+        userInput.maxCharacters = 20;
         userInput.minValue = 0;
         userInput.maxValue = 1000;
         //userInput.defaultValue = self.eddystoneConfiguration.namespaceFilter;
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"None";
         userInput.title = @"Namespace Filter";
-        userInput.identifier = @"Namespace Filter";
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
     }
 }
 
-- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSUInteger)value
+- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
     //self.sampleRateConfiguration.sampleRate = value;
     //[self updateProperties];

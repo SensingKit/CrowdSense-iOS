@@ -8,24 +8,35 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, CSUserInputMode) {
+    CSNUserInputIntegerMode,
+    CSNUserInputTextMode,
+    CSNUserInputHexMode
+};
+
 @protocol CSNUserInputDelegate <NSObject>
 
-- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSUInteger)value;
+- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value;
 
 @end
 
 @interface CSUserInput : UITableViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) id <CSNUserInputDelegate> delegate;
-
 @property (strong, nonatomic) NSString *identifier;
 
+@property (weak, nonatomic) id <CSNUserInputDelegate> delegate;
+
+@property (nonatomic) CSUserInputMode mode;
+
+@property (strong, nonatomic) NSString *userInputDefaultValue;
 @property (strong, nonatomic) NSString *userInputPlaceholder;
 @property (strong, nonatomic) NSString *userInputDescription;
 
-@property (nonatomic) NSUInteger defaultValue;
-@property (nonatomic) NSUInteger maxDigits;
+@property (nonatomic) NSUInteger maxCharacters;
+
+// Used in IntegerMode only
 @property (nonatomic) NSUInteger minValue;
 @property (nonatomic) NSUInteger maxValue;
+@property (nonatomic) BOOL zeroIsNil;
 
 @end

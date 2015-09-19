@@ -189,14 +189,14 @@
 		CF18C39719ED4B6000E295CB /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
+				CF18C3A719ED4C7700E295CB /* CSUserInput.h */,
+				CF18C3A819ED4C7700E295CB /* CSUserInput.m */,
 				CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */,
 				CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */,
 				CF18C39E19ED4BDC00E295CB /* CSSimpleSensorSetup.h */,
 				CF18C39F19ED4BDC00E295CB /* CSSimpleSensorSetup.m */,
 				CF18C39B19ED4BA400E295CB /* CSSamplingRateSensorSetup.h */,
 				CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */,
-				CF18C3A719ED4C7700E295CB /* CSUserInput.h */,
-				CF18C3A819ED4C7700E295CB /* CSUserInput.m */,
 				CF18C3A119ED4C0000E295CB /* CSLocationSensorSetup.h */,
 				CF18C3A219ED4C0000E295CB /* CSLocationSensorSetup.m */,
 				CF18C3A419ED4C1200E295CB /* CSiBeaconProximitySensorSetup.h */,

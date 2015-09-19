@@ -88,15 +88,16 @@
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
         CSUserInput *userInput = (CSUserInput *)navigationController.topViewController;
+        userInput.identifier = @"Major";
         userInput.delegate = self;
-        userInput.maxDigits = 5;
+        userInput.mode = CSNUserInputIntegerMode;
+        userInput.maxCharacters = 5;
         userInput.minValue = 0;
         userInput.maxValue = 65535;
-        userInput.defaultValue = self.iBeaconConfiguration.major;
+        userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.major];
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"Major";
         userInput.title = @"Major Identifier";
-        userInput.identifier = @"Major";
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
@@ -106,15 +107,16 @@
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
         CSUserInput *userInput = (CSUserInput *)navigationController.topViewController;
+        userInput.identifier = @"Minor";
         userInput.delegate = self;
-        userInput.maxDigits = 5;
+        userInput.mode = CSNUserInputIntegerMode;
+        userInput.maxCharacters = 5;
         userInput.minValue = 0;
         userInput.maxValue = 65535;
-        userInput.defaultValue = self.iBeaconConfiguration.minor;
+        userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.minor];
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"Distance Filter (m)";
         userInput.title = @"Minor Identifier";
-        userInput.identifier = @"Minor";
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
@@ -124,33 +126,34 @@
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
         CSUserInput *userInput = (CSUserInput *)navigationController.topViewController;
+        userInput.identifier = @"Measured Power";
         userInput.delegate = self;
-        userInput.maxDigits = 3;
+        userInput.mode = CSNUserInputIntegerMode;
+        userInput.maxCharacters = 3;
         userInput.minValue = 0;
         userInput.maxValue = 100;
-        userInput.defaultValue = self.iBeaconConfiguration.measuredPower.integerValue;
+        userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.measuredPower.integerValue];
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"Power (dBµ)";
         userInput.title = @"Measured Power";
-        userInput.identifier = @"Measured Power";
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
     }
 }
 
-- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSUInteger)value
+- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
-    if ([identifier isEqualToString:@""])
+    if ([identifier isEqualToString:@"Major"])
     {
         //self.sampleRateConfiguration.sampleRate = value;
         //[self updateProperties];
     }
-    else if ([identifier isEqualToString:@""])
+    else if ([identifier isEqualToString:@"Minor"])
     {
         
     }
-    else if ([identifier isEqualToString:@""])
+    else if ([identifier isEqualToString:@"Measured Power"])
     {
         
     }
