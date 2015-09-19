@@ -1108,6 +1108,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="majorLabel" destination="nGi-GT-Hq3" id="SEW-q4-u9d"/>
+                        <outlet property="measuredPowerLabel" destination="a7M-Jh-ReR" id="Kq4-Go-4lM"/>
+                        <outlet property="minorLabel" destination="zmW-fj-A8j" id="2H0-Ry-O2t"/>
                         <outlet property="sensorLabel" destination="Dfh-LY-s3s" id="TjX-G5-I9J"/>
                         <outlet property="sensorSwitch" destination="Odn-0t-QnL" id="VFk-mW-if5"/>
                     </connections>
@@ -1230,7 +1233,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="namespaceFilterLabel" destination="R9Q-y4-7jG" id="5nJ-79-gyY"/>
                         <outlet property="sensorLabel" destination="3Yw-zT-dQc" id="NHu-41-Jsr"/>
+                        <outlet property="sensorModeLabel" destination="lVb-ME-QmG" id="p6d-Ss-Iz7"/>
                         <outlet property="sensorSwitch" destination="HwZ-FR-Dsh" id="PSy-CJ-VUb"/>
                     </connections>
                 </tableViewController>

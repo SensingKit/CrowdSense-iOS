@@ -90,6 +90,7 @@
         userInput.maxCharacters = 3;
         userInput.minValue = 1;
         userInput.maxValue = 100;
+        userInput.noneValueAllowed = NO;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.sampleRateConfiguration.sampleRate];
         userInput.userInputDescription = @"Type the Sample Rate of the selected sensor in Hz.";
         userInput.userInputPlaceholder = @"Sample Rate (Hz)";

@@ -23,6 +23,7 @@
     
     // Update sensor properties
     [self updateSensorSwitch];
+    [self updateProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -74,6 +75,31 @@
     }
 }
 
+- (NSString *)sensorModeString
+{
+    switch (self.eddystoneConfiguration.mode)
+    {
+        case SKEddystoneProximityModeScanOnly:
+            return @"Scan Only";
+            
+        default:
+            NSLog(@"Unknown SKEddystoneProximityMode: %lu", (unsigned long)self.eddystoneConfiguration.mode);
+            abort();
+    }
+}
+
+- (NSString *)namespaceFilterString
+{
+    if (self.eddystoneConfiguration.namespaceFilter)
+    {
+        return self.eddystoneConfiguration.namespaceFilter;
+    }
+    else
+    {
+        return @"None";
+    }
+}
+
 - (SKEddystoneProximityConfiguration *)eddystoneConfiguration
 {
     return (SKEddystoneProximityConfiguration *)self.configuration;
@@ -92,9 +118,8 @@
         userInput.delegate = self;
         userInput.mode = CSNUserInputHexMode;
         userInput.maxCharacters = 20;
-        userInput.minValue = 0;
-        userInput.maxValue = 1000;
-        //userInput.defaultValue = self.eddystoneConfiguration.namespaceFilter;
+        userInput.noneValueAllowed = YES;
+        userInput.userInputDefaultValue = self.eddystoneConfiguration.namespaceFilter;
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"None";
         userInput.title = @"Namespace Filter";
@@ -106,8 +131,15 @@
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
-    //self.sampleRateConfiguration.sampleRate = value;
-    //[self updateProperties];
+    self.eddystoneConfiguration.namespaceFilter = value.lowercaseString;
+    [self updateProperties];
+}
+
+- (void)updateProperties
+{
+    // Update the UI
+    self.sensorModeLabel.text = self.sensorModeString;
+    self.namespaceFilterLabel.text = self.namespaceFilterString;
 }
 
 

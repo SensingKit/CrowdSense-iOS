@@ -23,6 +23,7 @@
     
     // Update sensor properties
     [self updateSensorSwitch];
+    [self updateProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -74,6 +75,28 @@
     }
 }
 
+- (NSString *)majorString
+{
+    return [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.major];
+}
+
+- (NSString *)minorString
+{
+    return [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.minor];
+}
+
+- (NSString *)measuredPowerString
+{
+    if (self.iBeaconConfiguration.measuredPower)
+    {
+        return [NSString stringWithFormat:@"%lu", (unsigned long)self.iBeaconConfiguration.measuredPower.unsignedIntegerValue];
+    }
+    else
+    {
+        return @"Default";
+    }
+}
+
 - (SKiBeaconProximityConfiguration *)iBeaconConfiguration
 {
     return (SKiBeaconProximityConfiguration *)self.configuration;
@@ -94,6 +117,7 @@
         userInput.maxCharacters = 5;
         userInput.minValue = 0;
         userInput.maxValue = 65535;
+        userInput.noneValueAllowed = NO;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.major];
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"Major";
@@ -113,6 +137,7 @@
         userInput.maxCharacters = 5;
         userInput.minValue = 0;
         userInput.maxValue = 65535;
+        userInput.noneValueAllowed = NO;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.minor];
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"Minor";
@@ -132,10 +157,21 @@
         userInput.maxCharacters = 3;
         userInput.minValue = 0;
         userInput.maxValue = 100;
-        userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.measuredPower.integerValue];
+        userInput.noneValueAllowed = YES;
+        
+        if (self.iBeaconConfiguration.measuredPower)
+        {
+            userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.measuredPower.integerValue];
+        }
+        else
+        {
+            userInput.userInputDefaultValue = nil;
+        }
+        
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
-        userInput.userInputPlaceholder = @"Power (dBµ)";
+        userInput.userInputPlaceholder = @"Default";
         userInput.title = @"Measured Power";
+        //Power (dBµ)
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
@@ -146,23 +182,38 @@
 {
     if ([identifier isEqualToString:@"Major"])
     {
-        //self.sampleRateConfiguration.sampleRate = value;
-        //[self updateProperties];
+        self.iBeaconConfiguration.major = value.integerValue;
     }
     else if ([identifier isEqualToString:@"Minor"])
     {
-        
+        self.iBeaconConfiguration.minor = value.integerValue;
     }
     else if ([identifier isEqualToString:@"Measured Power"])
     {
-        
+        if (value)
+        {
+            self.iBeaconConfiguration.measuredPower = @(value.integerValue);
+        }
+        else
+        {
+            self.iBeaconConfiguration.measuredPower = nil;
+        }
     }
     else
     {
         NSLog(@"Unknown identifier: %@", identifier);
         abort();
     }
+    
+    [self updateProperties];
 }
 
+- (void)updateProperties
+{
+    // Update the UI
+    self.majorLabel.text = self.majorString;
+    self.minorLabel.text = self.minorString;
+    self.measuredPowerLabel.text = self.measuredPowerString;
+}
 
 @end

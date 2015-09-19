@@ -34,6 +34,8 @@ typedef NS_ENUM(NSUInteger, CSUserInputMode) {
 
 @property (nonatomic) NSUInteger maxCharacters;
 
+@property (nonatomic) BOOL noneValueAllowed;
+
 // Used in IntegerMode only
 @property (nonatomic) NSUInteger minValue;
 @property (nonatomic) NSUInteger maxValue;

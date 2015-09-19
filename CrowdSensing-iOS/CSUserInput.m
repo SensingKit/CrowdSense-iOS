@@ -66,28 +66,59 @@
     _mode = mode;
 }
 
+- (void)alertRange
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ERROR Range"
+                                                        message:@""
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
+- (void)alertEmpty
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ERROR Empty"
+                                                        message:@""
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
 - (IBAction)doneAction:(id)sender
 {
-    if (self.mode == CSNUserInputIntegerMode)
+    // Trim textField
+    NSString *text = [self.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (text.length == 0)
+    {
+        text = nil;
+    }
+    
+    // Check if value is empty
+    if (!text && !self.noneValueAllowed)
+    {
+        [self alertEmpty];
+        return;
+    }
+    
+    if (self.mode == CSNUserInputIntegerMode && text)
     {
         // Parse as integer
-        NSUInteger value = self.textField.text.integerValue;
+        NSUInteger value = text.integerValue;
         
-        if (value < self.minValue)
+        if (value < self.minValue || value > self.maxValue)
         {
-            value = self.minValue;
+            [self alertRange];
+            return;
         }
-        
-        if (value > self.maxValue)
-        {
-            value = self.maxValue;
-        }
-        
-        self.textField.text = [NSString stringWithFormat:@"%lu", (long)value];
     }
     
     if (self.delegate) {
-        [self.delegate userInputWithIdentifier:self.identifier withValue:self.textField.text];
+        [self.delegate userInputWithIdentifier:self.identifier withValue:text];
     }
     
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -103,10 +134,10 @@
     // allow backspace
     if (!string.length) { return YES; }
     
-    // Check string for validity
+    // Check new character for validity
     if (![self isStringValid:string]) { return NO; }
     
-    // Check the length of the string
+    // Check the length of the new string
     NSString *updatedText = [textField.text stringByReplacingCharactersInRange:range withString:string];
     if (updatedText.length > self.maxCharacters) { return NO; }
     

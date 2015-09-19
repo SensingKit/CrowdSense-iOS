@@ -158,6 +158,7 @@
         userInput.maxCharacters = 10;
         userInput.minValue = 0;
         userInput.maxValue = 1000000000;
+        userInput.noneValueAllowed = YES;
         
         if (self.locationConfiguration.distanceFilter == -1)
         {
@@ -165,7 +166,7 @@
         }
         else
         {
-            [NSString stringWithFormat:@"%ld", (long)self.locationConfiguration.distanceFilter];
+            userInput.userInputDefaultValue = [NSString stringWithFormat:@"%ld", (long)self.locationConfiguration.distanceFilter];
         }
         
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
@@ -179,7 +180,14 @@
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
-    self.locationConfiguration.distanceFilter = value.integerValue;
+    if (!value)
+    {
+        self.locationConfiguration.distanceFilter = -1;
+    }
+    else
+    {
+        self.locationConfiguration.distanceFilter = value.integerValue;
+    }
 
     [self updateProperties];
 }
