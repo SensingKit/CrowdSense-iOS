@@ -115,7 +115,7 @@
         userInput.maxValue = 65535;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.minor];
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
-        userInput.userInputPlaceholder = @"Distance Filter (m)";
+        userInput.userInputPlaceholder = @"Minor";
         userInput.title = @"Minor Identifier";
         
         // Show the userInput controller
