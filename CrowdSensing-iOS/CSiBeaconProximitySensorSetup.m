@@ -139,7 +139,14 @@
         }
         else
         {
-            return 44;
+            if (self.iBeaconConfiguration.mode == SKiBeaconProximityModeScanOnly && indexPath.section == 2)
+            {
+                return 0;
+            }
+            else
+            {
+                return 44;
+            }
         }
     }
 }
@@ -248,6 +255,9 @@
     
     [self updateConfiguration];
     [self updateProperties];
+    
+    // Reload TableView (show/hide configuration)
+    [self.tableView reloadData];
 }
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
