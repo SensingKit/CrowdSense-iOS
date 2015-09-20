@@ -41,6 +41,9 @@
         {
             [self.delegate changeStatus:CSSensorStatusDisabled ofSensor:self.sensorType withConfiguration:nil];
         }
+        
+        // Reload TableView (show/hide configuration)
+        [self.tableView reloadData];
     }
 }
 
@@ -141,6 +144,25 @@
         default:
             NSLog(@"Unknown SKLocationAuthorization: %lu", (unsigned long)self.locationConfiguration.locationAuthorization);
             abort();
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+    {
+        return 44;
+    }
+    else
+    {
+        if (!self.sensorSwitch.on)
+        {
+            return 0;
+        }
+        else
+        {
+            return 44;
+        }
     }
 }
 
