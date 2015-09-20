@@ -246,6 +246,7 @@
         abort();
     }
     
+    [self updateConfiguration];
     [self updateProperties];
 }
 
@@ -276,6 +277,7 @@
         abort();
     }
     
+    [self updateConfiguration];
     [self updateProperties];
 }
 

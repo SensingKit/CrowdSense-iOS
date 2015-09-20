@@ -37,5 +37,6 @@ typedef NS_ENUM(NSUInteger, CSSensorStatus) {
 @property (strong, nonatomic) NSString *sensorDescription;
 
 - (void)alertSensorNotAvailable;
+- (void)updateConfiguration;
 
 @end

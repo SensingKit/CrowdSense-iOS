@@ -131,6 +131,7 @@
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
     self.sampleRateConfiguration.sampleRate = value.integerValue;
+    [self updateConfiguration];
     [self updateProperties];
 }
 

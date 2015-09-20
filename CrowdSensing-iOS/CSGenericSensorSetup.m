@@ -110,4 +110,12 @@
     [alert show];
 }
 
+- (void)updateConfiguration
+{
+    if (self.delegate)
+    {
+        [self.delegate updateConfiguration:self.configuration forSensor:self.sensorType];
+    }
+}
+
 @end

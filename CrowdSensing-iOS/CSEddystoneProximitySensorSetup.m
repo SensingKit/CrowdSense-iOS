@@ -154,6 +154,8 @@
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
     self.eddystoneConfiguration.namespaceFilter = value.lowercaseString;
+    
+    [self updateConfiguration];
     [self updateProperties];
 }
 
@@ -163,6 +165,5 @@
     self.sensorModeLabel.text = self.sensorModeString;
     self.namespaceFilterLabel.text = self.namespaceFilterString;
 }
-
 
 @end

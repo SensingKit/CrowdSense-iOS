@@ -245,6 +245,7 @@
         abort();
     }
 
+    [self updateConfiguration];
     [self updateProperties];
 }
 
@@ -259,6 +260,7 @@
         self.locationConfiguration.distanceFilter = value.integerValue;
     }
 
+    [self updateConfiguration];
     [self updateProperties];
 }
 
