@@ -32,6 +32,7 @@
 	<string>CrowdSense requires this access in order to capture your location, as well as your proximity with other devices actively running this app.</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>location</string>
 	</array>
 	<key>UIFileSharingEnabled</key>
