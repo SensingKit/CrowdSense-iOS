@@ -191,7 +191,11 @@
             break;
             
         case Microphone:
-            configuration = [[SKMicrophoneConfiguration alloc] init];
+        {
+            SKMicrophoneConfiguration *microphoneConfiguration = [[SKMicrophoneConfiguration alloc] init];
+            microphoneConfiguration.url = [self.folderPath URLByAppendingPathComponent:@"Microphone.aac"];
+            configuration = microphoneConfiguration;
+        }
             break;
             
         default:
