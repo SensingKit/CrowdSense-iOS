@@ -193,7 +193,8 @@
         case Microphone:
         {
             SKMicrophoneConfiguration *microphoneConfiguration = [[SKMicrophoneConfiguration alloc] init];
-            microphoneConfiguration.url = [self.folderPath URLByAppendingPathComponent:@"Microphone.aac"];
+            microphoneConfiguration.outputDirectory = self.folderPath;
+            microphoneConfiguration.recordingFilename = @"Microphone";
             configuration = microphoneConfiguration;
         }
             break;
