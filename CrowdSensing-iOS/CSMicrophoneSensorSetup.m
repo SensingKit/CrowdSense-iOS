@@ -8,8 +8,9 @@
 
 #import "CSMicrophoneSensorSetup.h"
 #import "CSUserInput.h"
+#import "CSSelectProperty.h"
 
-@interface CSMicrophoneSensorSetup () <CSUserInputDelegate>
+@interface CSMicrophoneSensorSetup () <CSUserInputDelegate, CSSelectPropertyDelegate>
 
 @end
 
@@ -23,6 +24,7 @@
     
     // Update sensor properties
     [self updateSensorSwitch];
+    [self updateProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -40,6 +42,9 @@
             [self.delegate changeStatus:CSSensorStatusDisabled ofSensor:self.sensorType withConfiguration:nil];
         }
     }
+    
+    // Reload TableView (show/hide configuration)
+    [self.tableView reloadData];
 }
 
 - (IBAction)switchTouchedAction:(id)sender
@@ -74,41 +79,175 @@
     }
 }
 
+- (NSString *)recordingFormatString
+{
+    switch (self.microphoneConfiguration.recordingFormat)
+    {
+        case SKMicrophoneRecordingFormatPCM:
+            return @"PCM";
+            
+        case SKMicrophoneRecordingFormatAAC:
+            return @"AAC";
+            
+        case SKMicrophoneRecordingFormatMP3:
+            return @"MP3";
+            
+        default:
+            NSLog(@"Unknown SKMicrophoneRecordingFormat: %lu", (unsigned long)self.microphoneConfiguration.recordingFormat);
+            abort();
+    }
+}
+
+- (NSString *)recordingQualityString
+{
+    switch (self.microphoneConfiguration.recordingQuality)
+    {
+        case SKMicrophoneRecordingQualityMin:
+            return @"Min";
+            
+        case SKMicrophoneRecordingQualityLow:
+            return @"Low";
+            
+        case SKMicrophoneRecordingQualityMedium:
+            return @"Medium";
+            
+        case SKMicrophoneRecordingQualityHigh:
+            return @"High";
+            
+        case SKMicrophoneRecordingQualityMax:
+            return @"Max";
+            
+        default:
+            NSLog(@"Unknown SKMicrophoneRecordingQuality: %lu", (unsigned long)self.microphoneConfiguration.recordingQuality);
+            abort();
+    }
+}
+
+- (NSString *)sampleRateString
+{
+    return [NSString stringWithFormat:@"%.01f Hz", self.microphoneConfiguration.sampleRate];
+}
+
 - (SKMicrophoneConfiguration *)microphoneConfiguration
 {
     return (SKMicrophoneConfiguration *)self.configuration;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+    {
+        return 44;
+    }
+    else
+    {
+        if (!self.sensorSwitch.on)
+        {
+            return 0;
+        }
+        else
+        {
+            return 44;
+        }
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if ([cell.textLabel.text isEqualToString:@"Distance Filter"])
+    if ([cell.textLabel.text isEqualToString:@"Recording Format"])
+    {
+        // Configure the selectProperty controller
+        CSSelectProperty *selectProperty = [self.storyboard instantiateViewControllerWithIdentifier:@"selectProperty"];
+        selectProperty.identifier = @"Recording Format";
+        selectProperty.delegate = self;
+        selectProperty.elements = @[@"PCM", @"AAC", @"MP3"];
+        selectProperty.selectedIndex = self.microphoneConfiguration.recordingFormat;
+        selectProperty.title = @"Recording Format";
+        
+        // Show the userInput controller
+        [self.navigationController pushViewController:selectProperty animated:YES];
+    }
+    else if ([cell.textLabel.text isEqualToString:@"Recording Quality"])
+    {
+        // Configure the selectProperty controller
+        CSSelectProperty *selectProperty = [self.storyboard instantiateViewControllerWithIdentifier:@"selectProperty"];
+        selectProperty.identifier = @"Recording Quality";
+        selectProperty.delegate = self;
+        selectProperty.elements = @[@"Min", @"Low", @"Medium", @"High", @"Max"];
+        selectProperty.selectedIndex = self.microphoneConfiguration.recordingQuality;
+        selectProperty.title = @"Recording Quality";
+        
+        // Show the userInput controller
+        [self.navigationController pushViewController:selectProperty animated:YES];
+    }
+    else if ([cell.textLabel.text isEqualToString:@"Sample Rate"])
     {
         // Configure the userInput controller
         UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userInput"];
         CSUserInput *userInput = (CSUserInput *)navigationController.topViewController;
-        userInput.identifier = @"Distance Filter";
+        userInput.identifier = @"Sample Rate";
         userInput.delegate = self;
         userInput.mode = CSNUserInputIntegerMode;
-        userInput.maxCharacters = 4;
-        userInput.minValue = 0;
-        userInput.maxValue = 1000;
-        //userInput.defaultValue = self.microphoneConfiguration.;
+        userInput.maxCharacters = 5;
+        userInput.minValue = 1000;
+        userInput.maxValue = 48000;
+        userInput.noneValueAllowed = NO;
+        userInput.userInputDefaultValue = [NSString stringWithFormat:@"%.0f", self.microphoneConfiguration.sampleRate];
         userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
-        userInput.userInputPlaceholder = @"Distance Filter (m)";
-        userInput.title = @"Distance Filter";
+        userInput.userInputPlaceholder = @"Sample Rate (Hz)";
+        userInput.title = @"Sample Rate";
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
     }
 }
 
-- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
+- (void)updateProperties
 {
-    //self.sampleRateConfiguration.sampleRate = value;
-    //[self updateProperties];
+    // Update the UI
+    self.recordingFormatLabel.text = self.recordingFormatString;
+    self.recordingQualityLabel.text = self.recordingQualityString;
+    self.sampleRateLabel.text = self.sampleRateString;
+}
+    
+- (void)selectPropertyWithIdentifier:(NSString *)identifier withIndex:(NSUInteger)index withValue:(NSString *)value
+{
+    if ([identifier isEqualToString:@"Recording Format"])
+    {
+        SKMicrophoneRecordingFormat recordingFormat = index;
+        self.microphoneConfiguration.recordingFormat = recordingFormat;
+    }
+    else if ([identifier isEqualToString:@"Recording Quality"])
+    {
+        SKMicrophoneRecordingQuality recordingQuality = index;
+        self.microphoneConfiguration.recordingQuality = recordingQuality;
+    }
+    else
+    {
+        NSLog(@"Unknown identifier: %@", identifier);
+        abort();
+    }
+    
+    [self updateConfiguration];
+    [self updateProperties];
 }
 
+- (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
+{
+    if ([identifier isEqualToString:@"Sample Rate"])
+    {
+        self.microphoneConfiguration.sampleRate = value.floatValue;
+    }
+    else
+    {
+        NSLog(@"Unknown identifier: %@", identifier);
+        abort();
+    }
+    
+    [self updateConfiguration];
+    [self updateProperties];
+}
 
 @end

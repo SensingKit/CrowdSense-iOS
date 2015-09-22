@@ -13,4 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *sensorLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *sensorSwitch;
 
+@property (weak, nonatomic) IBOutlet UILabel *recordingFormatLabel;
+@property (weak, nonatomic) IBOutlet UILabel *recordingQualityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sampleRateLabel;
 @end
