@@ -217,8 +217,8 @@
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[attachment] applicationActivities:nil];
     
     // Call this when the activity is completed
-    [activityViewController setCompletionHandler:^(NSString *activityType, BOOL completed) {
-
+    [activityViewController setCompletionWithItemsHandler:^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
+        
         // Delete the temporary file
         [[NSFileManager defaultManager] removeItemAtURL:attachment error:nil];
     }];
