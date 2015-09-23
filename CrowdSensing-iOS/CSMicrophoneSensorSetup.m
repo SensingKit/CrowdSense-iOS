@@ -188,11 +188,11 @@
         userInput.delegate = self;
         userInput.mode = CSNUserInputIntegerMode;
         userInput.maxCharacters = 5;
-        userInput.minValue = 1000;
+        userInput.minValue = 8000;
         userInput.maxValue = 48000;
         userInput.noneValueAllowed = NO;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%.0f", self.microphoneConfiguration.sampleRate];
-        userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
+        userInput.userInputDescription = @"Type the Sample Rate of Microphone sensor in Hz.";
         userInput.userInputPlaceholder = @"Sample Rate (Hz)";
         userInput.title = @"Sample Rate";
         

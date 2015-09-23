@@ -142,7 +142,7 @@
         userInput.maxCharacters = 20;
         userInput.noneValueAllowed = YES;
         userInput.userInputDefaultValue = self.eddystoneConfiguration.namespaceFilter;
-        userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
+        userInput.userInputDescription = @"Type the Namespace Filter of the Eddystone™ Proximity sensor in hexadecimal format. Leave the filter to None for scanning all Eddystone™ beacons in range.";
         userInput.userInputPlaceholder = @"None";
         userInput.title = @"Namespace Filter";
         

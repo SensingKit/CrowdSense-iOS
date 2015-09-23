@@ -205,7 +205,7 @@
             userInput.userInputDefaultValue = [NSString stringWithFormat:@"%ld", (long)self.locationConfiguration.distanceFilter];
         }
         
-        userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
+        userInput.userInputDescription = @"Type the Sample Rate of Distance Filter of Location sensor in meters.";
         userInput.userInputPlaceholder = @"None";
         userInput.title = @"Distance Filter";
         

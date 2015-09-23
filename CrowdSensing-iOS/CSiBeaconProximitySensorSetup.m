@@ -181,7 +181,7 @@
         userInput.maxValue = 65535;
         userInput.noneValueAllowed = NO;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.major];
-        userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
+        userInput.userInputDescription = @"Major and Minor are identifiers meant to identify individual beacons uniquelly.";
         userInput.userInputPlaceholder = @"Major";
         userInput.title = @"Major Identifier";
         
@@ -201,7 +201,7 @@
         userInput.maxValue = 65535;
         userInput.noneValueAllowed = NO;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.minor];
-        userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
+        userInput.userInputDescription = @"Major and Minor are identifiers meant to identify individual beacons uniquelly.";
         userInput.userInputPlaceholder = @"Minor";
         userInput.title = @"Minor Identifier";
         
@@ -230,10 +230,9 @@
             userInput.userInputDefaultValue = nil;
         }
         
-        userInput.userInputDescription = @"Type the Distance Filter of Location sensor in meters.";
+        userInput.userInputDescription = @"Measured Power is the RSSI (in dBµ) of the device observed from one meter distance. If not specified, it will default to a pre-determined value for the device.";
         userInput.userInputPlaceholder = @"Default";
         userInput.title = @"Measured Power";
-        //Power (dBµ)
         
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
