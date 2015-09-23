@@ -68,8 +68,11 @@
 
 - (void)alertRange
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ERROR Range"
-                                                        message:@""
+    NSString *title = [NSString stringWithFormat:@"\"%@\" is not a valid value", self.textField.text];
+    NSString *message = [NSString stringWithFormat:@"%@ ranges from %lu to %lu", self.title, (unsigned long)self.minValue, self.maxValue];
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -79,7 +82,9 @@
 
 - (void)alertEmpty
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ERROR Empty"
+    NSString *title = [NSString stringWithFormat:@"%@ cannot be empty", self.title];
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                         message:@""
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
