@@ -220,10 +220,10 @@
             return @"iBeacon™ Proximity sensor uses Apple's iBeacon™ technology to estimate the proximity of the current device with other devices actively running CrowdSense application.";
             
         case EddystoneProximity:
-            return @"Eddystone™ Proximity sensor estimates the proximity of the current device with other Eddystone™ beacons with namespace '90643f1a5253bff747fa' in range.";
+            return @"Eddystone™ Proximity sensor estimates the proximity of the current device with other Eddystone™ beacons in range.";
             
         case Microphone:
-            return @"TODO.";
+            return @"Microphone sensor can be used to record audio from the environment by converting sound into electrical signal.";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
