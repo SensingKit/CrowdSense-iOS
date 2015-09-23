@@ -83,14 +83,11 @@
 {
     switch (self.microphoneConfiguration.recordingFormat)
     {
-        case SKMicrophoneRecordingFormatPCM:
+        case SKMicrophoneRecordingFormatLinearPCM:
             return @"PCM";
             
-        case SKMicrophoneRecordingFormatAAC:
+        case SKMicrophoneRecordingFormatMPEG4AAC:
             return @"AAC";
-            
-        case SKMicrophoneRecordingFormatMP3:
-            return @"MP3";
             
         default:
             NSLog(@"Unknown SKMicrophoneRecordingFormat: %lu", (unsigned long)self.microphoneConfiguration.recordingFormat);
@@ -162,7 +159,7 @@
         CSSelectProperty *selectProperty = [self.storyboard instantiateViewControllerWithIdentifier:@"selectProperty"];
         selectProperty.identifier = @"Recording Format";
         selectProperty.delegate = self;
-        selectProperty.elements = @[@"PCM", @"AAC", @"MP3"];
+        selectProperty.elements = @[@"PCM", @"AAC"];
         selectProperty.selectedIndex = self.microphoneConfiguration.recordingFormat;
         selectProperty.title = @"Recording Format";
         

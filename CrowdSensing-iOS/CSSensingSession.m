@@ -192,9 +192,7 @@
             
         case Microphone:
         {
-            SKMicrophoneConfiguration *microphoneConfiguration = [[SKMicrophoneConfiguration alloc] init];
-            microphoneConfiguration.outputDirectory = self.folderPath;
-            microphoneConfiguration.recordingFilename = @"Microphone";
+            SKMicrophoneConfiguration *microphoneConfiguration = [[SKMicrophoneConfiguration alloc] initWithOutputDirectory:self.folderPath withFilename:@"Microphone"];
             configuration = microphoneConfiguration;
         }
             break;
