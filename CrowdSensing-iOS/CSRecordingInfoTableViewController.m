@@ -235,7 +235,8 @@
                                                      UIActivityTypeAddToReadingList,
                                                      UIActivityTypePostToFlickr,
                                                      UIActivityTypePostToVimeo,
-                                                     UIActivityTypePostToTencentWeibo];
+                                                     UIActivityTypePostToTencentWeibo,
+                                                     UIActivityTypeOpenInIBooks];
     
     // To avoid crash on iPad and iOS 8
     if ([activityViewController respondsToSelector:@selector(popoverPresentationController)])
