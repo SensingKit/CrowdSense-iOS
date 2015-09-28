@@ -68,7 +68,7 @@
 
 - (void)alertRange
 {
-    NSString *title = [NSString stringWithFormat:@"\"%@\" is not a valid value", self.textField.text];
+    NSString *title = [NSString stringWithFormat:@"\"%@\" is not valid", self.textField.text];
     NSString *message = [NSString stringWithFormat:@"%@ ranges from %lu to %lu", self.title, (unsigned long)self.minValue, (unsigned long)self.maxValue];
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title

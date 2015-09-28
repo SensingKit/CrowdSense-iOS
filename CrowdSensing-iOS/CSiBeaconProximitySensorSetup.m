@@ -181,7 +181,7 @@
         userInput.maxValue = 65535;
         userInput.noneValueAllowed = NO;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.major];
-        userInput.userInputDescription = @"Major and Minor are identifiers meant to identify individual beacons uniquelly.";
+        userInput.userInputDescription = @"Major and Minor are used for identifying each device uniquelly.";
         userInput.userInputPlaceholder = @"Major";
         userInput.title = @"Major Identifier";
         
@@ -201,7 +201,7 @@
         userInput.maxValue = 65535;
         userInput.noneValueAllowed = NO;
         userInput.userInputDefaultValue = [NSString stringWithFormat:@"%lu", (long)self.iBeaconConfiguration.minor];
-        userInput.userInputDescription = @"Major and Minor are identifiers meant to identify individual beacons uniquelly.";
+        userInput.userInputDescription = @"Major and Minor are used for identifying each device uniquelly.";
         userInput.userInputPlaceholder = @"Minor";
         userInput.title = @"Minor Identifier";
         

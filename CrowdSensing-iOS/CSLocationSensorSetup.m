@@ -205,7 +205,7 @@
             userInput.userInputDefaultValue = [NSString stringWithFormat:@"%ld", (long)self.locationConfiguration.distanceFilter];
         }
         
-        userInput.userInputDescription = @"Type the Sample Rate of Distance Filter of Location sensor in meters.";
+        userInput.userInputDescription = @"Type the minimum distance (measured in meters) the device must move horizontally before a location update event is recorded. If not specified, all movements will be recorded.";
         userInput.userInputPlaceholder = @"None";
         userInput.title = @"Distance Filter";
         

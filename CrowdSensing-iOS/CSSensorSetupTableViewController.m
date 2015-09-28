@@ -196,10 +196,10 @@
             return @"Gyroscope is a sensor that measures the device’s rate of rotation around each of the three spatial axes.";
             
         case Magnetometer:
-            return @"Magnetometer (also known as Compass or Magnetic Field Sensor) is a sensor that measures the actual orientation of the device relatively to the Magnetic North.";
+            return @"Magnetometer (also known as Compass or Magnetic Field Sensor) is a sensor that measures the actual orientation of the device in relation to the Magnetic North.";
             
         case DeviceMotion:
-            return @"Device Motion sensor uses sensor fusion techniques to provide more advanced and accurate motion measurements. It provides measurements of the Attitude, Rotation Rate, Calibrated Magnetic Field, as well as a separation of User Acceleration and Gravity from the device’s acceleration.";
+            return @"Device Motion sensor uses sensor fusion techniques to provide more advanced and accurate motion measurements. It measures the Attitude, Rotation Rate, Calibrated Magnetic Field, as well as a separation of User Acceleration and Gravity from the device’s acceleration.";
             
         case Activity:
             return @"Activity sensor uses an embedded motion co‑processor that senses the user’s activity classified as Stationary, Walking, Running, Automotive or Cycling.";
@@ -208,13 +208,13 @@
             return @"Pedometer sensor uses an embedded motion co‑processor that captures pedestrian‑related data such as step counts, distance traveled and number of floors ascended or descended.";
             
         case Altimeter:
-            return @"Altimeter sensor uses an embedded barometer sensor to capture relative changes in altitude (but not the actual altitude). It also provides the recorded atmospheric pressure in kPa.";
+            return @"Altimeter sensor uses an embedded barometer sensor to capture changes to the relative altitude (not the actual). It also provides the recorded atmospheric pressure in kPa.";
             
         case Battery:
-            return @"Battery sensor listens for changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).";
+            return @"Battery sensor listens to changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).";
             
         case Location:
-            return @"Location sensor senses the current location of the device using a combination of Cellular, Wi‑Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude) as well as the altitude of the device.";
+            return @"Location sensor determines the current location of the device using a combination of Cellular, Wi‑Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude), as well as the altitude of the device.";
             
         case iBeaconProximity:
             return @"iBeacon™ Proximity sensor uses Apple's iBeacon™ technology to estimate the proximity of the current device with other devices actively running CrowdSense application.";
