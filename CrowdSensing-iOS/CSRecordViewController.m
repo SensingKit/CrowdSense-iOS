@@ -40,7 +40,6 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 
 @property (nonatomic) CSStartButtonMode startButtonMode;
 
-@property (strong, nonatomic) NSDateFormatter *timerDateFormatter;
 @property (strong, nonatomic) NSDateFormatter *timestampDateFormatter;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSDate *startDate;
@@ -103,18 +102,6 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     
     // Create the SensingSession
     self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
-}
-
-- (NSDateFormatter *)timerDateFormatter
-{
-    if (!_timerDateFormatter)
-    {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"HH:mm:ss,SSS"];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-        _timerDateFormatter = dateFormatter;
-    }
-    return _timerDateFormatter;
 }
 
 - (NSDateFormatter *)timestampDateFormatter
@@ -540,7 +527,18 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 - (void)updateTimerLabelWithTimeInterval:(NSTimeInterval)timeInterval
 {
     self.duration = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    self.timestampLabel.text = [self.timerDateFormatter stringFromDate:self.duration];
+    self.timestampLabel.text = [CSRecordViewController stringFromTimeInterval:timeInterval];
+}
+
++ (NSString *)stringFromTimeInterval:(NSTimeInterval)timeInterval
+{
+    NSInteger interval = timeInterval;
+    NSInteger ms = (fmod(timeInterval, 1) * 1000);
+    long seconds = interval % 60;
+    long minutes = (interval / 60) % 60;
+    long hours = (interval / 3600);
+    
+    return [NSString stringWithFormat:@"%0.2ld:%0.2ld:%0.2ld,%0.3ld", hours, minutes, seconds, ms];
 }
 
 
