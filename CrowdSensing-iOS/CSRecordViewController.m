@@ -11,6 +11,7 @@
 #import "CSSensingSession.h"
 #import <SensingKit/SKSensorTimestamp.h>
 
+@import CoreText;
 
 typedef NS_ENUM(NSUInteger, CSStartButtonMode) {
     CSStartButtonStartMode,
@@ -92,6 +93,14 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     
     // Set it in the UI
     self.timeLabel.text = [self datetimeDateFormatter:createDate];
+    
+    // Set fond of the timestamp label
+    NSArray *monospacedSetting = @[@{UIFontFeatureTypeIdentifierKey: @(kNumberSpacingType),
+                                     UIFontFeatureSelectorIdentifierKey: @(kMonospacedNumbersSelector)}];
+    
+    UIFontDescriptor *newDescriptor = [[self.timestampLabel.font fontDescriptor] fontDescriptorByAddingAttributes:@{UIFontDescriptorFeatureSettingsAttribute: monospacedSetting}];
+    
+    self.timestampLabel.font = [UIFont fontWithDescriptor:newDescriptor size:0];
     
     // Set in the model
     self.recording.createDate = createDate;
