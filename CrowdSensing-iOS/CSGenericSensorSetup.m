@@ -7,6 +7,7 @@
 //
 
 #import "CSGenericSensorSetup.h"
+#import <SensingKit/NSString+SensorType.h>
 
 @interface CSGenericSensorSetup ()
 
@@ -41,60 +42,7 @@
 
 - (void)updateTitleForSensor:(SKSensorType)sensorType
 {
-    switch (sensorType)
-    {
-        case Accelerometer:
-            self.title = @"Accelerometer";
-            break;
-            
-        case Gyroscope:
-            self.title = @"Gyroscope";
-            break;
-            
-        case Magnetometer:
-            self.title = @"Magnetometer";
-            break;
-            
-        case DeviceMotion:
-            self.title = @"Device Motion";
-            break;
-            
-        case Activity:
-            self.title = @"Activity";
-            break;
-            
-        case Pedometer:
-            self.title = @"Pedometer";
-            break;
-            
-        case Altimeter:
-            self.title = @"Altimeter";
-            break;
-            
-        case Location:
-            self.title = @"Location";
-            break;
-            
-        case iBeaconProximity:
-            self.title = @"iBeacon™ Proximity";
-            break;
-            
-        case EddystoneProximity:
-            self.title = @"Eddystone™ Proximity";
-            break;
-            
-        case Battery:
-            self.title = @"Battery";
-            break;
-            
-        case Microphone:
-            self.title = @"Microphone";
-            break;
-            
-        default:
-            NSLog(@"Unknown sensorSetupType: %ld", (long)sensorType);
-            abort();
-    }
+    self.title = [NSString stringWithSensorType:sensorType];
 }
 
 - (void)alertSensorNotAvailable

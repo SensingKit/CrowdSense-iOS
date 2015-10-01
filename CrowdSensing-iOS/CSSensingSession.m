@@ -78,7 +78,7 @@
     NSString *header = [self.sensingKitLib csvHeaderForSensor:sensorType];
     
     // Create ModelWriter
-    NSString *filename = [[NSString stringWithSensorType:sensorType] stringByAppendingString:@".csv"];
+    NSString *filename = [[NSString nonspacedStringWithSensorType:sensorType] stringByAppendingString:@".csv"];
     CSModelWriter *modelWriter = [[CSModelWriter alloc] initWithSensorType:sensorType
                                                                 withHeader:header
                                                               withFilename:filename
