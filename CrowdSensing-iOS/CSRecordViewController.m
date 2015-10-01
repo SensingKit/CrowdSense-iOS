@@ -539,6 +539,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     self.timestampLabel.text = [CSRecordViewController stringFromTimeInterval:timeInterval];
 }
 
+// Thanks to http://stackoverflow.com/questions/28872450/conversion-from-nstimeinterval-to-hour-minutes-seconds-milliseconds-in-swift
 + (NSString *)stringFromTimeInterval:(NSTimeInterval)timeInterval
 {
     NSInteger interval = timeInterval;
@@ -547,7 +548,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     long minutes = (interval / 60) % 60;
     long hours = (interval / 3600);
     
-    return [NSString stringWithFormat:@"%0.2ld:%0.2ld:%0.2ld,%0.3ld", hours, minutes, seconds, ms];
+    return [NSString stringWithFormat:@"%0.2ld:%0.2ld:%0.2ld,%0.3ld", hours, minutes, seconds, (long)ms];
 }
 
 
