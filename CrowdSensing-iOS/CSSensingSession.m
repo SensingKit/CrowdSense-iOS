@@ -162,8 +162,8 @@
             configuration = [[SKDeviceMotionConfiguration alloc] init];
             break;
             
-        case Activity:
-            configuration = [[SKActivityConfiguration alloc] init];
+        case MotionActivity:
+            configuration = [[SKMotionActivityConfiguration alloc] init];
             break;
             
         case Pedometer:

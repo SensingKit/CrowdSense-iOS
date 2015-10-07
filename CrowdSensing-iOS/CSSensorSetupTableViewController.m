@@ -89,9 +89,9 @@
     {
         return DeviceMotion;
     }
-    else if ([sensorName isEqualToString:@"Activity"])
+    else if ([sensorName isEqualToString:@"Motion Activity"])
     {
-        return Activity;
+        return MotionActivity;
     }
     else if ([sensorName isEqualToString:@"Pedometer"])
     {
@@ -146,7 +146,7 @@
     {
         return @"Sample Rate Sensor Setup";
     }
-    else if ([sensorName isEqualToString:@"Activity"])
+    else if ([sensorName isEqualToString:@"Motion Activity"])
     {
         return @"Simple Sensor Setup";
     }
@@ -201,8 +201,8 @@
         case DeviceMotion:
             return @"Device Motion sensor uses sensor fusion techniques to provide more advanced and accurate motion measurements. It measures the Attitude, Rotation Rate, Calibrated Magnetic Field, as well as a separation of User Acceleration and Gravity from the device’s acceleration.";
             
-        case Activity:
-            return @"Activity sensor uses an embedded motion co‑processor that senses the user’s activity classified as Stationary, Walking, Running, Automotive or Cycling.";
+        case MotionActivity:
+            return @"Motion Activity sensor uses an embedded motion co‑processor that senses the user’s activity classified as Stationary, Walking, Running, Automotive or Cycling.";
             
         case Pedometer:
             return @"Pedometer sensor uses an embedded motion co‑processor that captures pedestrian‑related data such as step counts, distance traveled and number of floors ascended or descended.";
@@ -262,7 +262,7 @@
     [self updateTableViewCell:self.gyroscopeSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:Gyroscope]];
     [self updateTableViewCell:self.magnetometerSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:Magnetometer]];
     [self updateTableViewCell:self.deviceMotionSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:DeviceMotion]];
-    [self updateTableViewCell:self.activitySensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Activity]];
+    [self updateTableViewCell:self.activitySensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:MotionActivity]];
     [self updateTableViewCell:self.pedometerSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:Pedometer]];
     [self updateTableViewCell:self.altimeterSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:Altimeter]];
     [self updateTableViewCell:self.locationSensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Location]];
