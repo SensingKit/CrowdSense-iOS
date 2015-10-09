@@ -132,9 +132,6 @@
 {
     switch (self.locationConfiguration.locationAuthorization)
     {
-        case SKLocationAuthorizationNone:
-            return @"None";
-            
         case SKLocationAuthorizationWhenInUse:
             return @"When in use";
             
@@ -218,7 +215,7 @@
         CSSelectProperty *selectProperty = [self.storyboard instantiateViewControllerWithIdentifier:@"selectProperty"];
         selectProperty.identifier = @"Authorization";
         selectProperty.delegate = self;
-        selectProperty.elements = @[@"None", @"When in use", @"Always"];
+        selectProperty.elements = @[@"When in use", @"Always"];
         selectProperty.selectedIndex = self.locationConfiguration.locationAuthorization;
         selectProperty.title = @"Desired Accuracy";
         
