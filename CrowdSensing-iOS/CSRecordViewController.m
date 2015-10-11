@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 @property (strong, nonatomic) NSDateFormatter *timestampDateFormatter;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSDate *startDate;
-@property (strong, nonatomic) NSDate *duration;
+@property (strong, nonatomic, readonly) NSDate *duration;
 @property (nonatomic) NSTimeInterval timeElapsed;
 @property (nonatomic) NSUInteger syncCounter;
 
@@ -106,11 +106,16 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     self.recording.createDate = createDate;
     self.recording.storageFolder = folderName;
     
-    // zero the duration
-    self.duration = [NSDate distantPast];
-    
     // Create the SensingSession
     self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
+}
+
+- (NSDate *)duration
+{
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:self.startDate];
+    timeInterval += self.timeElapsed;
+    
+    return [NSDate dateWithTimeIntervalSince1970:timeInterval];
 }
 
 - (NSDateFormatter *)timestampDateFormatter
@@ -526,16 +531,19 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 
 - (void)timerTick
 {
-    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:self.startDate];
-    timeInterval += self.timeElapsed;
-    
-    // Update the UI
-    [self updateTimerLabelWithTimeInterval:timeInterval];
+    // Only update when the screen is on
+    if (![UIDevice currentDevice].proximityState)
+    {
+        NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:self.startDate];
+        timeInterval += self.timeElapsed;
+        
+        // Update the UI
+        [self updateTimerLabelWithTimeInterval:timeInterval];
+    }
 }
 
 - (void)updateTimerLabelWithTimeInterval:(NSTimeInterval)timeInterval
 {
-    self.duration = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     self.timestampLabel.text = [CSRecordViewController stringFromTimeInterval:timeInterval];
 }
 
