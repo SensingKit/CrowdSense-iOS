@@ -223,7 +223,7 @@
             return @"Eddystone™ Proximity sensor estimates the proximity of the current device with other Eddystone™ beacons in range.";
             
         case Microphone:
-            return @"Microphone sensor can be used to record audio from the environment by converting sound into electrical signal.";
+            return @"Microphone sensor can be used to record audio from the environment by converting sound into electrical signal. The maximum duration of an audio recording is 4 hours.";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
