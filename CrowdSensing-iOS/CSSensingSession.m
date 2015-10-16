@@ -191,10 +191,7 @@
             break;
             
         case Microphone:
-        {
-            SKMicrophoneConfiguration *microphoneConfiguration = [[SKMicrophoneConfiguration alloc] initWithOutputDirectory:self.folderPath withFilename:@"Microphone"];
-            configuration = microphoneConfiguration;
-        }
+            configuration = [[SKMicrophoneConfiguration alloc] initWithOutputDirectory:self.folderPath withFilename:@"Microphone"];
             break;
             
         default:

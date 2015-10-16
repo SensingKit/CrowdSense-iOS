@@ -128,22 +128,6 @@
     }
 }
 
-- (NSString *)desiredAuthorizationString
-{
-    switch (self.locationConfiguration.locationAuthorization)
-    {
-        case SKLocationAuthorizationWhenInUse:
-            return @"When in use";
-            
-        case SKLocationAuthorizationAlways:
-            return @"Always";
-            
-        default:
-            NSLog(@"Unknown SKLocationAuthorization: %lu", (unsigned long)self.locationConfiguration.locationAuthorization);
-            abort();
-    }
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0)
@@ -209,19 +193,6 @@
         // Show the userInput controller
         [self presentViewController:navigationController animated:YES completion:nil];
     }
-    else if ([cell.textLabel.text isEqualToString:@"Authorization"])
-    {
-        // Configure the selectProperty controller
-        CSSelectProperty *selectProperty = [self.storyboard instantiateViewControllerWithIdentifier:@"selectProperty"];
-        selectProperty.identifier = @"Authorization";
-        selectProperty.delegate = self;
-        selectProperty.elements = @[@"When in use", @"Always"];
-        selectProperty.selectedIndex = self.locationConfiguration.locationAuthorization;
-        selectProperty.title = @"Desired Accuracy";
-        
-        // Show the userInput controller
-        [self.navigationController pushViewController:selectProperty animated:YES];
-    }
 }
 
 - (void)selectPropertyWithIdentifier:(NSString *)identifier withIndex:(NSUInteger)index withValue:(NSString *)value
@@ -230,11 +201,6 @@
     {
         SKLocationAccuracy locationAccuracy = index;
         self.locationConfiguration.locationAccuracy = locationAccuracy;
-    }
-    else if ([identifier isEqualToString:@"Authorization"])
-    {
-        SKLocationAuthorization locationAuthorization = index;
-        self.locationConfiguration.locationAuthorization = locationAuthorization;
     }
     else
     {
@@ -266,6 +232,5 @@
     // Update the UI
     self.desiredAccuracyLabel.text = self.desiredAccuracyString;
     self.distanceFilterLabel.text = self.distanceFilterString;
-    self.authorizationLabel.text = self.desiredAuthorizationString;
 }
 @end
