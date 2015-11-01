@@ -393,6 +393,13 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
         {
             NSLog(@"Delete");
             
+            // Disable sensors
+            [self.sensingSession disableAllRegisteredSensors];
+            
+            // Close Session
+            [self.sensingSession close];
+            self.sensingSession = nil;
+            
             // Dismiss the view and delete recording
             [self dismissViewControllerAnimated:YES completion:^{
                 
