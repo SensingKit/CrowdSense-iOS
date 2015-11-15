@@ -15,6 +15,8 @@
 		CF18C3A619ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A519ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m */; };
 		CF18C3A919ED4C7700E295CB /* CSUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSUserInput.m */; };
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
+		CF3041F41BF8D5FB00447C19 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3041F21BF8D5FB00447C19 /* Fabric.framework */; };
+		CF3041F51BF8D5FB00447C19 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3041F31BF8D5FB00447C19 /* Crashlytics.framework */; };
 		CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */; };
 		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
 		CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Storyboard.storyboard */; };
@@ -83,6 +85,8 @@
 		CF18C3A819ED4C7700E295CB /* CSUserInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUserInput.m; sourceTree = "<group>"; };
 		CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGenericSensorSetup.h; sourceTree = "<group>"; };
 		CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGenericSensorSetup.m; sourceTree = "<group>"; };
+		CF3041F21BF8D5FB00447C19 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		CF3041F31BF8D5FB00447C19 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SensingKit.framework; sourceTree = "<group>"; };
 		CF5298971A0D1141002A4D54 /* SKStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKStyles.h; path = "CrowdSensing-iOS/SKStyles.h"; sourceTree = "<group>"; };
 		CF5298981A0D1141002A4D54 /* SKStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKStyles.m; path = "CrowdSensing-iOS/SKStyles.m"; sourceTree = "<group>"; };
@@ -156,7 +160,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3041F41BF8D5FB00447C19 /* Fabric.framework in Frameworks */,
 				CFC896611B8E13BA004F857C /* libz.dylib in Frameworks */,
+				CF3041F51BF8D5FB00447C19 /* Crashlytics.framework in Frameworks */,
 				CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */,
 				CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */,
 				CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
@@ -305,6 +311,8 @@
 		CFFF325419796BF600F7CE57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF3041F21BF8D5FB00447C19 /* Fabric.framework */,
+				CF3041F31BF8D5FB00447C19 /* Crashlytics.framework */,
 				CFF581D91A0EA56400CBEE4D /* libz.dylib */,
 				CF8E9BDF1B336195005AC2FC /* CoreData.framework */,
 				CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */,
@@ -387,6 +395,7 @@
 				CFFF324E19796BF600F7CE57 /* Sources */,
 				CFFF324F19796BF600F7CE57 /* Frameworks */,
 				CFFF325019796BF600F7CE57 /* Resources */,
+				CF3041F11BF8D5D900447C19 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -481,6 +490,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF3041F11BF8D5D900447C19 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run f8eac4b07e220eb80ae928f35aa6a29222538c20 dadc6bf9871a1735e525d47a051725a801f56fb087f85c302999325508c82646";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CFFF324E19796BF600F7CE57 /* Sources */ = {

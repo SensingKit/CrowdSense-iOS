@@ -9,6 +9,9 @@
 #import "CSAppDelegate.h"
 #import "CSMainTableTableViewController.h"
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 @interface CSAppDelegate ()
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
@@ -26,6 +29,8 @@
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     CSMainTableTableViewController *mainTableViewController = (CSMainTableTableViewController *)navigationController.topViewController;
     mainTableViewController.managedObjectContext = self.managedObjectContext;
+    
+    [Fabric with:@[[Crashlytics class]]];
     
     return YES;
 }
