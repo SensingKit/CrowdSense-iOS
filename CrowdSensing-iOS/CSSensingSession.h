@@ -25,6 +25,8 @@
 - (BOOL)isSensorAvailable:(SKSensorType)sensorType;
 - (BOOL)isSensorEnabled:(SKSensorType)sensorType;
 
+- (NSUInteger)sensorsEnabledCount;
+
 - (void)start;
 - (void)stop;
 - (void)close;

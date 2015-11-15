@@ -24,7 +24,7 @@
 		CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */; };
 		CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */; };
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
-		CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */; settings = {ASSET_TAGS = (); }; };
+		CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */; };
 		CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */; };
 		CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */; };
 		CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSAboutViewController.m */; };
@@ -38,8 +38,8 @@
 		CFC896611B8E13BA004F857C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
 		CFC8966B1B8E4A4C004F857C /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966A1B8E4A4C004F857C /* Recording.m */; };
 		CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966D1B8E4A4D004F857C /* LogEntry.m */; };
-		CFD0E18D1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0E18C1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m */; settings = {ASSET_TAGS = (); }; };
-		CFD0E1901BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0E18F1BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m */; settings = {ASSET_TAGS = (); }; };
+		CFD0E18D1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0E18C1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m */; };
+		CFD0E1901BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0E18F1BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m */; };
 		CFD450291B885C4900E2E78D /* CSRecordingLogModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */; };
 		CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFD450421B8A0DEC00E2E78D /* Settings.bundle */; };
 		CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFF325519796BF600F7CE57 /* Foundation.framework */; };
@@ -667,7 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

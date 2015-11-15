@@ -17,10 +17,13 @@
     if (self.type == CSRoundButtonFilledType) {
         [SKStyles drawRoundButtonFilledWithTitle:self.title];
     }
+    else if (self.type == CSRoundButtonFilledDeactivatedType) {
+        [SKStyles drawRoundButtonFilledDeactivatedWithTitle:self.title];
+    }
     else if (self.type == CSRoundButtonStrokedType) {
         [SKStyles drawRoundButtonStrokedWithTitle:self.title];
     }
-    else if (self.type == CSRoundButtonDeactivatedType) {
+    else if (self.type == CSRoundButtonStrokedDeactivatedType) {
         [SKStyles drawRoundButtonStrokedDeactivatedWithTitle:self.title];
     }
 }
@@ -28,6 +31,12 @@
 - (void)setTitle:(NSString *)title
 {
     _title = title;
+    [self setNeedsDisplay];
+}
+
+- (void)setType:(CSRoundButtonType)type
+{
+    _type = type;
     [self setNeedsDisplay];
 }
 

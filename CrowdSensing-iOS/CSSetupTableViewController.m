@@ -25,7 +25,7 @@
 {
     if (self.delegate)
     {
-        //[self.delegate doneWithConfiguration:self.configuration];
+        [self.delegate doneSensorSetup];
     }
     
     [self dismissViewControllerAnimated:YES

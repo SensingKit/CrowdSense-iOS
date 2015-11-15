@@ -11,8 +11,6 @@
 #import "CSRecordingLogModelWriter.h"
 #import <SensingKit/NSString+SensorType.h>
 
-#define TOTAL_SENSOR_MODULES 12
-
 @interface CSSensingSession ()
 
 @property (nonatomic, strong) NSURL* folderPath;
@@ -32,7 +30,7 @@
         
         self.folderPath = [self createFolderWithName:folderName];
         
-        self.modelWriters = [[NSMutableArray alloc] initWithCapacity:TOTAL_SENSOR_MODULES];
+        self.modelWriters = [[NSMutableArray alloc] initWithCapacity:TOTAL_SENSORS];
         self.recordingLogModelWriter = [[CSRecordingLogModelWriter alloc] initWithFilename:@"RecordingLog.csv"
                                                                                     inPath:self.folderPath];
     }
@@ -113,7 +111,7 @@
 
 - (void)disableAllRegisteredSensors
 {
-    for (int i = 0; i < TOTAL_SENSOR_MODULES; i++)
+    for (int i = 0; i < TOTAL_SENSORS; i++)
     {
         SKSensorType sensorType = i;
         
@@ -210,6 +208,22 @@
 - (BOOL)isSensorEnabled:(SKSensorType)sensorType
 {
     return [self.sensingKitLib isSensorRegistered:sensorType];
+}
+
+- (NSUInteger)sensorsEnabledCount
+{
+    NSUInteger counter = 0;
+    
+    for (int i = 0; i < TOTAL_SENSORS; i++)
+    {
+        SKSensorType sensorType = i;
+        
+        if ([self isSensorEnabled:sensorType]) {
+            counter++;
+        }
+    }
+    
+    return counter;
 }
 
 - (void)start

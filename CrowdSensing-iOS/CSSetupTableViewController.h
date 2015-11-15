@@ -11,7 +11,7 @@
 
 @protocol CSSetupTableViewControllerDelegate <NSObject>
 
-//- (void)doneWithConfiguration:(NSDictionary *)configuration;
+- (void)doneSensorSetup;
 
 @end
 

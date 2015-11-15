@@ -108,6 +108,9 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     
     // Create the SensingSession
     self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
+    
+    // Update the status of the Start Button
+    [self updateStartButtonStatus];
 }
 
 - (NSDate *)duration
@@ -175,13 +178,19 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             
         case CSStartButtonStartMode:
             
+            if (self.sensingSession.sensorsEnabledCount == 0)
+            {
+                [self alertEnableSensors];
+                return;
+            }
+            
             NSLog(@"Start Action");
             [self startTimer];
             
             // Disable Done and Setup buttons
             self.doneButton.enabled = NO;
             self.setupButton.enabled = NO;
-            self.setupButton.type = CSRoundButtonDeactivatedType;
+            self.setupButton.type = CSRoundButtonStrokedDeactivatedType;
             
             // Add to the list
             [self addLogEntryWithLabel:@"Start"];
@@ -224,13 +233,19 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             
         case CSStartButtonContinueMode:
             
+            if (self.sensingSession.sensorsEnabledCount == 0)
+            {
+                [self alertEnableSensors];
+                return;
+            }
+            
             NSLog(@"Continue Action");
             [self continueTimer];
             
             // Disable Done and Setup buttons
             self.doneButton.enabled = NO;
             self.setupButton.enabled = NO;
-            self.setupButton.type = CSRoundButtonDeactivatedType;
+            self.setupButton.type = CSRoundButtonStrokedDeactivatedType;
             
             // Add to the list
             [self addLogEntryWithLabel:@"Start"];
@@ -271,6 +286,22 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     {
         [self showSetNameAlertWithName:self.recording.title];
     }
+}
+
+- (void)alertEnableSensors
+{
+    [self alertWithTitle:@"Start Recording" withMessage:@"Please enable the sensors first"];
+}
+
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
 }
 
 - (void)showSaveRecordingAlertWithName:(NSString *)name
@@ -464,6 +495,23 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
         
         setupTableViewController.delegate = self;
         setupTableViewController.sensingSession = self.sensingSession;
+    }
+}
+
+- (void)doneSensorSetup
+{
+    [self updateStartButtonStatus];
+}
+
+- (void)updateStartButtonStatus
+{
+    if ([self.sensingSession sensorsEnabledCount] > 0)
+    {
+        self.startButton.type = CSRoundButtonFilledType;
+    }
+    else
+    {
+        self.startButton.type = CSRoundButtonFilledDeactivatedType;
     }
 }
 

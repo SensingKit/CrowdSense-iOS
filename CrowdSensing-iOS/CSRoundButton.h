@@ -10,8 +10,9 @@
 
 typedef NS_ENUM(NSUInteger, CSRoundButtonType) {
     CSRoundButtonFilledType,
+    CSRoundButtonFilledDeactivatedType,
     CSRoundButtonStrokedType,
-    CSRoundButtonDeactivatedType
+    CSRoundButtonStrokedDeactivatedType
 };
 
 
