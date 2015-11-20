@@ -198,8 +198,9 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             // Sensing
             [self.sensingSession start];
             
-            // Proximity Monitoring
+            // Proximity Monitoring and idle timer
             [UIDevice currentDevice].proximityMonitoringEnabled = YES;
+            [UIApplication sharedApplication].idleTimerDisabled = YES;
             
             self.startButtonMode = CSStartButtonPauseMode;
             
@@ -223,6 +224,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             
             // Proximity Monitoring
             [UIDevice currentDevice].proximityMonitoringEnabled = NO;
+            [UIApplication sharedApplication].idleTimerDisabled = NO;
             
             self.startButtonMode = CSStartButtonContinueMode;
             
@@ -255,6 +257,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             
             // Proximity Monitoring
             [UIDevice currentDevice].proximityMonitoringEnabled = YES;
+            [UIApplication sharedApplication].idleTimerDisabled = YES;
             
             self.startButtonMode = CSStartButtonPauseMode;
             
