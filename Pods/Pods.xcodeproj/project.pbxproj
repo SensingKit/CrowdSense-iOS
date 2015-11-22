@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1017F8694963BBADD2FC5820B18B9040 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = E3E13E21F4E342BE6EC4322973A0213D /* mztools.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		202A6E662F844A44D451D410E32214EA /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = EC7D3B4B06FFE67F72C2B5556F446C72 /* ioapi.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3DCBD934FB3A370A2C1D6608E632F783 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4857F3C9CA48C96EB9F51BD6308B5F41 /* SSZipArchive.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5DF3262377AF7FA173DDA13D119E0D25 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = E69138AE059CF8CC6864B1AC10584BB2 /* unzip.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		60C8D44C9202EAFCA7246AF8E8452593 /* Pods-CrowdSensing-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D5AA47CA3524E9242E77700E27A40 /* Pods-CrowdSensing-iOS-dummy.m */; };
+		74D923F86BF86CC8D1ACCA725F70105D /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = AD991F5E6CE956C8669037BC4CCC164B /* crypt.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		75126291C5EDD7C36088055923B5DDA6 /* Pods-CrowdSensing-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55230EE568DC511BB2215900F647F1FB /* Pods-CrowdSensing-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		847988A64A55B441ECC3B7E49A7BBCB4 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = CC8BECB41E26A4462822BA738C660FCF /* SSZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		868EDC3A337EBA230B8947BD7B9B707C /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AAECF8495BCB48DD4F569014AC4637 /* ioapi.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CD3862C7240AF4EB8D4A6689A98670F0 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E3DF4C91A948130E5883DA22CBEE704 /* mztools.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D0528CE2749E22C65F3BB7B1F751AFB3 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 90AFE0A63CAA644AB5CBB3ECFE8AF3CC /* zip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D4DC6802AF981A219B06408F9176C462 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CE7FBE3EFD3DBCC404AA858B65337E7 /* zip.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E2ABF070A1DAE56C2FA1A2ABAF9F0337 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		E39D99B58339F521D40D117104A61568 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A627171E58CEAE8BF4426C4E17ACA1D /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4A981A4F648A56130482EA11D166CA0 /* SSZipArchive-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B36A8B92E204FBBAA515429EC3ACFD /* SSZipArchive-dummy.m */; };
+		F3E5A3C37AF8B8A88A1FB30F6653B310 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 0B84BD7F23B6E841E23184990A5C2A97 /* unzip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F9F35641F78499259215809B5F32C650 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		FAD284801D7E5BA0834BE19490161A94 /* SSZipArchive-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50BBF537553A6D714342FCDB8FA7F607 /* SSZipArchive-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5525769C466624D05BD1B5955CFCE77E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B12272B28E313A1563BC892D2531A74;
+			remoteInfo = SSZipArchive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A627171E58CEAE8BF4426C4E17ACA1D /* Common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Common.h; path = SSZipArchive/Common.h; sourceTree = "<group>"; };
+		0B84BD7F23B6E841E23184990A5C2A97 /* unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = SSZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
+		106A6FC688201BE20928F4FCA2C0C299 /* Pods-CrowdSensing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CrowdSensing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		1347060E2140140AC830ACAA03B7E160 /* Pods-CrowdSensing-iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrowdSensing-iOS-resources.sh"; sourceTree = "<group>"; };
+		17AE18DD70FE33FBD48B64EA8B25B034 /* Pods-CrowdSensing-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CrowdSensing-iOS.modulemap"; sourceTree = "<group>"; };
+		1E3DF4C91A948130E5883DA22CBEE704 /* mztools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = SSZipArchive/minizip/mztools.h; sourceTree = "<group>"; };
+		1FE3DD3A3CABBB7CCAFCD49FE34C68C8 /* Pods-CrowdSensing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CrowdSensing-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		2034459D029C37DA8DF3662E29E1F2FB /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		3845123CA32DDB1CD30ED3E3D8545B82 /* SSZipArchive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SSZipArchive.modulemap; sourceTree = "<group>"; };
+		3AC656D8EFDA89D3369DC000DF69AFE0 /* SSZipArchive-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-prefix.pch"; sourceTree = "<group>"; };
+		3B3DD7826C53BB3977081D556419E433 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		42C6169E3A0DC03269B3D01D65858617 /* Pods-CrowdSensing-iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrowdSensing-iOS-frameworks.sh"; sourceTree = "<group>"; };
+		4857F3C9CA48C96EB9F51BD6308B5F41 /* SSZipArchive.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = SSZipArchive/SSZipArchive.m; sourceTree = "<group>"; };
+		4CE7FBE3EFD3DBCC404AA858B65337E7 /* zip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zip.h; path = SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
+		50BBF537553A6D714342FCDB8FA7F607 /* SSZipArchive-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-umbrella.h"; sourceTree = "<group>"; };
+		55117BBEF32DB1821F4DD22430AF896C /* Pods-CrowdSensing-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CrowdSensing-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		55230EE568DC511BB2215900F647F1FB /* Pods-CrowdSensing-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CrowdSensing-iOS-umbrella.h"; sourceTree = "<group>"; };
+		56B36A8B92E204FBBAA515429EC3ACFD /* SSZipArchive-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SSZipArchive-dummy.m"; sourceTree = "<group>"; };
+		5BD7788119545A1A6DCFC2BCABB18BE3 /* SSZipArchive.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SSZipArchive.xcconfig; sourceTree = "<group>"; };
+		626B260C3F01CFFB57251509CBD63F46 /* Pods-CrowdSensing-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CrowdSensing-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		6A0F41AC11BA7BD54975904348865229 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		743AEC7640E3C2BE6E085E4EF42EAF0F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		7C0D5AA47CA3524E9242E77700E27A40 /* Pods-CrowdSensing-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CrowdSensing-iOS-dummy.m"; sourceTree = "<group>"; };
+		90AFE0A63CAA644AB5CBB3ECFE8AF3CC /* zip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = zip.c; path = SSZipArchive/minizip/zip.c; sourceTree = "<group>"; };
+		A6AAECF8495BCB48DD4F569014AC4637 /* ioapi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = SSZipArchive/minizip/ioapi.h; sourceTree = "<group>"; };
+		AD991F5E6CE956C8669037BC4CCC164B /* crypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = SSZipArchive/minizip/crypt.h; sourceTree = "<group>"; };
+		B1B59EA18F84217BEFF89E0E1CEFD4BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CC8BECB41E26A4462822BA738C660FCF /* SSZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = SSZipArchive/SSZipArchive.h; sourceTree = "<group>"; };
+		E3E13E21F4E342BE6EC4322973A0213D /* mztools.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = SSZipArchive/minizip/mztools.c; sourceTree = "<group>"; };
+		E69138AE059CF8CC6864B1AC10584BB2 /* unzip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = SSZipArchive/minizip/unzip.h; sourceTree = "<group>"; };
+		EC7D3B4B06FFE67F72C2B5556F446C72 /* ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = SSZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
+		EF777F64525CCCB0F36FCEEB4E3C3869 /* Pods_CrowdSensing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdSensing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98638E16A7667DDAF07124187F0F622D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F35641F78499259215809B5F32C650 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE0BD9BBA06FDC8EB35111938119083E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2ABF070A1DAE56C2FA1A2ABAF9F0337 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00535385D6DBC301318F32BAE3D0BE8F /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				73ED1C86F47715B3C3B36EA21FE5B0ED /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		07F6EC3339B316515B2562FD5EE97F75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				743AEC7640E3C2BE6E085E4EF42EAF0F /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33EF9A1B433417F7423C5DAC3CB79F15 /* Pods-CrowdSensing-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B1B59EA18F84217BEFF89E0E1CEFD4BA /* Info.plist */,
+				17AE18DD70FE33FBD48B64EA8B25B034 /* Pods-CrowdSensing-iOS.modulemap */,
+				55117BBEF32DB1821F4DD22430AF896C /* Pods-CrowdSensing-iOS-acknowledgements.markdown */,
+				626B260C3F01CFFB57251509CBD63F46 /* Pods-CrowdSensing-iOS-acknowledgements.plist */,
+				7C0D5AA47CA3524E9242E77700E27A40 /* Pods-CrowdSensing-iOS-dummy.m */,
+				42C6169E3A0DC03269B3D01D65858617 /* Pods-CrowdSensing-iOS-frameworks.sh */,
+				1347060E2140140AC830ACAA03B7E160 /* Pods-CrowdSensing-iOS-resources.sh */,
+				55230EE568DC511BB2215900F647F1FB /* Pods-CrowdSensing-iOS-umbrella.h */,
+				106A6FC688201BE20928F4FCA2C0C299 /* Pods-CrowdSensing-iOS.debug.xcconfig */,
+				1FE3DD3A3CABBB7CCAFCD49FE34C68C8 /* Pods-CrowdSensing-iOS.release.xcconfig */,
+			);
+			name = "Pods-CrowdSensing-iOS";
+			path = "Target Support Files/Pods-CrowdSensing-iOS";
+			sourceTree = "<group>";
+		};
+		73ED1C86F47715B3C3B36EA21FE5B0ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2034459D029C37DA8DF3662E29E1F2FB /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				8B6663CDF023041DE265D40623A1AFC4 /* Pods */,
+				C8CE84A00C34B4AF6310E337F0DDACFA /* Products */,
+				A9BC5195E205283A6405C254C6B1BD7A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8B6663CDF023041DE265D40623A1AFC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00535385D6DBC301318F32BAE3D0BE8F /* Crashlytics */,
+				D0AA58D552FA2CF3A1BE48449BE01974 /* Fabric */,
+				A588E956E1F8D2B5B9A1F1FEC90EB730 /* SSZipArchive */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A588E956E1F8D2B5B9A1F1FEC90EB730 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				0A627171E58CEAE8BF4426C4E17ACA1D /* Common.h */,
+				AD991F5E6CE956C8669037BC4CCC164B /* crypt.h */,
+				EC7D3B4B06FFE67F72C2B5556F446C72 /* ioapi.c */,
+				A6AAECF8495BCB48DD4F569014AC4637 /* ioapi.h */,
+				E3E13E21F4E342BE6EC4322973A0213D /* mztools.c */,
+				1E3DF4C91A948130E5883DA22CBEE704 /* mztools.h */,
+				CC8BECB41E26A4462822BA738C660FCF /* SSZipArchive.h */,
+				4857F3C9CA48C96EB9F51BD6308B5F41 /* SSZipArchive.m */,
+				0B84BD7F23B6E841E23184990A5C2A97 /* unzip.c */,
+				E69138AE059CF8CC6864B1AC10584BB2 /* unzip.h */,
+				90AFE0A63CAA644AB5CBB3ECFE8AF3CC /* zip.c */,
+				4CE7FBE3EFD3DBCC404AA858B65337E7 /* zip.h */,
+				C2FA570F92B7C902C03333CB002E54F6 /* Support Files */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		A9BC5195E205283A6405C254C6B1BD7A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				33EF9A1B433417F7423C5DAC3CB79F15 /* Pods-CrowdSensing-iOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C2FA570F92B7C902C03333CB002E54F6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B3DD7826C53BB3977081D556419E433 /* Info.plist */,
+				3845123CA32DDB1CD30ED3E3D8545B82 /* SSZipArchive.modulemap */,
+				5BD7788119545A1A6DCFC2BCABB18BE3 /* SSZipArchive.xcconfig */,
+				56B36A8B92E204FBBAA515429EC3ACFD /* SSZipArchive-dummy.m */,
+				3AC656D8EFDA89D3369DC000DF69AFE0 /* SSZipArchive-prefix.pch */,
+				50BBF537553A6D714342FCDB8FA7F607 /* SSZipArchive-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SSZipArchive";
+			sourceTree = "<group>";
+		};
+		C8CE84A00C34B4AF6310E337F0DDACFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF777F64525CCCB0F36FCEEB4E3C3869 /* Pods_CrowdSensing_iOS.framework */,
+				6A0F41AC11BA7BD54975904348865229 /* SSZipArchive.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0AA58D552FA2CF3A1BE48449BE01974 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				07F6EC3339B316515B2562FD5EE97F75 /* Frameworks */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D20CA2A36E4F650205A5C84EAD83FED4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39D99B58339F521D40D117104A61568 /* Common.h in Headers */,
+				74D923F86BF86CC8D1ACCA725F70105D /* crypt.h in Headers */,
+				868EDC3A337EBA230B8947BD7B9B707C /* ioapi.h in Headers */,
+				CD3862C7240AF4EB8D4A6689A98670F0 /* mztools.h in Headers */,
+				FAD284801D7E5BA0834BE19490161A94 /* SSZipArchive-umbrella.h in Headers */,
+				847988A64A55B441ECC3B7E49A7BBCB4 /* SSZipArchive.h in Headers */,
+				5DF3262377AF7FA173DDA13D119E0D25 /* unzip.h in Headers */,
+				D4DC6802AF981A219B06408F9176C462 /* zip.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E989794BF3012AB0E6E0D6E284E82059 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75126291C5EDD7C36088055923B5DDA6 /* Pods-CrowdSensing-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6B12272B28E313A1563BC892D2531A74 /* SSZipArchive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EC7BB52BAA48AA6DC1E8E867DC2CD2E /* Build configuration list for PBXNativeTarget "SSZipArchive" */;
+			buildPhases = (
+				D3E53901DB16135A65DCDF941BC1C87F /* Sources */,
+				BE0BD9BBA06FDC8EB35111938119083E /* Frameworks */,
+				D20CA2A36E4F650205A5C84EAD83FED4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SSZipArchive;
+			productName = SSZipArchive;
+			productReference = 6A0F41AC11BA7BD54975904348865229 /* SSZipArchive.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E8C2140CCD1AF31203F9C7A9E4991613 /* Pods-CrowdSensing-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A31BCA4CD989858AB122BD41C51EEA7 /* Build configuration list for PBXNativeTarget "Pods-CrowdSensing-iOS" */;
+			buildPhases = (
+				A71EF17325EB83CDA962FA1F0B400696 /* Sources */,
+				98638E16A7667DDAF07124187F0F622D /* Frameworks */,
+				E989794BF3012AB0E6E0D6E284E82059 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B36737736E2F78558824EB65FF01FAB /* PBXTargetDependency */,
+			);
+			name = "Pods-CrowdSensing-iOS";
+			productName = "Pods-CrowdSensing-iOS";
+			productReference = EF777F64525CCCB0F36FCEEB4E3C3869 /* Pods_CrowdSensing_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C8CE84A00C34B4AF6310E337F0DDACFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8C2140CCD1AF31203F9C7A9E4991613 /* Pods-CrowdSensing-iOS */,
+				6B12272B28E313A1563BC892D2531A74 /* SSZipArchive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A71EF17325EB83CDA962FA1F0B400696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C8D44C9202EAFCA7246AF8E8452593 /* Pods-CrowdSensing-iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3E53901DB16135A65DCDF941BC1C87F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				202A6E662F844A44D451D410E32214EA /* ioapi.c in Sources */,
+				1017F8694963BBADD2FC5820B18B9040 /* mztools.c in Sources */,
+				E4A981A4F648A56130482EA11D166CA0 /* SSZipArchive-dummy.m in Sources */,
+				3DCBD934FB3A370A2C1D6608E632F783 /* SSZipArchive.m in Sources */,
+				F3E5A3C37AF8B8A88A1FB30F6653B310 /* unzip.c in Sources */,
+				D0528CE2749E22C65F3BB7B1F751AFB3 /* zip.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B36737736E2F78558824EB65FF01FAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SSZipArchive;
+			target = 6B12272B28E313A1563BC892D2531A74 /* SSZipArchive */;
+			targetProxy = 5525769C466624D05BD1B5955CFCE77E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		116D193001DBFF7313CCA3202718F721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 106A6FC688201BE20928F4FCA2C0C299 /* Pods-CrowdSensing-iOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CrowdSensing-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_CrowdSensing_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9F752750A578E26B0D8C988219C855DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FE3DD3A3CABBB7CCAFCD49FE34C68C8 /* Pods-CrowdSensing-iOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CrowdSensing-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_CrowdSensing_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B4748299B7081A19A412CCD3AFAEC261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BD7788119545A1A6DCFC2BCABB18BE3 /* SSZipArchive.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SSZipArchive/SSZipArchive-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SSZipArchive/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SSZipArchive/SSZipArchive.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SSZipArchive;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D62751F0F2D991949F27C3AF4E5551CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BD7788119545A1A6DCFC2BCABB18BE3 /* SSZipArchive.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SSZipArchive/SSZipArchive-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SSZipArchive/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SSZipArchive/SSZipArchive.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SSZipArchive;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A31BCA4CD989858AB122BD41C51EEA7 /* Build configuration list for PBXNativeTarget "Pods-CrowdSensing-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				116D193001DBFF7313CCA3202718F721 /* Debug */,
+				9F752750A578E26B0D8C988219C855DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EC7BB52BAA48AA6DC1E8E867DC2CD2E /* Build configuration list for PBXNativeTarget "SSZipArchive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D62751F0F2D991949F27C3AF4E5551CC /* Debug */,
+				B4748299B7081A19A412CCD3AFAEC261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_CrowdSensing_iOS {
+  umbrella header "Pods-CrowdSensing-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

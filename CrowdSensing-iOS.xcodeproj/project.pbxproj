@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4993FB8821900BFBE6779749 /* Pods_CrowdSensing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D59D63A83FF0A5DA316EA /* Pods_CrowdSensing_iOS.framework */; };
 		CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */; };
 		CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39519ED446500E295CB /* CSSensorSetupTableViewController.m */; };
 		CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */; };
@@ -15,8 +16,6 @@
 		CF18C3A619ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A519ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m */; };
 		CF18C3A919ED4C7700E295CB /* CSUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSUserInput.m */; };
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
-		CF3041F41BF8D5FB00447C19 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3041F21BF8D5FB00447C19 /* Fabric.framework */; };
-		CF3041F51BF8D5FB00447C19 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3041F31BF8D5FB00447C19 /* Crashlytics.framework */; };
 		CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */; };
 		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
 		CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Storyboard.storyboard */; };
@@ -32,12 +31,6 @@
 		CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB7CD2019F2E2BC00F6B406 /* CSAboutViewController.m */; };
 		CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */; };
 		CFC896281B8DE47F004F857C /* CSRecordingInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */; };
-		CFC8965C1B8E1388004F857C /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC896501B8E1388004F857C /* SSZipArchive.m */; };
-		CFC8965D1B8E1388004F857C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896531B8E1388004F857C /* ioapi.c */; };
-		CFC8965E1B8E1388004F857C /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896551B8E1388004F857C /* mztools.c */; };
-		CFC8965F1B8E1388004F857C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896571B8E1388004F857C /* unzip.c */; };
-		CFC896601B8E1388004F857C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = CFC896591B8E1388004F857C /* zip.c */; };
-		CFC896611B8E13BA004F857C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF581D91A0EA56400CBEE4D /* libz.dylib */; };
 		CFC8966B1B8E4A4C004F857C /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966A1B8E4A4C004F857C /* Recording.m */; };
 		CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC8966D1B8E4A4D004F857C /* LogEntry.m */; };
 		CFD0E18D1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0E18C1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m */; };
@@ -69,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		261D59D63A83FF0A5DA316EA /* Pods_CrowdSensing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdSensing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA5D64EFB3D74E525E4DF0AC /* Pods-CrowdSensing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CF18C39119ED439B00E295CB /* CSSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSetupTableViewController.h; sourceTree = "<group>"; };
 		CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSetupTableViewController.m; sourceTree = "<group>"; };
 		CF18C39419ED446500E295CB /* CSSensorSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensorSetupTableViewController.h; sourceTree = "<group>"; };
@@ -85,8 +80,6 @@
 		CF18C3A819ED4C7700E295CB /* CSUserInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSUserInput.m; sourceTree = "<group>"; };
 		CF18C3AA19ED4E3500E295CB /* CSGenericSensorSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGenericSensorSetup.h; sourceTree = "<group>"; };
 		CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGenericSensorSetup.m; sourceTree = "<group>"; };
-		CF3041F21BF8D5FB00447C19 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		CF3041F31BF8D5FB00447C19 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SensingKit.framework; sourceTree = "<group>"; };
 		CF5298971A0D1141002A4D54 /* SKStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKStyles.h; path = "CrowdSensing-iOS/SKStyles.h"; sourceTree = "<group>"; };
 		CF5298981A0D1141002A4D54 /* SKStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKStyles.m; path = "CrowdSensing-iOS/SKStyles.m"; sourceTree = "<group>"; };
@@ -112,17 +105,6 @@
 		CFC0F8AD19EC2242006CA622 /* CSRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRoundButton.m; sourceTree = "<group>"; };
 		CFC896261B8DE47F004F857C /* CSRecordingInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingInfoTableViewController.h; sourceTree = "<group>"; };
 		CFC896271B8DE47F004F857C /* CSRecordingInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingInfoTableViewController.m; sourceTree = "<group>"; };
-		CFC8964F1B8E1388004F857C /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
-		CFC896501B8E1388004F857C /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
-		CFC896521B8E1388004F857C /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
-		CFC896531B8E1388004F857C /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
-		CFC896541B8E1388004F857C /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
-		CFC896551B8E1388004F857C /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
-		CFC896561B8E1388004F857C /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
-		CFC896571B8E1388004F857C /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
-		CFC896581B8E1388004F857C /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
-		CFC896591B8E1388004F857C /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
-		CFC8965A1B8E1388004F857C /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		CFC896691B8E4A4C004F857C /* Recording.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recording.h; sourceTree = "<group>"; };
 		CFC8966A1B8E4A4C004F857C /* Recording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recording.m; sourceTree = "<group>"; };
 		CFC8966C1B8E4A4D004F857C /* LogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogEntry.h; sourceTree = "<group>"; };
@@ -134,7 +116,6 @@
 		CFD450271B885C4900E2E78D /* CSRecordingLogModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingLogModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingLogModelWriter.m; sourceTree = "<group>"; };
 		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
-		CFF581D91A0EA56400CBEE4D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF325519796BF600F7CE57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFFF325719796BF600F7CE57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -153,6 +134,7 @@
 		CFFF327F19796BF600F7CE57 /* CrowdSensing-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrowdSensing-iOSTests-Info.plist"; sourceTree = "<group>"; };
 		CFFF328119796BF600F7CE57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFFF328319796BF600F7CE57 /* CrowdSensing_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrowdSensing_iOSTests.m; sourceTree = "<group>"; };
+		FAF80AEE1DBD0DF4B4B3C892 /* Pods-CrowdSensing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,14 +142,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF3041F41BF8D5FB00447C19 /* Fabric.framework in Frameworks */,
-				CFC896611B8E13BA004F857C /* libz.dylib in Frameworks */,
-				CF3041F51BF8D5FB00447C19 /* Crashlytics.framework in Frameworks */,
 				CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */,
 				CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */,
 				CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
 				CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */,
 				CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */,
+				4993FB8821900BFBE6779749 /* Pods_CrowdSensing_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5344E5655CF7434BFFA38951 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA5D64EFB3D74E525E4DF0AC /* Pods-CrowdSensing-iOS.debug.xcconfig */,
+				FAF80AEE1DBD0DF4B4B3C892 /* Pods-CrowdSensing-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF18C38A19ED408800E295CB /* Setup */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,32 +237,6 @@
 			name = "User Input";
 			sourceTree = "<group>";
 		};
-		CFC8964E1B8E1388004F857C /* ZipArchive */ = {
-			isa = PBXGroup;
-			children = (
-				CFC8964F1B8E1388004F857C /* SSZipArchive.h */,
-				CFC896501B8E1388004F857C /* SSZipArchive.m */,
-				CFC896511B8E1388004F857C /* minizip */,
-			);
-			path = ZipArchive;
-			sourceTree = "<group>";
-		};
-		CFC896511B8E1388004F857C /* minizip */ = {
-			isa = PBXGroup;
-			children = (
-				CFC896521B8E1388004F857C /* crypt.h */,
-				CFC896531B8E1388004F857C /* ioapi.c */,
-				CFC896541B8E1388004F857C /* ioapi.h */,
-				CFC896551B8E1388004F857C /* mztools.c */,
-				CFC896561B8E1388004F857C /* mztools.h */,
-				CFC896571B8E1388004F857C /* unzip.c */,
-				CFC896581B8E1388004F857C /* unzip.h */,
-				CFC896591B8E1388004F857C /* zip.c */,
-				CFC8965A1B8E1388004F857C /* zip.h */,
-			);
-			path = minizip;
-			sourceTree = "<group>";
-		};
 		CFC896621B8E4997004F857C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,12 +253,12 @@
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
-				CFC8964E1B8E1388004F857C /* ZipArchive */,
 				CF52989A1A0D1149002A4D54 /* PaintCode generated files */,
 				CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */,
 				CFFF327D19796BF600F7CE57 /* CrowdSensing-iOSTests */,
 				CFFF325419796BF600F7CE57 /* Frameworks */,
 				CFFF325319796BF600F7CE57 /* Products */,
+				5344E5655CF7434BFFA38951 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,14 +274,12 @@
 		CFFF325419796BF600F7CE57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF3041F21BF8D5FB00447C19 /* Fabric.framework */,
-				CF3041F31BF8D5FB00447C19 /* Crashlytics.framework */,
-				CFF581D91A0EA56400CBEE4D /* libz.dylib */,
 				CF8E9BDF1B336195005AC2FC /* CoreData.framework */,
 				CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */,
 				CFFF325519796BF600F7CE57 /* Foundation.framework */,
 				CFFF325719796BF600F7CE57 /* CoreGraphics.framework */,
 				CFFF325919796BF600F7CE57 /* UIKit.framework */,
+				261D59D63A83FF0A5DA316EA /* Pods_CrowdSensing_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -392,9 +353,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFFF328719796BF600F7CE57 /* Build configuration list for PBXNativeTarget "CrowdSensing-iOS" */;
 			buildPhases = (
+				04C7B172F4DB5D06EA520E99 /* Check Pods Manifest.lock */,
 				CFFF324E19796BF600F7CE57 /* Sources */,
 				CFFF324F19796BF600F7CE57 /* Frameworks */,
 				CFFF325019796BF600F7CE57 /* Resources */,
+				7DFF7F67AD905B93F443C970 /* Embed Pods Frameworks */,
+				D1C430B56A13F6B52FA535C9 /* Copy Pods Resources */,
 				CF3041F11BF8D5D900447C19 /* ShellScript */,
 			);
 			buildRules = (
@@ -492,6 +456,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04C7B172F4DB5D06EA520E99 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7DFF7F67AD905B93F443C970 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CF3041F11BF8D5D900447C19 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -503,7 +497,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run f8eac4b07e220eb80ae928f35aa6a29222538c20 dadc6bf9871a1735e525d47a051725a801f56fb087f85c302999325508c82646";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f8eac4b07e220eb80ae928f35aa6a29222538c20 dadc6bf9871a1735e525d47a051725a801f56fb087f85c302999325508c82646";
+		};
+		D1C430B56A13F6B52FA535C9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -512,11 +521,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFC8965C1B8E1388004F857C /* SSZipArchive.m in Sources */,
 				CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */,
 				CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */,
-				CFC8965F1B8E1388004F857C /* unzip.c in Sources */,
-				CFC896601B8E1388004F857C /* zip.c in Sources */,
 				CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */,
 				CFC8966B1B8E4A4C004F857C /* Recording.m in Sources */,
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
@@ -532,9 +538,7 @@
 				CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */,
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
 				CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */,
-				CFC8965D1B8E1388004F857C /* ioapi.c in Sources */,
 				CF18C3A619ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m in Sources */,
-				CFC8965E1B8E1388004F857C /* mztools.c in Sources */,
 				CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */,
 				CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */,
 				CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */,
@@ -669,6 +673,7 @@
 		};
 		CFFF328819796BF600F7CE57 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA5D64EFB3D74E525E4DF0AC /* Pods-CrowdSensing-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -680,7 +685,7 @@
 				GCC_PREFIX_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.sensingkit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -690,6 +695,7 @@
 		};
 		CFFF328919796BF600F7CE57 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAF80AEE1DBD0DF4B4B3C892 /* Pods-CrowdSensing-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -701,7 +707,7 @@
 				GCC_PREFIX_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CrowdSensing-iOS/CrowdSensing-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.sensingkit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
