@@ -38,6 +38,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 @property (weak, nonatomic) IBOutlet CSRoundButton *syncButton;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *bookmarkButton;
 
 @property (nonatomic) CSStartButtonMode startButtonMode;
 
@@ -186,6 +187,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             
             // Disable Done and Setup buttons
             self.doneButton.enabled = NO;
+            self.bookmarkButton.enabled = NO;
             self.setupButton.enabled = NO;
             self.setupButton.type = CSRoundButtonStrokedDeactivatedType;
             
@@ -210,6 +212,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             
             // Enable Done and Setup buttons
             self.doneButton.enabled = YES;
+            self.bookmarkButton.enabled = YES;
             self.setupButton.enabled = YES;
             self.setupButton.type = CSRoundButtonStrokedType;
             
@@ -243,6 +246,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             
             // Disable Done and Setup buttons
             self.doneButton.enabled = NO;
+            self.bookmarkButton.enabled = NO;
             self.setupButton.enabled = NO;
             self.setupButton.type = CSRoundButtonStrokedDeactivatedType;
             
@@ -285,6 +289,94 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     if (self.startButtonMode != CSStartButtonPauseMode)
     {
         [self showSetNameAlertWithName:self.recording.title];
+    }
+}
+
+- (IBAction)bookmarkButtonAction:(id)sender
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Load Configuration"
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *loadAudioAction = [UIAlertAction actionWithTitle:@"Audio"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction *action) {
+                                                                      [self loadAudioConfiguration];
+                                                                  }];
+    
+    UIAlertAction *loadMotionProximityAction = [UIAlertAction actionWithTitle:@"Motion & iBeacon™ Proximity"
+                                                                        style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction *action) {
+                                                                          [self loadMotionAndProximityConfiguration];
+                                                                      }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction *action) {
+                                                             
+                                                             // Nothing
+                                                         }];
+    
+    [alertController addAction:loadAudioAction];
+    [alertController addAction:loadMotionProximityAction];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)loadAudioConfiguration
+{
+    // Set Name
+    self.recording.title = @"Audio Recording";
+    self.titleLabel.text = self.recording.title;
+    
+    // Set Sensors
+    if ([self.sensingSession isSensorAvailable:Microphone]) {
+        [self.sensingSession enableSensor:Microphone withConfiguration:nil];
+    }
+}
+
+- (void)loadMotionAndProximityConfiguration
+{
+    // Set Name
+    self.recording.title = @"Motion & Proximity Recording";
+    self.titleLabel.text = self.recording.title;
+    
+    // Set Sensors
+    if ([self.sensingSession isSensorAvailable:Accelerometer]) {
+        [self.sensingSession enableSensor:Accelerometer withConfiguration:nil];
+    }
+    
+    if ([self.sensingSession isSensorAvailable:Gyroscope]) {
+        [self.sensingSession enableSensor:Gyroscope withConfiguration:nil];
+    }
+    
+    if ([self.sensingSession isSensorAvailable:Magnetometer]) {
+        [self.sensingSession enableSensor:Magnetometer withConfiguration:nil];
+    }
+    
+    if ([self.sensingSession isSensorAvailable:DeviceMotion]) {
+        [self.sensingSession enableSensor:DeviceMotion withConfiguration:nil];
+    }
+    
+    if ([self.sensingSession isSensorAvailable:MotionActivity]) {
+        [self.sensingSession enableSensor:MotionActivity withConfiguration:nil];
+    }
+    
+    if ([self.sensingSession isSensorAvailable:Pedometer]) {
+        [self.sensingSession enableSensor:Pedometer withConfiguration:nil];
+    }
+    
+    if ([self.sensingSession isSensorAvailable:iBeaconProximity]) {
+        SKiBeaconProximityConfiguration *configuration = [[SKiBeaconProximityConfiguration alloc] initWithUUID:[[NSUUID alloc] initWithUUIDString:@"eeb79aec-022f-4c05-8331-93d9b2ba6dce"]];
+        
+        configuration.mode = SKiBeaconProximityModeScanAndBroadcast;
+        
+        [self.sensingSession enableSensor:iBeaconProximity withConfiguration:configuration];
+    }
+    
+    if ([self.sensingSession isSensorAvailable:Battery]) {
+        [self.sensingSession enableSensor:Battery withConfiguration:nil];
     }
 }
 
