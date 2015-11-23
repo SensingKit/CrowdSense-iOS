@@ -21,7 +21,6 @@ typedef NS_ENUM(NSUInteger, CSStartButtonMode) {
 
 typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     CSRecordViewControllerSaveRecordingAlertType,
-    CSRecordViewControllerDeleteRecordingAlertType,
     CSRecordViewControllerSetNameAlertType
 };
 
@@ -332,16 +331,43 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 - (void)showDeleteRecordingAlertForRecordingName:(NSString *)recordingName
 {
     NSString *message = [NSString stringWithFormat:@"Are you sure you want to delete\n\"%@\"?", recordingName];
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Delete Recording"
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Delete Recording"
-                                                        message:message
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"Delete", nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction *action) {
+                                                             
+                                                             [self showSaveRecordingAlertWithName:self.recording.title];
+                                                         }];
     
-    alertView.tag = CSRecordViewControllerDeleteRecordingAlertType;
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"Delete"
+                                                           style:UIAlertActionStyleDestructive
+                                                         handler:^(UIAlertAction *action) {
+                                                             
+                                                             NSLog(@"Delete");
+                                                             
+                                                             // Disable sensors
+                                                             [self.sensingSession disableAllRegisteredSensors];
+                                                             
+                                                             // Close Session
+                                                             [self.sensingSession close];
+                                                             self.sensingSession = nil;
+                                                             
+                                                             // Dismiss the view and delete recording
+                                                             [self dismissViewControllerAnimated:YES completion:^{
+                                                                 
+                                                                 // Delete the recording
+                                                                 [self.delegate deleteRecording:self.recording];
+                                                             }];
+                                                         }];
     
-    [alertView show];
+    [alertController addAction:deleteAction];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)showSetNameAlertWithName:(NSString *)name
@@ -415,38 +441,6 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
                 // Ask again
                 [self showSaveRecordingAlertWithName:self.recording.title];
             }
-        }
-        else
-        {
-            NSLog(@"Unknown button with text '%@'", buttonText);
-        }
-        
-    }
-    else if (type == CSRecordViewControllerDeleteRecordingAlertType)
-    {
-        NSString *buttonText = [alertView buttonTitleAtIndex:buttonIndex];
-        
-        if ([buttonText isEqualToString:@"Delete"])
-        {
-            NSLog(@"Delete");
-            
-            // Disable sensors
-            [self.sensingSession disableAllRegisteredSensors];
-            
-            // Close Session
-            [self.sensingSession close];
-            self.sensingSession = nil;
-            
-            // Dismiss the view and delete recording
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-                // Delete the recording
-                [self.delegate deleteRecording:self.recording];
-            }];
-        }
-        else if ([buttonText isEqualToString:@"Cancel"])
-        {
-            [self showSaveRecordingAlertWithName:self.recording.title];
         }
         else
         {
