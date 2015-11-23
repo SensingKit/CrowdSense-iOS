@@ -293,7 +293,8 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 
 - (void)alertEnableSensors
 {
-    [self alertWithTitle:@"Start Recording" withMessage:@"Please enable the sensors first"];
+    [self alertWithTitle:@"Unable to Start Recording"
+             withMessage:@"Please enable some sensors first using the Setup button."];
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
