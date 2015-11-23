@@ -323,6 +323,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     textField.text = name;
     textField.placeholder = name;
     textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
     [alertView show];
 }
@@ -358,6 +359,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     textField.text = name;
     textField.placeholder = name;
     textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
     [alertView show];
 }
