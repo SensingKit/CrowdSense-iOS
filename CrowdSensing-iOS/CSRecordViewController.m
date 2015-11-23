@@ -334,6 +334,9 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     if ([self.sensingSession isSensorAvailable:Microphone]) {
         [self.sensingSession enableSensor:Microphone withConfiguration:nil];
     }
+    
+    // Update the UI
+    [self updateStartButtonStatus];
 }
 
 - (void)loadMotionAndProximityConfiguration
@@ -378,6 +381,9 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     if ([self.sensingSession isSensorAvailable:Battery]) {
         [self.sensingSession enableSensor:Battery withConfiguration:nil];
     }
+    
+    // Update the UI
+    [self updateStartButtonStatus];
 }
 
 - (void)alertEnableSensors
