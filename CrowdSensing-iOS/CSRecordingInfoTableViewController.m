@@ -8,6 +8,7 @@
 
 #import "CSRecordingInfoTableViewController.h"
 #import "LogEntry.h"
+#import "NSString+CSTimeInterval.h"
 
 // ZipArchive
 #import "SSZipArchive.h"
@@ -16,7 +17,6 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSDateFormatter *timestampDateFormatter;
-@property (strong, nonatomic) NSDateFormatter *durationDateFormatter;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 
 @end
@@ -39,7 +39,6 @@
     [super didReceiveMemoryWarning];
     
     self.timestampDateFormatter = nil;
-    self.durationDateFormatter = nil;
 }
 
 - (NSString *)datetimeDateFormatter:(NSDate *)date
@@ -60,18 +59,6 @@
         _timestampDateFormatter = dateFormatter;
     }
     return _timestampDateFormatter;
-}
-
-- (NSDateFormatter *)durationDateFormatter
-{
-    if (!_durationDateFormatter)
-    {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"HH:mm:ss,SSS"];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-        _durationDateFormatter = dateFormatter;
-    }
-    return _durationDateFormatter;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -131,7 +118,7 @@
         else if (indexPath.row == 1)
         {
             cell.textLabel.text = @"Duration";
-            cell.detailTextLabel.text = [self.durationDateFormatter stringFromDate:self.recording.duration];
+            cell.detailTextLabel.text = [NSString stringFromTimeInterval:self.recording.duration.timeIntervalSince1970];
         }
         else if (indexPath.row == 2)
         {

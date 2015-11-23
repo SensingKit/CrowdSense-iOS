@@ -10,6 +10,7 @@
 #import "LogEntry+Create.h"
 #import "CSSensingSession.h"
 #import <SensingKit/SKSensorTimestamp.h>
+#import "NSString+CSTimeInterval.h"
 
 @import CoreText;
 
@@ -114,10 +115,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 
 - (NSDate *)duration
 {
-    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:self.startDate];
-    timeInterval += self.timeElapsed;
-    
-    return [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    return [NSDate dateWithTimeIntervalSince1970:self.timeElapsed];
 }
 
 - (NSDateFormatter *)timestampDateFormatter
@@ -600,21 +598,8 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 
 - (void)updateTimerLabelWithTimeInterval:(NSTimeInterval)timeInterval
 {
-    self.timestampLabel.text = [CSRecordViewController stringFromTimeInterval:timeInterval];
+    self.timestampLabel.text = [NSString stringFromTimeInterval:timeInterval];
 }
-
-// Thanks to http://stackoverflow.com/questions/28872450/conversion-from-nstimeinterval-to-hour-minutes-seconds-milliseconds-in-swift
-+ (NSString *)stringFromTimeInterval:(NSTimeInterval)timeInterval
-{
-    NSInteger interval = timeInterval;
-    NSInteger ms = (fmod(timeInterval, 1) * 1000);
-    long seconds = interval % 60;
-    long minutes = (interval / 60) % 60;
-    long hours = (interval / 3600);
-    
-    return [NSString stringWithFormat:@"%0.2ld:%0.2ld:%0.2ld,%0.3ld", hours, minutes, seconds, (long)ms];
-}
-
 
 #pragma mark CoreData
 
