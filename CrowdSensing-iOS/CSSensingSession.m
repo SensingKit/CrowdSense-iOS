@@ -82,6 +82,11 @@
                                                               withFilename:filename
                                                                     inPath:self.folderPath];
     
+    // If congiguration is nil, get the default
+    if (!configuration) {
+        configuration = [self getConfigurationFromSensor:sensorType];
+    }
+    
     // Register and Subscribe sensor
     [self.sensingKitLib registerSensor:sensorType withConfiguration:configuration];
     [self.sensingKitLib subscribeToSensor:sensorType
