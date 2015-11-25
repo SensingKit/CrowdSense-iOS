@@ -26,11 +26,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Fabric with:@[[Crashlytics class]]];
+    
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     CSMainTableTableViewController *mainTableViewController = (CSMainTableTableViewController *)navigationController.topViewController;
     mainTableViewController.managedObjectContext = self.managedObjectContext;
-    
-    [Fabric with:@[[Crashlytics class]]];
     
     return YES;
 }
