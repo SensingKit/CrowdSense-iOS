@@ -210,20 +210,25 @@
         [[NSFileManager defaultManager] removeItemAtURL:attachment error:nil];
     }];
     
+    NSMutableArray *array = @[UIActivityTypePostToFacebook,
+                              UIActivityTypePostToTwitter,
+                              UIActivityTypePostToWeibo,
+                              UIActivityTypeMessage,
+                              UIActivityTypePrint,
+                              UIActivityTypeCopyToPasteboard,
+                              UIActivityTypeAssignToContact,
+                              UIActivityTypeSaveToCameraRoll,
+                              UIActivityTypeAddToReadingList,
+                              UIActivityTypePostToFlickr,
+                              UIActivityTypePostToVimeo,
+                              UIActivityTypePostToTencentWeibo].mutableCopy;
+    
+    if ([NSProcessInfo processInfo].operatingSystemVersion.majorVersion >= 9) {
+        [array addObject:UIActivityTypeOpenInIBooks];
+    }
+    
     // Exclude Activities
-    activityViewController.excludedActivityTypes = @[UIActivityTypePostToFacebook,
-                                                     UIActivityTypePostToTwitter,
-                                                     UIActivityTypePostToWeibo,
-                                                     UIActivityTypeMessage,
-                                                     UIActivityTypePrint,
-                                                     UIActivityTypeCopyToPasteboard,
-                                                     UIActivityTypeAssignToContact,
-                                                     UIActivityTypeSaveToCameraRoll,
-                                                     UIActivityTypeAddToReadingList,
-                                                     UIActivityTypePostToFlickr,
-                                                     UIActivityTypePostToVimeo,
-                                                     UIActivityTypePostToTencentWeibo,
-                                                     UIActivityTypeOpenInIBooks];
+    activityViewController.excludedActivityTypes = array;
     
     // To avoid crash on iPad and iOS 8
     if ([activityViewController respondsToSelector:@selector(popoverPresentationController)])
