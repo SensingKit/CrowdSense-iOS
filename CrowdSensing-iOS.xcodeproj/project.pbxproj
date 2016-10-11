@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4993FB8821900BFBE6779749 /* Pods_CrowdSensing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D59D63A83FF0A5DA316EA /* Pods_CrowdSensing_iOS.framework */; };
+		9AFAFBF62FDE88A3579FB80D /* Pods_CrowdSensing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEA1D02208577FE9512130 /* Pods_CrowdSensing_iOS.framework */; };
 		CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */; };
 		CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39519ED446500E295CB /* CSSensorSetupTableViewController.m */; };
 		CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */; };
@@ -63,8 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		261D59D63A83FF0A5DA316EA /* Pods_CrowdSensing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdSensing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA5D64EFB3D74E525E4DF0AC /* Pods-CrowdSensing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		65B684E43645E885F3B88184 /* Pods-CrowdSensing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		70FEA1D02208577FE9512130 /* Pods_CrowdSensing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdSensing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93D822FC1F2BA8C91854A824 /* Pods-CrowdSensing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CF18C39119ED439B00E295CB /* CSSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSetupTableViewController.h; sourceTree = "<group>"; };
 		CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSetupTableViewController.m; sourceTree = "<group>"; };
 		CF18C39419ED446500E295CB /* CSSensorSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensorSetupTableViewController.h; sourceTree = "<group>"; };
@@ -137,7 +138,6 @@
 		CFFF327F19796BF600F7CE57 /* CrowdSensing-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrowdSensing-iOSTests-Info.plist"; sourceTree = "<group>"; };
 		CFFF328119796BF600F7CE57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFFF328319796BF600F7CE57 /* CrowdSensing_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrowdSensing_iOSTests.m; sourceTree = "<group>"; };
-		FAF80AEE1DBD0DF4B4B3C892 /* Pods-CrowdSensing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +150,7 @@
 				CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
 				CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */,
 				CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */,
-				4993FB8821900BFBE6779749 /* Pods_CrowdSensing_iOS.framework in Frameworks */,
+				9AFAFBF62FDE88A3579FB80D /* Pods_CrowdSensing_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,15 +166,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5344E5655CF7434BFFA38951 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AA5D64EFB3D74E525E4DF0AC /* Pods-CrowdSensing-iOS.debug.xcconfig */,
-				FAF80AEE1DBD0DF4B4B3C892 /* Pods-CrowdSensing-iOS.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		CF18C38A19ED408800E295CB /* Setup */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,7 +252,7 @@
 				CFFF327D19796BF600F7CE57 /* CrowdSensing-iOSTests */,
 				CFFF325419796BF600F7CE57 /* Frameworks */,
 				CFFF325319796BF600F7CE57 /* Products */,
-				5344E5655CF7434BFFA38951 /* Pods */,
+				D7D1BFAE484834036A6E67C9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,7 +273,7 @@
 				CFFF325519796BF600F7CE57 /* Foundation.framework */,
 				CFFF325719796BF600F7CE57 /* CoreGraphics.framework */,
 				CFFF325919796BF600F7CE57 /* UIKit.framework */,
-				261D59D63A83FF0A5DA316EA /* Pods_CrowdSensing_iOS.framework */,
+				70FEA1D02208577FE9512130 /* Pods_CrowdSensing_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,6 +342,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D7D1BFAE484834036A6E67C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93D822FC1F2BA8C91854A824 /* Pods-CrowdSensing-iOS.debug.xcconfig */,
+				65B684E43645E885F3B88184 /* Pods-CrowdSensing-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,13 +358,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFFF328719796BF600F7CE57 /* Build configuration list for PBXNativeTarget "CrowdSensing-iOS" */;
 			buildPhases = (
-				04C7B172F4DB5D06EA520E99 /* Check Pods Manifest.lock */,
+				8ED7119A356C418E7B2FDEF1 /* [CP] Check Pods Manifest.lock */,
 				CFFF324E19796BF600F7CE57 /* Sources */,
 				CFFF324F19796BF600F7CE57 /* Frameworks */,
 				CFFF325019796BF600F7CE57 /* Resources */,
-				7DFF7F67AD905B93F443C970 /* Embed Pods Frameworks */,
-				D1C430B56A13F6B52FA535C9 /* Copy Pods Resources */,
 				CF3041F11BF8D5D900447C19 /* ShellScript */,
+				C073EC211410BC3BBD99C119 /* [CP] Embed Pods Frameworks */,
+				0B7E5B49ECA52E4D6BE01C7E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -400,7 +400,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CS;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Kleomenis Katevas";
 				TargetAttributes = {
 					CFFF325119796BF600F7CE57 = {
@@ -461,29 +461,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04C7B172F4DB5D06EA520E99 /* Check Pods Manifest.lock */ = {
+		0B7E5B49ECA52E4D6BE01C7E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7DFF7F67AD905B93F443C970 /* Embed Pods Frameworks */ = {
+		8ED7119A356C418E7B2FDEF1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C073EC211410BC3BBD99C119 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,21 +518,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" f8eac4b07e220eb80ae928f35aa6a29222538c20 dadc6bf9871a1735e525d47a051725a801f56fb087f85c302999325508c82646";
-		};
-		D1C430B56A13F6B52FA535C9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -617,14 +617,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -657,13 +662,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -679,7 +689,7 @@
 		};
 		CFFF328819796BF600F7CE57 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA5D64EFB3D74E525E4DF0AC /* Pods-CrowdSensing-iOS.debug.xcconfig */;
+			baseConfigurationReference = 93D822FC1F2BA8C91854A824 /* Pods-CrowdSensing-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -701,7 +711,7 @@
 		};
 		CFFF328919796BF600F7CE57 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAF80AEE1DBD0DF4B4B3C892 /* Pods-CrowdSensing-iOS.release.xcconfig */;
+			baseConfigurationReference = 65B684E43645E885F3B88184 /* Pods-CrowdSensing-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
