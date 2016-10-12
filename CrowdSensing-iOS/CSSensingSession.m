@@ -9,7 +9,7 @@
 #import "CSSensingSession.h"
 #import "CSModelWriter.h"
 #import "CSRecordingLogModelWriter.h"
-#import <SensingKit/NSString+SensorType.h>
+#import <SensingKit/SensingKit.h>
 
 @interface CSSensingSession ()
 
@@ -88,7 +88,7 @@
     }
     
     // Register and Subscribe sensor
-    [self.sensingKitLib registerSensor:sensorType withConfiguration:configuration];
+    [self.sensingKitLib registerSensor:sensorType withConfiguration:configuration error:NULL];
     [self.sensingKitLib subscribeToSensor:sensorType
                               withHandler:^(SKSensorType sensorType, SKSensorData *sensorData) {
                                   
@@ -102,7 +102,7 @@
 
 - (void)disableSensor:(SKSensorType)sensorType
 {
-    [self.sensingKitLib deregisterSensor:sensorType];
+    [self.sensingKitLib deregisterSensor:sensorType error:NULL];
     
     // Search for the moduleWriter in the Array
     CSModelWriter *moduleWriter = [self getModuleWriterWithType:sensorType];
@@ -128,14 +128,14 @@
 
 - (void)setConfiguration:(SKConfiguration *)configuration toSensor:(SKSensorType)sensorType
 {
-    [self.sensingKitLib setConfiguration:configuration toSensor:sensorType];
+    [self.sensingKitLib setConfiguration:configuration toSensor:sensorType error:NULL];
 }
 
 - (SKConfiguration *)getConfigurationFromSensor:(SKSensorType)sensorType
 {
     if ([self isSensorEnabled:sensorType])
     {
-        return [self.sensingKitLib getConfigurationFromSensor:sensorType];
+        return [self.sensingKitLib getConfigurationFromSensor:sensorType error:NULL];
     }
     else
     {

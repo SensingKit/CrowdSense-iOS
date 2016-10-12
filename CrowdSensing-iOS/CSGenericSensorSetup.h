@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SensingKit/SensingKitLib.h>
+#import <SensingKit/SensingKit.h>
 
 typedef NS_ENUM(NSUInteger, CSSensorStatus) {
     CSSensorStatusEnabled,

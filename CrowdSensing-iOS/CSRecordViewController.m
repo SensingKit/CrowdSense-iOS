@@ -9,7 +9,8 @@
 #import "CSRecordViewController.h"
 #import "LogEntry+Create.h"
 #import "CSSensingSession.h"
-#import <SensingKit/SKSensorTimestamp.h>
+
+#import <SensingKit/SensingKit.h>
 #import "NSString+CSTimeInterval.h"
 
 @import CoreText;

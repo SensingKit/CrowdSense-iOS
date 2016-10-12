@@ -17,7 +17,6 @@
 		CF18C3A919ED4C7700E295CB /* CSUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSUserInput.m */; };
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
 		CF38EB441C03519300CAE092 /* NSString+CSTimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = CF38EB431C03519300CAE092 /* NSString+CSTimeInterval.m */; };
-		CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */; };
 		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
 		CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Storyboard.storyboard */; };
 		CF8E9BD71B3356E6005AC2FC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */; };
@@ -84,7 +83,6 @@
 		CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGenericSensorSetup.m; sourceTree = "<group>"; };
 		CF38EB421C03519300CAE092 /* NSString+CSTimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CSTimeInterval.h"; sourceTree = "<group>"; };
 		CF38EB431C03519300CAE092 /* NSString+CSTimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSTimeInterval.m"; sourceTree = "<group>"; };
-		CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SensingKit.framework; sourceTree = "<group>"; };
 		CF5298971A0D1141002A4D54 /* SKStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKStyles.h; path = "CrowdSensing-iOS/SKStyles.h"; sourceTree = "<group>"; };
 		CF5298981A0D1141002A4D54 /* SKStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKStyles.m; path = "CrowdSensing-iOS/SKStyles.m"; sourceTree = "<group>"; };
 		CF8E9BD61B3356E6005AC2FC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */,
 				CFFF325819796BF600F7CE57 /* CoreGraphics.framework in Frameworks */,
 				CFFF325A19796BF600F7CE57 /* UIKit.framework in Frameworks */,
-				CF3F84F21A20CC6700FAFA58 /* SensingKit.framework in Frameworks */,
 				CFFF325619796BF600F7CE57 /* Foundation.framework in Frameworks */,
 				9AFAFBF62FDE88A3579FB80D /* Pods_CrowdSensing_iOS.framework in Frameworks */,
 			);
@@ -269,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				CF8E9BDF1B336195005AC2FC /* CoreData.framework */,
-				CF3F84F11A20CC6700FAFA58 /* SensingKit.framework */,
 				CFFF325519796BF600F7CE57 /* Foundation.framework */,
 				CFFF325719796BF600F7CE57 /* CoreGraphics.framework */,
 				CFFF325919796BF600F7CE57 /* UIKit.framework */,
