@@ -37,9 +37,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) SKSensorType sensorType;
 @property (nonatomic, readonly, getter=isSensing) BOOL sensing;
 
-- (void)subscribeHandler:(SKSensorDataHandler)handler;
+@property (readonly) NSUInteger handlersCount;
 
-- (void)unsubscribeHandler:(SKSensorDataHandler)handler;
+- (BOOL)subscribeHandler:(SKSensorDataHandler)handler
+                   error:(NSError * _Nullable * _Nullable)error;
+
+- (BOOL)unsubscribeHandler:(SKSensorDataHandler)handler
+                     error:(NSError * _Nullable * _Nullable)error;
 
 - (void)unsubscribeAllHandlers;
 

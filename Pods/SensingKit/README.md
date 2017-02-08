@@ -1,6 +1,6 @@
 # SensingKit-iOS Library
 
-An iOS library that provides Continuous Sensing functionality to your applications. For more information, please refer to the [project website](http://www.sensingkit.org).
+An iOS library that provides Continuous Sensing functionality to your applications. For more information, please refer to the [project website](https://www.sensingkit.org).
 
 
 ## Supported Sensors
@@ -37,7 +37,9 @@ target <MyApp> do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
 
-  pod 'SensingKit'
+  # Pre-release version
+  pod 'SensingKit', :git => 'https://github.com/SensingKit/SensingKit-iOS.git', :branch => 'next'
+  
 end
 ```
 
@@ -52,8 +54,9 @@ For more information about CocoaPods, visit [https://cocoapods.org](https://coco
 
 ## Using the Library
 
-- Import and init SensingKit as shown bellow:
+Import and init SensingKit as shown bellow:
 
+*Objective-C*
 ```objectivec
 #import <SensingKit/SensingKit.h>
 
@@ -66,25 +69,52 @@ For more information about CocoaPods, visit [https://cocoapods.org](https://coco
 }
 ```
 
+*Swift*
+```swift
+import SensingKit
 
-- Check if a sensor is available in the device:
+let sensingKit = SensingKitLib.shared()
+```
 
+
+Check if a sensor is available in the device:
+
+*Objective-C*
 ```objectivec
 if ([self.sensingKit isSensorAvailable:Battery]) {
     // You can access the sensor
 }
 ```
 
+*Swift*
+```swift
+ if sensingKit.isSensorAvailable(SKSensorType.Battery) {
+    // You can access the sensor
+}
+```
 
-- Register a sensor (e.g. a Battery sensor) as shown bellow:
 
+Register a sensor (e.g. a Battery sensor) as shown bellow:
+
+*Objective-C*
 ```objectivec
 [self.sensingKit registerSensor:Battery error:NULL];
 ```
 
+*Swift*
+```swift
+do {
+	try sensingKit.register(SKSensorType.Battery)
+}
+catch {
+  // Handle error
+}
+```
 
-- Subscribe a sensor data handler. You can cast the data object into the actual sensor data object in order to access all the sensor data properties:
 
+Subscribe a sensor data handler. You can cast the data object into the actual sensor data object in order to access all the sensor data properties:
+
+*Objective-C*
 ```objectivec
 [self.sensingKit subscribeToSensor:Battery
                        withHandler:^(SKSensorType sensorType, SKSensorData *sensorData) {
@@ -94,10 +124,18 @@ if ([self.sensingKit isSensorAvailable:Battery]) {
     }];
 ```
 
+*Swift*
+```swift
+sensingkit.subscribe(to: SKSensorType.Battery, withHandler: { (sensorType, sensorData) in
+  let batteryData = sensorData as! SKBatteryData
+  print("Battery Level: \(batteryData)")
+})
+```
 
 
-- You can Start and Stop the Continuous Sensing using the following commands:
+You can Start and Stop the Continuous Sensing using the following commands:
 
+*Objective-C*
 ```objectivec
 // Start
 [self.sensingKit startContinuousSensingWithSensor:Battery];
@@ -106,8 +144,17 @@ if ([self.sensingKit isSensorAvailable:Battery]) {
 [self.sensingKit stopContinuousSensingWithSensor:Battery];
 ```
 
+*Swift*
+```swift
+// Start
+sensingKit.startContinuousSensingWithSensor(SKSensorType.Battery)
 
-For a complete description of our API, please refer to the [project website](http://www.sensingkit.org).
+// Stop
+sensingKit.stopContinuousSensingWithSensor(SKSensorType.Battery)
+```
+
+
+For a complete description of our API, please refer to the [project website](https://www.sensingkit.org).
 
 ## License
 
@@ -116,7 +163,7 @@ Copyright (c) 2014. Queen Mary University of London
 Kleomenis Katevas, k.katevas@qmul.ac.uk
 
 This file is part of SensingKit-iOS library.
-For more information, please visit http://www.sensingkit.org
+For more information, please visit https://www.sensingkit.org
 
 SensingKit-iOS is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
