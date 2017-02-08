@@ -94,7 +94,7 @@
                                   
                                   // Feed the writer with data
                                   [modelWriter readData:sensorData];
-                              }];
+                              } error:NULL];
     
     // Add sensorType and modelWriter to the arrays
     [self.modelWriters addObject:modelWriter];
@@ -233,12 +233,12 @@
 
 - (void)start
 {
-    [self.sensingKitLib startContinuousSensingWithAllRegisteredSensors];
+    [self.sensingKitLib startContinuousSensingWithAllRegisteredSensors:NULL];
 }
 
 - (void)stop
 {
-    [self.sensingKitLib stopContinuousSensingWithAllRegisteredSensors];
+    [self.sensingKitLib stopContinuousSensingWithAllRegisteredSensors:NULL];
 }
 
 - (void)close
