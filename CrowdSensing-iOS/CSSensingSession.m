@@ -79,7 +79,7 @@
     NSString *filename = [[NSString nonspacedStringWithSensorType:sensorType] stringByAppendingString:@".csv"];
     CSModelWriter *modelWriter = [[CSModelWriter alloc] initWithSensorType:sensorType
                                                                 withHeader:header
-                                                              withFilename:filename
+                                                               withFilename:filename
                                                                     inPath:self.folderPath];
     
     // If congiguration is nil, get the default
@@ -90,10 +90,12 @@
     // Register and Subscribe sensor
     [self.sensingKitLib registerSensor:sensorType withConfiguration:configuration error:NULL];
     [self.sensingKitLib subscribeToSensor:sensorType
-                              withHandler:^(SKSensorType sensorType, SKSensorData *sensorData) {
-                                  
-                                  // Feed the writer with data
-                                  [modelWriter readData:sensorData];
+                              withHandler:^(SKSensorType sensorType, SKSensorData *sensorData, NSError *error) {
+                                
+                                  if (!error) {
+                                      // Feed the writer with data
+                                      [modelWriter readData:sensorData];
+                                  }
                               } error:NULL];
     
     // Add sensorType and modelWriter to the arrays

@@ -15,7 +15,6 @@ The following mobile sensors are currently supported in SensingKit-iOS, (listed 
 - Pedometer
 - Altimeter
 - Battery
-- Screen Status
 - Location
 - iBeacon™ Proximity
 - Eddystone™ Proximity
@@ -37,8 +36,9 @@ target <MyApp> do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
 
-  # Pre-release version
-  pod 'SensingKit', :git => 'https://github.com/SensingKit/SensingKit-iOS.git', :branch => 'next'
+  pod 'SensingKit'
+  # For the latest development version, please use:
+  # pod 'SensingKit', :git => 'https://github.com/SensingKit/SensingKit-iOS.git', :branch => 'next'
   
 end
 ```
@@ -88,7 +88,7 @@ if ([self.sensingKit isSensorAvailable:Battery]) {
 
 *Swift*
 ```swift
- if sensingKit.isSensorAvailable(SKSensorType.Battery) {
+if sensingKit.isSensorAvailable(SKSensorType.Battery) {
     // You can access the sensor
 }
 ```
@@ -104,10 +104,10 @@ Register a sensor (e.g. a Battery sensor) as shown bellow:
 *Swift*
 ```swift
 do {
-	try sensingKit.register(SKSensorType.Battery)
+    try sensingKit.register(SKSensorType.Battery)
 }
 catch {
-  // Handle error
+    // Handle error
 }
 ```
 
@@ -117,19 +117,29 @@ Subscribe a sensor data handler. You can cast the data object into the actual se
 *Objective-C*
 ```objectivec
 [self.sensingKit subscribeToSensor:Battery
-                       withHandler:^(SKSensorType sensorType, SKSensorData *sensorData) {
+                       withHandler:^(SKSensorType sensorType, SKSensorData *sensorData, NSError *error) {
         
-        SKBatteryData *batteryData = (SKBatteryData *)sensorData;
-        NSLog(@“Battery Level: %f”, batteryData.level);
-    }];
+        if (!error) {
+            SKBatteryData *batteryData = (SKBatteryData *)sensorData;
+            NSLog(@"Battery Level: %f", batteryData.level);
+        }
+    } error:NULL];
 ```
 
 *Swift*
 ```swift
-sensingkit.subscribe(to: SKSensorType.Battery, withHandler: { (sensorType, sensorData) in
-  let batteryData = sensorData as! SKBatteryData
-  print("Battery Level: \(batteryData)")
-})
+do {
+    try sensingkit.subscribe(to: SKSensorType.Battery, withHandler: { (sensorType, sensorData, error) in
+        
+        if (error != nil) {
+            let batteryData = sensorData as! SKBatteryData
+            print("Battery Level: \(batteryData)")
+        }
+    })
+}
+catch {
+    // Handle error
+}
 ```
 
 
@@ -138,23 +148,33 @@ You can Start and Stop the Continuous Sensing using the following commands:
 *Objective-C*
 ```objectivec
 // Start
-[self.sensingKit startContinuousSensingWithSensor:Battery];
+[self.sensingKit startContinuousSensingWithSensor:Battery error:NULL];
 
 // Stop
-[self.sensingKit stopContinuousSensingWithSensor:Battery];
+[self.sensingKit stopContinuousSensingWithSensor:Battery error:NULL];
 ```
 
 *Swift*
 ```swift
 // Start
-sensingKit.startContinuousSensingWithSensor(SKSensorType.Battery)
+do {
+    try sensingKit.startContinuousSensingWithSensor(SKSensorType.Battery)
+}
+catch {
+    // Handle error
+}
 
 // Stop
-sensingKit.stopContinuousSensingWithSensor(SKSensorType.Battery)
+do {
+    try sensingKit.stopContinuousSensingWithSensor(SKSensorType.Battery)
+}
+catch {
+    // Handle error
+}
 ```
 
 
-For a complete description of our API, please refer to the [project website](https://www.sensingkit.org).
+For a complete description of our API, please refer to the [documentation page](https://www.sensingkit.org/documentation/ios/) of SensingKit website.
 
 ## License
 

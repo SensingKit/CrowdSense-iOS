@@ -36,7 +36,6 @@
 #import "SKPedometer.h"
 #import "SKAltimeter.h"
 #import "SKBattery.h"
-#import "SKScreenStatus.h"
 #import "SKLocation.h"
 #import "SKiBeaconProximity.h"
 #import "SKEddystoneProximity.h"
@@ -51,7 +50,6 @@
 #import "SKPedometerData.h"
 #import "SKAltimeterData.h"
 #import "SKBatteryData.h"
-#import "SKScreenStatusData.h"
 #import "SKLocationData.h"
 #import "SKiBeaconDeviceData.h"
 #import "SKEddystoneProximityData.h"
@@ -66,7 +64,6 @@
 #import "SKPedometerConfiguration.h"
 #import "SKAltimeterConfiguration.h"
 #import "SKBatteryConfiguration.h"
-#import "SKScreenStatusConfiguration.h"
 #import "SKLocationConfiguration.h"
 #import "SKiBeaconProximityConfiguration.h"
 #import "SKEddystoneProximityConfiguration.h"
@@ -126,9 +123,6 @@
             
         case Battery:
             return [SKBattery isSensorAvailable];
-            
-        case ScreenStatus:
-            return [SKScreenStatus isSensorAvailable];
             
         case Location:
             return [SKLocation isSensorAvailable];
@@ -210,8 +204,25 @@
         return NO;
     }
     
-    // If configuration was not provided, get the Default
-    if (!configuration) {
+    // if configuration is provided, check the type
+    if (configuration) {
+        
+        if (![configuration isValidForSensor:sensorType]) {
+            
+            if (error) {
+                
+                NSDictionary *userInfo = @{
+                                           NSLocalizedDescriptionKey: NSLocalizedString(@"Configuration is not compatible with the registered sensor.", nil),
+                                           };
+                
+                *error = [NSError errorWithDomain:SKErrorDomain
+                                             code:SKConfigurationNotValid
+                                         userInfo:userInfo];
+            }
+            return NO;
+        }
+    } else {
+        // If configuration was not provided, get the Default
         configuration = [SKSensorManager defaultConfigurationForSensor:sensorType];
     }
     
@@ -272,7 +283,20 @@
     // if configuration is provided, check the type
     if (configuration)
     {
-        // TODO
+        if (![configuration isValidForSensor:sensorType]) {
+            
+            if (error) {
+                
+                NSDictionary *userInfo = @{
+                                           NSLocalizedDescriptionKey: NSLocalizedString(@"Configuration is not compatible with the registered sensor.", nil),
+                                           };
+                
+                *error = [NSError errorWithDomain:SKErrorDomain
+                                             code:SKConfigurationNotValid
+                                         userInfo:userInfo];
+            }
+            return NO;
+        }
     }
     else {
         // If configuration was not provided, get the Default
@@ -378,9 +402,6 @@
         case Battery:
             return [SKBatteryData csvHeader];
             
-        case ScreenStatus:
-            return [SKScreenStatusData csvHeader];
-            
         case Location:
             return [SKLocationData csvHeader];
             
@@ -450,9 +471,7 @@
     }
     
     // Start Sensing
-    [sensor startSensing];
-    
-    return YES;
+    return [sensor startSensing:error];
 }
 
 - (BOOL)stopContinuousSensingWithSensor:(SKSensorType)sensorType
@@ -484,9 +503,7 @@
     }
     
     // Stop Sensing
-    [sensor stopSensing];
-    
-    return YES;
+    return [sensor stopSensing:error];
 }
 
 - (BOOL)startContinuousSensingWithAllRegisteredSensors:(NSError **)error
@@ -565,7 +582,6 @@
             
         case Accelerometer:
             sensor = [[SKAccelerometer alloc] initWithConfiguration:(SKAccelerometerConfiguration *)configuration];
-            
             break;
             
         case Gyroscope:
@@ -594,10 +610,6 @@
             
         case Battery:
             sensor = [[SKBattery alloc] initWithConfiguration:(SKBatteryConfiguration *)configuration];
-            break;
-            
-        case ScreenStatus:
-            sensor = [[SKScreenStatus alloc] initWithConfiguration:(SKScreenStatusConfiguration *)configuration];
             break;
             
         case Location:
@@ -664,11 +676,7 @@
         case Battery:
             configuration = [[SKBatteryConfiguration alloc] init];
             break;
-            
-        case ScreenStatus:
-            configuration = [[SKScreenStatusConfiguration alloc] init];
-            break;
-            
+
         case Location:
             configuration = [[SKLocationConfiguration alloc] init];
             break;

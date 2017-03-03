@@ -5,5 +5,7 @@ target 'CrowdSensing-iOS' do
   pod 'SSZipArchive'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'SensingKit', :git => 'https://github.com/SensingKit/SensingKit-iOS.git', :branch => 'next'
+  pod 'SensingKit'
+  # For the latest development version, please use:
+  # pod 'SensingKit', :git => 'https://github.com/SensingKit/SensingKit-iOS.git', :branch => 'next'
 end

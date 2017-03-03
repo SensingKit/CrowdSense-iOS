@@ -153,7 +153,7 @@
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
 {
-    self.eddystoneConfiguration.namespaceFilter = value.lowercaseString;
+    [self.eddystoneConfiguration setNamespaceFilter:value.lowercaseString error:NULL];
     
     [self updateConfiguration];
     [self updateProperties];

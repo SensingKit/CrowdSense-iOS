@@ -23,6 +23,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SKSensorType.h"
+#import "SKErrors.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  This is the base class for all Sensor Configuration objects.
  */
 @interface SKConfiguration : NSObject <NSCopying>
+
+- (BOOL)isValidForSensor:(SKSensorType)sensorType;
 
 @end
 
