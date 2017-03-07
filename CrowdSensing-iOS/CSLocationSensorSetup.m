@@ -24,6 +24,7 @@
     
     // Update sensor properties
     [self updateSensorSwitch];
+    [self updateBackgroundSwitch];
     [self updateProperties];
 }
 
@@ -57,6 +58,34 @@
     }
 }
 
+- (IBAction)backgroundSwitchAction:(id)sender
+{
+    if (self.delegate && self.sensorStatus != CSSensorStatusNotAvailable)
+    {
+        UISwitch *sensorSwitch = sender;
+        
+        if (sensorSwitch.on)
+        {
+            self.locationConfiguration.locationAuthorization = SKLocationAuthorizationAlways;
+        }
+        else
+        {
+            self.locationConfiguration.locationAuthorization = SKLocationAuthorizationWhenInUse;
+        }
+        
+        // Apply configuration
+        [self updateConfiguration];
+        
+        // Reload TableView (show/hide configuration)
+        [self.tableView reloadData];
+    }
+}
+
+- (IBAction)backgroundSwitchTouchedAction:(id)sender
+{
+    // To be used when we support error in authentication.
+}
+
 - (void)updateSensorSwitch
 {
     switch (self.sensorStatus)
@@ -76,6 +105,37 @@
         default:
             NSLog(@"Unknown CSSensorStatus: %lu", (unsigned long)self.sensorStatus);
             abort();
+    }
+}
+
+- (void)updateBackgroundSwitch
+{
+    switch (self.locationConfiguration.locationAuthorization) {
+            
+        case SKLocationAuthorizationWhenInUse:
+            self.backgroundSwitch.on = NO;
+            break;
+        
+        case SKLocationAuthorizationAlways:
+            self.backgroundSwitch.on = YES;
+            break;
+            
+        default:
+            NSLog(@"Unknown SKLocationAuthorization: %lu", (unsigned long)self.locationConfiguration.locationAuthorization);
+            abort();
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (section == 2 && self.sensorSwitch.on)
+    {
+        return @"Enable this option if you want to record sensor data continuously, even when the app runs in the background.";
+    }
+    else
+    {
+        // Implementation is in the superclass
+        return [super tableView:tableView titleForFooterInSection:section];
     }
 }
 
@@ -233,4 +293,5 @@
     self.desiredAccuracyLabel.text = self.desiredAccuracyString;
     self.distanceFilterLabel.text = self.distanceFilterString;
 }
+
 @end

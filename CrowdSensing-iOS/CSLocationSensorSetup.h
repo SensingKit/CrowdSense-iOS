@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *sensorLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *sensorSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *backgroundSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *desiredAccuracyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceFilterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *authorizationLabel;
