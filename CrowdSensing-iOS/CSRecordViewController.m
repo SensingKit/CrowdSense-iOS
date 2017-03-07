@@ -371,11 +371,16 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
         [self.sensingSession enableSensor:Pedometer withConfiguration:nil];
     }
     
+    if ([self.sensingSession isSensorAvailable:Location]) {
+        SKLocationConfiguration *configuration = [[SKLocationConfiguration alloc] init];
+        configuration.locationAccuracy = SKLocationAccuracyThreeKilometers;
+        configuration.locationAuthorization = SKLocationAuthorizationAlways;
+        [self.sensingSession enableSensor:Location withConfiguration:configuration];
+    }
+    
     if ([self.sensingSession isSensorAvailable:iBeaconProximity]) {
         SKiBeaconProximityConfiguration *configuration = [[SKiBeaconProximityConfiguration alloc] initWithUUID:[[NSUUID alloc] initWithUUIDString:@"eeb79aec-022f-4c05-8331-93d9b2ba6dce"]];
-        
-        configuration.mode = SKiBeaconProximityModeScanAndBroadcast;
-        
+        configuration.mode = SKiBeaconProximityModeScanOnly;
         [self.sensingSession enableSensor:iBeaconProximity withConfiguration:configuration];
     }
     
