@@ -44,6 +44,8 @@
 	<string>CrowdSense requires this access in order to record location data while using the app.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>CrowdSense requires this access in order to record location data while using the app.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>CrowdSense requires this access in order to record audio data using the Microphone sensor.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
