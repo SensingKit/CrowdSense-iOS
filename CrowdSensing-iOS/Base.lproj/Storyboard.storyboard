@@ -1538,7 +1538,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">CrowdSense is a free continuous sensing tool, based on the open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be accessed using iTunes (through iTunes file sharing).
+                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on our open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be accessed using iTunes (through iTunes file sharing).
 
 CrowdSense supports the following sensors:
 - Accelerometer
@@ -1554,13 +1554,13 @@ CrowdSense supports the following sensors:
 - Battery
 - Microphone
 
-Please note that continued use of CrowdSense can dramatically decrease your battery life.
+For more details about SensingKit library, please refer to https://www.sensingkit.org, or read the following publications:
 
-For more details about SensingKit library, please refer to www.sensingkit.org, or read the following Extended Abstract publication:
+Kleomenis Katevas, Hamed Haddadi and Laurissa Tokarchuk, "SensingKit: Evaluating the Sensor Power Consumption in iOS devices", 12th International Conference on Intelligent Environments (IE'16), September 2016, London, UK.
 
-Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, “Poster: SensingKit – A Multi‑Platform Mobile Sensing Framework for Large-Scale Experiments”, Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
+Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, "Poster: SensingKit – A Multi-Platform Mobile Sensing Framework for Large‑Scale Experiments", Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
-This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit minoskt.github.io.</string>
+This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
