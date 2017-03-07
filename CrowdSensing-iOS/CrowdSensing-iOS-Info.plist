@@ -39,11 +39,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>CrowdSense requires this access in order to capture your location, as well as your proximity with other devices actively running this app.</string>
+	<string>CrowdSense requires this access in order to record location data, even when the app runs in the background.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>CrowdSense requires this access in order to capture your location, as well as your proximity with other devices actively running this app.</string>
+	<string>CrowdSense requires this access in order to record location data while using the app.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>CrowdSense requires this access in order to capture your location, as well as your proximity with other devices actively running this app.</string>
+	<string>CrowdSense requires this access in order to record location data while using the app.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
