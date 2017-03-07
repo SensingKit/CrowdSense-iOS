@@ -118,6 +118,7 @@
 		CFD450271B885C4900E2E78D /* CSRecordingLogModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingLogModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingLogModelWriter.m; sourceTree = "<group>"; };
 		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
+		CFF3D0A21E6F18D8009EB542 /* CrowdSensing-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CrowdSensing-iOS.entitlements"; sourceTree = "<group>"; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF325519796BF600F7CE57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFFF325719796BF600F7CE57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -277,6 +278,7 @@
 		CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CFF3D0A21E6F18D8009EB542 /* CrowdSensing-iOS.entitlements */,
 				CFFF327019796BF600F7CE57 /* Images.xcassets */,
 				CF8E9BEC1B342C6D005AC2FC /* CSMainTableTableViewController.h */,
 				CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */,
@@ -688,6 +690,7 @@
 			baseConfigurationReference = 93D822FC1F2BA8C91854A824 /* Pods-CrowdSensing-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CrowdSensing-iOS/CrowdSensing-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -710,6 +713,7 @@
 			baseConfigurationReference = 65B684E43645E885F3B88184 /* Pods-CrowdSensing-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CrowdSensing-iOS/CrowdSensing-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
