@@ -48,6 +48,8 @@
 	<string>CrowdSense requires this access in order to record audio data using the Microphone sensor.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>CrowdSense requires this access in order to record your motion and fitness activity using the device&apos;s sensors.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>CrowdSense requires this access in order to record your proximity with external Eddystone beacons in range.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
