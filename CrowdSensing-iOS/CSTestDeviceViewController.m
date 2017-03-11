@@ -8,6 +8,7 @@
 
 #import "CSTestDeviceViewController.h"
 #import <SensingKit/SensingKit.h>
+#import "ALDisk.h"
 
 @interface CSTestDeviceViewController ()
 
@@ -66,7 +67,10 @@
     }
     
     // Test DataCollection
-    //...
+    errors = [self testDataCollection];
+    if (errors) {
+        [allErrors addObjectsFromArray:errors];
+    }
     
     // Test Deregistration
     errors = [self testDeregistration];
@@ -75,7 +79,10 @@
     }
     
     // Test Memory
-    //...
+    NSString *testMemory = [self testMemory];
+    if (testMemory){
+        [allErrors addObject:testMemory];
+    }
     
     // Report
     if (allErrors.count) {
@@ -91,7 +98,6 @@
     }
     
 }
-
 
 - (NSArray *)testRegistration
 {
@@ -134,6 +140,48 @@
     return nil;
 }
 
+- (NSArray *)testDataCollection
+{
+    // Array that will hold a list of errors (hopefully will remain empty)
+    NSMutableArray *errorArray = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    for (NSNumber *sensor in self.sensors) {
+        
+        SKSensorType sensorType = sensor.unsignedIntegerValue;
+        
+        // Test registration
+        NSString *errorString = [self testSensorDataCollection:sensorType];
+        
+        // In case an error occured, append it to the list
+        if (errorString) {
+            [errorArray addObject:errorString];
+        }
+    }
+    
+    // return
+    if (errorArray.count) {
+        return errorArray;
+    }
+    else {
+        return nil;
+    }
+}
+
+- (NSString *)testSensorDataCollection:(SKSensorType)sensorType {
+    
+    if ([self.sensingKit isSensorRegistered:sensorType]) {
+    
+        NSError *error;
+        if (![self.sensingKit subscribeToSensor:sensorType withHandler:^(SKSensorType sensorType, SKSensorData * _Nullable sensorData, NSError * _Nullable error) {
+            // Nothing
+        } error:&error]) {
+            return error.localizedDescription;
+        }
+    }
+    
+    return nil;
+}
+
 - (NSArray *)testDeregistration
 {
     // Array that will hold a list of errors (hopefully will remain empty)
@@ -173,9 +221,9 @@
 
 - (NSString *)testMemory {
     
-    
-    
-    
+    if ([ALDisk freeDiskSpaceInBytes] / 1000000 < 250) {
+        return @"Your device does not have enough disk space.";
+    }
     
     return nil;
 }

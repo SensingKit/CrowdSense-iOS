@@ -34,6 +34,7 @@
 		CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */; };
 		CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */; };
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
+		CF93F2691E742BC30060A5F5 /* ALDisk.m in Sources */ = {isa = PBXBuildFile; fileRef = CF93F2681E742BC30060A5F5 /* ALDisk.m */; };
 		CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */; };
 		CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */; };
 		CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */; };
@@ -122,6 +123,8 @@
 		CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recording+Create.m"; sourceTree = "<group>"; };
 		CF8E9BFB1B346733005AC2FC /* LogEntry+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LogEntry+Create.h"; sourceTree = "<group>"; };
 		CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LogEntry+Create.m"; sourceTree = "<group>"; };
+		CF93F2671E742BC30060A5F5 /* ALDisk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDisk.h; sourceTree = "<group>"; };
+		CF93F2681E742BC30060A5F5 /* ALDisk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDisk.m; sourceTree = "<group>"; };
 		CFB029B61BADBEB3008E4137 /* CSSelectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSelectProperty.h; sourceTree = "<group>"; };
 		CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectProperty.m; sourceTree = "<group>"; };
 		CFB668BA1B5434BC00D3ED80 /* CSSensingSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensingSession.h; sourceTree = "<group>"; };
@@ -270,6 +273,15 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		CF93F2661E742BC30060A5F5 /* ALDisk */ = {
+			isa = PBXGroup;
+			children = (
+				CF93F2671E742BC30060A5F5 /* ALDisk.h */,
+				CF93F2681E742BC30060A5F5 /* ALDisk.m */,
+			);
+			path = ALDisk;
+			sourceTree = "<group>";
+		};
 		CFB029B51BADBE90008E4137 /* User Input */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +309,7 @@
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
+				CF93F2661E742BC30060A5F5 /* ALDisk */,
 				CF52989A1A0D1149002A4D54 /* PaintCode generated files */,
 				CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */,
 				CFFF327D19796BF600F7CE57 /* CrowdSensing-iOSTests */,
@@ -582,6 +595,7 @@
 				CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */,
 				CF65BADE1E73103300AD143B /* CSQuestionnaireViewController.m in Sources */,
 				CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */,
+				CF93F2691E742BC30060A5F5 /* ALDisk.m in Sources */,
 				CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */,
 				CF65BAE41E73104600AD143B /* CSCalibrationViewController.m in Sources */,
 				CF65BAED1E73105E00AD143B /* CSSubmitDataViewController.m in Sources */,
