@@ -1398,10 +1398,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="1bC-CE-nPp" style="IBUITableViewCellStyleDefault" id="Lzl-oi-hfP">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzl-oi-hfP" id="Fbx-k0-EiG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1bC-CE-nPp">
@@ -2362,7 +2362,7 @@ When the experiment is finished, tap at the 'I am done' button. Please make sure
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41b-B3-7fA">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41b-B3-7fA">
                                 <rect key="frame" x="16" y="592" width="343" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="4Yt-pM-3L9"/>
@@ -2374,33 +2374,33 @@ When the experiment is finished, tap at the 'I am done' button. Please make sure
                                     <action selector="finishAction:" destination="yaM-wB-mAJ" eventType="touchUpInside" id="cAV-rP-bug"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8n8-5j-ieg">
-                                <rect key="frame" x="16" y="204" width="343" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8n8-5j-ieg">
+                                <rect key="frame" x="16" y="189" width="343" height="2"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42% completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJg-eb-GOY">
-                                <rect key="frame" x="239" y="214" width="120" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0% completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJg-eb-GOY">
+                                <rect key="frame" x="249" y="199" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data transmission:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3C-4j-7Kd">
-                                <rect key="frame" x="16" y="175" width="343" height="21"/>
+                                <rect key="frame" x="16" y="160" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Thank you once again for your participation. Please wait until this final proccess is completed." translatesAutoresizingMaskIntoConstraints="NO" id="kl3-9k-MEv">
-                                <rect key="frame" x="16" y="72" width="343" height="95"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please wait until we collect all data." translatesAutoresizingMaskIntoConstraints="NO" id="kl3-9k-MEv">
+                                <rect key="frame" x="16" y="72" width="343" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="95" id="qDu-kG-fnx"/>
+                                    <constraint firstAttribute="height" constant="80" id="qDu-kG-fnx"/>
                                 </constraints>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPf-Ak-tey">
-                                <rect key="frame" x="16" y="243" width="343" height="142"/>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPf-Ak-tey">
+                                <rect key="frame" x="16" y="228" width="343" height="142"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="142" id="GQy-ZQ-m5d"/>
@@ -2432,13 +2432,14 @@ When the experiment is finished, tap at the 'I am done' button. Please make sure
                             <constraint firstItem="K3C-4j-7Kd" firstAttribute="top" secondItem="kl3-9k-MEv" secondAttribute="bottom" constant="8" id="ypO-YU-XuQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Submit Collected Data" id="1cI-n8-gwG">
+                    <navigationItem key="navigationItem" title="Submitting Collected Data..." id="1cI-n8-gwG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="j0T-wO-APA"/>
                     </navigationItem>
                     <connections>
                         <outlet property="dataProgressLabel" destination="fJg-eb-GOY" id="uzg-Uu-8Pe"/>
                         <outlet property="dataProgressView" destination="8n8-5j-ieg" id="gWU-Vw-DcA"/>
                         <outlet property="finishButton" destination="41b-B3-7fA" id="N0E-Oq-i0w"/>
+                        <outlet property="statusTextView" destination="KPf-Ak-tey" id="Mjr-q7-59b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2f-0A-fAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
