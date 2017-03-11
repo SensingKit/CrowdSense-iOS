@@ -44,6 +44,56 @@
 - (IBAction)submitAction:(id)sender
 {
     // Check if all input is complete and valid. Save data
+    if ([self checkInput]) {
+        [self performSegueWithIdentifier:@"Show Almost Ready" sender:self];
+    }
 }
+
+- (BOOL)checkInput {
+    
+    // id
+    if (self.participantIdTextField.text.length == 0) {
+        [self alertWithTitle:@"Invalid Participant ID" withMessage:nil];
+        return NO;
+    }
+    
+    // gender
+    if (self.genderOutlet.selectedSegmentIndex == UISegmentedControlNoSegment) {
+        [self alertWithTitle:@"Please choose your gender" withMessage:nil];
+        return NO;
+    }
+    
+    // age
+    if (self.ageTextField.text.length == 0 || self.ageTextField.text.integerValue < 18 || self.ageTextField.text.integerValue > 90) {
+        [self alertWithTitle:@"Invalid Age" withMessage:nil];
+        return NO;
+    }
+    
+    // height
+    if (self.heightTextField.text.length == 0 || self.heightTextField.text.integerValue < 100 || self.heightTextField.text.integerValue > 230) {
+        [self alertWithTitle:@"Invalid Height" withMessage:nil];
+        return NO;
+    }
+    
+    // weight
+    if (self.weightTextField.text.length == 0 || self.weightTextField.text.integerValue < 35 || self.weightTextField.text.integerValue > 200) {
+        [self alertWithTitle:@"Invalid Weight" withMessage:nil];
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
+}
+
 
 @end

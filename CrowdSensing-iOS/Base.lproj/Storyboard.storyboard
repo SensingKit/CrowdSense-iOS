@@ -1398,10 +1398,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="1bC-CE-nPp" style="IBUITableViewCellStyleDefault" id="Lzl-oi-hfP">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzl-oi-hfP" id="Fbx-k0-EiG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1bC-CE-nPp">
@@ -2074,7 +2074,6 @@ By tapping at the following button, I agree that the research project named abov
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submitAction:" destination="i5C-dj-E95" eventType="touchUpInside" id="Hn1-GR-GZI"/>
-                                            <segue destination="x8r-v2-9vP" kind="show" id="4Jy-VF-gc0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2109,6 +2108,7 @@ By tapping at the following button, I agree that the research project named abov
                         <outlet property="participantIdTextField" destination="bcC-LJ-HYA" id="tCy-sb-ee6"/>
                         <outlet property="submitButton" destination="4Jl-XR-3Nz" id="QY6-MG-tFo"/>
                         <outlet property="weightTextField" destination="u5o-Xl-tyG" id="PoW-51-c8i"/>
+                        <segue destination="x8r-v2-9vP" kind="show" identifier="Show Almost Ready" id="7wv-k9-q1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSg-1Z-ldS" userLabel="First Responder" sceneMemberID="firstResponder"/>
