@@ -1,0 +1,183 @@
+//
+//  CSTestDeviceViewController.m
+//  CrowdSensing-iOS
+//
+//  Created by Minos Katevas on 10/03/2017.
+//  Copyright © 2017 Kleomenis Katevas. All rights reserved.
+//
+
+#import "CSTestDeviceViewController.h"
+#import <SensingKit/SensingKit.h>
+
+@interface CSTestDeviceViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *testDeviceButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+
+@property (strong, nonatomic) SensingKitLib *sensingKit;
+
+@property (strong, nonatomic) NSArray *sensors;
+
+@property (nonatomic) BOOL stopSegue;
+
+@end
+
+@implementation CSTestDeviceViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.stopSegue = FALSE;
+    
+    self.sensingKit = [SensingKitLib sharedSensingKitLib];
+    
+    // These are the sensors to be tested
+    self.sensors = @[@(Accelerometer), @(Gyroscope), @(Magnetometer), @(DeviceMotion), @(MotionActivity), @(Pedometer), @(Location), @(iBeaconProximity), @(Battery), @(Microphone)];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)testDeviceAction:(id)sender
+{
+    // Init a mutable array that will hold all reported erros
+    NSMutableArray *allErrors = [[NSMutableArray alloc] initWithCapacity:40];
+    
+    // Array per test
+    NSArray *errors;
+    
+    // Test Registration
+    errors = [self testRegistration];
+    if (errors) {
+        [allErrors addObjectsFromArray:errors];
+    }
+    
+    // Test DataCollection
+    //...
+    
+    // Test Deregistration
+    errors = [self testDeregistration];
+    if (errors) {
+        [allErrors addObjectsFromArray:errors];
+    }
+    
+    // Test Memory
+    //...
+    
+    // Report
+    if (allErrors.count) {
+        // Report errors
+        
+        
+    }
+    else
+    {
+        // Alert
+        self.testDeviceButton.enabled = NO;
+        self.nextButton.enabled = YES;
+    }
+    
+}
+
+
+- (NSArray *)testRegistration
+{
+    // Array that will hold a list of errors (hopefully will remain empty)
+    NSMutableArray *errorArray = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    for (NSNumber *sensor in self.sensors) {
+        
+        SKSensorType sensorType = sensor.unsignedIntegerValue;
+        
+        // Test registration
+        NSString *errorString = [self testSensorRegistration:sensorType];
+        
+        // In case an error occured, append it to the list
+        if (errorString) {
+            [errorArray addObject:errorString];
+        }
+    }
+    
+    // return
+    if (errorArray.count) {
+        return errorArray;
+    }
+    else {
+        return nil;
+    }
+}
+
+- (NSString *)testSensorRegistration:(SKSensorType)sensorType {
+    
+    if (![self.sensingKit isSensorAvailable:sensorType]) {
+         return [NSString stringWithFormat:@"Sensor '%@' is not available.", [NSString stringWithSensorType:sensorType]];
+    }
+    
+    NSError *error;
+    if (![self.sensingKit registerSensor:sensorType error:&error]) {
+        return error.localizedDescription;
+    };
+        
+    return nil;
+}
+
+- (NSArray *)testDeregistration
+{
+    // Array that will hold a list of errors (hopefully will remain empty)
+    NSMutableArray *errorArray = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    for (NSNumber *sensor in self.sensors) {
+        
+        SKSensorType sensorType = sensor.unsignedIntegerValue;
+        
+        // Test registration
+        NSString *errorString = [self testSensorDeregistration:sensorType];
+        
+        // In case an error occured, append it to the list
+        if (errorString) {
+            [errorArray addObject:errorString];
+        }
+    }
+    
+    // return
+    if (errorArray.count) {
+        return errorArray;
+    }
+    else {
+        return nil;
+    }
+}
+
+- (NSString *)testSensorDeregistration:(SKSensorType)sensorType {
+    
+    NSError *error;
+    if (![self.sensingKit deregisterSensor:sensorType error:&error]) {
+        return error.localizedDescription;
+    };
+    
+    return nil;
+}
+
+- (NSString *)testMemory {
+    
+    
+    
+    
+    
+    return nil;
+}
+
+@end
