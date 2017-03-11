@@ -1398,10 +1398,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="1bC-CE-nPp" style="IBUITableViewCellStyleDefault" id="Lzl-oi-hfP">
-                                <rect key="frame" x="0.0" y="55" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzl-oi-hfP" id="Fbx-k0-EiG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1bC-CE-nPp">
@@ -1715,7 +1715,7 @@ If you have any questions or concerns about the manner in which the study was co
                             <constraint firstAttribute="leadingMargin" secondItem="IZQ-XN-abD" secondAttribute="leading" id="xbc-It-E0j"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Experiment Information" id="5Ex-EX-mVg">
+                    <navigationItem key="navigationItem" title="Information Sheet" id="5Ex-EX-mVg">
                         <barButtonItem key="backBarButtonItem" title="Back" id="7Xj-RR-wMy"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Mup-Fv-Cli">
                             <connections>
@@ -1860,7 +1860,7 @@ If you have any questions or concerns about the manner in which the study was co
                             <constraint firstItem="Gty-ne-I5p" firstAttribute="top" secondItem="ght-5R-e7s" secondAttribute="bottom" constant="8" id="wah-wx-gYD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Test Device" id="TrV-i7-r2r">
+                    <navigationItem key="navigationItem" title="Testing Your Device" id="TrV-i7-r2r">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Ta1-j2-eQB"/>
                     </navigationItem>
                     <connections>
@@ -1893,7 +1893,6 @@ If you have any questions or concerns about the manner in which the study was co
                                 <state key="normal" title="I agree"/>
                                 <connections>
                                     <action selector="iAgreeAction:" destination="LtS-ZF-Jy5" eventType="touchUpInside" id="wkl-Yq-U8j"/>
-                                    <segue destination="i5C-dj-E95" kind="show" id="pLl-GZ-rcy"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J16-JB-dvF">
@@ -1938,6 +1937,7 @@ By tapping at the following button, I agree that the research project named abov
                     </navigationItem>
                     <connections>
                         <outlet property="iAgreeButton" destination="CA0-Kh-iHn" id="eIr-wp-FLa"/>
+                        <segue destination="i5C-dj-E95" kind="show" identifier="Show Questionnaire" id="xZM-Iq-Hw5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1D-Kl-70L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2405,7 +2405,7 @@ When the experiment is finished, tap at the 'I am done' button. Please make sure
                                 <constraints>
                                     <constraint firstAttribute="height" constant="142" id="GQy-ZQ-m5d"/>
                                 </constraints>
-                                <string key="text">All data have been transmitted sucesfully. We will come back to you with the result of the draw. Feel free to contact as in case you have any questions.</string>
+                                <string key="text">All data have been transmitted sucesfully. We will come back to you with the result of the draw. Feel free to contact us in case you have any questions.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
