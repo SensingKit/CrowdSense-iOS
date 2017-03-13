@@ -60,8 +60,15 @@
         //[formData appendPartWithFileURL:dataUrl name:@"uploadedFile" fileName:@"filename.zip" mimeType:@"application/zip" error:nil];
         
         // Tmp data for testing reasons
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://minoskt.github.io/media/projects/robothespian_thumb.jpg"]];
-        [formData appendPartWithFileData:data name:@"uploadedFile" fileName:@"filename.jpg" mimeType:@"image/jpeg"];
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.information
+                                                           options:NSJSONWritingPrettyPrinted
+                                                             error:&error];
+        
+        // TODO: Add _DateTime
+        NSString *filename = [NSString stringWithFormat:@"%@.json", self.information[@"Questionnaire"][@"ID"]];
+        
+        [formData appendPartWithFileData:jsonData name:@"uploadedFile" fileName:filename mimeType:@"application/json"];
         
     } error:nil];
     

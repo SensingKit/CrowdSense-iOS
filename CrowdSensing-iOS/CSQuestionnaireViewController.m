@@ -7,6 +7,7 @@
 //
 
 #import "CSQuestionnaireViewController.h"
+#import "ALDisk.h"
 
 @interface CSQuestionnaireViewController ()
 
@@ -33,20 +34,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
+        [segue.destinationViewController setInformation:self.information];
+    }
 }
-*/
 
 - (IBAction)submitAction:(id)sender
 {
     // Check if all input is complete and valid. Save data
     if ([self checkInput]) {
+        
+        // Add Questionnaire information to the dict
+        self.information[@"Questionnaire"] = @{
+                                               @"ID": self.participantIdTextField.text,
+                                               @"Gender": [self.genderOutlet titleForSegmentAtIndex:self.genderOutlet.selectedSegmentIndex],
+                                               @"Age": self.ageTextField.text,
+                                               @"Height": self.heightTextField.text,
+                                               @"Weight": self.weightTextField.text
+                                               };
+        
+        // Add Device information to the dict
+        self.information[@"DeviceInfo"] = @{@"Name": [[UIDevice currentDevice] name],
+                                            @"Model": [[UIDevice currentDevice] model],
+                                            @"IdentifierForVendor": [[UIDevice currentDevice] identifierForVendor].UUIDString,
+                                            @"SystemVersion": [[UIDevice currentDevice] systemVersion],
+                                            @"TotalDiskSpace": [ALDisk totalDiskSpace],
+                                            @"FreeDiskSpace": [ALDisk freeDiskSpace],
+                                            @"UsedDiskSpace": [ALDisk usedDiskSpace]
+                                            };
+
+        // Show next screen
         [self performSegueWithIdentifier:@"Show Almost Ready" sender:self];
     }
 }

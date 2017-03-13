@@ -10,4 +10,6 @@
 
 @interface CSTestDeviceViewController : UIViewController
 
+@property (nonatomic, weak) NSMutableDictionary *information;
+
 @end

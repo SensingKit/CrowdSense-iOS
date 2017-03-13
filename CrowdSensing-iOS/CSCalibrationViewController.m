@@ -27,15 +27,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
+        [segue.destinationViewController setInformation:self.information];
+    }
 }
-*/
 
 - (IBAction)recordAction:(id)sender
 {
@@ -46,7 +48,7 @@
     // Make sure data is recorded
     // TODO
     
-    [self askPassword:@"2222" toPerformSegueWithIdentifier:@"Show Experiment"];
+    [self askPassword:@"2222" toPerformSegueWithIdentifier:@"Show Ready to Go"];
 }
 
 - (void)askPassword:(NSString *)password toPerformSegueWithIdentifier:(NSString *)identifier {

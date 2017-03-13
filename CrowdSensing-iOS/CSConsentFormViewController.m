@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *iAgreeButton;
 
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation CSConsentFormViewController
@@ -19,6 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Configure NSDateFormatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS";
+    dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    self.dateFormatter = dateFormatter;
+    
+    NSLog(@"Testing Date: %@", [self.dateFormatter stringFromDate:[NSDate date]]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,15 +37,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
+        [segue.destinationViewController setInformation:self.information];
+    }
 }
-*/
 
 - (IBAction)iAgreeAction:(id)sender
 {
@@ -66,6 +79,15 @@
                                        [self alertWithTitle:@"Name Is Not Valid" withMessage:@"Your name does not appear to be valid. Please enter your full name in a valid format (e.g. John Smith)."];
                                    }
                                    else {
+                                       
+                                       // Add fullname to the dict
+                                       self.information[@"ConsentForm"] = @{
+                                                                            @"FullName": text,
+                                                                            @"SignedDate": [self.dateFormatter stringFromDate:[NSDate date]],
+                                                                            @"SystemUpTime": @([[NSProcessInfo processInfo] systemUptime]),
+                                                                            };
+                                       
+                                       // Show next screen
                                        [self performSegueWithIdentifier:@"Show Questionnaire" sender:self];
                                    }
                                    

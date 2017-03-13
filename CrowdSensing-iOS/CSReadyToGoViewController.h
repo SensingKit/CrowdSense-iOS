@@ -10,4 +10,6 @@
 
 @interface CSReadyToGoViewController : UIViewController
 
+@property (nonatomic, weak) NSMutableDictionary *information;
+
 @end

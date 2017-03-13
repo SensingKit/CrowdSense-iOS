@@ -10,4 +10,6 @@
 
 @interface CSRecordingDataViewController : UIViewController
 
+@property (nonatomic, weak) NSMutableDictionary *information;
+
 @end

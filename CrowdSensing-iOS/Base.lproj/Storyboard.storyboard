@@ -1674,7 +1674,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                                 <state key="normal" title="I agree"/>
                                 <connections>
                                     <action selector="iAgreeAction:" destination="JF6-Ml-XOr" eventType="touchUpInside" id="ZuF-Vt-edY"/>
-                                    <segue destination="5S9-gH-xVv" kind="show" id="FGj-57-lse"/>
+                                    <segue destination="5S9-gH-xVv" kind="show" identifier="Show Test Device" id="FGj-57-lse"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKC-T4-2hr">
@@ -1838,7 +1838,7 @@ If you have any questions or concerns about the manner in which the study was co
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="LtS-ZF-Jy5" kind="show" id="yuZ-Y1-fih"/>
+                                    <segue destination="LtS-ZF-Jy5" kind="show" identifier="Show Consent Form" id="yuZ-Y1-fih"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2188,7 +2188,7 @@ By tapping at the following button, I agree that the research project named abov
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextAction:" destination="4DJ-03-RPq" eventType="touchUpInside" id="a6h-h4-0cG"/>
-                                    <segue destination="gGy-QT-hDk" kind="show" identifier="Show Experiment" id="azw-Dm-7xf"/>
+                                    <segue destination="gGy-QT-hDk" kind="show" identifier="Show Ready to Go" id="azw-Dm-7xf"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="When the instructor says so, please tap at the 'Record' button." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-ft-pfd">
@@ -2260,7 +2260,7 @@ By tapping at the following button, I agree that the research project named abov
                                 <state key="normal" title="Start Experiment"/>
                                 <connections>
                                     <action selector="startAction:" destination="gGy-QT-hDk" eventType="touchUpInside" id="Fyw-B2-L0E"/>
-                                    <segue destination="n83-Q0-cFs" kind="show" id="N0f-b5-7FM"/>
+                                    <segue destination="n83-Q0-cFs" kind="show" identifier="Show Experiment" id="N0f-b5-7FM"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You are ready to go! Please wait for further instructions before you tap at the 'Start Experiment' button." translatesAutoresizingMaskIntoConstraints="NO" id="53L-RH-3ur">
@@ -2315,7 +2315,7 @@ By tapping at the following button, I agree that the research project named abov
                                 <state key="normal" title="I am done!"/>
                                 <connections>
                                     <action selector="iAmDoneAction:" destination="n83-Q0-cFs" eventType="touchUpInside" id="dqB-k4-DtR"/>
-                                    <segue destination="yaM-wB-mAJ" kind="show" id="RHj-Dg-Y4V"/>
+                                    <segue destination="yaM-wB-mAJ" kind="show" identifier="Show Submit Data" id="RHj-Dg-Y4V"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-oB-QxL">

@@ -10,4 +10,6 @@
 
 @interface CSQuestionnaireViewController : UIViewController
 
+@property (nonatomic, weak) NSMutableDictionary *information;
+
 @end
