@@ -53,7 +53,7 @@
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"https://sensingkit.herokuapp.com" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         // Set password
-        [formData appendPartWithFormData:[@"super" dataUsingEncoding:NSUTF8StringEncoding] name:@"password"];
+        [formData appendPartWithFormData:[@"b+FRongauiv/bKy1egB8AbB2HIICNbhX5IqlbMWcfn4" dataUsingEncoding:NSUTF8StringEncoding] name:@"password"];
         
         // Set data
         //NSURL *dataUrl = [NSURL URLWithString:@"..."];
