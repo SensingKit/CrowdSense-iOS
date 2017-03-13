@@ -2135,7 +2135,6 @@ By tapping at the following button, I agree that the research project named abov
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="NextAction:" destination="x8r-v2-9vP" eventType="touchUpInside" id="hAa-Np-zQQ"/>
-                                    <segue destination="4DJ-03-RPq" kind="show" id="dm6-9S-d6T"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You are almost ready to go! Please wait for further instructions before you go to the next screen." translatesAutoresizingMaskIntoConstraints="NO" id="0Vj-dY-tCb">
@@ -2160,6 +2159,9 @@ By tapping at the following button, I agree that the research project named abov
                     <navigationItem key="navigationItem" title="Almost ready.." id="NCX-Z5-Dp8">
                         <barButtonItem key="backBarButtonItem" title="Back" id="uIY-7e-IFB"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="4DJ-03-RPq" kind="show" identifier="Show Calibration" id="1ON-8K-8xn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqW-SN-zEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2186,7 +2188,6 @@ By tapping at the following button, I agree that the research project named abov
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextAction:" destination="4DJ-03-RPq" eventType="touchUpInside" id="a6h-h4-0cG"/>
-                                    <segue destination="gGy-QT-hDk" kind="show" id="azw-Dm-7xf"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="When the instructor says so, please tap at the Record button." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-ft-pfd">
@@ -2231,6 +2232,7 @@ By tapping at the following button, I agree that the research project named abov
                     <connections>
                         <outlet property="nextButton" destination="OTI-93-sUZ" id="Hwx-wI-Gg3"/>
                         <outlet property="recordButton" destination="v1D-0Z-oSj" id="6fB-Yw-lTE"/>
+                        <segue destination="gGy-QT-hDk" kind="show" identifier="Show Experiment" id="2YM-hP-82I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXm-J1-Ku5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2255,7 +2257,7 @@ By tapping at the following button, I agree that the research project named abov
                                     <constraint firstAttribute="height" constant="55" id="SU5-lN-98Q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Start Experiment"/>
                                 <connections>
                                     <action selector="startAction:" destination="gGy-QT-hDk" eventType="touchUpInside" id="Fyw-B2-L0E"/>
                                     <segue destination="n83-Q0-cFs" kind="show" id="N0f-b5-7FM"/>

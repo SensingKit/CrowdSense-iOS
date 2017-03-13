@@ -44,6 +44,52 @@
 - (IBAction)nextAction:(id)sender
 {
     // Make sure data is recorded
+    // TODO
+    
+    [self askPassword:@"2222" toPerformSegueWithIdentifier:@"Show Experiment"];
+}
+
+- (void)askPassword:(NSString *)password toPerformSegueWithIdentifier:(NSString *)identifier {
+    
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Enter Password"
+                                          message:@"Please enter the password given by the instructor in order to continue to the next step."
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:@"Cancel"
+                                   style:UIAlertActionStyleCancel
+                                   handler:nil];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * _Nonnull action) {
+                                   
+                                   NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
+                                   
+                                   if ([text isEqualToString:password])
+                                   {
+                                       [self performSegueWithIdentifier:identifier sender:self];
+                                   }
+                                   else
+                                   {
+                                       // Ask for Password again
+                                       [self askPassword:password toPerformSegueWithIdentifier:identifier];
+                                   }
+                                   
+                               }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Password";
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+    }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    
+    // Show the alert
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
