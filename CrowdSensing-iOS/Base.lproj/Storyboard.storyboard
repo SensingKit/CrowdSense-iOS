@@ -2137,7 +2137,7 @@ By tapping at the following button, I agree that the research project named abov
                                     <action selector="NextAction:" destination="x8r-v2-9vP" eventType="touchUpInside" id="hAa-Np-zQQ"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You are almost ready to go! Please wait for further instructions before you go to the next screen." translatesAutoresizingMaskIntoConstraints="NO" id="0Vj-dY-tCb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You are almost ready to go! Please wait for further instructions before you tap at the 'Next' button." translatesAutoresizingMaskIntoConstraints="NO" id="0Vj-dY-tCb">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
@@ -2188,9 +2188,10 @@ By tapping at the following button, I agree that the research project named abov
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextAction:" destination="4DJ-03-RPq" eventType="touchUpInside" id="a6h-h4-0cG"/>
+                                    <segue destination="gGy-QT-hDk" kind="show" identifier="Show Experiment" id="azw-Dm-7xf"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="When the instructor says so, please tap at the Record button." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-ft-pfd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="When the instructor says so, please tap at the 'Record' button." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-ft-pfd">
                                 <rect key="frame" x="16" y="72" width="343" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2232,7 +2233,6 @@ By tapping at the following button, I agree that the research project named abov
                     <connections>
                         <outlet property="nextButton" destination="OTI-93-sUZ" id="Hwx-wI-Gg3"/>
                         <outlet property="recordButton" destination="v1D-0Z-oSj" id="6fB-Yw-lTE"/>
-                        <segue destination="gGy-QT-hDk" kind="show" identifier="Show Experiment" id="2YM-hP-82I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXm-J1-Ku5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2263,7 +2263,7 @@ By tapping at the following button, I agree that the research project named abov
                                     <segue destination="n83-Q0-cFs" kind="show" id="N0f-b5-7FM"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You are ready to go! Please wait for further instructions before you tap at the Start button." translatesAutoresizingMaskIntoConstraints="NO" id="53L-RH-3ur">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You are ready to go! Please wait for further instructions before you tap at the 'Start Experiment' button." translatesAutoresizingMaskIntoConstraints="NO" id="53L-RH-3ur">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
@@ -2321,9 +2321,9 @@ By tapping at the following button, I agree that the research project named abov
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-oB-QxL">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">We are now collected data about your motion, orientation and location in the current space. The collected data are fully anonymous. Please place the phone into your left pocket, the given beacon on the right and wait for further instructions.
+                                <mutableString key="text">We are now collecting data about your motion, orientation and location in the current space. The data we collect are fully anonymous.  Please place the phone into your left pocket, the given beacon on the right and wait for further instructions.
 
-When the experiment is finished, tap at the 'I am done' button. Please make sure you complete the next process that submits the collected data.</string>
+When the experiment is finished, tap at the 'I am done!' button. Please make sure you complete the next step that submits the collected data.</mutableString>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2340,7 +2340,7 @@ When the experiment is finished, tap at the 'I am done' button. Please make sure
                             <constraint firstItem="fA1-oB-QxL" firstAttribute="leading" secondItem="epj-O1-F5Y" secondAttribute="leadingMargin" id="jcg-iC-zOX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recording Data..." id="0X1-4r-vyb">
+                    <navigationItem key="navigationItem" title="Collecting Data..." id="0X1-4r-vyb">
                         <barButtonItem key="backBarButtonItem" title="Back" id="zvy-o0-duO"/>
                     </navigationItem>
                     <connections>
