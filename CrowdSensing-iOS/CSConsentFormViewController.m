@@ -60,9 +60,10 @@
                                handler:^(UIAlertAction * _Nonnull action) {
                                    
                                    NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
+                                   NSArray *textArray = [text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                                    
-                                   if (text.length < 5) {
-                                       [self alertWithTitle:@"Name Is Not Valid" withMessage:@"You name does not appear to be valid. Please enter a valid name."];
+                                   if (text.length < 5 || textArray.count < 2) {
+                                       [self alertWithTitle:@"Name Is Not Valid" withMessage:@"Your name does not appear to be valid. Please enter your full name in a valid format (e.g. John Smith)."];
                                    }
                                    else {
                                        [self performSegueWithIdentifier:@"Show Questionnaire" sender:self];

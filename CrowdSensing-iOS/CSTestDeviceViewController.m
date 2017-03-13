@@ -86,13 +86,18 @@
     
     // Report
     if (allErrors.count) {
-        // Report errors
         
+        // Report errors
+        for (NSString *error in allErrors) {
+            [self alertWithTitle:@"Warning" withMessage:error];
+        }
         
     }
     else
     {
         // Alert
+        [self alertWithTitle:@"Test Passed" withMessage:@"Your device is compatible with the needs of this experiment."];
+        
         self.testDeviceButton.enabled = NO;
         self.nextButton.enabled = YES;
     }
@@ -226,6 +231,17 @@
     }
     
     return nil;
+}
+
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
 }
 
 @end
