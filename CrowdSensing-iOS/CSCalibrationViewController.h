@@ -11,5 +11,6 @@
 @interface CSCalibrationViewController : UIViewController
 
 @property (nonatomic, weak) NSMutableDictionary *information;
+@property (nonatomic, weak) UIImage *picture;
 
 @end

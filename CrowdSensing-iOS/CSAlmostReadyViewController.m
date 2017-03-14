@@ -37,6 +37,10 @@
     if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
         [segue.destinationViewController setInformation:self.information];
     }
+    
+    if ([segue.destinationViewController respondsToSelector:@selector(setPicture:)]) {
+        [segue.destinationViewController setPicture:self.picture];
+    }
 }
 
 - (IBAction)takePicture:(id)sender
@@ -54,8 +58,8 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.pictureImageView.image = chosenImage;
+    self.picture = info[UIImagePickerControllerEditedImage];
+    self.pictureImageView.image = self.picture;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     self.nextButton.enabled = YES;

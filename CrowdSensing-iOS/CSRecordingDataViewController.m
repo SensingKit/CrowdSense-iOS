@@ -36,6 +36,10 @@
     if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
         [segue.destinationViewController setInformation:self.information];
     }
+    
+    if ([segue.destinationViewController respondsToSelector:@selector(setPicture:)]) {
+        [segue.destinationViewController setPicture:self.picture];
+    }
 }
 
 - (IBAction)iAmDoneAction:(id)sender
