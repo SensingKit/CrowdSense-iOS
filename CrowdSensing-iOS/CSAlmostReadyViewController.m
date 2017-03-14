@@ -8,7 +8,10 @@
 
 #import "CSAlmostReadyViewController.h"
 
-@interface CSAlmostReadyViewController ()
+@interface CSAlmostReadyViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
@@ -35,6 +38,29 @@
         [segue.destinationViewController setInformation:self.information];
     }
 }
+
+- (IBAction)takePicture:(id)sender
+{
+    // Ask for password before continuing
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.pictureImageView.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    self.nextButton.enabled = YES;
+}
+
 
 - (IBAction)NextAction:(id)sender
 {
