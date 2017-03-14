@@ -8,8 +8,9 @@
 
 #import "CSSubmitDataViewController.h"
 @import AFNetworking;
+@import SSZipArchive;
 
-@interface CSSubmitDataViewController ()
+@interface CSSubmitDataViewController () <SSZipArchiveDelegate>
 
 @property (weak, nonatomic) IBOutlet UIProgressView *dataProgressView;
 @property (weak, nonatomic) IBOutlet UILabel *dataProgressLabel;
@@ -35,8 +36,8 @@
     
     NSLog(@"Testing Date: %@", [self.dateFormatter stringFromDate:[NSDate date]]);
 
-    // Start data uploading
-    [self uploadData];
+    // Prepare data for uploading
+    [self prepareData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,30 +61,77 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (void)uploadData
+- (void)prepareData
 {
+    // Create zip
+    NSString *zipPath = [self tempZipPath];
+    SSZipArchive *zipArchive = [[SSZipArchive alloc] initWithPath:zipPath];
+    
+    // Serialize json
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.information
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (error) {
+        [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+        return;
+    }
+    
+    // Add data
+    [zipArchive open];
+    [zipArchive writeData:jsonData filename:@"information.json" withPassword:nil];
+    [zipArchive writeData:UIImagePNGRepresentation(self.picture) filename:@"picture.png" withPassword:nil];
+    [zipArchive close];
+    
+    // finally
+    [self uploadData:zipPath];
+}
+
+- (NSString *)tempZipPath
+{
+    NSString *path = [NSString stringWithFormat:@"%@/\%@.zip",
+                      NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0],
+                      [NSUUID UUID].UUIDString];
+    return path;
+}
+
+- (void)uploadData:(NSString *)path
+{
+    NSError *error;
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"https://sensingkit.herokuapp.com" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
         // Set password
         [formData appendPartWithFormData:[@"b+FRongauiv/bKy1egB8AbB2HIICNbhX5IqlbMWcfn4" dataUsingEncoding:NSUTF8StringEncoding] name:@"password"];
         
         // Set data
-        //NSURL *dataUrl = [NSURL URLWithString:@"..."];
-        //[formData appendPartWithFileURL:dataUrl name:@"uploadedFile" fileName:@"filename.zip" mimeType:@"application/zip" error:nil];
-        
-        // Tmp data for testing reasons
-        NSError *error;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.information
-                                                           options:NSJSONWritingPrettyPrinted
-                                                             error:&error];
-        
-        NSString *filename = [NSString stringWithFormat:@"u%@__%@.json",
+        NSString *filename = [NSString stringWithFormat:@"u%@__%@.zip",
                               self.information[@"Questionnaire"][@"ID"],
                               [self.dateFormatter stringFromDate:[NSDate date]]];
         
-        [formData appendPartWithFileData:jsonData name:@"uploadedFile" fileName:filename mimeType:@"application/json"];
-        
-    } error:nil];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+            
+            NSError *error;
+            [formData appendPartWithFileURL:[NSURL fileURLWithPath:path]
+                                       name:@"uploadedFile"
+                                   fileName:filename
+                                   mimeType:@"application/zip"
+                                      error:&error];
+            
+            if (error) {
+                [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+            }
+        }
+        else
+        {
+            [self alertWithTitle:@"Transmission Failed" withMessage:@"File does not exist."];
+        }
+
+    } error:&error];
+    
+    if (error) {
+        [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+        return;
+    }
     
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -108,7 +156,10 @@
                       
                       if (error)
                       {
-                          NSLog(@"Error: %@", error);
+                          [self.dataProgressView setProgress:0];
+                          self.dataProgressLabel.text = @"0% completed";
+                          
+                          [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
                       }
                       else
                       {
@@ -119,6 +170,17 @@
                   }];
     
     [uploadTask resume];
+}
+
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
 }
 
 @end
