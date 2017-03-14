@@ -41,6 +41,36 @@
 - (IBAction)iAmDoneAction:(id)sender
 {
     // Are you sure?
+    [self askAreYouDone];
 }
+
+- (void)askAreYouDone {
+    
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Finish Experiment"
+                                          message:@"Are you sure you want to finish your participation?"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:@"Cancel"
+                                   style:UIAlertActionStyleCancel
+                                   handler:nil];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"I am sure"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * _Nonnull action) {
+                                   
+                                   [self performSegueWithIdentifier:@"Show Submit Data" sender:self];
+                                   
+                               }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    
+    // Show the alert
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 
 @end

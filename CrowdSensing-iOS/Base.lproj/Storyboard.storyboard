@@ -1680,7 +1680,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKC-T4-2hr">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
+                                <mutableString key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
 
 During this experiment, data will be recorded about your motion activity as well as the ways you interact with the other participants. You will also be asked to socialise with other people for one hour, while the application is collecting anonymous data about your motion, location, activity (e.g. stationary, walking, running), steps taken, proximity between other participants, as well as the power consumption impact it has in your smartphone’s battery.
 
@@ -1699,7 +1699,7 @@ Cognitive Science Research Group
 Queen Mary University of London
 London, UK
 
-If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</string>
+If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</mutableString>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1897,7 +1897,7 @@ If you have any questions or concerns about the manner in which the study was co
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J16-JB-dvF">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Please complete this form after you have read the Information Sheet and/or listened to an explanation about the research.
+                                <mutableString key="text">Please complete this form after you have read the Information Sheet and/or listened to an explanation about the research.
 
 Title of Study:
 Identify and model different qualities of social interactions inside crowds
@@ -1915,7 +1915,7 @@ Queen Mary Ethics of Research Committee Ref: QMREC1543a
 Participant’s Statement:
 
 By tapping at the following button, I agree that the research project named above has been explained to me to my satisfaction and I agree to take part in the study. I have read both the notes written above and the Information Sheet about the project, and understand what the research study involves.
-</string>
+</mutableString>
                                 <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2339,7 +2339,6 @@ By tapping at the following button, I agree that the research project named abov
                                 <state key="normal" title="I am done!"/>
                                 <connections>
                                     <action selector="iAmDoneAction:" destination="n83-Q0-cFs" eventType="touchUpInside" id="dqB-k4-DtR"/>
-                                    <segue destination="yaM-wB-mAJ" kind="show" identifier="Show Submit Data" id="RHj-Dg-Y4V"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-oB-QxL">
@@ -2369,6 +2368,7 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                     </navigationItem>
                     <connections>
                         <outlet property="iAmDoneButton" destination="A3B-WJ-IVd" id="Qnh-mM-8xe"/>
+                        <segue destination="yaM-wB-mAJ" kind="show" identifier="Show Submit Data" id="ztK-zK-sUl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7j-qs-PTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2430,7 +2430,7 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                                 <constraints>
                                     <constraint firstAttribute="height" constant="142" id="GQy-ZQ-m5d"/>
                                 </constraints>
-                                <string key="text">All data have been transmitted sucesfully. We will come back to you with the result of the draw. Feel free to contact us in case you have any questions.</string>
+                                <string key="text">All data have been transmitted succesfully. We will come back to you with the result of the draw. Feel free to contact us in case you have any questions.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
