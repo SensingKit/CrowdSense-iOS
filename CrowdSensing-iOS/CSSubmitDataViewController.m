@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *finishButton;
 @property (weak, nonatomic) IBOutlet UITextView *statusTextView;
 
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation CSSubmitDataViewController
@@ -24,6 +26,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // Configure NSDateFormatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy_MM_dd_HH_mm_ss";
+    dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    self.dateFormatter = dateFormatter;
+    
+    NSLog(@"Testing Date: %@", [self.dateFormatter stringFromDate:[NSDate date]]);
+
+    // Start data uploading
     [self uploadData];
 }
 
@@ -65,8 +77,9 @@
                                                            options:NSJSONWritingPrettyPrinted
                                                              error:&error];
         
-        // TODO: Add _DateTime
-        NSString *filename = [NSString stringWithFormat:@"%@.json", self.information[@"Questionnaire"][@"ID"]];
+        NSString *filename = [NSString stringWithFormat:@"u%@__%@.json",
+                              self.information[@"Questionnaire"][@"ID"],
+                              [self.dateFormatter stringFromDate:[NSDate date]]];
         
         [formData appendPartWithFileData:jsonData name:@"uploadedFile" fileName:filename mimeType:@"application/json"];
         
