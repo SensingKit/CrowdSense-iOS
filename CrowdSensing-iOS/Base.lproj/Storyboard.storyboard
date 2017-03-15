@@ -1680,7 +1680,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKC-T4-2hr">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
+                                <string key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
 
 During this experiment, data will be recorded about your motion activity as well as the ways you interact with the other participants. You will also be asked to socialise with other people for one hour, while the application is collecting anonymous data about your motion, location, activity (e.g. stationary, walking, running), steps taken, proximity between other participants, as well as the power consumption impact it has in your smartphone’s battery.
 
@@ -1699,7 +1699,7 @@ Cognitive Science Research Group
 Queen Mary University of London
 London, UK
 
-If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</mutableString>
+If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1897,7 +1897,7 @@ If you have any questions or concerns about the manner in which the study was co
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J16-JB-dvF">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Please complete this form after you have read the Information Sheet and/or listened to an explanation about the research.
+                                <string key="text">Please complete this form after you have read the Information Sheet and/or listened to an explanation about the research.
 
 Title of Study:
 Identify and model different qualities of social interactions inside crowds
@@ -1915,7 +1915,7 @@ Queen Mary Ethics of Research Committee Ref: QMREC1543a
 Participant’s Statement:
 
 By tapping at the following button, I agree that the research project named above has been explained to me to my satisfaction and I agree to take part in the study. I have read both the notes written above and the Information Sheet about the project, and understand what the research study involves.
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2156,7 +2156,7 @@ By tapping at the following button, I agree that the research project named abov
                                     <action selector="takePicture:" destination="x8r-v2-9vP" eventType="touchUpInside" id="1ba-1D-mUe"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unknown_picture" translatesAutoresizingMaskIntoConstraints="NO" id="B56-lz-PEC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unknown_picture" translatesAutoresizingMaskIntoConstraints="NO" id="B56-lz-PEC">
                                 <rect key="frame" x="107.5" y="240" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="82W-5b-MmQ"/>
@@ -2344,9 +2344,9 @@ By tapping at the following button, I agree that the research project named abov
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-oB-QxL">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">We are now collecting data about your motion, orientation and location in the current space. The data we collect are fully anonymous.  Please place the phone into your left pocket, the given beacon on the right and wait for further instructions.
+                                <string key="text">We are now collecting data about your motion, orientation and location in the current space. The data we collect are fully anonymous.  Please place the phone into your left pocket, the given beacon on the right and wait for further instructions.
 
-When the experiment is finished, tap at the 'I am done!' button. Please make sure you complete the next step that submits the collected data.</mutableString>
+When the experiment is finished, tap at the 'I am done!' button. Please make sure you complete the next step that submits the collected data.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

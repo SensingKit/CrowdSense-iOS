@@ -48,7 +48,7 @@
     // Ask for password before continuing
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.allowsEditing = YES;
+    picker.allowsEditing = NO;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
     
@@ -58,7 +58,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    self.picture = info[UIImagePickerControllerEditedImage];
+    self.picture = info[UIImagePickerControllerOriginalImage];
     self.pictureImageView.image = self.picture;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
