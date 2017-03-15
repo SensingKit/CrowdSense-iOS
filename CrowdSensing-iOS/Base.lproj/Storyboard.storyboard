@@ -2143,15 +2143,15 @@ By tapping at the following button, I agree that the research project named abov
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="Var-Po-kMg"/>
                                 </constraints>
-                                <string key="text">We need to take a picture of you in oreder to link your sensed data with the video feed. You will need to wait for further instructions before you tap at the 'Next' button.</string>
+                                <string key="text">We need to take a picture of you in order to link your sensed data with the video feed. You will need to wait for further instructions before you tap at the 'Next' button.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-6z-AN2">
-                                <rect key="frame" x="135" y="408" width="105" height="35"/>
+                                <rect key="frame" x="132" y="408" width="111" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Take Picture"/>
+                                <state key="normal" title="Take a selfie!"/>
                                 <connections>
                                     <action selector="takePicture:" destination="x8r-v2-9vP" eventType="touchUpInside" id="1ba-1D-mUe"/>
                                 </connections>
