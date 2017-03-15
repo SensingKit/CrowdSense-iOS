@@ -235,11 +235,11 @@
     // Set the action based on the sensorStatus enum
     switch (sensorStatus) {
         case CSSensorStatusEnabled:
-            [self.sensingSession enableSensor:sensorType withConfiguration:configuration];
+            [self.sensingSession enableSensor:sensorType withConfiguration:configuration withError:nil];
             break;
             
         case CSSensorStatusDisabled:
-            [self.sensingSession disableSensor:sensorType];
+            [self.sensingSession disableSensor:sensorType withError:nil];
             break;
             
         default:
@@ -253,7 +253,7 @@
 
 - (void)updateConfiguration:(SKConfiguration *)configuration forSensor:(SKSensorType)sensorType
 {
-    [self.sensingSession setConfiguration:configuration toSensor:sensorType];
+    [self.sensingSession setConfiguration:configuration toSensor:sensorType withError:nil];
 }
 
 - (void)updateSensorStatus

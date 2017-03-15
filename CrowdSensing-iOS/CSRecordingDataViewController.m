@@ -49,7 +49,7 @@
         if ([self.sensingSession isSensorAvailable:sensorType]) {
             
             SKConfiguration *configuration = [self createConfigurationForSensor:sensorType];
-            [self.sensingSession enableSensor:sensorType withConfiguration:configuration];
+            [self.sensingSession enableSensor:sensorType withConfiguration:configuration withError:nil];
         
         }
         
@@ -61,13 +61,13 @@
 
 - (void)startSensing
 {
-    [self.sensingSession start];
+    [self.sensingSession start:nil];
 }
 
 - (void)stopSensing
 {
-    [self.sensingSession stop];
-    [self.sensingSession disableAllRegisteredSensors];
+    [self.sensingSession stop:nil];
+    [self.sensingSession disableAllRegisteredSensors:nil];
     [self.sensingSession close];
 }
 

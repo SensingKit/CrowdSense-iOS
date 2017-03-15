@@ -196,7 +196,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             [self addLogEntryWithLabel:@"Start"];
             
             // Sensing
-            [self.sensingSession start];
+            [self.sensingSession start:nil];
             
             // Proximity Monitoring and idle timer
             [UIDevice currentDevice].proximityMonitoringEnabled = YES;
@@ -221,7 +221,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             [self addLogEntryWithLabel:@"Stop"];
             
             // Sensing
-            [self.sensingSession stop];
+            [self.sensingSession stop:nil];
             
             // Proximity Monitoring
             [UIDevice currentDevice].proximityMonitoringEnabled = NO;
@@ -255,7 +255,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
             [self addLogEntryWithLabel:@"Start"];
             
             // Sensing
-            [self.sensingSession start];
+            [self.sensingSession start:nil];
             
             // Proximity Monitoring
             [UIDevice currentDevice].proximityMonitoringEnabled = YES;
@@ -333,7 +333,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     
     // Set Sensors
     if ([self.sensingSession isSensorAvailable:Microphone]) {
-        [self.sensingSession enableSensor:Microphone withConfiguration:nil];
+        [self.sensingSession enableSensor:Microphone withConfiguration:nil withError:nil];
     }
     
     // Update the UI
@@ -348,44 +348,44 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     
     // Set Sensors
     if ([self.sensingSession isSensorAvailable:Accelerometer]) {
-        [self.sensingSession enableSensor:Accelerometer withConfiguration:nil];
+        [self.sensingSession enableSensor:Accelerometer withConfiguration:nil withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:Gyroscope]) {
-        [self.sensingSession enableSensor:Gyroscope withConfiguration:nil];
+        [self.sensingSession enableSensor:Gyroscope withConfiguration:nil withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:Magnetometer]) {
-        [self.sensingSession enableSensor:Magnetometer withConfiguration:nil];
+        [self.sensingSession enableSensor:Magnetometer withConfiguration:nil withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:DeviceMotion]) {
-        [self.sensingSession enableSensor:DeviceMotion withConfiguration:nil];
+        [self.sensingSession enableSensor:DeviceMotion withConfiguration:nil withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:MotionActivity]) {
-        [self.sensingSession enableSensor:MotionActivity withConfiguration:nil];
+        [self.sensingSession enableSensor:MotionActivity withConfiguration:nil withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:Pedometer]) {
-        [self.sensingSession enableSensor:Pedometer withConfiguration:nil];
+        [self.sensingSession enableSensor:Pedometer withConfiguration:nil withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:Location]) {
         SKLocationConfiguration *configuration = [[SKLocationConfiguration alloc] init];
         configuration.locationAccuracy = SKLocationAccuracyThreeKilometers;
         configuration.locationAuthorization = SKLocationAuthorizationAlways;
-        [self.sensingSession enableSensor:Location withConfiguration:configuration];
+        [self.sensingSession enableSensor:Location withConfiguration:configuration withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:iBeaconProximity]) {
         SKiBeaconProximityConfiguration *configuration = [[SKiBeaconProximityConfiguration alloc] initWithUUID:[[NSUUID alloc] initWithUUIDString:@"eeb79aec-022f-4c05-8331-93d9b2ba6dce"]];
         configuration.mode = SKiBeaconProximityModeScanOnly;
-        [self.sensingSession enableSensor:iBeaconProximity withConfiguration:configuration];
+        [self.sensingSession enableSensor:iBeaconProximity withConfiguration:configuration withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:Battery]) {
-        [self.sensingSession enableSensor:Battery withConfiguration:nil];
+        [self.sensingSession enableSensor:Battery withConfiguration:nil withError:nil];
     }
     
     // Update the UI
@@ -452,7 +452,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
                                                              NSLog(@"Delete");
                                                              
                                                              // Disable sensors
-                                                             [self.sensingSession disableAllRegisteredSensors];
+                                                             [self.sensingSession disableAllRegisteredSensors:nil];
                                                              
                                                              // Close Session
                                                              [self.sensingSession close];
@@ -515,7 +515,7 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
                 NSLog(@"Save with title: %@", recordingName);
                 
                 // Disable sensors
-                [self.sensingSession disableAllRegisteredSensors];
+                [self.sensingSession disableAllRegisteredSensors:nil];
                 
                 // Close Session
                 [self.sensingSession close];

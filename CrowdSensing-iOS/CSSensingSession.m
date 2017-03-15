@@ -69,7 +69,7 @@
     return nil;
 }
 
-- (void)enableSensor:(SKSensorType)sensorType withConfiguration:(SKConfiguration *)configuration
+- (BOOL)enableSensor:(SKSensorType)sensorType withConfiguration:(SKConfiguration *)configuration withError:(NSError **)error
 {
     // Get the csv header
     NSString *header = [self.sensingKitLib csvHeaderForSensor:sensorType];
@@ -87,23 +87,38 @@
     }
     
     // Register and Subscribe sensor
-    [self.sensingKitLib registerSensor:sensorType withConfiguration:configuration error:NULL];
-    [self.sensingKitLib subscribeToSensor:sensorType
-                              withHandler:^(SKSensorType sensorType, SKSensorData *sensorData, NSError *error) {
-                                
-                                  if (!error) {
-                                      // Feed the writer with data
-                                      [modelWriter readData:sensorData];
-                                  }
-                              } error:NULL];
-    
-    // Add sensorType and modelWriter to the arrays
-    [self.modelWriters addObject:modelWriter];
+    if ([self.sensingKitLib registerSensor:sensorType withConfiguration:configuration error:error])
+    {
+        BOOL succeed =  [self.sensingKitLib subscribeToSensor:sensorType
+                                                  withHandler:^(SKSensorType sensorType, SKSensorData *sensorData, NSError *error) {
+                                                      
+                                                      if (!error) {
+                                                          // Feed the writer with data
+                                                          [modelWriter readData:sensorData];
+                                                      }
+                                                  } error:error];
+        
+        if (!succeed) {
+            return NO;
+        }
+        
+        // Add sensorType and modelWriter to the arrays
+        [self.modelWriters addObject:modelWriter];
+        
+        return YES;
+    }
+    else {
+        return NO;
+    }
 }
 
-- (void)disableSensor:(SKSensorType)sensorType
+- (BOOL)disableSensor:(SKSensorType)sensorType withError:(NSError **)error
 {
-    [self.sensingKitLib deregisterSensor:sensorType error:NULL];
+    BOOL succeed = [self.sensingKitLib deregisterSensor:sensorType error:error];
+    
+    if (!succeed) {
+        return NO;
+    }
     
     // Search for the moduleWriter in the Array
     CSModelWriter *moduleWriter = [self getModuleWriterWithType:sensorType];
@@ -113,23 +128,30 @@
     
     // Remove fileWriter
     [self.modelWriters removeObject:moduleWriter];
+    
+    return YES;
 }
 
-- (void)disableAllRegisteredSensors
+- (BOOL)disableAllRegisteredSensors:(NSError **)error
 {
     for (int i = 0; i < TOTAL_SENSORS; i++)
     {
         SKSensorType sensorType = i;
         
         if ([self isSensorEnabled:sensorType]) {
-            [self disableSensor:sensorType];
+            if (![self disableSensor:sensorType withError:error])
+            {
+                return NO;
+            }
         }
     }
+    
+    return YES;
 }
 
-- (void)setConfiguration:(SKConfiguration *)configuration toSensor:(SKSensorType)sensorType
+- (BOOL)setConfiguration:(SKConfiguration *)configuration toSensor:(SKSensorType)sensorType withError:(NSError **)error
 {
-    [self.sensingKitLib setConfiguration:configuration toSensor:sensorType error:NULL];
+    return [self.sensingKitLib setConfiguration:configuration toSensor:sensorType error:error];
 }
 
 - (SKConfiguration *)getConfigurationFromSensor:(SKSensorType)sensorType
@@ -232,14 +254,14 @@
     return counter;
 }
 
-- (void)start
+- (BOOL)start:(NSError **)error
 {
-    [self.sensingKitLib startContinuousSensingWithAllRegisteredSensors:NULL];
+    return [self.sensingKitLib startContinuousSensingWithAllRegisteredSensors:error];
 }
 
-- (void)stop
+- (BOOL)stop:(NSError **)error
 {
-    [self.sensingKitLib stopContinuousSensingWithAllRegisteredSensors:NULL];
+    return [self.sensingKitLib stopContinuousSensingWithAllRegisteredSensors:error];
 }
 
 - (void)close

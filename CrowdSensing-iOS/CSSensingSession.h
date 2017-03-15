@@ -16,11 +16,11 @@
 
 - (instancetype)initWithFolderName:(NSString *)folderName;
 
-- (void)enableSensor:(SKSensorType)sensorType withConfiguration:(SKConfiguration *)configuration;
-- (void)disableSensor:(SKSensorType)sensorType;
-- (void)disableAllRegisteredSensors;
+- (BOOL)enableSensor:(SKSensorType)sensorType withConfiguration:(SKConfiguration *)configuration withError:(NSError **)error;
+- (BOOL)disableSensor:(SKSensorType)sensorType withError:(NSError **)error;
+- (BOOL)disableAllRegisteredSensors:(NSError **)error;
 
-- (void)setConfiguration:(SKConfiguration *)configuration toSensor:(SKSensorType)sensorType;
+- (BOOL)setConfiguration:(SKConfiguration *)configuration toSensor:(SKSensorType)sensorType withError:(NSError **)error;
 - (SKConfiguration *)getConfigurationFromSensor:(SKSensorType)sensorType;
 
 - (BOOL)isSensorAvailable:(SKSensorType)sensorType;
@@ -28,8 +28,8 @@
 
 - (NSUInteger)sensorsEnabledCount;
 
-- (void)start;
-- (void)stop;
+- (BOOL)start:(NSError **)error;
+- (BOOL)stop:(NSError **)error;
 - (void)close;
 
 - (void)addRecordingLog:(NSString *)recordingLog;
