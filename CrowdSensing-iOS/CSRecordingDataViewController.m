@@ -61,11 +61,21 @@
 
 - (void)startSensing
 {
+    // Proximity Monitoring
+    [UIDevice currentDevice].proximityMonitoringEnabled = YES;
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
+    // Start Sensing
     [self.sensingSession start:nil];
 }
 
 - (void)stopSensing
 {
+    // Proximity Monitoring
+    [UIDevice currentDevice].proximityMonitoringEnabled = NO;
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
+    
+    // Stop Sensing
     [self.sensingSession stop:nil];
     [self.sensingSession disableAllRegisteredSensors:nil];
     [self.sensingSession close];
