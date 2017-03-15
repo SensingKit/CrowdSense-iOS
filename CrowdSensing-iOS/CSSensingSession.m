@@ -13,7 +13,6 @@
 
 @interface CSSensingSession ()
 
-@property (nonatomic, strong) NSURL* folderPath;
 @property (nonatomic, strong) NSMutableArray *modelWriters;
 @property (nonatomic, strong) CSRecordingLogModelWriter *recordingLogModelWriter;
 
@@ -28,7 +27,7 @@
         // Init SensingKitLib
         self.sensingKitLib = [SensingKitLib sharedSensingKitLib];
         
-        self.folderPath = [self createFolderWithName:folderName];
+        _folderPath = [self createFolderWithName:folderName];
         
         self.modelWriters = [[NSMutableArray alloc] initWithCapacity:TOTAL_SENSORS];
         self.recordingLogModelWriter = [[CSRecordingLogModelWriter alloc] initWithFilename:@"RecordingLog.csv"

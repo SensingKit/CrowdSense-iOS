@@ -12,5 +12,6 @@
 
 @property (nonatomic, weak) NSMutableDictionary *information;
 @property (nonatomic, weak) UIImage *picture;
+@property (nonatomic, weak) NSURL *dataPath;
 
 @end

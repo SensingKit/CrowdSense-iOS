@@ -27,15 +27,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // Configure NSDateFormatter
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy_MM_dd_HH_mm_ss";
-    dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
-    dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
-    self.dateFormatter = dateFormatter;
-    
-    NSLog(@"Testing Date: %@", [self.dateFormatter stringFromDate:[NSDate date]]);
-
     // Prepare data for uploading
     [self prepareData];
 }
@@ -55,6 +46,18 @@
 }
 */
 
+- (NSDateFormatter *)dateFormatter
+{
+    if (!_dateFormatter)
+    {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        _dateFormatter.dateFormat = @"yyyy_MM_dd_HH_mm_ss";
+        _dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+        _dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    }
+    return _dateFormatter;
+}
+
 - (IBAction)finishAction:(id)sender
 {
     // Should be disabled initially
@@ -63,11 +66,7 @@
 
 - (void)prepareData
 {
-    // Create zip
-    NSString *zipPath = [self tempZipPath];
-    SSZipArchive *zipArchive = [[SSZipArchive alloc] initWithPath:zipPath];
-    
-    // Serialize json
+    // Serialize json and save into dataPath
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.information
                                                        options:NSJSONWritingPrettyPrinted
@@ -77,11 +76,18 @@
         return;
     }
     
-    // Add data
-    [zipArchive open];
-    [zipArchive writeData:jsonData filename:@"information.json" withPassword:nil];
-    [zipArchive writeData:UIImagePNGRepresentation(self.picture) filename:@"picture.png" withPassword:nil];
-    [zipArchive close];
+    NSString *jsonPath = [self.dataPath URLByAppendingPathComponent:@"information.json" isDirectory:NO].path;
+    [jsonData writeToFile:jsonPath atomically:YES];
+    
+    // Save picture into dataPath
+    NSString *imagePath = [self.dataPath URLByAppendingPathComponent:@"picture.jpeg" isDirectory:NO].path;
+    [UIImageJPEGRepresentation(self.picture, 0.8) writeToFile:imagePath atomically:YES];
+    
+    // Save into zip
+    NSString *zipPath = [self tempZipPath];
+    [SSZipArchive createZipFileAtPath:zipPath withContentsOfDirectory:self.dataPath.path keepParentDirectory:YES withPassword:nil andProgressHandler:^(NSUInteger entryNumber, NSUInteger total) {
+        NSLog(@"Progress: %lu/%lu", (unsigned long)entryNumber, (unsigned long)total);
+    }];
     
     // finally
     [self uploadData:zipPath];
@@ -166,6 +172,9 @@
                           // Enable finish button and show status view
                           self.statusTextView.hidden = NO;
                           self.finishButton.enabled = YES;
+                          
+                          // Delete the tmp zip file (unziped files still exist)
+                          [self deleteFileAtPath:path];
                       }
                   }];
     
@@ -181,6 +190,16 @@
                                           otherButtonTitles:@"OK", nil];
     
     [alert show];
+}
+
+- (void)deleteFileAtPath:(NSString *)filePath
+{
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+    
+    if (error) {
+        //[self alertWithTitle:@"Delete Failed" withMessage:error.localizedDescription];
+    }
 }
 
 @end

@@ -12,6 +12,7 @@
 @interface CSSensingSession : NSObject
 
 @property (nonatomic, strong) SensingKitLib *sensingKitLib;
+@property (nonatomic, readonly) NSURL* folderPath;
 
 - (instancetype)initWithFolderName:(NSString *)folderName;
 
