@@ -110,7 +110,7 @@
         [formData appendPartWithFormData:[@"b+FRongauiv/bKy1egB8AbB2HIICNbhX5IqlbMWcfn4" dataUsingEncoding:NSUTF8StringEncoding] name:@"password"];
         
         // Set data
-        NSString *filename = [NSString stringWithFormat:@"u%@__%@.zip",
+        NSString *filename = [NSString stringWithFormat:@"CS__u%@__%@.zip",
                               self.information[@"Questionnaire"][@"ID"],
                               [self.dateFormatter stringFromDate:[NSDate date]]];
         
