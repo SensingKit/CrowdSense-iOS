@@ -157,4 +157,61 @@
     }
 }
 
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
+}
+
+- (void)userInput {
+    
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Study Participation"
+                                          message:@"Please enter the coupon received when registering for the Speed Networking study:"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:@"Cancel"
+                                   style:UIAlertActionStyleCancel
+                                   handler:nil];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * _Nonnull action) {
+                                   
+                                   NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
+                                   
+                                   if (![text isEqualToString:@"Q"]) {
+                                       [self alertWithTitle:@"Coupon Is Not Valid" withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
+                                   }
+                                   else {
+                                       
+                                       [self performSegueWithIdentifier:@"Show Experiment" sender:self];
+                                   }
+                                   
+                               }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Please enter the coupon.";
+        textField.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
+    }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    
+    // Show the alert
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (IBAction)showExperimentAction:(id)sender
+{
+    [self userInput];
+}
+
 @end
