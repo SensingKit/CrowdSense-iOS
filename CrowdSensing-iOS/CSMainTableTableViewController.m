@@ -11,11 +11,14 @@
 #import "CSRecordingInfoTableViewController.h"
 #import "Recording.h"
 #import "Recording+Create.h"
+#import "CSInformationViewController.h"
 
 @interface CSMainTableTableViewController () <CSRecordViewControllerDelegate>
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSFileManager *fileManager;
+
+@property (nonnull, strong) NSString *experimentType;
 
 @end
 
@@ -155,6 +158,12 @@
         Recording *recording = [self.fetchedResultsController objectAtIndexPath:indexPath];
         recordingInfoController.recording = recording;
     }
+    else if ([segue.identifier isEqualToString:@"Show Experiment"])  {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        CSInformationViewController *informationViewController = (CSInformationViewController *)navigationController.topViewController;
+        informationViewController.type = self.experimentType;
+    }
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
@@ -187,14 +196,18 @@
                                    
                                    NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
                                    
-                                   if (![text isEqualToString:@"Q"]) {
-                                       [self alertWithTitle:@"Coupon Is Not Valid" withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
+                                   if ([text isEqualToString:@"Q"]) {
+                                       self.experimentType = @"Actual";
+                                      [self performSegueWithIdentifier:@"Show Experiment" sender:self];
                                    }
-                                   else {
-                                       
+                                   else  if ([text isEqualToString:@"T"]) {
+                                       self.experimentType = @"Test";
                                        [self performSegueWithIdentifier:@"Show Experiment" sender:self];
                                    }
-                                   
+                                   else {
+                                        [self alertWithTitle:@"Coupon Is Not Valid"
+                                                 withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
+                                   }
                                }];
     
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {

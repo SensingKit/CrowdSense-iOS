@@ -12,4 +12,6 @@
 
 @property (nonatomic, weak) NSMutableDictionary *information;
 
+@property (nonatomic, weak) NSString *type;
+
 @end

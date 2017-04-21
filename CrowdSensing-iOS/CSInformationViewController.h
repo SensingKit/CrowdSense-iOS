@@ -10,6 +10,8 @@
 
 @interface CSInformationViewController : UIViewController
 
-@property (nonatomic, strong) NSMutableDictionary *information;
+@property (nonatomic, strong) NSMutableDictionary * _Nullable information;
+
+@property (nonnull, strong) NSString *type;
 
 @end
