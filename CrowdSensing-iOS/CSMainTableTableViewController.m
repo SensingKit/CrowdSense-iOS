@@ -18,7 +18,9 @@
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSFileManager *fileManager;
 
-@property (nonnull, strong) NSString *experimentType;
+@property (nonnull, strong) NSString *experimentCoupon;
+
+@property (nonatomic, strong) NSArray *coupons;
 
 @end
 
@@ -33,6 +35,8 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self setupFetchedResultsController];
+    
+    self.coupons = @[@"AAA-ABT", @"BBB-ABE"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -162,8 +166,15 @@
         
         UINavigationController *navigationController = segue.destinationViewController;
         CSInformationViewController *informationViewController = (CSInformationViewController *)navigationController.topViewController;
-        informationViewController.type = self.experimentType;
+        informationViewController.coupon = self.experimentCoupon;
     }
+    else if ([segue.identifier isEqualToString:@"Show PreExperiment"])  {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        CSInformationViewController *informationViewController = (CSInformationViewController *)navigationController.topViewController;
+        informationViewController.coupon = self.experimentCoupon;
+    }
+
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
@@ -196,13 +207,21 @@
                                    
                                    NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
                                    
-                                   if ([text isEqualToString:@"Q"]) {
-                                       self.experimentType = @"Actual";
-                                      [self performSegueWithIdentifier:@"Show Experiment" sender:self];
-                                   }
-                                   else  if ([text isEqualToString:@"T"]) {
-                                       self.experimentType = @"Test";
-                                       [self performSegueWithIdentifier:@"Show Experiment" sender:self];
+                                   if ([self.coupons containsObject:text]) {
+                                       // All good, check for coupon type
+                                       
+                                       self.experimentCoupon = text;
+                                       
+                                       if ([text containsString:@"-ABT"]) {  // PreExperiment
+                                           [self performSegueWithIdentifier:@"Show PreExperiment" sender:self];
+                                       }
+                                       else if ([text containsString:@"-ABE"]) {  // Experiment
+                                           [self performSegueWithIdentifier:@"Show Experiment" sender:self];
+                                       }
+                                       else {
+                                           [self alertWithTitle:@"Coupon Is Not Valid"
+                                                    withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
+                                       }
                                    }
                                    else {
                                         [self alertWithTitle:@"Coupon Is Not Valid"

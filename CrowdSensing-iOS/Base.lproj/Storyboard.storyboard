@@ -1398,7 +1398,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="1bC-CE-nPp" style="IBUITableViewCellStyleDefault" id="Lzl-oi-hfP">
-                                <rect key="frame" x="0.0" y="55" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzl-oi-hfP" id="Fbx-k0-EiG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -1526,6 +1526,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Mco-UP-c0a" kind="presentation" identifier="Show Experiment" id="H6E-T8-e8k"/>
+                        <segue destination="JL9-hV-86a" kind="presentation" identifier="Show PreExperiment" id="v8N-Tq-vlR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLL-xa-l7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1802,7 +1803,7 @@ If you have any questions or concerns about the manner in which the study was co
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmD-Cf-31Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1255" y="2837"/>
+            <point key="canvasLocation" x="-122" y="2604"/>
         </scene>
         <!--Test Device-->
         <scene sceneID="GbV-dW-UBg">
@@ -2473,6 +2474,98 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2f-0A-fAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6357.6000000000004" y="3402.5487256371816"/>
+        </scene>
+        <!--PreExperiment-->
+        <scene sceneID="7vr-Cv-ccK">
+            <objects>
+                <viewController title="PreExperiment" id="zU4-YZ-fwV" customClass="CSInformationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PoP-Sy-cAe"/>
+                        <viewControllerLayoutGuide type="bottom" id="QhI-Cy-r9S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qJ1-OL-Adp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9L-RW-zIf">
+                                <rect key="frame" x="16" y="593" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="zVo-Xb-TTM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="I agree"/>
+                                <connections>
+                                    <action selector="iAgreeAction:" destination="zU4-YZ-fwV" eventType="touchUpInside" id="IYd-E1-MSc"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzF-kw-kJp">
+                                <rect key="frame" x="16" y="28" width="343" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
+
+During this experiment, data will be recorded about your motion activity as well as the ways you interact with the other participants. You will also be asked to socialise with other people for one hour, while the application is collecting anonymous data about your motion, location, activity (e.g. stationary, walking, running), steps taken, proximity between other participants, as well as the power consumption impact it has in your smartphone’s battery.
+
+There is no obvious disadvantage or risk by taking part in this research. However, the application CrowdSense will use your smartphone’s resources and sensors to collect the data described above. This will result on an up to 30% usage of your device's battery life. To avoid that issue, fast chargers will be provided on your request, in order to fully charge your smartphone.
+
+Video recording using external cameras is also taking place. In some of these recordings, your face will be recorded. A picture of you face will also be required in a way to link your smartphone with you position in the video. Once the required link is made, the pictures, as well as the video recordings that can expose your face will be safely erased. The recorded video will never be used publicly for any reason and your personal id will never be exposed. No audio is being recorded during the experiment.
+
+You will be instructed to walk in this open space for 60 minutes, while socialising with the other participants of this experiment. No payment will be provided as remuneration for participation.
+
+There are no direct benefits to you. However, this experiment correlates to future research aiming to assist pedestrians in public events in cases of emergency. It is up to you to decide whether or not to take part. You can cancel your participation and stop the experiment at any time without giving any reason. In that case, all recorded data will be erased.
+For any further inquiries, please do not hesitate to ask the researcher. The contact details are the following:
+
+Kleomenis Katevas
+k.katevas@qmul.ac.uk
+Cognitive Science Research Group
+Queen Mary University of London
+London, UK
+
+If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m9L-RW-zIf" firstAttribute="top" secondItem="GzF-kw-kJp" secondAttribute="bottom" constant="8" id="05N-5z-I1W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GzF-kw-kJp" secondAttribute="trailing" id="F9u-rg-tqQ"/>
+                            <constraint firstItem="GzF-kw-kJp" firstAttribute="top" secondItem="PoP-Sy-cAe" secondAttribute="bottom" constant="8" id="IBw-NF-VBl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="GzF-kw-kJp" secondAttribute="leading" id="LPO-FE-0iw"/>
+                            <constraint firstItem="QhI-Cy-r9S" firstAttribute="top" secondItem="m9L-RW-zIf" secondAttribute="bottom" constant="19" id="ZuD-SI-2RF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="m9L-RW-zIf" secondAttribute="leading" id="sWU-DW-Int"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m9L-RW-zIf" secondAttribute="trailing" id="tgR-Hq-zZy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Information Sheet" id="Gaj-xL-EUF">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="YPA-ae-Ex2"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="o74-P2-PrB">
+                            <connections>
+                                <action selector="cancelAction:" destination="zU4-YZ-fwV" id="y5e-9H-6Id"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NiE-fT-Nc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122" y="4281"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r6p-L5-0Gc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JL9-hV-86a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p01-Y7-9NA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zU4-YZ-fwV" kind="relationship" relationship="rootViewController" id="qzq-EU-zDI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3t8-fM-fuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1226" y="4281"/>
         </scene>
     </scenes>
     <resources>

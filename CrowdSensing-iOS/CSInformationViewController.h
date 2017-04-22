@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) NSMutableDictionary * _Nullable information;
 
-@property (nonnull, strong) NSString *type;
+@property (nonnull, strong) NSString *coupon;
 
 @end

@@ -98,7 +98,7 @@
     else
     {
         // Alert
-        [self alertWithTitle:@"Test Passed" withMessage:@"Your device is compatible with the needs of this experiment."];
+        [self alertWithTitle:@"Test Passed" withMessage:@"Your device is compatible."];
         
         self.testDeviceButton.enabled = NO;
         self.nextButton.enabled = YES;
