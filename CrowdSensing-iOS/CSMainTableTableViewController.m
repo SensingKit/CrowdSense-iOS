@@ -20,7 +20,8 @@
 
 @property (nonnull, strong) NSString *experimentCoupon;
 
-@property (nonatomic, strong) NSArray *coupons;
+@property (nonatomic, strong) NSArray *couponsTest;
+@property (nonatomic, strong) NSArray *couponsExperiment;
 
 @end
 
@@ -36,7 +37,8 @@
     
     [self setupFetchedResultsController];
     
-    self.coupons = @[@"AAA-ABT", @"BBB-ABE"];
+    self.couponsTest = @[@"AAA", @"CCC"];
+    self.couponsExperiment = @[@"BBB", @"DDD"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -207,21 +209,13 @@
                                    
                                    NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
                                    
-                                   if ([self.coupons containsObject:text]) {
-                                       // All good, check for coupon type
-                                       
+                                   if ([self.couponsTest containsObject:text]) {
                                        self.experimentCoupon = text;
-                                       
-                                       if ([text containsString:@"-ABT"]) {  // PreExperiment
-                                           [self performSegueWithIdentifier:@"Show PreExperiment" sender:self];
-                                       }
-                                       else if ([text containsString:@"-ABE"]) {  // Experiment
-                                           [self performSegueWithIdentifier:@"Show Experiment" sender:self];
-                                       }
-                                       else {
-                                           [self alertWithTitle:@"Coupon Is Not Valid"
-                                                    withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
-                                       }
+                                       [self performSegueWithIdentifier:@"Show PreExperiment" sender:self];
+                                   }
+                                   else if ([self.couponsTest containsObject:text]) {
+                                       self.experimentCoupon = text;
+                                       [self performSegueWithIdentifier:@"Show Experiment" sender:self];
                                    }
                                    else {
                                         [self alertWithTitle:@"Coupon Is Not Valid"
