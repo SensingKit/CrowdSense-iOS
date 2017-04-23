@@ -2496,12 +2496,13 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                                 <state key="normal" title="I agree"/>
                                 <connections>
                                     <action selector="iAgreeAction:" destination="zU4-YZ-fwV" eventType="touchUpInside" id="IYd-E1-MSc"/>
+                                    <segue destination="Mkp-pV-oX7" kind="show" identifier="Show Test Device" id="zIp-AG-uCA"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzF-kw-kJp">
-                                <rect key="frame" x="16" y="28" width="343" height="557"/>
+                                <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
+                                <mutableString key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
 
 During this experiment, data will be recorded about your motion activity as well as the ways you interact with the other participants. You will also be asked to socialise with other people for one hour, while the application is collecting anonymous data about your motion, location, activity (e.g. stationary, walking, running), steps taken, proximity between other participants, as well as the power consumption impact it has in your smartphone’s battery.
 
@@ -2520,7 +2521,7 @@ Cognitive Science Research Group
 Queen Mary University of London
 London, UK
 
-If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</string>
+If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</mutableString>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2566,6 +2567,73 @@ If you have any questions or concerns about the manner in which the study was co
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3t8-fM-fuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1226" y="4281"/>
+        </scene>
+        <!--Test Device-->
+        <scene sceneID="j3g-aD-jLR">
+            <objects>
+                <viewController title="Test Device" id="Mkp-pV-oX7" customClass="CSTestDeviceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vgw-46-tGh"/>
+                        <viewControllerLayoutGuide type="bottom" id="PlM-UB-g0z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xJf-3p-JdZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehz-Hp-YJA">
+                                <rect key="frame" x="16" y="529" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="OlA-Hs-zAi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Test Device"/>
+                                <connections>
+                                    <action selector="testDeviceAction:" destination="Mkp-pV-oX7" eventType="touchUpInside" id="7Jh-E1-gVn"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="We will need to test your smartphone to see if it is compatible with the needs of the experiment." translatesAutoresizingMaskIntoConstraints="NO" id="JLq-V5-kzd">
+                                <rect key="frame" x="16" y="28" width="343" height="493"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ib3-EV-c0h">
+                                <rect key="frame" x="16" y="592" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="gDN-GB-L4I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ehz-Hp-YJA" secondAttribute="trailing" id="7hI-yj-bvC"/>
+                            <constraint firstItem="ehz-Hp-YJA" firstAttribute="trailing" secondItem="xJf-3p-JdZ" secondAttribute="trailingMargin" id="8U9-fN-0lY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JLq-V5-kzd" secondAttribute="trailing" id="9ZJ-82-OIu"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JLq-V5-kzd" secondAttribute="leading" id="9ku-k8-Orf"/>
+                            <constraint firstItem="ib3-EV-c0h" firstAttribute="top" secondItem="ehz-Hp-YJA" secondAttribute="bottom" constant="8" id="AKQ-c1-G9x"/>
+                            <constraint firstItem="ehz-Hp-YJA" firstAttribute="leading" secondItem="JLq-V5-kzd" secondAttribute="trailing" constant="-343" id="Dft-Zk-va5"/>
+                            <constraint firstItem="ehz-Hp-YJA" firstAttribute="top" secondItem="JLq-V5-kzd" secondAttribute="bottom" constant="8" id="FxB-vd-qgv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ehz-Hp-YJA" secondAttribute="leading" id="GgW-kK-5In"/>
+                            <constraint firstItem="ib3-EV-c0h" firstAttribute="leading" secondItem="xJf-3p-JdZ" secondAttribute="leadingMargin" id="LjX-23-Svf"/>
+                            <constraint firstItem="PlM-UB-g0z" firstAttribute="top" secondItem="ib3-EV-c0h" secondAttribute="bottom" constant="20" id="O5y-wv-aG5"/>
+                            <constraint firstItem="JLq-V5-kzd" firstAttribute="top" secondItem="Vgw-46-tGh" secondAttribute="bottom" constant="8" id="S3x-YF-5zW"/>
+                            <constraint firstItem="ehz-Hp-YJA" firstAttribute="leading" secondItem="xJf-3p-JdZ" secondAttribute="leadingMargin" id="lO8-Lq-yWr"/>
+                            <constraint firstItem="ib3-EV-c0h" firstAttribute="trailing" secondItem="xJf-3p-JdZ" secondAttribute="trailingMargin" id="qet-Lt-eZU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Testing Your Device" id="EQm-q0-3xe">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="DI6-QQ-aJz"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nextButton" destination="ib3-EV-c0h" id="Eii-Gd-Eqs"/>
+                        <outlet property="testDeviceButton" destination="ehz-Hp-YJA" id="CEC-gi-17m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEI-NY-XXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="4281"/>
         </scene>
     </scenes>
     <resources>

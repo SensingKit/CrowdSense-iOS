@@ -37,8 +37,9 @@
     
     [self setupFetchedResultsController];
     
-    self.couponsTest = @[@"AAA", @"CCC"];
-    self.couponsExperiment = @[@"BBB", @"DDD"];
+    self.couponsTest = @[@"AAA", @"YRN-VQN", @"LMV-JFV", @"GZX-ALQ", @"TIH-TGN", @"HNC-SDD", @"CVZ-DEW", @"POI-WHO", @"KKL-QPA", @"NWY-MES", @"XHQ-KMX", @"CMG-MVJ", @"ZZS-HSV", @"TQD-YEO", @"ZKJ-ZSF", @"WRR-LEH", @"LOW-MFG", @"KGX-YEN", @"ZBN-QCM", @"UPL-WVX", @"DED-TQX", @"EHK-JAR", @"RFH-CZS", @"MBE-OHF", @"WDV-ZWF", @"BBW-DTN", @"TFX-FKO", @"JME-PER", @"WXG-TQZ", @"JKM-JLO", @"MLZ-WFV", @"AIR-PMJ", @"VMF-VUE", @"MPB-KWG", @"YRM-YFK", @"CWY-NCE", @"WWA-WYB", @"NDJ-WLR", @"HXB-ONX", @"ELY-NNJ", @"JLW-PMV", @"XDG-HBA", @"UTQ-BJZ", @"WDV-TOE", @"IXB-OPJ", @"DRA-IWK", @"ZVZ-DJT", @"YHP-SVX", @"TMX-XOP", @"DYH-RKO", @"HYD-QYP", @"BWN-UKT", @"LAV-MHP", @"UET-ZNF", @"ULG-YYF", @"KGY-HQX", @"MUI-QNW", @"YPZ-SEP", @"EEQ-COQ", @"SVE-EXL", @"IAK-XCW", @"VSC-BBA", @"BTL-TDI", @"QTT-OPY", @"VUQ-MET", @"DFI-NOU", @"QFU-LKN", @"III-JTU", @"GLY-QOL", @"ZQI-SES", @"XKQ-BVX", @"GYX-XQP", @"NXK-MKD", @"XXJ-VME", @"UNX-WMQ", @"PQH-PXQ", @"YWF-VGD", @"ILD-CBU", @"YKE-NMO", @"GYU-XEM", @"PAT-NSY", @"KKY-FTF", @"AVJ-LOT", @"KCS-OVW", @"VRJ-RZC", @"BEW-LON", @"HQJ-DWD", @"MVY-WXG", @"VLN-PMQ", @"UOU-NZF", @"ZGZ-GWH", @"IAF-WGV", @"CZU-NAV", @"GNV-EEN", @"RAN-EYN", @"AGV-HLA", @"EMO-GHU", @"SIW-UWE", @"HRC-HRA", @"YBM-FBM", @"RIG-USY"];
+    
+    self.couponsExperiment = @[@"BBB", @"RUV-IYB", @"PLG-GPS", @"RFO-FDP", @"IHY-DXC", @"DBM-ZOF", @"PMH-TUQ", @"LWP-BPL", @"ITX-DFQ", @"CMC-THZ", @"LKA-XOA", @"HJP-FPD", @"LSQ-XGX", @"HQO-CKD", @"VQL-DJU", @"UFF-MUF", @"RAS-TUT", @"SRH-TWB", @"GWW-FWF", @"IKV-QZH", @"GPX-IMZ", @"BAM-JYP", @"GZN-ROO", @"SFP-YUK", @"LVS-LKI", @"WRC-GOX", @"CJW-XPM", @"KEP-BPE", @"DFR-CCM", @"UEC-HBX", @"YGZ-UUZ", @"BVK-LRK", @"CWS-KVM", @"WOI-EZK", @"ZYE-PVE", @"LTY-ZOF", @"TWU-UXY", @"KUL-THZ", @"YCV-ZEL", @"VTR-KED", @"EDK-SQO", @"JNB-JPK", @"FPG-VDK", @"RWD-WJM", @"JBY-NNM", @"WGX-CAY", @"JUF-MSL", @"RIU-IPH", @"HLP-ZCA", @"UJR-FIO", @"NTE-NDG", @"XUJ-NEF", @"FXG-CZV", @"JNB-ZUV", @"PQN-NGU", @"YZT-YHF", @"NNL-USY", @"PYN-FNW", @"OXL-RTU", @"GZW-KZQ", @"KHR-VLX", @"CIW-XDS", @"ICR-CES", @"XIM-PIR", @"WBH-ZOQ", @"LPX-BIS", @"APX-TSC", @"ISW-HNP", @"QUJ-MVV", @"YOO-HOM", @"GRQ-VRG", @"WNO-PZL", @"FAR-WVZ", @"JRK-AFU", @"RHO-TGJ", @"FXO-NDA", @"CNI-JVB", @"ZCC-SBB", @"QJO-CTZ", @"MJH-DLW", @"AAR-ZWW", @"EYE-HAG", @"UOW-CSP", @"VKW-GAI", @"BSA-BVV", @"YBJ-RIH", @"MMK-SOU", @"IYQ-WGQ", @"ZOW-UGZ", @"HUM-CTL", @"OTN-ZXC", @"WBH-KQA", @"XEL-USJ", @"ECX-CFZ", @"TEW-GUM", @"VMF-GAZ", @"TTK-JTH", @"VHK-QVL", @"FUH-PRT", @"OEA-WPF", @"VZO-ZFT"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -168,12 +169,14 @@
         
         UINavigationController *navigationController = segue.destinationViewController;
         CSInformationViewController *informationViewController = (CSInformationViewController *)navigationController.topViewController;
+        informationViewController.type = @"Experiment";
         informationViewController.coupon = self.experimentCoupon;
     }
     else if ([segue.identifier isEqualToString:@"Show PreExperiment"])  {
         
         UINavigationController *navigationController = segue.destinationViewController;
         CSInformationViewController *informationViewController = (CSInformationViewController *)navigationController.topViewController;
+        informationViewController.type = @"Test";
         informationViewController.coupon = self.experimentCoupon;
     }
 
@@ -213,7 +216,7 @@
                                        self.experimentCoupon = text;
                                        [self performSegueWithIdentifier:@"Show PreExperiment" sender:self];
                                    }
-                                   else if ([self.couponsTest containsObject:text]) {
+                                   else if ([self.couponsExperiment containsObject:text]) {
                                        self.experimentCoupon = text;
                                        [self performSegueWithIdentifier:@"Show Experiment" sender:self];
                                    }

@@ -20,6 +20,8 @@
     
     // init information dict
     self.information = [[NSMutableDictionary alloc] initWithCapacity:30];
+    self.information[@"Type"] = self.type;
+    self.information[@"Coupon"] = self.coupon;
 }
 
 - (void)didReceiveMemoryWarning {
