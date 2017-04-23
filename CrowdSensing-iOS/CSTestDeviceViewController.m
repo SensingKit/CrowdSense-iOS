@@ -19,8 +19,6 @@
 
 @property (strong, nonatomic) NSArray *sensors;
 
-@property (nonatomic) BOOL stopSegue;
-
 @end
 
 @implementation CSTestDeviceViewController
@@ -28,8 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.stopSegue = FALSE;
     
     self.sensingKit = [SensingKitLib sharedSensingKitLib];
     
