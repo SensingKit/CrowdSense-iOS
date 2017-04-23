@@ -271,6 +271,13 @@
     [self.recordingLogModelWriter close];
 }
 
+- (void)deleteSession
+{
+    NSLog(@"Delete Session");
+    
+    [[NSFileManager defaultManager] removeItemAtURL:self.folderPath error:nil];
+}
+
 - (void)addRecordingLog:(NSString *)recordingLog;
 {
     [self.recordingLogModelWriter addRecordingLog:recordingLog];

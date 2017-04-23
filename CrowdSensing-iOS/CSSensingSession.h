@@ -31,6 +31,7 @@
 - (BOOL)start:(NSError **)error;
 - (BOOL)stop:(NSError **)error;
 - (void)close;
+- (void)deleteSession;
 
 - (void)addRecordingLog:(NSString *)recordingLog;
 
