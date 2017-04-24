@@ -1965,57 +1965,38 @@ By tapping at the following button, I agree that the research project named abov
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vch-hp-fnV">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcC-LJ-HYA">
-                                                <rect key="frame" x="149" y="84" width="218" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
-                                            </textField>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-lc-GKi">
-                                                <rect key="frame" x="149" y="122" width="218" height="29"/>
-                                                <segments>
-                                                    <segment title="Male"/>
-                                                    <segment title="Female"/>
-                                                </segments>
-                                            </segmentedControl>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="years old" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZMx-b4-ayk">
-                                                <rect key="frame" x="149" y="158" width="218" height="30"/>
+                                                <rect key="frame" x="149" y="120" width="218" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="new-Ix-Ykm">
-                                                <rect key="frame" x="149" y="196" width="218" height="30"/>
+                                                <rect key="frame" x="149" y="158" width="218" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-Xl-tyG">
-                                                <rect key="frame" x="149" y="234" width="218" height="30"/>
+                                                <rect key="frame" x="149" y="196" width="218" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participant ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gs-mJ-c5g">
-                                                <rect key="frame" x="8" y="89" width="108" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRV-0S-KC6">
-                                                <rect key="frame" x="8" y="126" width="62" height="21"/>
+                                                <rect key="frame" x="8" y="87.5" width="62" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdy-Ad-r5i">
-                                                <rect key="frame" x="8" y="163" width="35" height="21"/>
+                                                <rect key="frame" x="8" y="125" width="35" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height (cm):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXs-gu-6uW">
-                                                <rect key="frame" x="8" y="201" width="95" height="21"/>
+                                                <rect key="frame" x="8" y="163" width="95" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2030,15 +2011,24 @@ By tapping at the following button, I agree that the research project named abov
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight (kg):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkI-pC-dmd">
-                                                <rect key="frame" x="8" y="239" width="93" height="21"/>
+                                                <rect key="frame" x="8" y="201" width="93" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-lc-GKi">
+                                                <rect key="frame" x="149" y="84" width="218" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="218" id="awt-hV-sZ5"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="Male"/>
+                                                    <segment title="Female"/>
+                                                </segments>
+                                            </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="9Gs-mJ-c5g" firstAttribute="centerY" secondItem="bcC-LJ-HYA" secondAttribute="centerY" id="1q5-on-3Mg"/>
                                             <constraint firstItem="pkI-pC-dmd" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="24e-RF-4lK"/>
                                             <constraint firstAttribute="trailing" secondItem="new-Ix-Ykm" secondAttribute="trailing" constant="8" id="99a-yO-ucD"/>
                                             <constraint firstItem="iRV-0S-KC6" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="9Tk-bQ-qKy"/>
@@ -2046,22 +2036,17 @@ By tapping at the following button, I agree that the research project named abov
                                             <constraint firstItem="Pdy-Ad-r5i" firstAttribute="centerY" secondItem="ZMx-b4-ayk" secondAttribute="centerY" id="GAn-hW-lmr"/>
                                             <constraint firstItem="gXs-gu-6uW" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="GBt-ck-WK2"/>
                                             <constraint firstItem="ck4-N6-Vk8" firstAttribute="top" secondItem="Vch-hp-fnV" secondAttribute="top" id="J8D-oC-V1e"/>
-                                            <constraint firstItem="bcC-LJ-HYA" firstAttribute="leading" secondItem="9Gs-mJ-c5g" secondAttribute="trailing" constant="33" id="J8K-3A-01h"/>
                                             <constraint firstItem="gXs-gu-6uW" firstAttribute="centerY" secondItem="new-Ix-Ykm" secondAttribute="centerY" id="O0d-EY-ABZ"/>
-                                            <constraint firstItem="yRy-lc-GKi" firstAttribute="width" secondItem="bcC-LJ-HYA" secondAttribute="width" id="SLz-Do-wcc"/>
                                             <constraint firstAttribute="trailing" secondItem="yRy-lc-GKi" secondAttribute="trailing" constant="8" id="UbT-8j-R29"/>
-                                            <constraint firstItem="9Gs-mJ-c5g" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="V02-Ga-FFd"/>
-                                            <constraint firstAttribute="trailing" secondItem="bcC-LJ-HYA" secondAttribute="trailing" constant="8" id="W5j-qv-H5S"/>
                                             <constraint firstItem="Pdy-Ad-r5i" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="WJ3-qZ-1cC"/>
-                                            <constraint firstItem="yRy-lc-GKi" firstAttribute="top" secondItem="bcC-LJ-HYA" secondAttribute="bottom" constant="8" id="XmF-Q1-1r9"/>
                                             <constraint firstAttribute="trailing" secondItem="ck4-N6-Vk8" secondAttribute="trailing" constant="8" id="XqH-xG-qFv"/>
                                             <constraint firstItem="iRV-0S-KC6" firstAttribute="centerY" secondItem="yRy-lc-GKi" secondAttribute="centerY" id="axU-iN-0Um"/>
                                             <constraint firstAttribute="trailing" secondItem="u5o-Xl-tyG" secondAttribute="trailing" constant="8" id="bqq-Kp-fsR"/>
                                             <constraint firstItem="new-Ix-Ykm" firstAttribute="width" secondItem="ZMx-b4-ayk" secondAttribute="width" id="gaC-qv-Woi"/>
                                             <constraint firstItem="ZMx-b4-ayk" firstAttribute="top" secondItem="yRy-lc-GKi" secondAttribute="bottom" constant="8" id="iQJ-d2-BOT"/>
                                             <constraint firstItem="u5o-Xl-tyG" firstAttribute="top" secondItem="new-Ix-Ykm" secondAttribute="bottom" constant="8" id="ny2-B3-G5h"/>
-                                            <constraint firstItem="bcC-LJ-HYA" firstAttribute="top" secondItem="ck4-N6-Vk8" secondAttribute="bottom" constant="8" id="oar-sm-qNu"/>
                                             <constraint firstItem="ck4-N6-Vk8" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="sKj-SO-yj6"/>
+                                            <constraint firstItem="yRy-lc-GKi" firstAttribute="top" secondItem="ck4-N6-Vk8" secondAttribute="bottom" constant="8" id="sma-Ne-zYo"/>
                                             <constraint firstItem="pkI-pC-dmd" firstAttribute="centerY" secondItem="u5o-Xl-tyG" secondAttribute="centerY" id="vDe-9d-9aS"/>
                                             <constraint firstAttribute="trailing" secondItem="ZMx-b4-ayk" secondAttribute="trailing" constant="8" id="vgN-EJ-y6H"/>
                                             <constraint firstItem="u5o-Xl-tyG" firstAttribute="width" secondItem="new-Ix-Ykm" secondAttribute="width" id="yxA-DY-xjY"/>
@@ -2069,7 +2054,7 @@ By tapping at the following button, I agree that the research project named abov
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jl-XR-3Nz">
-                                        <rect key="frame" x="8" y="280" width="359" height="55"/>
+                                        <rect key="frame" x="8" y="250" width="359" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="erM-DP-qC3"/>
                                         </constraints>
@@ -2081,7 +2066,7 @@ By tapping at the following button, I agree that the research project named abov
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4Jl-XR-3Nz" firstAttribute="top" secondItem="alO-s8-G4j" secondAttribute="top" constant="280" id="BUe-33-c98"/>
+                                    <constraint firstItem="4Jl-XR-3Nz" firstAttribute="top" secondItem="alO-s8-G4j" secondAttribute="top" constant="250" id="BUe-33-c98"/>
                                     <constraint firstAttribute="bottom" secondItem="Vch-hp-fnV" secondAttribute="bottom" id="BhZ-3d-F2h"/>
                                     <constraint firstItem="Vch-hp-fnV" firstAttribute="leading" secondItem="alO-s8-G4j" secondAttribute="leading" id="SFt-mo-oVI"/>
                                     <constraint firstItem="Vch-hp-fnV" firstAttribute="centerY" secondItem="alO-s8-G4j" secondAttribute="centerY" id="T0H-Ef-euI"/>
@@ -2108,7 +2093,6 @@ By tapping at the following button, I agree that the research project named abov
                         <outlet property="ageTextField" destination="ZMx-b4-ayk" id="5gF-tT-fRY"/>
                         <outlet property="genderOutlet" destination="yRy-lc-GKi" id="91g-oU-88a"/>
                         <outlet property="heightTextField" destination="new-Ix-Ykm" id="smx-Lp-lIZ"/>
-                        <outlet property="participantIdTextField" destination="bcC-LJ-HYA" id="tCy-sb-ee6"/>
                         <outlet property="submitButton" destination="4Jl-XR-3Nz" id="QY6-MG-tFo"/>
                         <outlet property="weightTextField" destination="u5o-Xl-tyG" id="PoW-51-c8i"/>
                         <segue destination="x8r-v2-9vP" kind="show" identifier="Show Almost Ready" id="7wv-k9-q1H"/>
@@ -2116,7 +2100,7 @@ By tapping at the following button, I agree that the research project named abov
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSg-1Z-ldS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="3403"/>
+            <point key="canvasLocation" x="2104.8000000000002" y="3402.5487256371816"/>
         </scene>
         <!--Ready-->
         <scene sceneID="bsD-fW-S69">

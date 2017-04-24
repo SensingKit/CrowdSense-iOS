@@ -11,7 +11,6 @@
 
 @interface CSQuestionnaireViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *participantIdTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderOutlet;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UITextField *heightTextField;
@@ -26,7 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.participantIdTextField becomeFirstResponder];
+    [self.ageTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +52,6 @@
         
         // Add Questionnaire information to the dict
         self.information[@"Questionnaire"] = @{
-                                               @"ID": self.participantIdTextField.text,
                                                @"Gender": [self.genderOutlet titleForSegmentAtIndex:self.genderOutlet.selectedSegmentIndex],
                                                @"Age": self.ageTextField.text,
                                                @"Height": self.heightTextField.text,
@@ -76,12 +74,6 @@
 }
 
 - (BOOL)checkInput {
-    
-    // id
-    if (self.participantIdTextField.text.length == 0) {
-        [self alertWithTitle:@"Participant ID" withMessage:@"Please enter your participant ID. It should be written behind the given beacon."];
-        return NO;
-    }
     
     // gender
     if (self.genderOutlet.selectedSegmentIndex == UISegmentedControlNoSegment) {
