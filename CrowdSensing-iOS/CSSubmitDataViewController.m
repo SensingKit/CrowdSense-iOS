@@ -66,26 +66,34 @@
 
 - (void)prepareData
 {
+    NSURL *dataPath = self.sensingSession.folderPath;
+    
     // Serialize json and save into dataPath
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.information
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-    if (error) {
-        [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
-        return;
+    if (self.information) {
+        
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.information
+                                                           options:NSJSONWritingPrettyPrinted
+                                                             error:&error];
+        if (error) {
+            [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+            return;
+        }
+        
+        NSString *jsonPath = [dataPath URLByAppendingPathComponent:@"information.json" isDirectory:NO].path;
+        [jsonData writeToFile:jsonPath atomically:YES];
     }
     
-    NSString *jsonPath = [self.dataPath URLByAppendingPathComponent:@"information.json" isDirectory:NO].path;
-    [jsonData writeToFile:jsonPath atomically:YES];
-    
     // Save picture into dataPath
-    NSString *imagePath = [self.dataPath URLByAppendingPathComponent:@"picture.jpeg" isDirectory:NO].path;
-    [UIImageJPEGRepresentation(self.picture, 0.8) writeToFile:imagePath atomically:YES];
+    if (self.picture) {
+    
+        NSString *imagePath = [dataPath URLByAppendingPathComponent:@"picture.jpeg" isDirectory:NO].path;
+        [UIImageJPEGRepresentation(self.picture, 0.8) writeToFile:imagePath atomically:YES];
+    }
     
     // Save into zip
     NSString *zipPath = [self tempZipPath];
-    [SSZipArchive createZipFileAtPath:zipPath withContentsOfDirectory:self.dataPath.path keepParentDirectory:YES withPassword:nil andProgressHandler:^(NSUInteger entryNumber, NSUInteger total) {
+    [SSZipArchive createZipFileAtPath:zipPath withContentsOfDirectory:dataPath.path keepParentDirectory:YES withPassword:nil andProgressHandler:^(NSUInteger entryNumber, NSUInteger total) {
         NSLog(@"Progress: %lu/%lu", (unsigned long)entryNumber, (unsigned long)total);
     }];
     
@@ -110,8 +118,8 @@
         [formData appendPartWithFormData:[@"b+FRongauiv/bKy1egB8AbB2HIICNbhX5IqlbMWcfn4" dataUsingEncoding:NSUTF8StringEncoding] name:@"password"];
         
         // Set data
-        NSString *filename = [NSString stringWithFormat:@"CS__u%@__%@.zip",
-                              self.information[@"Questionnaire"][@"ID"],
+        NSString *filename = [NSString stringWithFormat:@"CS__c%@__%@.zip",
+                              self.information[@"Coupon"],
                               [self.dateFormatter stringFromDate:[NSDate date]]];
         
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {

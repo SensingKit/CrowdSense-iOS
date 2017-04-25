@@ -8,6 +8,7 @@
 
 #import "CSQuestionnaireViewController.h"
 #import "ALDisk.h"
+#import "CSAlmostReadyViewController.h"
 
 @interface CSQuestionnaireViewController ()
 
@@ -40,9 +41,10 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
-        [segue.destinationViewController setInformation:self.information];
-    }
+    CSAlmostReadyViewController *controller = (CSAlmostReadyViewController *)segue.destinationViewController;
+    controller.sensingSession = self.sensingSession;
+    controller.information = self.information;
+
 }
 
 - (IBAction)submitAction:(id)sender

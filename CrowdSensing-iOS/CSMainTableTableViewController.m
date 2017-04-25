@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSFileManager *fileManager;
 
+@property (nonnull, strong) NSString *experimentType;
 @property (nonnull, strong) NSString *experimentCoupon;
 
 @property (nonatomic, strong) NSArray *couponsTest;
@@ -169,14 +170,7 @@
         
         UINavigationController *navigationController = segue.destinationViewController;
         CSInformationViewController *informationViewController = (CSInformationViewController *)navigationController.topViewController;
-        informationViewController.type = @"Experiment";
-        informationViewController.coupon = self.experimentCoupon;
-    }
-    else if ([segue.identifier isEqualToString:@"Show PreExperiment"])  {
-        
-        UINavigationController *navigationController = segue.destinationViewController;
-        CSInformationViewController *informationViewController = (CSInformationViewController *)navigationController.topViewController;
-        informationViewController.type = @"Test";
+        informationViewController.type = self.experimentType;
         informationViewController.coupon = self.experimentCoupon;
     }
 
@@ -213,10 +207,12 @@
                                    NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
                                    
                                    if ([self.couponsTest containsObject:text]) {
+                                       self.experimentType = @"Test";
                                        self.experimentCoupon = text;
-                                       [self performSegueWithIdentifier:@"Show PreExperiment" sender:self];
+                                       [self performSegueWithIdentifier:@"Show Experiment" sender:self];
                                    }
                                    else if ([self.couponsExperiment containsObject:text]) {
+                                       self.experimentType = @"Experiment";
                                        self.experimentCoupon = text;
                                        [self performSegueWithIdentifier:@"Show Experiment" sender:self];
                                    }

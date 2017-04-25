@@ -7,11 +7,15 @@
 //
 
 #import "CSCalibrationViewController.h"
+#import <SensingKit/SensingKit.h>
+#import "CSReadyToGoViewController.h"
 
 @interface CSCalibrationViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
+
+@property (strong, nonatomic) NSDateFormatter *filenameDateFormatter;
 
 @end
 
@@ -20,11 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    SKMicrophoneConfiguration *configuration = [[SKMicrophoneConfiguration alloc] initWithOutputDirectory:self.sensingSession.folderPath withFilename:@"Calibration"];
+    configuration.recordingQuality = SKMicrophoneRecordingQualityMax;
+    
+    NSError *error;
+    [self.sensingSession enableSensor:Microphone withConfiguration:configuration withError:&error];
+    if (error) {
+        // TODO
+    }
 }
 
 #pragma mark - Navigation
@@ -34,24 +42,50 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
-        [segue.destinationViewController setInformation:self.information];
-    }
-    
-    if ([segue.destinationViewController respondsToSelector:@selector(setPicture:)]) {
-        [segue.destinationViewController setPicture:self.picture];
-    }
+    CSReadyToGoViewController *controller = (CSReadyToGoViewController *)segue.destinationViewController;
+    controller.information = self.information;
+    controller.picture = self.picture;
+    controller.sensingSession = self.sensingSession;
 }
 
 - (IBAction)recordAction:(id)sender
 {
+    NSTimeInterval recordingDuration = 5.0; // seconds
+    
+    NSError *error;
+    [self.sensingSession start:&error];
+    
+    if (error) {
+        // TODO
+    }
+    
+    self.recordButton.enabled = NO;
+    
+    // Schedule a stop in testingDuration seconds
+    [self performSelector:@selector(stopRecording) withObject:self afterDelay:recordingDuration];
+}
+
+- (void)stopRecording
+{
+    NSError *error;
+    [self.sensingSession stop:&error];
+    
+    if (error) {
+        // TODO
+    }
+    
+    [self.sensingSession disableSensor:Microphone withError:&error];
+    
+    if (error) {
+        // TODO
+    }
+    
+    self.nextButton.enabled = YES;
 }
 
 - (IBAction)nextAction:(id)sender
 {
-    // Make sure data is recorded
-    // TODO
-    
+
     [self askPassword:@"2222" toPerformSegueWithIdentifier:@"Show Ready to Go"];
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "CSAlmostReadyViewController.h"
+#import "CSCalibrationViewController.h"
 
 @interface CSAlmostReadyViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -34,13 +35,10 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
-        [segue.destinationViewController setInformation:self.information];
-    }
-    
-    if ([segue.destinationViewController respondsToSelector:@selector(setPicture:)]) {
-        [segue.destinationViewController setPicture:self.picture];
-    }
+    CSCalibrationViewController *controller = (CSCalibrationViewController *)segue.destinationViewController;
+    controller.sensingSession = self.sensingSession;
+    controller.information = self.information;
+    controller.picture = self.picture;
 }
 
 - (IBAction)takePicture:(id)sender

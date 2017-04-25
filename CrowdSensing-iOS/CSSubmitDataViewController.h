@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSSensingSession.h"
 
 @interface CSSubmitDataViewController : UIViewController
 
+@property (nonatomic, weak) CSSensingSession *sensingSession;
+
 @property (nonatomic, weak) NSMutableDictionary *information;
 @property (nonatomic, weak) UIImage *picture;
-@property (nonatomic, weak) NSURL *dataPath;
 
 @end

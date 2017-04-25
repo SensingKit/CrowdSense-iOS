@@ -1526,7 +1526,6 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Mco-UP-c0a" kind="presentation" identifier="Show Experiment" id="H6E-T8-e8k"/>
-                        <segue destination="JL9-hV-86a" kind="presentation" identifier="Show PreExperiment" id="v8N-Tq-vlR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLL-xa-l7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1817,23 +1816,6 @@ If you have any questions or concerns about the manner in which the study was co
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ght-5R-e7s">
-                                <rect key="frame" x="16" y="529" width="343" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="0oR-UK-WTD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Test Device"/>
-                                <connections>
-                                    <action selector="testDeviceAction:" destination="5S9-gH-xVv" eventType="touchUpInside" id="Me9-Ro-75m"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="We will need to test your smartphone to see if it is compatible with the needs of the experiment." translatesAutoresizingMaskIntoConstraints="NO" id="ar8-Bv-Zt4">
-                                <rect key="frame" x="16" y="72" width="343" height="449"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gty-ne-I5p">
                                 <rect key="frame" x="16" y="592" width="343" height="55"/>
                                 <constraints>
@@ -1845,22 +1827,39 @@ If you have any questions or concerns about the manner in which the study was co
                                     <segue destination="LtS-ZF-Jy5" kind="show" identifier="Show Consent Form" id="yuZ-Y1-fih"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ght-5R-e7s">
+                                <rect key="frame" x="16" y="306" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="53L-GQ-J36"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Test Device"/>
+                                <state key="disabled" title="Testing device..."/>
+                                <connections>
+                                    <action selector="testDeviceAction:" destination="5S9-gH-xVv" eventType="touchUpInside" id="Me9-Ro-75m"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="We will need to test your smartphone to see if it is compatible with the needs of the experiment." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-WA-0YZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="193"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="193" id="7i1-fF-4ig"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ght-5R-e7s" firstAttribute="leading" secondItem="5Y8-w6-NVo" secondAttribute="leadingMargin" id="9t4-cE-U2b"/>
-                            <constraint firstItem="ght-5R-e7s" firstAttribute="leading" secondItem="ar8-Bv-Zt4" secondAttribute="trailing" constant="-343" id="Awq-E2-cK5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ar8-Bv-Zt4" secondAttribute="trailing" id="Nz2-fC-vIl"/>
+                            <constraint firstItem="dO2-WA-0YZ" firstAttribute="top" secondItem="8uD-z6-ms9" secondAttribute="bottom" id="1nl-7b-aKK"/>
+                            <constraint firstItem="ght-5R-e7s" firstAttribute="leading" secondItem="5Y8-w6-NVo" secondAttribute="leadingMargin" id="O5Y-1v-0cc"/>
                             <constraint firstItem="Gty-ne-I5p" firstAttribute="trailing" secondItem="5Y8-w6-NVo" secondAttribute="trailingMargin" id="Pir-oc-iYA"/>
+                            <constraint firstItem="ght-5R-e7s" firstAttribute="trailing" secondItem="5Y8-w6-NVo" secondAttribute="trailingMargin" id="RlD-AA-Bjk"/>
                             <constraint firstItem="A0t-yC-tef" firstAttribute="top" secondItem="Gty-ne-I5p" secondAttribute="bottom" constant="20" id="UYS-UX-cZa"/>
                             <constraint firstItem="Gty-ne-I5p" firstAttribute="leading" secondItem="5Y8-w6-NVo" secondAttribute="leadingMargin" id="V6b-5u-Xbr"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="ght-5R-e7s" secondAttribute="leading" id="ZTF-0e-uGh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ght-5R-e7s" secondAttribute="trailing" id="bWv-dg-ncI"/>
-                            <constraint firstItem="ght-5R-e7s" firstAttribute="top" secondItem="ar8-Bv-Zt4" secondAttribute="bottom" constant="8" id="f40-CR-7np"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="ar8-Bv-Zt4" secondAttribute="leading" id="ffd-IQ-lpd"/>
-                            <constraint firstItem="ght-5R-e7s" firstAttribute="trailing" secondItem="5Y8-w6-NVo" secondAttribute="trailingMargin" id="h5N-ng-Ulv"/>
-                            <constraint firstItem="ar8-Bv-Zt4" firstAttribute="top" secondItem="8uD-z6-ms9" secondAttribute="bottom" constant="8" id="neU-1X-8bV"/>
-                            <constraint firstItem="Gty-ne-I5p" firstAttribute="top" secondItem="ght-5R-e7s" secondAttribute="bottom" constant="8" id="wah-wx-gYD"/>
+                            <constraint firstAttribute="trailing" secondItem="dO2-WA-0YZ" secondAttribute="trailing" id="W5s-A4-31G"/>
+                            <constraint firstItem="ght-5R-e7s" firstAttribute="centerY" secondItem="5Y8-w6-NVo" secondAttribute="centerY" id="niM-zx-7Qo"/>
+                            <constraint firstItem="dO2-WA-0YZ" firstAttribute="leading" secondItem="5Y8-w6-NVo" secondAttribute="leading" id="nsz-0D-2Bd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Testing Your Device" id="TrV-i7-r2r">
@@ -2191,7 +2190,7 @@ By tapping at the following button, I agree that the research project named abov
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTI-93-sUZ">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTI-93-sUZ">
                                 <rect key="frame" x="16" y="593" width="343" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Hej-cj-UI2"/>
@@ -2204,10 +2203,10 @@ By tapping at the following button, I agree that the research project named abov
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="When the instructor says so, please tap at the 'Record' button." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-ft-pfd">
-                                <rect key="frame" x="16" y="72" width="343" height="100"/>
+                                <rect key="frame" x="16" y="72" width="343" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="qzt-fw-u5E"/>
+                                    <constraint firstAttribute="height" constant="150" id="qzt-fw-u5E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2219,6 +2218,7 @@ By tapping at the following button, I agree that the research project named abov
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Record"/>
+                                <state key="disabled" title="Recording..."/>
                                 <connections>
                                     <action selector="recordAction:" destination="4DJ-03-RPq" eventType="touchUpInside" id="cg6-Mj-22Y"/>
                                 </connections>
@@ -2412,13 +2412,12 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPf-Ak-tey">
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="All data have been transmitted succesfully." translatesAutoresizingMaskIntoConstraints="NO" id="KPf-Ak-tey">
                                 <rect key="frame" x="16" y="228" width="343" height="142"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="142" id="GQy-ZQ-m5d"/>
                                 </constraints>
-                                <string key="text">All data have been transmitted succesfully. We will come back to you with the result of the draw. Feel free to contact us in case you have any questions.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2445,7 +2444,7 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                             <constraint firstItem="K3C-4j-7Kd" firstAttribute="top" secondItem="kl3-9k-MEv" secondAttribute="bottom" constant="8" id="ypO-YU-XuQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Submitting Collected Data..." id="1cI-n8-gwG">
+                    <navigationItem key="navigationItem" title="Submitting Data..." id="1cI-n8-gwG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="j0T-wO-APA"/>
                     </navigationItem>
                     <connections>
@@ -2458,166 +2457,6 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2f-0A-fAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6357.6000000000004" y="3402.5487256371816"/>
-        </scene>
-        <!--PreExperiment-->
-        <scene sceneID="7vr-Cv-ccK">
-            <objects>
-                <viewController title="PreExperiment" id="zU4-YZ-fwV" customClass="CSInformationViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PoP-Sy-cAe"/>
-                        <viewControllerLayoutGuide type="bottom" id="QhI-Cy-r9S"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qJ1-OL-Adp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9L-RW-zIf">
-                                <rect key="frame" x="16" y="593" width="343" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="zVo-Xb-TTM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="I agree"/>
-                                <connections>
-                                    <action selector="iAgreeAction:" destination="zU4-YZ-fwV" eventType="touchUpInside" id="IYd-E1-MSc"/>
-                                    <segue destination="Mkp-pV-oX7" kind="show" identifier="Show Test Device" id="zIp-AG-uCA"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzF-kw-kJp">
-                                <rect key="frame" x="16" y="72" width="343" height="513"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
-
-During this experiment, data will be recorded about your motion activity as well as the ways you interact with the other participants. You will also be asked to socialise with other people for one hour, while the application is collecting anonymous data about your motion, location, activity (e.g. stationary, walking, running), steps taken, proximity between other participants, as well as the power consumption impact it has in your smartphone’s battery.
-
-There is no obvious disadvantage or risk by taking part in this research. However, the application CrowdSense will use your smartphone’s resources and sensors to collect the data described above. This will result on an up to 30% usage of your device's battery life. To avoid that issue, fast chargers will be provided on your request, in order to fully charge your smartphone.
-
-Video recording using external cameras is also taking place. In some of these recordings, your face will be recorded. A picture of you face will also be required in a way to link your smartphone with you position in the video. Once the required link is made, the pictures, as well as the video recordings that can expose your face will be safely erased. The recorded video will never be used publicly for any reason and your personal id will never be exposed. No audio is being recorded during the experiment.
-
-You will be instructed to walk in this open space for 60 minutes, while socialising with the other participants of this experiment. No payment will be provided as remuneration for participation.
-
-There are no direct benefits to you. However, this experiment correlates to future research aiming to assist pedestrians in public events in cases of emergency. It is up to you to decide whether or not to take part. You can cancel your participation and stop the experiment at any time without giving any reason. In that case, all recorded data will be erased.
-For any further inquiries, please do not hesitate to ask the researcher. The contact details are the following:
-
-Kleomenis Katevas
-k.katevas@qmul.ac.uk
-Cognitive Science Research Group
-Queen Mary University of London
-London, UK
-
-If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</mutableString>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="m9L-RW-zIf" firstAttribute="top" secondItem="GzF-kw-kJp" secondAttribute="bottom" constant="8" id="05N-5z-I1W"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GzF-kw-kJp" secondAttribute="trailing" id="F9u-rg-tqQ"/>
-                            <constraint firstItem="GzF-kw-kJp" firstAttribute="top" secondItem="PoP-Sy-cAe" secondAttribute="bottom" constant="8" id="IBw-NF-VBl"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="GzF-kw-kJp" secondAttribute="leading" id="LPO-FE-0iw"/>
-                            <constraint firstItem="QhI-Cy-r9S" firstAttribute="top" secondItem="m9L-RW-zIf" secondAttribute="bottom" constant="19" id="ZuD-SI-2RF"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="m9L-RW-zIf" secondAttribute="leading" id="sWU-DW-Int"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="m9L-RW-zIf" secondAttribute="trailing" id="tgR-Hq-zZy"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Information Sheet" id="Gaj-xL-EUF">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="YPA-ae-Ex2"/>
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="o74-P2-PrB">
-                            <connections>
-                                <action selector="cancelAction:" destination="zU4-YZ-fwV" id="y5e-9H-6Id"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NiE-fT-Nc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-122" y="4281"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="r6p-L5-0Gc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JL9-hV-86a" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p01-Y7-9NA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zU4-YZ-fwV" kind="relationship" relationship="rootViewController" id="qzq-EU-zDI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3t8-fM-fuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1226" y="4281"/>
-        </scene>
-        <!--Test Device-->
-        <scene sceneID="j3g-aD-jLR">
-            <objects>
-                <viewController title="Test Device" id="Mkp-pV-oX7" customClass="CSTestDeviceViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Vgw-46-tGh"/>
-                        <viewControllerLayoutGuide type="bottom" id="PlM-UB-g0z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xJf-3p-JdZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehz-Hp-YJA">
-                                <rect key="frame" x="16" y="529" width="343" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="OlA-Hs-zAi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Test Device"/>
-                                <connections>
-                                    <action selector="testDeviceAction:" destination="Mkp-pV-oX7" eventType="touchUpInside" id="7Jh-E1-gVn"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="We will need to test your smartphone to see if it is compatible with the needs of the experiment." translatesAutoresizingMaskIntoConstraints="NO" id="JLq-V5-kzd">
-                                <rect key="frame" x="16" y="28" width="343" height="493"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ib3-EV-c0h">
-                                <rect key="frame" x="16" y="592" width="343" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="gDN-GB-L4I"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Next"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ehz-Hp-YJA" secondAttribute="trailing" id="7hI-yj-bvC"/>
-                            <constraint firstItem="ehz-Hp-YJA" firstAttribute="trailing" secondItem="xJf-3p-JdZ" secondAttribute="trailingMargin" id="8U9-fN-0lY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JLq-V5-kzd" secondAttribute="trailing" id="9ZJ-82-OIu"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="JLq-V5-kzd" secondAttribute="leading" id="9ku-k8-Orf"/>
-                            <constraint firstItem="ib3-EV-c0h" firstAttribute="top" secondItem="ehz-Hp-YJA" secondAttribute="bottom" constant="8" id="AKQ-c1-G9x"/>
-                            <constraint firstItem="ehz-Hp-YJA" firstAttribute="leading" secondItem="JLq-V5-kzd" secondAttribute="trailing" constant="-343" id="Dft-Zk-va5"/>
-                            <constraint firstItem="ehz-Hp-YJA" firstAttribute="top" secondItem="JLq-V5-kzd" secondAttribute="bottom" constant="8" id="FxB-vd-qgv"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="ehz-Hp-YJA" secondAttribute="leading" id="GgW-kK-5In"/>
-                            <constraint firstItem="ib3-EV-c0h" firstAttribute="leading" secondItem="xJf-3p-JdZ" secondAttribute="leadingMargin" id="LjX-23-Svf"/>
-                            <constraint firstItem="PlM-UB-g0z" firstAttribute="top" secondItem="ib3-EV-c0h" secondAttribute="bottom" constant="20" id="O5y-wv-aG5"/>
-                            <constraint firstItem="JLq-V5-kzd" firstAttribute="top" secondItem="Vgw-46-tGh" secondAttribute="bottom" constant="8" id="S3x-YF-5zW"/>
-                            <constraint firstItem="ehz-Hp-YJA" firstAttribute="leading" secondItem="xJf-3p-JdZ" secondAttribute="leadingMargin" id="lO8-Lq-yWr"/>
-                            <constraint firstItem="ib3-EV-c0h" firstAttribute="trailing" secondItem="xJf-3p-JdZ" secondAttribute="trailingMargin" id="qet-Lt-eZU"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Testing Your Device" id="EQm-q0-3xe">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="DI6-QQ-aJz"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="nextButton" destination="ib3-EV-c0h" id="Eii-Gd-Eqs"/>
-                        <outlet property="testDeviceButton" destination="ehz-Hp-YJA" id="CEC-gi-17m"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MEI-NY-XXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="641" y="4281"/>
         </scene>
     </scenes>
     <resources>

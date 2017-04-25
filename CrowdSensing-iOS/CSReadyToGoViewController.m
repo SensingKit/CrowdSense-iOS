@@ -7,6 +7,7 @@
 //
 
 #import "CSReadyToGoViewController.h"
+#import "CSRecordingDataViewController.h"
 
 @interface CSReadyToGoViewController ()
 
@@ -31,15 +32,12 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
-        [segue.destinationViewController setInformation:self.information];
-    }
+    CSRecordingDataViewController *controller = (CSRecordingDataViewController *)segue.destinationViewController;
     
-    if ([segue.destinationViewController respondsToSelector:@selector(setPicture:)]) {
-        [segue.destinationViewController setPicture:self.picture];
-    }
+    controller.sensingSession = self.sensingSession;
+    controller.information = self.information;
+    controller.picture = self.picture;
 }
 
 - (IBAction)startAction:(id)sender

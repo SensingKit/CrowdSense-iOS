@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSSensingSession.h"
 
 @interface CSRecordingDataViewController : UIViewController
 
+@property (nonatomic, weak) CSSensingSession *sensingSession;
 @property (nonatomic, weak) NSMutableDictionary *information;
 @property (nonatomic, weak) UIImage *picture;
 

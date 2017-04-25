@@ -35,6 +35,7 @@
 		CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */; };
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
 		CF93F2691E742BC30060A5F5 /* ALDisk.m in Sources */ = {isa = PBXBuildFile; fileRef = CF93F2681E742BC30060A5F5 /* ALDisk.m */; };
+		CF9A709D1EAE87B000DCAB66 /* CSCalibrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAE31E73104600AD143B /* CSCalibrationViewController.m */; };
 		CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */; };
 		CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */; };
 		CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */; };
@@ -646,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFFF328419796BF600F7CE57 /* CrowdSensing_iOSTests.m in Sources */,
+				CF9A709D1EAE87B000DCAB66 /* CSCalibrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

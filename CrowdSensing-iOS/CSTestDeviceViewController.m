@@ -7,8 +7,11 @@
 //
 
 #import "CSTestDeviceViewController.h"
+#import "CSConsentFormViewController.h"
+
 #import <SensingKit/SensingKit.h>
 #import "CSSensingSession.h"
+
 #import "ALDisk.h"
 
 @interface CSTestDeviceViewController ()
@@ -33,7 +36,7 @@
     self.errors = [[NSMutableArray alloc] initWithCapacity:40];
     
     // Init Sensing Session
-    NSString *folderName = [NSString stringWithFormat:@"TestData_%@", [self.filenameDateFormatter stringFromDate:[NSDate date]]];
+    NSString *folderName = [NSString stringWithFormat:@"ExperimentData_%@", [self.filenameDateFormatter stringFromDate:[NSDate date]]];
     self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
     
     // These are the sensors to be tested
@@ -59,13 +62,15 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
-        [segue.destinationViewController setInformation:self.information];
-    }
+    CSConsentFormViewController *controller = (CSConsentFormViewController *)segue.destinationViewController;
+    controller.sensingSession = self.sensingSession;
+    controller.information = self.information;
 }
 
 - (IBAction)testDeviceAction:(id)sender
 {
+    self.testDeviceButton.enabled = NO;
+    
     NSTimeInterval testingDuration = 5.0; // seconds
     
     // Test Memory
@@ -77,7 +82,7 @@
     
     // Test Registration
     NSArray *errors = [self testRegistration];
-    if ([self testRegistration]) {
+    if (errors) {
         [self.errors addObjectsFromArray:errors];
     }
     
@@ -120,11 +125,12 @@
     else
     {
         // Alert
-        [self alertWithTitle:@"Test Passed" withMessage:@"Your device is compatible."];
+        [self alertWithTitle:@"Test Passed" withMessage:@"Your device is compatible. Please tap at 'Next' button to continue."];
         
-        self.testDeviceButton.enabled = NO;
         self.nextButton.enabled = YES;
     }
+    
+    self.testDeviceButton.hidden = YES;
 }
 
 - (NSArray *)testRegistration
@@ -323,7 +329,7 @@
             
         case Microphone:
         {
-            SKMicrophoneConfiguration *configuration = [[SKMicrophoneConfiguration alloc] initWithOutputDirectory:folderPath withFilename:@"Microphone"];
+            SKMicrophoneConfiguration *configuration = [[SKMicrophoneConfiguration alloc] initWithOutputDirectory:folderPath withFilename:@"Test"];
             return configuration;
         }
             

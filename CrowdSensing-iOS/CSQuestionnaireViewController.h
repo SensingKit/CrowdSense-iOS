@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSSensingSession.h"
 
 @interface CSQuestionnaireViewController : UIViewController
 
+@property (nonatomic, weak) CSSensingSession *sensingSession;
 @property (nonatomic, weak) NSMutableDictionary *information;
 
 @end
