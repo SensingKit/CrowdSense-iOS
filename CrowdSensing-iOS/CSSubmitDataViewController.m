@@ -32,6 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.navigationItem setHidesBackButton:YES];
+    
     // Close session
     [self.sensingSession close];
     
