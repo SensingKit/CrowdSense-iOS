@@ -13,6 +13,8 @@
 #import "Recording+Create.h"
 #import "CSInformationViewController.h"
 
+@import AFNetworking;
+
 @interface CSMainTableTableViewController () <CSRecordViewControllerDelegate>
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
@@ -20,9 +22,6 @@
 
 @property (nonnull, strong) NSString *experimentType;
 @property (nonnull, strong) NSString *experimentCoupon;
-
-@property (nonatomic, strong) NSArray *couponsTest;
-@property (nonatomic, strong) NSArray *couponsExperiment;
 
 @end
 
@@ -37,10 +36,6 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self setupFetchedResultsController];
-    
-    self.couponsTest = @[@"AAA", @"YRN-VQN", @"LMV-JFV", @"GZX-ALQ", @"TIH-TGN", @"HNC-SDD", @"CVZ-DEW", @"POI-WHO", @"KKL-QPA", @"NWY-MES", @"XHQ-KMX", @"CMG-MVJ", @"ZZS-HSV", @"TQD-YEO", @"ZKJ-ZSF", @"WRR-LEH", @"LOW-MFG", @"KGX-YEN", @"ZBN-QCM", @"UPL-WVX", @"DED-TQX", @"EHK-JAR", @"RFH-CZS", @"MBE-OHF", @"WDV-ZWF", @"BBW-DTN", @"TFX-FKO", @"JME-PER", @"WXG-TQZ", @"JKM-JLO", @"MLZ-WFV", @"AIR-PMJ", @"VMF-VUE", @"MPB-KWG", @"YRM-YFK", @"CWY-NCE", @"WWA-WYB", @"NDJ-WLR", @"HXB-ONX", @"ELY-NNJ", @"JLW-PMV", @"XDG-HBA", @"UTQ-BJZ", @"WDV-TOE", @"IXB-OPJ", @"DRA-IWK", @"ZVZ-DJT", @"YHP-SVX", @"TMX-XOP", @"DYH-RKO", @"HYD-QYP", @"BWN-UKT", @"LAV-MHP", @"UET-ZNF", @"ULG-YYF", @"KGY-HQX", @"MUI-QNW", @"YPZ-SEP", @"EEQ-COQ", @"SVE-EXL", @"IAK-XCW", @"VSC-BBA", @"BTL-TDI", @"QTT-OPY", @"VUQ-MET", @"DFI-NOU", @"QFU-LKN", @"III-JTU", @"GLY-QOL", @"ZQI-SES", @"XKQ-BVX", @"GYX-XQP", @"NXK-MKD", @"XXJ-VME", @"UNX-WMQ", @"PQH-PXQ", @"YWF-VGD", @"ILD-CBU", @"YKE-NMO", @"GYU-XEM", @"PAT-NSY", @"KKY-FTF", @"AVJ-LOT", @"KCS-OVW", @"VRJ-RZC", @"BEW-LON", @"HQJ-DWD", @"MVY-WXG", @"VLN-PMQ", @"UOU-NZF", @"ZGZ-GWH", @"IAF-WGV", @"CZU-NAV", @"GNV-EEN", @"RAN-EYN", @"AGV-HLA", @"EMO-GHU", @"SIW-UWE", @"HRC-HRA", @"YBM-FBM", @"RIG-USY"];
-    
-    self.couponsExperiment = @[@"BBB", @"RUV-IYB", @"PLG-GPS", @"RFO-FDP", @"IHY-DXC", @"DBM-ZOF", @"PMH-TUQ", @"LWP-BPL", @"ITX-DFQ", @"CMC-THZ", @"LKA-XOA", @"HJP-FPD", @"LSQ-XGX", @"HQO-CKD", @"VQL-DJU", @"UFF-MUF", @"RAS-TUT", @"SRH-TWB", @"GWW-FWF", @"IKV-QZH", @"GPX-IMZ", @"BAM-JYP", @"GZN-ROO", @"SFP-YUK", @"LVS-LKI", @"WRC-GOX", @"CJW-XPM", @"KEP-BPE", @"DFR-CCM", @"UEC-HBX", @"YGZ-UUZ", @"BVK-LRK", @"CWS-KVM", @"WOI-EZK", @"ZYE-PVE", @"LTY-ZOF", @"TWU-UXY", @"KUL-THZ", @"YCV-ZEL", @"VTR-KED", @"EDK-SQO", @"JNB-JPK", @"FPG-VDK", @"RWD-WJM", @"JBY-NNM", @"WGX-CAY", @"JUF-MSL", @"RIU-IPH", @"HLP-ZCA", @"UJR-FIO", @"NTE-NDG", @"XUJ-NEF", @"FXG-CZV", @"JNB-ZUV", @"PQN-NGU", @"YZT-YHF", @"NNL-USY", @"PYN-FNW", @"OXL-RTU", @"GZW-KZQ", @"KHR-VLX", @"CIW-XDS", @"ICR-CES", @"XIM-PIR", @"WBH-ZOQ", @"LPX-BIS", @"APX-TSC", @"ISW-HNP", @"QUJ-MVV", @"YOO-HOM", @"GRQ-VRG", @"WNO-PZL", @"FAR-WVZ", @"JRK-AFU", @"RHO-TGJ", @"FXO-NDA", @"CNI-JVB", @"ZCC-SBB", @"QJO-CTZ", @"MJH-DLW", @"AAR-ZWW", @"EYE-HAG", @"UOW-CSP", @"VKW-GAI", @"BSA-BVV", @"YBJ-RIH", @"MMK-SOU", @"IYQ-WGQ", @"ZOW-UGZ", @"HUM-CTL", @"OTN-ZXC", @"WBH-KQA", @"XEL-USJ", @"ECX-CFZ", @"TEW-GUM", @"VMF-GAZ", @"TTK-JTH", @"VHK-QVL", @"FUH-PRT", @"OEA-WPF", @"VZO-ZFT"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -205,21 +200,7 @@
                                handler:^(UIAlertAction * _Nonnull action) {
                                    
                                    NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
-                                   
-                                   if ([self.couponsTest containsObject:text]) {
-                                       self.experimentType = @"Test";
-                                       self.experimentCoupon = text;
-                                       [self performSegueWithIdentifier:@"Show Experiment" sender:self];
-                                   }
-                                   else if ([self.couponsExperiment containsObject:text]) {
-                                       self.experimentType = @"Experiment";
-                                       self.experimentCoupon = text;
-                                       [self performSegueWithIdentifier:@"Show Experiment" sender:self];
-                                   }
-                                   else {
-                                        [self alertWithTitle:@"Coupon Is Not Valid"
-                                                 withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
-                                   }
+                                   [self checkCoupon:text];
                                }];
     
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
@@ -237,6 +218,43 @@
 - (IBAction)showExperimentAction:(id)sender
 {
     [self userInput];
+}
+
+- (void)checkCoupon:(NSString *)coupon
+{
+    // JSON Body
+    NSDictionary* bodyObject = @{@"password": @"b+FRongauiv/bKy1egB8AbB2HIICNbhX5IqlbMWcfn4",
+                                 @"coupon": coupon};
+    
+    [[AFHTTPSessionManager manager] POST:@"https://sensingkit.herokuapp.com/validation"
+       parameters:bodyObject progress:^(NSProgress * _Nonnull uploadProgress) {
+           // All ok
+       } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
+           
+           [self parseResponse:responseObject forCoupon:coupon];
+           
+       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+           [self alertWithTitle:@"Coupon Is Not Valid"
+                    withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
+       }];
+}
+
+- (void)parseResponse:(NSDictionary *)response forCoupon:(NSString *)coupon
+{
+    if ([response[@"isTestCoupon"] isEqual:@(1)]) {
+        self.experimentCoupon = coupon;
+        self.experimentType = @"Test";
+        [self performSegueWithIdentifier:@"Show Experiment" sender:self];
+    }
+    else if ([response[@"isExpirimentCoupon"] isEqual:@(1)]) {
+        self.experimentCoupon = coupon;
+        self.experimentType = @"Experiment";
+        [self performSegueWithIdentifier:@"Show Experiment" sender:self];
+    }
+    else {
+        [self alertWithTitle:@"Coupon Is Not Valid"
+                 withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
+    }
 }
 
 @end

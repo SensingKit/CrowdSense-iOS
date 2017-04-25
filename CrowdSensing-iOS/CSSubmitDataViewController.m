@@ -112,6 +112,7 @@
         
         // Set password
         [formData appendPartWithFormData:[@"b+FRongauiv/bKy1egB8AbB2HIICNbhX5IqlbMWcfn4" dataUsingEncoding:NSUTF8StringEncoding] name:@"password"];
+        [formData appendPartWithFormData:[self.information[@"Coupon"] dataUsingEncoding:NSUTF8StringEncoding] name:@"coupon"];
         
         // Set data
         NSString *filename = [NSString stringWithFormat:@"CS__c%@__%@.zip",
@@ -149,8 +150,7 @@
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    NSURLSessionUploadTask *uploadTask;
-    uploadTask = [manager
+    NSURLSessionUploadTask *uploadTask = [manager
                   uploadTaskWithStreamedRequest:request
                   progress:^(NSProgress * _Nonnull uploadProgress) {
                       
