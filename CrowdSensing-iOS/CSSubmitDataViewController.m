@@ -13,11 +13,16 @@
 @interface CSSubmitDataViewController () <SSZipArchiveDelegate>
 
 @property (weak, nonatomic) IBOutlet UIProgressView *dataProgressView;
+@property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 @property (weak, nonatomic) IBOutlet UILabel *dataProgressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dataProgressTitleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *finishButton;
-@property (weak, nonatomic) IBOutlet UITextView *statusTextView;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIButton *retryButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSString *zipPath;
 
 @end
 
@@ -60,6 +65,8 @@
 
 - (IBAction)finishAction:(id)sender
 {
+    [self deleteFileAtPath:self.zipPath];
+    
     // Should be disabled initially
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -77,6 +84,7 @@
                                                              error:&error];
         if (error) {
             [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+            self.retryButton.hidden = NO;
             return;
         }
         
@@ -97,8 +105,8 @@
         NSLog(@"Progress: %lu/%lu", (unsigned long)entryNumber, (unsigned long)total);
     }];
     
-    // finally
-    [self uploadData:zipPath];
+    // Save the path
+    self.zipPath = zipPath;
 }
 
 - (NSString *)tempZipPath
@@ -133,17 +141,20 @@
             
             if (error) {
                 [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+                self.retryButton.hidden = NO;
             }
         }
         else
         {
             [self alertWithTitle:@"Transmission Failed" withMessage:@"File does not exist."];
+            self.retryButton.hidden = NO;
         }
 
     } error:&error];
     
     if (error) {
         [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+        self.retryButton.hidden = NO;
         return;
     }
     
@@ -172,17 +183,24 @@
                       {
                           [self.dataProgressView setProgress:0];
                           self.dataProgressLabel.text = @"0% completed";
+                          self.retryButton.hidden = NO;
                           
                           [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
                       }
                       else
                       {
-                          // Enable finish button and show status view
-                          self.statusTextView.hidden = NO;
+                          // Show status view and hide progress bar
+                          self.statusLabel.hidden = NO;
+                          self.titleTextView.hidden = YES;
+                          self.dataProgressTitleLabel.hidden = YES;
+                          self.retryButton.hidden = YES;
+                          self.dataProgressView.hidden = YES;
+                          self.dataProgressLabel.hidden = YES;
+                          
+                          // Enable finish
                           self.finishButton.enabled = YES;
                           
-                          // Delete the tmp zip file (unziped files still exist)
-                          [self deleteFileAtPath:path];
+                          [self alertWithTitle:@"Submission Succedded" withMessage:@"Thank you for your participation. We will be in touch soon with the results of the draw."];
                       }
                   }];
     
@@ -208,6 +226,52 @@
     if (error) {
         //[self alertWithTitle:@"Delete Failed" withMessage:error.localizedDescription];
     }
+}
+
+- (IBAction)shareData:(id)sender {
+    
+    NSURL *attachment = [NSURL fileURLWithPath:self.zipPath];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[attachment] applicationActivities:nil];
+    
+    // Call this when the activity is completed
+    [activityViewController setCompletionWithItemsHandler:^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
+        
+        // Nothing?
+    }];
+    
+    NSMutableArray *array = @[UIActivityTypePostToFacebook,
+                              UIActivityTypePostToTwitter,
+                              UIActivityTypePostToWeibo,
+                              UIActivityTypeMessage,
+                              UIActivityTypePrint,
+                              UIActivityTypeCopyToPasteboard,
+                              UIActivityTypeAssignToContact,
+                              UIActivityTypeSaveToCameraRoll,
+                              UIActivityTypeAddToReadingList,
+                              UIActivityTypePostToFlickr,
+                              UIActivityTypePostToVimeo,
+                              UIActivityTypePostToTencentWeibo].mutableCopy;
+    
+    if ([NSProcessInfo processInfo].operatingSystemVersion.majorVersion >= 9) {
+        [array addObject:UIActivityTypeOpenInIBooks];
+    }
+    
+    // Exclude Activities
+    activityViewController.excludedActivityTypes = array;
+    
+    // To avoid crash on iPad and iOS 8
+    if ([activityViewController respondsToSelector:@selector(popoverPresentationController)])
+    {
+        // iOS8
+        activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
+    }
+    
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (IBAction)retrySubmission:(id)sender {
+    [self uploadData:self.zipPath];
 }
 
 @end

@@ -1547,7 +1547,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">CrowdSense is a free continuous sensing tool, based on our open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be accessed using iTunes (through iTunes file sharing).
+                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on our open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be accessed using iTunes (through iTunes file sharing).
 
 CrowdSense supports the following sensors:
 - Accelerometer
@@ -1569,7 +1569,7 @@ Kleomenis Katevas, Hamed Haddadi and Laurissa Tokarchuk, "SensingKit: Evaluating
 
 Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, "Poster: SensingKit – A Multi-Platform Mobile Sensing Framework for Large‑Scale Experiments", Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
-This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</string>
+This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -1827,8 +1827,17 @@ If you have any questions or concerns about the manner in which the study was co
                                     <segue destination="LtS-ZF-Jy5" kind="show" identifier="Show Consent Form" id="yuZ-Y1-fih"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-WA-0YZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="457"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">We will now test your device to see if it is compatible with the needs of the experiment. We will record some anonymous data for 30 seconds (i.e. Motion, Orientation, Location and Audio) from your device.
+
+Please remain silent and tap at the "Test Device" button when you are ready. Don't forget to accept the requested permissions appearing in your device's screen.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ght-5R-e7s">
-                                <rect key="frame" x="16" y="306" width="343" height="55"/>
+                                <rect key="frame" x="16" y="529" width="343" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="53L-GQ-J36"/>
                                 </constraints>
@@ -1839,27 +1848,19 @@ If you have any questions or concerns about the manner in which the study was co
                                     <action selector="testDeviceAction:" destination="5S9-gH-xVv" eventType="touchUpInside" id="Me9-Ro-75m"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="We will need to test your smartphone to see if it is compatible with the needs of the experiment." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-WA-0YZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="193"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="193" id="7i1-fF-4ig"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dO2-WA-0YZ" firstAttribute="top" secondItem="8uD-z6-ms9" secondAttribute="bottom" id="1nl-7b-aKK"/>
+                            <constraint firstItem="Gty-ne-I5p" firstAttribute="top" secondItem="ght-5R-e7s" secondAttribute="bottom" constant="8" id="B1E-ew-qSi"/>
                             <constraint firstItem="ght-5R-e7s" firstAttribute="leading" secondItem="5Y8-w6-NVo" secondAttribute="leadingMargin" id="O5Y-1v-0cc"/>
                             <constraint firstItem="Gty-ne-I5p" firstAttribute="trailing" secondItem="5Y8-w6-NVo" secondAttribute="trailingMargin" id="Pir-oc-iYA"/>
                             <constraint firstItem="ght-5R-e7s" firstAttribute="trailing" secondItem="5Y8-w6-NVo" secondAttribute="trailingMargin" id="RlD-AA-Bjk"/>
                             <constraint firstItem="A0t-yC-tef" firstAttribute="top" secondItem="Gty-ne-I5p" secondAttribute="bottom" constant="20" id="UYS-UX-cZa"/>
                             <constraint firstItem="Gty-ne-I5p" firstAttribute="leading" secondItem="5Y8-w6-NVo" secondAttribute="leadingMargin" id="V6b-5u-Xbr"/>
                             <constraint firstAttribute="trailing" secondItem="dO2-WA-0YZ" secondAttribute="trailing" id="W5s-A4-31G"/>
-                            <constraint firstItem="ght-5R-e7s" firstAttribute="centerY" secondItem="5Y8-w6-NVo" secondAttribute="centerY" id="niM-zx-7Qo"/>
                             <constraint firstItem="dO2-WA-0YZ" firstAttribute="leading" secondItem="5Y8-w6-NVo" secondAttribute="leading" id="nsz-0D-2Bd"/>
+                            <constraint firstItem="ght-5R-e7s" firstAttribute="top" secondItem="dO2-WA-0YZ" secondAttribute="bottom" constant="8" id="tWl-Ty-Sd7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Testing Your Device" id="TrV-i7-r2r">
@@ -2332,9 +2333,9 @@ By tapping at the following button, I agree that the research project named abov
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-oB-QxL">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">We are now collecting data about your motion, orientation and location in the current space. The data we collect are fully anonymous.  Please place the phone into your left pocket, the given beacon on the right and wait for further instructions.
+                                <mutableString key="text">We are now collecting data about your motion, orientation and location in the current space. The data we collect are fully anonymous.  Please do not place the phone into your pocket yourself - ask an instructor to assist you!
 
-When the experiment is finished, tap at the 'I am done!' button. Please make sure you complete the next step that submits the collected data.</string>
+When the experiment is finished, tap at the 'I am done!' button. Please make sure you complete the next step that submits the collected data. Once this is done, we will contact you with the results of the draw. Good luck!</mutableString>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2402,7 +2403,7 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please wait until we collect all data." translatesAutoresizingMaskIntoConstraints="NO" id="kl3-9k-MEv">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please tap at 'Submit Data' button and wait until we collect all data." translatesAutoresizingMaskIntoConstraints="NO" id="kl3-9k-MEv">
                                 <rect key="frame" x="16" y="72" width="343" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2412,46 +2413,68 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="All data have been transmitted succesfully." translatesAutoresizingMaskIntoConstraints="NO" id="KPf-Ak-tey">
-                                <rect key="frame" x="16" y="228" width="343" height="142"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m15-Kw-0bt">
+                                <rect key="frame" x="16" y="529" width="343" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="142" id="GQy-ZQ-m5d"/>
+                                    <constraint firstAttribute="height" constant="55" id="TFR-cq-qyO"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Submit Data"/>
+                                <connections>
+                                    <action selector="retrySubmission:" destination="yaM-wB-mAJ" eventType="touchUpInside" id="pCk-eJ-vz8"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All data have been succesfully transmitted." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g48-zm-qte">
+                                <rect key="frame" x="16" y="283" width="343" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="VKN-74-9bz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="textColor" red="0.26804078649269147" green="0.60691489361702122" blue="0.3485777281724316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="41b-B3-7fA" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="0nx-SN-MjW"/>
                             <constraint firstItem="hrn-It-hL4" firstAttribute="top" secondItem="41b-B3-7fA" secondAttribute="bottom" constant="20" id="2GJ-8W-1gr"/>
                             <constraint firstItem="8n8-5j-ieg" firstAttribute="top" secondItem="K3C-4j-7Kd" secondAttribute="bottom" constant="8" id="3ag-Om-7iX"/>
+                            <constraint firstItem="m15-Kw-0bt" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="5aX-sn-4Ng"/>
                             <constraint firstItem="K3C-4j-7Kd" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="86k-FB-VFX"/>
                             <constraint firstItem="kl3-9k-MEv" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="AXO-p2-5Ay"/>
                             <constraint firstItem="fJg-eb-GOY" firstAttribute="top" secondItem="8n8-5j-ieg" secondAttribute="bottom" constant="8" id="FKv-bK-wbE"/>
-                            <constraint firstItem="KPf-Ak-tey" firstAttribute="top" secondItem="fJg-eb-GOY" secondAttribute="bottom" constant="8" id="FVB-ap-cm8"/>
-                            <constraint firstItem="KPf-Ak-tey" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="Kzp-5c-gkK"/>
+                            <constraint firstItem="g48-zm-qte" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="FaD-by-4hP"/>
                             <constraint firstItem="kl3-9k-MEv" firstAttribute="top" secondItem="RIw-kX-6Ka" secondAttribute="bottom" constant="8" id="LFG-K0-hxL"/>
-                            <constraint firstItem="KPf-Ak-tey" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="Lge-FI-QDw"/>
                             <constraint firstItem="8n8-5j-ieg" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="T89-LX-JYV"/>
+                            <constraint firstItem="g48-zm-qte" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="Vms-q6-vSJ"/>
                             <constraint firstItem="8n8-5j-ieg" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="Y2o-Zc-ESJ"/>
+                            <constraint firstItem="m15-Kw-0bt" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="ehT-ny-JvX"/>
                             <constraint firstItem="kl3-9k-MEv" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="fZB-up-aCG"/>
                             <constraint firstItem="K3C-4j-7Kd" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="oQK-hh-1bP"/>
+                            <constraint firstItem="41b-B3-7fA" firstAttribute="top" secondItem="m15-Kw-0bt" secondAttribute="bottom" constant="8" id="oXS-cU-DPo"/>
                             <constraint firstItem="fJg-eb-GOY" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="tsX-Vq-ABC"/>
                             <constraint firstItem="41b-B3-7fA" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="yiz-vX-j6B"/>
                             <constraint firstItem="K3C-4j-7Kd" firstAttribute="top" secondItem="kl3-9k-MEv" secondAttribute="bottom" constant="8" id="ypO-YU-XuQ"/>
+                            <constraint firstItem="g48-zm-qte" firstAttribute="centerY" secondItem="YK3-ze-oUW" secondAttribute="centerY" id="zK0-qo-b1T"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Submitting Data..." id="1cI-n8-gwG">
+                    <navigationItem key="navigationItem" title="Submit Data" id="1cI-n8-gwG">
                         <barButtonItem key="backBarButtonItem" title="Back" id="j0T-wO-APA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="7Aq-DU-o5G">
+                            <connections>
+                                <action selector="shareData:" destination="yaM-wB-mAJ" id="Ceo-sf-sN9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dataProgressLabel" destination="fJg-eb-GOY" id="uzg-Uu-8Pe"/>
+                        <outlet property="dataProgressTitleLabel" destination="K3C-4j-7Kd" id="NlL-vC-qGG"/>
                         <outlet property="dataProgressView" destination="8n8-5j-ieg" id="gWU-Vw-DcA"/>
                         <outlet property="finishButton" destination="41b-B3-7fA" id="N0E-Oq-i0w"/>
-                        <outlet property="statusTextView" destination="KPf-Ak-tey" id="Mjr-q7-59b"/>
+                        <outlet property="retryButton" destination="m15-Kw-0bt" id="nIo-Ww-aBh"/>
+                        <outlet property="shareButton" destination="7Aq-DU-o5G" id="WxE-8J-b8h"/>
+                        <outlet property="statusLabel" destination="g48-zm-qte" id="bwk-2B-7n1"/>
+                        <outlet property="titleTextView" destination="kl3-9k-MEv" id="RyV-LG-nId"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2f-0A-fAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
