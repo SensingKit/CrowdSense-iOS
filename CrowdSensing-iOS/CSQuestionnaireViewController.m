@@ -42,6 +42,7 @@
     // Pass the selected object to the new view controller.
     
     CSAlmostReadyViewController *controller = (CSAlmostReadyViewController *)segue.destinationViewController;
+    controller.type = self.type;
     controller.sensingSession = self.sensingSession;
     controller.information = self.information;
 

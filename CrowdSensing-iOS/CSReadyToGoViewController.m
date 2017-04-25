@@ -34,7 +34,7 @@
     // Get the new view controller using [segue destinationViewController].
     
     CSRecordingDataViewController *controller = (CSRecordingDataViewController *)segue.destinationViewController;
-    
+    controller.type = self.type;
     controller.sensingSession = self.sensingSession;
     controller.information = self.information;
     controller.picture = self.picture;

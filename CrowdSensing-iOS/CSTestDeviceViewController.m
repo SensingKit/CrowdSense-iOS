@@ -8,6 +8,7 @@
 
 #import "CSTestDeviceViewController.h"
 #import "CSConsentFormViewController.h"
+#import "CSSubmitDataViewController.h"
 
 #import <SensingKit/SensingKit.h>
 #import "CSSensingSession.h"
@@ -62,9 +63,30 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    CSConsentFormViewController *controller = (CSConsentFormViewController *)segue.destinationViewController;
-    controller.sensingSession = self.sensingSession;
-    controller.information = self.information;
+    if ([segue.identifier isEqualToString:@"Show Consent Form"]) {
+        
+        CSConsentFormViewController *controller = (CSConsentFormViewController *)segue.destinationViewController;
+        controller.type = self.type;
+        controller.sensingSession = self.sensingSession;
+        controller.information = self.information;
+    }
+    else if ([segue.identifier isEqualToString:@"Show Submit Data"]) {
+        
+        CSSubmitDataViewController *controller = (CSSubmitDataViewController *)segue.destinationViewController;
+        controller.type = self.type;
+        controller.sensingSession = self.sensingSession;
+        controller.information = self.information;
+    }
+}
+
+- (IBAction)nextButtonAction:(id)sender
+{
+    if ([self.type isEqualToString:@"Test"]) {
+        [self performSegueWithIdentifier:@"Show Submit Data" sender:self];
+    }
+    else if ([self.type isEqualToString:@"Experiment"]) {
+        [self performSegueWithIdentifier:@"Show Consent Form" sender:self];
+    }
 }
 
 - (IBAction)testDeviceAction:(id)sender

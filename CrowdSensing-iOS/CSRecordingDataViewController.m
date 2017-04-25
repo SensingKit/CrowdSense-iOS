@@ -66,7 +66,6 @@
     // Stop Sensing
     [self.sensingSession stop:nil];
     [self.sensingSession disableAllRegisteredSensors:nil];
-    [self.sensingSession close];
 }
 
 - (NSArray *)sensors
@@ -152,7 +151,7 @@
     // Pass the selected object to the new view controller.
     
     CSSubmitDataViewController *controller = (CSSubmitDataViewController *)segue.destinationViewController;
-    
+    controller.type = self.type;
     controller.sensingSession = self.sensingSession;
     controller.information = self.information;
     controller.picture = self.picture;

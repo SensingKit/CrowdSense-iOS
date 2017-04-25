@@ -46,6 +46,7 @@
     // Pass the selected object to the new view controller.
     
     CSQuestionnaireViewController *controller = (CSQuestionnaireViewController *)segue.destinationViewController;
+    controller.type = self.type;
     controller.sensingSession = self.sensingSession;
     controller.information = self.information;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "CSInformationViewController.h"
+#import "CSTestDeviceViewController.h"
 
 @interface CSInformationViewController ()
 
@@ -36,9 +37,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController respondsToSelector:@selector(setInformation:)]) {
-        [segue.destinationViewController setInformation:self.information];
-    }
+    CSTestDeviceViewController *controller = (CSTestDeviceViewController *)segue.destinationViewController;
+    controller.type = self.type;
+    controller.information = self.information;
 }
 
 - (IBAction)iAgreeAction:(id)sender

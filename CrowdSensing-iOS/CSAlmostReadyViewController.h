@@ -11,6 +11,7 @@
 
 @interface CSAlmostReadyViewController : UIViewController
 
+@property (nonatomic, weak) NSString *type;
 @property (nonatomic, weak) CSSensingSession *sensingSession;
 @property (nonatomic, weak) NSMutableDictionary *information;
 @property (nonatomic, weak) UIImage *picture;

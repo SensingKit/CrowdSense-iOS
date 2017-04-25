@@ -36,6 +36,7 @@
     // Pass the selected object to the new view controller.
     
     CSCalibrationViewController *controller = (CSCalibrationViewController *)segue.destinationViewController;
+    controller.type = self.type;
     controller.sensingSession = self.sensingSession;
     controller.information = self.information;
     controller.picture = self.picture;
