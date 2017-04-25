@@ -2464,7 +2464,7 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                         <barButtonItem key="backBarButtonItem" title="Back" id="j0T-wO-APA"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="7Aq-DU-o5G">
                             <connections>
-                                <action selector="shareData:" destination="yaM-wB-mAJ" id="Ceo-sf-sN9"/>
+                                <action selector="shareDataAction:" destination="yaM-wB-mAJ" id="qxf-2D-1DP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

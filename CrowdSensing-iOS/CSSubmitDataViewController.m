@@ -216,8 +216,59 @@
     }
 }
 
-- (IBAction)shareData:(id)sender {
+- (IBAction)shareDataAction:(id)sender {
     
+    [self askPassword:@"1395"];
+}
+
+- (IBAction)retrySubmission:(id)sender {
+    [self uploadData:self.zipPath];
+}
+
+- (void)askPassword:(NSString *)password {
+    
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Enter Password"
+                                          message:@"Please enter the password given by the instructor in order to continue to the next step."
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:@"Cancel"
+                                   style:UIAlertActionStyleCancel
+                                   handler:nil];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * _Nonnull action) {
+                                   
+                                   NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
+                                   
+                                   if ([text isEqualToString:password])
+                                   {
+                                       [self shareData];
+                                   }
+                                   else
+                                   {
+                                       // Ignore
+                                   }
+                                   
+                               }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Password";
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+    }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    
+    // Show the alert
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)shareData
+{
     NSURL *attachment = [NSURL fileURLWithPath:self.zipPath];
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[attachment] applicationActivities:nil];
@@ -256,10 +307,6 @@
     }
     
     [self presentViewController:activityViewController animated:YES completion:nil];
-}
-
-- (IBAction)retrySubmission:(id)sender {
-    [self uploadData:self.zipPath];
 }
 
 @end
