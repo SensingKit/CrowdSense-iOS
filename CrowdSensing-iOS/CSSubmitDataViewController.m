@@ -190,7 +190,15 @@
                           // Enable finish
                           self.finishButton.enabled = YES;
                           
-                          [self alertWithTitle:@"Submission Succedded" withMessage:@"Thank you for your participation. We will be in touch soon with the results of the draw."];
+                          if ([self.type isEqualToString:@"Test"])
+                          {
+                              [self alertWithTitle:@"Submission Succedded" withMessage:@"Thank you for your participation. We will be in touch soon."];
+                          }
+                          else
+                          {
+                              [self alertWithTitle:@"Submission Succedded" withMessage:@"Thank you for your participation. We will be in touch soon with the results of the draw."];
+                          }
+                          
                       }
                   }];
     
