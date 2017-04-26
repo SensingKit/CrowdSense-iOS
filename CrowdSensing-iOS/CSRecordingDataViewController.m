@@ -10,12 +10,15 @@
 #import "CSSubmitDataViewController.h"
 
 @import SensingKit;
+@import AudioToolbox;
 
 @interface CSRecordingDataViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *iAmDoneButton;
 
 @property (strong, nonatomic) NSArray *sensors;
+
+@property (nonatomic) BOOL vibration;
 
 @end
 
@@ -58,6 +61,25 @@
     [self.sensingSession start:nil];
 }
 
+- (void)setVibration:(BOOL)vibration
+{
+    if (!_vibration && vibration) {
+        _vibration = YES;
+        [self vibratePerSecond];
+    }
+    
+    _vibration = vibration;
+}
+
+- (void)vibratePerSecond
+{
+    AudioServicesPlayAlertSoundWithCompletion(kSystemSoundID_Vibrate, nil);
+    
+    if (self.vibration) {
+        [self performSelector:@selector(vibratePerSecond) withObject:self afterDelay:1.0];
+    }
+}
+
 - (void)stopSensing
 {
     // Proximity Monitoring
@@ -67,6 +89,8 @@
     // Stop Sensing
     [self.sensingSession stop:nil];
     [self.sensingSession disableAllRegisteredSensors:nil];
+    
+    self.vibration = NO;
 }
 
 - (NSArray *)sensors
