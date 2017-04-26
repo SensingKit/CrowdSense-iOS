@@ -23,6 +23,8 @@
     self.information = [[NSMutableDictionary alloc] initWithCapacity:30];
     self.information[@"Type"] = self.type;
     self.information[@"Coupon"] = self.coupon;
+    
+    [self checkForUpdate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,5 +53,53 @@
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+- (void)checkForUpdate {
+
+    NSURL *url = [NSURL URLWithString:@"https://sensingkit.org/CrowdSenseData.json"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSError *error = nil;
+    NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    
+    NSString *latestVersion = response[@"latestVersion"];
+    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    
+    if (![latestVersion isEqualToString:currentVersion]) {
+        [self askToUpdate];
+    }
+}
+
+- (void)askToUpdate
+{
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Update CrowdSense"
+                                          message:@"There is an updated version available in the App Store. Please update to the latest version."
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:@"Update"
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction * _Nonnull action) {
+                                       
+                                       NSString *iTunesLink = @"https://itunes.apple.com/us/app/crowdsense/id930853606?ls=1&mt=8";
+                                       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
+                                       
+                                   }];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"Cancel"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * _Nonnull action) {
+                                   // Ignore
+                               }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    
+    // Show the alert
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
 
 @end

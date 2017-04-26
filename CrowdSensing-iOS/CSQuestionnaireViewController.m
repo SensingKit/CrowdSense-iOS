@@ -72,6 +72,11 @@
                                             @"FreeDiskSpace": [ALDisk freeDiskSpace],
                                             @"UsedDiskSpace": [ALDisk usedDiskSpace]
                                             };
+        
+        // Add App version and build
+        self.information[@"App"] = @{@"Version": [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+                                     @"Build": [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+                                     };
 
         // Show next screen
         [self performSegueWithIdentifier:@"Show Almost Ready" sender:self];
