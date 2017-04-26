@@ -1340,7 +1340,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1JN-Ad-UKu" id="u2k-pX-gi7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8VD-nF-kuG">
@@ -1398,10 +1398,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="1bC-CE-nPp" style="IBUITableViewCellStyleDefault" id="Lzl-oi-hfP">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzl-oi-hfP" id="Fbx-k0-EiG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1bC-CE-nPp">
@@ -1547,7 +1547,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on our open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be accessed using iTunes (through iTunes file sharing).
+                                <string key="text">CrowdSense is a free continuous sensing tool, based on our open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be accessed using iTunes (through iTunes file sharing).
 
 CrowdSense supports the following sensors:
 - Accelerometer
@@ -1569,7 +1569,7 @@ Kleomenis Katevas, Hamed Haddadi and Laurissa Tokarchuk, "SensingKit: Evaluating
 
 Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, "Poster: SensingKit – A Multi-Platform Mobile Sensing Framework for Large‑Scale Experiments", Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
-This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</mutableString>
+This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -1831,6 +1831,8 @@ If you have any questions or concerns about the manner in which the study was co
                                 <rect key="frame" x="0.0" y="64" width="375" height="457"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">We will now test your device to see if it is compatible with the needs of the experiment. We will record some anonymous data for 30 seconds (i.e. Motion, Orientation, Location and Audio) from your device.
+
+Make sure that your Bluetooth is enabled.
 
 Please remain silent and tap at the "Test Device" button when you are ready. Don't forget to accept the requested permissions appearing in your device's screen.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -2335,9 +2337,9 @@ By tapping at the following button, I agree that the research project named abov
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-oB-QxL">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">We are now collecting data about your motion, orientation and location in the current space. The data we collect are fully anonymous.  Please do not place the phone into your pocket yourself - ask an instructor to assist you!
+                                <string key="text">We are now collecting data about your motion, orientation and location in the current space. The data we collect are fully anonymous.  Please do not place the phone into your pocket yourself - ask an instructor to assist you!
 
-When the experiment is finished, tap at the 'I am done!' button. Please make sure you complete the next step that submits the collected data. Once this is done, we will contact you with the results of the draw. Good luck!</mutableString>
+When the experiment is finished, tap at the 'I am done!' button. Please make sure you complete the next step that submits the collected data. Once this is done, we will contact you with the results of the draw. Good luck!</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
