@@ -75,6 +75,7 @@
         if (error) {
             [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
             self.retryButton.hidden = NO;
+            self.retryButton.enabled = YES;
             return;
         }
         
@@ -133,12 +134,14 @@
             if (error) {
                 [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
                 self.retryButton.hidden = NO;
+                self.retryButton.enabled = YES;
             }
         }
         else
         {
             [self alertWithTitle:@"Transmission Failed" withMessage:@"File does not exist."];
             self.retryButton.hidden = NO;
+            self.retryButton.enabled = YES;
         }
 
     } error:&error];
@@ -146,6 +149,7 @@
     if (error) {
         [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
         self.retryButton.hidden = NO;
+        self.retryButton.enabled = YES;
         return;
     }
     
@@ -174,6 +178,7 @@
                           [self.dataProgressView setProgress:0];
                           self.dataProgressLabel.text = @"0% completed";
                           self.retryButton.hidden = NO;
+                          self.retryButton.enabled = YES;
                           
                           [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
                       }
@@ -232,6 +237,7 @@
 }
 
 - (IBAction)retrySubmission:(id)sender {
+    self.retryButton.enabled = NO;
     [self uploadData:self.zipPath];
 }
 
