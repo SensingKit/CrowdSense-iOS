@@ -1,8 +1,8 @@
 //
-//  SKSensorDataHandler.h
+//  SKHeadingConfiguration.h
 //  SensingKit
 //
-//  Copyright (c) 2014. Queen Mary University of London
+//  Copyright (c) 2017. Queen Mary University of London
 //  Kleomenis Katevas, k.katevas@qmul.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
@@ -24,18 +24,22 @@
 
 #import <Foundation/Foundation.h>
 
-#import "SKSensorData.h"
+#import "SKConfiguration.h"
+
+@import CoreLocation;
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 /**
- Βlock to be invoked when new sensor data is available. You can cast the sensorData object into the actual sensor data (e.g. SKAccelerometerData), based on the reported sensorType.
-
- @param sensorType The type of the sensor producing the SKSensorData object.
- @param sensorData The new sensor data produced by the SKSensorType sensor.
- @param error This pointer is NULL if an error has occured and sensor data is not available.
+ *  An instance of SKHeadingConfiguration can be used to configure the Heading sensor.
  */
-typedef void (^SKSensorDataHandler)(SKSensorType sensorType, SKSensorData * __nullable sensorData, NSError * __nullable error);
+@interface SKHeadingConfiguration : SKConfiguration
+
+@property (nonatomic) CLLocationDegrees headingFilter;
+@property (nonatomic) CLDeviceOrientation headingOrientation;
+
+@property (nonatomic) BOOL displayHeadingCalibration;
+
+@end
 
 NS_ASSUME_NONNULL_END

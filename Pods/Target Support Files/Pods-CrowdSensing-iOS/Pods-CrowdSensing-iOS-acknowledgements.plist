@@ -259,7 +259,7 @@ apply, that proxy's public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.</string>
 			<key>License</key>
-			<string>LGPL 3.0</string>
+			<string>LGPL</string>
 			<key>Title</key>
 			<string>SensingKit</string>
 			<key>Type</key>

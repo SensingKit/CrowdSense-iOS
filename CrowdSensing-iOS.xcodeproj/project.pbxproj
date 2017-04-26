@@ -283,13 +283,6 @@
 			path = ALDisk;
 			sourceTree = "<group>";
 		};
-		CF9A70991EABE18C00DCAB66 /* PreExperiment */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = PreExperiment;
-			sourceTree = "<group>";
-		};
 		CFB029B51BADBE90008E4137 /* User Input */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,7 +367,6 @@
 				CF18C38A19ED408800E295CB /* Setup */,
 				CFC896621B8E4997004F857C /* Model */,
 				CFFF325C19796BF600F7CE57 /* Supporting Files */,
-				CF9A70991EABE18C00DCAB66 /* PreExperiment */,
 				CF65BACF1E730F9A00AD143B /* Experiment */,
 				CFFF326719796BF600F7CE57 /* Storyboard.storyboard */,
 				CFD450421B8A0DEC00E2E78D /* Settings.bundle */,

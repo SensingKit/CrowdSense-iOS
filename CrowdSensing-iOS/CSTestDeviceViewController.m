@@ -44,7 +44,7 @@
     self.sensingSession = [[CSSensingSession alloc] initWithFolderName:folderName];
     
     // These are the sensors to be tested
-    self.sensors = @[@(Accelerometer), @(Gyroscope), @(Magnetometer), @(DeviceMotion), @(MotionActivity), @(Pedometer), @(iBeaconProximity), @(Battery), @(Microphone)];
+    self.sensors = @[@(Accelerometer), @(Gyroscope), @(Magnetometer), @(Heading), @(DeviceMotion), @(MotionActivity), @(Pedometer), @(iBeaconProximity), @(Battery), @(Microphone)];
 }
 
 - (NSDateFormatter *)filenameDateFormatter
@@ -363,6 +363,13 @@
         {
             SKMagnetometerConfiguration *configuration = [[SKMagnetometerConfiguration alloc] init];
             configuration.sampleRate = sampleRate;
+            return configuration;
+        }
+            
+        case Heading:
+        {
+            SKHeadingConfiguration *configuration = [[SKHeadingConfiguration alloc] init];
+            configuration.displayHeadingCalibration = YES;
             return configuration;
         }
             

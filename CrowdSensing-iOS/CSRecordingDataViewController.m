@@ -96,7 +96,7 @@
 - (NSArray *)sensors
 {
     if (!_sensors) {
-        _sensors = @[@(Accelerometer), @(Gyroscope), @(Magnetometer), @(DeviceMotion), @(MotionActivity), @(Pedometer), @(iBeaconProximity), @(Battery)];
+        _sensors = @[@(Accelerometer), @(Gyroscope), @(Magnetometer), @(Heading), @(DeviceMotion), @(MotionActivity), @(Pedometer), @(iBeaconProximity), @(Battery)];
     }
     return _sensors;
 }
@@ -125,6 +125,13 @@
         {
             SKMagnetometerConfiguration *configuration = [[SKMagnetometerConfiguration alloc] init];
             configuration.sampleRate = sampleRate;
+            return configuration;
+        }
+            
+        case Heading:
+        {
+            SKHeadingConfiguration *configuration = [[SKHeadingConfiguration alloc] init];
+            configuration.displayHeadingCalibration = NO;
             return configuration;
         }
             

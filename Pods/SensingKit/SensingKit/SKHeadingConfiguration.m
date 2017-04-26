@@ -1,8 +1,8 @@
 //
-//  SKSensorDataHandler.h
+//  SKHeadingConfiguration.m
 //  SensingKit
 //
-//  Copyright (c) 2014. Queen Mary University of London
+//  Copyright (c) 2017. Queen Mary University of London
 //  Kleomenis Katevas, k.katevas@qmul.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
@@ -22,20 +22,35 @@
 //  along with SensingKit-iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import <Foundation/Foundation.h>
+#import "SKHeadingConfiguration.h"
 
-#import "SKSensorData.h"
+@implementation SKHeadingConfiguration
 
-NS_ASSUME_NONNULL_BEGIN
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        // Set default values
+        _headingFilter = 1;
+        _headingOrientation = CLDeviceOrientationPortrait;
+        _displayHeadingCalibration = NO;
+    }
+    return self;
+}
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    SKHeadingConfiguration *configuration = [super copyWithZone:zone];
+    configuration.headingFilter = _headingFilter;
+    configuration.headingOrientation = _headingOrientation;
+    configuration.displayHeadingCalibration = _displayHeadingCalibration;
+    
+    return configuration;
+}
 
-/**
- Βlock to be invoked when new sensor data is available. You can cast the sensorData object into the actual sensor data (e.g. SKAccelerometerData), based on the reported sensorType.
+- (BOOL)isValidForSensor:(SKSensorType)sensorType
+{
+    return sensorType == Heading;
+}
 
- @param sensorType The type of the sensor producing the SKSensorData object.
- @param sensorData The new sensor data produced by the SKSensorType sensor.
- @param error This pointer is NULL if an error has occured and sensor data is not available.
- */
-typedef void (^SKSensorDataHandler)(SKSensorType sensorType, SKSensorData * __nullable sensorData, NSError * __nullable error);
-
-NS_ASSUME_NONNULL_END
+@end
