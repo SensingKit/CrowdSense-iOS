@@ -15,6 +15,9 @@
 
 #import "ALDisk.h"
 
+@import AVFoundation;
+@import CoreBluetooth;
+
 @interface CSTestDeviceViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *testDeviceButton;
@@ -101,7 +104,6 @@
         [self.errors addObject:testMemoryError];
     }
     
-    
     // Test Registration
     NSArray *errors = [self testRegistration];
     if (errors) {
@@ -135,6 +137,12 @@
     // Close session
     [self.sensingSession close];
     
+    // Test Permissions
+    errors = [self testPermissions];
+    if (errors) {
+        [self.errors addObjectsFromArray:errors];
+    }
+    
     // Report
     if (self.errors.count) {
         
@@ -153,6 +161,47 @@
     }
     
     self.testDeviceButton.hidden = YES;
+}
+
+ - (NSArray *)testPermissions
+{
+    // Array that will hold a list of errors (hopefully will remain empty)
+    NSMutableArray *errorArray = [[NSMutableArray alloc] initWithCapacity:5];
+    
+    // Check Microphone permission
+    if ([AVAudioSession sharedInstance].recordPermission == AVAudioSessionRecordPermissionDenied) {
+        [errorArray addObject:@"Microphone permission is denied."];
+    }
+    else if ([AVAudioSession sharedInstance].recordPermission == AVAudioSessionRecordPermissionUndetermined) {
+        [errorArray addObject:@"Microphone permission is undetermined."];
+    }
+    // else all ok (AVAudioSessionRecordPermissionGranted)
+    
+    
+    // Check Location permission
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [errorArray addObject:@"Location Services permission is undetermined."];
+    }
+    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted) {
+        [errorArray addObject:@"Location Services permission is restricted."];
+    }
+    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+        [errorArray addObject:@"Location Services permission is denied."];
+    }
+    // else all ok
+    
+    
+    // Check Motion permission
+    // Not possible at the moment
+    
+    
+    // return
+    if (errorArray.count) {
+        return errorArray;
+    }
+    else {
+        return nil;
+    }
 }
 
 - (NSArray *)testRegistration

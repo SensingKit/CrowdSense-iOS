@@ -8,6 +8,7 @@
 
 #import "CSAlmostReadyViewController.h"
 #import "CSCalibrationViewController.h"
+@import AVFoundation;
 
 @interface CSAlmostReadyViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -44,14 +45,22 @@
 
 - (IBAction)takePicture:(id)sender
 {
-    // Ask for password before continuing
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = NO;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-    
-    [self presentViewController:picker animated:YES completion:NULL];
+    if ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] == AVAuthorizationStatusRestricted) {
+        [self alertWithTitle:@"Permission Restricted" withMessage:@"Please change the Camera permission in Settings > Privacy > Camera."];
+    }
+    else if ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] == AVAuthorizationStatusDenied) {
+         [self alertWithTitle:@"Permission Denied" withMessage:@"Please change the Camera permission in Settings > Privacy > Camera."];
+    }
+    else {
+        // Ask for password before continuing
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = NO;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
     
 }
 
@@ -113,6 +122,18 @@
     
     // Show the alert
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
 }
 
 @end
