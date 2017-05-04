@@ -310,7 +310,7 @@
 
 - (NSString *)testMemory {
     
-    if ([ALDisk freeDiskSpaceInBytes] / 1000000 < 250) {
+    if ([ALDisk freeDiskSpaceInBytes] / 1000000 < 300) {
         return @"- Your device does not have enough disk space. Please free up some space and try again.";
     }
     
