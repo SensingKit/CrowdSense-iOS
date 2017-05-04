@@ -42,6 +42,8 @@
 	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>CrowdSense requires this access in order to record your proximity with external Eddystone beacons in range.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need this access in order to capture a picture of your face and correlate your sensor data with the camera recording.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>CrowdSense requires this access in order to record location data, even when the app runs in the background.</string>
 	<key>NSLocationUsageDescription</key>
@@ -51,9 +53,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>CrowdSense requires this access in order to record audio data using the Microphone sensor.</string>
 	<key>NSMotionUsageDescription</key>
-	<string>CrowdSense requires this access in order to record your motion and fitness activity using the device&apos;s sensors.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need this access in order to capture a picture of your face and correlate your sensor data with the camera recording.</string>
+	<string>CrowdSense requires this access in order to record your motion and fitness activity using the device's sensors.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -71,6 +71,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
