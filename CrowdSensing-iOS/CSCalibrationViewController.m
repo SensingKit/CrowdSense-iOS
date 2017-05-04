@@ -51,7 +51,7 @@
 
 - (IBAction)recordAction:(id)sender
 {
-    NSTimeInterval recordingDuration = 5.0; // seconds
+    NSTimeInterval recordingDuration = 30.0; // seconds
     
     NSError *error;
     [self.sensingSession start:&error];
