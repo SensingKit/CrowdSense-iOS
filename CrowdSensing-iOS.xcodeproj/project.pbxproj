@@ -97,6 +97,7 @@
 		CF38EB431C03519300CAE092 /* NSString+CSTimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSTimeInterval.m"; sourceTree = "<group>"; };
 		CF5198C31EBB865900E0786C /* CSTestReportingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTestReportingViewController.h; sourceTree = "<group>"; };
 		CF5198C41EBB865900E0786C /* CSTestReportingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTestReportingViewController.m; sourceTree = "<group>"; };
+		CF5198C61EBB9C8A00E0786C /* CrowdSensing-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CrowdSensing-iOS.entitlements"; sourceTree = "<group>"; };
 		CF5298971A0D1141002A4D54 /* SKStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKStyles.h; path = "CrowdSensing-iOS/SKStyles.h"; sourceTree = "<group>"; };
 		CF5298981A0D1141002A4D54 /* SKStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKStyles.m; path = "CrowdSensing-iOS/SKStyles.m"; sourceTree = "<group>"; };
 		CF65BAD01E730FFF00AD143B /* CSInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInformationViewController.h; sourceTree = "<group>"; };
@@ -152,7 +153,6 @@
 		CFD450271B885C4900E2E78D /* CSRecordingLogModelWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingLogModelWriter.h; sourceTree = "<group>"; };
 		CFD450281B885C4900E2E78D /* CSRecordingLogModelWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingLogModelWriter.m; sourceTree = "<group>"; };
 		CFD450421B8A0DEC00E2E78D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
-		CFF3D0A21E6F18D8009EB542 /* CrowdSensing-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CrowdSensing-iOS.entitlements"; sourceTree = "<group>"; };
 		CFFF325219796BF600F7CE57 /* CrowdSensing-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrowdSensing-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF325519796BF600F7CE57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFFF325719796BF600F7CE57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -349,7 +349,7 @@
 		CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CFF3D0A21E6F18D8009EB542 /* CrowdSensing-iOS.entitlements */,
+				CF5198C61EBB9C8A00E0786C /* CrowdSensing-iOS.entitlements */,
 				CFFF327019796BF600F7CE57 /* Images.xcassets */,
 				CF8E9BEC1B342C6D005AC2FC /* CSMainTableTableViewController.h */,
 				CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */,
@@ -475,6 +475,7 @@
 				TargetAttributes = {
 					CFFF325119796BF600F7CE57 = {
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -777,6 +778,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "CrowdSensing-iOS/CrowdSensing-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 9T92P8D3FB;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -791,6 +793,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.sensingkit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -807,6 +810,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "CrowdSensing-iOS/CrowdSensing-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 9T92P8D3FB;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -821,6 +825,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.sensingkit.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CrowdSensing-iOS/CrowdSensing-iOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
