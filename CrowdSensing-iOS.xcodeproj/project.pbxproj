@@ -806,7 +806,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "CrowdSensing-iOS/CrowdSensing-iOS.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 9T92P8D3FB;
 				FRAMEWORK_SEARCH_PATHS = (
