@@ -9,6 +9,7 @@
 #import "CSTestDeviceViewController.h"
 #import "CSConsentFormViewController.h"
 #import "CSSubmitDataViewController.h"
+#import "CSTestReportingViewController.h"
 
 #import <SensingKit/SensingKit.h>
 #import "CSSensingSession.h"
@@ -80,6 +81,11 @@
         controller.sensingSession = self.sensingSession;
         controller.information = self.information;
     }
+    else if ([segue.identifier isEqualToString:@"Report Errors"]) {
+        
+        CSTestReportingViewController *controller = (CSTestReportingViewController *)segue.destinationViewController;
+        controller.errors = self.errors;
+    }
 }
 
 - (IBAction)nextButtonAction:(id)sender
@@ -146,10 +152,7 @@
     // Report
     if (self.errors.count) {
         
-        // Report errors
-        for (NSString *error in self.errors) {
-            [self alertWithTitle:@"Warning" withMessage:error];
-        }
+        [self performSegueWithIdentifier:@"Report Errors" sender:self];
         
     }
     else
@@ -170,23 +173,23 @@
     
     // Check Microphone permission
     if ([AVAudioSession sharedInstance].recordPermission == AVAudioSessionRecordPermissionDenied) {
-        [errorArray addObject:@"Microphone permission is denied."];
+        [errorArray addObject:@"- Microphone permission is denied. Please visit Settings > Privacy > Microphone and enable the access for the app CrowdSense."];
     }
     else if ([AVAudioSession sharedInstance].recordPermission == AVAudioSessionRecordPermissionUndetermined) {
-        [errorArray addObject:@"Microphone permission is undetermined."];
+        [errorArray addObject:@"- Microphone permission is undetermined."];
     }
     // else all ok (AVAudioSessionRecordPermissionGranted)
     
     
     // Check Location permission
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
-        [errorArray addObject:@"Location Services permission is undetermined."];
+        [errorArray addObject:@"- Location Services permission is undetermined."];
     }
     else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted) {
-        [errorArray addObject:@"Location Services permission is restricted."];
+        [errorArray addObject:@"- Location Services permission is restricted. Please visit Settings > Privacy > Location Services and change the access for the app CrowdSense to 'While Using the App' or 'Always'."];
     }
     else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
-        [errorArray addObject:@"Location Services permission is denied."];
+        [errorArray addObject:@"- Location Services permission is denied. Please visit Settings > Privacy > Location Services and change the access for the app CrowdSense to 'While Using the App' or 'Always'."];
     }
     // else all ok
     
@@ -234,7 +237,7 @@
 - (NSString *)testSensorRegistration:(SKSensorType)sensorType {
     
     if (![self.sensingSession isSensorAvailable:sensorType]) {
-         return [NSString stringWithFormat:@"Sensor '%@' is not available.", [NSString stringWithSensorType:sensorType]];
+         return [NSString stringWithFormat:@"- Sensor '%@' is not available.", [NSString stringWithSensorType:sensorType]];
     }
     
     // Create the configuration (folder path is only needed in the Microphone sensor)
@@ -242,7 +245,7 @@
     
     NSError *error;
     if (![self.sensingSession enableSensor:sensorType withConfiguration:configuration withError:&error]) {
-        return error.localizedDescription;
+        return [NSString stringWithFormat:@"- %@", error.localizedDescription];
     };
         
     return nil;
@@ -252,7 +255,7 @@
 {
     NSError *error;
     if (![self.sensingSession start:&error]) {
-        return error.localizedDescription;
+        return [NSString stringWithFormat:@"- %@", error.localizedDescription];
     }
 
     return nil;
@@ -262,7 +265,7 @@
 {
     NSError *error;
     if (![self.sensingSession stop:&error]) {
-        return error.localizedDescription;
+        return [NSString stringWithFormat:@"- %@", error.localizedDescription];
     }
     
     return nil;
@@ -299,7 +302,7 @@
     
     NSError *error;
     if (![self.sensingSession disableSensor:sensorType withError:&error]) {
-        return error.localizedDescription;
+        return [NSString stringWithFormat:@"- %@", error.localizedDescription];
     };
     
     return nil;
@@ -308,7 +311,7 @@
 - (NSString *)testMemory {
     
     if ([ALDisk freeDiskSpaceInBytes] / 1000000 < 250) {
-        return @"Your device does not have enough disk space.";
+        return @"- Your device does not have enough disk space. Please free up some space and try again.";
     }
     
     return nil;
@@ -323,20 +326,6 @@
                                           otherButtonTitles:@"OK", nil];
     
     [alert show];
-}
-
-- (void)initSensingInFolderPath:(NSURL *)folderPath
-{
-    for (NSNumber *sensor in self.sensors) {
-        SKSensorType sensorType = sensor.unsignedIntegerValue;
-        
-        if ([self.sensingSession isSensorAvailable:sensorType]) {
-            
-            SKConfiguration *configuration = [self createConfigurationForSensor:sensorType withFolderPath:folderPath];
-            [self.sensingSession enableSensor:sensorType withConfiguration:configuration withError:nil];
-            
-        }
-    }
 }
 
 - (SKConfiguration *)createConfigurationForSensor:(SKSensorType)sensorType withFolderPath:(NSURL *)folderPath

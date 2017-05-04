@@ -1873,11 +1873,70 @@ Please remain silent and tap at the "Test Device" button when you are ready. Don
                         <outlet property="testDeviceButton" destination="ght-5R-e7s" id="9ee-BZ-ryl"/>
                         <segue destination="yaM-wB-mAJ" kind="show" identifier="Show Submit Data" id="NqI-2B-zHx"/>
                         <segue destination="LtS-ZF-Jy5" kind="show" identifier="Show Consent Form" id="Sba-UQ-gq0"/>
+                        <segue destination="Hby-hh-lbu" kind="show" identifier="Report Errors" id="DwR-Dn-ddI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbj-42-iys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="640.79999999999995" y="3402.5487256371816"/>
+        </scene>
+        <!--Testing Report-->
+        <scene sceneID="ajZ-ch-hgE">
+            <objects>
+                <viewController title="Testing Report" id="Hby-hh-lbu" customClass="CSTestReportingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BKN-tt-o8p"/>
+                        <viewControllerLayoutGuide type="bottom" id="E8o-Ym-LIP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IVt-Oj-nFY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cZ-iT-ddg">
+                                <rect key="frame" x="16" y="592" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="TdJ-Ak-G53"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="55" id="UxA-DM-4xW"/>
+                                    <constraint firstAttribute="height" constant="55" id="jwX-21-h8B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Finish"/>
+                                <connections>
+                                    <action selector="finishAction:" destination="Hby-hh-lbu" eventType="touchUpInside" id="Viy-iI-FaM"/>
+                                    <action selector="finishAction:" destination="yaM-wB-mAJ" eventType="touchUpInside" id="gIi-hp-NJ8"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FAm-1L-dnf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">We have identified some issues that makes your device incompatible with the study. Please resolve the reported issues and try again. Feel free to contact us at k.katevas@qmul.ac.uk if you need any help.
+
+Report:
+
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FAm-1L-dnf" firstAttribute="leading" secondItem="IVt-Oj-nFY" secondAttribute="leading" id="ELm-yd-utS"/>
+                            <constraint firstItem="6cZ-iT-ddg" firstAttribute="top" secondItem="FAm-1L-dnf" secondAttribute="bottom" constant="8" id="NHr-wL-t3r"/>
+                            <constraint firstItem="6cZ-iT-ddg" firstAttribute="leading" secondItem="IVt-Oj-nFY" secondAttribute="leadingMargin" id="Slj-M8-LKA"/>
+                            <constraint firstAttribute="trailing" secondItem="FAm-1L-dnf" secondAttribute="trailing" id="W18-V1-VTq"/>
+                            <constraint firstItem="FAm-1L-dnf" firstAttribute="top" secondItem="BKN-tt-o8p" secondAttribute="bottom" id="faK-M7-Iib"/>
+                            <constraint firstItem="E8o-Ym-LIP" firstAttribute="top" secondItem="6cZ-iT-ddg" secondAttribute="bottom" constant="20" id="neD-6k-lpD"/>
+                            <constraint firstItem="6cZ-iT-ddg" firstAttribute="trailing" secondItem="IVt-Oj-nFY" secondAttribute="trailingMargin" id="oOQ-4c-TXJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="reportTextView" destination="FAm-1L-dnf" id="Dpm-t9-gAH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="faf-vg-ayv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.79999999999995" y="4275.1124437781109"/>
         </scene>
         <!--Consent Form-->
         <scene sceneID="oOC-Ru-UTs">
