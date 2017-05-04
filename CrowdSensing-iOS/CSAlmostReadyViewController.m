@@ -77,7 +77,7 @@
 - (IBAction)NextAction:(id)sender
 {
     // Ask for password before continuing
-    [self askPassword:@"1111" toPerformSegueWithIdentifier:@"Show Calibration"];
+    [self askPassword:@"3864" toPerformSegueWithIdentifier:@"Show Calibration"];
 }
 
 

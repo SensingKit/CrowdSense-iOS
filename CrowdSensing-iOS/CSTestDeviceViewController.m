@@ -102,7 +102,7 @@
 {
     self.testDeviceButton.enabled = NO;
     
-    NSTimeInterval testingDuration = 5.0; // seconds
+    NSTimeInterval testingDuration = 30.0; // seconds
     
     // Test Memory
     NSString *testMemoryError = [self testMemory];

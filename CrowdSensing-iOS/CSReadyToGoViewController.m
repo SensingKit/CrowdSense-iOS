@@ -44,7 +44,7 @@
 
 - (IBAction)startAction:(id)sender
 {
-    [self askPassword:@"3333" toPerformSegueWithIdentifier:@"Show Experiment"];
+    [self askPassword:@"1928" toPerformSegueWithIdentifier:@"Show Experiment"];
 }
 
 - (void)askPassword:(NSString *)password toPerformSegueWithIdentifier:(NSString *)identifier {
