@@ -1683,7 +1683,7 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKC-T4-2hr">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
+                                <mutableString key="text">Thank you for your interest in the research study “Identify and model different qualities of social interactions inside crowds”.
 
 During this experiment, data will be recorded about your motion activity as well as the ways you interact with the other participants. You will also be asked to socialise with other people for one hour, while the application is collecting anonymous data about your motion, location, activity (e.g. stationary, walking, running), steps taken, proximity between other participants, as well as the power consumption impact it has in your smartphone’s battery.
 
@@ -1702,7 +1702,7 @@ Cognitive Science Research Group
 Queen Mary University of London
 London, UK
 
-If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</string>
+If you have any questions or concerns about the manner in which the study was conducted please, in the first instance, contact the researcher responsible for the study.  If this is unsuccessful, or not appropriate, please contact the Secretary at the Queen Mary Ethics of Research Committee, Room W117, Queen’s Building, Mile End Campus, Mile End Road, London or research-ethics@qmul.ac.uk.</mutableString>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1964,7 +1964,7 @@ Report:
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J16-JB-dvF">
                                 <rect key="frame" x="16" y="72" width="343" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Please complete this form after you have read the Information Sheet and/or listened to an explanation about the research.
+                                <mutableString key="text">Please complete this form after you have read the Information Sheet and/or listened to an explanation about the research.
 
 Title of Study:
 Identify and model different qualities of social interactions inside crowds
@@ -1982,7 +1982,7 @@ Queen Mary Ethics of Research Committee Ref: QMREC1543a
 Participant’s Statement:
 
 By tapping at the following button, I agree that the research project named above has been explained to me to my satisfaction and I agree to take part in the study. I have read both the notes written above and the Information Sheet about the project, and understand what the research study involves.
-</string>
+</mutableString>
                                 <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2029,19 +2029,19 @@ By tapping at the following button, I agree that the research project named abov
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="years old" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZMx-b4-ayk">
-                                                <rect key="frame" x="149" y="120" width="218" height="30"/>
+                                                <rect key="frame" x="167" y="120" width="200" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="new-Ix-Ykm">
-                                                <rect key="frame" x="149" y="158" width="218" height="30"/>
+                                                <rect key="frame" x="167" y="158" width="200" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-Xl-tyG">
-                                                <rect key="frame" x="149" y="196" width="218" height="30"/>
+                                                <rect key="frame" x="167" y="196" width="200" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -2080,9 +2080,9 @@ By tapping at the following button, I agree that the research project named abov
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-lc-GKi">
-                                                <rect key="frame" x="149" y="84" width="218" height="29"/>
+                                                <rect key="frame" x="167" y="84" width="200" height="29"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="218" id="awt-hV-sZ5"/>
+                                                    <constraint firstAttribute="width" constant="200" id="awt-hV-sZ5"/>
                                                 </constraints>
                                                 <segments>
                                                     <segment title="Male"/>
