@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9AFAFBF62FDE88A3579FB80D /* Pods_CrowdSensing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEA1D02208577FE9512130 /* Pods_CrowdSensing_iOS.framework */; };
+		CF1486531EED5E7700A2F5E5 /* CSDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1486521EED5E7700A2F5E5 /* CSDemoViewController.m */; };
 		CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */; };
 		CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39519ED446500E295CB /* CSSensorSetupTableViewController.m */; };
 		CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */; };
@@ -77,6 +78,8 @@
 		65B684E43645E885F3B88184 /* Pods-CrowdSensing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		70FEA1D02208577FE9512130 /* Pods_CrowdSensing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdSensing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D822FC1F2BA8C91854A824 /* Pods-CrowdSensing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		CF1486511EED5E7700A2F5E5 /* CSDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDemoViewController.h; sourceTree = "<group>"; };
+		CF1486521EED5E7700A2F5E5 /* CSDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSDemoViewController.m; sourceTree = "<group>"; };
 		CF18C39119ED439B00E295CB /* CSSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSetupTableViewController.h; sourceTree = "<group>"; };
 		CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSetupTableViewController.m; sourceTree = "<group>"; };
 		CF18C39419ED446500E295CB /* CSSensorSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensorSetupTableViewController.h; sourceTree = "<group>"; };
@@ -198,6 +201,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF1486501EED5E6100A2F5E5 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				CF1486511EED5E7700A2F5E5 /* CSDemoViewController.h */,
+				CF1486521EED5E7700A2F5E5 /* CSDemoViewController.m */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
 		CF18C38A19ED408800E295CB /* Setup */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +384,7 @@
 				CF18C38A19ED408800E295CB /* Setup */,
 				CFC896621B8E4997004F857C /* Model */,
 				CFFF325C19796BF600F7CE57 /* Supporting Files */,
+				CF1486501EED5E6100A2F5E5 /* Demo */,
 				CF65BACF1E730F9A00AD143B /* Experiment */,
 				CFFF326719796BF600F7CE57 /* Storyboard.storyboard */,
 				CFD450421B8A0DEC00E2E78D /* Settings.bundle */,
@@ -602,6 +615,7 @@
 				CF65BADE1E73103300AD143B /* CSQuestionnaireViewController.m in Sources */,
 				CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */,
 				CF93F2691E742BC30060A5F5 /* ALDisk.m in Sources */,
+				CF1486531EED5E7700A2F5E5 /* CSDemoViewController.m in Sources */,
 				CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */,
 				CF65BAE41E73104600AD143B /* CSCalibrationViewController.m in Sources */,
 				CF65BAED1E73105E00AD143B /* CSSubmitDataViewController.m in Sources */,

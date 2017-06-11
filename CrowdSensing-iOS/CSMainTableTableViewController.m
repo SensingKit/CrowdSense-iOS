@@ -217,7 +217,8 @@
 
 - (IBAction)showExperimentAction:(id)sender
 {
-    [self userInput];
+    //[self userInput];
+    [self performSegueWithIdentifier:@"Show Demo" sender:self];
 }
 
 - (void)checkCoupon:(NSString *)coupon
