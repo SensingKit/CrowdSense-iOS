@@ -1504,7 +1504,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Demo" id="500-ux-Mon">
+                        <barButtonItem title="MobiSys'17 Demo" id="500-ux-Mon">
                             <connections>
                                 <action selector="showExperimentAction:" destination="Oex-SW-Hps" id="ZWb-ff-oVy"/>
                             </connections>
@@ -1799,18 +1799,6 @@ If you have any questions or concerns about the manner in which the study was co
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bzs-Nd-Ifo">
-                                <rect key="frame" x="16" y="282" width="343" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="orE-bD-4bm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Join Demo"/>
-                                <connections>
-                                    <action selector="iAgreeAction:" destination="LtS-ZF-Jy5" eventType="touchUpInside" id="wUa-Jh-NQc"/>
-                                    <action selector="joinDemo:" destination="WDC-KX-hUU" eventType="touchUpInside" id="EvN-Hc-ZRM"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0l-32-7LP">
                                 <rect key="frame" x="16" y="210" width="120" height="30"/>
                                 <constraints>
@@ -1822,8 +1810,9 @@ If you have any questions or concerns about the manner in which the study was co
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server IP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rum-0B-qjw">
-                                <rect key="frame" x="16" y="248" width="120" height="20.5"/>
+                                <rect key="frame" x="16" y="248" width="120" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6fB-40-tvh"/>
                                     <constraint firstAttribute="width" constant="120" id="KOO-V6-xku"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1835,7 +1824,7 @@ If you have any questions or concerns about the manner in which the study was co
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="USz-XV-e4d"/>
                                 </constraints>
-                                <string key="text">You will first need to connect to our CrowdSenseServer Wi-Fi network. Then just type you name, tap at the 'Join Demo' button and start socializing!</string>
+                                <string key="text">You will first need to connect to our CrowdSenseServer Wi-Fi network. Then type you name, enable the 'Join Demo' switch and start socializing!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1847,27 +1836,38 @@ If you have any questions or concerns about the manner in which the study was co
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="192.168.0.2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rzs-SA-uWi">
-                                <rect key="frame" x="144" y="244" width="215" height="30"/>
+                                <rect key="frame" x="144" y="248" width="215" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Join Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIQ-1e-thm">
+                                <rect key="frame" x="16" y="299" width="286" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q6E-yA-qR6">
+                                <rect key="frame" x="310" y="306" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="WDC-KX-hUU" eventType="valueChanged" id="4Oz-95-k4d"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YoW-PR-WJv" firstAttribute="top" secondItem="Kj1-cj-eS6" secondAttribute="bottom" constant="8" id="7m8-LT-XYZ"/>
                             <constraint firstItem="0hd-sS-rrO" firstAttribute="top" secondItem="YoW-PR-WJv" secondAttribute="bottom" constant="8" id="7pd-0n-nw9"/>
                             <constraint firstItem="YoW-PR-WJv" firstAttribute="leading" secondItem="Ynu-xB-9LE" secondAttribute="leadingMargin" id="8au-LY-q9f"/>
-                            <constraint firstItem="rzs-SA-uWi" firstAttribute="top" secondItem="0hd-sS-rrO" secondAttribute="bottom" constant="4" id="93C-Ob-gff"/>
-                            <constraint firstItem="Bzs-Nd-Ifo" firstAttribute="trailing" secondItem="Ynu-xB-9LE" secondAttribute="trailingMargin" id="Ddn-J1-dpd"/>
                             <constraint firstItem="rzs-SA-uWi" firstAttribute="trailing" secondItem="Ynu-xB-9LE" secondAttribute="trailingMargin" id="GKN-V9-Im7"/>
                             <constraint firstItem="rum-0B-qjw" firstAttribute="leading" secondItem="Ynu-xB-9LE" secondAttribute="leadingMargin" id="HzP-h9-u2s"/>
-                            <constraint firstItem="Bzs-Nd-Ifo" firstAttribute="top" secondItem="rzs-SA-uWi" secondAttribute="bottom" constant="8" id="JHe-ei-VWI"/>
                             <constraint firstItem="rzs-SA-uWi" firstAttribute="leading" secondItem="rum-0B-qjw" secondAttribute="trailing" constant="8" id="PyG-8n-RtX"/>
                             <constraint firstItem="0hd-sS-rrO" firstAttribute="leading" secondItem="S0l-32-7LP" secondAttribute="trailing" constant="8" id="U4y-y3-9c4"/>
                             <constraint firstItem="S0l-32-7LP" firstAttribute="top" secondItem="YoW-PR-WJv" secondAttribute="bottom" constant="8" id="ZXH-jC-hJ1"/>
+                            <constraint firstItem="rzs-SA-uWi" firstAttribute="top" secondItem="0hd-sS-rrO" secondAttribute="bottom" constant="8" id="f9S-m4-Oqj"/>
                             <constraint firstItem="rum-0B-qjw" firstAttribute="top" secondItem="S0l-32-7LP" secondAttribute="bottom" constant="8" id="jHX-pB-GNR"/>
-                            <constraint firstItem="Bzs-Nd-Ifo" firstAttribute="leading" secondItem="Ynu-xB-9LE" secondAttribute="leadingMargin" id="qPG-1V-Kbw"/>
                             <constraint firstItem="YoW-PR-WJv" firstAttribute="trailing" secondItem="Ynu-xB-9LE" secondAttribute="trailingMargin" id="uJq-yA-ENX"/>
                             <constraint firstItem="0hd-sS-rrO" firstAttribute="trailing" secondItem="Ynu-xB-9LE" secondAttribute="trailingMargin" id="wVC-eh-fPf"/>
                             <constraint firstItem="S0l-32-7LP" firstAttribute="leading" secondItem="Ynu-xB-9LE" secondAttribute="leadingMargin" id="wit-1q-zw9"/>
@@ -1881,7 +1881,9 @@ If you have any questions or concerns about the manner in which the study was co
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="joinDemoButton" destination="Bzs-Nd-Ifo" id="ATT-VX-jhc"/>
+                        <outlet property="joinDemoSwitch" destination="q6E-yA-qR6" id="s7s-PQ-WgJ"/>
+                        <outlet property="nameTextField" destination="0hd-sS-rrO" id="dgG-oh-mMV"/>
+                        <outlet property="serverTextField" destination="rzs-SA-uWi" id="OA2-Yv-XBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaW-SV-A1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
