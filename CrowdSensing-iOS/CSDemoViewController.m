@@ -24,6 +24,7 @@
 @property (nonatomic) NSUInteger deviceID;
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSDictionary *configuration;
 
 @end
 
@@ -33,6 +34,7 @@
     [super viewDidLoad];
     
     self.sensingKit = [SensingKitLib sharedSensingKitLib];
+    self.configuration = [self getConfiguration];
     [self initNetworkCommunication];
 }
 
@@ -76,7 +78,11 @@
 - (void)initSensingWithID:(NSUInteger)deviceID;
 {
     [self initBeaconSensingWithID:deviceID];
-    [self initHeadingSensing];
+    
+    if (self.configuration[@"heading"]) {
+        [self initHeadingSensing];
+        NSLog(@"Heading feature is enabled.");
+    }
 }
 
 - (void)initBeaconSensingWithID:(NSUInteger)deviceID
@@ -103,7 +109,7 @@
     [self.sensingKit subscribeToSensor:iBeaconProximity withHandler:^(SKSensorType sensorType, SKSensorData * _Nullable sensorData, NSError * _Nullable error) {
         
         if (!error) {
-            NSString *data = [NSString stringWithFormat:@"%@,%@", @"BEACON", sensorData.csvString];
+            NSString *data = [NSString stringWithFormat:@"%@,%lu,%@;", @"BEACON", self.deviceID, sensorData.csvString];
             [self sendData:data];
         }
         
@@ -121,8 +127,12 @@
         [self alertWithTitle:@"Error" withMessage:@"Heading sensor is not available in your device." withHandler:nil];
         return;
     }
-    
+    NSNumber *filter = self.configuration[@"heading_filter"];
     SKHeadingConfiguration *configuration = [[SKHeadingConfiguration alloc] init];
+    if (filter) {
+        NSLog(@"Heading Filter: %@", filter);
+        configuration.headingFilter = filter.unsignedIntegerValue;
+    }
     configuration.displayHeadingCalibration = YES;
     
     NSError *error;
@@ -136,7 +146,7 @@
     [self.sensingKit subscribeToSensor:Heading withHandler:^(SKSensorType sensorType, SKSensorData * _Nullable sensorData, NSError * _Nullable error) {
         
         if (!error) {
-            NSString *data = [NSString stringWithFormat:@"%@,%@", @"HEADING", sensorData.csvString];
+            NSString *data = [NSString stringWithFormat:@"%@,%lu,%@;", @"HEADING", self.deviceID, sensorData.csvString];
             [self sendData:data];
         }
         
@@ -150,17 +160,15 @@
 
 #pragma mark Streaming Communication
 
-- (NSString *)getIP
+- (NSDictionary *)getConfiguration
 {
-    // return @"192.168.0.1";
-    
     NSURL *url = [NSURL URLWithString:@"https://www.sensingkit.org/MobiSys17-Demo.json"];
     NSData *receivedData = [NSData dataWithContentsOfURL:url];
     
     if (!receivedData)
     {
         [self alertWithTitle:@"Network Error" withMessage:@"Please make sure you are connected with MobiSys'17 Wi-Fi network." withHandler:nil];
-        return @"192.168.10.10";
+        return nil;
     }
     
     NSError *error = nil;
@@ -170,12 +178,11 @@
         
     if (error) {
         [self alertWithTitle:@"Error" withMessage:error.localizedDescription withHandler:nil];
-        return @"192.168.10.10";
+        return nil;
     }
         
-    NSString *ip = jsonDictionary[@"ip"];
-    NSLog(@"IP: %@", ip);
-    return ip;
+    NSLog(@"IP: %@", jsonDictionary[@"ip"]);
+    return jsonDictionary;
 }
 
 - (void)initNetworkCommunication
@@ -183,7 +190,7 @@
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     
-    NSString *ip = [self getIP];
+    NSString *ip = self.configuration[@"ip"];
     
     if (!ip)
     {
@@ -276,7 +283,7 @@
     if (sender.on)
     {
         // Send Name
-        [self sendData:[NSString stringWithFormat:@"SET_NAME,%lu,%@", (unsigned long)self.deviceID, self.name]];
+        [self sendData:[NSString stringWithFormat:@"SET_NAME,%lu,%@;", (unsigned long)self.deviceID, self.name]];
         
         // Proximity Monitoring and idle timer
         [UIDevice currentDevice].proximityMonitoringEnabled = YES;
