@@ -109,7 +109,15 @@
     [self.sensingKit subscribeToSensor:iBeaconProximity withHandler:^(SKSensorType sensorType, SKSensorData * _Nullable sensorData, NSError * _Nullable error) {
         
         if (!error) {
-            NSString *data = [NSString stringWithFormat:@"%@,%lu,%@;", @"BEACON", self.deviceID, sensorData.csvString];
+            SKiBeaconDeviceData *beaconData = (SKiBeaconDeviceData *)sensorData;
+            
+            // Format: B,deviceID,minor,rssi,accuracy;
+            NSString *data = [NSString stringWithFormat:@"B,%lu,%hu,%ld,%f;",
+                              (unsigned long)self.deviceID,
+                              beaconData.minor,
+                              (long)beaconData.rssi,
+                              beaconData.accuracy];
+            
             [self sendData:data];
         }
         
@@ -146,7 +154,16 @@
     [self.sensingKit subscribeToSensor:Heading withHandler:^(SKSensorType sensorType, SKSensorData * _Nullable sensorData, NSError * _Nullable error) {
         
         if (!error) {
-            NSString *data = [NSString stringWithFormat:@"%@,%lu,%@;", @"HEADING", self.deviceID, sensorData.csvString];
+            SKHeadingData *headerData = (SKHeadingData *)sensorData;
+            CLHeading *heading = headerData.heading;
+            
+            // Format: H,deviceID,magneticHeading,trueHeading,headingAccuracy;
+            NSString *data = [NSString stringWithFormat:@"H,%lu,%f,%f,%f;",
+                              (unsigned long)self.deviceID,
+                              heading.magneticHeading,
+                              heading.trueHeading,
+                              heading.headingAccuracy];
+            
             [self sendData:data];
         }
         
