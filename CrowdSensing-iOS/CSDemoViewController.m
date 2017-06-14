@@ -24,7 +24,6 @@
 @property (nonatomic) NSUInteger deviceID;
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSDictionary *configuration;
 
 @end
 
@@ -34,7 +33,6 @@
     [super viewDidLoad];
     
     self.sensingKit = [SensingKitLib sharedSensingKitLib];
-    self.configuration = [self getConfiguration];
     [self initNetworkCommunication];
 }
 
@@ -176,31 +174,6 @@
 }
 
 #pragma mark Streaming Communication
-
-- (NSDictionary *)getConfiguration
-{
-    NSURL *url = [NSURL URLWithString:@"https://www.sensingkit.org/MobiSys17-Demo.json"];
-    NSData *receivedData = [NSData dataWithContentsOfURL:url];
-    
-    if (!receivedData)
-    {
-        [self alertWithTitle:@"Network Error" withMessage:@"Please make sure you are connected with MobiSys'17 Wi-Fi network." withHandler:nil];
-        return nil;
-    }
-    
-    NSError *error = nil;
-    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:receivedData
-                                                                   options:kNilOptions
-                                                                     error:&error];
-        
-    if (error) {
-        [self alertWithTitle:@"Error" withMessage:error.localizedDescription withHandler:nil];
-        return nil;
-    }
-        
-    NSLog(@"IP: %@", jsonDictionary[@"ip"]);
-    return jsonDictionary;
-}
 
 - (void)initNetworkCommunication
 {

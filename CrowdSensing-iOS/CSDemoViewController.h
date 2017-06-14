@@ -10,4 +10,6 @@
 
 @interface CSDemoViewController : UIViewController
 
+@property (nonatomic, weak) NSDictionary *configuration;
+
 @end

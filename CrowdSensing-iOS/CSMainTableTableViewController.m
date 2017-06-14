@@ -12,6 +12,7 @@
 #import "Recording.h"
 #import "Recording+Create.h"
 #import "CSInformationViewController.h"
+#import "CSDemoViewController.h"
 
 @import AFNetworking;
 
@@ -22,6 +23,8 @@
 
 @property (nonnull, strong) NSString *experimentType;
 @property (nonnull, strong) NSString *experimentCoupon;
+
+@property (nonatomic, strong) NSDictionary *configuration;
 
 @end
 
@@ -36,6 +39,8 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self setupFetchedResultsController];
+    
+    self.configuration = [self getConfiguration];
 }
 
 - (void)didReceiveMemoryWarning
@@ -168,7 +173,12 @@
         informationViewController.type = self.experimentType;
         informationViewController.coupon = self.experimentCoupon;
     }
-
+    else if ([segue.identifier isEqualToString:@"Show Demo"])  {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        CSDemoViewController *demoViewController = (CSDemoViewController *)navigationController.topViewController;
+        demoViewController.configuration = self.configuration;
+    }
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
@@ -256,6 +266,48 @@
         [self alertWithTitle:@"Coupon Is Not Valid"
                  withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
     }
+}
+
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (NSDictionary *)getConfiguration
+{
+    NSURL *url = [NSURL URLWithString:@"https://www.sensingkit.org/MobiSys17-Demo.json"];
+    NSData *receivedData = [NSData dataWithContentsOfURL:url];
+    
+    if (!receivedData)
+    {
+        [self alertWithTitle:@"Network Error" withMessage:@"Please make sure you have a reliable Internet connection." withHandler:nil];
+        return nil;
+    }
+    
+    NSError *error = nil;
+    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:receivedData
+                                                                   options:kNilOptions
+                                                                     error:&error];
+    
+    if (error) {
+        [self alertWithTitle:@"Error" withMessage:error.localizedDescription withHandler:nil];
+        return nil;
+    }
+    
+    NSLog(@"IP: %@", jsonDictionary[@"ip"]);
+    return jsonDictionary;
 }
 
 @end
