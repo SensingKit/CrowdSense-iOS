@@ -175,6 +175,12 @@
     }
     else if ([segue.identifier isEqualToString:@"Show Demo"])  {
         
+        if (!self.configuration) {
+            self.configuration = @{@"ip": @"192.168.10.10",
+                                   @"heading": @YES,
+                                   @"heading_filter": @5};
+        }
+        
         UINavigationController *navigationController = segue.destinationViewController;
         CSDemoViewController *demoViewController = (CSDemoViewController *)navigationController.topViewController;
         demoViewController.configuration = self.configuration;
