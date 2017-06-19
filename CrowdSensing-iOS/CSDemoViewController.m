@@ -107,16 +107,19 @@
     [self.sensingKit subscribeToSensor:iBeaconProximity withHandler:^(SKSensorType sensorType, SKSensorData * _Nullable sensorData, NSError * _Nullable error) {
         
         if (!error) {
-            SKiBeaconDeviceData *beaconData = (SKiBeaconDeviceData *)sensorData;
+            SKProximityData *proximityData = (SKProximityData *)sensorData;
             
-            // Format: B,deviceID,minor,rssi,accuracy;
-            NSString *data = [NSString stringWithFormat:@"B,%lu,%hu,%ld,%f;",
-                              (unsigned long)self.deviceID,
-                              beaconData.minor,
-                              (long)beaconData.rssi,
-                              beaconData.accuracy];
-            
-            [self sendData:data];
+            for (SKiBeaconDeviceData *beaconData in proximityData.devices) {
+                
+                // Format: B,deviceID,minor,rssi,accuracy;
+                NSString *data = [NSString stringWithFormat:@"B,%lu,%d,%ld,%f;",
+                                  (unsigned long)self.deviceID,
+                                  beaconData.minor,
+                                  (long)beaconData.rssi,
+                                  beaconData.accuracy];
+                
+                [self sendData:data];
+            }
         }
         
     } error:&error];
