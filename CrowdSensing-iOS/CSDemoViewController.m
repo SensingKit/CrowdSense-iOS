@@ -8,7 +8,7 @@
 
 #import "CSDemoViewController.h"
 @import SensingKit;
-#import <sys/utsname.h>
+@import DeviceUtil;
 
 @interface CSDemoViewController () <NSStreamDelegate>
 
@@ -287,7 +287,7 @@
     {
         // Send Name and DeviceType
         [self sendData:[NSString stringWithFormat:@"SET_NAME,%lu,%@;", (unsigned long)self.deviceID, self.name]];
-        [self sendData:[NSString stringWithFormat:@"SET_DEVICE,%lu,%@;", (unsigned long)self.deviceID, deviceName()]];
+        [self sendData:[NSString stringWithFormat:@"SET_POWER,%lu,%ld;", (unsigned long)self.deviceID, (long)[self getMeasuredPower]]];
         
         // Proximity Monitoring and idle timer
         [UIDevice currentDevice].proximityMonitoringEnabled = YES;
@@ -359,13 +359,49 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-NSString* deviceName()
+- (NSInteger)getMeasuredPower
 {
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    
-    return [NSString stringWithCString:systemInfo.machine
-                              encoding:NSUTF8StringEncoding];
+    switch ([DeviceUtil hardware]) {
+            
+        case IPHONE_4S:
+            return -59;
+            
+        case IPHONE_5:
+            return -59;
+            
+        case IPHONE_5_CDMA_GSM:
+            return -59;
+            
+        case IPHONE_5C:
+            return -59;
+            
+        case IPHONE_5C_CDMA_GSM:
+            return -59;
+            
+        case IPHONE_5S:
+            return -57;
+            
+        case IPHONE_5S_CDMA_GSM:
+            return -57;
+            
+        case IPHONE_6:
+            return -56;
+            
+        case IPHONE_6_PLUS:
+            return -57;
+            
+        case IPHONE_6S:
+            return -56;
+            
+        case IPHONE_6S_PLUS:
+            return -57;
+            
+        case IPHONE_SE:
+            return -56;
+            
+        default:
+            return -57;
+    }
 }
 
 @end
