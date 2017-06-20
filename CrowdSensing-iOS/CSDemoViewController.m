@@ -8,6 +8,7 @@
 
 #import "CSDemoViewController.h"
 @import SensingKit;
+#import <sys/utsname.h>
 
 @interface CSDemoViewController () <NSStreamDelegate>
 
@@ -42,6 +43,13 @@
         [self alertWithTitle:nil withMessage:@"Please stop the demo first by turning-off the switch." withHandler:nil];
     }
     else {
+        if ([self.sensingKit isSensorRegistered:iBeaconProximity]) {
+            [self.sensingKit deregisterSensor:iBeaconProximity error:nil];
+        }
+        if ([self.sensingKit isSensorRegistered:Heading]) {
+            [self.sensingKit deregisterSensor:Heading error:nil];
+        }
+        
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -117,6 +125,8 @@
                                   beaconData.minor,
                                   (long)beaconData.rssi,
                                   beaconData.accuracy];
+                
+                NSLog(@"Data: %@", data);
                 
                 [self sendData:data];
             }
@@ -275,8 +285,9 @@
     
     if (sender.on)
     {
-        // Send Name
+        // Send Name and DeviceType
         [self sendData:[NSString stringWithFormat:@"SET_NAME,%lu,%@;", (unsigned long)self.deviceID, self.name]];
+        [self sendData:[NSString stringWithFormat:@"SET_DEVICE,%lu,%@;", (unsigned long)self.deviceID, deviceName()]];
         
         // Proximity Monitoring and idle timer
         [UIDevice currentDevice].proximityMonitoringEnabled = YES;
@@ -348,5 +359,13 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+NSString* deviceName()
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    return [NSString stringWithCString:systemInfo.machine
+                              encoding:NSUTF8StringEncoding];
+}
 
 @end
