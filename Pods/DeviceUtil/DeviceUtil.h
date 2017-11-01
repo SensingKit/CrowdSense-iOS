@@ -36,6 +36,14 @@ typedef NS_ENUM(NSUInteger, Hardware) {
   IPHONE_7_PLUS,
   IPHONE_7_PLUS_GSM,
 
+  IPHONE_8,
+  IPHONE_8_CN,
+  IPHONE_8_PLUS,
+  IPHONE_8_PLUS_CN,
+
+  IPHONE_X,
+  IPHONE_X_CN,
+
   IPOD_TOUCH_1G,
   IPOD_TOUCH_2G,
   IPOD_TOUCH_3G,
@@ -79,6 +87,11 @@ typedef NS_ENUM(NSUInteger, Hardware) {
 
   IPAD_PRO_WIFI,
   IPAD_PRO_WIFI_CELLULAR,
+  
+  IPAD_PRO_2G_WIFI,
+  IPAD_PRO_2G_WIFI_CELLULAR,
+  IPAD_PRO_105_WIFI,
+  IPAD_PRO_105_WIFI_CELLULAR,
   
   IPAD_5_WIFI,
   IPAD_5_WIFI_CELLULAR,
@@ -128,6 +141,12 @@ extern NSString* const iPhone9_1;
 extern NSString* const iPhone9_2;
 extern NSString* const iPhone9_3;
 extern NSString* const iPhone9_4;
+extern NSString* const iPhone10_1;
+extern NSString* const iPhone10_2;
+extern NSString* const iPhone10_3;
+extern NSString* const iPhone10_4;
+extern NSString* const iPhone10_5;
+extern NSString* const iPhone10_6;
 
 extern NSString* const iPod1_1;
 extern NSString* const iPod2_1;
@@ -168,6 +187,10 @@ extern NSString* const iPad6_3;
 extern NSString* const iPad6_4;
 extern NSString* const iPad6_7;
 extern NSString* const iPad6_8;
+extern NSString* const iPad7_1;
+extern NSString* const iPad7_2;
+extern NSString* const iPad7_3;
+extern NSString* const iPad7_4;
 extern NSString* const iPad6_11;
 extern NSString* const iPad6_12;
 extern NSString* const AppleTV1_1;
@@ -196,6 +219,9 @@ extern NSString* const x86_64_Sim;
 
 /** This method returns the readable description of hardware string */
 + (NSString*)hardwareDescription;
+
+/** This method returns the readable simple description of hardware string */
++ (NSString*)hardwareSimpleDescription;
 
 /**
  This method returns the hardware number not actual but logically.

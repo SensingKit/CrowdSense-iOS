@@ -179,14 +179,16 @@
 
 - (void)startScanning
 {
-    // Start monitoring
+    // Start monitoring and ranging
+    [self.locationManager startMonitoringForRegion:self.scan_beaconRegion];
     [self.locationManager startRangingBeaconsInRegion:self.scan_beaconRegion];
 }
 
 - (void)stopScanning
 {
-    // Stop monitoring
+    // Stop monitoring and ranging
     [self.locationManager stopRangingBeaconsInRegion:self.scan_beaconRegion];
+    [self.locationManager stopMonitoringForRegion:self.scan_beaconRegion];
 }
 
 - (BOOL)startSensing:(NSError **)error

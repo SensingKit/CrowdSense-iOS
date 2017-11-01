@@ -36,6 +36,12 @@ NSString* const iPhone9_1 = @"iPhone9,1";
 NSString* const iPhone9_2 = @"iPhone9,2";
 NSString* const iPhone9_3 = @"iPhone9,3";
 NSString* const iPhone9_4 = @"iPhone9,4";
+NSString* const iPhone10_1 = @"iPhone10,1";
+NSString* const iPhone10_2 = @"iPhone10,2";
+NSString* const iPhone10_3 = @"iPhone10,3";
+NSString* const iPhone10_4 = @"iPhone10,4";
+NSString* const iPhone10_5 = @"iPhone10,5";
+NSString* const iPhone10_6 = @"iPhone10,6";
 
 NSString* const iPod1_1 = @"iPod1,1";
 NSString* const iPod2_1 = @"iPod2,1";
@@ -78,6 +84,11 @@ NSString* const iPad6_7 = @"iPad6,7";
 NSString* const iPad6_8 = @"iPad6,8";
 NSString* const iPad6_11 = @"iPad6,11";
 NSString* const iPad6_12 = @"iPad6,12";
+
+NSString* const iPad7_1 = @"iPad7,1";
+NSString* const iPad7_2 = @"iPad7,2";
+NSString* const iPad7_3 = @"iPad7,3";
+NSString* const iPad7_4 = @"iPad7,4";
 
 NSString* const AppleTV1_1 = @"AppleTV1,1";
 NSString* const AppleTV2_1 = @"AppleTV2,1";
@@ -171,6 +182,13 @@ NSString* const x86_64_Sim  = @"x86_64";
   if ([hardware isEqualToString:iPhone9_3])    return IPHONE_7_GSM;
   if ([hardware isEqualToString:iPhone9_2])    return IPHONE_7_PLUS;
   if ([hardware isEqualToString:iPhone9_4])    return IPHONE_7_PLUS_GSM;
+  
+  if ([hardware isEqualToString:iPhone10_1])    return IPHONE_8_CN;
+  if ([hardware isEqualToString:iPhone10_2])    return IPHONE_8_PLUS_CN;
+  if ([hardware isEqualToString:iPhone10_3])    return IPHONE_X_CN;
+  if ([hardware isEqualToString:iPhone10_4])    return IPHONE_8;
+  if ([hardware isEqualToString:iPhone10_5])    return IPHONE_8_PLUS;
+  if ([hardware isEqualToString:iPhone10_6])    return IPHONE_X;
 
   if ([hardware isEqualToString:iPod1_1])      return IPOD_TOUCH_1G;
   if ([hardware isEqualToString:iPod2_1])      return IPOD_TOUCH_2G;
@@ -218,6 +236,11 @@ NSString* const x86_64_Sim  = @"x86_64";
   if ([hardware isEqualToString:iPad6_11])     return IPAD_5_WIFI;
   if ([hardware isEqualToString:iPad6_12])     return IPAD_5_WIFI_CELLULAR;
   
+  if ([hardware isEqualToString:iPad7_1])      return IPAD_PRO_2G_WIFI;
+  if ([hardware isEqualToString:iPad7_2])      return IPAD_PRO_2G_WIFI_CELLULAR;
+  if ([hardware isEqualToString:iPad7_3])      return IPAD_PRO_105_WIFI;
+  if ([hardware isEqualToString:iPad7_4])      return IPAD_PRO_105_WIFI_CELLULAR;
+  
   if ([hardware isEqualToString:AppleTV1_1])   return APPLE_TV_1G;
   if ([hardware isEqualToString:AppleTV2_1])   return APPLE_TV_2G;
   if ([hardware isEqualToString:AppleTV3_1])   return APPLE_TV_3G;
@@ -255,6 +278,21 @@ NSString* const x86_64_Sim  = @"x86_64";
   }
 }
 
++ (NSString*)hardwareSimpleDescription {
+  NSString *hardwareDescription = [DeviceUtil hardwareDescription];
+  if (hardwareDescription == nil) {
+    return nil;
+  }
+  NSError *error = nil;
+  // this expression matches all strings between round brackets (e.g (Wifi), (GSM)) except the pattern "[0-9]+ Gen"
+  NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\((?![0-9]+ Gen).*\\)" options:NSRegularExpressionCaseInsensitive error:&error];
+  NSString *hardwareSimpleDescription = [regex stringByReplacingMatchesInString:hardwareDescription options:0 range:NSMakeRange(0, [hardwareDescription length]) withTemplate:@""];
+  if (error) {
+    return nil;
+  } else {
+    return hardwareSimpleDescription;
+  }
+}
 
 + (float)hardwareNumber {
   NSString *hardware = [self hardwareString];
@@ -297,16 +335,23 @@ NSString* const x86_64_Sim  = @"x86_64";
     case IPHONE_5C_CDMA_GSM:
     case IPHONE_6:
     case IPHONE_6_PLUS:
+    case IPOD_TOUCH_6G:
     case IPAD_AIR_2_WIFI:
     case IPAD_AIR_2_WIFI_CELLULAR:
-      return CGSizeMake(3264, 2448);
-
     case IPHONE_6S:
     case IPHONE_6S_PLUS:
+      return CGSizeMake(3264, 2448);
+
     case IPHONE_7:
     case IPHONE_7_GSM:
     case IPHONE_7_PLUS:
     case IPHONE_7_PLUS_GSM:
+    case IPHONE_8:
+    case IPHONE_8_CN:
+    case IPHONE_8_PLUS:
+    case IPHONE_8_PLUS_CN:
+    case IPHONE_X:
+    case IPHONE_X_CN:
       return CGSizeMake(4032, 3024);
 
     case IPOD_TOUCH_4G:

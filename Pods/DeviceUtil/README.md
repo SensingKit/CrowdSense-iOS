@@ -1,6 +1,9 @@
 # DeviceUtil
 
-### For **Swift** please visit [DeviceGuru](https://github.com/InderKumarRathore/DeviceGuru)
+### For **Swift** please use [DeviceGuru](https://github.com/InderKumarRathore/DeviceGuru) as below
+```sh
+pod 'DeviceGuru'
+```
 
 *DeviceUtil* helps identifying the exact harware type of the device. e.g. iPhone 6 or iPhone 6s.
 
@@ -59,6 +62,7 @@ iPod Touch 2G | ```ipod_TOUCH_2G``` | ```iPod2,1```
 iPod Touch 3G | ```ipod_TOUCH_3G``` | ```iPod3,1```
 iPod Touch 4G | ```ipod_TOUCH_4G``` | ```iPod4,1```
 iPod Touch 5G | ```ipod_TOUCH_5G``` | ```iPod5,1```
+iPod Touch 6G | ```ipod_TOUCH_6G``` | ```iPod7,1```
 
 ##### iPad
 Device | hardware() | hardwareString()
