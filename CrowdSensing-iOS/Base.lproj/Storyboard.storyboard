@@ -636,6 +636,7 @@
                                                 <constraint firstAttribute="centerY" secondItem="Yz8-7k-eea" secondAttribute="centerY" id="aiN-0d-vo5"/>
                                                 <constraint firstItem="nPa-Vz-3he" firstAttribute="leading" secondItem="B4R-T8-LKB" secondAttribute="leading" constant="15" id="bUU-BG-nJP"/>
                                                 <constraint firstAttribute="centerY" secondItem="nPa-Vz-3he" secondAttribute="centerY" id="mn2-yk-cqr"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nPa-Vz-3he" secondAttribute="trailing" constant="20" symbolic="YES" id="wQB-Og-jln"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -721,6 +722,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="nCa-tb-eq8" secondAttribute="trailing" constant="15" id="BgK-Xn-uEd"/>
                                                 <constraint firstItem="wmF-xx-dla" firstAttribute="leading" secondItem="23u-l5-Gpz" secondAttribute="leading" constant="15" id="Hmb-tZ-Uyg"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wmF-xx-dla" secondAttribute="trailing" constant="20" symbolic="YES" id="k2i-pt-GVX"/>
                                                 <constraint firstAttribute="centerY" secondItem="nCa-tb-eq8" secondAttribute="centerY" id="qFW-6H-N8F"/>
                                                 <constraint firstAttribute="centerY" secondItem="wmF-xx-dla" secondAttribute="centerY" id="ySN-sL-VGj"/>
                                             </constraints>
@@ -808,6 +810,7 @@
                                                 <constraint firstItem="wBb-O9-Aop" firstAttribute="leading" secondItem="JDU-QB-VcQ" secondAttribute="leading" constant="15" id="POd-Nr-dEF"/>
                                                 <constraint firstAttribute="centerY" secondItem="wBb-O9-Aop" secondAttribute="centerY" id="bD3-ZQ-B80"/>
                                                 <constraint firstAttribute="centerY" secondItem="JtM-6K-saG" secondAttribute="centerY" id="xyy-Jw-FQM"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wBb-O9-Aop" secondAttribute="trailing" constant="20" symbolic="YES" id="yq9-5p-jQQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -866,6 +869,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="Dfh-LY-s3s" secondAttribute="centerY" id="0QQ-39-fZV"/>
                                                 <constraint firstItem="Dfh-LY-s3s" firstAttribute="leading" secondItem="ILU-zd-EFb" secondAttribute="leading" constant="15" id="9Zc-6B-WoA"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dfh-LY-s3s" secondAttribute="trailing" constant="20" symbolic="YES" id="IiM-zI-TMl"/>
                                                 <constraint firstAttribute="trailing" secondItem="Odn-0t-QnL" secondAttribute="trailing" constant="15" id="JUE-PP-qLS"/>
                                                 <constraint firstAttribute="centerY" secondItem="Odn-0t-QnL" secondAttribute="centerY" id="bE8-2j-KxN"/>
                                             </constraints>
@@ -1056,6 +1060,7 @@
                                                 <constraint firstItem="3Yw-zT-dQc" firstAttribute="leading" secondItem="tNj-Ri-GGo" secondAttribute="leading" constant="15" id="264-u6-XHg"/>
                                                 <constraint firstAttribute="trailing" secondItem="HwZ-FR-Dsh" secondAttribute="trailing" constant="15" id="dSJ-Zw-zgc"/>
                                                 <constraint firstAttribute="centerY" secondItem="HwZ-FR-Dsh" secondAttribute="centerY" id="ig7-ro-mZF"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Yw-zT-dQc" secondAttribute="trailing" constant="20" symbolic="YES" id="vJB-p3-OpI"/>
                                                 <constraint firstAttribute="centerY" secondItem="3Yw-zT-dQc" secondAttribute="centerY" id="x9E-pu-GtZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1167,6 +1172,7 @@
                                                 <constraint firstAttribute="centerY" secondItem="xXz-wF-pXM" secondAttribute="centerY" id="8uO-oT-9d5"/>
                                                 <constraint firstItem="xXz-wF-pXM" firstAttribute="leading" secondItem="K3s-1t-XME" secondAttribute="leading" constant="15" id="B5A-ud-7yn"/>
                                                 <constraint firstAttribute="centerY" secondItem="TkR-aw-1Hu" secondAttribute="centerY" id="BqE-Ih-eyI"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xXz-wF-pXM" secondAttribute="trailing" constant="20" symbolic="YES" id="e63-10-33t"/>
                                                 <constraint firstAttribute="trailing" secondItem="TkR-aw-1Hu" secondAttribute="trailing" constant="15" id="oiN-mv-y7r"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1304,6 +1310,7 @@
                                                 <constraint firstItem="15a-eO-naB" firstAttribute="leading" secondItem="rBo-pS-gYu" secondAttribute="leading" constant="15" id="SwC-fU-t9M"/>
                                                 <constraint firstAttribute="centerY" secondItem="15a-eO-naB" secondAttribute="centerY" id="Y3E-Yj-gh4"/>
                                                 <constraint firstAttribute="centerY" secondItem="LpK-BZ-TTV" secondAttribute="centerY" id="bw2-OX-bgb"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="15a-eO-naB" secondAttribute="trailing" constant="20" symbolic="YES" id="laF-R5-5gC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1815,7 +1822,7 @@ If you have any questions or concerns about the manner in which the study was co
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-C5-DG9">
-                                <rect key="frame" x="124" y="72" width="235" height="40"/>
+                                <rect key="frame" x="223.5" y="72" width="135.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RSw-7Z-y8U"/>
                                 </constraints>
@@ -1823,10 +1830,10 @@ If you have any questions or concerns about the manner in which the study was co
                                 <color key="textColor" red="0.4393609174" green="0.4393609174" blue="0.4393609174" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4W-QL-IUZ">
-                                <rect key="frame" x="16" y="72" width="100" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4W-QL-IUZ">
+                                <rect key="frame" x="16" y="72" width="199.5" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="afC-ff-6sD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="afC-ff-6sD"/>
                                     <constraint firstAttribute="height" constant="40" id="gEh-73-1gL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -2161,7 +2168,7 @@ By tapping at the following button, I agree that the research project named abov
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-lc-GKi">
                                                 <rect key="frame" x="167" y="84" width="200" height="29"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="awt-hV-sZ5"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="awt-hV-sZ5"/>
                                                 </constraints>
                                                 <segments>
                                                     <segment title="Male"/>
@@ -2172,11 +2179,16 @@ By tapping at the following button, I agree that the research project named abov
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="pkI-pC-dmd" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="24e-RF-4lK"/>
+                                            <constraint firstItem="u5o-Xl-tyG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="20" symbolic="YES" id="4zk-Yy-VvI"/>
                                             <constraint firstAttribute="trailing" secondItem="new-Ix-Ykm" secondAttribute="trailing" constant="8" id="99a-yO-ucD"/>
                                             <constraint firstItem="iRV-0S-KC6" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="9Tk-bQ-qKy"/>
+                                            <constraint firstItem="new-Ix-Ykm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="20" symbolic="YES" id="9pO-ln-3Nz"/>
                                             <constraint firstItem="new-Ix-Ykm" firstAttribute="top" secondItem="ZMx-b4-ayk" secondAttribute="bottom" constant="8" id="EIf-jw-nLU"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iRV-0S-KC6" secondAttribute="trailing" constant="20" symbolic="YES" id="G94-Cw-y35"/>
                                             <constraint firstItem="Pdy-Ad-r5i" firstAttribute="centerY" secondItem="ZMx-b4-ayk" secondAttribute="centerY" id="GAn-hW-lmr"/>
                                             <constraint firstItem="gXs-gu-6uW" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="GBt-ck-WK2"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pkI-pC-dmd" secondAttribute="trailing" constant="20" symbolic="YES" id="Gl5-JL-x9H"/>
+                                            <constraint firstItem="ZMx-b4-ayk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="20" symbolic="YES" id="Ijf-4s-Oqg"/>
                                             <constraint firstItem="ck4-N6-Vk8" firstAttribute="top" secondItem="Vch-hp-fnV" secondAttribute="top" id="J8D-oC-V1e"/>
                                             <constraint firstItem="gXs-gu-6uW" firstAttribute="centerY" secondItem="new-Ix-Ykm" secondAttribute="centerY" id="O0d-EY-ABZ"/>
                                             <constraint firstAttribute="trailing" secondItem="yRy-lc-GKi" secondAttribute="trailing" constant="8" id="UbT-8j-R29"/>
@@ -2184,8 +2196,11 @@ By tapping at the following button, I agree that the research project named abov
                                             <constraint firstAttribute="trailing" secondItem="ck4-N6-Vk8" secondAttribute="trailing" constant="8" id="XqH-xG-qFv"/>
                                             <constraint firstItem="iRV-0S-KC6" firstAttribute="centerY" secondItem="yRy-lc-GKi" secondAttribute="centerY" id="axU-iN-0Um"/>
                                             <constraint firstAttribute="trailing" secondItem="u5o-Xl-tyG" secondAttribute="trailing" constant="8" id="bqq-Kp-fsR"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pdy-Ad-r5i" secondAttribute="trailing" constant="20" symbolic="YES" id="ezW-YM-G51"/>
                                             <constraint firstItem="new-Ix-Ykm" firstAttribute="width" secondItem="ZMx-b4-ayk" secondAttribute="width" id="gaC-qv-Woi"/>
+                                            <constraint firstItem="yRy-lc-GKi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="20" symbolic="YES" id="hy6-MJ-8s8"/>
                                             <constraint firstItem="ZMx-b4-ayk" firstAttribute="top" secondItem="yRy-lc-GKi" secondAttribute="bottom" constant="8" id="iQJ-d2-BOT"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gXs-gu-6uW" secondAttribute="trailing" constant="20" symbolic="YES" id="kyg-BK-SDr"/>
                                             <constraint firstItem="u5o-Xl-tyG" firstAttribute="top" secondItem="new-Ix-Ykm" secondAttribute="bottom" constant="8" id="ny2-B3-G5h"/>
                                             <constraint firstItem="ck4-N6-Vk8" firstAttribute="leading" secondItem="Vch-hp-fnV" secondAttribute="leading" constant="8" id="sKj-SO-yj6"/>
                                             <constraint firstItem="yRy-lc-GKi" firstAttribute="top" secondItem="ck4-N6-Vk8" secondAttribute="bottom" constant="8" id="sma-Ne-zYo"/>
@@ -2590,6 +2605,7 @@ When the experiment is finished, tap at the 'I am done!' button. Please make sur
                             <constraint firstItem="8n8-5j-ieg" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="T89-LX-JYV"/>
                             <constraint firstItem="g48-zm-qte" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="Vms-q6-vSJ"/>
                             <constraint firstItem="8n8-5j-ieg" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="Y2o-Zc-ESJ"/>
+                            <constraint firstItem="fJg-eb-GOY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="ZbB-zz-dCm"/>
                             <constraint firstItem="m15-Kw-0bt" firstAttribute="leading" secondItem="YK3-ze-oUW" secondAttribute="leadingMargin" id="ehT-ny-JvX"/>
                             <constraint firstItem="kl3-9k-MEv" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="fZB-up-aCG"/>
                             <constraint firstItem="K3C-4j-7Kd" firstAttribute="trailing" secondItem="YK3-ze-oUW" secondAttribute="trailingMargin" id="oQK-hh-1bP"/>
