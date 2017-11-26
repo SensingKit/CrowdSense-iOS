@@ -201,7 +201,7 @@
                           }
                           else
                           {
-                              [self alertWithTitle:@"Submission Succedded" withMessage:@"Thank you for your participation. We will be in touch soon with the results of the draw."];
+                              [self alertWithTitle:@"Submission Succedded" withMessage:@"Thank you for your participation. We will be in touch soon."];
                           }
                           
                       }
