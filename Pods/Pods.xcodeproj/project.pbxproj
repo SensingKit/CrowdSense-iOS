@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -272,11 +272,11 @@
 		1347060E2140140AC830ACAA03B7E160 /* Pods-CrowdSensing-iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrowdSensing-iOS-resources.sh"; sourceTree = "<group>"; };
 		147376492621E6E70AA3CCEC05EEDCD8 /* ESSEddystone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ESSEddystone.m; path = ESSEddystone/ESSEddystone.m; sourceTree = "<group>"; };
 		14896910EBA1532F7B90F1F4E10DD00D /* SKDeviceMotionData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKDeviceMotionData.h; path = SensingKit/SKDeviceMotionData.h; sourceTree = "<group>"; };
-		14D1A53725692F235BC0F2625FFB8B70 /* DeviceUtil.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DeviceUtil.modulemap; sourceTree = "<group>"; };
+		14D1A53725692F235BC0F2625FFB8B70 /* DeviceUtil.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DeviceUtil.modulemap; sourceTree = "<group>"; };
 		14DE926408880CD8C35FBA04BF5BC28B /* SKEddystoneProximityConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKEddystoneProximityConfiguration.h; path = SensingKit/SKEddystoneProximityConfiguration.h; sourceTree = "<group>"; };
 		160845E19685E9F6FF22B0650FFD92B6 /* ESSBeaconScanner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ESSBeaconScanner.h; path = ESSEddystone/ESSBeaconScanner.h; sourceTree = "<group>"; };
-		17AE18DD70FE33FBD48B64EA8B25B034 /* Pods-CrowdSensing-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CrowdSensing-iOS.modulemap"; sourceTree = "<group>"; };
-		18F8CDA4BE715C3CE67B810CF53D82D2 /* aeskey.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aeskey.c; path = SSZipArchive/minizip/aes/aeskey.c; sourceTree = "<group>"; };
+		17AE18DD70FE33FBD48B64EA8B25B034 /* Pods-CrowdSensing-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CrowdSensing-iOS.modulemap"; sourceTree = "<group>"; };
+		18F8CDA4BE715C3CE67B810CF53D82D2 /* aeskey.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aeskey.c; path = SSZipArchive/minizip/aes/aeskey.c; sourceTree = "<group>"; };
 		1BE32DC20596EE017847A9E186DB754C /* SKSampleRateConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKSampleRateConfiguration.m; path = SensingKit/SKSampleRateConfiguration.m; sourceTree = "<group>"; };
 		1D2232F7297131E7842398B8CDD2BB26 /* SKGyroscope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKGyroscope.h; path = SensingKit/SKGyroscope.h; sourceTree = "<group>"; };
 		1E0F0FCADC9978F7777E4BFB9A1A2A4C /* crypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = SSZipArchive/minizip/crypt.h; sourceTree = "<group>"; };
@@ -286,7 +286,7 @@
 		21AAC4F173EB199D6360119E6316B8ED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23002BBB18C3880439336591E877C572 /* SKPedometerData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKPedometerData.h; path = SensingKit/SKPedometerData.h; sourceTree = "<group>"; };
 		230C6850E6A3F7537EC73CC577BC398E /* SKAbstractSensor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKAbstractSensor.m; path = SensingKit/SKAbstractSensor.m; sourceTree = "<group>"; };
-		2353EAC15BCC465887C3315D9E376441 /* aescrypt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aescrypt.c; path = SSZipArchive/minizip/aes/aescrypt.c; sourceTree = "<group>"; };
+		2353EAC15BCC465887C3315D9E376441 /* aescrypt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aescrypt.c; path = SSZipArchive/minizip/aes/aescrypt.c; sourceTree = "<group>"; };
 		24A3B4F379DED5F75D127906295D304B /* ZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = SSZipArchive/ZipArchive.h; sourceTree = "<group>"; };
 		24D0EA8984AD3E06A6F49C3B96966B0F /* SKDeviceMotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKDeviceMotion.h; path = SensingKit/SKDeviceMotion.h; sourceTree = "<group>"; };
 		25C88085FD6B303000E2E8B0FB5AD73A /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 		37DF47DCC1559E0F257AEF4A86D1C284 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		38748DD64EC890D4C0BA97A9201C7264 /* SKMotionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKMotionManager.m; path = SensingKit/SKMotionManager.m; sourceTree = "<group>"; };
 		38F279838E556AC8C78E7BD8B583F141 /* SKBatteryData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKBatteryData.h; path = SensingKit/SKBatteryData.h; sourceTree = "<group>"; };
-		3A0BC4235AFFEC89F94E7836E6F3F1D2 /* SensingKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SensingKit.modulemap; sourceTree = "<group>"; };
+		3A0BC4235AFFEC89F94E7836E6F3F1D2 /* SensingKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SensingKit.modulemap; sourceTree = "<group>"; };
 		3BBBCA4481D524E50CF8016685900D4C /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 		42C6169E3A0DC03269B3D01D65858617 /* Pods-CrowdSensing-iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrowdSensing-iOS-frameworks.sh"; sourceTree = "<group>"; };
 		43481AF0962E570BF8AF87FB139F684A /* SKBatteryConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKBatteryConfiguration.m; path = SensingKit/SKBatteryConfiguration.m; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		49521E6C85ED7AF149785F8CCBC419CA /* SKiBeaconProximityConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKiBeaconProximityConfiguration.h; path = SensingKit/SKiBeaconProximityConfiguration.h; sourceTree = "<group>"; };
 		499DAE9B1A866A5088D26AEF166AA65D /* SKMotionActivity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKMotionActivity.m; path = SensingKit/SKMotionActivity.m; sourceTree = "<group>"; };
 		4A6EE97721B6BA4799800AA77D1D84F2 /* SensingKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SensingKit.h; path = SensingKit/SensingKit.h; sourceTree = "<group>"; };
-		4C8CFF4C0E85900232BC99365B402A2D /* minishared.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = minishared.c; path = SSZipArchive/minizip/minishared.c; sourceTree = "<group>"; };
+		4C8CFF4C0E85900232BC99365B402A2D /* minishared.c */ = {isa = PBXFileReference; includeInIndex = 1; name = minishared.c; path = SSZipArchive/minizip/minishared.c; sourceTree = "<group>"; };
 		4CABDF136178AA852534069E3A78B8B0 /* SKProximityData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKProximityData.h; path = SensingKit/SKProximityData.h; sourceTree = "<group>"; };
 		4F51149DB51AE50CF8974E8F821FB1FC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		4FBD0A8D7B933619B6FE4B2E6BF7F6DA /* SSZipArchive-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-umbrella.h"; sourceTree = "<group>"; };
@@ -335,36 +335,36 @@
 		552B0CC00E6F71784CD3B44F019C2940 /* SKConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKConfiguration.m; path = SensingKit/SKConfiguration.m; sourceTree = "<group>"; };
 		569D89B60E0C454C7ADEDE4637B91795 /* ioapi_mem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi_mem.h; path = SSZipArchive/minizip/ioapi_mem.h; sourceTree = "<group>"; };
 		594CF3F97E2CC4243318FC6BC3E70C12 /* SKLocationConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKLocationConfiguration.h; path = SensingKit/SKLocationConfiguration.h; sourceTree = "<group>"; };
-		5A9080A78602E5650BD44986F58E0425 /* aes_ni.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aes_ni.c; path = SSZipArchive/minizip/aes/aes_ni.c; sourceTree = "<group>"; };
+		5A9080A78602E5650BD44986F58E0425 /* aes_ni.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aes_ni.c; path = SSZipArchive/minizip/aes/aes_ni.c; sourceTree = "<group>"; };
 		5AF3DB92AD1451540EC8994545B70504 /* aesopt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aesopt.h; path = SSZipArchive/minizip/aes/aesopt.h; sourceTree = "<group>"; };
-		5B62FC6F4371AF86E75A19AF6C441241 /* DeviceUtil.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceUtil.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B62FC6F4371AF86E75A19AF6C441241 /* DeviceUtil.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DeviceUtil.bundle; path = DeviceUtil.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2C6533548F3524DF637C17D1631B95 /* SKConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKConfiguration.h; path = SensingKit/SKConfiguration.h; sourceTree = "<group>"; };
 		5D9FF91249F7DE1B28F25D0575435848 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		5DB1F766893DEE74CB006CA91221CD23 /* SKPedometerData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKPedometerData.m; path = SensingKit/SKPedometerData.m; sourceTree = "<group>"; };
 		5FA07AC9C4C17E3CA520CC5F12422CBE /* aes_ni.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes_ni.h; path = SSZipArchive/minizip/aes/aes_ni.h; sourceTree = "<group>"; };
-		5FE5F8C41F301018F219D16E664DF8B3 /* ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = SSZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
+		5FE5F8C41F301018F219D16E664DF8B3 /* ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ioapi.c; path = SSZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
 		60110BFECBDF7047194E0445A8EB168E /* ESSEddystone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ESSEddystone.h; path = ESSEddystone/ESSEddystone.h; sourceTree = "<group>"; };
 		610839A9EF3C62C770365D0A9FF5695B /* SKGyroscopeData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKGyroscopeData.h; path = SensingKit/SKGyroscopeData.h; sourceTree = "<group>"; };
 		610F88870FB8733FF04EFED2B20259A3 /* NSString+SensorType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+SensorType.m"; path = "SensingKit/NSString+SensorType.m"; sourceTree = "<group>"; };
 		626B260C3F01CFFB57251509CBD63F46 /* Pods-CrowdSensing-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CrowdSensing-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		63587D0438CBA4C42BEE12A54C495B7A /* SSZipArchive.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SSZipArchive.xcconfig; sourceTree = "<group>"; };
 		649439F723B2C515FD259E1DE5F215EB /* SKSensorData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKSensorData.h; path = SensingKit/SKSensorData.h; sourceTree = "<group>"; };
-		661BAA5EAD301556255B6DA47B7F5EB3 /* ioapi_buf.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ioapi_buf.c; path = SSZipArchive/minizip/ioapi_buf.c; sourceTree = "<group>"; };
+		661BAA5EAD301556255B6DA47B7F5EB3 /* ioapi_buf.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ioapi_buf.c; path = SSZipArchive/minizip/ioapi_buf.c; sourceTree = "<group>"; };
 		661FA2F688A5DA76F1ED6F3734A27A35 /* SKMagnetometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKMagnetometer.h; path = SensingKit/SKMagnetometer.h; sourceTree = "<group>"; };
 		667A5D6D7E0B4C480992FBBAB651862E /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		679481C62DF133E9BAC6147330344DC0 /* SKErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKErrors.h; path = SensingKit/SKErrors.h; sourceTree = "<group>"; };
 		679C8BFE3196FF440B0AFA1C414AC191 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		69BB81B03DB19C14D1C7170681AEA166 /* Pods_CrowdSensing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdSensing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69BB81B03DB19C14D1C7170681AEA166 /* Pods_CrowdSensing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CrowdSensing_iOS.framework; path = "Pods-CrowdSensing-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A51F6A0DF176C4C531DCE111B0E63AC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A53C069FDFC3603E176E341695E59C5 /* ResourceBundle-DeviceUtil-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DeviceUtil-Info.plist"; sourceTree = "<group>"; };
-		6C4E88485180F6C4CE4951C464D8939F /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
+		6C4E88485180F6C4CE4951C464D8939F /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AFNetworking.modulemap; sourceTree = "<group>"; };
 		6D617C5BD5F86B3F5B86075FAF8E3EB1 /* SKPedometerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKPedometerConfiguration.h; path = SensingKit/SKPedometerConfiguration.h; sourceTree = "<group>"; };
-		6E950EA15F51C260F396F3FE69B0777B /* prng.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = prng.c; path = SSZipArchive/minizip/aes/prng.c; sourceTree = "<group>"; };
+		6E950EA15F51C260F396F3FE69B0777B /* prng.c */ = {isa = PBXFileReference; includeInIndex = 1; name = prng.c; path = SSZipArchive/minizip/aes/prng.c; sourceTree = "<group>"; };
 		704A77B078A2C14CDEEE5E63011DB412 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		7230319B8E1BB3D92FBB29A13E97DC89 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7230319B8E1BB3D92FBB29A13E97DC89 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SSZipArchive.framework; path = SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		739EDB0C0AE3494093EB73570EE46FDB /* SensingKitLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SensingKitLib.h; path = SensingKit/SensingKitLib.h; sourceTree = "<group>"; };
 		7497F9EB297961DB651571F59163F0FD /* DeviceUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DeviceUtil.m; sourceTree = "<group>"; };
-		74A44FA70DC642F130ADE7E72B333618 /* DeviceUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A44FA70DC642F130ADE7E72B333618 /* DeviceUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DeviceUtil.framework; path = DeviceUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F164C5BA0790E6130CCE4DC56C933C /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		77209E84C83FFED3672E975D03C95949 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		7800B9A3B55A2C116293B0B84448FCC2 /* SKAbstractSensor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKAbstractSensor.h; path = SensingKit/SKAbstractSensor.h; sourceTree = "<group>"; };
@@ -381,14 +381,14 @@
 		8823161C501024B3E6A5B1C18430C9A6 /* SSZipArchive-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SSZipArchive-dummy.m"; sourceTree = "<group>"; };
 		8AFBAF54EBE919EA651D070CB80AEA2B /* SKHeadingConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKHeadingConfiguration.h; path = SensingKit/SKHeadingConfiguration.h; sourceTree = "<group>"; };
 		8B5A71563B87A31C753DED6CB7989435 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
-		8E43E142146E7D6937AC1DE72F3AF117 /* SSZipArchive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SSZipArchive.modulemap; sourceTree = "<group>"; };
+		8E43E142146E7D6937AC1DE72F3AF117 /* SSZipArchive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SSZipArchive.modulemap; sourceTree = "<group>"; };
 		8E8BE25303A4D47DB401673B12612B42 /* SKGyroscopeConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKGyroscopeConfiguration.h; path = SensingKit/SKGyroscopeConfiguration.h; sourceTree = "<group>"; };
 		8E90D2FAF6D456CB302D8A0A060B78CC /* SKDeviceMotionConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKDeviceMotionConfiguration.m; path = SensingKit/SKDeviceMotionConfiguration.m; sourceTree = "<group>"; };
-		901E13DDDD46B4F1465CF8C4DC9AE73A /* hmac.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = SSZipArchive/minizip/aes/hmac.c; sourceTree = "<group>"; };
+		901E13DDDD46B4F1465CF8C4DC9AE73A /* hmac.c */ = {isa = PBXFileReference; includeInIndex = 1; name = hmac.c; path = SSZipArchive/minizip/aes/hmac.c; sourceTree = "<group>"; };
 		91831247A3818C5F3714EAAB7FFAD962 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		92339D0C65DBA66CB8BA80B7A97CEE5D /* SKAccelerometerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKAccelerometerConfiguration.h; path = SensingKit/SKAccelerometerConfiguration.h; sourceTree = "<group>"; };
 		92904549CC4D64B6869FECD9C33E299B /* SKLocationData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKLocationData.m; path = SensingKit/SKLocationData.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93F51191E92C3955EDFEE2AB8774FBDE /* SKPedometer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKPedometer.m; path = SensingKit/SKPedometer.m; sourceTree = "<group>"; };
 		955BF3C09ED79F69F8486AF92B1F04B1 /* SKiBeaconProximityConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKiBeaconProximityConfiguration.m; path = SensingKit/SKiBeaconProximityConfiguration.m; sourceTree = "<group>"; };
 		97724DCF25521441F235B4DECFC65A0A /* SSZipCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSZipCommon.h; path = SSZipArchive/SSZipCommon.h; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 		9CBE546E8486AE216D448A295580A60F /* SKLocationConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKLocationConfiguration.m; path = SensingKit/SKLocationConfiguration.m; sourceTree = "<group>"; };
 		9CF6B8BD49B0E7EA65CF1897737CCCAC /* SKMagnetometerData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKMagnetometerData.m; path = SensingKit/SKMagnetometerData.m; sourceTree = "<group>"; };
 		9CFA27E6EEE1041DBB9987CAFE09C996 /* SKHeadingConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKHeadingConfiguration.m; path = SensingKit/SKHeadingConfiguration.m; sourceTree = "<group>"; };
-		9D934411CF86EAB1B27CBB5E6EFED3DD /* pwd2key.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pwd2key.c; path = SSZipArchive/minizip/aes/pwd2key.c; sourceTree = "<group>"; };
+		9D934411CF86EAB1B27CBB5E6EFED3DD /* pwd2key.c */ = {isa = PBXFileReference; includeInIndex = 1; name = pwd2key.c; path = SSZipArchive/minizip/aes/pwd2key.c; sourceTree = "<group>"; };
 		9FF3A998FB2AFCF90E06099719EE1F27 /* SKEddystoneProximityData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKEddystoneProximityData.m; path = SensingKit/SKEddystoneProximityData.m; sourceTree = "<group>"; };
 		A1BA1F43860465EBE1DC088B616EFA60 /* SKBattery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKBattery.h; path = SensingKit/SKBattery.h; sourceTree = "<group>"; };
 		A20F7DB52086F6C52AA8FB83565662F3 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
@@ -415,17 +415,17 @@
 		AAC9947E5FDF45B66968BC425E5F4985 /* SKMicrophone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKMicrophone.h; path = SensingKit/SKMicrophone.h; sourceTree = "<group>"; };
 		AAD1E27CA854EBAD7A0BF03F26AD0260 /* SKLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKLocation.h; path = SensingKit/SKLocation.h; sourceTree = "<group>"; };
 		AC6E365AC0AAA834B30651E0835DF18E /* sha1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = SSZipArchive/minizip/aes/sha1.h; sourceTree = "<group>"; };
-		ACD02BD3FD809F2BFE688E465B5F263A /* sha1.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = SSZipArchive/minizip/aes/sha1.c; sourceTree = "<group>"; };
+		ACD02BD3FD809F2BFE688E465B5F263A /* sha1.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sha1.c; path = SSZipArchive/minizip/aes/sha1.c; sourceTree = "<group>"; };
 		AD081771AFEA6952407580A1D219A065 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		ADC38D4005363DF608F5DA8F71CA1031 /* SKSensorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKSensorManager.m; path = SensingKit/SKSensorManager.m; sourceTree = "<group>"; };
 		AE67CAA4BA8DFDCFA3FDD11C06DC479D /* SKMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKMicrophone.m; path = SensingKit/SKMicrophone.m; sourceTree = "<group>"; };
 		B0DE43BE548009FAB38A02B6EE61A9E2 /* SKMotionActivityConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKMotionActivityConfiguration.m; path = SensingKit/SKMotionActivityConfiguration.m; sourceTree = "<group>"; };
 		B1B59EA18F84217BEFF89E0E1CEFD4BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1EB74AA55E570B188CD9EA885E37AB2 /* SensingKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SensingKit-prefix.pch"; sourceTree = "<group>"; };
-		B7A69BBB30E462AB7607B108903B8D65 /* aestab.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aestab.c; path = SSZipArchive/minizip/aes/aestab.c; sourceTree = "<group>"; };
+		B7A69BBB30E462AB7607B108903B8D65 /* aestab.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aestab.c; path = SSZipArchive/minizip/aes/aestab.c; sourceTree = "<group>"; };
 		B861506B7BB4C12DFD5D5297F152D548 /* SKBatteryData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKBatteryData.m; path = SensingKit/SKBatteryData.m; sourceTree = "<group>"; };
 		B9FDBCCB266ACFED93E55656FD8A014C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		BE3EE7412CB2F0A27B54E632DEC72965 /* unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = SSZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
+		BE3EE7412CB2F0A27B54E632DEC72965 /* unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; name = unzip.c; path = SSZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
 		BE81B49F770DF25A84F17D9D39B96C5A /* SKSensorDataHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKSensorDataHandler.h; path = SensingKit/SKSensorDataHandler.h; sourceTree = "<group>"; };
 		C0245D084E0AE6050D0BB1D021FF9CFE /* SKMagnetometerData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKMagnetometerData.h; path = SensingKit/SKMagnetometerData.h; sourceTree = "<group>"; };
 		C10515EE0C592DB24E24F0DA12C5DC20 /* aestab.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aestab.h; path = SSZipArchive/minizip/aes/aestab.h; sourceTree = "<group>"; };
@@ -443,10 +443,10 @@
 		CAE1C02D1B65241D29530D5822C3DF1E /* SSZipArchive-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-prefix.pch"; sourceTree = "<group>"; };
 		CB17FC69A6033CF11C8C6232A2E4DBFC /* zip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zip.h; path = SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
 		CB756F730B0F6EEDCA6006DBDCCFB3E4 /* SKHeadingData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKHeadingData.m; path = SensingKit/SKHeadingData.m; sourceTree = "<group>"; };
-		CC00D0FECD441DD2D6D8B39F49D15CE4 /* zip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = zip.c; path = SSZipArchive/minizip/zip.c; sourceTree = "<group>"; };
+		CC00D0FECD441DD2D6D8B39F49D15CE4 /* zip.c */ = {isa = PBXFileReference; includeInIndex = 1; name = zip.c; path = SSZipArchive/minizip/zip.c; sourceTree = "<group>"; };
 		CC9AC918F9F1B2D20E519281434F799A /* SKHeading.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKHeading.m; path = SensingKit/SKHeading.m; sourceTree = "<group>"; };
 		CCC0F6535A75D2DD865FDCC16C5D8B84 /* SKSampleRateConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKSampleRateConfiguration.h; path = SensingKit/SKSampleRateConfiguration.h; sourceTree = "<group>"; };
-		CEAB3E589DFFD6C8604D30FE62D38E45 /* crypt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = crypt.c; path = SSZipArchive/minizip/crypt.c; sourceTree = "<group>"; };
+		CEAB3E589DFFD6C8604D30FE62D38E45 /* crypt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = crypt.c; path = SSZipArchive/minizip/crypt.c; sourceTree = "<group>"; };
 		CFCC478C9ACCDA9F0165EF02905B3537 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
 		D24CE659DBFF8476A645EA179CC5E09D /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
 		D25BAB0948C0A0912B26C5C5D8D6080E /* NSString+SensorType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SensorType.h"; path = "SensingKit/NSString+SensorType.h"; sourceTree = "<group>"; };
@@ -461,11 +461,11 @@
 		DCF3761AD8A41D373D0B704F3482857F /* SKMotionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKMotionManager.h; path = SensingKit/SKMotionManager.h; sourceTree = "<group>"; };
 		DFB494E1D680F96A194E22F82FEBD240 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		E12BBBFE75FE373108E6DE61BF9E30A1 /* SKiBeaconProximity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKiBeaconProximity.h; path = SensingKit/SKiBeaconProximity.h; sourceTree = "<group>"; };
-		E2D46415CE26B4C65F539EB1E32F69EB /* fileenc.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fileenc.c; path = SSZipArchive/minizip/aes/fileenc.c; sourceTree = "<group>"; };
+		E2D46415CE26B4C65F539EB1E32F69EB /* fileenc.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fileenc.c; path = SSZipArchive/minizip/aes/fileenc.c; sourceTree = "<group>"; };
 		E3C54FC1601CA1B75EA76FDAC4902F02 /* SKMicrophoneConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKMicrophoneConfiguration.h; path = SensingKit/SKMicrophoneConfiguration.h; sourceTree = "<group>"; };
-		E4FDA258EDF2D05DE5F108C6D430B67B /* SensingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SensingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4FDA258EDF2D05DE5F108C6D430B67B /* SensingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SensingKit.framework; path = SensingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A2154058B22039762B7BEEBB4D01DB /* SKBatteryConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKBatteryConfiguration.h; path = SensingKit/SKBatteryConfiguration.h; sourceTree = "<group>"; };
-		E759DA0EC9E2575F91B0C174F888D2BC /* ioapi_mem.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ioapi_mem.c; path = SSZipArchive/minizip/ioapi_mem.c; sourceTree = "<group>"; };
+		E759DA0EC9E2575F91B0C174F888D2BC /* ioapi_mem.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ioapi_mem.c; path = SSZipArchive/minizip/ioapi_mem.c; sourceTree = "<group>"; };
 		E77975913BCDABCAE023265A74EAB068 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		E88ADFD64A30238845DB3D854F55CE84 /* SKAccelerometerConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKAccelerometerConfiguration.m; path = SensingKit/SKAccelerometerConfiguration.m; sourceTree = "<group>"; };
 		E8DFCE375DACD1C65076C508A177F565 /* SKLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKLocation.m; path = SensingKit/SKLocation.m; sourceTree = "<group>"; };
@@ -475,7 +475,7 @@
 		E9E333C7039021B0D454A8219C961D35 /* SKiBeaconDeviceData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKiBeaconDeviceData.m; path = SensingKit/SKiBeaconDeviceData.m; sourceTree = "<group>"; };
 		EA5552635860F99DF9A8B6402F62F97D /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		EA7C5356D08CD160029BC36154E46B40 /* DeviceUtil-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DeviceUtil-dummy.m"; sourceTree = "<group>"; };
-		EB57D92925574A628136F286FB05F981 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB57D92925574A628136F286FB05F981 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC49385827F95BF4092CB36703A671CE /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		EC8A7C0B6179467051ED95E59DB2AF9F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		EE0397BF0729D6062171B4AD09886010 /* SKMotionActivityData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKMotionActivityData.h; path = SensingKit/SKMotionActivityData.h; sourceTree = "<group>"; };
@@ -660,6 +660,7 @@
 				2B280B6B0F9E375E3C09B6F7EEECB306 /* SKSensorType.h */,
 				51F5EE33662BB54AFBB9D33428EDD40E /* Support Files */,
 			);
+			name = SensingKit;
 			path = SensingKit;
 			sourceTree = "<group>";
 		};
@@ -720,6 +721,7 @@
 				D36BEEC2E690ED7BB39C8F57613E52E8 /* Resources */,
 				10B74BE359174DA033C5C401913514EF /* Support Files */,
 			);
+			name = DeviceUtil;
 			path = DeviceUtil;
 			sourceTree = "<group>";
 		};
@@ -824,6 +826,7 @@
 				24A3B4F379DED5F75D127906295D304B /* ZipArchive.h */,
 				6B378C4408379C9D50B86BE175327126 /* Support Files */,
 			);
+			name = SSZipArchive;
 			path = SSZipArchive;
 			sourceTree = "<group>";
 		};
@@ -852,6 +855,7 @@
 				68AF053232762D10E621F97E345CBCB0 /* Support Files */,
 				324D02918AE80B102A11ABCB3ACE596C /* UIKit */,
 			);
+			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -929,6 +933,7 @@
 				0006B5746C6DCF301B277D8D698D3E0C /* Fabric.h */,
 				AFC08D0333447C8E20600B1FA98F528B /* Frameworks */,
 			);
+			name = Fabric;
 			path = Fabric;
 			sourceTree = "<group>";
 		};
@@ -987,6 +992,7 @@
 				F8CCB5152078DA6772FD5EB5611B87F1 /* Crashlytics.h */,
 				060190FBB73C3BD472559A475698DF72 /* Frameworks */,
 			);
+			name = Crashlytics;
 			path = Crashlytics;
 			sourceTree = "<group>";
 		};
@@ -1247,7 +1253,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1573,9 +1579,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1583,21 +1587,15 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -1647,9 +1645,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1657,20 +1653,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
