@@ -10,6 +10,8 @@
 #import "ALDisk.h"
 #import "CSAlmostReadyViewController.h"
 
+#include <sys/sysctl.h>
+
 @interface CSQuestionnaireViewController ()
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderOutlet;
@@ -65,7 +67,7 @@
         
         // Add Device information to the dict
         self.information[@"DeviceInfo"] = @{@"Name": [[UIDevice currentDevice] name],
-                                            @"Model": [[UIDevice currentDevice] model],
+                                            @"Model": [CSQuestionnaireViewController getModel],
                                             @"IdentifierForVendor": [[UIDevice currentDevice] identifierForVendor].UUIDString,
                                             @"SystemVersion": [[UIDevice currentDevice] systemVersion],
                                             @"TotalDiskSpace": [ALDisk totalDiskSpace],
@@ -123,5 +125,14 @@
     [alert show];
 }
 
++ (NSString *)getModel {
+    size_t size;
+    sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+    char *model = malloc(size);
+    sysctlbyname("hw.machine", model, &size, NULL, 0);
+    NSString *deviceModel = [NSString stringWithCString:model encoding:NSUTF8StringEncoding];
+    free(model);
+    return deviceModel;
+}
 
 @end
