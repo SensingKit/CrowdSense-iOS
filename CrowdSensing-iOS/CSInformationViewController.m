@@ -58,14 +58,19 @@
 
     NSURL *url = [NSURL URLWithString:@"https://sensingkit.org/CrowdSenseData.json"];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    NSError *error = nil;
-    NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     
-    NSString *latestVersion = response[@"latestVersion"];
-    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    
-    if (![latestVersion isEqualToString:currentVersion]) {
-        [self askToUpdate];
+    if (data) {
+        NSError *error = nil;
+        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        if (response) {
+            NSString *latestVersion = response[@"latestVersion"];
+            NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+            
+            if (![latestVersion isEqualToString:currentVersion]) {
+                [self askToUpdate];
+            }
+        }
     }
 }
 
