@@ -40,7 +40,7 @@
     
     [self setupFetchedResultsController];
     
-    self.configuration = [self getConfiguration];
+    //self.configuration = [self getConfiguration];
 }
 
 - (void)didReceiveMemoryWarning
