@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BIq-tP-tce">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BIq-tP-tce">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -427,12 +427,36 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="zL9-JI-lWc" detailTextLabel="9lf-fj-Fxy" rowHeight="44" style="IBUITableViewCellStyleValue1" id="jtf-vS-zqI">
+                                        <rect key="frame" x="0.0" y="343" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jtf-vS-zqI" id="edf-r4-NRA">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zL9-JI-lWc">
+                                                    <rect key="frame" x="16" y="12" width="61" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9lf-fj-Fxy">
+                                                    <rect key="frame" x="317" y="12" width="23" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="Egb-Bu-RIW">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="nip-Cq-2cJ" detailTextLabel="cL7-Dt-mOt" rowHeight="44" style="IBUITableViewCellStyleValue1" id="SU3-l0-nu7">
-                                        <rect key="frame" x="0.0" y="363" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="407" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SU3-l0-nu7" id="NuA-wJ-R08">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -460,7 +484,7 @@
                             <tableViewSection id="J4E-g0-eNW">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="TCN-CQ-rgM" detailTextLabel="2Rt-YK-7fn" rowHeight="44" style="IBUITableViewCellStyleValue1" id="d4H-SX-ACn">
-                                        <rect key="frame" x="0.0" y="427" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="471" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d4H-SX-ACn" id="Jzb-YN-yKw">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -484,7 +508,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="bfw-Mk-F3m" detailTextLabel="Kna-9T-OuR" rowHeight="44" style="IBUITableViewCellStyleValue1" id="qEU-T9-0TR">
-                                        <rect key="frame" x="0.0" y="471" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="515" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEU-T9-0TR" id="h0g-e2-qOF">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -512,7 +536,7 @@
                             <tableViewSection id="Jlp-iR-ddD">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="3xn-1j-YSF" detailTextLabel="cwo-xt-KY2" rowHeight="44" style="IBUITableViewCellStyleValue1" id="7ao-8U-E3g">
-                                        <rect key="frame" x="0.0" y="535" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="579" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ao-8U-E3g" id="w7w-bU-TfB">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -540,14 +564,14 @@
                             <tableViewSection id="dgK-l3-IyW">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Soi-QP-e0j" detailTextLabel="orU-dx-5JQ" rowHeight="44" style="IBUITableViewCellStyleValue1" id="vP0-1i-jTk">
-                                        <rect key="frame" x="0.0" y="599" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="643" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vP0-1i-jTk" id="ipX-8n-OIG">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Microphone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Soi-QP-e0j">
-                                                    <rect key="frame" x="16" y="12" width="86.5" height="19.5"/>
+                                                    <rect key="frame" x="15" y="12" width="86.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -583,6 +607,7 @@
                         <outlet property="deviceMotionSensorCell" destination="rZu-dO-ELu" id="kHM-cT-gWn"/>
                         <outlet property="eddystoneSensorCell" destination="qEU-T9-0TR" id="V9C-x4-eCN"/>
                         <outlet property="gyroscopeSensorCell" destination="JeZ-Uu-Fwr" id="ABb-By-Yym"/>
+                        <outlet property="headingSensorCell" destination="jtf-vS-zqI" id="Zxt-eH-adH"/>
                         <outlet property="locationSensorCell" destination="SU3-l0-nu7" id="TCV-Y4-MGn"/>
                         <outlet property="magnetometerSensorCell" destination="iJ8-Pw-RAD" id="aDq-Hm-dqG"/>
                         <outlet property="microphoneSensorCell" destination="vP0-1i-jTk" id="2Rh-CL-EWt"/>
@@ -1550,7 +1575,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on our open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be either shared withing the app, or accessed using iTunes through File Sharing.
+                                <string key="text">CrowdSense is a free continuous sensing tool, based on our open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be either shared withing the app, or accessed using iTunes through File Sharing.
 
 CrowdSense supports the following sensors:
 - Accelerometer
@@ -1573,7 +1598,7 @@ Kleomenis Katevas, Hamed Haddadi and Laurissa Tokarchuk, "SensingKit: Evaluating
 
 Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, "Poster: SensingKit – A Multi-Platform Mobile Sensing Framework for Large‑Scale Experiments", Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
-This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</mutableString>
+This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>

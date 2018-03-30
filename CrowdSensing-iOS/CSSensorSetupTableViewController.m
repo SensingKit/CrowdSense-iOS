@@ -121,6 +121,10 @@
     {
         return Microphone;
     }
+    else if ([sensorName isEqualToString:@"Heading"])
+    {
+        return Heading;
+    }
     else
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
@@ -178,6 +182,10 @@
     {
         return @"Microphone Sensor Setup";
     }
+    else if ([sensorName isEqualToString:@"Heading"])
+    {
+        return @"Simple Sensor Setup";
+    }
     else
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
@@ -224,6 +232,9 @@
             
         case Microphone:
             return @"Microphone sensor can be used to record audio from the environment by converting sound into electrical signal. The maximum duration of an audio recording is 4 hours.";
+        
+        case Heading:
+            return @"Heading sensor";  // TODO
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
@@ -270,6 +281,7 @@
     [self updateTableViewCell:self.eddystoneSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:EddystoneProximity]];
     [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Battery]];
     [self updateTableViewCell:self.microphoneSensorCell    withSensorEnabled:[self.sensingSession isSensorEnabled:Microphone]];
+    [self updateTableViewCell:self.headingSensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Heading]];
 }
 
 - (void)updateTableViewCell:(UITableViewCell *)tableViewCell withSensorEnabled:(BOOL)sensorEnabled

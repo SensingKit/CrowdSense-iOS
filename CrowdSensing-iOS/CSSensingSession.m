@@ -219,12 +219,16 @@
         case Microphone:
             configuration = [[SKMicrophoneConfiguration alloc] initWithOutputDirectory:self.folderPath withFilename:@"Microphone"];
             break;
+        
+        case Heading:
+            configuration = [[SKHeadingConfiguration alloc] init];
+            break;
             
         default:
             NSLog(@"Unknown sensorSetupType: %ld", (long)sensorType);
             abort();
     }
-    
+     
     return configuration;
 }
 
