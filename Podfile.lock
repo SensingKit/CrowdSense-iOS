@@ -44,7 +44,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SensingKit:
-    :commit: d59995ff5cd9081d2c6072c4633f609b1e41ca82
+    :commit: 7cea17b59bda634819bb459bd36ffbbe37343215
     :git: https://github.com/SensingKit/SensingKit-iOS.git
 
 SPEC CHECKSUMS:
@@ -52,9 +52,9 @@ SPEC CHECKSUMS:
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
   DeviceUtil: 4cf6b8bdc108ef89fe6a1c744a8d743bef9b245c
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
-  SensingKit: 037b5f524bf0ddc00e14043a1aacb4a4122578bb
+  SensingKit: e4acb178652e6bcf23e564f2da111e5087b39e79
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 
-PODFILE CHECKSUM: 37cc704b81a391a5626c05b82fe7d6af5dd5bae8
+PODFILE CHECKSUM: 28d89b6b08ba4bc28acac78f3476ccf4ad921f58
 
 COCOAPODS: 1.6.0.beta.1
