@@ -1,25 +1,25 @@
 PODS:
-  - AFNetworking (3.2.0):
-    - AFNetworking/NSURLSession (= 3.2.0)
-    - AFNetworking/Reachability (= 3.2.0)
-    - AFNetworking/Security (= 3.2.0)
-    - AFNetworking/Serialization (= 3.2.0)
-    - AFNetworking/UIKit (= 3.2.0)
-  - AFNetworking/NSURLSession (3.2.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.0)
-  - AFNetworking/Security (3.2.0)
-  - AFNetworking/Serialization (3.2.0)
-  - AFNetworking/UIKit (3.2.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Crashlytics (3.10.1):
-    - Fabric (~> 1.7.5)
-  - DeviceUtil (2.1.2)
-  - Fabric (1.7.6)
+  - Crashlytics (3.10.7):
+    - Fabric (~> 1.7.11)
+  - DeviceUtil (2.1.3)
+  - Fabric (1.7.11)
   - SensingKit (0.5.1)
-  - SSZipArchive (2.1.1)
+  - SSZipArchive (2.1.4)
 
 DEPENDENCIES:
   - AFNetworking
@@ -28,6 +28,14 @@ DEPENDENCIES:
   - Fabric
   - SensingKit (from `https://github.com/SensingKit/SensingKit-iOS.git`, branch `next`)
   - SSZipArchive
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Crashlytics
+    - DeviceUtil
+    - Fabric
+    - SSZipArchive
 
 EXTERNAL SOURCES:
   SensingKit:
@@ -40,13 +48,13 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SensingKit/SensingKit-iOS.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
-  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
-  DeviceUtil: 8a0334404594ba8e3f7fa01caf48cc95b0427333
-  Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
+  DeviceUtil: 4cf6b8bdc108ef89fe6a1c744a8d743bef9b245c
+  Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
   SensingKit: 037b5f524bf0ddc00e14043a1aacb4a4122578bb
-  SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 
 PODFILE CHECKSUM: 37cc704b81a391a5626c05b82fe7d6af5dd5bae8
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.0.beta.1
