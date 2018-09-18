@@ -38,6 +38,8 @@
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
 		CF93F2691E742BC30060A5F5 /* ALDisk.m in Sources */ = {isa = PBXBuildFile; fileRef = CF93F2681E742BC30060A5F5 /* ALDisk.m */; };
 		CF9A709D1EAE87B000DCAB66 /* CSCalibrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAE31E73104600AD143B /* CSCalibrationViewController.m */; };
+		CFA508D421513CBD000E8EFF /* ExperimentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA508D621513CBD000E8EFF /* ExperimentStoryboard.storyboard */; };
+		CFA508D721513CC3000E8EFF /* DemoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA508D921513CC3000E8EFF /* DemoStoryboard.storyboard */; };
 		CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */; };
 		CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */; };
 		CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */; };
@@ -133,6 +135,8 @@
 		CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LogEntry+Create.m"; sourceTree = "<group>"; };
 		CF93F2671E742BC30060A5F5 /* ALDisk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDisk.h; sourceTree = "<group>"; };
 		CF93F2681E742BC30060A5F5 /* ALDisk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDisk.m; sourceTree = "<group>"; };
+		CFA508D521513CBD000E8EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExperimentStoryboard.storyboard; sourceTree = "<group>"; };
+		CFA508D821513CC3000E8EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DemoStoryboard.storyboard; sourceTree = "<group>"; };
 		CFB029B61BADBEB3008E4137 /* CSSelectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSelectProperty.h; sourceTree = "<group>"; };
 		CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectProperty.m; sourceTree = "<group>"; };
 		CFB668BA1B5434BC00D3ED80 /* CSSensingSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensingSession.h; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 				CF1486501EED5E6100A2F5E5 /* Demo */,
 				CF65BACF1E730F9A00AD143B /* Experiment */,
 				CFFF326719796BF600F7CE57 /* Storyboard.storyboard */,
+				CFA508D621513CBD000E8EFF /* ExperimentStoryboard.storyboard */,
+				CFA508D921513CC3000E8EFF /* DemoStoryboard.storyboard */,
 				CFD450421B8A0DEC00E2E78D /* Settings.bundle */,
 			);
 			path = "CrowdSensing-iOS";
@@ -526,9 +532,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA508D721513CC3000E8EFF /* DemoStoryboard.storyboard in Resources */,
 				CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */,
 				CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */,
 				CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */,
+				CFA508D421513CBD000E8EFF /* ExperimentStoryboard.storyboard in Resources */,
 				CFFF326019796BF600F7CE57 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,6 +678,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CFA508D621513CBD000E8EFF /* ExperimentStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFA508D521513CBD000E8EFF /* Base */,
+			);
+			name = ExperimentStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		CFA508D921513CC3000E8EFF /* DemoStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFA508D821513CC3000E8EFF /* Base */,
+			);
+			name = DemoStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		CFFF325E19796BF600F7CE57 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
