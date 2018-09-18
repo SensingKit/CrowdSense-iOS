@@ -89,25 +89,33 @@
     
     // gender
     if (self.genderOutlet.selectedSegmentIndex == UISegmentedControlNoSegment) {
-        [self alertWithTitle:@"Gender" withMessage:@"Please choose your gender."];
+        [self alertWithTitle:@"Gender"
+                 withMessage:@"Please choose your gender."
+                 withHandler:nil];
         return NO;
     }
     
     // age
     if (self.ageTextField.text.length == 0 || self.ageTextField.text.integerValue < 18 || self.ageTextField.text.integerValue > 90) {
-        [self alertWithTitle:@"Invalid Age" withMessage:@"You should be over 18 years old in order to participate in this study."];
+        [self alertWithTitle:@"Invalid Age"
+                 withMessage:@"You should be over 18 years old in order to participate in this study."
+                 withHandler:nil];
         return NO;
     }
     
     // height
     if (self.heightTextField.text.length == 0 || self.heightTextField.text.integerValue < 100 || self.heightTextField.text.integerValue > 230) {
-        [self alertWithTitle:@"Invalid Height" withMessage:@"Please make sure you have entered your height in cm (e.g. for 1.70m you should enter 170)."];
+        [self alertWithTitle:@"Invalid Height"
+                 withMessage:@"Please make sure you have entered your height in cm (e.g. for 1.70m you should enter 170)."
+                 withHandler:nil];
         return NO;
     }
     
     // weight
     if (self.weightTextField.text.length == 0 || self.weightTextField.text.integerValue < 35 || self.weightTextField.text.integerValue > 200) {
-        [self alertWithTitle:@"Invalid Weight" withMessage:@"Please make sure you have entered your weight in kg."];
+        [self alertWithTitle:@"Invalid Weight"
+                 withMessage:@"Please make sure you have entered your weight in kg."
+                 withHandler:nil];
         return NO;
     }
     
@@ -115,14 +123,20 @@
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert show];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 + (NSString *)getModel {

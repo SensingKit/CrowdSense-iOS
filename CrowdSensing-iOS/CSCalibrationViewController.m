@@ -84,7 +84,9 @@
     self.recordButton.hidden = YES;
     self.nextButton.enabled = YES;
     
-    [self alertWithTitle:@"Calibration Completed" withMessage:@"Please tap at 'Next' button to continue."];
+    [self alertWithTitle:@"Calibration Completed"
+             withMessage:@"Please tap at 'Next' button to continue."
+             withHandler:nil];
 }
 
 - (IBAction)nextAction:(id)sender
@@ -137,14 +139,20 @@
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert show];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 

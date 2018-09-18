@@ -399,39 +399,94 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 - (void)alertEnableSensors
 {
     [self alertWithTitle:@"Unable to Start Recording"
-             withMessage:@"Please enable some sensors first using the Setup button."];
+             withMessage:@"Please enable some sensors first using the Setup button."
+             withHandler:nil];
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert show];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)showSaveRecordingAlertWithName:(NSString *)name
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Save Recording"
-                                                        message:@"Enter a name for this recording."
-                                                       delegate:self
-                                              cancelButtonTitle:@"Delete"
-                                              otherButtonTitles:@"Save", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Save Recording"
+                                                                             message:@"Enter a name for this recording."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    alertView.tag = CSRecordViewControllerSaveRecordingAlertType;
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        // Preload the text with 'New Recording'
+        textField.text = name;
+        textField.placeholder = name;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }];
     
-    // Preload the text with 'New Recording'
-    UITextField *textField = [alertView textFieldAtIndex:0];
-    textField.text = name;
-    textField.placeholder = name;
-    textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"Delete"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction *action) {
+                                                             
+                                                             NSString *recordingName = alertController.textFields
+                                                             [0].text;
+                                                             
+                                                             [self showDeleteRecordingAlertForRecordingName:recordingName];
+                                                            
+                                                         }];
     
-    [alertView show];
+    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"Save"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             
+                                                             NSString *recordingName = alertController.textFields
+                                                             [0].text;
+                                                             
+                                                             if (recordingName.length > 0)
+                                                             {
+                                                                 NSLog(@"Save with title: %@", recordingName);
+                                                                 
+                                                                 // Disable sensors
+                                                                 [self.sensingSession disableAllRegisteredSensors:nil];
+                                                                 
+                                                                 // Close Session
+                                                                 [self.sensingSession close];
+                                                                 self.sensingSession = nil;
+                                                                 
+                                                                 // Save the title
+                                                                 self.recording.title = recordingName;
+                                                                 
+                                                                 // Save the duration
+                                                                 self.recording.duration = self.duration;
+                                                                 
+                                                                 // Update the Label
+                                                                 self.titleLabel.text = recordingName;
+                                                                 
+                                                                 // Dismiss the view
+                                                                 [self dismissViewControllerAnimated:YES completion:^{
+                                                                     
+                                                                     // Save
+                                                                     NSManagedObjectContext *context = self.recording.managedObjectContext;
+                                                                     [context save:NULL];
+                                                                 }];
+                                                             }
+                                                             
+                                                         }];
+    
+    [alertController addAction:saveAction];
+    [alertController addAction:deleteAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)showDeleteRecordingAlertForRecordingName:(NSString *)recordingName
@@ -478,118 +533,51 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
 
 - (void)showSetNameAlertWithName:(NSString *)name
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Recording Name"
-                                                        message:@"Enter a name for this recording."
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"OK", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Recording Name"
+                                                                             message:@"Enter a name for this recording."
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    alertView.tag = CSRecordViewControllerSetNameAlertType;
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        // Preload the text with 'New Recording'
+        textField.text = name;
+        textField.placeholder = name;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }];
     
-    // Preload the text with 'New Recording'
-    UITextField *textField = [alertView textFieldAtIndex:0];
-    textField.text = name;
-    textField.placeholder = name;
-    textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             
+                                                             NSString *recordingName = alertController.textFields
+                                                             [0].text;
+                                                             
+                                                             if (recordingName.length > 0)
+                                                             {
+                                                                 // Save the title
+                                                                 self.recording.title = recordingName;
+                                                                 
+                                                                 // Update the Label
+                                                                 self.titleLabel.text = recordingName;
+                                                             }
+                                                             else
+                                                             {
+                                                                 // Ask again
+                                                                 [self showSetNameAlertWithName:self.recording.title];
+                                                             }
+                                                         }];
     
-    [alertView show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    CSRecordViewControllerAlertType type = alertView.tag;
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                       style:UIAlertActionStyleCancel
+                                                     handler:^(UIAlertAction *action) {
+                                                         
+                                                             NSLog(@"Cancel Set name");
+                                                         }];
     
-    if (type == CSRecordViewControllerSaveRecordingAlertType)
-    {
-        NSString *buttonText = [alertView buttonTitleAtIndex:buttonIndex];
-        
-        NSString *recordingName = [alertView textFieldAtIndex:0].text;
-        
-        if ([buttonText isEqualToString:@"Delete"])
-        {
-            [self showDeleteRecordingAlertForRecordingName:recordingName];
-            
-        }
-        else if ([buttonText isEqualToString:@"Save"])
-        {
-            if (recordingName.length > 0)
-            {
-                NSLog(@"Save with title: %@", recordingName);
-                
-                // Disable sensors
-                [self.sensingSession disableAllRegisteredSensors:nil];
-                
-                // Close Session
-                [self.sensingSession close];
-                self.sensingSession = nil;
-                
-                // Save the title
-                self.recording.title = recordingName;
-                
-                // Save the duration
-                self.recording.duration = self.duration;
-                
-                // Update the Label
-                self.titleLabel.text = recordingName;
-                
-                // Dismiss the view
-                [self dismissViewControllerAnimated:YES completion:^{
-                    
-                    // Save
-                    NSManagedObjectContext *context = self.recording.managedObjectContext;
-                    [context save:NULL];
-                }];
-            }
-            else
-            {
-                // Ask again
-                [self showSaveRecordingAlertWithName:self.recording.title];
-            }
-        }
-        else
-        {
-            NSLog(@"Unknown button with text '%@'", buttonText);
-        }
-        
-    }
-    else if (type == CSRecordViewControllerSetNameAlertType)
-    {
-        // When tapping on the Title Label
-        NSString *buttonText = [alertView buttonTitleAtIndex:buttonIndex];
-        
-        if ([buttonText isEqualToString:@"OK"])
-        {
-            NSString *recordingName = [alertView textFieldAtIndex:0].text;
-            
-            if (recordingName.length > 0)
-            {
-                // Save the title
-                self.recording.title = recordingName;
-            
-                // Update the Label
-                self.titleLabel.text = recordingName;
-            }
-            else
-            {
-                // Ask again
-                [self showSetNameAlertWithName:self.recording.title];
-            }
-        }
-        else if ([buttonText isEqualToString:@"Cancel"])
-        {
-            NSLog(@"Cancel Set name");
-        }
-        else
-        {
-            NSLog(@"Unknown button with text '%@'", buttonText);
-        }
-    }
-    else
-    {
-        NSLog(@"Unknown CSRecordViewControllerAlertType: %ld", (long) type);
-    }
+    [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -17,7 +17,7 @@
 
 @end
 
-@interface CSRecordViewController : UIViewController<UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, CSSetupTableViewControllerDelegate>
+@interface CSRecordViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, CSSetupTableViewControllerDelegate>
 
 @property (weak, nonatomic) id <CSRecordViewControllerDelegate> delegate;
 @property (nonatomic, strong) Recording *recording;

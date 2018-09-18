@@ -73,7 +73,9 @@
                                                            options:NSJSONWritingPrettyPrinted
                                                              error:&error];
         if (error) {
-            [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+            [self alertWithTitle:@"Transmission Failed"
+                     withMessage:error.localizedDescription
+                     withHandler:nil];
             self.retryButton.hidden = NO;
             self.retryButton.enabled = YES;
             return;
@@ -132,14 +134,18 @@
                                       error:&error];
             
             if (error) {
-                [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+                [self alertWithTitle:@"Transmission Failed"
+                         withMessage:error.localizedDescription
+                         withHandler:nil];
                 self.retryButton.hidden = NO;
                 self.retryButton.enabled = YES;
             }
         }
         else
         {
-            [self alertWithTitle:@"Transmission Failed" withMessage:@"File does not exist."];
+            [self alertWithTitle:@"Transmission Failed"
+                     withMessage:@"File does not exist."
+                     withHandler:nil];
             self.retryButton.hidden = NO;
             self.retryButton.enabled = YES;
         }
@@ -147,7 +153,9 @@
     } error:&error];
     
     if (error) {
-        [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+        [self alertWithTitle:@"Transmission Failed"
+                 withMessage:error.localizedDescription
+                 withHandler:nil];
         self.retryButton.hidden = NO;
         self.retryButton.enabled = YES;
         return;
@@ -180,7 +188,9 @@
                           self.retryButton.hidden = NO;
                           self.retryButton.enabled = YES;
                           
-                          [self alertWithTitle:@"Transmission Failed" withMessage:error.localizedDescription];
+                          [self alertWithTitle:@"Transmission Failed"
+                                   withMessage:error.localizedDescription
+                                   withHandler:nil];
                       }
                       else
                       {
@@ -197,11 +207,15 @@
                           
                           if ([self.type isEqualToString:@"Test"])
                           {
-                              [self alertWithTitle:@"Submission Succedded" withMessage:@"Thank you for your participation. We will be in touch soon."];
+                              [self alertWithTitle:@"Submission Succedded"
+                                       withMessage:@"Thank you for your participation. We will be in touch soon."
+                                       withHandler:nil];
                           }
                           else
                           {
-                              [self alertWithTitle:@"Submission Succedded" withMessage:@"Thank you for your participation. We will be in touch soon."];
+                              [self alertWithTitle:@"Submission Succedded"
+                                       withMessage:@"Thank you for your participation. We will be in touch soon."
+                                       withHandler:nil];
                           }
                           
                       }
@@ -211,14 +225,20 @@
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert show];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)deleteFileAtPath:(NSString *)filePath

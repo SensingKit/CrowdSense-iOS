@@ -66,31 +66,35 @@
     _mode = mode;
 }
 
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 - (void)alertRange
 {
-    NSString *title = [NSString stringWithFormat:@"\"%@\" is not valid", self.textField.text];
-    NSString *message = [NSString stringWithFormat:@"%@ ranges from %lu to %lu", self.title, (unsigned long)self.minValue, (unsigned long)self.maxValue];
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    
-    [alertView show];
+    [self alertWithTitle:[NSString stringWithFormat:@"\"%@\" is not valid", self.textField.text]
+             withMessage:[NSString stringWithFormat:@"%@ ranges from %lu to %lu", self.title, (unsigned long)self.minValue, (unsigned long)self.maxValue]
+             withHandler:nil];
 }
 
 - (void)alertEmpty
 {
-    NSString *title = [NSString stringWithFormat:@"%@ cannot be empty", self.title];
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                        message:@""
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    
-    [alertView show];
+    [self alertWithTitle: [NSString stringWithFormat:@"%@ cannot be empty", self.title]
+             withMessage:@""
+             withHandler:nil];
 }
 
 - (IBAction)doneAction:(id)sender

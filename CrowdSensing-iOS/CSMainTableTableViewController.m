@@ -188,14 +188,20 @@
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert show];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)userInput {
@@ -252,7 +258,8 @@
            
        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
            [self alertWithTitle:@"Coupon Is Not Valid"
-                    withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
+                    withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."
+                    withHandler:nil];
        }];
 }
 
@@ -270,25 +277,9 @@
     }
     else {
         [self alertWithTitle:@"Coupon Is Not Valid"
-                 withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."];
+                 withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."
+                 withHandler:nil];
     }
-}
-
-- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
-           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
-{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *okAction = [UIAlertAction
-                               actionWithTitle:@"OK"
-                               style:UIAlertActionStyleDefault
-                               handler:handler];
-    
-    [alertController addAction:okAction];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (NSDictionary *)getConfiguration

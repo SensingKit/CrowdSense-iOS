@@ -80,7 +80,9 @@
                                    NSArray *textArray = [text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                                    
                                    if (text.length < 5 || textArray.count < 2) {
-                                       [self alertWithTitle:@"Name Is Not Valid" withMessage:@"Your name does not appear to be valid. Please enter your full name in a valid format (e.g. John Smith)."];
+                                       [self alertWithTitle:@"Name Is Not Valid"
+                                                withMessage:@"Your name does not appear to be valid. Please enter your full name in a valid format (e.g. John Smith)."
+                                                withHandler:nil];
                                    }
                                    else {
                                        
@@ -110,14 +112,20 @@
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert show];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

@@ -47,15 +47,9 @@
 
 - (void)alertSensorNotAvailable
 {
-    NSString *title = [NSString stringWithFormat:@"%@ Sensor", self.title];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:@"Sensor is not available on this device."
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    
-    [alert show];
+    [self alertWithTitle:[NSString stringWithFormat:@"%@ Sensor", self.title]
+             withMessage:@"Sensor is not available on this device."
+             withHandler:nil];
 }
 
 - (void)updateConfiguration
@@ -64,6 +58,23 @@
     {
         [self.delegate updateConfiguration:self.configuration forSensor:self.sensorType];
     }
+}
+
+- (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

@@ -46,10 +46,14 @@
 - (IBAction)takePicture:(id)sender
 {
     if ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] == AVAuthorizationStatusRestricted) {
-        [self alertWithTitle:@"Permission Restricted" withMessage:@"Please change the Camera permission in Settings > Privacy > Camera."];
+        [self alertWithTitle:@"Permission Restricted"
+                 withMessage:@"Please change the Camera permission in Settings > Privacy > Camera."
+                 withHandler:nil];
     }
     else if ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] == AVAuthorizationStatusDenied) {
-         [self alertWithTitle:@"Permission Denied" withMessage:@"Please change the Camera permission in Settings > Privacy > Camera."];
+         [self alertWithTitle:@"Permission Denied"
+                  withMessage:@"Please change the Camera permission in Settings > Privacy > Camera."
+                  withHandler:nil];
     }
     else {
         // Ask for password before continuing
@@ -126,14 +130,20 @@
 
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
+           withHandler:(void (^ __nullable)(UIAlertAction *action))handler
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert show];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:handler];
+    
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
