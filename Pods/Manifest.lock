@@ -1,39 +1,19 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
   - Crashlytics (3.10.7):
     - Fabric (~> 1.7.11)
-  - DeviceUtil (2.1.3)
   - Fabric (1.7.11)
   - SensingKit (0.5.1)
   - SSZipArchive (2.1.4)
 
 DEPENDENCIES:
-  - AFNetworking
   - Crashlytics
-  - DeviceUtil
   - Fabric
   - SensingKit (from `https://github.com/SensingKit/SensingKit-iOS.git`, branch `next`)
   - SSZipArchive
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - AFNetworking
     - Crashlytics
-    - DeviceUtil
     - Fabric
     - SSZipArchive
 
@@ -44,17 +24,15 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SensingKit:
-    :commit: 7b468203bdc406c925d1092da85e9d59c85767d1
+    :commit: 4134dbc6ef5fa82a9e3ce780160a2a7473731c2d
     :git: https://github.com/SensingKit/SensingKit-iOS.git
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
-  DeviceUtil: 4cf6b8bdc108ef89fe6a1c744a8d743bef9b245c
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
   SensingKit: e4acb178652e6bcf23e564f2da111e5087b39e79
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 
-PODFILE CHECKSUM: 28d89b6b08ba4bc28acac78f3476ccf4ad921f58
+PODFILE CHECKSUM: 4cefde875f673b617931213133d9d57b586b7248
 
 COCOAPODS: 1.6.0.beta.1

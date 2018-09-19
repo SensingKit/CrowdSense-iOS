@@ -1550,10 +1550,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="irw-a3-4F5" kind="presentation" identifier="Show Experiment" id="H6E-T8-e8k"/>
-                        <segue destination="V5E-DR-apd" kind="presentation" identifier="Show Demo" id="auP-9K-WR0"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLL-xa-l7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1738,22 +1734,6 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tho-p4-E6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-103" y="2186"/>
-        </scene>
-        <!--ExperimentStoryboard-->
-        <scene sceneID="z67-rY-f13">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ExperimentStoryboard" id="irw-a3-4F5" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-YY-ksv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-896" y="1919"/>
-        </scene>
-        <!--DemoStoryboard-->
-        <scene sceneID="DYj-0x-p7g">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DemoStoryboard" id="V5E-DR-apd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ACv-MY-duQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1697" y="1919"/>
         </scene>
     </scenes>
     <resources>

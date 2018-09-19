@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9AFAFBF62FDE88A3579FB80D /* Pods_CrowdSensing_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEA1D02208577FE9512130 /* Pods_CrowdSensing_iOS.framework */; };
-		CF1486531EED5E7700A2F5E5 /* CSDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1486521EED5E7700A2F5E5 /* CSDemoViewController.m */; };
 		CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */; };
 		CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39519ED446500E295CB /* CSSensorSetupTableViewController.m */; };
 		CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C39C19ED4BA400E295CB /* CSSamplingRateSensorSetup.m */; };
@@ -18,28 +17,14 @@
 		CF18C3A919ED4C7700E295CB /* CSUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3A819ED4C7700E295CB /* CSUserInput.m */; };
 		CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */; };
 		CF38EB441C03519300CAE092 /* NSString+CSTimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = CF38EB431C03519300CAE092 /* NSString+CSTimeInterval.m */; };
-		CF5198C51EBB865900E0786C /* CSTestReportingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5198C41EBB865900E0786C /* CSTestReportingViewController.m */; };
 		CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5298981A0D1141002A4D54 /* SKStyles.m */; };
 		CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFF326719796BF600F7CE57 /* Storyboard.storyboard */; };
-		CF65BAD21E730FFF00AD143B /* CSInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAD11E730FFF00AD143B /* CSInformationViewController.m */; };
-		CF65BAD81E73101E00AD143B /* CSTestDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAD71E73101E00AD143B /* CSTestDeviceViewController.m */; };
-		CF65BADB1E73102900AD143B /* CSConsentFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BADA1E73102900AD143B /* CSConsentFormViewController.m */; };
-		CF65BADE1E73103300AD143B /* CSQuestionnaireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BADD1E73103300AD143B /* CSQuestionnaireViewController.m */; };
-		CF65BAE11E73103B00AD143B /* CSAlmostReadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAE01E73103B00AD143B /* CSAlmostReadyViewController.m */; };
-		CF65BAE41E73104600AD143B /* CSCalibrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAE31E73104600AD143B /* CSCalibrationViewController.m */; };
-		CF65BAE71E73104F00AD143B /* CSReadyToGoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAE61E73104F00AD143B /* CSReadyToGoViewController.m */; };
-		CF65BAEA1E73105700AD143B /* CSRecordingDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAE91E73105700AD143B /* CSRecordingDataViewController.m */; };
-		CF65BAED1E73105E00AD143B /* CSSubmitDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAEC1E73105E00AD143B /* CSSubmitDataViewController.m */; };
 		CF8E9BD71B3356E6005AC2FC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BD51B3356E6005AC2FC /* Model.xcdatamodeld */; };
 		CF8E9BE01B336195005AC2FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8E9BDF1B336195005AC2FC /* CoreData.framework */; };
 		CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BEA1B342BB9005AC2FC /* CoreDataTableViewController.m */; };
 		CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BED1B342C6D005AC2FC /* CSMainTableTableViewController.m */; };
 		CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */; };
 		CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */; };
-		CF93F2691E742BC30060A5F5 /* ALDisk.m in Sources */ = {isa = PBXBuildFile; fileRef = CF93F2681E742BC30060A5F5 /* ALDisk.m */; };
-		CF9A709D1EAE87B000DCAB66 /* CSCalibrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF65BAE31E73104600AD143B /* CSCalibrationViewController.m */; };
-		CFA508D421513CBD000E8EFF /* ExperimentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA508D621513CBD000E8EFF /* ExperimentStoryboard.storyboard */; };
-		CFA508D721513CC3000E8EFF /* DemoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA508D921513CC3000E8EFF /* DemoStoryboard.storyboard */; };
 		CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */; };
 		CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BB1B5434BC00D3ED80 /* CSSensingSession.m */; };
 		CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB668BE1B5434CC00D3ED80 /* CSModelWriter.m */; };
@@ -80,8 +65,6 @@
 		65B684E43645E885F3B88184 /* Pods-CrowdSensing-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		70FEA1D02208577FE9512130 /* Pods_CrowdSensing_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrowdSensing_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D822FC1F2BA8C91854A824 /* Pods-CrowdSensing-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdSensing-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		CF1486511EED5E7700A2F5E5 /* CSDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSDemoViewController.h; sourceTree = "<group>"; };
-		CF1486521EED5E7700A2F5E5 /* CSDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSDemoViewController.m; sourceTree = "<group>"; };
 		CF18C39119ED439B00E295CB /* CSSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSetupTableViewController.h; sourceTree = "<group>"; };
 		CF18C39219ED439B00E295CB /* CSSetupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSetupTableViewController.m; sourceTree = "<group>"; };
 		CF18C39419ED446500E295CB /* CSSensorSetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensorSetupTableViewController.h; sourceTree = "<group>"; };
@@ -100,29 +83,9 @@
 		CF18C3AB19ED4E3500E295CB /* CSGenericSensorSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGenericSensorSetup.m; sourceTree = "<group>"; };
 		CF38EB421C03519300CAE092 /* NSString+CSTimeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CSTimeInterval.h"; sourceTree = "<group>"; };
 		CF38EB431C03519300CAE092 /* NSString+CSTimeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSTimeInterval.m"; sourceTree = "<group>"; };
-		CF5198C31EBB865900E0786C /* CSTestReportingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTestReportingViewController.h; sourceTree = "<group>"; };
-		CF5198C41EBB865900E0786C /* CSTestReportingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTestReportingViewController.m; sourceTree = "<group>"; };
 		CF5198C61EBB9C8A00E0786C /* CrowdSensing-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CrowdSensing-iOS.entitlements"; sourceTree = "<group>"; };
 		CF5298971A0D1141002A4D54 /* SKStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKStyles.h; path = "CrowdSensing-iOS/SKStyles.h"; sourceTree = "<group>"; };
 		CF5298981A0D1141002A4D54 /* SKStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKStyles.m; path = "CrowdSensing-iOS/SKStyles.m"; sourceTree = "<group>"; };
-		CF65BAD01E730FFF00AD143B /* CSInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInformationViewController.h; sourceTree = "<group>"; };
-		CF65BAD11E730FFF00AD143B /* CSInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSInformationViewController.m; sourceTree = "<group>"; };
-		CF65BAD61E73101E00AD143B /* CSTestDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTestDeviceViewController.h; sourceTree = "<group>"; };
-		CF65BAD71E73101E00AD143B /* CSTestDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTestDeviceViewController.m; sourceTree = "<group>"; };
-		CF65BAD91E73102900AD143B /* CSConsentFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSConsentFormViewController.h; sourceTree = "<group>"; };
-		CF65BADA1E73102900AD143B /* CSConsentFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSConsentFormViewController.m; sourceTree = "<group>"; };
-		CF65BADC1E73103300AD143B /* CSQuestionnaireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSQuestionnaireViewController.h; sourceTree = "<group>"; };
-		CF65BADD1E73103300AD143B /* CSQuestionnaireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSQuestionnaireViewController.m; sourceTree = "<group>"; };
-		CF65BADF1E73103B00AD143B /* CSAlmostReadyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAlmostReadyViewController.h; sourceTree = "<group>"; };
-		CF65BAE01E73103B00AD143B /* CSAlmostReadyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAlmostReadyViewController.m; sourceTree = "<group>"; };
-		CF65BAE21E73104600AD143B /* CSCalibrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCalibrationViewController.h; sourceTree = "<group>"; };
-		CF65BAE31E73104600AD143B /* CSCalibrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCalibrationViewController.m; sourceTree = "<group>"; };
-		CF65BAE51E73104F00AD143B /* CSReadyToGoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSReadyToGoViewController.h; sourceTree = "<group>"; };
-		CF65BAE61E73104F00AD143B /* CSReadyToGoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSReadyToGoViewController.m; sourceTree = "<group>"; };
-		CF65BAE81E73105700AD143B /* CSRecordingDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordingDataViewController.h; sourceTree = "<group>"; };
-		CF65BAE91E73105700AD143B /* CSRecordingDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordingDataViewController.m; sourceTree = "<group>"; };
-		CF65BAEB1E73105E00AD143B /* CSSubmitDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSubmitDataViewController.h; sourceTree = "<group>"; };
-		CF65BAEC1E73105E00AD143B /* CSSubmitDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSubmitDataViewController.m; sourceTree = "<group>"; };
 		CF8E9BD61B3356E6005AC2FC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CF8E9BDF1B336195005AC2FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CF8E9BE91B342BB9005AC2FC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -133,10 +96,6 @@
 		CF8E9BF91B344EF3005AC2FC /* Recording+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recording+Create.m"; sourceTree = "<group>"; };
 		CF8E9BFB1B346733005AC2FC /* LogEntry+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LogEntry+Create.h"; sourceTree = "<group>"; };
 		CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LogEntry+Create.m"; sourceTree = "<group>"; };
-		CF93F2671E742BC30060A5F5 /* ALDisk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDisk.h; sourceTree = "<group>"; };
-		CF93F2681E742BC30060A5F5 /* ALDisk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDisk.m; sourceTree = "<group>"; };
-		CFA508D521513CBD000E8EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExperimentStoryboard.storyboard; sourceTree = "<group>"; };
-		CFA508D821513CC3000E8EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DemoStoryboard.storyboard; sourceTree = "<group>"; };
 		CFB029B61BADBEB3008E4137 /* CSSelectProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSelectProperty.h; sourceTree = "<group>"; };
 		CFB029B71BADBEB3008E4137 /* CSSelectProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSelectProperty.m; sourceTree = "<group>"; };
 		CFB668BA1B5434BC00D3ED80 /* CSSensingSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSensingSession.h; sourceTree = "<group>"; };
@@ -205,15 +164,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF1486501EED5E6100A2F5E5 /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				CF1486511EED5E7700A2F5E5 /* CSDemoViewController.h */,
-				CF1486521EED5E7700A2F5E5 /* CSDemoViewController.m */,
-			);
-			name = Demo;
-			sourceTree = "<group>";
-		};
 		CF18C38A19ED408800E295CB /* Setup */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,33 +207,6 @@
 			name = "PaintCode generated files";
 			sourceTree = "<group>";
 		};
-		CF65BACF1E730F9A00AD143B /* Experiment */ = {
-			isa = PBXGroup;
-			children = (
-				CF65BAD01E730FFF00AD143B /* CSInformationViewController.h */,
-				CF65BAD11E730FFF00AD143B /* CSInformationViewController.m */,
-				CF65BAD61E73101E00AD143B /* CSTestDeviceViewController.h */,
-				CF65BAD71E73101E00AD143B /* CSTestDeviceViewController.m */,
-				CF5198C31EBB865900E0786C /* CSTestReportingViewController.h */,
-				CF5198C41EBB865900E0786C /* CSTestReportingViewController.m */,
-				CF65BAD91E73102900AD143B /* CSConsentFormViewController.h */,
-				CF65BADA1E73102900AD143B /* CSConsentFormViewController.m */,
-				CF65BADC1E73103300AD143B /* CSQuestionnaireViewController.h */,
-				CF65BADD1E73103300AD143B /* CSQuestionnaireViewController.m */,
-				CF65BADF1E73103B00AD143B /* CSAlmostReadyViewController.h */,
-				CF65BAE01E73103B00AD143B /* CSAlmostReadyViewController.m */,
-				CF65BAE21E73104600AD143B /* CSCalibrationViewController.h */,
-				CF65BAE31E73104600AD143B /* CSCalibrationViewController.m */,
-				CF65BAE51E73104F00AD143B /* CSReadyToGoViewController.h */,
-				CF65BAE61E73104F00AD143B /* CSReadyToGoViewController.m */,
-				CF65BAE81E73105700AD143B /* CSRecordingDataViewController.h */,
-				CF65BAE91E73105700AD143B /* CSRecordingDataViewController.m */,
-				CF65BAEB1E73105E00AD143B /* CSSubmitDataViewController.h */,
-				CF65BAEC1E73105E00AD143B /* CSSubmitDataViewController.m */,
-			);
-			name = Experiment;
-			sourceTree = "<group>";
-		};
 		CF8E9BDE1B3360AD005AC2FC /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,15 +216,6 @@
 				CF8E9BFC1B346733005AC2FC /* LogEntry+Create.m */,
 			);
 			name = Categories;
-			sourceTree = "<group>";
-		};
-		CF93F2661E742BC30060A5F5 /* ALDisk */ = {
-			isa = PBXGroup;
-			children = (
-				CF93F2671E742BC30060A5F5 /* ALDisk.h */,
-				CF93F2681E742BC30060A5F5 /* ALDisk.m */,
-			);
-			path = ALDisk;
 			sourceTree = "<group>";
 		};
 		CFB029B51BADBE90008E4137 /* User Input */ = {
@@ -331,7 +245,6 @@
 		CFFF324919796BF600F7CE57 = {
 			isa = PBXGroup;
 			children = (
-				CF93F2661E742BC30060A5F5 /* ALDisk */,
 				CF52989A1A0D1149002A4D54 /* PaintCode generated files */,
 				CFFF325B19796BF600F7CE57 /* CrowdSensing-iOS */,
 				CFFF327D19796BF600F7CE57 /* CrowdSensing-iOSTests */,
@@ -388,11 +301,7 @@
 				CF18C38A19ED408800E295CB /* Setup */,
 				CFC896621B8E4997004F857C /* Model */,
 				CFFF325C19796BF600F7CE57 /* Supporting Files */,
-				CF1486501EED5E6100A2F5E5 /* Demo */,
-				CF65BACF1E730F9A00AD143B /* Experiment */,
 				CFFF326719796BF600F7CE57 /* Storyboard.storyboard */,
-				CFA508D621513CBD000E8EFF /* ExperimentStoryboard.storyboard */,
-				CFA508D921513CC3000E8EFF /* DemoStoryboard.storyboard */,
 				CFD450421B8A0DEC00E2E78D /* Settings.bundle */,
 			);
 			path = "CrowdSensing-iOS";
@@ -532,11 +441,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFA508D721513CC3000E8EFF /* DemoStoryboard.storyboard in Resources */,
 				CFD450431B8A0DEC00E2E78D /* Settings.bundle in Resources */,
 				CF52989B1A0D16C4002A4D54 /* Storyboard.storyboard in Resources */,
 				CFFF327119796BF600F7CE57 /* Images.xcassets in Resources */,
-				CFA508D421513CBD000E8EFF /* ExperimentStoryboard.storyboard in Resources */,
 				CFFF326019796BF600F7CE57 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,15 +484,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/DeviceUtil/DeviceUtil.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SensingKit/SensingKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceUtil.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SensingKit.framework",
 			);
@@ -614,22 +517,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF65BAEA1E73105700AD143B /* CSRecordingDataViewController.m in Sources */,
 				CFC0F8AE19EC2242006CA622 /* CSRoundButton.m in Sources */,
-				CF65BADE1E73103300AD143B /* CSQuestionnaireViewController.m in Sources */,
 				CFB029B81BADBEB3008E4137 /* CSSelectProperty.m in Sources */,
-				CF93F2691E742BC30060A5F5 /* ALDisk.m in Sources */,
-				CF1486531EED5E7700A2F5E5 /* CSDemoViewController.m in Sources */,
 				CF8E9BFD1B346733005AC2FC /* LogEntry+Create.m in Sources */,
-				CF65BAE41E73104600AD143B /* CSCalibrationViewController.m in Sources */,
-				CF65BAED1E73105E00AD143B /* CSSubmitDataViewController.m in Sources */,
 				CFC8966B1B8E4A4C004F857C /* Recording.m in Sources */,
 				CFFF326619796BF600F7CE57 /* CSAppDelegate.m in Sources */,
-				CF65BAE11E73103B00AD143B /* CSAlmostReadyViewController.m in Sources */,
 				CFFF326219796BF600F7CE57 /* main.m in Sources */,
 				CF18C3AC19ED4E3500E295CB /* CSGenericSensorSetup.m in Sources */,
 				CFD0E1901BAAC7A500F98F14 /* CSMicrophoneSensorSetup.m in Sources */,
-				CF65BAD81E73101E00AD143B /* CSTestDeviceViewController.m in Sources */,
 				CF8E9BEB1B342BB9005AC2FC /* CoreDataTableViewController.m in Sources */,
 				CF5298991A0D1141002A4D54 /* SKStyles.m in Sources */,
 				CFD0E18D1BAAC78C00F98F14 /* CSEddystoneProximitySensorSetup.m in Sources */,
@@ -639,18 +534,14 @@
 				CFB668BC1B5434BC00D3ED80 /* CSSensingSession.m in Sources */,
 				CF18C39619ED446500E295CB /* CSSensorSetupTableViewController.m in Sources */,
 				CFB7CD2119F2E2BC00F6B406 /* CSAboutViewController.m in Sources */,
-				CF65BAE71E73104F00AD143B /* CSReadyToGoViewController.m in Sources */,
-				CF5198C51EBB865900E0786C /* CSTestReportingViewController.m in Sources */,
 				CF18C3A619ED4C1200E295CB /* CSiBeaconProximitySensorSetup.m in Sources */,
 				CFFF326F19796BF600F7CE57 /* CSRecordViewController.m in Sources */,
-				CF65BAD21E730FFF00AD143B /* CSInformationViewController.m in Sources */,
 				CFC8966E1B8E4A4D004F857C /* LogEntry.m in Sources */,
 				CF8E9BFA1B344EF3005AC2FC /* Recording+Create.m in Sources */,
 				CF18C3A919ED4C7700E295CB /* CSUserInput.m in Sources */,
 				CF8E9BD71B3356E6005AC2FC /* Model.xcdatamodeld in Sources */,
 				CF8E9BEE1B342C6D005AC2FC /* CSMainTableTableViewController.m in Sources */,
 				CF18C3A319ED4C0000E295CB /* CSLocationSensorSetup.m in Sources */,
-				CF65BADB1E73102900AD143B /* CSConsentFormViewController.m in Sources */,
 				CF18C39319ED439B00E295CB /* CSSetupTableViewController.m in Sources */,
 				CFB668BF1B5434CC00D3ED80 /* CSModelWriter.m in Sources */,
 				CF18C39D19ED4BA400E295CB /* CSSamplingRateSensorSetup.m in Sources */,
@@ -663,7 +554,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFFF328419796BF600F7CE57 /* CrowdSensing_iOSTests.m in Sources */,
-				CF9A709D1EAE87B000DCAB66 /* CSCalibrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,22 +568,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CFA508D621513CBD000E8EFF /* ExperimentStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFA508D521513CBD000E8EFF /* Base */,
-			);
-			name = ExperimentStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		CFA508D921513CC3000E8EFF /* DemoStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFA508D821513CC3000E8EFF /* Base */,
-			);
-			name = DemoStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 		CFFF325E19796BF600F7CE57 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

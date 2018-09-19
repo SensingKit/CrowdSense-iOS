@@ -11,10 +11,6 @@
 #import "CSRecordingInfoTableViewController.h"
 #import "Recording.h"
 #import "Recording+Create.h"
-#import "CSInformationViewController.h"
-#import "CSDemoViewController.h"
-
-@import AFNetworking;
 
 @interface CSMainTableTableViewController () <CSRecordViewControllerDelegate>
 
@@ -166,25 +162,6 @@
         Recording *recording = [self.fetchedResultsController objectAtIndexPath:indexPath];
         recordingInfoController.recording = recording;
     }
-    else if ([segue.identifier isEqualToString:@"Show Experiment"])  {
-        
-        UINavigationController *navigationController = segue.destinationViewController;
-        CSInformationViewController *informationViewController = (CSInformationViewController *)navigationController.topViewController;
-        informationViewController.type = self.experimentType;
-        informationViewController.coupon = self.experimentCoupon;
-    }
-    else if ([segue.identifier isEqualToString:@"Show Demo"])  {
-        
-        if (!self.configuration) {
-            self.configuration = @{@"ip": @"192.168.10.10",
-                                   @"heading": @YES,
-                                   @"heading_filter": @5};
-        }
-        
-        UINavigationController *navigationController = segue.destinationViewController;
-        CSDemoViewController *demoViewController = (CSDemoViewController *)navigationController.topViewController;
-        demoViewController.configuration = self.configuration;
-    }
 }
 
 - (void)alertWithTitle:(NSString *)title withMessage:(NSString *)message
@@ -202,109 +179,6 @@
     [alertController addAction:okAction];
     
     [self presentViewController:alertController animated:YES completion:nil];
-}
-
-- (void)userInput {
-    
-    UIAlertController *alertController = [UIAlertController
-                                          alertControllerWithTitle:@"Study Participation"
-                                          message:@"Please enter the coupon received when registering for the Speed Networking study:"
-                                          preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *cancelAction = [UIAlertAction
-                                   actionWithTitle:@"Cancel"
-                                   style:UIAlertActionStyleCancel
-                                   handler:nil];
-    
-    UIAlertAction *okAction = [UIAlertAction
-                               actionWithTitle:@"OK"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * _Nonnull action) {
-                                   
-                                   NSString *text = ((UITextField *)[alertController.textFields objectAtIndex:0]).text;
-                                   [self checkCoupon:text];
-                               }];
-    
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Please enter the coupon.";
-        textField.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
-    }];
-    
-    [alertController addAction:cancelAction];
-    [alertController addAction:okAction];
-    
-    // Show the alert
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
-- (IBAction)showExperimentAction:(id)sender
-{
-    [self userInput];
-    //[self performSegueWithIdentifier:@"Show Demo" sender:self];
-}
-
-- (void)checkCoupon:(NSString *)coupon
-{
-    // JSON Body
-    NSDictionary* bodyObject = @{@"password": @"b+FRongauiv/bKy1egB8AbB2HIICNbhX5IqlbMWcfn4",
-                                 @"coupon": coupon};
-    
-    [[AFHTTPSessionManager manager] POST:@"https://sensingkit.herokuapp.com/validation"
-       parameters:bodyObject progress:^(NSProgress * _Nonnull uploadProgress) {
-           // All ok
-       } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
-           
-           [self parseResponse:responseObject forCoupon:coupon];
-           
-       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-           [self alertWithTitle:@"Coupon Is Not Valid"
-                    withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."
-                    withHandler:nil];
-       }];
-}
-
-- (void)parseResponse:(NSDictionary *)response forCoupon:(NSString *)coupon
-{
-    if ([response[@"isTestCoupon"] isEqual:@(1)]) {
-        self.experimentCoupon = coupon;
-        self.experimentType = @"Test";
-        [self performSegueWithIdentifier:@"Show Experiment" sender:self];
-    }
-    else if ([response[@"isExpirimentCoupon"] isEqual:@(1)]) {
-        self.experimentCoupon = coupon;
-        self.experimentType = @"Experiment";
-        [self performSegueWithIdentifier:@"Show Experiment" sender:self];
-    }
-    else {
-        [self alertWithTitle:@"Coupon Is Not Valid"
-                 withMessage:@"Please e-mail us at k.katevas@qmul.ac.uk if you live in London and you want to participate in our study."
-                 withHandler:nil];
-    }
-}
-
-- (NSDictionary *)getConfiguration
-{
-    NSURL *url = [NSURL URLWithString:@"https://www.sensingkit.org/MobiSys17-Demo.json"];
-    NSData *receivedData = [NSData dataWithContentsOfURL:url];
-    
-    if (!receivedData)
-    {
-        [self alertWithTitle:@"Network Error" withMessage:@"Please make sure you have a reliable Internet connection." withHandler:nil];
-        return nil;
-    }
-    
-    NSError *error = nil;
-    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:receivedData
-                                                                   options:kNilOptions
-                                                                     error:&error];
-    
-    if (error) {
-        [self alertWithTitle:@"Error" withMessage:error.localizedDescription withHandler:nil];
-        return nil;
-    }
-    
-    NSLog(@"IP: %@", jsonDictionary[@"ip"]);
-    return jsonDictionary;
 }
 
 @end
