@@ -8,24 +8,15 @@ PODS:
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - SensingKit (from `https://github.com/SensingKit/SensingKit-iOS.git`, branch `next`)
+  - SensingKit
   - SSZipArchive
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Crashlytics
     - Fabric
+    - SensingKit
     - SSZipArchive
-
-EXTERNAL SOURCES:
-  SensingKit:
-    :branch: next
-    :git: https://github.com/SensingKit/SensingKit-iOS.git
-
-CHECKOUT OPTIONS:
-  SensingKit:
-    :commit: 89b69ce31031c0e01270544c1f0fd558313f6461
-    :git: https://github.com/SensingKit/SensingKit-iOS.git
 
 SPEC CHECKSUMS:
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
@@ -33,6 +24,6 @@ SPEC CHECKSUMS:
   SensingKit: e4acb178652e6bcf23e564f2da111e5087b39e79
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 
-PODFILE CHECKSUM: 4cefde875f673b617931213133d9d57b586b7248
+PODFILE CHECKSUM: c2af04e0a32de4dda6a96b2be172433508d6e7be
 
 COCOAPODS: 1.6.0.beta.1
