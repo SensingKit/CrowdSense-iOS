@@ -36,7 +36,6 @@
 		0AF055833B59ABFBBA769D4EB99F944F /* SKHeadingConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = DD402ADC0EE46691E56AC4B24CEE1042 /* SKHeadingConfiguration.m */; };
 		0BD13F4F87EE69D46E01BA26D3221BED /* SKDeviceMotionData.m in Sources */ = {isa = PBXBuildFile; fileRef = C4719DBE81AFFE80C6F7534D62D0BCC6 /* SKDeviceMotionData.m */; };
 		0D2CB94A9F81A3026ABF87D82CA02A58 /* ESSBeaconScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 6698612A2BA7AC83232EEDF146804B1F /* ESSBeaconScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E44DA549555B484A873A373052337EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		0E74CCE38D3CDC136DE530B2D5CA76DD /* SKGyroscopeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ABE3F4EA353CF07EDBC92537A3DB4D /* SKGyroscopeData.m */; };
 		0E8E4461BA906D261FCE1E162D009850 /* SKDeviceMotionData.h in Headers */ = {isa = PBXBuildFile; fileRef = F8279A302C41DA638D7A38503C4C3EC0 /* SKDeviceMotionData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0FC9033C2088FB9F76DB8CD1C250F40D /* SKDeviceMotionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = DB588CE534B168D1479AD1D325315A3B /* SKDeviceMotionConfiguration.m */; };
@@ -54,7 +53,6 @@
 		2010D869617F0D6779AE77ABA33B40F2 /* SKPedometerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = A61CF50C45BF269B00E74F6EAE98260D /* SKPedometerConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		204C36DC42FDE92611BAEBE8161137EE /* SKBatteryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0825C67C5B1339F21909CD21E983CEA9 /* SKBatteryData.m */; };
 		215B6222669E05EFDD562CD0B2A592AD /* minishared.c in Sources */ = {isa = PBXBuildFile; fileRef = 78A20CED74F0FA8C8BABA6FE6ACC0FFD /* minishared.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		215C664ECEA109F4AEC2E10A102810FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		23E2771F38CC2A31A827AE9F7772426A /* ESSEddystone.m in Sources */ = {isa = PBXBuildFile; fileRef = 001A120C8BCFE1B397EAB954DDAFBFAC /* ESSEddystone.m */; };
 		24FD1BC1878D81C6F8374C33E0D70C50 /* SKLocationData.h in Headers */ = {isa = PBXBuildFile; fileRef = DC045A5B27AE766B4918DF2BFCA4D517 /* SKLocationData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27F61B7F64F8CF15F29F4864FAB3CD40 /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 7143DD53107AD4365A6524D664ED01D8 /* hmac.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -63,6 +61,7 @@
 		2DD37F7366FBC79796D8C5095A17F24B /* NSString+SensorType.h in Headers */ = {isa = PBXBuildFile; fileRef = F240C8B6AF83BE5F3C53AF05F977BB4E /* NSString+SensorType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E86A1920903020697BB22286307F443 /* SKProximityData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8BD6C162F7397FB7FB0E3F6853A444 /* SKProximityData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E8AEDCDAC9F3619F2734629D50E4C08 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = 9E033F2AC10F41974C12EBB36E93D56B /* prng.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2F864FEA23DCAFC860EB9FFEC20B7C3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		30159276C31906B5C0F0979DD63E9956 /* SKEddystoneProximityData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC3EA92BCEEED32FA381EC5A4BC6B1 /* SKEddystoneProximityData.m */; };
 		31D4F6794200C5B6B5A6461EF4B9AEE6 /* SKMotionActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE201204647CE7B4359FAA010E7561C /* SKMotionActivity.m */; };
 		36EDACCEB12108151A9C10C1B7DF720F /* SKConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E99E21B310CBBBB91299B11F049EA5B /* SKConfiguration.m */; };
@@ -128,6 +127,7 @@
 		9ADDD78BACF49ECBCCA32D09E5D7548E /* SensingKitLib.h in Headers */ = {isa = PBXBuildFile; fileRef = DEDA5A2085A22A22A7C313EAEFDA6ADD /* SensingKitLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D37D90F1AB181352FED9508DFCA958B /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = B494E2CF8EECD13AD363699F4254DE28 /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9EE3C2E18B13200928BB6F12A0EF7E98 /* SKSensorTimestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 152F84020C0A0E949308D04621F4EDE0 /* SKSensorTimestamp.m */; };
+		A007DF6CA4D63855B4FB37B46B2A0A9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		A1E7940627E652913F2449D221743300 /* SKSensorType.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C4E982C8500207D4C98AE5F36C2DFD /* SKSensorType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A25E3A8670D7EDF1B48108018E58AD3E /* SKBattery.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B0A7D701B0B62F60F6CB0BC8C41CB /* SKBattery.m */; };
 		A64461C8F0C3769F0FAF0754673AC384 /* Pods-CrowdSensing-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DE2A5C45602E537AC3AF80B2333553 /* Pods-CrowdSensing-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -153,8 +153,8 @@
 		CB8AD89DD9BC2165996DAD6F2996FA21 /* ESSTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10A157FBDFB755CE0B9C2182F77CA2 /* ESSTimer.m */; };
 		CD7A61853D5DAE613DD633CC1D173DE2 /* SensingKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 604945CC7D3FCFCAF73A268E882C9E0B /* SensingKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFE551C4E17E02C997AD3BD7697C15C5 /* SKEddystoneProximity.h in Headers */ = {isa = PBXBuildFile; fileRef = 25E23B466E71916B10E2962BBB889805 /* SKEddystoneProximity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D209829BDDA02822A87A086B72874FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		D27C23A4CDDA97398D34F98A02EA7949 /* SKMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EF88448D97F9905D81FD1DA88A0367 /* SKMotionManager.m */; };
-		D8EDAAE68BDBE3898D5613DDB0D22A4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		DADE3F7A5EADA93DF7922C5BD6E149AB /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = AA7E79A6F693EFA0F7BA06D2F57E92DB /* crypt.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		DC89DB8E85756C320785918BBA4001C6 /* SKPedometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FBCE62CCF6CB781FE28BCF7B3C50EC /* SKPedometerData.m */; };
 		DCC40528CF4CA7ED8F56B66244C81013 /* SKMagnetometer.h in Headers */ = {isa = PBXBuildFile; fileRef = 224256521634E98DF7B43350D04A5D4A /* SKMagnetometer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -286,7 +286,6 @@
 		54D5191E019372828E38487121EA544A /* sha1.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sha1.c; path = SSZipArchive/minizip/aes/sha1.c; sourceTree = "<group>"; };
 		55ABE3F4EA353CF07EDBC92537A3DB4D /* SKGyroscopeData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKGyroscopeData.m; path = SensingKit/SKGyroscopeData.m; sourceTree = "<group>"; };
 		59519EED857DE88B1C4D33615EF32FE5 /* SKAltimeterConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKAltimeterConfiguration.h; path = SensingKit/SKAltimeterConfiguration.h; sourceTree = "<group>"; };
-		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5A55508B32109AB0556349E0528D9875 /* SKAccelerometer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKAccelerometer.m; path = SensingKit/SKAccelerometer.m; sourceTree = "<group>"; };
 		5B5B0A7D701B0B62F60F6CB0BC8C41CB /* SKBattery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKBattery.m; path = SensingKit/SKBattery.m; sourceTree = "<group>"; };
 		604945CC7D3FCFCAF73A268E882C9E0B /* SensingKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SensingKit-umbrella.h"; sourceTree = "<group>"; };
@@ -326,7 +325,6 @@
 		915CBA0ABF5BC8AD080B772CCED85171 /* SKMicrophoneConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKMicrophoneConfiguration.h; path = SensingKit/SKMicrophoneConfiguration.h; sourceTree = "<group>"; };
 		925F7C05F76B144627FF280860C3E24F /* SKLocationConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKLocationConfiguration.m; path = SensingKit/SKLocationConfiguration.m; sourceTree = "<group>"; };
 		936FFA1ABB71ABF3BAC78A0BEB837762 /* SKHeadingData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKHeadingData.h; path = SensingKit/SKHeadingData.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93B9639F687DFA0A86945A9D810F3975 /* SKMicrophone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKMicrophone.m; path = SensingKit/SKMicrophone.m; sourceTree = "<group>"; };
 		942D2B4BE4BDC4FB884A8FDC2247E34E /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		959E127B7DE24B930B2CD1EDD5528399 /* SKGyroscope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKGyroscope.h; path = SensingKit/SKGyroscope.h; sourceTree = "<group>"; };
@@ -349,6 +347,7 @@
 		AF80C3E216D906B734F1E688D4BD9AB2 /* crypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = SSZipArchive/minizip/crypt.h; sourceTree = "<group>"; };
 		B01BC5B6D54150695E0955B6D4B98E81 /* zip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zip.h; path = SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
 		B085276CA4C5642FE2A25F69C8A0345D /* SKHeading.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKHeading.h; path = SensingKit/SKHeading.h; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B3A8DBF6F0E1CDFBFCDCDB0A19FB69D1 /* ioapi_buf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi_buf.h; path = SSZipArchive/minizip/ioapi_buf.h; sourceTree = "<group>"; };
 		B494E2CF8EECD13AD363699F4254DE28 /* ZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = SSZipArchive/ZipArchive.h; sourceTree = "<group>"; };
 		B54D15F6554EC34071027E65DED60681 /* SKMagnetometerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKMagnetometerConfiguration.h; path = SensingKit/SKMagnetometerConfiguration.h; sourceTree = "<group>"; };
@@ -378,6 +377,7 @@
 		CFA6D98F8E1F66CF586AB6217EC90772 /* sha1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = SSZipArchive/minizip/aes/sha1.h; sourceTree = "<group>"; };
 		D54B8550CFD4624400D9F60B3B050199 /* ESSBeaconScanner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ESSBeaconScanner.m; path = ESSEddystone/ESSBeaconScanner.m; sourceTree = "<group>"; };
 		D571C32E9A5F6D0A588BC4DF9CF7F9CC /* SKMicrophoneConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKMicrophoneConfiguration.m; path = SensingKit/SKMicrophoneConfiguration.m; sourceTree = "<group>"; };
+		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D840372DE9E371F091DE5BB398234DE7 /* fileenc.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fileenc.c; path = SSZipArchive/minizip/aes/fileenc.c; sourceTree = "<group>"; };
 		D9445BD06BBD8EE160B4994B5B47D09B /* SKBattery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKBattery.h; path = SensingKit/SKBattery.h; sourceTree = "<group>"; };
 		DA8F65BAA7BDDFF3F8916DC1BC462325 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
@@ -417,7 +417,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E44DA549555B484A873A373052337EF /* Foundation.framework in Frameworks */,
+				A007DF6CA4D63855B4FB37B46B2A0A9B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +425,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				215C664ECEA109F4AEC2E10A102810FA /* Foundation.framework in Frameworks */,
+				D209829BDDA02822A87A086B72874FC5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +433,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8EDAAE68BDBE3898D5613DDB0D22A4C /* Foundation.framework in Frameworks */,
+				2F864FEA23DCAFC860EB9FFEC20B7C3A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +551,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		44D5347904CF754D6785B84253F2574A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		4879F3D14BE8E33C48648C56CCAB4A29 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,18 +570,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				4879F3D14BE8E33C48648C56CCAB4A29 /* Pods */,
 				3F6AC100DED1A2657E0844654EC7EC75 /* Products */,
@@ -629,7 +629,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+				44D5347904CF754D6785B84253F2574A /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1117,6 +1117,70 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		08B0394D5F17A9F046DC0719C25BA452 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
 		0925D8C7EC6A147BA845F1C6EBB83952 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46CC2BE4D48EF963F949210B92A26B5C /* SensingKit.xcconfig */;
@@ -1243,70 +1307,6 @@
 			};
 			name = Release;
 		};
-		60DAF49CA7A9F362148D49C3C3123B2A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
 		66BE6DEE3BCB3E7A0619F94C9D30C90A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46CC2BE4D48EF963F949210B92A26B5C /* SensingKit.xcconfig */;
@@ -1427,65 +1427,6 @@
 			};
 			name = Release;
 		};
-		C4EAA84F44D044E108500A81C635F21E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
 		D18EF3073B94FF417BEEB9EAF4E3D363 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9AAC34E5110AC53A718A20994283391 /* Pods-CrowdSensing-iOS.debug.xcconfig */;
@@ -1523,6 +1464,66 @@
 			};
 			name = Debug;
 		};
+		E82C56363775B4EF468FF2AD9A2F5414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1547,8 +1548,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				60DAF49CA7A9F362148D49C3C3123B2A /* Debug */,
-				C4EAA84F44D044E108500A81C635F21E /* Release */,
+				08B0394D5F17A9F046DC0719C25BA452 /* Debug */,
+				E82C56363775B4EF468FF2AD9A2F5414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
