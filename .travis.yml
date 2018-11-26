@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode10
+xcode_project: CrowdSensing-iOS.xcworkspace
+xcode_scheme: CrowdSensing-iOS
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone XS
