@@ -1,29 +1,20 @@
 PODS:
-  - Crashlytics (3.11.1):
-    - Fabric (~> 1.8.1)
-  - Fabric (1.8.2)
   - SensingKit (0.5.1)
-  - SSZipArchive (2.1.4)
+  - SSZipArchive (2.2.3)
 
 DEPENDENCIES:
-  - Crashlytics
-  - Fabric
   - SensingKit
   - SSZipArchive
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Crashlytics
-    - Fabric
+  trunk:
     - SensingKit
     - SSZipArchive
 
 SPEC CHECKSUMS:
-  Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
-  Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
   SensingKit: e4acb178652e6bcf23e564f2da111e5087b39e79
-  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
 
-PODFILE CHECKSUM: c2af04e0a32de4dda6a96b2be172433508d6e7be
+PODFILE CHECKSUM: e65be669e13be71ee86409b859f94b4667ca4be9
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.9.3

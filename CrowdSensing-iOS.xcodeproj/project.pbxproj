@@ -360,7 +360,6 @@
 				CFFF324E19796BF600F7CE57 /* Sources */,
 				CFFF324F19796BF600F7CE57 /* Frameworks */,
 				CFFF325019796BF600F7CE57 /* Resources */,
-				CF3041F11BF8D5D900447C19 /* ShellScript */,
 				C073EC211410BC3BBD99C119 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -422,6 +421,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -482,33 +482,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
-				"${BUILT_PRODUCTS_DIR}/SensingKit/SensingKit.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SensingKit.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		CF3041F11BF8D5D900447C19 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" f8eac4b07e220eb80ae928f35aa6a29222538c20 dadc6bf9871a1735e525d47a051725a801f56fb087f85c302999325508c82646";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -9,8 +9,6 @@
 #import "CSAppDelegate.h"
 #import "CSMainTableTableViewController.h"
 
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 
 @interface CSAppDelegate ()
 
@@ -25,9 +23,7 @@
 @synthesize managedObjectModel=_managedObjectModel, managedObjectContext=_managedObjectContext, persistentStoreCoordinator=_persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    [Fabric with:@[[Crashlytics class]]];
-    
+{    
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     CSMainTableTableViewController *mainTableViewController = (CSMainTableTableViewController *)navigationController.topViewController;
     mainTableViewController.managedObjectContext = self.managedObjectContext;
