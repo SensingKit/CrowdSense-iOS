@@ -136,7 +136,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recording" id="Mgx-oc-8gh">
-                        <barButtonItem key="leftBarButtonItem" image="bookmarks" id="98D-Ca-ysd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="98D-Ca-ysd">
+                            <color key="tintColor" systemColor="systemBlueColor"/>
                             <connections>
                                 <action selector="bookmarkButtonAction:" destination="vXZ-lx-hvc" id="jtL-jl-5Mv"/>
                             </connections>
@@ -1737,12 +1738,14 @@ This application is part of a Ph.D. research, conducted in Queen Mary University
         </scene>
     </scenes>
     <resources>
-        <image name="bookmarks" width="28" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
