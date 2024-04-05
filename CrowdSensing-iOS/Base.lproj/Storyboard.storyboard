@@ -565,18 +565,18 @@
                                         <rect key="frame" x="0.0" y="618" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vP0-1i-jTk" id="ipX-8n-OIG">
-                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Microphone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Soi-QP-e0j">
-                                                    <rect key="frame" x="16" y="13" width="86.5" height="19.5"/>
+                                                    <rect key="frame" x="8" y="13" width="86.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="orU-dx-5JQ">
-                                                    <rect key="frame" x="317.5" y="13" width="23" height="19.5"/>
+                                                    <rect key="frame" x="325.5" y="13" width="23" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
@@ -1569,7 +1569,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on our open source library SensingKit. It provides an easy way for researchers to capture sensor data using iOS devices. Taking user privacy seriously, all data are fully anonymised and the user’s explicit permission is required prior to enabling the sensors. Recorded data can be either shared withing the app, or accessed using iTunes through File Sharing.
+                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on the open-source SensingKit framework, that allows researchers to harness the full potential of mobile sensor data collection via iOS devices. The app requires explicit permission from users before activating any sensors, ensuring that all data collection is transparent and secure. Data recorded with CrowdSense can be conveniently shared within the app or exported securely via USB using iTunes File Sharing, giving researchers flexible options for data analysis.
 
 CrowdSense supports the following sensors:
 - Accelerometer
