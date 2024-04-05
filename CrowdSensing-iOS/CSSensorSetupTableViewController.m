@@ -292,7 +292,7 @@
     }
     else
     {
-        tableViewCell.detailTextLabel.textColor = [UIColor grayColor];
+        tableViewCell.detailTextLabel.textColor = [UIColor systemGrayColor];
         tableViewCell.detailTextLabel.text = @"Off";
     }
 }
