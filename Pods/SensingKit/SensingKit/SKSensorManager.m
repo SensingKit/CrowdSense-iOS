@@ -145,7 +145,8 @@
         case Microphone:
             return [SKMicrophone isSensorAvailable];
         
-            // Don't forget to break!
+        case ScreenBrightness:
+            return [SKScreenBrightness isSensorAvailable];
             
         default:
             // Internal Error. Should never happen.
@@ -426,7 +427,8 @@
         case Microphone:
             return [SKMicrophoneData csvHeader];
         
-            // Don't forget to break!
+        case ScreenBrightness:
+            return [SKScreenBrightnessData csvHeader];
             
         default:
             // Internal Error. Should never happen.

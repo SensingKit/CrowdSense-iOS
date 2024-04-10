@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SensingKit:
-    :commit: 3c65dace24cb6366119c97a970364fbde8f8dd51
+    :commit: 0081fe7772c4b29ad77bb69b09c90e686911b7a6
     :git: https://github.com/SensingKit/SensingKit-iOS.git
 
 SPEC CHECKSUMS:
