@@ -178,7 +178,7 @@
     {
         return @"Eddystone Proximity Sensor Setup";
     }
-    else if ([sensorName isEqualToString:@"Battery"])
+    else if ([sensorName isEqualToString:@"Battery Status"])
     {
         return @"Simple Sensor Setup";
     }
