@@ -562,18 +562,18 @@
                                         <rect key="frame" x="0.0" y="598" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s7p-1I-UO1" id="vqB-g6-0X2">
-                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Screen Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GvO-Tp-gGz">
-                                                    <rect key="frame" x="16" y="13" width="132.5" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Screen Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GvO-Tp-gGz">
+                                                    <rect key="frame" x="8" y="13" width="132.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="egi-uK-nCz">
-                                                    <rect key="frame" x="317.5" y="13" width="23" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="egi-uK-nCz">
+                                                    <rect key="frame" x="325.5" y="13" width="23" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
@@ -590,18 +590,18 @@
                                         <rect key="frame" x="0.0" y="662" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vP0-1i-jTk" id="ipX-8n-OIG">
-                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Microphone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Soi-QP-e0j">
-                                                    <rect key="frame" x="16" y="13" width="86.5" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Microphone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Soi-QP-e0j">
+                                                    <rect key="frame" x="8" y="13" width="86.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="orU-dx-5JQ">
-                                                    <rect key="frame" x="317.5" y="13" width="23" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="orU-dx-5JQ">
+                                                    <rect key="frame" x="325.5" y="13" width="23" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
@@ -1611,6 +1611,7 @@ CrowdSense supports the following sensors:
 - Eddystone™ Proximity
 - Battery Status
 - Microphone
+- Screen Brightness
 
 For more details about SensingKit library, please refer to https://www.sensingkit.org, or read the following publications:
 
