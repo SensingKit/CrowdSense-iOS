@@ -40,10 +40,8 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>CrowdSense requires this access in order to record your proximity with external Eddystone beacons in range.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need this access in order to capture a picture of your face and correlate your sensor data with the camera recording.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>CrowdSense requires this access for broadcasting as an iBeacon™ and/or recording your proximity with external Eddystone beacons in range.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>CrowdSense requires this access in order to record location data, even when the app runs in the background.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -55,7 +53,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>CrowdSense requires this access in order to record audio data using the Microphone sensor.</string>
 	<key>NSMotionUsageDescription</key>
-	<string>CrowdSense requires this access in order to record your motion and fitness activity using the device's sensors.</string>
+	<string>CrowdSense requires this access in order to record your motion and fitness activity using the device&apos;s sensors.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>CrowdSense requires this access in order to take a selfie picture for your profile.</string>
 	<key>UIBackgroundModes</key>
