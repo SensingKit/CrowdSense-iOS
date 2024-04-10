@@ -388,6 +388,10 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
         [self.sensingSession enableSensor:BatteryStatus withConfiguration:nil withError:nil];
     }
     
+    if ([self.sensingSession isSensorAvailable:ScreenBrightness]) {
+        [self.sensingSession enableSensor:ScreenBrightness withConfiguration:nil withError:nil];
+    }
+    
     if ([self.sensingSession isSensorAvailable:Heading]) {
         [self.sensingSession enableSensor:Heading withConfiguration:nil withError:nil];
     }

@@ -125,6 +125,10 @@
     {
         return Heading;
     }
+    else if ([sensorName isEqualToString:@"Screen Brightness"])
+    {
+        return ScreenBrightness;
+    }
     else
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
@@ -186,6 +190,10 @@
     {
         return @"Simple Sensor Setup";
     }
+    else if ([sensorName isEqualToString:@"Screen Brightness"])
+    {
+        return @"Simple Sensor Setup";
+    }
     else
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
@@ -236,6 +244,9 @@
         case Heading:
             return @"Heading is a sensor that reports the device's orientation relative to magnetic and true north.";
             
+        case ScreenBrightness:
+            return @"The Screen Brightness sensor listens for changes in the device screen brightness level and reports it with 1% precision. This change can happen manually by the user or automatically by the OS when Auto-Brightness feature is enabled (Settings > Accessibility > Display & Text Size).";
+            
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
     }
@@ -280,6 +291,7 @@
     [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:iBeaconProximity]];
     [self updateTableViewCell:self.eddystoneSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:EddystoneProximity]];
     [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:BatteryStatus]];
+    [self updateTableViewCell:self.screenBrightnessSensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:ScreenBrightness]];
     [self updateTableViewCell:self.microphoneSensorCell    withSensorEnabled:[self.sensingSession isSensorEnabled:Microphone]];
     [self updateTableViewCell:self.headingSensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Heading]];
 }

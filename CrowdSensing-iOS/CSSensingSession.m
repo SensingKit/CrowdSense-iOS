@@ -224,6 +224,10 @@
             configuration = [[SKHeadingConfiguration alloc] init];
             break;
             
+        case ScreenBrightness:
+            configuration = [[SKScreenBrightnessConfiguration alloc] init];
+            break;
+            
         default:
             NSLog(@"Unknown sensorSetupType: %ld", (long)sensorType);
             abort();
