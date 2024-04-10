@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, k.katevas@imperial.ac.uk
+//  Kleomenis Katevas, minos.kat@gmail.com
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -147,7 +147,7 @@
 
 - (BOOL)startBroadcasting:(NSError **)error
 {
-    if (self.peripheralManager.state != CBPeripheralManagerStatePoweredOn) {
+    if (self.peripheralManager.state != CBManagerStatePoweredOn) {
         
         if (error) {
             
@@ -247,7 +247,7 @@
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
 {
-    if (peripheral.state != CBPeripheralManagerStatePoweredOn)
+    if (peripheral.state != CBManagerStatePoweredOn)
     {
         NSLog(@"Warning: Bluetooth radio is not available. (State: %d)", (int)peripheral.state);
     }

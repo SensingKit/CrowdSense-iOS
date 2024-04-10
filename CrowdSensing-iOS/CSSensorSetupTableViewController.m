@@ -113,9 +113,9 @@
     {
         return EddystoneProximity;
     }
-    else if ([sensorName isEqualToString:@"Battery"])
+    else if ([sensorName isEqualToString:@"Battery Status"])
     {
-        return Battery;
+        return BatteryStatus;
     }
     else if ([sensorName isEqualToString:@"Microphone"])
     {
@@ -218,7 +218,7 @@
         case Altimeter:
             return @"Altimeter sensor uses an embedded barometer sensor to capture changes to the relative altitude (not the actual). It also provides the recorded atmospheric pressure in kPa.";
             
-        case Battery:
+        case BatteryStatus:
             return @"Battery sensor listens to changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).";
             
         case Location:
@@ -279,7 +279,7 @@
     [self updateTableViewCell:self.locationSensorCell      withSensorEnabled:[self.sensingSession isSensorEnabled:Location]];
     [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:iBeaconProximity]];
     [self updateTableViewCell:self.eddystoneSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:EddystoneProximity]];
-    [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Battery]];
+    [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:BatteryStatus]];
     [self updateTableViewCell:self.microphoneSensorCell    withSensorEnabled:[self.sensingSession isSensorEnabled:Microphone]];
     [self updateTableViewCell:self.headingSensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Heading]];
 }

@@ -1,5 +1,5 @@
 //
-//  SKMicrophone.h
+//  SKBatteryStatus.h
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
@@ -25,17 +25,17 @@
 #import <Foundation/Foundation.h>
 
 #import "SKAbstractSensor.h"
-#import "SKMicrophoneConfiguration.h"
+#import "SKBatteryStatusConfiguration.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SKMicrophone : SKAbstractSensor
+@interface SKBatteryStatus : SKAbstractSensor
 
 + (BOOL)isSensorAvailable;
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithConfiguration:(SKMicrophoneConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithConfiguration:(SKBatteryStatusConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
 
 @end
 

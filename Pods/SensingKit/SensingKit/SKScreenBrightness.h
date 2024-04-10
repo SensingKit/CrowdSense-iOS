@@ -1,5 +1,5 @@
 //
-//  SKMicrophone.h
+//  SKScreenBrightness.h
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
@@ -25,17 +25,17 @@
 #import <Foundation/Foundation.h>
 
 #import "SKAbstractSensor.h"
-#import "SKMicrophoneConfiguration.h"
+#import "SKScreenBrightnessConfiguration.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SKMicrophone : SKAbstractSensor
+@interface SKScreenBrightness : SKAbstractSensor
 
 + (BOOL)isSensorAvailable;
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithConfiguration:(SKMicrophoneConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithConfiguration:(SKScreenBrightnessConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
 
 @end
 

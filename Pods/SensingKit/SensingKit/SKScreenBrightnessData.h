@@ -1,8 +1,8 @@
 //
-//  SKHeadingData.h
+//  SKScreenBrightnessData.h
 //  SensingKit
 //
-//  Copyright (c) 2017. Kleomenis Katevas
+//  Copyright (c) 2014. Kleomenis Katevas
 //  Kleomenis Katevas, minos.kat@gmail.com
 //
 //  This file is part of SensingKit-iOS library.
@@ -22,14 +22,17 @@
 //  along with SensingKit-iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import <SensingKit/SensingKit.h>
+#import <UIKit/UIDevice.h>
+#import <Foundation/Foundation.h>
+
+#import <SensingKit/SKSensorData.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  An instance of SKHeadingData encapsulates measurements related to the Heading sensor.
+ *  An instance of SKScreenBrightnessData encapsulates measurements related to the Screen Brightness sensor.
  */
-@interface SKHeadingData : SKSensorData
+@interface SKScreenBrightnessData : SKSensorData
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -37,21 +40,21 @@ NS_ASSUME_NONNULL_BEGIN
                      withTimestamp:(SKSensorTimestamp *)timestamp NS_UNAVAILABLE;
 
 /**
- *  Returns an SKHeadingData object, initialized with an instance of CLHeading.
+ *  Returns an SKScreenBrightnessData object, initialized with measurements of the screen brightness level.
  *
- *  @param heading A CLHeading object that contains Heading related data.
+ *  @param level A float number that indicates the current screen brightness level. Value ranges from 0.0 (minimum brightness) to 1.0 (maximum brightness).
  *
- *  @return An SKHeadingData object.
+ *  @return An SKScreenBrightnessData object.
  */
-- (instancetype)initWithHeading:(CLHeading *)heading NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithLevel:(CGFloat)level NS_DESIGNATED_INITIALIZER;
 
 /**
- *  A CLHeading object contains data about the device's orientation relative to magnetic and true north.
+ *  A float number that indicates the current screen brightness level. Value ranges from 0.0 (minimum brightness) to 1.0 (maximum brightness).
  */
-@property (nonatomic, readonly, copy) CLHeading *heading;
+@property (nonatomic, readonly) CGFloat level;
 
 /**
- *  A string with a CSV formatted header that describes the data of the Heading sensor. This method is useful in combination with the csvString instance method of an SKSensorData object.
+ *  A string with a CSV formatted header that describes the data of the Screen Brightness sensor. This method is useful in combination with the csvString instance method of an SKSensorData object.
  *
  *  @return A string with a CSV header.
  */

@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, k.katevas@imperial.ac.uk
+//  Kleomenis Katevas, minos.kat@gmail.com
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -70,9 +70,9 @@ typedef NS_ENUM(NSUInteger, SKSensorType)
     Altimeter,
     
     /**
-     *  Battery sensor listens to changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).
+     *  Battery Status sensor listens to changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).
      */
-    Battery,
+    BatteryStatus,
     
     /**
      *  Location sensor determines the current location of the device using a combination of Cellular, Wi‑Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude), as well as the altitude of the device.
@@ -95,7 +95,12 @@ typedef NS_ENUM(NSUInteger, SKSensorType)
     EddystoneProximity,
     
     /**
-     *  Microphone sensor can be used to record audio from the environment (up to 4 hours) by converting sound into electrical signal.
+     *  Microphone sensor(s) can be used to record audio from the environment (up to 4 hours) by converting sound into electrical signal.
      */
-    Microphone
+    Microphone,
+    
+    /**
+     *  The Screen Brightness sensor listens for changes in the device screen brightness level and reports it with 1% precision. This change can happen manually by the user or automatically by the OS when Auto-Brightness feature is enabled (Settings > Accessibility > Display & Text Size).
+     */
+    ScreenBrightness
 };

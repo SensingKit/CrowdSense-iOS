@@ -384,8 +384,8 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
         [self.sensingSession enableSensor:iBeaconProximity withConfiguration:configuration withError:nil];
     }
     
-    if ([self.sensingSession isSensorAvailable:Battery]) {
-        [self.sensingSession enableSensor:Battery withConfiguration:nil withError:nil];
+    if ([self.sensingSession isSensorAvailable:BatteryStatus]) {
+        [self.sensingSession enableSensor:BatteryStatus withConfiguration:nil withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:Heading]) {

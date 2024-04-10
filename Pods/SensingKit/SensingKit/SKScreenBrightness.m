@@ -1,9 +1,9 @@
 //
-//  SKBattery.m
+//  SKScreenBrightness.m
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, k.katevas@imperial.ac.uk
+//  Kleomenis Katevas, minos.kat@gmail.com
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -22,25 +22,16 @@
 //  along with SensingKit-iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import "SKBattery.h"
-#import "SKBatteryData.h"
+#import "SKScreenBrightness.h"
+#import "SKScreenBrightnessData.h"
 
 
-@implementation SKBattery
+@implementation SKScreenBrightness
 
-- (instancetype)initWithConfiguration:(SKBatteryConfiguration *)configuration
+- (instancetype)initWithConfiguration:(SKScreenBrightnessConfiguration *)configuration
 {
     if (self = [super init])
     {
-        // Register for battery level and state change notifications.
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(batteryLevelChanged:)
-                                                     name:UIDeviceBatteryLevelDidChangeNotification object:nil];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(batteryStateChanged:)
-                                                     name:UIDeviceBatteryStateDidChangeNotification object:nil];
-        
         self.configuration = configuration;
     }
     return self;
@@ -54,7 +45,7 @@
     super.configuration = configuration;
     
     // Cast the configuration instance
-    // SKBatteryConfiguration *batteryConfiguration = (SKBatteryConfiguration *)configuration;
+    // SKScreenBrightnessConfiguration *screenBrightnessConfiguration = (SKScreenBrightnessConfiguration *)configuration;
     
     // Make the required updates on the sensor
     //
@@ -75,12 +66,12 @@
         return NO;
     }
     
-    if (![SKBattery isSensorAvailable])
+    if (![SKScreenBrightness isSensorAvailable])
     {
         if (error) {
             
             NSDictionary *userInfo = @{
-                                       NSLocalizedDescriptionKey: NSLocalizedString(@"Battery sensor is not available.", nil),
+                                       NSLocalizedDescriptionKey: NSLocalizedString(@"Screen Brightness sensor is not available.", nil),
                                        };
             
             *error = [NSError errorWithDomain:SKErrorDomain
@@ -90,42 +81,33 @@
         return NO;
     }
     
-    [UIDevice currentDevice].batteryMonitoringEnabled = YES;
+    // Register for screen brightness level notifications.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(brightnessLevelChanged:)
+                                                 name:UIScreenBrightnessDidChangeNotification object:nil];
     
     return YES;
 }
 
 - (BOOL)stopSensing:(NSError **)error
 {
-    [UIDevice currentDevice].batteryMonitoringEnabled = NO;
+    // Unregister screen brightness level notifications.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     return [super stopSensing:error];
 }
 
-- (CGFloat)batteryLevel
+- (CGFloat)brightnessLevel
 {
-    return [UIDevice currentDevice].batteryLevel;
+    return [UIScreen mainScreen].brightness;
 }
 
-- (UIDeviceBatteryState)batteryState
+- (void)brightnessLevelChanged:(NSNotification *)notification
 {
-    return [UIDevice currentDevice].batteryState;
-}
-
-- (void)batteryLevelChanged:(NSNotification *)notification
-{
-    SKBatteryData *data = [[SKBatteryData alloc] initWithLevel:[self batteryLevel]
-                                                     withState:[self batteryState]];
+    SKScreenBrightnessData *data = [[SKScreenBrightnessData alloc] initWithLevel:[self brightnessLevel]];
     
     [self submitSensorData:data error:NULL];
 }
 
-- (void)batteryStateChanged:(NSNotification *)notification
-{
-    SKBatteryData *data = [[SKBatteryData alloc] initWithLevel:[self batteryLevel]
-                                                     withState:[self batteryState]];
-    
-    [self submitSensorData:data error:NULL];
-}
 
 @end

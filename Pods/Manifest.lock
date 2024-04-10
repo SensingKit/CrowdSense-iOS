@@ -1,20 +1,29 @@
 PODS:
-  - SensingKit (0.5.1)
+  - SensingKit (0.6.0)
   - SSZipArchive (2.5.5)
 
 DEPENDENCIES:
-  - SensingKit
+  - SensingKit (from `https://github.com/SensingKit/SensingKit-iOS.git`, branch `next`)
   - SSZipArchive
 
 SPEC REPOS:
   trunk:
-    - SensingKit
     - SSZipArchive
 
+EXTERNAL SOURCES:
+  SensingKit:
+    :branch: next
+    :git: https://github.com/SensingKit/SensingKit-iOS.git
+
+CHECKOUT OPTIONS:
+  SensingKit:
+    :commit: 3c65dace24cb6366119c97a970364fbde8f8dd51
+    :git: https://github.com/SensingKit/SensingKit-iOS.git
+
 SPEC CHECKSUMS:
-  SensingKit: e4acb178652e6bcf23e564f2da111e5087b39e79
+  SensingKit: 20697e41c5e690967599bf12e010879007a51f72
   SSZipArchive: c69881e8ac5521f0e622291387add5f60f30f3c4
 
-PODFILE CHECKSUM: f1c55f858b21508ea0f76befc2599ebba1ae4ba1
+PODFILE CHECKSUM: 13a31bf812388cc0c23430e827f9c9f794fcdc88
 
 COCOAPODS: 1.15.2

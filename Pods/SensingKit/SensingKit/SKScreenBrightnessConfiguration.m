@@ -1,5 +1,5 @@
 //
-//  SKMicrophone.h
+//  SKScreenBrightnessConfiguration.m
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
@@ -22,21 +22,30 @@
 //  along with SensingKit-iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import <Foundation/Foundation.h>
+#import "SKScreenBrightnessConfiguration.h"
 
-#import "SKAbstractSensor.h"
-#import "SKMicrophoneConfiguration.h"
+@implementation SKScreenBrightnessConfiguration
 
-NS_ASSUME_NONNULL_BEGIN
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        // Set default values
+    }
+    return self;
+}
 
-@interface SKMicrophone : SKAbstractSensor
+- (id)copyWithZone:(NSZone *)zone
+{
+    SKScreenBrightnessConfiguration *configuration = [super copyWithZone:zone];
+    
+    return configuration;
+}
 
-+ (BOOL)isSensorAvailable;
+- (BOOL)isValidForSensor:(SKSensorType)sensorType
+{
+    return sensorType == ScreenBrightness;
+}
 
-- (instancetype)init NS_UNAVAILABLE;
-
-- (instancetype)initWithConfiguration:(SKMicrophoneConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
 
 @end
-
-NS_ASSUME_NONNULL_END

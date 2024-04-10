@@ -212,8 +212,8 @@
             configuration = [[SKEddystoneProximityConfiguration alloc] init];
             break;
             
-        case Battery:
-            configuration = [[SKBatteryConfiguration alloc] init];
+        case BatteryStatus:
+            configuration = [[SKBatteryStatusConfiguration alloc] init];
             break;
             
         case Microphone:

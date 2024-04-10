@@ -1,5 +1,5 @@
 //
-//  SKMagnetometerData.m
+//  SKScreenBrightnessData.m
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
@@ -22,47 +22,43 @@
 //  along with SensingKit-iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import "SKMagnetometerData.h"
+#import "SKScreenBrightnessData.h"
 
-@implementation SKMagnetometerData
+@implementation SKScreenBrightnessData
 
-- (instancetype)initWithMagnetometerData:(CMMagnetometerData *)magnetometerData
+- (instancetype)initWithLevel:(CGFloat)level
 {
-    if (self = [super initWithSensorType:Magnetometer
-                           withTimestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:magnetometerData.timestamp]])
+    if (self = [super initWithSensorType:ScreenBrightness
+                           withTimestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:[NSProcessInfo processInfo].systemUptime]])
     {
-        _magneticField = magnetometerData.magneticField;
+        _level = level;
     }
     return self;
 }
 
 + (NSString *)csvHeader
 {
-    return @"timestamp,timeIntervalSince1970,x,y,z";
+    return @"timestamp,timeIntervalSince1970,level";
 }
 
 - (NSString *)csvString
 {
-    return [NSString stringWithFormat:@"\"%@\",%f,%f,%f,%f",
+    return [NSString stringWithFormat:@"\"%@\",%f,%f",
             self.timestamp.timestampString,
             self.timestamp.timeIntervalSince1970,
-            _magneticField.x,
-            _magneticField.y,
-            _magneticField.z];
+            _level];
 }
 
 - (NSDictionary *)dictionaryData
 {
     return @{
-             @"sensorType": @(self.sensorType),
-             @"sensorTypeString": [NSString stringWithSensorType:self.sensorType],
-             @"timestamp": self.timestamp.timestampDictionary,
-             @"magneticField": @{
-                     @"x": @(_magneticField.x),
-                     @"y": @(_magneticField.y),
-                     @"z": @(_magneticField.z)
-                     }
-             };
+        @"sensorType": @(self.sensorType),
+        @"sensorTypeString": [NSString stringWithSensorType:self.sensorType],
+        @"timestamp": self.timestamp.timestampDictionary,
+        @"brightness": @{
+            @"level": @(_level),
+        }
+    };
 }
 
 @end
