@@ -210,32 +210,24 @@
         [[NSFileManager defaultManager] removeItemAtURL:attachment error:nil];
     }];
     
-    NSMutableArray *array = @[UIActivityTypePostToFacebook,
-                              UIActivityTypePostToTwitter,
-                              UIActivityTypePostToWeibo,
-                              UIActivityTypeMessage,
-                              UIActivityTypePrint,
-                              UIActivityTypeCopyToPasteboard,
-                              UIActivityTypeAssignToContact,
-                              UIActivityTypeSaveToCameraRoll,
-                              UIActivityTypeAddToReadingList,
-                              UIActivityTypePostToFlickr,
-                              UIActivityTypePostToVimeo,
-                              UIActivityTypePostToTencentWeibo].mutableCopy;
-    
-    if ([NSProcessInfo processInfo].operatingSystemVersion.majorVersion >= 9) {
-        [array addObject:UIActivityTypeOpenInIBooks];
-    }
+    NSArray *array = @[UIActivityTypePostToFacebook,
+                       UIActivityTypePostToTwitter,
+                       UIActivityTypePostToWeibo,
+                       UIActivityTypePrint,
+                       UIActivityTypeCopyToPasteboard,
+                       UIActivityTypeAssignToContact,
+                       UIActivityTypeSaveToCameraRoll,
+                       UIActivityTypeAddToReadingList,
+                       UIActivityTypePostToFlickr,
+                       UIActivityTypePostToVimeo,
+                       UIActivityTypePostToTencentWeibo,
+                       UIActivityTypeOpenInIBooks,
+                       UIActivityTypeMarkupAsPDF];
     
     // Exclude Activities
     activityViewController.excludedActivityTypes = array;
     
-    // To avoid crash on iPad and iOS 8
-    if ([activityViewController respondsToSelector:@selector(popoverPresentationController)])
-    {
-        // iOS8
-        activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
-    }
+    activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
     
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
