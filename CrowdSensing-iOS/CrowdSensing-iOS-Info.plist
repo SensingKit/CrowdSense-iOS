@@ -54,8 +54,6 @@
 	<string>CrowdSense requires this access in order to record audio data using the Microphone sensor.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>CrowdSense requires this access in order to record your motion and fitness activity using the device&apos;s sensors.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>CrowdSense requires this access in order to take a selfie picture for your profile.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
