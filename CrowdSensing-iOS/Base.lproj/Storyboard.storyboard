@@ -198,7 +198,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="n9x-RM-fPB">
-                                <string key="footerTitle">Only local data storage is supported at the moment. Recorded data can be accessed using iTunes (through iTunes file sharing). Alternatively you can share the data with nearby devices or over the Internet.</string>
+                                <string key="footerTitle">Only local data storage is supported at the moment. Recorded data can be accessed via USB using iTunes File Sharing. Alternatively you can share the data with nearby devices or over the Internet.</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="KEz-wb-eh6" detailTextLabel="iGX-IP-74j" style="IBUITableViewCellStyleValue1" id="DCM-EH-Upp">
                                         <rect key="frame" x="0.0" y="94" width="375" height="44"/>
@@ -1570,7 +1570,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">CrowdSense is a free continuous sensing tool, based on the open-source SensingKit framework, that allows researchers to harness the full potential of mobile sensor data collection via iOS devices. The app requires explicit permission from users before activating any sensors, ensuring that all data collection is transparent and secure. Data recorded with CrowdSense can be conveniently shared within the app or exported securely via USB using iTunes File Sharing, giving researchers flexible options for data analysis.
+                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on the open-source SensingKit framework, that allows researchers to harness the full potential of mobile sensor data collection via iOS devices. The app requires explicit permission from users before activating any sensors, ensuring that all data collection is transparent and secure. Data recorded with CrowdSense can be conveniently shared within the app or exported securely via USB using iTunes File Sharing, giving researchers flexible options for data analysis.
 
 CrowdSense supports the following sensors:
 - Accelerometer
@@ -1584,16 +1584,32 @@ CrowdSense supports the following sensors:
 - Heading
 - iBeacon™ Proximity
 - Eddystone™ Proximity
-- Battery
+- Battery Status
 - Microphone
 
 For more details about SensingKit library, please refer to https://www.sensingkit.org, or read the following publications:
 
-Kleomenis Katevas, Hamed Haddadi and Laurissa Tokarchuk, "SensingKit: Evaluating the Sensor Power Consumption in iOS devices", 12th International Conference on Intelligent Environments (IE'16), September 2016, London, UK.
+Finding Dory in the Crowd: Detecting Social Interactions using Multi-Modal Mobile Sensing
+Kleomenis Katevas, Katrin Hänsel, Richard Clegg, Ilias Leontiadis, Hamed Haddadi, Laurissa Tokarchuk
+At the 1st Workshop on Machine Learning on Edge in Sensor Systems (SenSys-ML '19) in conjunction with ACM SenSys '19, New York, NY, USA, November 2019
 
-Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, "Poster: SensingKit – A Multi-Platform Mobile Sensing Framework for Large‑Scale Experiments", Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
+Detecting Group Formations using iBeacon Technology
+Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, Richard G. Clegg
+At the 4th International Workshop on Human Activity Sensing Corpus and Application (HASCA 2016) in conjunction with ACM UbiComp 2016, Heidelberg, Germany, September 2016
 
-This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</string>
+SensingKit: Evaluating the Sensor Power Consumption in iOS devices
+Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk
+At the 12th International Conference on Intelligent Environments (IE'16), London, UK, September 2016
+
+Walking in Sync: Two is Company, Three’s a Crowd
+Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, Richard G. Clegg
+At the 2nd Workshop on Physical Analytics (WPA) in conjunction with ACM MobiSys 2015, Florence, Italy, May 2015
+
+Poster: SensingKit — A Multi-Platform Mobile Sensing Framework for Large-Scale Experiments
+Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk
+In ACM MobiCom 2014, Maui, Hawaii, September 2014
+
+This application was part of a Ph.D. research, conducted at Queen Mary University of London. For more information, please visit https://minoskt.github.io.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
