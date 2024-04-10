@@ -541,8 +541,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="348.5" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3xn-1j-YSF">
-                                                    <rect key="frame" x="16" y="13" width="53" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Battery Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3xn-1j-YSF">
+                                                    <rect key="frame" x="16" y="13" width="103.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -1570,7 +1570,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-7H-Krq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">CrowdSense is a free continuous sensing tool, based on the open-source SensingKit framework, that allows researchers to harness the full potential of mobile sensor data collection via iOS devices. The app requires explicit permission from users before activating any sensors, ensuring that all data collection is transparent and secure. Data recorded with CrowdSense can be conveniently shared within the app or exported securely via USB using iTunes File Sharing, giving researchers flexible options for data analysis.
+                                <string key="text">CrowdSense is a free continuous sensing tool, based on the open-source SensingKit framework, that allows researchers to harness the full potential of mobile sensor data collection via iOS devices. The app requires explicit permission from users before activating any sensors, ensuring that all data collection is transparent and secure. Data recorded with CrowdSense can be conveniently shared within the app or exported securely via USB using iTunes File Sharing, giving researchers flexible options for data analysis.
 
 CrowdSense supports the following sensors:
 - Accelerometer
@@ -1593,7 +1593,7 @@ Kleomenis Katevas, Hamed Haddadi and Laurissa Tokarchuk, "SensingKit: Evaluating
 
 Kleomenis Katevas, Hamed Haddadi, Laurissa Tokarchuk, "Poster: SensingKit – A Multi-Platform Mobile Sensing Framework for Large‑Scale Experiments", Extended abstract, ACM MobiCom 2014, Maui, Hawaii, September 2014.
 
-This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</mutableString>
+This application is part of a Ph.D. research, conducted in Queen Mary University of London. For more information, please visit https://minoskt.github.io.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
