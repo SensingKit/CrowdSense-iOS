@@ -227,7 +227,9 @@
     // Exclude Activities
     activityViewController.excludedActivityTypes = array;
     
-    activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
+    if (activityViewController.popoverPresentationController != NULL) {
+        activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
+    }
     
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
