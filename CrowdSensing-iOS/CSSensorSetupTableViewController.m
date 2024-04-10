@@ -234,7 +234,7 @@
             return @"Microphone sensor can be used to record audio from the environment by converting sound into electrical signal. The maximum duration of an audio recording is 4 hours.";
         
         case Heading:
-            return @"Heading sensor";  // TODO
+            return @"Heading is a sensor that reports the device's orientation relative to magnetic and true north.";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
