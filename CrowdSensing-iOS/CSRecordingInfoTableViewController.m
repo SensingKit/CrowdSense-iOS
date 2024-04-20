@@ -231,6 +231,9 @@
         activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
     }
     
+    activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
+    activityViewController.popoverPresentationController.sourceView = self.view;
+    
     [self presentViewController:activityViewController animated:YES completion:nil];
 }
 

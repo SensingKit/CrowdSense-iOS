@@ -322,6 +322,9 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     [alertController addAction:loadMotionProximityAction];
     [alertController addAction:cancelAction];
     
+    alertController.popoverPresentationController.barButtonItem = self.bookmarkButton;
+    alertController.popoverPresentationController.sourceView = self.view;
+    
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
