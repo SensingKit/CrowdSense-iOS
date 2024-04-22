@@ -596,6 +596,13 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
         
         setupTableViewController.delegate = self;
         setupTableViewController.sensingSession = self.sensingSession;
+        
+        if (@available(iOS 13.0, *)) {
+            setupTableViewController.modalInPresentation = YES;
+        } else {
+            // Fallback on earlier versions
+            setupTableViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        }
     }
 }
 
