@@ -2,7 +2,7 @@
   "name": "SensingKit",
   "version": "0.6.0",
   "summary": "Mobile Sensing Framework.",
-  "description": "<<-DESC\n                    An iOS library that provides Continuous Sensing functionality to your applications.\n                   DESC",
+  "description": "<<-DESC\n                    An iOS framework that provides Mobile Sensing to your apps.\n                   DESC",
   "homepage": "https://www.sensingkit.org",
   "documentation_url": "https://www.sensingkit.org/documentation/ios/",
   "license": {

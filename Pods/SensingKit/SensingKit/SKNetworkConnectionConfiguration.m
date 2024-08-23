@@ -1,5 +1,5 @@
 //
-//  SKSampleRateConfiguration.h
+//  SKNetworkConnectionConfiguration.m
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
@@ -22,22 +22,31 @@
 //  along with SensingKit-iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import <Foundation/Foundation.h>
+#import "SKNetworkConnectionConfiguration.h"
 
-#import <SensingKit/SKConfiguration.h>
+@implementation SKNetworkConnectionConfiguration
 
-NS_ASSUME_NONNULL_BEGIN
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        // Set default values
+        self.sampleRate = 1;  // Hz
+    }
+    return self;
+}
 
-/**
- *  This is the base class for all motion sensors that require a sample rate configuration (e.g., Accelerometer, Gyroscope, Magnetometer, Device Motion, etc.).
- */
-@interface SKSampleRateConfiguration : SKConfiguration <NSCopying>
+- (id)copyWithZone:(NSZone *)zone
+{
+    SKNetworkConnectionConfiguration *configuration = [super copyWithZone:zone];
+    
+    return configuration;
+}
 
-/**
- *  The Sample Rate of the sensor in Hz.
- */
-@property (nonatomic) NSUInteger sampleRate;
+- (BOOL)isValidForSensor:(SKSensorType)sensorType
+{
+    return sensorType == NetworkConnection;
+}
+
 
 @end
-
-NS_ASSUME_NONNULL_END

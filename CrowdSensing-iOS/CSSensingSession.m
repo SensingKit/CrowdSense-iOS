@@ -228,6 +228,10 @@
             configuration = [[SKScreenBrightnessConfiguration alloc] init];
             break;
             
+        case NetworkConnection:
+            configuration = [[SKNetworkConnectionConfiguration alloc] init];
+            break;
+            
         default:
             NSLog(@"Unknown sensorSetupType: %ld", (long)sensorType);
             abort();

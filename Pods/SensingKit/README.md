@@ -21,6 +21,7 @@ The following mobile sensors are currently supported in SensingKit-iOS, (listed 
 - Eddystone™ Proximity
 - Microphone
 - Screen Brightness
+- Network Connection
 
 
 ## Installing the Library
@@ -186,8 +187,11 @@ Depending on the used sensor and its configuration, some keys with a user-friend
 ### Microphone
 - NSMicrophoneUsageDescription
 
+### iBeacon™ Proximity
+- NSBluetoothAlwaysUsageDescription (when Broadcasting only)
+
 ### Eddystone
-- NSBluetoothPeripheralUsageDescription
+- NSBluetoothAlwaysUsageDescription
 
 ### Location
 - NSLocationAlwaysUsageDescription

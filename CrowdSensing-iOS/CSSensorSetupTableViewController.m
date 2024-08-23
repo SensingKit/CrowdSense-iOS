@@ -129,6 +129,10 @@
     {
         return ScreenBrightness;
     }
+    else if ([sensorName isEqualToString:@"Network Connection"])
+    {
+        return NetworkConnection;
+    }
     else
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
@@ -194,6 +198,10 @@
     {
         return @"Simple Sensor Setup";
     }
+    else if ([sensorName isEqualToString:@"Network Connection"])
+    {
+        return @"Sample Rate Sensor Setup";
+    }
     else
     {
         NSLog(@"Unknown Sensor name: %@", sensorName);
@@ -227,7 +235,7 @@
             return @"Altimeter sensor uses an embedded barometer sensor to capture changes to the relative altitude (not the actual). It also provides the recorded atmospheric pressure in kPa.";
             
         case BatteryStatus:
-            return @"Battery sensor listens to changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).";
+            return @"Location sensor determines the current location of the device using a combination of Cellular, Wi‑Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude), as well as the altitude of the device.";
             
         case Location:
             return @"Location sensor determines the current location of the device using a combination of Cellular, Wi‑Fi, Bluetooth and GPS sensors. It provides 2D geographical coordinate information (latitude, longitude), as well as the altitude of the device.";
@@ -246,6 +254,9 @@
             
         case ScreenBrightness:
             return @"The Screen Brightness sensor listens for changes in the device screen brightness level and reports it with 1% precision. This change can happen manually by the user or automatically by the OS when Auto-Brightness feature is enabled (Settings > Accessibility > Display & Text Size).";
+            
+        case NetworkConnection:
+            return @"The Network Connection sensor reports changes in the device's network connectivity (e.g., WiFi vs. Cellular, WiFi SSID or Cellular carrier, IP address, etc.), quality (e.g., signal strength, Internet reachability, etc.) and network data consumption (in bytes).";
             
         default:
             return [NSString stringWithFormat:@"Unknown SensorModule: %li", (long)sensorType];
@@ -291,7 +302,8 @@
     [self updateTableViewCell:self.beaconSensorCell        withSensorEnabled:[self.sensingSession isSensorEnabled:iBeaconProximity]];
     [self updateTableViewCell:self.eddystoneSensorCell     withSensorEnabled:[self.sensingSession isSensorEnabled:EddystoneProximity]];
     [self updateTableViewCell:self.batterySensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:BatteryStatus]];
-    [self updateTableViewCell:self.screenBrightnessSensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:ScreenBrightness]];
+    [self updateTableViewCell:self.screenBrightnessSensorCell  withSensorEnabled:[self.sensingSession isSensorEnabled:ScreenBrightness]];
+    [self updateTableViewCell:self.networkConnectionSensorCell withSensorEnabled:[self.sensingSession isSensorEnabled:NetworkConnection]];
     [self updateTableViewCell:self.microphoneSensorCell    withSensorEnabled:[self.sensingSession isSensorEnabled:Microphone]];
     [self updateTableViewCell:self.headingSensorCell       withSensorEnabled:[self.sensingSession isSensorEnabled:Heading]];
 }

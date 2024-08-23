@@ -27,7 +27,7 @@
 /**
  *  Total number of sensors supported by SensingKit-iOS.
  */
-static NSUInteger const TOTAL_SENSORS = 14;
+static NSUInteger const TOTAL_SENSORS = 15;
 
 /**
  *  These constants indicate the type of the sensor.
@@ -70,7 +70,7 @@ typedef NS_ENUM(NSUInteger, SKSensorType)
     Altimeter,
     
     /**
-     *  Battery Status sensor listens to changes in the battery charge state (Charging, Full, Unplugged) as well as in the battery charge level (with 1% precision).
+     *  Battery Status sensor listens to changes in the battery charge state (Charging, Full, Unplugged), battery charge level (with 1% precision), and Low Power Model (disabled or enabled).
      */
     BatteryStatus,
     
@@ -102,5 +102,11 @@ typedef NS_ENUM(NSUInteger, SKSensorType)
     /**
      *  The Screen Brightness sensor listens for changes in the device screen brightness level and reports it with 1% precision. This change can happen manually by the user or automatically by the OS when Auto-Brightness feature is enabled (Settings > Accessibility > Display & Text Size).
      */
-    ScreenBrightness
+    ScreenBrightness,
+    
+    /**
+     *  The Network Connection sensor reports changes in the device's network connectivity (e.g., WiFi vs. Cellular, WiFi SSID or Cellular carrier, IP address, etc.), quality (e.g., signal strength, Internet reachability, etc.) and network data consumption (in bytes).
+     */
+    NetworkConnection
 };
+ 

@@ -42,6 +42,7 @@
 #import "SKEddystoneProximity.h"
 #import "SKMicrophone.h"
 #import "SKScreenBrightness.h"
+#import "SKNetworkConnection.h"
 
 // SensorData
 #import "SKAccelerometerData.h"
@@ -58,6 +59,7 @@
 #import "SKEddystoneProximityData.h"
 #import "SKMicrophoneData.h"
 #import "SKScreenBrightnessData.h"
+#import "SKNetworkConnectionData.h"
 
 // SensorConfiguration
 #import "SKAccelerometerConfiguration.h"
@@ -74,6 +76,7 @@
 #import "SKEddystoneProximityConfiguration.h"
 #import "SKMicrophoneConfiguration.h"
 #import "SKScreenBrightnessConfiguration.h"
+#import "SKNetworkConnectionConfiguration.h"
 
 
 @interface SKSensorManager()
@@ -147,6 +150,9 @@
         
         case ScreenBrightness:
             return [SKScreenBrightness isSensorAvailable];
+            
+        case NetworkConnection:
+            return [SKNetworkConnection isSensorAvailable];
             
         default:
             // Internal Error. Should never happen.
@@ -430,6 +436,9 @@
         case ScreenBrightness:
             return [SKScreenBrightnessData csvHeader];
             
+        case NetworkConnection:
+            return [SKNetworkConnectionData csvHeader];
+            
         default:
             // Internal Error. Should never happen.
             NSLog(@"Internal Error: Unknown Sensor: %li", (long)sensorType);
@@ -650,6 +659,10 @@
             sensor = [[SKScreenBrightness alloc] initWithConfiguration:(SKScreenBrightnessConfiguration *)configuration];
             break;
             
+        case NetworkConnection:
+            sensor = [[SKNetworkConnection alloc] initWithConfiguration:(SKNetworkConnectionConfiguration *)configuration];
+            break;
+            
             // Don't forget to break!
             
         default:
@@ -720,6 +733,10 @@
             break;
             
         case ScreenBrightness:
+            configuration = [[SKScreenBrightnessConfiguration alloc] init];
+            break;
+            
+        case NetworkConnection:
             configuration = [[SKScreenBrightnessConfiguration alloc] init];
             break;
             

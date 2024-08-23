@@ -21,9 +21,7 @@ static UIColor* _backgroundColor = nil;
 
 + (void)initialize
 {
-    // Colors Initialization
-    _backgroundColor = [UIColor colorWithRed: 0.099 green: 0.564 blue: 0.809 alpha: 1];
-
+    _backgroundColor = [UIColor colorNamed:@"SKStyleTint"];
 }
 
 #pragma mark Colors

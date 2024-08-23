@@ -1,5 +1,5 @@
 //
-//  SKAltimeterData.m
+//  SKNetworkConnectionData.m
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
@@ -22,32 +22,37 @@
 //  along with SensingKit-iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import "SKAltimeterData.h"
+#import "SKNetworkConnectionData.h"
 
-@implementation SKAltimeterData
+@implementation SKNetworkConnectionData
 
-- (instancetype)initWithAltitudeData:(CMAltitudeData *)altitudeData
+- (instancetype)initWithNetworkDataActivity:(SKNetworkDataActivity)networkDataActivity
 {
-    if (self = [super initWithSensorType:Altimeter
-                               timestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:altitudeData.timestamp]])
+    if (self = [super initWithSensorType:NetworkConnection
+                               timestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:[NSProcessInfo processInfo].systemUptime]])
     {
-        _altitudeData = altitudeData;
+        _wifiSent = networkDataActivity.wifiSent;
+        _wifiReceived = networkDataActivity.wifiReceived;
+        _cellularSent = networkDataActivity.cellularSent;
+        _cellularReceived = networkDataActivity.cellularReceived;
     }
     return self;
 }
 
 + (NSString *)csvHeader
 {
-    return @"timestamp,timeIntervalSince1970,relativeAltitude,pressure";
+    return @"timestamp,timeIntervalSince1970,wifiSent,wifiReceived,cellularSent,cellularReceived";
 }
 
 - (NSString *)csvString
 {
-    return [NSString stringWithFormat:@"\"%@\",%f,%ld,%lu",
+    return [NSString stringWithFormat:@"\"%@\",%f,%llu,%llu,%llu,%llu",
             self.timestamp.timestampString,
             self.timestamp.timeIntervalSince1970,
-            (long)_altitudeData.relativeAltitude.integerValue,
-            (unsigned long)_altitudeData.pressure.unsignedIntegerValue];
+            _wifiSent,
+            _wifiReceived,
+            _cellularSent,
+            _cellularReceived];
 }
 
 - (NSDictionary *)dictionaryData
@@ -56,9 +61,11 @@
         @"sensorType": @(self.sensorType),
         @"sensorTypeString": [NSString stringWithSensorType:self.sensorType],
         @"timestamp": self.timestamp.timestampDictionary,
-        @"altitudeData": @{
-            @"relativeAltitude": _altitudeData.relativeAltitude,
-            @"pressure": _altitudeData.pressure
+        @"networkData": @{
+            @"wifiSent": @(_wifiSent),
+            @"wifiReceived": @(_wifiReceived),
+            @"cellularSent": @(_cellularSent),
+            @"cellularReceived": @(_cellularReceived)
         }
     };
 }

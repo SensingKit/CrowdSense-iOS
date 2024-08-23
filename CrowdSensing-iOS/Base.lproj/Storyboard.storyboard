@@ -582,12 +582,36 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="NMx-vH-Xav" detailTextLabel="8yy-Du-hnC" rowHeight="44" style="IBUITableViewCellStyleValue1" id="1Bw-4T-JHU">
+                                        <rect key="frame" x="0.0" y="642" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Bw-4T-JHU" id="WCS-1q-cDg">
+                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Network Connection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NMx-vH-Xav">
+                                                    <rect key="frame" x="8" y="13" width="148.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" text="Off" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8yy-Du-hnC">
+                                                    <rect key="frame" x="325.5" y="13" width="23" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="dgK-l3-IyW">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Soi-QP-e0j" detailTextLabel="orU-dx-5JQ" rowHeight="44" style="IBUITableViewCellStyleValue1" id="vP0-1i-jTk">
-                                        <rect key="frame" x="0.0" y="662" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="706" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vP0-1i-jTk" id="ipX-8n-OIG">
                                             <rect key="frame" x="0.0" y="0.0" width="356.5" height="44"/>
@@ -634,6 +658,7 @@
                         <outlet property="locationSensorCell" destination="SU3-l0-nu7" id="TCV-Y4-MGn"/>
                         <outlet property="magnetometerSensorCell" destination="iJ8-Pw-RAD" id="aDq-Hm-dqG"/>
                         <outlet property="microphoneSensorCell" destination="vP0-1i-jTk" id="2Rh-CL-EWt"/>
+                        <outlet property="networkConnectionSensorCell" destination="1Bw-4T-JHU" id="rKF-U7-3SI"/>
                         <outlet property="pedometerSensorCell" destination="n8c-eg-cQ3" id="5fR-lk-mhU"/>
                         <outlet property="screenBrightnessSensorCell" destination="s7p-1I-UO1" id="ftw-Gh-3iH"/>
                         <segue destination="vyI-8l-K4q" kind="show" identifier="Simple Sensor Setup" id="jSO-w1-0b3"/>
@@ -1612,6 +1637,7 @@ CrowdSense supports the following sensors:
 - Battery Status
 - Microphone
 - Screen Brightness
+- Network Connection
 
 For more details about SensingKit library, please refer to https://www.sensingkit.org, or read the following publications:
 
