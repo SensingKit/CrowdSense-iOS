@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "icon_ios_1024.png",
+      "filename" : "CrowdSense-any.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "CrowdSense icon@0.5x.png",
+      "filename" : "CrowdSense-dark.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -25,7 +25,7 @@
           "value" : "tinted"
         }
       ],
-      "filename" : "CrowdSense icon.png",
+      "filename" : "CrowdSense-tinted.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
