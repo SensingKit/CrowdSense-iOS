@@ -24,7 +24,7 @@
     
     // Update sensor properties
     [self updateSensorSwitch];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -201,7 +201,7 @@
     }
 }
 
-- (void)updateProperties
+- (void)updateSensorProperties
 {
     // Update the UI
     self.recordingFormatLabel.text = self.recordingFormatString;
@@ -228,7 +228,7 @@
     }
     
     [self updateConfiguration];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
@@ -244,7 +244,7 @@
     }
     
     [self updateConfiguration];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
 @end

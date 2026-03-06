@@ -23,7 +23,7 @@
     
     // Update sensor properties
     [self updateSensorSwitch];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -132,10 +132,10 @@
 {
     self.sampleRateConfiguration.sampleRate = value.integerValue;
     [self updateConfiguration];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
-- (void)updateProperties
+- (void)updateSensorProperties
 {
     NSUInteger sampleRate = self.sampleRateConfiguration.sampleRate;
     

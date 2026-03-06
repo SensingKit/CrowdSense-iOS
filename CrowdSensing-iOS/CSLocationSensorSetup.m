@@ -25,7 +25,7 @@
     // Update sensor properties
     [self updateSensorSwitch];
     [self updateBackgroundSwitch];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -269,7 +269,7 @@
     }
 
     [self updateConfiguration];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
 - (void)userInputWithIdentifier:(NSString *)identifier withValue:(NSString *)value
@@ -284,10 +284,10 @@
     }
 
     [self updateConfiguration];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
-- (void)updateProperties
+- (void)updateSensorProperties
 {
     // Update the UI
     self.desiredAccuracyLabel.text = self.desiredAccuracyString;
