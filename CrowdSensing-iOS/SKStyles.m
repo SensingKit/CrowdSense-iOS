@@ -10,6 +10,40 @@
 
 #import "SKStyles.h"
 
+// MARK: - Safe dynamic color helpers for pre–iOS 13 fallback
+static inline UIColor *SKSystemBackgroundColor(void) {
+    if (@available(iOS 13.0, *)) {
+        return UIColor.systemBackgroundColor;
+    } else {
+        return [UIColor whiteColor];
+    }
+}
+
+static inline UIColor *SKLabelColor(void) {
+    if (@available(iOS 13.0, *)) {
+        return UIColor.labelColor;
+    } else {
+        return [UIColor blackColor];
+    }
+}
+
+static inline UIColor *SKSystemBlueTint(void) {
+    if (@available(iOS 13.0, *)) {
+        return UIColor.systemBlueColor;
+    } else {
+        return [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    }
+}
+
+static inline UIColor *SKDynamicColor(UIColor *lightColor, UIColor *darkColor) {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            return (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) ? darkColor : lightColor;
+        }];
+    } else {
+        return lightColor;
+    }
+}
 
 @implementation SKStyles
 
@@ -21,7 +55,12 @@ static UIColor* _backgroundColor = nil;
 
 + (void)initialize
 {
-    _backgroundColor = [UIColor colorNamed:@"SKStyleTint"];
+    UIColor *tint = [UIColor colorNamed:@"SKStyleTint"];
+    if (tint == nil) {
+        // Fallback to system tint that adapts to light/dark
+        tint = SKSystemBlueTint();
+    }
+    _backgroundColor = tint;
 }
 
 #pragma mark Colors
@@ -36,11 +75,11 @@ static UIColor* _backgroundColor = nil;
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     //// Color Declarations
-    UIColor* titleColor = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
+    UIColor *titleColor = SKSystemBackgroundColor();
 
     //// Oval Drawing
     UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(3.5, 3.5, 65, 65)];
-    [SKStyles.backgroundColor setFill];
+    [[SKStyles backgroundColor] setFill];
     [ovalPath fill];
 
 
@@ -49,7 +88,36 @@ static UIColor* _backgroundColor = nil;
     NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
     textStyle.alignment = NSTextAlignmentCenter;
 
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: titleColor, NSParagraphStyleAttributeName: textStyle};
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody], NSForegroundColorAttributeName: titleColor, NSParagraphStyleAttributeName: textStyle};
+
+    CGFloat textTextHeight = [title boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
+    CGContextSaveGState(context);
+    CGContextClipToRect(context, textRect);
+    [title drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
+    CGContextRestoreGState(context);
+}
+
++ (void)drawRoundButtonFilledDeactivatedWithTitle: (NSString*)title
+{
+    //// General Declarations
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    //// Color Declarations
+    UIColor *titleColor = SKLabelColor();
+    UIColor *deactivatedColor = SKDynamicColor([UIColor colorWithWhite:0.0 alpha:0.2], [UIColor colorWithWhite:1.0 alpha:0.28]);
+
+    //// Oval Drawing
+    [deactivatedColor setFill];
+    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(3.5, 3.5, 65, 65)];
+    [ovalPath fill];
+
+
+    //// Text Drawing
+    CGRect textRect = CGRectMake(0, 25, 72, 21);
+    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    textStyle.alignment = NSTextAlignmentCenter;
+
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody], NSForegroundColorAttributeName: titleColor, NSParagraphStyleAttributeName: textStyle};
 
     CGFloat textTextHeight = [title boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
     CGContextSaveGState(context);
@@ -65,10 +133,10 @@ static UIColor* _backgroundColor = nil;
 
     //// Oval Drawing
     UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(3.5, 3.5, 65, 65)];
-    [UIColor.whiteColor setFill];
+    [SKSystemBackgroundColor() setFill];
     [ovalPath fill];
-    [SKStyles.backgroundColor setStroke];
-    ovalPath.lineWidth = 1;
+    [[SKStyles backgroundColor] setStroke];
+    ovalPath.lineWidth = 1.0;
     [ovalPath stroke];
 
 
@@ -77,7 +145,7 @@ static UIColor* _backgroundColor = nil;
     NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
     textStyle.alignment = NSTextAlignmentCenter;
 
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: SKStyles.backgroundColor, NSParagraphStyleAttributeName: textStyle};
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody], NSForegroundColorAttributeName: [SKStyles backgroundColor], NSParagraphStyleAttributeName: textStyle};
 
     CGFloat textTextHeight = [title boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
     CGContextSaveGState(context);
@@ -92,11 +160,11 @@ static UIColor* _backgroundColor = nil;
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     //// Color Declarations
-    UIColor* deactivatedColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.2];
+    UIColor *deactivatedColor = SKDynamicColor([UIColor colorWithWhite:0.0 alpha:0.2], [UIColor colorWithWhite:1.0 alpha:0.28]);
 
     //// Oval Drawing
     UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(3.5, 3.5, 65, 65)];
-    [UIColor.whiteColor setFill];
+    [SKSystemBackgroundColor() setFill];
     [ovalPath fill];
     [deactivatedColor setStroke];
     ovalPath.lineWidth = 1;
@@ -108,36 +176,7 @@ static UIColor* _backgroundColor = nil;
     NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
     textStyle.alignment = NSTextAlignmentCenter;
 
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: deactivatedColor, NSParagraphStyleAttributeName: textStyle};
-
-    CGFloat textTextHeight = [title boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
-    CGContextSaveGState(context);
-    CGContextClipToRect(context, textRect);
-    [title drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
-    CGContextRestoreGState(context);
-}
-
-+ (void)drawRoundButtonFilledDeactivatedWithTitle: (NSString*)title
-{
-    //// General Declarations
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    //// Color Declarations
-    UIColor* titleColor = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-    UIColor* deactivatedColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.2];
-
-    //// Oval Drawing
-    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(3.5, 3.5, 65, 65)];
-    [deactivatedColor setFill];
-    [ovalPath fill];
-
-
-    //// Text Drawing
-    CGRect textRect = CGRectMake(0, 25, 72, 21);
-    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    textStyle.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: titleColor, NSParagraphStyleAttributeName: textStyle};
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody], NSForegroundColorAttributeName: deactivatedColor, NSParagraphStyleAttributeName: textStyle};
 
     CGFloat textTextHeight = [title boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
     CGContextSaveGState(context);
@@ -147,3 +186,4 @@ static UIColor* _backgroundColor = nil;
 }
 
 @end
+
