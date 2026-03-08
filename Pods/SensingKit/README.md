@@ -5,7 +5,7 @@ An iOS library that provides Continuous Sensing functionality to your applicatio
 
 ## Supported Sensors
 
-The following mobile sensors are currently supported in SensingKit-iOS, (listed in [SKSensorType](SensingKit/SKSensorType.h) enum):
+The following mobile sensors are currently supported in SensingKit-iOS (listed in [SKSensorType](SensingKit/SKSensorType.h) enum):
 
 - Accelerometer
 - Gyroscope
@@ -14,7 +14,7 @@ The following mobile sensors are currently supported in SensingKit-iOS, (listed 
 - Motion Activity
 - Pedometer
 - Altimeter
-- Battery Status
+- BatteryStatus
 - Location
 - Heading
 - iBeacon™ Proximity
@@ -35,7 +35,7 @@ $ gem install cocoapods
 To integrate SensingKit into your Xcode project, specify it in your `Podfile`:
 
 ```ruby
-target <MyApp> do
+target 'MyApp' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
 
@@ -97,7 +97,7 @@ if sensingKit.isSensorAvailable(SKSensorType.BatteryStatus) {
 ```
 
 
-Register a sensor (e.g. a Battery Status sensor) as shown below:
+Register a sensor (e.g. a BatteryStatus sensor) as shown below:
 
 *Objective-C*
 ```objectivec
@@ -123,8 +123,8 @@ Subscribe a sensor data handler. You can cast the data object into the actual se
                        withHandler:^(SKSensorType sensorType, SKSensorData *sensorData, NSError *error) {
 
         if (!error) {
-            SKBatteryData *batteryData = (SKBatteryData *)sensorData;
-            NSLog(@"Battery Level: %f", batteryData.level);
+            SKBatteryStatusData *batteryStatusData = (SKBatteryStatusData *)sensorData;
+            NSLog(@"Battery Level: %f", batteryStatusData.level);
         }
     } error:NULL];
 ```
@@ -132,11 +132,11 @@ Subscribe a sensor data handler. You can cast the data object into the actual se
 *Swift*
 ```swift
 do {
-    try sensingkit.subscribe(to: SKSensorType.BatteryStatus, withHandler: { (sensorType, sensorData, error) in
+    try sensingKit.subscribe(to: SKSensorType.BatteryStatus, withHandler: { (sensorType, sensorData, error) in
 
         if (error == nil) {
-            let batteryData = sensorData as! SKBatteryData
-            print("Battery Level: \(batteryData)")
+            let batteryStatusData = sensorData as! SKBatteryStatusData
+            print("Battery Level: \(batteryStatusData.level)")
         }
     })
 }
@@ -161,7 +161,7 @@ You can Start and Stop the Continuous Sensing using the following commands:
 ```swift
 // Start
 do {
-    try sensingKit.startContinuousSensing(with:SKSensorType.Battery)
+    try sensingKit.startContinuousSensing(with:SKSensorType.BatteryStatus)
 }
 catch {
     // Handle error
@@ -169,7 +169,7 @@ catch {
 
 // Stop
 do {
-    try sensingKit.stopContinuousSensing(with:SKSensorType.Battery)
+    try sensingKit.stopContinuousSensing(with:SKSensorType.BatteryStatus)
 }
 catch {
     // Handle error
@@ -190,7 +190,7 @@ Depending on the used sensor and its configuration, some keys with a user-friend
 ### iBeacon™ Proximity
 - NSBluetoothAlwaysUsageDescription (when Broadcasting only)
 
-### Eddystone
+### Eddystone™ Proximity
 - NSBluetoothAlwaysUsageDescription
 
 ### Location
