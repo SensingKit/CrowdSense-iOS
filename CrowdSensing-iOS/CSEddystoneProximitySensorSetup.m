@@ -23,7 +23,7 @@
     
     // Update sensor properties
     [self updateSensorSwitch];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
 - (IBAction)sensorSwitchAction:(id)sender
@@ -156,10 +156,10 @@
     [self.eddystoneConfiguration setNamespaceFilter:value.lowercaseString error:NULL];
     
     [self updateConfiguration];
-    [self updateProperties];
+    [self updateSensorProperties];
 }
 
-- (void)updateProperties
+- (void)updateSensorProperties
 {
     // Update the UI
     self.sensorModeLabel.text = self.sensorModeString;

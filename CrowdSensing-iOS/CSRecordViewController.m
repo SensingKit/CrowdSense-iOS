@@ -322,6 +322,9 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
     [alertController addAction:loadMotionProximityAction];
     [alertController addAction:cancelAction];
     
+    alertController.popoverPresentationController.barButtonItem = self.bookmarkButton;
+    alertController.popoverPresentationController.sourceView = self.view;
+    
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -384,8 +387,12 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
         [self.sensingSession enableSensor:iBeaconProximity withConfiguration:configuration withError:nil];
     }
     
-    if ([self.sensingSession isSensorAvailable:Battery]) {
-        [self.sensingSession enableSensor:Battery withConfiguration:nil withError:nil];
+    if ([self.sensingSession isSensorAvailable:BatteryStatus]) {
+        [self.sensingSession enableSensor:BatteryStatus withConfiguration:nil withError:nil];
+    }
+    
+    if ([self.sensingSession isSensorAvailable:ScreenBrightness]) {
+        [self.sensingSession enableSensor:ScreenBrightness withConfiguration:nil withError:nil];
     }
     
     if ([self.sensingSession isSensorAvailable:Heading]) {
@@ -589,6 +596,13 @@ typedef NS_ENUM(NSUInteger, CSRecordViewControllerAlertType) {
         
         setupTableViewController.delegate = self;
         setupTableViewController.sensingSession = self.sensingSession;
+        
+        if (@available(iOS 13.0, *)) {
+            setupTableViewController.modalInPresentation = YES;
+        } else {
+            // Fallback on earlier versions
+            setupTableViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        }
     }
 }
 

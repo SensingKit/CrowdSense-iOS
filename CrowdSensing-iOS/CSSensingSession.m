@@ -212,8 +212,8 @@
             configuration = [[SKEddystoneProximityConfiguration alloc] init];
             break;
             
-        case Battery:
-            configuration = [[SKBatteryConfiguration alloc] init];
+        case BatteryStatus:
+            configuration = [[SKBatteryStatusConfiguration alloc] init];
             break;
             
         case Microphone:
@@ -222,6 +222,14 @@
         
         case Heading:
             configuration = [[SKHeadingConfiguration alloc] init];
+            break;
+            
+        case ScreenBrightness:
+            configuration = [[SKScreenBrightnessConfiguration alloc] init];
+            break;
+            
+        case NetworkConnection:
+            configuration = [[SKNetworkConnectionConfiguration alloc] init];
             break;
             
         default:

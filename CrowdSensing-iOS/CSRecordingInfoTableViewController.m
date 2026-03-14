@@ -163,7 +163,7 @@
 {
     if (section == 0)
     {
-        return @"Recorded data can be accessed using iTunes (through iTunes file sharing). Alternatively you can use the Share button to share the data with nearby devices or over the Internet.";
+        return @"Recorded data can be accessed via USB using iTunes File Sharing. Alternatively you can share the data with nearby devices or over the Internet.";
     }
     else if (section == 1)
     {
@@ -210,32 +210,29 @@
         [[NSFileManager defaultManager] removeItemAtURL:attachment error:nil];
     }];
     
-    NSMutableArray *array = @[UIActivityTypePostToFacebook,
-                              UIActivityTypePostToTwitter,
-                              UIActivityTypePostToWeibo,
-                              UIActivityTypeMessage,
-                              UIActivityTypePrint,
-                              UIActivityTypeCopyToPasteboard,
-                              UIActivityTypeAssignToContact,
-                              UIActivityTypeSaveToCameraRoll,
-                              UIActivityTypeAddToReadingList,
-                              UIActivityTypePostToFlickr,
-                              UIActivityTypePostToVimeo,
-                              UIActivityTypePostToTencentWeibo].mutableCopy;
-    
-    if ([NSProcessInfo processInfo].operatingSystemVersion.majorVersion >= 9) {
-        [array addObject:UIActivityTypeOpenInIBooks];
-    }
+    NSArray *array = @[UIActivityTypePostToFacebook,
+                       UIActivityTypePostToTwitter,
+                       UIActivityTypePostToWeibo,
+                       UIActivityTypePrint,
+                       UIActivityTypeCopyToPasteboard,
+                       UIActivityTypeAssignToContact,
+                       UIActivityTypeSaveToCameraRoll,
+                       UIActivityTypeAddToReadingList,
+                       UIActivityTypePostToFlickr,
+                       UIActivityTypePostToVimeo,
+                       UIActivityTypePostToTencentWeibo,
+                       UIActivityTypeOpenInIBooks,
+                       UIActivityTypeMarkupAsPDF];
     
     // Exclude Activities
     activityViewController.excludedActivityTypes = array;
     
-    // To avoid crash on iPad and iOS 8
-    if ([activityViewController respondsToSelector:@selector(popoverPresentationController)])
-    {
-        // iOS8
+    if (activityViewController.popoverPresentationController != NULL) {
         activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
     }
+    
+    activityViewController.popoverPresentationController.barButtonItem = self.shareButton;
+    activityViewController.popoverPresentationController.sourceView = self.view;
     
     [self presentViewController:activityViewController animated:YES completion:nil];
 }

@@ -153,6 +153,12 @@
                                                 inManagedObjectContext:self.managedObjectContext];
         
         recordViewController.delegate = self;
+        if (@available(iOS 13.0, *)) {
+            recordViewController.modalInPresentation = YES;
+        } else {
+            // Fallback on earlier versions
+            recordViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        }
     }
     else if ([segue.identifier isEqualToString:@"Recording Info"]) {
         

@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-CrowdSensing-iOS/Pods-CrowdSensing-iOS-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework
+${BUILT_PRODUCTS_DIR}/SensingKit/SensingKit.framework
