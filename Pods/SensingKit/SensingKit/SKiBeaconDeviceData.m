@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -27,14 +27,14 @@
 @implementation SKiBeaconDeviceData
 
 - (instancetype)initWithTimestamp:(NSDate *)timestamp
-                            major:(uint16_t)major
-                            minor:(uint16_t)minor
-                         accuracy:(CLLocationAccuracy)accuracy
-                        proximity:(CLProximity)proximity
-                             rssi:(NSInteger)rssi
+                        withMajor:(uint16_t)major
+                        withMinor:(uint16_t)minor
+                     withAccuracy:(CLLocationAccuracy)accuracy
+                    withProximity:(CLProximity)proximity
+                         withRssi:(NSInteger)rssi
 {
     if (self = [super initWithSensorType:iBeaconProximity
-                               timestamp:[SKSensorTimestamp sensorTimestampFromDate:timestamp]])
+                           withTimestamp:[SKSensorTimestamp sensorTimestampFromDate:timestamp]])
     {
         _major = major;
         _minor = minor;

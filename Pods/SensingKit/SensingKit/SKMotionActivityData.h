@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -24,8 +24,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import <SensingKit/SKSensorData.h>
-#import <CoreMotion/CoreMotion.h>
+#import "SKSensorData.h"
+@import CoreMotion;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)initWithSensorType:(SKSensorType)sensorType
-                         timestamp:(SKSensorTimestamp *)timestamp NS_UNAVAILABLE;
+                     withTimestamp:(SKSensorTimestamp *)timestamp NS_UNAVAILABLE;
 
 /**
  *  Returns an SKMotionActivityData object, initialized with an instance of CMMotionActivity.

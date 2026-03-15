@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -32,7 +32,7 @@ static NSString *const SKErrorDomain = @"org.sensingkit.SensingKit-iOS.ErrorDoma
  */
 typedef NS_ENUM(NSInteger, SKSensorError) {
     
-/** Sensor Availability */
+/** Sensor Availibility */
     
     /**
      * Sensor is not available.

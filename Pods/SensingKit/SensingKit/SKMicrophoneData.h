@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -24,7 +24,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <SensingKit/SKSensorData.h>
+#import "SKSensorData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)initWithSensorType:(SKSensorType)sensorType
-                         timestamp:(SKSensorTimestamp *)timestamp NS_UNAVAILABLE;
+                     withTimestamp:(SKSensorTimestamp *)timestamp NS_UNAVAILABLE;
 
 /**
  *  Returns an SKMicrophoneData object, initialized with the current state of the sensor and the timestamp.
@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return An SKMicrophoneData object.
  */
 - (instancetype)initWithState:(NSString *)state
-                 timeInterval:(NSTimeInterval)timeInterval NS_DESIGNATED_INITIALIZER;
+             withTimeInterval:(NSTimeInterval)timeInterval NS_DESIGNATED_INITIALIZER;
 
 /**
  *  A string with the state of Microphone sensor (e.g. Started or Stopped).

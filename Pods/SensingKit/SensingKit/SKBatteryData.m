@@ -1,9 +1,9 @@
 //
-//  SKBatteryStatusData.m
+//  SKBatteryData.m
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -22,20 +22,17 @@
 //  along with SensingKit-iOS.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import "SKBatteryStatusData.h"
+#import "SKBatteryData.h"
 
-@implementation SKBatteryStatusData
+@implementation SKBatteryData
 
-- (instancetype)initWithLevel:(CGFloat)level
-                    state:(UIDeviceBatteryState)state
-            lowPowerModeState:(SKLowPowerModeState)lowPowerModeState
+- (instancetype)initWithLevel:(CGFloat)level withState:(UIDeviceBatteryState)state
 {
-    if (self = [super initWithSensorType:BatteryStatus
-                               timestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:[NSProcessInfo processInfo].systemUptime]])
+    if (self = [super initWithSensorType:Battery
+                           withTimestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:[NSProcessInfo processInfo].systemUptime]])
     {
         _level = level;
         _state = state;
-        _lowPowerModeState = lowPowerModeState;
     }
     return self;
 }
@@ -61,51 +58,32 @@
     }
 }
 
-- (NSString *)lowPowerModeStateString
-{
-    switch (_lowPowerModeState) {
-            
-        case SKLowPowerModeStateDisabled:
-            return @"Disabled";
-            
-        case SKLowPowerModeStateEnabled:
-            return @"Enabled";
-            
-        default:
-            NSLog(@"Warning: Unknown lowPowerModeState: %d", (int)_lowPowerModeState);
-            return @"Unknown";
-    }
-}
-
 + (NSString *)csvHeader
 {
-    return @"timestamp,timeIntervalSince1970,state,level,lowPowerModeState";
+    return @"timestamp,timeIntervalSince1970,state,level";
 }
 
 - (NSString *)csvString
 {
-    return [NSString stringWithFormat:@"\"%@\",%f,%@,%f,%@",
+    return [NSString stringWithFormat:@"\"%@\",%f,%@,%f",
             self.timestamp.timestampString,
             self.timestamp.timeIntervalSince1970,
             self.stateString,
-            _level,
-            self.lowPowerModeStateString];
+            _level];
 }
 
 - (NSDictionary *)dictionaryData
 {
     return @{
-        @"sensorType": @(self.sensorType),
-        @"sensorTypeString": [NSString stringWithSensorType:self.sensorType],
-        @"timestamp": self.timestamp.timestampDictionary,
-        @"battery": @{
-            @"level": @(_level),
-            @"state": @(_state),
-            @"stateString": self.stateString,
-            @"lowPowerModeState": @(_lowPowerModeState),
-            @"lowPowerModeStateString": self.lowPowerModeStateString,
-        }
-    };
+             @"sensorType": @(self.sensorType),
+             @"sensorTypeString": [NSString stringWithSensorType:self.sensorType],
+             @"timestamp": self.timestamp.timestampDictionary,
+             @"battery": @{
+                     @"level": @(_level),
+                     @"state": @(_state),
+                     @"stateString": self.stateString
+                     }
+             };
 }
 
 @end

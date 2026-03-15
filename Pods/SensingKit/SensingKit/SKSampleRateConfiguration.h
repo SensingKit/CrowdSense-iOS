@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -24,12 +24,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import <SensingKit/SKConfiguration.h>
+#import "SKConfiguration.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  This is the base class for all motion sensors that require a sample rate configuration (e.g., Accelerometer, Gyroscope, Magnetometer, Device Motion, etc.).
+ *  This is the base class for all motion sensors that require a sample rate configuration. These sensors are Accelerometer, Gyroscope, Magnetometer and Device Motion.
  */
 @interface SKSampleRateConfiguration : SKConfiguration <NSCopying>
 
