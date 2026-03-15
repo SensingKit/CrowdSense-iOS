@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -29,7 +29,7 @@
 - (instancetype)initWithPedometerData:(CMPedometerData *)pedometerData
 {
     if (self = [super initWithSensorType:Pedometer
-                               timestamp:[SKSensorTimestamp sensorTimestampFromDate:pedometerData.startDate]])
+                           withTimestamp:[SKSensorTimestamp sensorTimestampFromDate:pedometerData.startDate]])
     {
         // No need to have two instances of the same timestamp. We point startDate to self.timestamp
         _startDate = self.timestamp;

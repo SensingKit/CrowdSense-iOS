@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -27,10 +27,10 @@
 @implementation SKMicrophoneData
 
 - (instancetype)initWithState:(NSString *)state
-                 timeInterval:(NSTimeInterval)timeInterval
+             withTimeInterval:(NSTimeInterval)timeInterval
 {
     if (self = [super initWithSensorType:Microphone
-                               timestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:timeInterval]])
+                           withTimestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:timeInterval]])
     {
         _state = state;
     }

@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -35,14 +35,12 @@
 #import "SKMotionActivity.h"
 #import "SKPedometer.h"
 #import "SKAltimeter.h"
-#import "SKBatteryStatus.h"
+#import "SKBattery.h"
 #import "SKLocation.h"
 #import "SKHeading.h"
 #import "SKiBeaconProximity.h"
 #import "SKEddystoneProximity.h"
 #import "SKMicrophone.h"
-#import "SKScreenBrightness.h"
-#import "SKNetworkConnection.h"
 
 // SensorData
 #import "SKAccelerometerData.h"
@@ -52,14 +50,12 @@
 #import "SKMotionActivityData.h"
 #import "SKPedometerData.h"
 #import "SKAltimeterData.h"
-#import "SKBatteryStatusData.h"
+#import "SKBatteryData.h"
 #import "SKLocationData.h"
 #import "SKHeadingData.h"
 #import "SKiBeaconDeviceData.h"
 #import "SKEddystoneProximityData.h"
 #import "SKMicrophoneData.h"
-#import "SKScreenBrightnessData.h"
-#import "SKNetworkConnectionData.h"
 
 // SensorConfiguration
 #import "SKAccelerometerConfiguration.h"
@@ -69,14 +65,12 @@
 #import "SKMotionActivityConfiguration.h"
 #import "SKPedometerConfiguration.h"
 #import "SKAltimeterConfiguration.h"
-#import "SKBatteryStatusConfiguration.h"
+#import "SKBatteryConfiguration.h"
 #import "SKLocationConfiguration.h"
 #import "SKHeadingConfiguration.h"
 #import "SKiBeaconProximityConfiguration.h"
 #import "SKEddystoneProximityConfiguration.h"
 #import "SKMicrophoneConfiguration.h"
-#import "SKScreenBrightnessConfiguration.h"
-#import "SKNetworkConnectionConfiguration.h"
 
 
 @interface SKSensorManager()
@@ -130,8 +124,8 @@
         case Altimeter:
             return [SKAltimeter isSensorAvailable];
             
-        case BatteryStatus:
-            return [SKBatteryStatus isSensorAvailable];
+        case Battery:
+            return [SKBattery isSensorAvailable];
             
         case Location:
             return [SKLocation isSensorAvailable];
@@ -148,11 +142,7 @@
         case Microphone:
             return [SKMicrophone isSensorAvailable];
         
-        case ScreenBrightness:
-            return [SKScreenBrightness isSensorAvailable];
-            
-        case NetworkConnection:
-            return [SKNetworkConnection isSensorAvailable];
+            // Don't forget to break!
             
         default:
             // Internal Error. Should never happen.
@@ -415,8 +405,8 @@
         case Altimeter:
             return [SKAltimeterData csvHeader];
             
-        case BatteryStatus:
-            return [SKBatteryStatusData csvHeader];
+        case Battery:
+            return [SKBatteryData csvHeader];
             
         case Location:
             return [SKLocationData csvHeader];
@@ -433,11 +423,7 @@
         case Microphone:
             return [SKMicrophoneData csvHeader];
         
-        case ScreenBrightness:
-            return [SKScreenBrightnessData csvHeader];
-            
-        case NetworkConnection:
-            return [SKNetworkConnectionData csvHeader];
+            // Don't forget to break!
             
         default:
             // Internal Error. Should never happen.
@@ -631,8 +617,8 @@
             sensor = [[SKAltimeter alloc] initWithConfiguration:(SKAltimeterConfiguration *)configuration];
             break;
             
-        case BatteryStatus:
-            sensor = [[SKBatteryStatus alloc] initWithConfiguration:(SKBatteryStatusConfiguration *)configuration];
+        case Battery:
+            sensor = [[SKBattery alloc] initWithConfiguration:(SKBatteryConfiguration *)configuration];
             break;
             
         case Location:
@@ -653,14 +639,6 @@
             
         case Microphone:
             sensor = [[SKMicrophone alloc] initWithConfiguration:(SKMicrophoneConfiguration *)configuration];
-            break;
-            
-        case ScreenBrightness:
-            sensor = [[SKScreenBrightness alloc] initWithConfiguration:(SKScreenBrightnessConfiguration *)configuration];
-            break;
-            
-        case NetworkConnection:
-            sensor = [[SKNetworkConnection alloc] initWithConfiguration:(SKNetworkConnectionConfiguration *)configuration];
             break;
             
             // Don't forget to break!
@@ -708,8 +686,8 @@
             configuration = [[SKAltimeterConfiguration alloc] init];
             break;
             
-        case BatteryStatus:
-            configuration = [[SKBatteryStatusConfiguration alloc] init];
+        case Battery:
+            configuration = [[SKBatteryConfiguration alloc] init];
             break;
 
         case Location:
@@ -730,14 +708,6 @@
             
         case Microphone:
             configuration = [[SKMicrophoneConfiguration alloc] initWithOutputDirectory:[SKSensorManager applicationDocumentsDirectory] withFilename:@"Recording"];
-            break;
-            
-        case ScreenBrightness:
-            configuration = [[SKScreenBrightnessConfiguration alloc] init];
-            break;
-            
-        case NetworkConnection:
-            configuration = [[SKScreenBrightnessConfiguration alloc] init];
             break;
             
             // Don't forget to break!

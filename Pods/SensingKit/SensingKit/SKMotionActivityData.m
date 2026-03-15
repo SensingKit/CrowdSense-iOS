@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -29,7 +29,7 @@
 - (instancetype)initWithMotionActivity:(CMMotionActivity *)motionActivity
 {
     if (self = [super initWithSensorType:MotionActivity
-                               timestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:motionActivity.timestamp]])
+                           withTimestamp:[SKSensorTimestamp sensorTimestampFromTimeInterval:motionActivity.timestamp]])
     {
         _startDate = [SKSensorTimestamp sensorTimestampFromDate:motionActivity.startDate];
         _motionActivity = motionActivity;

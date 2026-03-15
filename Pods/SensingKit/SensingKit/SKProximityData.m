@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -27,11 +27,11 @@
 @implementation SKProximityData
 
 - (instancetype)initWithSensorType:(SKSensorType)sensorType
-                         timestamp:(NSDate *)timestamp
-                           devices:(NSArray *)devices
+                     withTimestamp:(NSDate *)timestamp
+                       withDevices:(NSArray *)devices
 {
     if (self = [super initWithSensorType:sensorType
-                               timestamp:[SKSensorTimestamp sensorTimestampFromDate:timestamp]])
+                           withTimestamp:[SKSensorTimestamp sensorTimestampFromDate:timestamp]])
     {
         _devices = devices;
     }

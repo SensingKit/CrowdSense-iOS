@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -147,7 +147,7 @@
 
 - (BOOL)startBroadcasting:(NSError **)error
 {
-    if (self.peripheralManager.state != CBManagerStatePoweredOn) {
+    if (self.peripheralManager.state != CBPeripheralManagerStatePoweredOn) {
         
         if (error) {
             
@@ -247,7 +247,7 @@
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
 {
-    if (peripheral.state != CBManagerStatePoweredOn)
+    if (peripheral.state != CBPeripheralManagerStatePoweredOn)
     {
         NSLog(@"Warning: Bluetooth radio is not available. (State: %d)", (int)peripheral.state);
     }
@@ -270,11 +270,11 @@
             if (beacon)
             {
                 SKiBeaconDeviceData *deviceData = [[SKiBeaconDeviceData alloc] initWithTimestamp:timestamp
-                                                                                           major:beacon.major.unsignedIntegerValue
-                                                                                           minor:beacon.minor.unsignedIntegerValue
-                                                                                        accuracy:beacon.accuracy
-                                                                                       proximity:beacon.proximity
-                                                                                            rssi:beacon.rssi];
+                                                                                       withMajor:beacon.major.unsignedIntegerValue
+                                                                                       withMinor:beacon.minor.unsignedIntegerValue
+                                                                                    withAccuracy:beacon.accuracy
+                                                                                   withProximity:beacon.proximity
+                                                                                        withRssi:beacon.rssi];
                 
                 [array addObject:deviceData];
             }
@@ -285,8 +285,8 @@
             
             // Create and submit the SKProximityData object
             SKProximityData *data = [[SKProximityData alloc] initWithSensorType:iBeaconProximity
-                                                                      timestamp:timestamp
-                                                                        devices:array];
+                                                                  withTimestamp:timestamp
+                                                                    withDevices:array];
             
             [self submitSensorData:data error:NULL];
         }

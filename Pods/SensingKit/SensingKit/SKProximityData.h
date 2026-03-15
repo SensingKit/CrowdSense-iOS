@@ -3,7 +3,7 @@
 //  SensingKit
 //
 //  Copyright (c) 2014. Kleomenis Katevas
-//  Kleomenis Katevas, minos.kat@gmail.com
+//  Kleomenis Katevas, k.katevas@imperial.ac.uk
 //
 //  This file is part of SensingKit-iOS library.
 //  For more information, please visit https://www.sensingkit.org
@@ -23,7 +23,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <SensingKit/SKSensorData.h>
+
+#import "SKSensorData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -35,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)initWithSensorType:(SKSensorType)sensorType
-                         timestamp:(SKSensorTimestamp *)timestamp NS_UNAVAILABLE;
+                     withTimestamp:(SKSensorTimestamp *)timestamp NS_UNAVAILABLE;
 
 /**
  *  Returns an SKProximityData object, initialized with an array of Device Data objects as well as the time that the scan was completed.
@@ -47,8 +48,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return An SKProximityData object.
  */
 - (instancetype)initWithSensorType:(SKSensorType)sensorType
-                         timestamp:(NSDate *)timestamp
-                           devices:(NSArray *)devices NS_DESIGNATED_INITIALIZER;
+                     withTimestamp:(NSDate *)timestamp
+                       withDevices:(NSArray *)devices NS_DESIGNATED_INITIALIZER;
 
 /**
  *  An array that holds the Device Data objects.
