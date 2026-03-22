@@ -3,7 +3,5 @@ use_frameworks!
 
 target 'CrowdSensing-iOS' do
   pod 'SSZipArchive'
-  pod 'SensingKit'
-  # For the latest development version, please use:
-  #pod 'SensingKit', :git => 'https://github.com/SensingKit/SensingKit-iOS.git', :branch => 'next'
+  pod 'SensingKit', :git => 'https://github.com/SensingKit/SensingKit-iOS.git', :branch => 'master'
 end
